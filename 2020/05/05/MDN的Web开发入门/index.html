@@ -106,7 +106,6 @@
 
         <p>具体内容如下：</p>
 <a id="more"></a>
-
 <hr>
 <hr>
 <h3 id="安装基础软件"><a href="#安装基础软件" class="headerlink" title="安装基础软件"></a>安装基础软件</h3><h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><p>文本编辑器、浏览器、图像编辑器、版本控制系统、FTP工具软件、自动化构建工具、模板(库、框架)</p>
@@ -187,9 +186,7 @@
 </li>
 <li><p>字体(Google Fonts)</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css?family=Roboto&amp;display=swap"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: 'Roboto', sans-serif;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <hr>
@@ -217,23 +214,7 @@
 </li>
 <li><p>elements、tags</p>
 <ul>
-<li><table>
-<thead>
-<tr>
-<th align="center">开始标签</th>
-<th align="center">结束标签</th>
-<th align="center">内容</th>
-<th align="center">元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Opening tag</td>
-<td align="center">Closing tag</td>
-<td align="center">Content</td>
-<td align="center">Element</td>
-</tr>
-</tbody></table>
-</li>
+<li>|  开始标签   |  结束标签   |  内容   |  元素   |<br>| :————-: | :————-: | :——-: | :——-: |<br>| Opening tag | Closing tag | Content | Element |</li>
 </ul>
 </li>
 <li><p>属性(Attribute)。<code>class=&quot;editor-note&quot;</code></p>
@@ -241,7 +222,7 @@
 <li><p>嵌套元素：元素需要正确的开始和结束</p>
 <p><code>&lt;p&gt; class=&quot;editor-note&quot;&gt;我的猫咪脾气&lt;strong&gt;爆&lt;/strong&gt;:)&lt;/p&gt;</code></p>
 </li>
-<li><p>空元素：图像元素不需要通过Content产生效果，不需要Closing tag(</img>)</p>
+<li><p>空元素：图像元素不需要通过Content产生效果，不需要Closing tag(&lt;/img&gt;)</p>
 </li>
 <li><p>HTML文档详解(index.html)</p>
 <ul>
@@ -322,40 +303,7 @@
 </ul>
 </li>
 <li><p>不同类型选择器</p>
-<table>
-<thead>
-<tr>
-<th>选择器名称</th>
-<th>选择的内容</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>元素选择器</td>
-<td>所有指定类型的HTML元素</td>
-<td><code>p</code>选择<code>&lt;p&gt;</code></td>
-</tr>
-<tr>
-<td>ID选择器</td>
-<td>具有特定ID的元素</td>
-<td><code>#my-id</code>选择<code>&lt;p id=&quot;my-id&quot;</code>或<code>&lt;a id=&quot;my-id&quot;</code></td>
-</tr>
-<tr>
-<td>类选择器</td>
-<td>具有特定类的元素</td>
-<td><code>.my-class</code>选择<code>&lt;p class=&quot;my-class&quot;&gt;</code>和<code>&lt;a class class=&quot;my-class&quot;&gt;</code></td>
-</tr>
-<tr>
-<td>属性选择器</td>
-<td>具有特定属性的元素</td>
-<td><code>img[src]</code>选择<code>&lt;img src=&quot;myimage.png&quot;&gt;</code>而不是<code>&lt;img&gt;</code></td>
-</tr>
-<tr>
-<td>伪(Pseudo)选择器</td>
-<td>特定状态下的特定元素(比如鼠标指针悬停)</td>
-<td><code>a:hover</code>仅在指针悬停在链接上时选择<code>&lt;a&gt;</code></td>
-</tr>
-</tbody></table>
+<p>| 选择器名称       | 选择的内容                             | 示例                                                         |<br>| ———————— | ——————————————————— | —————————————————————————————— |<br>| 元素选择器       | 所有指定类型的HTML元素                 | <code>p</code>选择<code>&lt;p&gt;</code>                                                 |<br>| ID选择器         | 具有特定ID的元素                       | <code>#my-id</code>选择<code>&lt;p id=&quot;my-id&quot;</code>或<code>&lt;a id=&quot;my-id&quot;</code>                 |<br>| 类选择器         | 具有特定类的元素                       | <code>.my-class</code>选择<code>&lt;p class=&quot;my-class&quot;&gt;</code>和<code>&lt;a class class=&quot;my-class&quot;&gt;</code> |<br>| 属性选择器       | 具有特定属性的元素                     | <code>img[src]</code>选择<code>&lt;img src=&quot;myimage.png&quot;&gt;</code>而不是<code>&lt;img&gt;</code>         |<br>| 伪(Pseudo)选择器 | 特定状态下的特定元素(比如鼠标指针悬停) | <code>a:hover</code>仅在指针悬停在链接上时选择<code>&lt;a&gt;</code>                     |</p>
 </li>
 </ul>
 <h4 id="字体和文本"><a href="#字体和文本" class="headerlink" title="字体和文本"></a>字体和文本</h4><blockquote>
@@ -371,7 +319,6 @@
 </li>
 <li><p>为文档体内的元素设置字号，使标题居中显示，并为正文设置行高和字间距，从而提高页面可读性</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">60px</span>;</span><br><span class="line">	<span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span>,<span class="selector-tag">li</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">2</span>;</span><br><span class="line">	<span class="attribute">letter-spacing</span>: <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
 <h4 id="一切皆盒子"><a href="#一切皆盒子" class="headerlink" title="一切皆盒子"></a>一切皆盒子</h4><p>html页面内大部分元素可以被看作若干层叠的盒子</p>
@@ -401,7 +348,6 @@
 </li>
 <li><p>文档体格式设置</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#0F9D96</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">0</span> <span class="number">20px</span> <span class="number">20px</span> <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">5px</span> solid black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ol>
 <li><p><code>width: 600px;</code>——强制页面永远保持600px</p>
 </li>
@@ -417,14 +363,12 @@
 </li>
 <li><p>定位页面主标题并添加样式</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#8B4CB2</span>;</span><br><span class="line">	<span class="attribute">text-shadow</span>: <span class="number">3px</span> <span class="number">3px</span> <span class="number">1px</span> black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><code>text-shadow</code>属性：第1个值设置水平偏移值、2设置垂直、3设置阴影魔糊半径、4设置阴影基色</li>
 </ul>
 </li>
 <li><p>图像居中</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>通过<code>display: block;</code>给予内联元素<code>img</code>与<code>&lt;body&gt;</code>相同的块级行为，从而能够对其进行<code>margin: 0 auto;</code>操作使其居中</li>
 </ul>
@@ -450,7 +394,6 @@
 </li>
 <li><p>添加如下代码到main.js文件</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myHeading = <span class="built_in">document</span>.querySelector(<span class="string">'h1'</span>);</span><br><span class="line">myHeading.textContent = <span class="string">'Hello World!'</span>;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
 <blockquote>
@@ -475,34 +418,7 @@
 </ol>
 </li>
 <li><p>数据类型</p>
-<table>
-<thead>
-<tr>
-<th>变量类型</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String</td>
-<td><code>let myVariable = &#39;李磊&#39;;</code></td>
-</tr>
-<tr>
-<td>Number</td>
-<td><code>let myVariable = 10;</code></td>
-</tr>
-<tr>
-<td>Boolean</td>
-<td><code>let myVariable = true;</code></td>
-</tr>
-<tr>
-<td>Array</td>
-<td><code>let myVariable = [1, &#39;李磊&#39;, &#39;韩梅梅&#39;, 10]</code></td>
-</tr>
-<tr>
-<td>Object</td>
-<td><code>let myVariable = document.querySelector(&#39;h1&#39;)</code></td>
-</tr>
-</tbody></table>
+<p>| 变量类型 | 示例                                            |<br>| ———— | ———————————————————————- |<br>| String   | <code>let myVariable = &#39;李磊&#39;;</code>                      |<br>| Number   | <code>let myVariable = 10;</code>                          |<br>| Boolean  | <code>let myVariable = true;</code>                        |<br>| Array    | <code>let myVariable = [1, &#39;李磊&#39;, &#39;韩梅梅&#39;, 10]</code>    |<br>| Object   | <code>let myVariable = document.querySelector(&#39;h1&#39;)</code> |</p>
 </li>
 <li><p>注释——<code>/* */</code>注释多行或者<code>//</code>注释单行</p>
 </li>
@@ -516,10 +432,8 @@
 </li>
 <li><p>事件：为网页添加真实的交互能力，即捕捉浏览器操作并作出响应。如点击事件代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'html'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'别戳我，我怕疼。'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>上述代码为下面代码的简化版：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myHTML = <span class="built_in">document</span>.querySelector(<span class="string">'html'</span>);</span><br><span class="line">myHTML.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h4 id="完善网页，丰富特性"><a href="#完善网页，丰富特性" class="headerlink" title="完善网页，丰富特性"></a>完善网页，丰富特性</h4><ul>
@@ -614,7 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/05/MDN%E7%9A%84Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" data-id="ckb0vej4a0000wcwder1p1pm5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/05/MDN%E7%9A%84Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" data-id="ckb0z3tnu0001e4wdfo2g5owi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li></ul>

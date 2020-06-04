@@ -941,6 +941,16 @@ a.article-title:hover {
   max-width: 100%;
   margin: 0 auto;
 }
+#toc {
+  float: right;
+  background-color: #eee;
+  font-size: 0.8em;
+  color: #258fb8;
+  margin: 5px;
+}
+#toc .toc {
+  list-style: none;
+}
 #comments {
   background: #fff;
   -webkit-box-shadow: 1px 2px 3px #ddd;

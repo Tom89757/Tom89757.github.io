@@ -105,7 +105,6 @@
 
         <p>以下目录于书籍中目录相对应</p>
 <a id="more"></a>
-
 <h2 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h2><p>以一个简单的hello.c程序为例，里面的每个字符都以ASCII码的形式存储，每个字符占据1 byte=8 bits</p>
 <h2 id="程序被其他程序翻译成不同的方式"><a href="#程序被其他程序翻译成不同的方式" class="headerlink" title="程序被其他程序翻译成不同的方式"></a>程序被其他程序翻译成不同的方式</h2><p>一个程序的生命周期往往以高级语言写成的程序开始，以一个二进制的机器可执行文件结束。以hello.c为例，首先由预处理器cpp识别第一行，将系统头文件stdio.h中的内容直接插入程序得到hello.i文件；再通过编译器ccl将hello.i转为由汇编语言表示的hello.s（由于汇编语言是通用的，所以同一机器上可以运行多种高级语言）；接下来通过汇编器as将hello.s转为二进制的可重定位目标程序hello.o（此处可将重定位理解为在地址空间中可定位程序中机器指令所在的位置）；最后还需通过链接器ld将printf函数对应的已编译好的printf.o文件链接到hello.o供其调用，即得到最终的二进制的可执行目标文件hello，其可加载到内存中供系统执行。</p>
 <h2 id="了解编译系统是如何工作是大有益处的"><a href="#了解编译系统是如何工作是大有益处的" class="headerlink" title="了解编译系统是如何工作是大有益处的"></a>了解编译系统是如何工作是大有益处的</h2><ul>
@@ -147,7 +146,9 @@
 <p><em>该部分只简单的介绍了操作系统中涉及的概念，并未涉及具体调控机制，待后续详述</em></p>
 <h2 id="系统之间利用网络通信"><a href="#系统之间利用网络通信" class="headerlink" title="系统之间利用网络通信"></a>系统之间利用网络通信</h2><p>此处将网络认为是一个IO设备，细想是合理的。网络即意味着交流，单次的交流即意味着一方输入、一方输出。</p>
 <p>以telnet本地客户端与远程服务端间的网络为例，当使用客户端在登录远程服务端后，远程服务端等待本地客户端的输入，输入hello后，客户端将hello字符串发送至服务端，服务端shell执行hello程序并得到输出结果，然后服务端将输出结果发送至客户端，并在客户端的显示器上打印出来。</p>
-<h2 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h2><h3 id="Amdahl定律"><a href="#Amdahl定律" class="headerlink" title="Amdahl定律"></a>Amdahl定律</h3><p>简单但具有洞察力的定律：<br>$$<br>\frac{T_old}{T_new}=\frac{1}{1-\alpha+\frac{\alpha}{k}}<br>$$<br>其中$\alpha$为某部分所花费的时间占比，$k$为该部分效率提升的的比例。当$\alpha=0.6$、$k=3$时，比值为$\frac{5}{3}$，和$k$相差较多，可见只有当占比足够大的一部分速度提升时，才能显著提升整个系统的速度。当$k$趋向于$+\infty$时，比值为$\frac{1}{1-\alpha}$，这意味着$\alpha$较小时，性能的提升极其有限。</p>
+<h2 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h2><h3 id="Amdahl定律"><a href="#Amdahl定律" class="headerlink" title="Amdahl定律"></a>Amdahl定律</h3><p>简单但具有洞察力的定律：</p>
+<script type="math/tex; mode=display">
+\frac{T_old}{T_new}=\frac{1}{1-\alpha+\frac{\alpha}{k}}</script><p>其中$\alpha$为某部分所花费的时间占比，$k$为该部分效率提升的的比例。当$\alpha=0.6$、$k=3$时，比值为$\frac{5}{3}$，和$k$相差较多，可见只有当占比足够大的一部分速度提升时，才能显著提升整个系统的速度。当$k$趋向于$+\infty$时，比值为$\frac{1}{1-\alpha}$，这意味着$\alpha$较小时，性能的提升极其有限。</p>
 <h3 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h3><p>并发是指一个系统可以同时进行多种活动，而并行则是通过并发使一个系统运行得更快。</p>
 <ul>
 <li><p>线程级并发。目前已由单处理器单线程构成的系统发展为多处理器超线程构成的系统，但他们都是通过单一的操作系统控制。单处理器系统通过进程间切换模拟出的宏观上的并发，而多处理器则通过多核实现真正物理层面的并发。根据前面所提到的存储结构，每个核都有L1和L2高速缓存，L1由数据高速缓存和指令高速缓存构成，其速度仅次于寄存器并与寄存器进行信息传输，L2则是每个核统一的高速缓存，为L1的下一级缓存，然后每个核的L2又共用一个同一的高速缓存L3，L3与主存进行信息传输。</p>
@@ -156,8 +157,7 @@
 </li>
 <li><p>指令集并行。这个概念是指现代的单个处理器可以同时处理多条机器指令，后续会谈到流水线设计<strong>mark</strong>和超标量处理器（在少于一个时钟周期的时间内执行一条指令）<strong>mark</strong>。</p>
 </li>
-<li><p>单指令、多数据并行。即SIMD并行<strong>mark</strong>，Single Instrucition Multiple Data，允许一个指令产生多个可以并行执行的操作。</p>
-</li>
+<li>单指令、多数据并行。即SIMD并行<strong>mark</strong>，Single Instrucition Multiple Data，允许一个指令产生多个可以并行执行的操作。</li>
 </ul>
 <h3 id="计算机系统中抽象的重要性"><a href="#计算机系统中抽象的重要性" class="headerlink" title="计算机系统中抽象的重要性"></a>计算机系统中抽象的重要性</h3><p>抽象在计算机科学中无处不在。将函数抽象为应用程序接口API，将程序抽象为进程，将程序存储器抽象为虚拟内存，将I/O设备抽象为文件。我们还可以将操作系统、处理器、主存和I/O设备构成的整个系统抽象为虚拟机<strong>mark</strong>。</p>
 <p><strong><em>至此，第一章的内容全部结束。回顾一下，它展示了一个C语言程序的执行过程、网络通信、进程／虚拟内存／文件的抽象，从而将一系列的概念联系起来，并指出了几个重要的设计和理念——高速缓存、Aｍｄａｈｌ定律、并发和并行、抽象．</em></strong></p>
@@ -165,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/" data-id="ckb0vej8u001lwcwd44kbc8ob" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/" data-id="ckb0z3tob000fe4wd5hhofpzw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
