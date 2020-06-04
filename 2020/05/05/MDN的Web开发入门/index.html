@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>MDN的Web开发入门 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="具体内容如下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MDN的Web开发入门">
+<meta property="og:url" content="http://yoursite.com/2020/05/05/MDN%E7%9A%84Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="具体内容如下：">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-05T08:44:50.000Z">
+<meta property="article:modified_time" content="2020-05-07T06:55:00.856Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="入门">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MDN的Web开发入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/MDN%E7%9A%84Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" class="article-date">
+  <time datetime="2020-05-05T08:44:50.000Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MDN的Web开发入门
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>具体内容如下：</p>
+<a id="more"></a>
+
+<hr>
+<hr>
+<h3 id="安装基础软件"><a href="#安装基础软件" class="headerlink" title="安装基础软件"></a>安装基础软件</h3><h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><p>文本编辑器、浏览器、图像编辑器、版本控制系统、FTP工具软件、自动化构建工具、模板(库、框架)</p>
+<h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>两个以上浏览器、文本编辑器</p>
+<h4 id="安装本地Web服务器"><a href="#安装本地Web服务器" class="headerlink" title="安装本地Web服务器"></a>安装本地Web服务器</h4><ul>
+<li><p>互联网如何工作</p>
+<ul>
+<li><p>路由器、调制解调器(modem)、ISP(互联网服务提供商)、IP地址和域名、Internet和Web</p>
+<p>互联网借助路由器、已有的设施(电话线, 需通过调制解调器将电话信号与网络信号相互转换)、ISP(其管理特殊的路由器)以及所有的电脑构建，每台电脑对应一个IP地址。注意Internet指互联网，而Web指网络，前者为基础设施，后者为建立在前者上的服务。</p>
+</li>
+</ul>
+</li>
+<li><p>网页、网站、网络服务器、搜索引擎</p>
+<p>  网页是特定类型——HTML的文档，样式信息控制观感、脚本添加交互、多媒体添加多种形式的资源；网站是共享唯一域名的网页的集合；网络服务器是用于托管网站的计算机；搜索引擎是用于搜索和访问网页的工具，其本身也是一个网站，浏览器为基础设施，用以展示网页，搜索引擎为建立在其上的服务。</p>
+</li>
+<li><p>网络服务器</p>
+<ul>
+<li><p>硬件部分和软件部分</p>
+<p>硬件部分即为存储网络服务软件和网站内容(包括文档和样式)的计算机；软件部分即为控制用户对网站的访问。</p>
+</li>
+<li><p>静态服务器和动态服务器</p>
+<p>静态指将托管网站的文件保持原样发送给用户；动态则通过将数据库中的内容填充到模板中来生成HTML文档，实际上服务中存储的对应文件并不为HTML格式。这样可以提高效率和降低维护成本。</p>
+</li>
+<li><p>托管文件</p>
+<p>托管的好处是：一直启动和运行；一直与互联网连接；一直拥有相同的IP地址；由他人维护。</p>
+</li>
+<li><p>通过HTTP交流(textual and stateless)</p>
+<p>HTTP的命令是纯文本的，而通过HTTP对文件的请求状态不会被保留，即服务器不能记住你输入的密码或者你处于请求的哪一步。</p>
+</li>
+<li><p>静态内容和动态内容</p>
+<p>静态意味这保持原样的提供文件，即通过HTML、CSS和Javascript文件展现对应的网页内容；而动态则意味着从数据库提取内容，通过模板安排布局。</p>
+</li>
+</ul>
+</li>
+<li><p>设置本地测试服务器</p>
+<ul>
+<li><p>本地文件(异步请求和服务端代码)和远程文件</p>
+<p>由于本地文件有异步请求或者包含服务端语言代码，可能无法作为本地文件打开</p>
+</li>
+<li><p>运行本地HTTP服务器（用于解决异步请求问题）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server <span class="comment"># python 3.x</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>在本地运行服务器端语言</p>
+<p>  服务器端语言通常用于搭建一个动态网站，借助于一个web框架，来实现信息的高效存储和运输、定制用户体验、控制对内容的访问、存储会话和状态信息、通知和通讯、进行数据分析。以下为常用的web框架：</p>
+<ul>
+<li>Python：Django/Flask</li>
+<li>Node.js：Express</li>
+<li>PHP：MAMP/AMPPS</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h3 id="网站规划"><a href="#网站规划" class="headerlink" title="网站规划"></a>网站规划</h3><h4 id="设定Web项目目标"><a href="#设定Web项目目标" class="headerlink" title="设定Web项目目标"></a>设定Web项目目标</h4><ul>
+<li><p>我到底想完成什么</p>
+</li>
+<li><p>网站应该包含哪些内容</p>
+</li>
+<li><p>做什么、以什么顺序完成网站构建</p>
+</li>
+</ul>
+<h4 id="具体考虑因素"><a href="#具体考虑因素" class="headerlink" title="具体考虑因素"></a>具体考虑因素</h4><ul>
+<li><p>网页内容</p>
+</li>
+<li><p>主题中展示的信息</p>
+</li>
+<li><p>网页样式</p>
+</li>
+</ul>
+<h4 id="画出草稿"><a href="#画出草稿" class="headerlink" title="画出草稿"></a>画出草稿</h4><h4 id="选择内容"><a href="#选择内容" class="headerlink" title="选择内容"></a>选择内容</h4><ul>
+<li><p>文本(段落、标题)</p>
+</li>
+<li><p>主题颜色(the Color Picker: #0F9D96)</p>
+</li>
+<li><p>图像(Google Images)</p>
+</li>
+<li><p>字体(Google Fonts)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css?family=Roboto&amp;display=swap"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: 'Roboto', sans-serif;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<hr>
+<h3 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h3><h4 id="网站存放在计算机上合适的位置"><a href="#网站存放在计算机上合适的位置" class="headerlink" title="网站存放在计算机上合适的位置"></a>网站存放在计算机上合适的位置</h4><ul>
+<li>将关联文件存放在一个反映服务器上文件结构的文件夹里(web-projects\test-site)</li>
+</ul>
+<h4 id="关于大小写和空格"><a href="#关于大小写和空格" class="headerlink" title="关于大小写和空格"></a>关于大小写和空格</h4><ul>
+<li><p>Web服务器对大小写敏感</p>
+</li>
+<li><p>浏览器、服务器和编程语言对空格的处理不同</p>
+</li>
+</ul>
+<h4 id="网站使用的结构"><a href="#网站使用的结构" class="headerlink" title="网站使用的结构"></a>网站使用的结构</h4><ul>
+<li>index.html、images文件夹、styles文件夹、scripts文件夹</li>
+</ul>
+<h4 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h4><ul>
+<li>同级目录、子目录和父目录文件的引用 </li>
+</ul>
+<hr>
+<hr>
+<h3 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h3><ul>
+<li><p>HyperText Markup Language. 超文本标记语言</p>
+<p><code>&lt;p&gt; class=&quot;editor-note&quot;&gt;我的猫咪脾气爆:)&lt;/p&gt;</code></p>
+</li>
+<li><p>elements、tags</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">开始标签</th>
+<th align="center">结束标签</th>
+<th align="center">内容</th>
+<th align="center">元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Opening tag</td>
+<td align="center">Closing tag</td>
+<td align="center">Content</td>
+<td align="center">Element</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>属性(Attribute)。<code>class=&quot;editor-note&quot;</code></p>
+</li>
+<li><p>嵌套元素：元素需要正确的开始和结束</p>
+<p><code>&lt;p&gt; class=&quot;editor-note&quot;&gt;我的猫咪脾气&lt;strong&gt;爆&lt;/strong&gt;:)&lt;/p&gt;</code></p>
+</li>
+<li><p>空元素：图像元素不需要通过Content产生效果，不需要Closing tag(</img>)</p>
+</li>
+<li><p>HTML文档详解(index.html)</p>
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code>文档类型</li>
+<li><code>&lt;html&gt;&lt;/html&gt;</code>根元素</li>
+<li><code>&lt;head&gt;&lt;/head&gt;</code>不是展现给用户，包含搜索关键字、页面描述、CSS样式地址和字符编码声明以及Javascript地址</li>
+<li><code>&lt;meta charset=&#39;utf-8&#39;&gt;</code>字符编码类型</li>
+<li><code>&lt;title&gt;&lt;/title&gt;</code>页面标题</li>
+<li><code>&lt;body&gt;&lt;/body&gt;</code>包含用户访问页面时看到的内容，如文本、图像、视频、音频等</li>
+</ul>
+</li>
+</ul>
+<h4 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h4><p><code>&lt;img src=&quot;images/firefox-icon.png&quot; alt=&quot;My test image&quot;&gt;</code></p>
+<ul>
+<li><p><code>src</code>为地址属性</p>
+</li>
+<li><p><code>alt</code>为替换文字属性，为图像不能被用户看见时显示</p>
+</li>
+</ul>
+<h4 id="标记文本"><a href="#标记文本" class="headerlink" title="标记文本"></a>标记文本</h4><ul>
+<li><p>标题(Heading)</p>
+<ul>
+<li><p><code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>，使用方法为<code>&lt;h1&gt;主标题&lt;/h1&gt;</code>,一般最多用到3-4级标题</p>
+</li>
+<li><p>不要使用标题元素放大、加粗字体，因为标题对于<code>无障碍访问</code>和<code>搜索引擎优化</code>等问题具有重要意义。应该保持页面及结构清晰，标题整洁</p>
+</li>
+</ul>
+</li>
+<li><p>段落(Paragraph)</p>
+<ul>
+<li><code>&lt;p&gt;这是一个段落&lt;/p&gt;</code></li>
+</ul>
+</li>
+<li><p>列表(LIst)</p>
+<ul>
+<li><p>Unordered List: 使用一个<code>&lt;ul&gt;</code>元素包围</p>
+</li>
+<li><p>Ordered List：使用一个<code>&lt;ol&gt;</code>元素包围</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p><code>&lt;a href=&quot;https://www.mozilla.org/zh-CN/about/manifesto/&quot;&gt;Mozilla宣言&lt;/a&gt;</code></p>
+<ul>
+<li>a对应单词为anchor(锚)，href对应为hypertext reference(超文本引用)</li>
+</ul>
+<hr>
+<hr>
+<h3 id="CSS基础"><a href="#CSS基础" class="headerlink" title="CSS基础"></a>CSS基础</h3><blockquote>
+<p>层叠样式表(Cascading Style Sheet) </p>
+</blockquote>
+<h4 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h4><ul>
+<li><p>样式表语言，用于选择性的为HTML元素添加样式</p>
+<ol>
+<li><p>css文件：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加下面代码到<code>&lt;head&gt;</code>和<code>&lt;/head&gt;</code>之间</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"styles/style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>“CSS 规则集”详解</p>
+<ol>
+<li><p>选择器(Selector)——<code>p</code>。选择一个或多个需要添加样式的元素，此例中为<code>p</code></p>
+</li>
+<li><p>声明(Declaration)——<code>color: red</code>。用来添加样式元素属性</p>
+</li>
+<li><p>属性(Properties)——<code>color</code>和属性值(Property value)——<code>red</code>。</p>
+</li>
+</ol>
+</li>
+<li><p>多元素选择</p>
+<ul>
+<li><p>选择多种类型元素添加一组相同的样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>, <span class="selector-tag">li</span>, <span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>不同类型选择器</p>
+<table>
+<thead>
+<tr>
+<th>选择器名称</th>
+<th>选择的内容</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素选择器</td>
+<td>所有指定类型的HTML元素</td>
+<td><code>p</code>选择<code>&lt;p&gt;</code></td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>具有特定ID的元素</td>
+<td><code>#my-id</code>选择<code>&lt;p id=&quot;my-id&quot;</code>或<code>&lt;a id=&quot;my-id&quot;</code></td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>具有特定类的元素</td>
+<td><code>.my-class</code>选择<code>&lt;p class=&quot;my-class&quot;&gt;</code>和<code>&lt;a class class=&quot;my-class&quot;&gt;</code></td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>具有特定属性的元素</td>
+<td><code>img[src]</code>选择<code>&lt;img src=&quot;myimage.png&quot;&gt;</code>而不是<code>&lt;img&gt;</code></td>
+</tr>
+<tr>
+<td>伪(Pseudo)选择器</td>
+<td>特定状态下的特定元素(比如鼠标指针悬停)</td>
+<td><code>a:hover</code>仅在指针悬停在链接上时选择<code>&lt;a&gt;</code></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="字体和文本"><a href="#字体和文本" class="headerlink" title="字体和文本"></a>字体和文本</h4><blockquote>
+<p>中文字体较大，不适合直接用于Web Font</p>
+</blockquote>
+<p>向<code>style.css</code>中添加字体样式</p>
+<ol>
+<li><p>将2_网站规划中的字体地址添加进入<code>index.html</code>文档头</p>
+<p><code>&lt;link href=&quot;https://fonts.googleapis.com/css?family=Roboto&amp;display=swap&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code>以上代码会为当前网页下载对应字体</p>
+</li>
+<li><p>删除之前的<code>p{color: red;}</code>, 添加下列代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    <span class="comment">/* px 表示像素(pixels): 基础字号为10像素 */</span></span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">10px</span></span><br><span class="line">    <span class="comment">/* Google fonts 输出的CSS */</span></span><br><span class="line">    font-family: <span class="string">'Roboto'</span>, sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为文档体内的元素设置字号，使标题居中显示，并为正文设置行高和字间距，从而提高页面可读性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">60px</span>;</span><br><span class="line">	<span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span>,<span class="selector-tag">li</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">2</span>;</span><br><span class="line">	<span class="attribute">letter-spacing</span>: <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="一切皆盒子"><a href="#一切皆盒子" class="headerlink" title="一切皆盒子"></a>一切皆盒子</h4><p>html页面内大部分元素可以被看作若干层叠的盒子</p>
+<ul>
+<li><p>盒子(块)的属性：</p>
+<ol>
+<li><p><code>padding</code>: 内边距，围绕着内容(如段落)的空间</p>
+</li>
+<li><p><code>border</code>: 边框，紧接着内边距的线。</p>
+</li>
+<li><p><code>margin</code>: 外边距，围绕元素外部的空间</p>
+</li>
+<li><p><code>width</code>: 元素宽度</p>
+</li>
+<li><p><code>background-color</code>: 元素内容和内边距底下的颜色</p>
+</li>
+<li><p><code>color</code>: 元素内容(文本)的颜色</p>
+</li>
+<li><p><code>text-shadow</code>: 为元素内文本设置阴影</p>
+</li>
+<li><p><code>display</code>: 设置元素的显示模式(暂略)</p>
+</li>
+</ol>
+</li>
+<li><p>更改页面颜色</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-color</span>: <span class="selector-id">#0F9D96</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文档体格式设置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#0F9D96</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">0</span> <span class="number">20px</span> <span class="number">20px</span> <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">5px</span> solid black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p><code>width: 600px;</code>——强制页面永远保持600px</p>
+</li>
+<li><p><code>margin: 0 auto;</code>——为margin或padding设置两个值时，第一个值代表元素的上方和下方；第二个则代表左右。auto表示水平方向上左右对称(可以理解为居中操作)。(可以根据情况设置1-4个值)</p>
+</li>
+<li><p><code>backgroud-color</code>——指定元素的背景色</p>
+</li>
+<li><p><code>padding: 0 20px 20px 20px;</code>——分别对应上0、右20、左20、下20。（补充：3个值时，第1个值对应上，2对应左和右，3对应下）</p>
+</li>
+<li><p><code>border: 5px solid black</code>——为body设置5px的黑色实现边框。</p>
+</li>
+</ol>
+</li>
+<li><p>定位页面主标题并添加样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#8B4CB2</span>;</span><br><span class="line">	<span class="attribute">text-shadow</span>: <span class="number">3px</span> <span class="number">3px</span> <span class="number">1px</span> black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>text-shadow</code>属性：第1个值设置水平偏移值、2设置垂直、3设置阴影魔糊半径、4设置阴影基色</li>
+</ul>
+</li>
+<li><p>图像居中</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过<code>display: block;</code>给予内联元素<code>img</code>与<code>&lt;body&gt;</code>相同的块级行为，从而能够对其进行<code>margin: 0 auto;</code>操作使其居中</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h3 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h3><blockquote>
+<p>动态编程语言，为网站添加交互功能(例如：游戏、动态样式、动画，以及在按下按钮或受到表单数据时做出的响应)</p>
+</blockquote>
+<h4 id="Javascript简介"><a href="#Javascript简介" class="headerlink" title="Javascript简介"></a>Javascript简介</h4><ul>
+<li><p>应用场合: 幻灯片，照片库，浮动布局，响应按钮点击；游戏，动画，大型数据库驱动程序</p>
+</li>
+<li><p>基于它编写的工具: 浏览器程序接口(API)，第三方API，第三方框架和库</p>
+</li>
+</ul>
+<h4 id="“Hello-World”实例"><a href="#“Hello-World”实例" class="headerlink" title="“Hello World”实例"></a>“Hello World”实例</h4><ol>
+<li><p>创建scripts文件夹，添加main.js文件</p>
+</li>
+<li><p>在<code>index.html</code>中添加如下代码到头文件，<code>&lt;/head&gt;</code>标签之前</p>
+<p><code>&lt;script src=&quot;scripts/main.js&quot; defer&gt;&lt;/script&gt;</code></p>
+<p>他将javascript引入页面作用于HTML和CSS</p>
+</li>
+<li><p>添加如下代码到main.js文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myHeading = <span class="built_in">document</span>.querySelector(<span class="string">'h1'</span>);</span><br><span class="line">myHeading.textContent = <span class="string">'Hello World!'</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>ps：此处将<code>scripts</code>放在结束标签<code>&lt;/head&gt;</code>之前，是因为代码顺序执行，需要先加载出HTML内容再使用javascript对其进行操作或修饰</p>
+</blockquote>
+<h4 id="发生了什么"><a href="#发生了什么" class="headerlink" title="发生了什么"></a>发生了什么</h4><ul>
+<li>把页面标题改成了”Hello World!”。首先<code>querySelector(&#39;h1&#39;)</code>获取对标题内容的引用，并将其储存再变量<code>myHeading</code>中，然后调用变量属性<code>textContent</code>(标题内容)将其修改为”Hello World!”</li>
+</ul>
+<h4 id="JavaScript-快速入门"><a href="#JavaScript-快速入门" class="headerlink" title="JavaScript 快速入门"></a>JavaScript 快速入门</h4><blockquote>
+<p>关于JavaScript控制台的更多信息：<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Discover_browser_developer_tools" target="_blank" rel="noopener">浏览器开发工具</a></p>
+</blockquote>
+<ul>
+<li><p>Variable: 通过<code>let</code>或<code>var</code>声明变量，并取合适的变量名，如<code>let myVarible;</code>。</p>
+<p>更细节的东西如下：</p>
+<ol>
+<li><p><a href="https://news.codecademy.com/your-guide-to-semicolons-in-javascript/" target="_blank" rel="noopener">JavaScript分号使用指南</a></p>
+</li>
+<li><p>变量(也称标识符)命名：字母、下划线或者$开头；后续字符可以为0-9；区分大小写；<a href="https://mothereff.in/js-variables" target="_blank" rel="noopener">验证变量名是否有效</a></p>
+</li>
+<li><p><code>var</code>和<code>let</code>区别：var支持变量提升，因此使代码更为混乱，故推荐多使用<code>let</code></p>
+</li>
+</ol>
+</li>
+<li><p>数据类型</p>
+<table>
+<thead>
+<tr>
+<th>变量类型</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String</td>
+<td><code>let myVariable = &#39;李磊&#39;;</code></td>
+</tr>
+<tr>
+<td>Number</td>
+<td><code>let myVariable = 10;</code></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td><code>let myVariable = true;</code></td>
+</tr>
+<tr>
+<td>Array</td>
+<td><code>let myVariable = [1, &#39;李磊&#39;, &#39;韩梅梅&#39;, 10]</code></td>
+</tr>
+<tr>
+<td>Object</td>
+<td><code>let myVariable = document.querySelector(&#39;h1&#39;)</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>注释——<code>/* */</code>注释多行或者<code>//</code>注释单行</p>
+</li>
+<li><p>运算符(略)：等于<code>===</code>; 不等于<code>!==</code></p>
+</li>
+<li><p>条件语句，示例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> iceCream = <span class="string">'chocolate'</span>;</span><br><span class="line"><span class="keyword">if</span> (iceCream === <span class="string">'chocolate'</span>) &#123;</span><br><span class="line">    alert(<span class="string">'我最喜欢巧克力冰淇淋了。'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">'但是巧克力才是我的最爱呀...'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数(Function): 封装可复用的功能，以下为函数示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = num1 * num2</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件：为网页添加真实的交互能力，即捕捉浏览器操作并作出响应。如点击事件代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'html'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'别戳我，我怕疼。'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码为下面代码的简化版：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myHTML = <span class="built_in">document</span>.querySelector(<span class="string">'html'</span>);</span><br><span class="line">myHTML.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="完善网页，丰富特性"><a href="#完善网页，丰富特性" class="headerlink" title="完善网页，丰富特性"></a>完善网页，丰富特性</h4><ul>
+<li><p>添加一个图像切换器：使用DOM API为网页添加另一张图片</p>
+<ol>
+<li><p>找到一张与之前图片尺寸相同的图片<code>firefox2.png</code>，存储在images目录下。</p>
+</li>
+<li><p>打开<code>main.js</code>文件，添加如下代码(删除”hello world”脚本): </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myImage = <span class="built_in">document</span>.querySeletor(<span class="string">'img'</span>);</span><br><span class="line"></span><br><span class="line">myImage.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> mySrc = myImage.getAttribute(<span class="string">'src'</span>);</span><br><span class="line">    <span class="keyword">if</span>(mySrc === <span class="string">'images/firefox-icon.png'</span>) &#123;</span><br><span class="line">        myImage.setAttribute(<span class="string">'src'</span>, <span class="string">'images/firefox2.png'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        myImage.setAttribute(<span class="string">'src'</span>, <span class="string">'images/firefox-icon.png'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>添加个性化欢迎信息：再用户进入网站时在标题中加入用户姓名；姓名信息通过<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API" target="_blank" rel="noopener">Web Storage API</a> 保存，用户关闭页面后再打开，仍然得到之前信息；根据需要改变姓名更新信息。</p>
+<ol>
+<li><p>在<code>index.html</code>的<code>&lt;script&gt;</code>标签前加入<code>&lt;button&gt;切换用户&lt;/button&gt;</code></p>
+</li>
+<li><p>在<code>main.js</code>文件底部加如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myButton = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span><br><span class="line"><span class="keyword">let</span> myHeading = <span class="built_in">document</span>.querySelector(<span class="string">'h1'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加以下函数设置个性化欢迎信息：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setUserName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> myName = prompt(<span class="string">'请输入你的名字：'</span>)</span><br><span class="line">    localStorage.setItem(<span class="string">'name'</span>, myName);</span><br><span class="line">    myHeading.textContent = <span class="string">'Mozilla 酷毙了，'</span> + myName</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加初始化代码，在页面初次读取时进行构造工作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!localStorage.getItem(<span class="string">'name'</span>)) &#123;</span><br><span class="line">    setUserName();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> storedName = localStorage.getItem(<span class="string">'name'</span>);</span><br><span class="line">    myHeading.textContent = <span class="string">'Mozilla 酷毙了, '</span> + storedName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为<code>切换用户</code>按钮添加onclick事件处理器。按钮按下时执行<code>setUserName()</code>, 用户可以设置新名字：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myButton.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setUserName();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>用户名为null？：解决办法——更新<code>setUserName()</code>来检查用户是否未输入或输入了空名字</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setUserName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> myName = prompt(<span class="string">'请输入你的名字：'</span>)</span><br><span class="line">    <span class="keyword">if</span>(!myName || myName === <span class="literal">null</span>) &#123;</span><br><span class="line">        setUserName();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      localStorage.setItem(<span class="string">'name'</span>, myName);</span><br><span class="line">      myHeading.textContent = <span class="string">'Mozilla 酷毙了，'</span> + myName</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<hr>
+<h3 id="发布网站"><a href="#发布网站" class="headerlink" title="发布网站"></a>发布网站</h3><p>   适合初学者的三种方法</p>
+<h4 id="获取主机服务和域名"><a href="#获取主机服务和域名" class="headerlink" title="获取主机服务和域名"></a>获取主机服务和域名</h4><blockquote>
+<p>需要花钱购置：主机服务和域名</p>
+</blockquote>
+<ul>
+<li><p>搜索网络主机服务+域名即可找到出售域名的公司</p>
+</li>
+<li><p>免费服务：Neocities、Blogspot、Wordpress</p>
+<h4 id="使用在线工具如GitHub或Google-App-Engine-免费"><a href="#使用在线工具如GitHub或Google-App-Engine-免费" class="headerlink" title="使用在线工具如GitHub或Google App Engine(免费)"></a>使用在线工具如GitHub或Google App Engine(免费)</h4></li>
+</ul>
+<ul>
+<li><p>以GitHub为例发布网站</p>
+<ol>
+<li>注册账号，建立一个repository存放文件</li>
+<li>将对应文件夹拖拽到资源库，通过对应域名在浏览器中访问</li>
+</ol>
+<h4 id="使用Thimble的基于Web的继承开发环境"><a href="#使用Thimble的基于Web的继承开发环境" class="headerlink" title="使用Thimble的基于Web的继承开发环境"></a>使用Thimble的基于Web的继承开发环境</h4><ul>
+<li>仿真一个网站开发环境：JSBin、JSFiddle、Thimble、Codepen</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h3 id="万维网是如何工作的"><a href="#万维网是如何工作的" class="headerlink" title="万维网是如何工作的"></a>万维网是如何工作的</h3><h4 id="客户端和服务器"><a href="#客户端和服务器" class="headerlink" title="客户端和服务器"></a>客户端和服务器</h4><ul>
+<li>客户端请求(requests)，服务器回应(responses)</li>
+</ul>
+<h4 id="其它方面"><a href="#其它方面" class="headerlink" title="其它方面"></a>其它方面</h4><ul>
+<li><p>网络连接：允许客户端发送和接收数据</p>
+</li>
+<li><p>TCP/IP：定义数据如何传输的通信协议</p>
+</li>
+<li><p>DNS：域名系统服务器类似网站通信录帮助客户端找到对应服务器获取目标网页内容</p>
+</li>
+<li><p>HTTP：定义客户端和服务器间交流的语言</p>
+</li>
+<li><p>网页组成文件：</p>
+<ol>
+<li><p>代码：HTML、CSS、JavaScript</p>
+</li>
+<li><p>资源：图像、音频、视频、文件</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="请求和回应过程"><a href="#请求和回应过程" class="headerlink" title="请求和回应过程"></a>请求和回应过程</h4><ol>
+<li><p>浏览器在域名系统(DNS)服务器上找出存放网页的服务器的实际地址</p>
+</li>
+<li><p>浏览器发送HTTP请求信息到服务器拷贝一份目标网页</p>
+</li>
+<li><p>服务器同意客户端请求，传输网页文件</p>
+</li>
+<li><p>浏览器加载网页</p>
+</li>
+</ol>
+<h4 id="DNS解析和数据传输——详见-互联网协议"><a href="#DNS解析和数据传输——详见-互联网协议" class="headerlink" title="DNS解析和数据传输——详见 互联网协议"></a>DNS解析和数据传输——详见 <a href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html" target="_blank" rel="noopener">互联网协议</a></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/05/MDN%E7%9A%84Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" data-id="ckb0vej4a0000wcwder1p1pm5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/06/%E7%BC%96%E7%A8%8B%E8%8B%B1%E6%96%87%E6%9C%AF%E8%AF%AD/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          编程英文术语
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F/">人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 20px;">微言小义</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 20px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 20px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 20px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/">间歇性踌躇满志与持续性混吃等死</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">计算机科学中的微言小义</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">生活中的微言小义</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/25/chpater2%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%92%8C%E6%89%A7%E8%A1%8C/">chpater2程序结构和执行</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/25/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%9F%E6%82%9F/">关于生活的感悟</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

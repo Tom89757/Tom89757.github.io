@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>chapter1计算机系统漫游 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="以下目录于书籍中目录相对应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter1计算机系统漫游">
+<meta property="og:url" content="http://yoursite.com/2020/05/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以下目录于书籍中目录相对应">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-23T08:29:38.000Z">
+<meta property="article:modified_time" content="2020-06-01T16:09:32.451Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="深入理解计算机系统">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-chapter1计算机系统漫游" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/" class="article-date">
+  <time datetime="2020-05-23T08:29:38.000Z" itemprop="datePublished">2020-05-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chapter1计算机系统漫游
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下目录于书籍中目录相对应</p>
+<a id="more"></a>
+
+<h2 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h2><p>以一个简单的hello.c程序为例，里面的每个字符都以ASCII码的形式存储，每个字符占据1 byte=8 bits</p>
+<h2 id="程序被其他程序翻译成不同的方式"><a href="#程序被其他程序翻译成不同的方式" class="headerlink" title="程序被其他程序翻译成不同的方式"></a>程序被其他程序翻译成不同的方式</h2><p>一个程序的生命周期往往以高级语言写成的程序开始，以一个二进制的机器可执行文件结束。以hello.c为例，首先由预处理器cpp识别第一行，将系统头文件stdio.h中的内容直接插入程序得到hello.i文件；再通过编译器ccl将hello.i转为由汇编语言表示的hello.s（由于汇编语言是通用的，所以同一机器上可以运行多种高级语言）；接下来通过汇编器as将hello.s转为二进制的可重定位目标程序hello.o（此处可将重定位理解为在地址空间中可定位程序中机器指令所在的位置）；最后还需通过链接器ld将printf函数对应的已编译好的printf.o文件链接到hello.o供其调用，即得到最终的二进制的可执行目标文件hello，其可加载到内存中供系统执行。</p>
+<h2 id="了解编译系统是如何工作是大有益处的"><a href="#了解编译系统是如何工作是大有益处的" class="headerlink" title="了解编译系统是如何工作是大有益处的"></a>了解编译系统是如何工作是大有益处的</h2><ul>
+<li>优化程序性能：我们可以通过比较相近的实现相同功能的语句间的性能差异</li>
+<li>理解链接时发生的错误：链接器经常会报告无法解析一个引用，引用可能是函数或者变量，对这些函数或者变量我们应该采取怎样的存储模式和顺序。</li>
+<li>理解缓冲区溢出错误：安全区漏洞经常由缓冲区溢出错误引起，编译系统的学习可以帮助我们理解堆栈原理和缓冲区溢出错误</li>
+</ul>
+<h2 id="处理器读取并解释存储在内存中的指令"><a href="#处理器读取并解释存储在内存中的指令" class="headerlink" title="处理器读取并解释存储在内存中的指令"></a>处理器读取并解释存储在内存中的指令</h2><p>shelll为一个命令解释器，会输出一个提示符等待输入，往往使用回车表示输入完成，然后shell会判断输入的第一个单词是否为内置的shell命令，如果不是他会假定其为一个可执行文件的名字，并从内存中加载并执行。</p>
+<p>系统的硬件组成</p>
+<ul>
+<li>总线：用以传递信息的电子通路，通常以字节块传递信息，字节块可简称为字，一般为4或8个字节，分别对应32位和64位。<strong>待解决的问题为IO/系统/内存总线的区别和联系</strong></li>
+<li>I/O设备：如鼠标/键盘/显示器/磁盘，其中鼠标/键盘/磁盘通过控制器与IO总线连接，显示器通过适配器与IO总线连接，控制器为设备自身或者主板上的芯片组，适配器则为插在主板上的卡，个人认为二者的主要区别在于其宏观上的可移植性。</li>
+<li>主存：用于存储程序和数据的临时存储设备。物理上由一系列的DRAM芯片组成，逻辑上为一个字节数组，每个字节有对应的地址，地址由零开始。</li>
+<li>CPU：也称处理器。其核心为程序计数器PC，PC本质上为一个字大小的存储器／寄存器，其指向当前机器指令对应的主存地址；其他部分为ALU／寄存器文件。根据指令CPU可执行加载/存储/操作/跳转等操作。（需要区分的是处理器的指令集架构和微体系结构<strong>mark</strong>，前者为宏观表现即指令运行的效果，故比较直观简单，后者为具体实现，较为复杂，后续章节会进一步介绍）</li>
+</ul>
+<p>运行hello程序</p>
+<p>在shell窗口敲下hello过程中，hello通过IO总线和系统总线被一一读入寄存器，继而存储到主存中；当敲下回车键时，意味着输入结束，主存通过直接存储器存取技术而不用通过处理器直接从磁盘中加载hello程序和数据；加载完成后，处理器依次执行程序中的机器指令，并将输出结果输出到显示器上。</p>
+<p>了解整个流程后，需要追问一个问题，shell究竟是什么。前面说到它是一个命令行解释器，属于软件，这里似乎要用到计算机的多层结构，<strong>mark一下留待解决</strong>（后面操作系统管理硬件的部分做了简单介绍）。</p>
+<h2 id="高速缓存至关重要"><a href="#高速缓存至关重要" class="headerlink" title="高速缓存至关重要"></a>高速缓存至关重要</h2><p>在处理器和主存之间插入更小的存储设备——高速缓存已经成为主流，并且高速缓存目前还采用了L1/L2/L3分级，以本人电脑为例，L1对应64KB，L2对应512KB，L3对应4MB，他们是通过静态随机访问存储器SRAM<strong>mark</strong>的硬件技术实现，和主存不同。（目前看来，提高处理器寄存器速度比提高主存速度要容易得多）</p>
+<h2 id="存储设备形成层次结构"><a href="#存储设备形成层次结构" class="headerlink" title="存储设备形成层次结构"></a>存储设备形成层次结构</h2><p>目前存储器容量由小到大、速度由大到小依次为：寄存器、L1高速缓存、L2高速缓存、L3高速缓存、主存、本地二级存储（本地磁盘）、远程二级存储（分布式文件系统、Web服务器），都可将上一级看作下一级的高速缓存，数量级依次为几百B、几十KB、几百KB、几MB、几GB、几百GB／几TB、几百／几千TB。</p>
+<h2 id="操作系统管理硬件"><a href="#操作系统管理硬件" class="headerlink" title="操作系统管理硬件"></a>操作系统管理硬件</h2><p>操作系统可看作应用程序和硬件之间插入的软件，操作系统和应用程序共同构成了软件部分，处理器/IO设备/主存则共同构成了硬件部分。</p>
+<p>操作系统需要实现两个基本功能<strong>mark</strong>：</p>
+<ul>
+<li>防止硬件被失控的应用程序滥用</li>
+<li>通过简单单一的机制控制复杂多样的硬件设备。</li>
+</ul>
+<p>为实现上述功能，操作系统使用了三个重要的抽象概念：进程、虚拟内存和文件。</p>
+<ul>
+<li><p>进程是处理器/主存/IO设备三者的抽象表示，它营造了一种程序独立的占用处理器、主存和IO设备的假象。实际生活中，多个进程可以并发运行，表面上实现了多个程序的同时运行，实际上是通过上下文切换的微观机制来实现，任意时刻实际上都只有一个程序被执行。在进行两个进程间的切换时，操作系统会保存前一个进程的所有状态信息，即上下文，其包含了能够恢复该进程当前状态的所有信息，同时生成新的进程的上下文，从而实现多个进程间的切换。</p>
+<p>操作系统内核长期储存在主存之中，他是系统管理自身的所有进程的代码和数据结构的总和。</p>
+</li>
+<li><p>线程。一个进程可由多个称为线程的执行单元构成，每个线程共享代码和全局数据。和进程相比，多线程间文件数据更为快捷。<strong>mark</strong></p>
+</li>
+<li><p>虚拟内存是主存/IO设备二者的抽象表示。进程的虚拟内存空间由5个部分组成，由下面区域到上面区域依次是：代码和数据，大小固定；malloc或者free创建的可伸缩的堆<strong>mark</strong>；共享库；用户栈，可伸缩<strong>mark</strong>；最顶部的内核虚拟内存。</p>
+</li>
+<li><p>文件则是IO设备的抽象表示。文件即为字节序列，它为应用程序提供了同一的视图<strong>mark</strong></p>
+</li>
+</ul>
+<p><em>该部分只简单的介绍了操作系统中涉及的概念，并未涉及具体调控机制，待后续详述</em></p>
+<h2 id="系统之间利用网络通信"><a href="#系统之间利用网络通信" class="headerlink" title="系统之间利用网络通信"></a>系统之间利用网络通信</h2><p>此处将网络认为是一个IO设备，细想是合理的。网络即意味着交流，单次的交流即意味着一方输入、一方输出。</p>
+<p>以telnet本地客户端与远程服务端间的网络为例，当使用客户端在登录远程服务端后，远程服务端等待本地客户端的输入，输入hello后，客户端将hello字符串发送至服务端，服务端shell执行hello程序并得到输出结果，然后服务端将输出结果发送至客户端，并在客户端的显示器上打印出来。</p>
+<h2 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h2><h3 id="Amdahl定律"><a href="#Amdahl定律" class="headerlink" title="Amdahl定律"></a>Amdahl定律</h3><p>简单但具有洞察力的定律：<br>$$<br>\frac{T_old}{T_new}=\frac{1}{1-\alpha+\frac{\alpha}{k}}<br>$$<br>其中$\alpha$为某部分所花费的时间占比，$k$为该部分效率提升的的比例。当$\alpha=0.6$、$k=3$时，比值为$\frac{5}{3}$，和$k$相差较多，可见只有当占比足够大的一部分速度提升时，才能显著提升整个系统的速度。当$k$趋向于$+\infty$时，比值为$\frac{1}{1-\alpha}$，这意味着$\alpha$较小时，性能的提升极其有限。</p>
+<h3 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h3><p>并发是指一个系统可以同时进行多种活动，而并行则是通过并发使一个系统运行得更快。</p>
+<ul>
+<li><p>线程级并发。目前已由单处理器单线程构成的系统发展为多处理器超线程构成的系统，但他们都是通过单一的操作系统控制。单处理器系统通过进程间切换模拟出的宏观上的并发，而多处理器则通过多核实现真正物理层面的并发。根据前面所提到的存储结构，每个核都有L1和L2高速缓存，L1由数据高速缓存和指令高速缓存构成，其速度仅次于寄存器并与寄存器进行信息传输，L2则是每个核统一的高速缓存，为L1的下一级缓存，然后每个核的L2又共用一个同一的高速缓存L3，L3与主存进行信息传输。</p>
+<p>超线程这一架构的使用是为了更充分的利用处理器的处理资源，往往表现为一部分如PC和寄存器文件具有多个备份，而另一部分如ALU则只有一份，从而使得一个线程在进行诸如数据的加载时执行另一个线程。目前主流的架构为双线程，可能的解释为：使用双线程可以更好的平衡单线程牺牲掉的处理资源和多线程架构的复杂化两者的关系，达到最优解，即既不至于浪费处理资源，又不至于由于架构的复杂化产生太多管理成本。</p>
+<p>值得一提的是，多处理器不仅满足了用户处理多个任务的需要，而且使用多线程方式编写的程序<strong>mark</strong>也能得到更快的运行。</p>
+</li>
+<li><p>指令集并行。这个概念是指现代的单个处理器可以同时处理多条机器指令，后续会谈到流水线设计<strong>mark</strong>和超标量处理器（在少于一个时钟周期的时间内执行一条指令）<strong>mark</strong>。</p>
+</li>
+<li><p>单指令、多数据并行。即SIMD并行<strong>mark</strong>，Single Instrucition Multiple Data，允许一个指令产生多个可以并行执行的操作。</p>
+</li>
+</ul>
+<h3 id="计算机系统中抽象的重要性"><a href="#计算机系统中抽象的重要性" class="headerlink" title="计算机系统中抽象的重要性"></a>计算机系统中抽象的重要性</h3><p>抽象在计算机科学中无处不在。将函数抽象为应用程序接口API，将程序抽象为进程，将程序存储器抽象为虚拟内存，将I/O设备抽象为文件。我们还可以将操作系统、处理器、主存和I/O设备构成的整个系统抽象为虚拟机<strong>mark</strong>。</p>
+<p><strong><em>至此，第一章的内容全部结束。回顾一下，它展示了一个C语言程序的执行过程、网络通信、进程／虚拟内存／文件的抽象，从而将一系列的概念联系起来，并指出了几个重要的设计和理念——高速缓存、Aｍｄａｈｌ定律、并发和并行、抽象．</em></strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/" data-id="ckb0vej8u001lwcwd44kbc8ob" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/24/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8E%98%E6%B8%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于编程语言类型的几组概念的厘清
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/20/2020%E5%B9%B4520%E6%89%80%E4%BD%9C%E7%9A%84%E5%AF%B9%E8%BF%87%E5%BE%80%E4%BA%BA%E7%94%9F%E5%92%8C%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%E7%9A%84%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2020年520所作的对过往人生和当前状态的总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F/">人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 20px;">微言小义</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 20px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 20px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 20px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/">间歇性踌躇满志与持续性混吃等死</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">计算机科学中的微言小义</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">生活中的微言小义</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/25/chpater2%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%92%8C%E6%89%A7%E8%A1%8C/">chpater2程序结构和执行</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/25/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%9F%E6%82%9F/">关于生活的感悟</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
