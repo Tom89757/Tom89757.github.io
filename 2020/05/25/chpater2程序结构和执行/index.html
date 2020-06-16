@@ -15,7 +15,7 @@
 <meta property="og:description" content="本章将讲述无符号数、补码表示的有符号数、整数和浮点数，探讨这些数据和计算机对数据执行操作时的属性。描述过程中会用到数学语言。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-25T14:21:31.000Z">
-<meta property="article:modified_time" content="2020-05-28T16:12:53.085Z">
+<meta property="article:modified_time" content="2020-06-16T16:20:39.280Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
@@ -99,19 +99,97 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信息存储"><span class="toc-text">信息存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#十六进制表示法"><span class="toc-text">十六进制表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字数据大小"><span class="toc-text">字数据大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#寻址和字节顺序"><span class="toc-text">寻址和字节顺序</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信息存储"><span class="toc-text">信息存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#十六进制表示法"><span class="toc-text">十六进制表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字数据大小"><span class="toc-text">字数据大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#寻址和字节顺序"><span class="toc-text">寻址和字节顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表示字符串"><span class="toc-text">表示字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表示代码"><span class="toc-text">表示代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布尔代数简介"><span class="toc-text">布尔代数简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的位级运算"><span class="toc-text">C语言中的位级运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的逻辑运算"><span class="toc-text">C语言中的逻辑运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的移位运算"><span class="toc-text">C语言中的移位运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整数表示"><span class="toc-text">整数表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整型数据类型"><span class="toc-text">整型数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无符号数的编码"><span class="toc-text">无符号数的编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补码编码"><span class="toc-text">补码编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有符号数与无符号数之间的转换"><span class="toc-text">有符号数与无符号数之间的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的有符号数与无符号数"><span class="toc-text">C语言中的有符号数与无符号数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展一个数字的位表示"><span class="toc-text">扩展一个数字的位表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#截断数字"><span class="toc-text">截断数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于有符号数和无符号数的建议"><span class="toc-text">关于有符号数和无符号数的建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整数运算"><span class="toc-text">整数运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无符号加法"><span class="toc-text">无符号加法</span></a></li></ol></li></ol>
 </div>
 
 
         <p>本章将讲述无符号数、补码表示的有符号数、整数和浮点数，探讨这些数据和计算机对数据执行操作时的属性。描述过程中会用到数学语言。</p>
 <a id="more"></a>
-<h2 id="信息存储"><a href="#信息存储" class="headerlink" title="信息存储"></a>信息存储</h2><p>字节是可寻址的最小单位，内存中每个字节都有与之对应的地址，所有的地址构成了虚拟地址空间，其具体实现后面会介绍<strong>mark</strong>。后面会讲述程序从编译到运行过程中存储空间是如何划分用以存储不同的程序对象，指针是其中的难点，理解指针需要学习其机器机上的实现。</p>
+<h2 id="信息存储"><a href="#信息存储" class="headerlink" title="信息存储"></a>信息存储</h2><p>字节是可寻址的最小单位，内存中每个字节都有与之对应的地址，所有的地址构成了虚拟地址空间，其具体实现后面会介绍<strong>mark</strong>。后面会讲述程序从编译到运行过程中存储空间是如何划分用以存储不同的程序对象，指针是其中的难点，理解指针需要学习其机器级上的实现。</p>
 <h3 id="十六进制表示法"><a href="#十六进制表示法" class="headerlink" title="十六进制表示法"></a>十六进制表示法</h3><p>采用0x表示16进制，如0x0000表示是16进制的0。A-F或者a-f表示10到15。故每个字节可以通过两位的16进制数表示。</p>
 <h3 id="字数据大小"><a href="#字数据大小" class="headerlink" title="字数据大小"></a>字数据大小</h3><p>字的意义在于它的位数指示了虚拟地址空间所容纳的字节数，因为虚拟地址空间中每个字节的虚拟地址都对应一个字。根据向后兼容的理念，64位机器可以兼容32位程序，反之则不成立。</p>
-<p>计算机和编译器支持使用不同方式编码的数据格式，具体特性暂不详述<strong>mark</strong>。</p>
+<p>计算机和编译器支持使用不同方式编码的数据格式，具体特性暂不详述<strong>mark</strong>。值得注意的是，在C语言中指针使用机器的一个全字长存储，在64位机器上即为8个字节。</p>
 <h3 id="寻址和字节顺序"><a href="#寻址和字节顺序" class="headerlink" title="寻址和字节顺序"></a>寻址和字节顺序</h3><p>以变量类型int为例，每个int型变量使用4个字节存储，其四个字节对应地址从小到大设置为0x100, 0x101, 0x102, 0x103（关于地址为什么为3位？<strong>mark</strong>）。它可能采取两种方式存储：大端法和小端法，两种方式无明显优劣，但在android和iOS上采用的都为小端法。个人认为，大端法符合人类习惯，即将变量的高位到地位从左到右依次存储，由此低地址位的字节存储了高数字位的信息，小端法则与之相反。</p>
-<p>两种方式导致了：在不同机器间使用网络传输数据时需要进行两次转换；阅读顺序不同；强制类型转换时需要考虑的问题<strong>mark</strong>，书中使用了一个稍显复杂的利用强制类型转换规避类型系统的程序，用以打印数据对象的字节表示。例子展示了不同机器上不同类型的具体数的字节表示，int型和float型只是顺序不同，指针型则是字节值都全然不同，这暗示不同机器/操作系统对指针型数据采取不同的存储机制。（旁注给出了使用typedef命名数据类型、使用printf格式化输出、指针和数组、指针的创建和简介引用等知识，但显然我对他们不是特别了解，此处打算暂停去学习K&amp;R编写的经典书籍《C语言程序数据》<strong>mark</strong>）</p>
-
+<p>两种方式导致了：在不同机器间使用网络传输数据时需要进行两次转换；阅读顺序不同；强制类型转换时需要考虑的问题<strong>mark</strong>，书中使用了一个稍显复杂的利用强制类型转换规避类型系统的程序，用以打印数据对象的字节表示。例子展示了不同机器上不同类型的具体数的字节表示，int型和float型只是顺序不同，指针型则是字节值都全然不同，这暗示不同机器/操作系统对指针型数据采取不同的存储机制。（旁注给出了使用typedef命名数据类型、使用printf格式化输出、指针和数组、指针的创建和简介引用等知识，但显然我对他们不是特别了解，此处打算暂停去学习K&amp;R编写的经典书籍《C语言程序数据》<strong>mark</strong>，已粗略浏览完，具体细节打算边看边完善）。</p>
+<p>书中show-bytes.c中定义了一种名为byte_pointer的指针类型，用以引用无符号字符型的对象，使用强制类型转换后实际上该类型的指针指向的是存储数据对象的第一个字节，故可以将数据对象的值依次进行单字节打印。</p>
+<h3 id="表示字符串"><a href="#表示字符串" class="headerlink" title="表示字符串"></a>表示字符串</h3><p>由于字符串在各平台上都是从左至右表示，无大端、小端之分，故其具有更好的平台独立性。如字符串”12345”其字节表示在各平台上都为”31 32 33 34 35 00”。使用库函数strlen()得到字符串长度时其长度不包括字符串末尾的空字符串——\0。</p>
+<h3 id="表示代码"><a href="#表示代码" class="headerlink" title="表示代码"></a>表示代码</h3><p>从机器的角度看，程序只是一堆字节序列，机器本身没有关于源程序的任何信息。程序经过预处理器、编译器、汇编器和链接器后形成的二进制序列在不同机器上是不同的，并且难以兼容。</p>
+<h3 id="布尔代数简介"><a href="#布尔代数简介" class="headerlink" title="布尔代数简介"></a>布尔代数简介</h3><p>布尔代数中的逻辑运算包括AND、OR、NOT以及异或，在命题逻辑中都有与之对应的符号（因为不好打出来，此处略）。C语言中与之相对应的是位级运算中的&amp;、|、~、^ 和逻辑运算中的&amp;&amp;、||、!、^。</p>
+<p>信息论鼻祖香农建立了布尔代数和数字逻辑之间的联系，其应用即为广泛，有数字逻辑这一学科对其进行更全面的阐述。</p>
+<h3 id="C语言中的位级运算"><a href="#C语言中的位级运算" class="headerlink" title="C语言中的位级运算"></a>C语言中的位级运算</h3><p>C语言支持按位布尔运算。对一个16进制表示的数来说，其最简单的按位运算的步骤为：转换为2进制；按位取反；转换为16进制。</p>
+<p>位级运算催生了掩码的应用，可以使得一个多字节数中指定位的数被掩盖（一般表现为都为0），而其它指定位的数正常显示；~0可生成全部位为1的掩码，并且由于不同机器字位数不同，这种生成方式可移植。</p>
+<p>显然，取补通过异或运算，取0通过&amp;运算，取1通过|运算，使用&amp;和时分别可通过设置对应位为1和0来保持对应操作数位的值不变。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>取补</td>
+<td>与1异或</td>
+</tr>
+<tr>
+<td>保持不变</td>
+<td>&amp; 1或者\</td>
+<td>0</td>
+</tr>
+<tr>
+<td>取1</td>
+<td>\</td>
+<td>1</td>
+</tr>
+<tr>
+<td>取0</td>
+<td>&amp; 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>异或运算：a异或b = （a并非b）或（b并非a）。</p>
+<h3 id="C语言中的逻辑运算"><a href="#C语言中的逻辑运算" class="headerlink" title="C语言中的逻辑运算"></a>C语言中的逻辑运算</h3><p>注意将|和||、&amp;和&amp;&amp;区分，前者用于位级运算，两个操作数都会用到，后者则用于逻辑运算求真值，当前一个操作数可以确定结果时，不会用到后一个操作数。</p>
+<h3 id="C语言中的移位运算"><a href="#C语言中的移位运算" class="headerlink" title="C语言中的移位运算"></a>C语言中的移位运算</h3><p>左移只有一种，与右移对比应称为逻辑左移，在操作数右端补0；右移则分为逻辑右移和算术右移，逻辑右移在左端补0，并且在C语言中针对无符号数，算术右移在左端补最高位，在C语言中针对有符号数（java中则通过&gt;&gt;和&gt;&gt;&gt;两种符号区分算术右移和逻辑右移）。</p>
+<h2 id="整数表示"><a href="#整数表示" class="headerlink" title="整数表示"></a>整数表示</h2><p>本小节介绍了表示整数的两种方式：有符号数和无符号数。并详细探讨了编码和操作这些整数的方式。</p>
+<h3 id="整型数据类型"><a href="#整型数据类型" class="headerlink" title="整型数据类型"></a>整型数据类型</h3><p>负数的范围比正数的范围大1。C语言规定了各类型整型数据能够表示的最小范围，其范围与32位机器各类型的范围基本对应。</p>
+<h3 id="无符号数的编码"><a href="#无符号数的编码" class="headerlink" title="无符号数的编码"></a>无符号数的编码</h3><p>无符号数编码的定义：$B2{U<em>{\omega}}(\vec x)=\sum</em>{i=0}^{\omega-1}{x_i}{2^i}$。其编码具有唯一性。</p>
+<h3 id="补码编码"><a href="#补码编码" class="headerlink" title="补码编码"></a>补码编码</h3><p>补码编码的定义：$B2T<em>{\omega}(\vec x)=-x</em>{\omega-1}2^{\omega-1}+\sum_{i=0}^{\omega-1}x_i2^i$。其编码同样具有唯一性。</p>
+<p>正是补码相较于原码和反码有唯一性，几乎所有的机器都使用补码来表示有符号数。在C语言中使用宏使得数据类型具有更好的可移植性，并且在C库的文件<limits.h>中定义了一组常量限定不同整型数据的取值范围；而在java中，则明确要求整数数据类型的取值范围，需使用补码，且在不同机器上表现的完全一样。</p>
+<h3 id="有符号数与无符号数之间的转换"><a href="#有符号数与无符号数之间的转换" class="headerlink" title="有符号数与无符号数之间的转换"></a>有符号数与无符号数之间的转换</h3><p>$1+UMax_\omega=2^\omega$。负数的补码表示和其对应的无符号数之差的绝对值为$2^\omega$。即有：</p>
+<script type="math/tex; mode=display">
+T2U\omega(x)=
+    \begin{cases}
+        x+2^\omega, & \text{$x<0$}\\
+        x, & \text{$x\geq0$}
+    \end{cases}</script><p>同理，有：</p>
+<script type="math/tex; mode=display">
+U2T\omega(x)=
+    \begin{cases}
+        u, & \text{$u \leq TMax_\omega$}\\
+        u - 2^\omega, & \text{$u > TMax_\omega$}
+    \end{cases}</script><h3 id="C语言中的有符号数与无符号数"><a href="#C语言中的有符号数与无符号数" class="headerlink" title="C语言中的有符号数与无符号数"></a>C语言中的有符号数与无符号数</h3><p>C语言中进行有符号数与无符号数之间的大小比较时，会将有符号数转换为无符号数，这样会导致非直观（错误）的结果。（但凡表达式中涉及到了无符号数，有符号数都会被转换）</p>
+<p>在C语言中，表示$TMin<em>{32}$使用的是 -2147483647-1，而表示$TMax</em>{32}$使用的是2147483647。之所以使用这种方式，可以追溯到C语言的头文件<limits.h>，其中对int数据的大小定义为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INT_MAX 2147483647</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INT_MIN (-INT_MAX - 1)</span></span><br></pre></td></tr></table></figure>
+<p>这是由于补码表示数据时出现的细微的不对称性。但其原因未作说明。</p>
+<h3 id="扩展一个数字的位表示"><a href="#扩展一个数字的位表示" class="headerlink" title="扩展一个数字的位表示"></a>扩展一个数字的位表示</h3><p>扩展类型包括：</p>
+<ul>
+<li>无符号数的零扩展，即通过在原始二进制表示的开头添加0。</li>
+<li>补码数的符号扩展，即通过在原始二进制表示的开头添加1。</li>
+</ul>
+<p>（在程序中涉及到各整型类型数据的转换时，需要考虑转换的相对顺序问题，例如：当signed short int转换为unsigned int时，先将其转换为int而非unsigned short int）</p>
+<h3 id="截断数字"><a href="#截断数字" class="headerlink" title="截断数字"></a>截断数字</h3><ul>
+<li><p>截断无符号数：截断高位的$k$位后，$x^` = x \mod 2^k$。</p>
+</li>
+<li><p>截断补码数值：截断高位的$k$位后，$x^` =U2T_k(x \mod 2^k)$。</p>
+</li>
+</ul>
+<h3 id="关于有符号数和无符号数的建议"><a href="#关于有符号数和无符号数的建议" class="headerlink" title="关于有符号数和无符号数的建议"></a>关于有符号数和无符号数的建议</h3><p>由有符号数到无符号数的隐式强制类型转换的发生，会导致一些非直观的错误，并且难以察觉。</p>
+<p>例如在一个for循环中，如果int i =0并且unsigned length = 0，i &lt;= length- 1则等价于i &lt;= Umax，其恒成立，运行程序会发生内存错误。</p>
+<p>在P59的旁注中介绍了库函数memcpy，说明了有符号数和无符号数间的转换可能导致的问题。避免这种转换错误的一种方法时绝不使用无符号数，事实上，除了C以外很少有语言支持无符号数，如java只支持有符号整数，并且通过补码运算来实现。（无符号数有它的用途，<strong>mark</strong>，后续或许会介绍）</p>
+<h2 id="整数运算"><a href="#整数运算" class="headerlink" title="整数运算"></a>整数运算</h2><p>两个正数相加得到负数？x &lt; y 和 x - y &lt; 0有差别?这些问题由计算运算的局限性导致。</p>
+<h3 id="无符号加法"><a href="#无符号加法" class="headerlink" title="无符号加法"></a>无符号加法</h3>
       
     </div>
     <footer class="article-footer">
