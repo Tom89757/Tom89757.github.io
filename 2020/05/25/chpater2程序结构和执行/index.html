@@ -15,7 +15,7 @@
 <meta property="og:description" content="本章将讲述无符号数、补码表示的有符号数、整数和浮点数，探讨这些数据和计算机对数据执行操作时的属性。描述过程中会用到数学语言。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-25T14:21:31.000Z">
-<meta property="article:modified_time" content="2020-06-16T16:20:39.280Z">
+<meta property="article:modified_time" content="2020-06-21T18:20:04.992Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
@@ -99,7 +99,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信息存储"><span class="toc-text">信息存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#十六进制表示法"><span class="toc-text">十六进制表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字数据大小"><span class="toc-text">字数据大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#寻址和字节顺序"><span class="toc-text">寻址和字节顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表示字符串"><span class="toc-text">表示字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表示代码"><span class="toc-text">表示代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布尔代数简介"><span class="toc-text">布尔代数简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的位级运算"><span class="toc-text">C语言中的位级运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的逻辑运算"><span class="toc-text">C语言中的逻辑运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的移位运算"><span class="toc-text">C语言中的移位运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整数表示"><span class="toc-text">整数表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整型数据类型"><span class="toc-text">整型数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无符号数的编码"><span class="toc-text">无符号数的编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补码编码"><span class="toc-text">补码编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有符号数与无符号数之间的转换"><span class="toc-text">有符号数与无符号数之间的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的有符号数与无符号数"><span class="toc-text">C语言中的有符号数与无符号数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展一个数字的位表示"><span class="toc-text">扩展一个数字的位表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#截断数字"><span class="toc-text">截断数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于有符号数和无符号数的建议"><span class="toc-text">关于有符号数和无符号数的建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整数运算"><span class="toc-text">整数运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无符号加法"><span class="toc-text">无符号加法</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信息存储"><span class="toc-text">信息存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#十六进制表示法"><span class="toc-text">十六进制表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字数据大小"><span class="toc-text">字数据大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#寻址和字节顺序"><span class="toc-text">寻址和字节顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表示字符串"><span class="toc-text">表示字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表示代码"><span class="toc-text">表示代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布尔代数简介"><span class="toc-text">布尔代数简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的位级运算"><span class="toc-text">C语言中的位级运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的逻辑运算"><span class="toc-text">C语言中的逻辑运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的移位运算"><span class="toc-text">C语言中的移位运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整数表示"><span class="toc-text">整数表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整型数据类型"><span class="toc-text">整型数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无符号数的编码"><span class="toc-text">无符号数的编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补码编码"><span class="toc-text">补码编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有符号数与无符号数之间的转换"><span class="toc-text">有符号数与无符号数之间的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的有符号数与无符号数"><span class="toc-text">C语言中的有符号数与无符号数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展一个数字的位表示"><span class="toc-text">扩展一个数字的位表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#截断数字"><span class="toc-text">截断数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于有符号数和无符号数的建议"><span class="toc-text">关于有符号数和无符号数的建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整数运算"><span class="toc-text">整数运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无符号加法"><span class="toc-text">无符号加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补码加法"><span class="toc-text">补码加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补码的非"><span class="toc-text">补码的非</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无符号乘法"><span class="toc-text">无符号乘法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补码乘法"><span class="toc-text">补码乘法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#乘以常数"><span class="toc-text">乘以常数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#除以2的幂"><span class="toc-text">除以2的幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于整数运算的最后思考"><span class="toc-text">关于整数运算的最后思考</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮点数"><span class="toc-text">浮点数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二进制小数"><span class="toc-text">二进制小数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IEEE浮点表示"><span class="toc-text">IEEE浮点表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字实例"><span class="toc-text">数字实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#舍入（mark，具体舍入过程尚不清楚）"><span class="toc-text">舍入（mark，具体舍入过程尚不清楚）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮点运算"><span class="toc-text">浮点运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言中的浮点数"><span class="toc-text">C语言中的浮点数</span></a></li></ol></li></ol>
 </div>
 
 
@@ -154,8 +154,12 @@
 <h3 id="C语言中的移位运算"><a href="#C语言中的移位运算" class="headerlink" title="C语言中的移位运算"></a>C语言中的移位运算</h3><p>左移只有一种，与右移对比应称为逻辑左移，在操作数右端补0；右移则分为逻辑右移和算术右移，逻辑右移在左端补0，并且在C语言中针对无符号数，算术右移在左端补最高位，在C语言中针对有符号数（java中则通过&gt;&gt;和&gt;&gt;&gt;两种符号区分算术右移和逻辑右移）。</p>
 <h2 id="整数表示"><a href="#整数表示" class="headerlink" title="整数表示"></a>整数表示</h2><p>本小节介绍了表示整数的两种方式：有符号数和无符号数。并详细探讨了编码和操作这些整数的方式。</p>
 <h3 id="整型数据类型"><a href="#整型数据类型" class="headerlink" title="整型数据类型"></a>整型数据类型</h3><p>负数的范围比正数的范围大1。C语言规定了各类型整型数据能够表示的最小范围，其范围与32位机器各类型的范围基本对应。</p>
-<h3 id="无符号数的编码"><a href="#无符号数的编码" class="headerlink" title="无符号数的编码"></a>无符号数的编码</h3><p>无符号数编码的定义：$B2{U<em>{\omega}}(\vec x)=\sum</em>{i=0}^{\omega-1}{x_i}{2^i}$。其编码具有唯一性。</p>
-<h3 id="补码编码"><a href="#补码编码" class="headerlink" title="补码编码"></a>补码编码</h3><p>补码编码的定义：$B2T<em>{\omega}(\vec x)=-x</em>{\omega-1}2^{\omega-1}+\sum_{i=0}^{\omega-1}x_i2^i$。其编码同样具有唯一性。</p>
+<h3 id="无符号数的编码"><a href="#无符号数的编码" class="headerlink" title="无符号数的编码"></a>无符号数的编码</h3><p>无符号数编码的定义：</p>
+<script type="math/tex; mode=display">
+B2{U_{\omega}}(\vec x)=\sum_{i=0}^{\omega-1}{x_i}{2^i}</script><p>其编码具有唯一性。</p>
+<h3 id="补码编码"><a href="#补码编码" class="headerlink" title="补码编码"></a>补码编码</h3><p>补码编码的定义：</p>
+<script type="math/tex; mode=display">
+B2T_{\omega}(\vec x)=-x_{\omega-1}2^{\omega-1}+\sum_{i=0}^{\omega-1}x_i2^i</script><p>其编码同样具有唯一性。</p>
 <p>正是补码相较于原码和反码有唯一性，几乎所有的机器都使用补码来表示有符号数。在C语言中使用宏使得数据类型具有更好的可移植性，并且在C库的文件<limits.h>中定义了一组常量限定不同整型数据的取值范围；而在java中，则明确要求整数数据类型的取值范围，需使用补码，且在不同机器上表现的完全一样。</p>
 <h3 id="有符号数与无符号数之间的转换"><a href="#有符号数与无符号数之间的转换" class="headerlink" title="有符号数与无符号数之间的转换"></a>有符号数与无符号数之间的转换</h3><p>$1+UMax_\omega=2^\omega$。负数的补码表示和其对应的无符号数之差的绝对值为$2^\omega$。即有：</p>
 <script type="math/tex; mode=display">
@@ -170,7 +174,7 @@ U2T\omega(x)=
         u, & \text{$u \leq TMax_\omega$}\\
         u - 2^\omega, & \text{$u > TMax_\omega$}
     \end{cases}</script><h3 id="C语言中的有符号数与无符号数"><a href="#C语言中的有符号数与无符号数" class="headerlink" title="C语言中的有符号数与无符号数"></a>C语言中的有符号数与无符号数</h3><p>C语言中进行有符号数与无符号数之间的大小比较时，会将有符号数转换为无符号数，这样会导致非直观（错误）的结果。（但凡表达式中涉及到了无符号数，有符号数都会被转换）</p>
-<p>在C语言中，表示$TMin<em>{32}$使用的是 -2147483647-1，而表示$TMax</em>{32}$使用的是2147483647。之所以使用这种方式，可以追溯到C语言的头文件<limits.h>，其中对int数据的大小定义为：</p>
+<p>在C语言中，表示：$TMin<em>{32}$ 使用的是 -2147483647-1，而表示：$TMax</em>{32}$ 使用的是2147483647。之所以使用这种方式，可以追溯到C语言的头文件<limits.h>，其中对int数据的大小定义为：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INT_MAX 2147483647</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INT_MIN (-INT_MAX - 1)</span></span><br></pre></td></tr></table></figure>
 <p>这是由于补码表示数据时出现的细微的不对称性。但其原因未作说明。</p>
 <h3 id="扩展一个数字的位表示"><a href="#扩展一个数字的位表示" class="headerlink" title="扩展一个数字的位表示"></a>扩展一个数字的位表示</h3><p>扩展类型包括：</p>
@@ -189,7 +193,104 @@ U2T\omega(x)=
 <p>例如在一个for循环中，如果int i =0并且unsigned length = 0，i &lt;= length- 1则等价于i &lt;= Umax，其恒成立，运行程序会发生内存错误。</p>
 <p>在P59的旁注中介绍了库函数memcpy，说明了有符号数和无符号数间的转换可能导致的问题。避免这种转换错误的一种方法时绝不使用无符号数，事实上，除了C以外很少有语言支持无符号数，如java只支持有符号整数，并且通过补码运算来实现。（无符号数有它的用途，<strong>mark</strong>，后续或许会介绍）</p>
 <h2 id="整数运算"><a href="#整数运算" class="headerlink" title="整数运算"></a>整数运算</h2><p>两个正数相加得到负数？x &lt; y 和 x - y &lt; 0有差别?这些问题由计算运算的局限性导致。</p>
-<h3 id="无符号加法"><a href="#无符号加法" class="headerlink" title="无符号加法"></a>无符号加法</h3>
+<h3 id="无符号加法"><a href="#无符号加法" class="headerlink" title="无符号加法"></a>无符号加法</h3><p>对于 $0 \le x,y &lt; 2^\omega$：</p>
+<script type="math/tex; mode=display">
+x +^u_\omega y =
+    \begin{cases}
+        x + y, &\text{$x + y <2^\omega$}    & \text{正常}\\
+        x + y - 2^\omega, &\text{$2^\omega \le x + y < 2^\omega$}    &\text{溢出}
+    \end{cases}</script><p>检测$x + y$的溢出原理也非常简单，只需将结果值与x或y进行比较，结果值小于x或y说明溢出。</p>
+<p>无符号数求反：</p>
+<script type="math/tex; mode=display">
+-^u_\omega x =
+    \begin{cases}
+        x, &\text{$x = 0$}\\
+        2^\omega - x, &\text{$x > 0$}
+    \end{cases}</script><h3 id="补码加法"><a href="#补码加法" class="headerlink" title="补码加法"></a>补码加法</h3><p>无非是针对x+y的和是否越过其本身位数大小的上界和下界，分为正溢出、不变、负溢出：</p>
+<script type="math/tex; mode=display">
+x +^t_\omega y =
+    \begin{cases}
+        x + y - 2^\omega, &\text{$2^{\omega-1} \le x+y < 2^{\omega-1}$ }\\
+        x + y, &\text{$-2^{\omega-1} \le x+y < 2^{\omega-1}$}\\
+        x + y + 2^\omega, &\text{$x+y < -2^{\omega-1}$}
+    \end{cases}</script><p>检测$x + y$的溢出原理同样简单，当x、y同号时，若其和与之异号，说明溢出。<strong>mark</strong>我不想花太多时间讨论TM的溢出，习题部分跳过。（<strong>mark</strong>此处发现课后习题过多，由于时间有限需挑选部分习题练习）</p>
+<h3 id="补码的非"><a href="#补码的非" class="headerlink" title="补码的非"></a>补码的非</h3><script type="math/tex; mode=display">
+-^t_\omega x =
+    \begin{cases}
+        TMin_\omega, &\text{$x = TMin_\omega$}\\
+        -x, &\text{$x > TMin\omega$}
+    \end{cases}</script><p>书中给出了两种计算数x的补码非即-x的方法：1）取反加一；2）除x最后一个1外取反。</p>
+<h3 id="无符号乘法"><a href="#无符号乘法" class="headerlink" title="无符号乘法"></a>无符号乘法</h3><p>对$0 &lt; x,y \le UMax<em>\omega$，有：$x * y^u</em>\omega = (x * y) mod 2^\omega$。</p>
+<h3 id="补码乘法"><a href="#补码乘法" class="headerlink" title="补码乘法"></a>补码乘法</h3><p>对于$-2^{\omega-1} \le x, y \le 2^{\omega-1} - 1$，有：</p>
+<script type="math/tex; mode=display">
+x *^t_\omega y = U2T_\omega((x·y) \mod 2^\omega)</script><p>即无符号和补码乘法截断后的计算结果的位级表示相同，或者说二者具有位级等价性。（ps：完整的乘积的位级表示可能不同）</p>
+<h3 id="乘以常数"><a href="#乘以常数" class="headerlink" title="乘以常数"></a>乘以常数</h3><p>加法、减法、位级运算和移位只需要一个时钟周期，而整数乘法运算却需要10个或以上的时钟周期（<strong>mark</strong>所需时钟周期数会因为cpu架构有所不同，如Intel Core i7 Haswell上只需3个）。下面会通过将整数乘以常数因子的运算转换为加法和移位运算，从而减小所需时钟周期数。下面遵循从特殊到一般的思路：</p>
+<ul>
+<li>乘以2的幂$2^k$。左移k位，右边补零；对于固定字长，弃掉高位的k位。无符号整数和补码操作相同。</li>
+<li>乘以K。如14=[(0000)(111)(0)]，x * K = （x &lt;&lt; 3）+ (x &lt;&lt; 1) = (x &lt;&lt; 4) - (x &lt;&lt; 1)</li>
+</ul>
+<p>当使用少量移位、加法和减法来取代乘法运算时，才能进行速度上的优化</p>
+<h3 id="除以2的幂"><a href="#除以2的幂" class="headerlink" title="除以2的幂"></a>除以2的幂</h3><p>整数除法往往比乘法还慢，需要30个以上的时钟周期。</p>
+<ul>
+<li>无符号数：逻辑右移k位。</li>
+<li>补码：分为向下舍入和我们希望的向上舍入（通过加上偏量）。</li>
+</ul>
+<p>但是这种移位代替除法的操作并不能推广至任意常数。</p>
+<h3 id="关于整数运算的最后思考"><a href="#关于整数运算的最后思考" class="headerlink" title="关于整数运算的最后思考"></a>关于整数运算的最后思考</h3><p>从上面的各种运算可以看出，无论是无符号数还是补码，其加减乘除操作都可以表示为相似的位级行为，即通过所需时钟周期数更少的移位来实现。同时，无符号数作为一种简单的整数数据类型，却会导致让人匪夷所思的缺陷，比如在调用库函数时。</p>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>直到上世纪80年代，对浮点数的设计依然以速度和简洁性为主，而不考虑计算精确性。之后，在Intel的支持下，Kahan教授才使得对浮点数的定义精确化，并且IEEE协会采纳的标准非常接近Intel采用的标准。</p>
+<h3 id="二进制小数"><a href="#二进制小数" class="headerlink" title="二进制小数"></a>二进制小数</h3><p>其定义为：$b = \sum_{i=-n}^m 2^i * b_i$。</p>
+<h3 id="IEEE浮点表示"><a href="#IEEE浮点表示" class="headerlink" title="IEEE浮点表示"></a>IEEE浮点表示</h3><p>IEEE浮点标准为：$V = (-1)^s <em> M </em> 2^E$。符号位s、阶码位E和尾数位M在单精度浮点数float分别由1(s字段)、8(exp字段，其数值用k表示)、23(frac字段，其数值用n表示)位表示，在双精度double则分别由1、11、52位表示。</p>
+<p>根据尾数位的值exp，可以将编码的浮点数值分为三种情况（以float为例）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>特征</th>
+<th>E</th>
+<th>M</th>
+<th>s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>规格化</td>
+<td>exp位模式不全为0/1</td>
+<td>$e-Bias(-126到+127)$</td>
+<td>$1+f$</td>
+<td>$(-1)^s$</td>
+</tr>
+<tr>
+<td>非规格化的</td>
+<td>exp位模式全为0</td>
+<td>$1-Bias (= -126)$</td>
+<td>$f$</td>
+<td>$(-1)^s$</td>
+</tr>
+<tr>
+<td>$+\infty 或 -\infty$</td>
+<td>exp位模式全为1，frac位模式全为0</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>exp位模式全为1，frac位模式非零</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>非规格化的浮点数中使用$M = f$，使得非规格化值得以平滑的转换到规格化值。</p>
+<h3 id="数字实例"><a href="#数字实例" class="headerlink" title="数字实例"></a>数字实例</h3><p>通过P80的举例，我们可以看出：在0附近，非规格化数聚集，且十分稠密，这是因为非规格化数的E值恒为$1-Bias$，为一个较小的数，其等于相邻非规格化数的差值；并且，通过将非规格化数的E值设为$1-Bias$，可以使得非规格化数和规格化数之间的过渡更为平滑。</p>
+<h3 id="舍入（mark，具体舍入过程尚不清楚）"><a href="#舍入（mark，具体舍入过程尚不清楚）" class="headerlink" title="舍入（mark，具体舍入过程尚不清楚）"></a>舍入（<strong>mark</strong>，具体舍入过程尚不清楚）</h3><p>可分为向偶数舍入、向零舍入、向下舍入、向上舍入四种，具体略。值得补充一下的是，向偶数舍入是一种避免统计偏差的策略，因为向上或向下舍入会认为使得数值的平均值偏小或偏大。
+　</p>
+<h3 id="浮点运算"><a href="#浮点运算" class="headerlink" title="浮点运算"></a>浮点运算</h3><p>浮点数的加法和乘法具有交换性，不具有结合性，并且乘法还不具有分配性。结合性和分配性的缺失使得科学计算器和编译器的编写面临困难。</p>
+<h3 id="C语言中的浮点数"><a href="#C语言中的浮点数" class="headerlink" title="C语言中的浮点数"></a>C语言中的浮点数</h3><p>C语言标准并不要求机器使用IEEE浮点，所以无法改变舍入方式和得到$-\infty$、$+\infty$、-0、NaN等值。需要通过导入特定文件来定义这些特殊值。</p>
+<p>在int、float和double之间进行格式转换时，可能会发生精度的损失、溢出或者舍入。</p>
+
       
     </div>
     <footer class="article-footer">
