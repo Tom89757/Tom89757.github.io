@@ -15,8 +15,9 @@
 <meta property="og:description" content="计算机根据字节序列储存的信息执行处理数据、管理内存、读写数据和网络通信等操作。根据第一章的内容，我们知道由C语言程序转换为可执行的二进制程序需要经过预处理、编译、汇编、链接等过程。与早期编程使用的汇编语言相比，高级语言提供了更高层次的抽象，从而使得程序的开发过程对人来说更易理解，开发效率更高，并且通过编译器提供的类型检查可以市对数据的操作具有一致性；并且，高级语言编写的程序具有更好的可迁移性，可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter3%E5%9B%BE1.png?imageView2/0/format/png/q/100">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter3%E5%9B%BE2.png?imageView2/0/q/100">
 <meta property="article:published_time" content="2020-06-21T18:37:08.000Z">
-<meta property="article:modified_time" content="2020-06-23T05:47:38.284Z">
+<meta property="article:modified_time" content="2020-06-23T10:33:47.401Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
@@ -101,7 +102,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#历史观点"><span class="toc-text">历史观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序编码"><span class="toc-text">程序编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器机代码"><span class="toc-text">机器机代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实例"><span class="toc-text">代码实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于格式的注解"><span class="toc-text">关于格式的注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据格式"><span class="toc-text">数据格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问信息"><span class="toc-text">访问信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作数指示符"><span class="toc-text">操作数指示符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传送指令"><span class="toc-text">数据传送指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传输示例"><span class="toc-text">数据传输示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压入和弹出栈数据"><span class="toc-text">压入和弹出栈数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算术与逻辑操作"><span class="toc-text">算术与逻辑操作</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#历史观点"><span class="toc-text">历史观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序编码"><span class="toc-text">程序编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器机代码"><span class="toc-text">机器机代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实例"><span class="toc-text">代码实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于格式的注解"><span class="toc-text">关于格式的注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据格式"><span class="toc-text">数据格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问信息"><span class="toc-text">访问信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作数指示符"><span class="toc-text">操作数指示符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传送指令"><span class="toc-text">数据传送指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传输示例"><span class="toc-text">数据传输示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压入和弹出栈数据"><span class="toc-text">压入和弹出栈数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算术与逻辑操作"><span class="toc-text">算术与逻辑操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加载有效地址"><span class="toc-text">加载有效地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一元操作和二元操作"><span class="toc-text">一元操作和二元操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移位操作"><span class="toc-text">移位操作</span></a></li></ol></li></ol>
 </div>
 
 
@@ -134,11 +135,11 @@
 <h3 id="关于格式的注解"><a href="#关于格式的注解" class="headerlink" title="关于格式的注解"></a>关于格式的注解</h3><ul>
 <li><p>为便于理解，书中给出了带解释的汇编代码。</p>
 </li>
-<li><p>书中的汇编是用ATT格式描述，它于Intel格式有所不同。</p>
+<li><p>书中的汇编是用ATT格式描述，它与Intel格式有所不同。</p>
 </li>
 <li>利用GCC的支持，可以直接在C代码中嵌入汇编代码，也可直接将整个函数编写为汇编代码。（之所以有这个需求，是因为有些程序需要访问机器的低级特性）</li>
 </ul>
-<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>根据Intel的说法，将2个字节称为一个字（word），并且使用字来表示数据类型。大多数汇编指令都有一个字符的后缀，该后缀于操作数的大小有关，</p>
+<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>根据Intel的说法，将2个字节称为一个字（word），并且使用字来表示数据类型。大多数汇编指令都有一个字符的后缀，该后缀于操作数的大小有关。</p>
 <h2 id="访问信息"><a href="#访问信息" class="headerlink" title="访问信息"></a>访问信息</h2><p>一个x86-64的中央处理单元（cpu）包含一组16个存储64位值的通用目的寄存器，用来存储整数数据和指针。它们都以%r开头。指令可以对寄存器低位字节中存储的不同大小的数据进行操作，依次可进行的操作位字节级操作、16位操作、32位操作和64位操作。</p>
 <p>需特别注意的是栈寄存器%rsp，其功能固定，相较于它其它的寄存器用法更为灵活。有一组标准的编程规范控制着如何使用寄存器来管理栈、传递函数参数、函数的返回值以及存储局部和临时数据。</p>
 <h3 id="操作数指示符"><a href="#操作数指示符" class="headerlink" title="操作数指示符"></a>操作数指示符</h3><p>操作数分为三种类型：立即数；寄存器；内存引用。其中，基址和变址寄存器必须为64位寄存器，即括号()内寄存器均为64位寄存器。</p>
@@ -153,7 +154,15 @@
 <p>经验证发现，当将无/有符号数转换为更长字节的有/符号数时，是先将无/有符号数转换为更长字节的无/有符号数，进而转换为对应的有/无符号数，故在汇编语言层面表现为，分别使用movz和movs指令。这一特征在P56有具体说明，并且可以直观感觉到这种转换顺序更为自然。</p>
 <h3 id="压入和弹出栈数据"><a href="#压入和弹出栈数据" class="headerlink" title="压入和弹出栈数据"></a>压入和弹出栈数据</h3><p>在x86-64中通过push和pop操作压入和弹出数据，栈顶指针始终指向最低位的地址，栈向低地址方向增长。使用push和pop指令的好处是将原来需要两条指令的操作压缩为只需一条指令，不仅节省了空间，并且可读性更强。</p>
 <p>值得一提的是，对push操作来说，执行之后不仅栈顶指针地址改变，进栈元素还覆盖了新的栈顶指针原来存储的元素；而对pop操作来说，执行之后仅表现为栈顶指针地址的改变，原来指针处存储的元素依然还在，直到被下一个写入的元素覆盖。</p>
-<h3 id="算术与逻辑操作"><a href="#算术与逻辑操作" class="headerlink" title="算术与逻辑操作"></a>算术与逻辑操作</h3>
+<h2 id="算术与逻辑操作"><a href="#算术与逻辑操作" class="headerlink" title="算术与逻辑操作"></a>算术与逻辑操作</h2><p>x86-64中有一系列的整数和逻辑操作，每一种操作又有各种变种，其主要与操作数的字节数有关（除leaq外，它用于加载有效地址）。</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter3%E5%9B%BE2.png?imageView2/0/q/100" alt="整数算术操作"></p>
+<h3 id="加载有效地址"><a href="#加载有效地址" class="headerlink" title="加载有效地址"></a>加载有效地址</h3><p>加载有效地址指令leaq本质上是movq指令的变形，但它可以为后面的内存引用产生指针。<strong>mark</strong>它和mov有何区别？</p>
+<h3 id="一元操作和二元操作"><a href="#一元操作和二元操作" class="headerlink" title="一元操作和二元操作"></a>一元操作和二元操作</h3><ul>
+<li>一元操作只有一个操作数，其既是源又是目的，如incq(%rsp)为自增一，与C语言的自增自减类似。</li>
+<li>二元操作，第一个操作数为源操作数，第二个为目的操作数，其中第二个既是源也是目的，如subq %rax, %rdx。</li>
+</ul>
+<h3 id="移位操作"><a href="#移位操作" class="headerlink" title="移位操作"></a>移位操作</h3><p>第一个操作数是位移量，第二个是要移位的数。</p>
+
       
     </div>
     <footer class="article-footer">
