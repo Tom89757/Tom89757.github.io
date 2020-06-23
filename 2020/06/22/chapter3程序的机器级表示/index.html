@@ -14,11 +14,13 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="计算机根据字节序列储存的信息执行处理数据、管理内存、读写数据和网络通信等操作。根据第一章的内容，我们知道由C语言程序转换为可执行的二进制程序需要经过预处理、编译、汇编、链接等过程。与早期编程使用的汇编语言相比，高级语言提供了更高层次的抽象，从而使得程序的开发过程对人来说更易理解，开发效率更高，并且通过编译器提供的类型检查可以市对数据的操作具有一致性；并且，高级语言编写的程序具有更好的可迁移性，可以">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:/Desktop/chapter3-图1.png">
 <meta property="article:published_time" content="2020-06-21T18:37:08.000Z">
-<meta property="article:modified_time" content="2020-06-22T10:32:51.634Z">
+<meta property="article:modified_time" content="2020-06-23T04:42:46.766Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/Desktop/chapter3-图1.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -99,7 +101,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#历史观点"><span class="toc-text">历史观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序编码"><span class="toc-text">程序编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器机代码"><span class="toc-text">机器机代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实例"><span class="toc-text">代码实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于格式的注解"><span class="toc-text">关于格式的注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据格式"><span class="toc-text">数据格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问信息"><span class="toc-text">访问信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作数指示符"><span class="toc-text">操作数指示符</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#历史观点"><span class="toc-text">历史观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序编码"><span class="toc-text">程序编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器机代码"><span class="toc-text">机器机代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实例"><span class="toc-text">代码实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于格式的注解"><span class="toc-text">关于格式的注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据格式"><span class="toc-text">数据格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问信息"><span class="toc-text">访问信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作数指示符"><span class="toc-text">操作数指示符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传送指令"><span class="toc-text">数据传送指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传输示例"><span class="toc-text">数据传输示例</span></a></li></ol></li></ol>
 </div>
 
 
@@ -139,7 +141,17 @@
 <h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>根据Intel的说法，将2个字节称为一个字（word），并且使用字来表示数据类型。大多数汇编指令都有一个字符的后缀，该后缀于操作数的大小有关，</p>
 <h2 id="访问信息"><a href="#访问信息" class="headerlink" title="访问信息"></a>访问信息</h2><p>一个x86-64的中央处理单元（cpu）包含一组16个存储64位值的通用目的寄存器，用来存储整数数据和指针。它们都以%r开头。指令可以对寄存器低位字节中存储的不同大小的数据进行操作，依次可进行的操作位字节级操作、16位操作、32位操作和64位操作。</p>
 <p>需特别注意的是栈寄存器%rsp，其功能固定，相较于它其它的寄存器用法更为灵活。有一组标准的编程规范控制着如何使用寄存器来管理栈、传递函数参数、函数的返回值以及存储局部和临时数据。</p>
-<h3 id="操作数指示符"><a href="#操作数指示符" class="headerlink" title="操作数指示符"></a>操作数指示符</h3>
+<h3 id="操作数指示符"><a href="#操作数指示符" class="headerlink" title="操作数指示符"></a>操作数指示符</h3><p>操作数分为三种类型：立即数；寄存器；内存引用。其中，基址和变址寄存器必须为64位寄存器，即括号()内寄存器均为64位寄存器。</p>
+<h3 id="数据传送指令"><a href="#数据传送指令" class="headerlink" title="数据传送指令"></a>数据传送指令</h3><p>即将数据从一位置复制到另一个位置。不同的数据传输指令在源、目的操作数的类型、执行转换、副作用等方面有差异，此处将执行相同操作的指令划分为同一个指令集，它们的区别只在于传送数据的大小。如MOV类指令分为：movb、movw、movl、movq，操作的数据大小分别为1/2/4/8个字节。</p>
+<p>对于MOV操作，源操作数指定的值是一个立即数，存储在寄存器或者内存中，目的操作数指定一个位置，为寄存器或者内存地址。在x86-64中规定，两个操作数不能同时指向内存位置，要实现这一操作先需要将该值复制到寄存器中，再复制到内存的另一个位置，即需要两条指令。（这种规定是合理的，因为寄存器是cpu的组成部分，如果只涉及内存间数据的传送，这种行为极为不自然，<strong>mark</strong>其效率问题书上未提。）</p>
+<p>同样执行数据传送操作的指令集还有MOVZ类和MOVS类。其中MOVS类中的ctlq指令与movslq %eax,%rax等价，但是更为紧凑。</p>
+<p>需要注意的是，GCC生成的汇编指令带有后缀，而反汇编器生成的则没有；此外，x86-64中的内存引用总是通过四个字长的寄存器给出，即()中的寄存器为16个64位寄存器之一。</p>
+<h3 id="数据传输示例"><a href="#数据传输示例" class="headerlink" title="数据传输示例"></a>数据传输示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">long exchange(long *xp, long y)</span><br><span class="line">&#123;</span><br><span class="line">	long x &#x3D; *xp;</span><br><span class="line">	*xp &#x3D; x;</span><br><span class="line">	return x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">exchange:</span><br><span class="line">	movq	(%rdi), %rax	&#x2F;&#x2F;Get x at xp. Set as return value.</span><br><span class="line">	movq	%rsi, (%rax)	&#x2F;&#x2F;Store y at xp.</span><br><span class="line">	ret					   &#x2F;&#x2F;Return</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，汇编语言恰好反映了指针的本质就是地址。此外，rax/rdi/rsi分别代表返回值，第一参数，第二参数，即每个寄存器所存储的值有额外的含义，这也是用以提高效率和增加汇编代码可读性的一种策略。</p>
+<p><img src="D:\Desktop\chapter3-图1.png" alt="chapter3-图1"></p>
+<p>经验证发现，当将无/有符号数转换为更长字节的有/符号数时，是先将无/有符号数转换为更长字节的无/有符号数，进而转换为对应的有/无符号数，故在汇编语言层面表现为，分别使用movz和movs指令。这一特征在P56有具体说明，并且可以直观感觉到这种转换顺序更为自然。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -232,7 +244,7 @@
           </li>
         
           <li>
-            <a href="/2020/05/25/chapter2%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%92%8C%E6%89%A7%E8%A1%8C/">chapter2程序结构和执行</a>
+            <a href="/2020/05/25/chapter2%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/">chapter2信息的表示和处理</a>
           </li>
         
       </ul>
