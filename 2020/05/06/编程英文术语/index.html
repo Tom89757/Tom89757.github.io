@@ -15,7 +15,7 @@
 <meta property="og:description" content="以下内容按字母顺序排列">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-06T15:08:25.000Z">
-<meta property="article:modified_time" content="2020-06-27T16:57:30.693Z">
+<meta property="article:modified_time" content="2020-06-30T15:09:41.217Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="术语">
 <meta name="twitter:card" content="summary">
@@ -99,19 +99,21 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A"><span class="toc-text">A</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D"><span class="toc-text">D</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#G"><span class="toc-text">G</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I"><span class="toc-text">I</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#S"><span class="toc-text">S</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P"><span class="toc-text">P</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A"><span class="toc-text">A</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C"><span class="toc-text">C</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D"><span class="toc-text">D</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#G"><span class="toc-text">G</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I"><span class="toc-text">I</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#S"><span class="toc-text">S</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P"><span class="toc-text">P</span></a></li></ol>
 </div>
 
 
         <p>以下内容按字母顺序排列</p>
 <a id="more"></a>
 <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>ASLR：地址空间布局随机化(Address-Space Layout Randomization)。从用ASLR，每次运行时程序的不同部分，都会被加载到内存的不同区域。</p>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>CISC和RISC：复杂指令集计算机和精简指令集计算机。</p>
 <h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>DRAM: 动态随机访问存储器<strong>mark</strong></p>
 <h2 id="G"><a href="#G" class="headerlink" title="G"></a>G</h2><p>GCC：GNU Compiler Collection的缩写，GNU编译器套装，以<a href="https://zh.wikipedia.org/wiki/GPL" target="_blank" rel="noopener">GPL</a>及<a href="https://zh.wikipedia.org/wiki/LGPL" target="_blank" rel="noopener">LGPL</a>许可证所发行的<a href="https://zh.wikipedia.org/wiki/自由軟體" target="_blank" rel="noopener">自由软件</a>，也是<a href="https://zh.wikipedia.org/wiki/GNU計劃" target="_blank" rel="noopener">GNU计划</a>的关键部分，也是<a href="https://zh.wikipedia.org/wiki/GNU工具链" target="_blank" rel="noopener">GNU工具链</a>的主要组成部分之一。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。</p>
 <h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><p>ISA：Instruction Set Architecture的缩写，指令集架构，用以定义机器机程序的格式和行为，定义了处理器状态、指令的格式，以及每条指令对状态的影响。</p>
-<h2 id="S"><a href="#S" class="headerlink" title="S"></a>S</h2><p>SRAM: 静态随机访问存储器<strong>mark</strong></p>
+<h2 id="S"><a href="#S" class="headerlink" title="S"></a>S</h2><p>SIMD：Single instruction Multiple Data。通过SIMD并行即单指令多数据并行可以同时对一组数据执行相同的操作从而实现空间上的并行。</p>
+<p>SRAM: 静态随机访问存储器<strong>mark</strong></p>
+<p>SSE指令：SSE是流SIMD（Streaming SIMD Extensions）的缩写。SSE历经几代，已经更新为AVX（高级向量扩展，advanced vector extension），可以通过一条指令产生对多个数据值的计算，这些值存储在一组特殊的向量寄存器中。</p>
 <p>straight-line code：无分支结构（如while; do-while; for）的代码</p>
-<p>SIMD：Single instruction Multiple Data。通过SIMD并行即单指令多数据并行可以同时对一组数是执行相同的操作从而实现空间上的并行。</p>
 <p>system call：系统调用，应用程序通过系统调用指令将处理器的控制权交由操作系统内核，内核执行被请求的操作后将结果返回给应用程序。</p>
 <h2 id="P"><a href="#P" class="headerlink" title="P"></a>P</h2><p>prompt: 提示，提示符</p>
 
@@ -200,6 +202,14 @@
       <ul>
         
           <li>
+            <a href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/">chapter5优化程序性能</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">chapter4处理器体系结构</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/">chapter3程序的机器级表示</a>
           </li>
         
@@ -209,14 +219,6 @@
         
           <li>
             <a href="/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">计算机科学中的微言小义</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">生活中的微言小义</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/25/chapter2%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/">chapter2信息的表示和处理</a>
           </li>
         
       </ul>
@@ -264,22 +266,5 @@
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-
 </body>
 </html>
