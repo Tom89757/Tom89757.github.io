@@ -7,16 +7,16 @@
   
   <title>chapter5优化程序性能 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="程序的第一目标是在所有可能的情况下正确工作，另一方面就需要尽可能提高程序的运行速度。编写高效程序需要做到以下几点：  选择一组适当的算法和数据结构。 理解优化编译器的能力和局限性。对C语言代码的优化通常很难进行，对其性能的提升往往体现在C程序的编写层面，这意味着对C语言程序员更高的要求。 将大任务量的任务进行分解，实现在多核多处理器上的并行运算。  即便追求性能，也需要在实现和维护程序的简单性与它">
+  <meta name="description" content="程序的第一目标是在所有可能的情况下正确工作，另一方面就需要尽可能提高程序的运行速度。编写高效程序需要做到以下几点：  选择一组适当的算法和数据结构。 理解优化编译器的能力和局限性。对C语言代码的优化通常很难进行，对其性能的提升往往体现在C程序的编写层面，这意味着对C语言程序员更高的要求。 将大任务量的任务进行分解，实现在多核多处理器上的并行运算。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chapter5优化程序性能">
 <meta property="og:url" content="http://yoursite.com/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
-<meta property="og:description" content="程序的第一目标是在所有可能的情况下正确工作，另一方面就需要尽可能提高程序的运行速度。编写高效程序需要做到以下几点：  选择一组适当的算法和数据结构。 理解优化编译器的能力和局限性。对C语言代码的优化通常很难进行，对其性能的提升往往体现在C程序的编写层面，这意味着对C语言程序员更高的要求。 将大任务量的任务进行分解，实现在多核多处理器上的并行运算。  即便追求性能，也需要在实现和维护程序的简单性与它">
+<meta property="og:description" content="程序的第一目标是在所有可能的情况下正确工作，另一方面就需要尽可能提高程序的运行速度。编写高效程序需要做到以下几点：  选择一组适当的算法和数据结构。 理解优化编译器的能力和局限性。对C语言代码的优化通常很难进行，对其性能的提升往往体现在C程序的编写层面，这意味着对C语言程序员更高的要求。 将大任务量的任务进行分解，实现在多核多处理器上的并行运算。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter5.7%E6%95%B4%E4%BD%93%E6%93%8D%E4%BD%9C.png?imageView2/0/q/100">
 <meta property="article:published_time" content="2020-06-28T08:43:57.000Z">
-<meta property="article:modified_time" content="2020-06-30T16:06:54.615Z">
+<meta property="article:modified_time" content="2020-07-01T05:13:07.536Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
@@ -101,7 +101,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#优化编译器的能力和局限性"><span class="toc-text">优化编译器的能力和局限性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表示程序性能"><span class="toc-text">表示程序性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序示例"><span class="toc-text">程序示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消除循环的低效率"><span class="toc-text">消除循环的低效率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#减少过程调用"><span class="toc-text">减少过程调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消除不必要的内存引用"><span class="toc-text">消除不必要的内存引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解现代处理器"><span class="toc-text">理解现代处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整体操作"><span class="toc-text">整体操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能单元的性能"><span class="toc-text">功能单元的性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理器操作的抽象模型"><span class="toc-text">处理器操作的抽象模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环展开"><span class="toc-text">循环展开</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提高并行性"><span class="toc-text">提高并行性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多个累计变量"><span class="toc-text">多个累计变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新结合变换"><span class="toc-text">重新结合变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化合并代码的结果小结"><span class="toc-text">优化合并代码的结果小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些限制因素"><span class="toc-text">一些限制因素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#寄存器溢出"><span class="toc-text">寄存器溢出</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#优化编译器的能力和局限性"><span class="toc-text">优化编译器的能力和局限性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表示程序性能"><span class="toc-text">表示程序性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序示例"><span class="toc-text">程序示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消除循环的低效率"><span class="toc-text">消除循环的低效率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#减少过程调用"><span class="toc-text">减少过程调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消除不必要的内存引用"><span class="toc-text">消除不必要的内存引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解现代处理器"><span class="toc-text">理解现代处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整体操作"><span class="toc-text">整体操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能单元的性能"><span class="toc-text">功能单元的性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理器操作的抽象模型"><span class="toc-text">处理器操作的抽象模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环展开"><span class="toc-text">循环展开</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提高并行性"><span class="toc-text">提高并行性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多个累计变量"><span class="toc-text">多个累计变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新结合变换"><span class="toc-text">重新结合变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化合并代码的结果小结"><span class="toc-text">优化合并代码的结果小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些限制因素"><span class="toc-text">一些限制因素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#寄存器溢出"><span class="toc-text">寄存器溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支预测和预测错误处罚"><span class="toc-text">分支预测和预测错误处罚</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解内存性能"><span class="toc-text">理解内存性能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加载的性能"><span class="toc-text">加载的性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储的性能"><span class="toc-text">存储的性能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用：性能提高技术"><span class="toc-text">应用：性能提高技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#确认和消除性能瓶颈"><span class="toc-text">确认和消除性能瓶颈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程序剖析"><span class="toc-text">程序剖析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用剖析程序来指导优化"><span class="toc-text">使用剖析程序来指导优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
 </div>
 
 
@@ -111,6 +111,7 @@
 <li>理解优化编译器的能力和局限性。对C语言代码的优化通常很难进行，对其性能的提升往往体现在C程序的编写层面，这意味着对C语言程序员更高的要求。</li>
 <li>将大任务量的任务进行分解，实现在多核多处理器上的并行运算。</li>
 </ul>
+<a id="more"></a>
 <p>即便追求性能，也需要在实现和维护程序的简单性与它的运行速度之间做出权衡。算法层面，实现基本需求并不难，难的是不断优化得到高效的算法；代码层面，低级别的优化往往会降低程序的可读性和模块性，使得程序容易出错并难以修改和扩展。编译器层面，理想情况是编译器能够更具代码产生尽可能高效、具有目标行为的机器级程序。值得补充的是，即使现代的编译器具有强大的功能，仍然受限于妨碍优化的因素（optimization blocker），它们往往是程序行为中严重依赖于执行环境的方面。</p>
 <p>程序优化的步骤也有一定讲究：</p>
 <ul>
@@ -158,7 +159,45 @@
 <p>相较于使用多个累计变量来提高并行性的方法，重新结合变换并不那么可靠。</p>
 <h2 id="优化合并代码的结果小结"><a href="#优化合并代码的结果小结" class="headerlink" title="优化合并代码的结果小结"></a>优化合并代码的结果小结</h2><p>使用累计和变换两种优化技术我们使得CPE达到了吞吐量界限，只受限于功能单元的容量，而使用交心的SIMD指令则进一步使得性能有4~8倍的提升。现代处理器已经有相当的计算机能力，但这种能力需要我们按照非常程式化的方式编写程序来挖掘。</p>
 <h2 id="一些限制因素"><a href="#一些限制因素" class="headerlink" title="一些限制因素"></a>一些限制因素</h2><p>程序方面，一个程序的数据流图指明了执行该程序所需时间的一个基本的下界，即关键路径链上所有延迟之和；硬件方面，发射时间和功能单元数共同决定的吞吐量界限也是程序执行时间的下界。</p>
-<h3 id="寄存器溢出"><a href="#寄存器溢出" class="headerlink" title="寄存器溢出"></a>寄存器溢出</h3>
+<h3 id="寄存器溢出"><a href="#寄存器溢出" class="headerlink" title="寄存器溢出"></a>寄存器溢出</h3><p>如果并行度p超过了可用的寄存器数量，那么编译器就会诉诸溢出，将某些临时值存放在内存中，这会导致所需的基本操作数增多，性能反而下降。所幸，x86-64有足够多的寄存器，大多数循环在出现溢出前就会达到吞吐量限制。</p>
+<h3 id="分支预测和预测错误处罚"><a href="#分支预测和预测错误处罚" class="headerlink" title="分支预测和预测错误处罚"></a>分支预测和预测错误处罚</h3><p>在遇到分支时，处理器会采取投机执行的策略。当预测错误时，会招致错误处罚（当然，在一些情况下，也可以使用条件传送替代条件控制，从而避免预测从而避免处罚）。</p>
+<p>如何保证分支预测处罚不会阻碍程序的效率呢，有以下通用原则：</p>
+<ul>
+<li>不要过分关心可预测的分支。</li>
+<li>书写适合用条件传送实现的代码。对程序员而言，可以根据经验写出能够使编译器产生数据传送而不是控制转移的代码。</li>
+</ul>
+<h2 id="理解内存性能"><a href="#理解内存性能" class="headerlink" title="理解内存性能"></a>理解内存性能</h2><p>目前为止我们写的代码值访问长度小于1000个元素的向量，数据量不超过8000个字节，这些数据都存放在高速缓存中。本节我们讨论加载和存储操作的性能，以参考机为例，每个加载单元可以保存多达72个的读请求，每个存储单元可以保存多达42个写请求。</p>
+<h3 id="加载的性能"><a href="#加载的性能" class="headerlink" title="加载的性能"></a>加载的性能</h3><p>书中通过构建由一系列加载操作组成的运算程序，表明加载操作的CPE为４.０，这与后续６.４节中L1级cache的4周期访问时间一致。</p>
+<h3 id="存储的性能"><a href="#存储的性能" class="headerlink" title="存储的性能"></a>存储的性能</h3><p>同加载一样，存储操作可以在完全流水化的模式中工作，每个周期开始一条新的存储。存储单元包含一个存储缓冲区，包含已经被发射到存储单元但还没有完成的存储操作的地址和数据，使得一系列存储操作不必等待每个操作都更新高速缓存就能够执行。当一个加载操作发生时，它必须检查存储缓冲区中的条目，看有没有地址相匹配，正因为此，当下一条加载操作执行时，需要考虑其目标地址是否与上一条存储操作的地址字段相同。</p>
+<p>内存操作的实现包括许多细微指出。对于寄存器而言，指令译码时处理器就可以确定哪些指令会影响其他指令；而对内存操作，只有计算出加载和存储的地址，才能确定指令之间的影响。</p>
+<h2 id="应用：性能提高技术"><a href="#应用：性能提高技术" class="headerlink" title="应用：性能提高技术"></a>应用：性能提高技术</h2><p>下面是对提高性能的方式的总结：</p>
+<ul>
+<li>高级设计：为遇到的问题选择适当的算法和数据结构。</li>
+<li><p>基本编码原则：避免限制优化的因素：1）消除连续的函数调用，可能时将计算移到循环外。2）消除不必要的内存引用，引入临时变量保存中间结果。</p>
+</li>
+<li><p>低级优化：结构化代码以利用硬件功能。1）展开循环。2）使用多个累计变量和重新结合技术，提高并行度。3）使用功能性的峰哥重写条件程序，使得编译器将代码采用条件数据传送。</p>
+</li>
+</ul>
+<p>值得注意的是，为提高效率而进行的代码重写往往会使得程序变得更为复杂，此时需要使用检查代码测试函数的各个版本，避免引入错误。</p>
+<h2 id="确认和消除性能瓶颈"><a href="#确认和消除性能瓶颈" class="headerlink" title="确认和消除性能瓶颈"></a>确认和消除性能瓶颈</h2><p>前面只阐述了对小程序的优化，但是对大程序的优化却十分困难，甚至难以确定需要优化的点。本节描述使用代码剖析程序（code profiler）来收集性能数据，其通用原则是1.9.1节的Amdahl定律。</p>
+<h3 id="程序剖析"><a href="#程序剖析" class="headerlink" title="程序剖析"></a>程序剖析</h3><p>程序剖析（profiling）通过在程序中插入工具代码，确定程序的各部分所需要的时间。它可以基于基准数据（benchmark data）运行，更贴合实际。</p>
+<p>Unix系统提供剖析程序GPROF，它确定程序中每个函数花费的时间以及每个函数调用的次数。其剖析分为三个步骤，以程序prog.c为例：</p>
+<ul>
+<li>对目标程序进行剖析前的编译和链接<code>gcc -Og -pg prog.c -o prog</code>。<code>-pg</code>选项确保编译器不通过内联替换尝试任何优化，<code>-Og</code>保证正确追踪函数调用。</li>
+<li><code>./prog file.txt</code>。运行比正常慢大约2倍，生成文件gmon.txt。</li>
+<li>调用GPROF分析gmon.txt中的数据<code>gprof prog</code>。</li>
+</ul>
+<p>GPROF有以下属性：</p>
+<ul>
+<li>计时不是很准确。对于运行时间小于1秒的程序，得到的统计数字只能堪称粗略的估计值。</li>
+<li>没有执行内联替换时，调用信息相当可靠。</li>
+<li>默认情况下，不会显示对库函数如strlen的计时，其时间计算到调用它们的函数的事件中。</li>
+</ul>
+<h3 id="使用剖析程序来指导优化"><a href="#使用剖析程序来指导优化" class="headerlink" title="使用剖析程序来指导优化"></a>使用剖析程序来指导优化</h3><p>书中以对莎士比亚全集组成的文件的分析为示例，其对程序运行时间的分类可以使我们有目的的优化程序中不同的部分。</p>
+<p>剖析程序帮助我们把注意里集中在程序最耗时的部分上，即便如此，一些瓶颈（如插入到链表的开始还是结尾所导致）仍然需要我们的仔细分析。在一项最耗时的部分被优化到不是性能瓶颈时，我们需要关注程序的其他部分，它们可能称为了新的瓶颈。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>虽然编译器可以生成优化的机器代码，但是坏的算法和数据结构不会被优化。作为程序员，我们需要关注那些妨碍优化的因素，如过程调用和内存别名使用；此外，我们也应该稍微理解处理器微体系结构，对操作、容量、延迟和功能单元发射时间等有一定的认识，从而预测程序的性能。</p>
+<p>并行、分支和代码剖析三个方面是我们进一步优化程序性能的核心。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -299,5 +338,22 @@
 
 
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
 </body>
 </html>
