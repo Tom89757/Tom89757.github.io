@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
 <meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%89%B9%E6%80%A7.png">
 <meta property="article:published_time" content="2020-07-01T10:17:22.000Z">
-<meta property="article:modified_time" content="2020-07-02T11:05:53.712Z">
+<meta property="article:modified_time" content="2020-07-02T16:52:14.758Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
@@ -104,7 +104,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#存储技术"><span class="toc-text">存储技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#随机访问存储器（RAM）"><span class="toc-text">随机访问存储器（RAM）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘存储"><span class="toc-text">磁盘存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#固态硬盘"><span class="toc-text">固态硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储技术趋势"><span class="toc-text">存储技术趋势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部性"><span class="toc-text">局部性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对程序数据引用的局部性"><span class="toc-text">对程序数据引用的局部性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取指令的局部性"><span class="toc-text">取指令的局部性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#局部性小结"><span class="toc-text">局部性小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储器层次结构"><span class="toc-text">存储器层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器层次结构中的缓存"><span class="toc-text">存储器层次结构中的缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器层次结构概念小结"><span class="toc-text">存储器层次结构概念小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高速缓存存储器"><span class="toc-text">高速缓存存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用的高速缓存存储器组织结构"><span class="toc-text">通用的高速缓存存储器组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直接映射高速缓存"><span class="toc-text">直接映射高速缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组相联高速缓存（set-associative-cache）"><span class="toc-text">组相联高速缓存（set associative cache）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全相联高速缓存（fully-associative-cache）"><span class="toc-text">全相联高速缓存（fully associative cache）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有关写的问题"><span class="toc-text">有关写的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个真实的高速缓存层次据结构的解剖"><span class="toc-text">一个真实的高速缓存层次据结构的解剖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高速缓存参数的性能影响"><span class="toc-text">高速缓存参数的性能影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写高速缓存友好的代码"><span class="toc-text">编写高速缓存友好的代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综合：高速缓存对程序性能的影响"><span class="toc-text">综合：高速缓存对程序性能的影响</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器山（mark，具体描述细节暂略）"><span class="toc-text">存储器山（mark，具体描述细节暂略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新排列循环以提高空间局部性（mark，具体描述细节暂略）"><span class="toc-text">重新排列循环以提高空间局部性（mark，具体描述细节暂略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在程序中利用局部性"><span class="toc-text">在程序中利用局部性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-存储技术"><span class="toc-text">6.1 存储技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#随机访问存储器（RAM）"><span class="toc-text">随机访问存储器（RAM）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘存储"><span class="toc-text">磁盘存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#固态硬盘"><span class="toc-text">固态硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储技术趋势"><span class="toc-text">存储技术趋势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-局部性"><span class="toc-text">6.2 局部性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对程序数据引用的局部性"><span class="toc-text">对程序数据引用的局部性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取指令的局部性"><span class="toc-text">取指令的局部性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#局部性小结"><span class="toc-text">局部性小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-存储器层次结构"><span class="toc-text">6.3 存储器层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器层次结构中的缓存"><span class="toc-text">存储器层次结构中的缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器层次结构概念小结"><span class="toc-text">存储器层次结构概念小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-高速缓存存储器"><span class="toc-text">6.4 高速缓存存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用的高速缓存存储器组织结构"><span class="toc-text">通用的高速缓存存储器组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直接映射高速缓存"><span class="toc-text">直接映射高速缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组相联高速缓存（set-associative-cache）"><span class="toc-text">组相联高速缓存（set associative cache）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全相联高速缓存（fully-associative-cache）"><span class="toc-text">全相联高速缓存（fully associative cache）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有关写的问题"><span class="toc-text">有关写的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个真实的高速缓存层次据结构的解剖"><span class="toc-text">一个真实的高速缓存层次据结构的解剖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高速缓存参数的性能影响"><span class="toc-text">高速缓存参数的性能影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-5-编写高速缓存友好的代码"><span class="toc-text">6.5 编写高速缓存友好的代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-6-综合：高速缓存对程序性能的影响"><span class="toc-text">6.6 综合：高速缓存对程序性能的影响</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器山（mark，具体描述细节暂略）"><span class="toc-text">存储器山（mark，具体描述细节暂略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新排列循环以提高空间局部性（mark，具体描述细节暂略）"><span class="toc-text">重新排列循环以提高空间局部性（mark，具体描述细节暂略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在程序中利用局部性"><span class="toc-text">在程序中利用局部性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-7-小结"><span class="toc-text">6.7 小结</span></a></li></ol>
 </div>
 
 
@@ -113,7 +113,7 @@
 <p>要使得程序运行具有更快的速度，则需要将其数据项存储在层次结构中较高的地方，以使CPU更快的访问，这体现了计算机程序的局部性（locality）属性。</p>
 <p>本章将讲述基本的存储技术——SRAM、DRAM、ROM以及旋转的和固态的硬盘，重点是高速缓存存储器，它们是链接CPU和主存的桥梁。</p>
 <a id="more"></a>
-<h2 id="存储技术"><a href="#存储技术" class="headerlink" title="存储技术"></a>存储技术</h2><p>存储器容量已从早期的数千字节扩展到几TB，并以每年两倍的速度增长。</p>
+<h2 id="6-1-存储技术"><a href="#6-1-存储技术" class="headerlink" title="6.1 存储技术"></a>6.1 存储技术</h2><p>存储器容量已从早期的数千字节扩展到几TB，并以每年两倍的速度增长。</p>
 <h3 id="随机访问存储器（RAM）"><a href="#随机访问存储器（RAM）" class="headerlink" title="随机访问存储器（RAM）"></a>随机访问存储器（RAM）</h3><p>分为SRAM和DRAM，SRAM作为高速缓存存储器；DRAM作为主存以及图形系统的帧缓冲区。SRAM和DRAM的数量级分别为几MB和几百上千MB。</p>
 <ul>
 <li>SRAM：每个位即bit存储在一个双稳态的存储器单元里，它的特性在于可以无限期的保持在两个不同的电压配置（即状态）之一。对干扰并不敏感，干扰消除后恢复稳定。</li>
@@ -135,11 +135,11 @@
 </ul>
 <h3 id="固态硬盘"><a href="#固态硬盘" class="headerlink" title="固态硬盘"></a>固态硬盘</h3><p>SSD（Solid State Disk）是一种基于闪存的存储技术。一个闪存由B个块（每个块32到128页，16KB到512KB）的序列组成，每个块又由P（512B到4KB）页组成。只有当一页所属的块整个被擦除后（块的所有位置为1），才能写这一页。由于写操作需要擦除块或者将带有数据的页复制到新块，所以比读操作慢。</p>
 <h3 id="存储技术趋势"><a href="#存储技术趋势" class="headerlink" title="存储技术趋势"></a>存储技术趋势</h3><p>不同的存储技术由不同的价格和性能折中。从几十年的发展趋势看，对内存和硬盘来说，增加存储密度（从而降低成本）比降低访问时间容易得多。此外，CPU的速度增加得更多，因此现在DRAM和磁盘的性能滞后于CPU的性能，现代计算机通过频繁使用基于SRAM的高速缓存，试图弥补处理器和内存之间的差距。</p>
-<h2 id="局部性"><a href="#局部性" class="headerlink" title="局部性"></a>局部性</h2><p>局部性是一个持久的概念，对硬件和软件的设计和性能影响深远，分为时间局部性和空间局部性。</p>
+<h2 id="6-2-局部性"><a href="#6-2-局部性" class="headerlink" title="6.2 局部性"></a>6.2 局部性</h2><p>局部性是一个持久的概念，对硬件和软件的设计和性能影响深远，分为时间局部性和空间局部性。</p>
 <h3 id="对程序数据引用的局部性"><a href="#对程序数据引用的局部性" class="headerlink" title="对程序数据引用的局部性"></a>对程序数据引用的局部性</h3><p>我们对数组中元素的顺序访问为步长为一的引用模式，也被称为顺序引用模式，推广到每个k个元素进行访问即为步长为k的引用模式，随着k增大，空间局部性下降。故对二维数组来说，按行访问和按列访问，步长由1增加到N。</p>
 <h3 id="取指令的局部性"><a href="#取指令的局部性" class="headerlink" title="取指令的局部性"></a>取指令的局部性</h3><p>对for循环体来说，循环体内的指令按照连续内存顺序执行，故具有良好的空间局部性，循环体重复执行多次，故具有良好的时间局部性 。相较于数据，代码较为稳定。</p>
 <h3 id="局部性小结"><a href="#局部性小结" class="headerlink" title="局部性小结"></a>局部性小结</h3><p>目前只是从性质上对局部性做了说明，后续会通过高速缓存命中率和不命中率来量化局部性的概念。</p>
-<h2 id="存储器层次结构"><a href="#存储器层次结构" class="headerlink" title="存储器层次结构"></a>存储器层次结构</h2><p>前两节描述了存储技术和局部性的概念。硬件上访问速度的差异和软件上局部性的特性催生出了存储器层次结构这一对存储器的组织方式。</p>
+<h2 id="6-3-存储器层次结构"><a href="#6-3-存储器层次结构" class="headerlink" title="6.3 存储器层次结构"></a>6.3 存储器层次结构</h2><p>前两节描述了存储技术和局部性的概念。硬件上访问速度的差异和软件上局部性的特性催生出了存储器层次结构这一对存储器的组织方式。</p>
 <p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图1 存储器层次结构"></p>
 <h3 id="存储器层次结构中的缓存"><a href="#存储器层次结构中的缓存" class="headerlink" title="存储器层次结构中的缓存"></a>存储器层次结构中的缓存</h3><p>高速缓存（cache）是一个小而快速的存储设备，使用cache的过程称为缓存（caching）。位于k层的更快更小的存储设备作为位于k+1层的更慢更大的存储设备的缓存。k层和k+1层的存储设备都被划分成块，k层缓存保存k+1层块的子集副本，数据以块为传送单元在二者间传递，不同的相邻的存储设备间块大小不同。以下是关于缓存的几个概念：</p>
 <ul>
@@ -150,7 +150,7 @@
 </ul>
 <h3 id="存储器层次结构概念小结"><a href="#存储器层次结构概念小结" class="headerlink" title="存储器层次结构概念小结"></a>存储器层次结构概念小结</h3><p>整个存储体系都建立在局部性原理之上，下图展示了存储设备中的各种属于和缩写：</p>
 <p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%90%84%E5%B1%82%E6%AC%A1%E7%BC%93%E5%AD%98.png" alt="图2 各层次缓存"></p>
-<h2 id="高速缓存存储器"><a href="#高速缓存存储器" class="headerlink" title="高速缓存存储器"></a>高速缓存存储器</h2><p>由于CPU和主存间的性能差异，在它们之间插入了三级高速缓存L1、L2和L3，为简化模型，后续叙述设定CPU和主存之间只有L1。</p>
+<h2 id="6-4-高速缓存存储器"><a href="#6-4-高速缓存存储器" class="headerlink" title="6.4 高速缓存存储器"></a>6.4 高速缓存存储器</h2><p>由于CPU和主存间的性能差异，在它们之间插入了三级高速缓存L1、L2和L3，为简化模型，后续叙述设定CPU和主存之间只有L1。</p>
 <h3 id="通用的高速缓存存储器组织结构"><a href="#通用的高速缓存存储器组织结构" class="headerlink" title="通用的高速缓存存储器组织结构"></a>通用的高速缓存存储器组织结构</h3><p>高速缓存结构将m个地址位划分成t个标记位、s个组索引位和b个块偏移位，故其结构可以用（S, E, B, m）来描述。其中$2^m$表示内存地址（k+1层存储器）的最大数量，B x E x S表示高速缓存（k层）大小。</p>
 <h3 id="直接映射高速缓存"><a href="#直接映射高速缓存" class="headerlink" title="直接映射高速缓存"></a>直接映射高速缓存</h3><p>每个组只有一行即E=1的高速缓存称为直接映射高速缓存。高速缓存确定CPU的一个请求是否命中，然后抽取出被请求的字的过程，分为三步：组选择、行匹配和字抽取。</p>
 <ul>
@@ -192,12 +192,12 @@
 <li>相联度的影响：较高的相联度降低了抖动出现的可能性，同时也增加了实现代价、命中时间和不命中处罚。对性能要求高的高速缓存，采用较低的相联度，L1和L2采用8路组相联，L3采用16路组相联。</li>
 <li>写策略的影响：从高速缓存往下层走，策略从直写过渡到写回。</li>
 </ul>
-<h2 id="编写高速缓存友好的代码"><a href="#编写高速缓存友好的代码" class="headerlink" title="编写高速缓存友好的代码"></a>编写高速缓存友好的代码</h2><p>对高速缓存友好，等价于更好的运用局部性原理。以下是一些基本方法：</p>
+<h2 id="6-5-编写高速缓存友好的代码"><a href="#6-5-编写高速缓存友好的代码" class="headerlink" title="6.5 编写高速缓存友好的代码"></a>6.5 编写高速缓存友好的代码</h2><p>对高速缓存友好，等价于更好的运用局部性原理。以下是一些基本方法：</p>
 <ul>
 <li>让最常见的情况运行的快。</li>
 <li>尽量减小每个循环内部的缓存不命中数量：分析得到，对局部变量的反复引用和步长为1的引用模式都是好的。</li>
 </ul>
-<h2 id="综合：高速缓存对程序性能的影响"><a href="#综合：高速缓存对程序性能的影响" class="headerlink" title="综合：高速缓存对程序性能的影响"></a>综合：高速缓存对程序性能的影响</h2><p>此节将前面学习的理论与实际程序联系起来，综合了对存储器层次结构的讨论。</p>
+<h2 id="6-6-综合：高速缓存对程序性能的影响"><a href="#6-6-综合：高速缓存对程序性能的影响" class="headerlink" title="6.6 综合：高速缓存对程序性能的影响"></a>6.6 综合：高速缓存对程序性能的影响</h2><p>此节将前面学习的理论与实际程序联系起来，综合了对存储器层次结构的讨论。</p>
 <h3 id="存储器山（mark，具体描述细节暂略）"><a href="#存储器山（mark，具体描述细节暂略）" class="headerlink" title="存储器山（mark，具体描述细节暂略）"></a>存储器山（<strong>mark</strong>，具体描述细节暂略）</h3><p>一个程序在s秒的时间内读n个字节，其读吞吐量为n/s，通常以MB/s作为单位。</p>
 <p>书中展示了一个用以生成存储器山的程序，每个计算机都有表明它存储器系统能力特色的唯一的存储器山。</p>
 <h3 id="重新排列循环以提高空间局部性（mark，具体描述细节暂略）"><a href="#重新排列循环以提高空间局部性（mark，具体描述细节暂略）" class="headerlink" title="重新排列循环以提高空间局部性（mark，具体描述细节暂略）"></a>重新排列循环以提高空间局部性（<strong>mark</strong>，具体描述细节暂略）</h3><p>通过更改矩阵相乘的程序中嵌套循环中局部变量i，j，k的顺序，可以得到执行操作数均为$O(n^3)$的六个程序版本。</p>
@@ -207,7 +207,7 @@
 <li>按照数据对象存储在内存中的顺序，以步长1来读数据，从而使得程序的空间局部性最大</li>
 <li>一旦从存储器中读入了一个数据对象，就尽可能多的使用它，从而使程序达到更大的时间局部性</li>
 </ul>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本章讲述了基本存储技术（RAM、ROM和磁盘）以及存储原理；并讲述了利用局部性原理组织的存储器层次结构；接下来分析了运用局部性原理用以提高程序运行效率的方法。</p>
+<h2 id="6-7-小结"><a href="#6-7-小结" class="headerlink" title="6.7 小结"></a>6.7 小结</h2><p>本章讲述了基本存储技术（RAM、ROM和磁盘）以及存储原理；并讲述了利用局部性原理组织的存储器层次结构；接下来分析了运用局部性原理用以提高程序运行效率的方法。</p>
 
       
     </div>
@@ -222,6 +222,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter7链接
+        
+      </div>
+    </a>
   
   
     <a href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/" id="article-nav-older" class="article-nav-link-wrap">
@@ -285,6 +294,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/">chapter7链接</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter6存储器层次结构</a>
           </li>
         
@@ -298,10 +311,6 @@
         
           <li>
             <a href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/">chapter3程序的机器级表示</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/">间歇性踌躇满志与持续性混吃等死</a>
           </li>
         
       </ul>

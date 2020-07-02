@@ -68,6 +68,79 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chapter7链接" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/" class="article-date">
+  <time datetime="2020-07-02T12:54:22.000Z" itemprop="datePublished">2020-07-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/">chapter7链接</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-编译器驱动程序"><span class="toc-text">7.1 编译器驱动程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-静态链接"><span class="toc-text">7.2 静态链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-目标文件"><span class="toc-text">7.3 目标文件</span></a></li></ol>
+</div>
+
+
+        <p>链接是将各种代码和数据片段收集并组合成为一个单一文件的过程，这个文件可以被加载到内存并执行。链接过程可以执行在编译、加载甚至运行时，它使得分离编译得以实现。理解链接有以下好处：</p>
+<ul>
+<li>帮助构造大性程序。当构造大性程序时经常会遇到缺少模块、缺少库或者不兼容的库版本等引起的链接器错误。</li>
+<li>帮助避免一些危险的编程错误。如错误的定义多个全局变量时。</li>
+<li>帮助理解语言的作用域规则如何实现。全局和局部对程序来说到底意味着什么。</li>
+<li>帮助理解其他的系统概念。如加载和运行程序、虚拟内存、分页、内存映射。</li>
+<li>可以利用共享库。许多软件产品在运行时通过共享库升级程序；Web服务器依赖于共享库的动态链接提供动态内容。</li>
+</ul>
+<p>本章按照传统静态链接到加载时的共享库的动态链接再到运行时的共享库的动态链接的顺序进行讲述。</p>
+<h2 id="7-1-编译器驱动程序"><a href="#7-1-编译器驱动程序" class="headerlink" title="7.1 编译器驱动程序"></a>7.1 编译器驱动程序</h2><p>大多数编译系统都会提供编译器驱动程序（compiler driver），它代表用户在需要时调用语言预处理器、编译器、汇编器和链接器。</p>
+<p>使用命令调动GCC驱动程序：<code>gcc -Og -o prog main.c sum.c</code>，生成可执行目标二进制文件prog。</p>
+<p>运行<code>./prog</code>后shell调用系统中一个叫做加载器的函数，它将prog中的代码和数据复制到内存，然后将控制转移到这个程序的开头。</p>
+<h2 id="7-2-静态链接"><a href="#7-2-静态链接" class="headerlink" title="7.2 静态链接"></a>7.2 静态链接</h2><p>静态链接器以一组可重定位目标文件和命令参数作为输入，以一个完全链接的、可以加载和运行的可执行目标文件作为输出。可重定位目标文件由不同的代码和数据节组成，每一节都是一个连续的字节序列。在链接过程中链接器完成以下任务：</p>
+<ul>
+<li>符号解析。每个符号引用关联一个符号定义。</li>
+<li>重定位。将每个符号定义与一个内存位置关联起来，从而对各个节进行重定位。</li>
+</ul>
+<p>目标文件纯粹时字节块的集合，链接器只是完成了小部分工作，实际上它与目标机器关联性较小，因为编译器和汇编器已经完成了大部分工作。</p>
+<h2 id="7-3-目标文件"><a href="#7-3-目标文件" class="headerlink" title="7.3 目标文件"></a>7.3 目标文件</h2><p>目标文件由三种形式：</p>
+<ul>
+<li>可重定位目标文件：可在编译时与其他可重定位目标文件合并，创建一个可执行目标文件。</li>
+<li>可执行目标文件：可直接复制到内存并执行。</li>
+<li>共享目标文件：一种特殊的可重定位目标文件，可以在加载或运行时动态的加载进内存并链接。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/" data-id="ckc52ouju0000eswdhujo7fhp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-chapter6存储器层次结构" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="article-date">
@@ -520,56 +593,6 @@
 
 
   
-    <article id="post-关于计算机科学的感悟" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/" class="article-date">
-  <time datetime="2020-05-25T14:00:11.000Z" itemprop="datePublished">2020-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a>►<a class="article-category-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/">关于计算机科学的感悟</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络与交流"><span class="toc-text">网络与交流</span></a></li></ol>
-</div>
-
-
-        <h3 id="网络与交流"><a href="#网络与交流" class="headerlink" title="网络与交流"></a>网络与交流</h3><p>网络可以看作一种特殊的I/O设备，输入输出便意味着交流，网络组成的最基本单元即是一对一的交流，显然由请求方、回应方以及二者间的交流协议构成。这种简单的模型是一种优雅的抽象。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/" data-id="ckb0z3to20006e4wdg4t00we5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -627,6 +650,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/">chapter7链接</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter6存储器层次结构</a>
           </li>
         
@@ -640,10 +667,6 @@
         
           <li>
             <a href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/">chapter3程序的机器级表示</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/">间歇性踌躇满志与持续性混吃等死</a>
           </li>
         
       </ul>

@@ -15,7 +15,7 @@
 <meta property="og:description" content="以下目录于书籍中目录相对应">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-23T08:29:38.000Z">
-<meta property="article:modified_time" content="2020-06-01T16:09:32.451Z">
+<meta property="article:modified_time" content="2020-07-02T16:48:52.216Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
@@ -99,20 +99,20 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信息就是位-上下文"><span class="toc-text">信息就是位+上下文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序被其他程序翻译成不同的方式"><span class="toc-text">程序被其他程序翻译成不同的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#了解编译系统是如何工作是大有益处的"><span class="toc-text">了解编译系统是如何工作是大有益处的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理器读取并解释存储在内存中的指令"><span class="toc-text">处理器读取并解释存储在内存中的指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高速缓存至关重要"><span class="toc-text">高速缓存至关重要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储设备形成层次结构"><span class="toc-text">存储设备形成层次结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统管理硬件"><span class="toc-text">操作系统管理硬件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统之间利用网络通信"><span class="toc-text">系统之间利用网络通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重要概念"><span class="toc-text">重要概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Amdahl定律"><span class="toc-text">Amdahl定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并发和并行"><span class="toc-text">并发和并行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机系统中抽象的重要性"><span class="toc-text">计算机系统中抽象的重要性</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-信息就是位-上下文"><span class="toc-text">1.1 信息就是位+上下文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-程序被其他程序翻译成不同的方式"><span class="toc-text">1.2 程序被其他程序翻译成不同的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-了解编译系统是如何工作是大有益处的"><span class="toc-text">1.3 了解编译系统是如何工作是大有益处的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-处理器读取并解释存储在内存中的指令"><span class="toc-text">1.4 处理器读取并解释存储在内存中的指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-高速缓存至关重要"><span class="toc-text">1.5 高速缓存至关重要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-存储设备形成层次结构"><span class="toc-text">1.6 存储设备形成层次结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-操作系统管理硬件"><span class="toc-text">1.7 操作系统管理硬件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-系统之间利用网络通信"><span class="toc-text">1.8 系统之间利用网络通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-重要概念"><span class="toc-text">1.9 重要概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Amdahl定律"><span class="toc-text">Amdahl定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并发和并行"><span class="toc-text">并发和并行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机系统中抽象的重要性"><span class="toc-text">计算机系统中抽象的重要性</span></a></li></ol></li></ol>
 </div>
 
 
         <p>以下目录于书籍中目录相对应</p>
 <a id="more"></a>
-<h2 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h2><p>以一个简单的hello.c程序为例，里面的每个字符都以ASCII码的形式存储，每个字符占据1 byte=8 bits</p>
-<h2 id="程序被其他程序翻译成不同的方式"><a href="#程序被其他程序翻译成不同的方式" class="headerlink" title="程序被其他程序翻译成不同的方式"></a>程序被其他程序翻译成不同的方式</h2><p>一个程序的生命周期往往以高级语言写成的程序开始，以一个二进制的机器可执行文件结束。以hello.c为例，首先由预处理器cpp识别第一行，将系统头文件stdio.h中的内容直接插入程序得到hello.i文件；再通过编译器ccl将hello.i转为由汇编语言表示的hello.s（由于汇编语言是通用的，所以同一机器上可以运行多种高级语言）；接下来通过汇编器as将hello.s转为二进制的可重定位目标程序hello.o（此处可将重定位理解为在地址空间中可定位程序中机器指令所在的位置）；最后还需通过链接器ld将printf函数对应的已编译好的printf.o文件链接到hello.o供其调用，即得到最终的二进制的可执行目标文件hello，其可加载到内存中供系统执行。</p>
-<h2 id="了解编译系统是如何工作是大有益处的"><a href="#了解编译系统是如何工作是大有益处的" class="headerlink" title="了解编译系统是如何工作是大有益处的"></a>了解编译系统是如何工作是大有益处的</h2><ul>
+<h2 id="1-1-信息就是位-上下文"><a href="#1-1-信息就是位-上下文" class="headerlink" title="1.1 信息就是位+上下文"></a>1.1 信息就是位+上下文</h2><p>以一个简单的hello.c程序为例，里面的每个字符都以ASCII码的形式存储，每个字符占据1 byte=8 bits</p>
+<h2 id="1-2-程序被其他程序翻译成不同的方式"><a href="#1-2-程序被其他程序翻译成不同的方式" class="headerlink" title="1.2 程序被其他程序翻译成不同的方式"></a>1.2 程序被其他程序翻译成不同的方式</h2><p>一个程序的生命周期往往以高级语言写成的程序开始，以一个二进制的机器可执行文件结束。以hello.c为例，首先由预处理器cpp识别第一行，将系统头文件stdio.h中的内容直接插入程序得到hello.i文件；再通过编译器ccl将hello.i转为由汇编语言表示的hello.s（由于汇编语言是通用的，所以同一机器上可以运行多种高级语言）；接下来通过汇编器as将hello.s转为二进制的可重定位目标程序hello.o（此处可将重定位理解为在地址空间中可定位程序中机器指令所在的位置）；最后还需通过链接器ld将printf函数对应的已编译好的printf.o文件链接到hello.o供其调用，即得到最终的二进制的可执行目标文件hello，其可加载到内存中供系统执行。</p>
+<h2 id="1-3-了解编译系统是如何工作是大有益处的"><a href="#1-3-了解编译系统是如何工作是大有益处的" class="headerlink" title="1.3 了解编译系统是如何工作是大有益处的"></a>1.3 了解编译系统是如何工作是大有益处的</h2><ul>
 <li>优化程序性能：我们可以通过比较相近的实现相同功能的语句间的性能差异</li>
 <li>理解链接时发生的错误：链接器经常会报告无法解析一个引用，引用可能是函数或者变量，对这些函数或者变量我们应该采取怎样的存储模式和顺序。</li>
 <li>理解缓冲区溢出错误：安全区漏洞经常由缓冲区溢出错误引起，编译系统的学习可以帮助我们理解堆栈原理和缓冲区溢出错误</li>
 </ul>
-<h2 id="处理器读取并解释存储在内存中的指令"><a href="#处理器读取并解释存储在内存中的指令" class="headerlink" title="处理器读取并解释存储在内存中的指令"></a>处理器读取并解释存储在内存中的指令</h2><p>shelll为一个命令解释器，会输出一个提示符等待输入，往往使用回车表示输入完成，然后shell会判断输入的第一个单词是否为内置的shell命令，如果不是他会假定其为一个可执行文件的名字，并从内存中加载并执行。</p>
+<h2 id="1-4-处理器读取并解释存储在内存中的指令"><a href="#1-4-处理器读取并解释存储在内存中的指令" class="headerlink" title="1.4 处理器读取并解释存储在内存中的指令"></a>1.4 处理器读取并解释存储在内存中的指令</h2><p>shelll为一个命令解释器，会输出一个提示符等待输入，往往使用回车表示输入完成，然后shell会判断输入的第一个单词是否为内置的shell命令，如果不是他会假定其为一个可执行文件的名字，并从内存中加载并执行。</p>
 <p>系统的硬件组成</p>
 <ul>
 <li>总线：用以传递信息的电子通路，通常以字节块传递信息，字节块可简称为字，一般为4或8个字节，分别对应32位和64位。<strong>待解决的问题为IO/系统/内存总线的区别和联系</strong></li>
@@ -123,9 +123,9 @@
 <p>运行hello程序</p>
 <p>在shell窗口敲下hello过程中，hello通过IO总线和系统总线被一一读入寄存器，继而存储到主存中；当敲下回车键时，意味着输入结束，主存通过直接存储器存取技术而不用通过处理器直接从磁盘中加载hello程序和数据；加载完成后，处理器依次执行程序中的机器指令，并将输出结果输出到显示器上。</p>
 <p>了解整个流程后，需要追问一个问题，shell究竟是什么。前面说到它是一个命令行解释器，属于软件，这里似乎要用到计算机的多层结构，<strong>mark一下留待解决</strong>（后面操作系统管理硬件的部分做了简单介绍）。</p>
-<h2 id="高速缓存至关重要"><a href="#高速缓存至关重要" class="headerlink" title="高速缓存至关重要"></a>高速缓存至关重要</h2><p>在处理器和主存之间插入更小的存储设备——高速缓存已经成为主流，并且高速缓存目前还采用了L1/L2/L3分级，以本人电脑为例，L1对应64KB，L2对应512KB，L3对应4MB，他们是通过静态随机访问存储器SRAM<strong>mark</strong>的硬件技术实现，和主存不同。（目前看来，提高处理器寄存器速度比提高主存速度要容易得多）</p>
-<h2 id="存储设备形成层次结构"><a href="#存储设备形成层次结构" class="headerlink" title="存储设备形成层次结构"></a>存储设备形成层次结构</h2><p>目前存储器容量由小到大、速度由大到小依次为：寄存器、L1高速缓存、L2高速缓存、L3高速缓存、主存、本地二级存储（本地磁盘）、远程二级存储（分布式文件系统、Web服务器），都可将上一级看作下一级的高速缓存，数量级依次为几百B、几十KB、几百KB、几MB、几GB、几百GB／几TB、几百／几千TB。</p>
-<h2 id="操作系统管理硬件"><a href="#操作系统管理硬件" class="headerlink" title="操作系统管理硬件"></a>操作系统管理硬件</h2><p>操作系统可看作应用程序和硬件之间插入的软件，操作系统和应用程序共同构成了软件部分，处理器/IO设备/主存则共同构成了硬件部分。</p>
+<h2 id="1-5-高速缓存至关重要"><a href="#1-5-高速缓存至关重要" class="headerlink" title="1.5 高速缓存至关重要"></a>1.5 高速缓存至关重要</h2><p>在处理器和主存之间插入更小的存储设备——高速缓存已经成为主流，并且高速缓存目前还采用了L1/L2/L3分级，以本人电脑为例，L1对应64KB，L2对应512KB，L3对应4MB，他们是通过静态随机访问存储器SRAM<strong>mark</strong>的硬件技术实现，和主存不同。（目前看来，提高处理器寄存器速度比提高主存速度要容易得多）</p>
+<h2 id="1-6-存储设备形成层次结构"><a href="#1-6-存储设备形成层次结构" class="headerlink" title="1.6 存储设备形成层次结构"></a>1.6 存储设备形成层次结构</h2><p>目前存储器容量由小到大、速度由大到小依次为：寄存器、L1高速缓存、L2高速缓存、L3高速缓存、主存、本地二级存储（本地磁盘）、远程二级存储（分布式文件系统、Web服务器），都可将上一级看作下一级的高速缓存，数量级依次为几百B、几十KB、几百KB、几MB、几GB、几百GB／几TB、几百／几千TB。</p>
+<h2 id="1-7-操作系统管理硬件"><a href="#1-7-操作系统管理硬件" class="headerlink" title="1.7 操作系统管理硬件"></a>1.7 操作系统管理硬件</h2><p>操作系统可看作应用程序和硬件之间插入的软件，操作系统和应用程序共同构成了软件部分，处理器/IO设备/主存则共同构成了硬件部分。</p>
 <p>操作系统需要实现两个基本功能<strong>mark</strong>：</p>
 <ul>
 <li>防止硬件被失控的应用程序滥用</li>
@@ -144,9 +144,9 @@
 </li>
 </ul>
 <p><em>该部分只简单的介绍了操作系统中涉及的概念，并未涉及具体调控机制，待后续详述</em></p>
-<h2 id="系统之间利用网络通信"><a href="#系统之间利用网络通信" class="headerlink" title="系统之间利用网络通信"></a>系统之间利用网络通信</h2><p>此处将网络认为是一个IO设备，细想是合理的。网络即意味着交流，单次的交流即意味着一方输入、一方输出。</p>
+<h2 id="1-8-系统之间利用网络通信"><a href="#1-8-系统之间利用网络通信" class="headerlink" title="1.8 系统之间利用网络通信"></a>1.8 系统之间利用网络通信</h2><p>此处将网络认为是一个IO设备，细想是合理的。网络即意味着交流，单次的交流即意味着一方输入、一方输出。</p>
 <p>以telnet本地客户端与远程服务端间的网络为例，当使用客户端在登录远程服务端后，远程服务端等待本地客户端的输入，输入hello后，客户端将hello字符串发送至服务端，服务端shell执行hello程序并得到输出结果，然后服务端将输出结果发送至客户端，并在客户端的显示器上打印出来。</p>
-<h2 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h2><h3 id="Amdahl定律"><a href="#Amdahl定律" class="headerlink" title="Amdahl定律"></a>Amdahl定律</h3><p>简单但具有洞察力的定律：</p>
+<h2 id="1-9-重要概念"><a href="#1-9-重要概念" class="headerlink" title="1.9 重要概念"></a>1.9 重要概念</h2><h3 id="Amdahl定律"><a href="#Amdahl定律" class="headerlink" title="Amdahl定律"></a>Amdahl定律</h3><p>简单但具有洞察力的定律：</p>
 <script type="math/tex; mode=display">
 \frac{T_old}{T_new}=\frac{1}{1-\alpha+\frac{\alpha}{k}}</script><p>其中$\alpha$为某部分所花费的时间占比，$k$为该部分效率提升的的比例。当$\alpha=0.6$、$k=3$时，比值为$\frac{5}{3}$，和$k$相差较多，可见只有当占比足够大的一部分速度提升时，才能显著提升整个系统的速度。当$k$趋向于$+\infty$时，比值为$\frac{1}{1-\alpha}$，这意味着$\alpha$较小时，性能的提升极其有限。</p>
 <h3 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h3><p>并发是指一个系统可以同时进行多种活动，而并行则是通过并发使一个系统运行得更快。</p>
@@ -247,6 +247,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/">chapter7链接</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter6存储器层次结构</a>
           </li>
         
@@ -260,10 +264,6 @@
         
           <li>
             <a href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/">chapter3程序的机器级表示</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/">间歇性踌躇满志与持续性混吃等死</a>
           </li>
         
       </ul>
