@@ -5,19 +5,14 @@
   
 
   
-  <title>chapter4处理器体系结构 | Tom89757&#39;s blog</title>
+  <title>归档: 2020/7 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个处理器支持的指令和指令的字节级编码称为它的指令集架构（ISA）。理解处理器的ISA指令可以让我们更好的理解计算机如何工作，ISA模型看上去是指令按顺序一条一条执行，实际上为提高性能，采用了同一时刻执行指令的不同部分的策略，并且使用巧妙的机制使得它与顺序执行等价。书中使用Y86-64指令集、HCL（Hardware Control Language，硬件控制语言）以及对应的编译器和模拟器实现一个">
-<meta property="og:type" content="article">
-<meta property="og:title" content="chapter4处理器体系结构">
-<meta property="og:url" content="http://yoursite.com/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Tom89757&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
-<meta property="og:description" content="一个处理器支持的指令和指令的字节级编码称为它的指令集架构（ISA）。理解处理器的ISA指令可以让我们更好的理解计算机如何工作，ISA模型看上去是指令按顺序一条一条执行，实际上为提高性能，采用了同一时刻执行指令的不同部分的策略，并且使用巧妙的机制使得它与顺序执行等价。书中使用Y86-64指令集、HCL（Hardware Control Language，硬件控制语言）以及对应的编译器和模拟器实现一个">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-27T17:30:52.000Z">
-<meta property="article:modified_time" content="2020-06-28T08:47:45.010Z">
 <meta property="article:author" content="Tom89757">
-<meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
@@ -71,80 +66,39 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-chapter4处理器体系结构" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="article-date">
-  <time datetime="2020-06-27T17:30:52.000Z" itemprop="datePublished">2020-06-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      chapter4处理器体系结构
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="archive-article-date">
+  <time datetime="2020-07-01T10:17:22.000Z" itemprop="datePublished">7月 1</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter6存储器层次结构</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Y86-64指令集体系结构"><span class="toc-text">Y86-64指令集体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程序员可见的状态"><span class="toc-text">程序员可见的状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Y86-64指令"><span class="toc-text">Y86-64指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令编码"><span class="toc-text">指令编码</span></a></li></ol></li></ol>
-</div>
-
-
-        <p>一个处理器支持的指令和指令的字节级编码称为它的指令集架构（ISA）。理解处理器的ISA指令可以让我们更好的理解计算机如何工作，ISA模型看上去是指令按顺序一条一条执行，实际上为提高性能，采用了同一时刻执行指令的不同部分的策略，并且使用巧妙的机制使得它与顺序执行等价。书中使用Y86-64指令集、HCL（Hardware Control Language，硬件控制语言）以及对应的编译器和模拟器实现一个较为完整的处理器系统的构建。</p>
-<a id="more"></a>
-<h2 id="Y86-64指令集体系结构"><a href="#Y86-64指令集体系结构" class="headerlink" title="Y86-64指令集体系结构"></a>Y86-64指令集体系结构</h2><p>定义一种新的指令集体系结构需要定义各种状态单元、指令集和它们的编码、一组编程规范和异常时间处理。</p>
-<h3 id="程序员可见的状态"><a href="#程序员可见的状态" class="headerlink" title="程序员可见的状态"></a>程序员可见的状态</h3><p>如x86-64，Y86-64程序中的每条指令都会读取或修改处理器状态的某些部分，这被称之为程序员可见状态，其本质是可以通过汇编指令控制处理器的处理过程。对Y86-64而言，它的架构更像是x86-64的一个子集。</p>
-<h3 id="Y86-64指令"><a href="#Y86-64指令" class="headerlink" title="Y86-64指令"></a>Y86-64指令</h3><p>其指令集架构与x86-64类似，但是功能更简化，指令的指代更精确，如movq被分为了四个指令，指令本身即指示了源操作数和目的操作数的数据类型。</p>
-<h3 id="指令编码"><a href="#指令编码" class="headerlink" title="指令编码"></a>指令编码</h3><p>每条指令需要1~10个字节不等，取决于指令包含哪些字段。第一个字节反映了指令的类型，该字节又分为两部分，高4位的代码部分和低4位的功能部分，一组相关的指令可能共用同样的高4位代码，这时候就需要低4位将其区分开来。</p>
-<p>15个程序寄存器每个都有一个范围在0到0xE之间的寄存器标识符，它们存储在cpu的一个寄存器文件中，可以将这个文件看作以寄存器ID寻址的随机访问存储器。</p>
-<p>每条指令的字节编码必须有唯一的解释，这样才能确保处理器执行目标代码的无二义性。但是在执行目标代码序列时我们需要知道其起始位置，这是开发反汇编程序的一个挑战。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" data-id="ckc24lvbt00036swdd9fu2r8w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          chapter5优化程序性能
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">chapter3程序的机器级表示</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 
 </section>

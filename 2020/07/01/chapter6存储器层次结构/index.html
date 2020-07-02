@@ -5,15 +5,25 @@
   
 
   
-  <title>Tom89757&#39;s blog</title>
+  <title>chapter6存储器层次结构 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tom89757&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="目前来看，我们对计算机的认识依赖于一个简单的模型，CPU执行指令，存储器血死为CPU存放指令和数据，并且将存储器看作一个线性的字节数组，CPU可以在常数时间内访问每个存储器为止。 实际上，存储器系统时一个具有不同容量、成本和访问时间的存储设备的层次结构，而CPU寄存器保存着最常用的数据。正如第一章所说，小的、速度更快、高一级的存储器可以看作大的、速度较慢、低一级的存储器的缓冲区域（此处可以对存储器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter6存储器层次结构">
+<meta property="og:url" content="http://yoursite.com/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="目前来看，我们对计算机的认识依赖于一个简单的模型，CPU执行指令，存储器血死为CPU存放指令和数据，并且将存储器看作一个线性的字节数组，CPU可以在常数时间内访问每个存储器为止。 实际上，存储器系统时一个具有不同容量、成本和访问时间的存储设备的层次结构，而CPU寄存器保存着最常用的数据。正如第一章所说，小的、速度更快、高一级的存储器可以看作大的、速度较慢、低一级的存储器的缓冲区域（此处可以对存储器">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%90%84%E5%B1%82%E6%AC%A1%E7%BC%93%E5%AD%98.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%89%B9%E6%80%A7.png">
+<meta property="article:published_time" content="2020-07-01T10:17:22.000Z">
+<meta property="article:modified_time" content="2020-07-02T11:03:37.703Z">
 <meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -66,9 +76,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-chapter6存储器层次结构" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-chapter6存储器层次结构" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="article-date">
   <time datetime="2020-07-01T10:17:22.000Z" itemprop="datePublished">2020-07-01</time>
@@ -85,8 +93,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter6存储器层次结构</a>
+    <h1 class="article-title" itemprop="name">
+      chapter6存储器层次结构
     </h1>
   
 
@@ -211,468 +219,20 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-chapter5优化程序性能" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/" class="article-date">
-  <time datetime="2020-06-28T08:43:57.000Z" itemprop="datePublished">2020-06-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/">chapter5优化程序性能</a>
-    </h1>
+    <a href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chapter5优化程序性能</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>程序的第一目标是在所有可能的情况下正确工作，另一方面就需要尽可能提高程序的运行速度。编写高效程序需要做到以下几点：</p>
-<ul>
-<li>选择一组适当的算法和数据结构。</li>
-<li>理解优化编译器的能力和局限性。对C语言代码的优化通常很难进行，对其性能的提升往往体现在C程序的编写层面，这意味着对C语言程序员更高的要求。</li>
-<li>将大任务量的任务进行分解，实现在多核多处理器上的并行运算。</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/" data-id="ckc24lv4g00006swdg6sa9pat" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
-
-
-  
-    <article id="post-chapter4处理器体系结构" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="article-date">
-  <time datetime="2020-06-27T17:30:52.000Z" itemprop="datePublished">2020-06-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">chapter4处理器体系结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个处理器支持的指令和指令的字节级编码称为它的指令集架构（ISA）。理解处理器的ISA指令可以让我们更好的理解计算机如何工作，ISA模型看上去是指令按顺序一条一条执行，实际上为提高性能，采用了同一时刻执行指令的不同部分的策略，并且使用巧妙的机制使得它与顺序执行等价。书中使用Y86-64指令集、HCL（Hardware Control Language，硬件控制语言）以及对应的编译器和模拟器实现一个较为完整的处理器系统的构建。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" data-id="ckc24lvbt00036swdd9fu2r8w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter3程序的机器级表示" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/" class="article-date">
-  <time datetime="2020-06-21T18:37:08.000Z" itemprop="datePublished">2020-06-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/">chapter3程序的机器级表示</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>计算机根据字节序列储存的信息执行处理数据、管理内存、读写数据和网络通信等操作。根据第一章的内容，我们知道由C语言程序转换为可执行的二进制程序需要经过预处理、编译、汇编、链接等过程。与早期编程使用的汇编语言相比，高级语言提供了更高层次的抽象，从而使得程序的开发过程对人来说更易理解，开发效率更高，并且通过编译器提供的类型检查可以市对数据的操作具有一致性；并且，高级语言编写的程序具有更好的可迁移性，可以在多种机器上运行，这与只能在特定机器上运行的汇编语言程序不同。</p>
-<p>但学习汇编语言对当今的程序员来说依然有用，因为汇编语言更接近计算机的底层，也就让我们更接近计算机运行程序的本质，从而高屋建瓴的观察到代码中隐藏的不合理或者低效率的部分。因此，阅读和理解汇编语言对一个优秀的程序员来说依然必要。</p>
-<p>本章的讲述基于x86-64，他是现在最常见处理器的机器语言。本章将先建立C语言、汇编语言和机器语言的关系，然后依次介绍细节，从数据的表示、处理和控制的实现，到过程的实现如运行栈的维护和局部变量的存储，再到数据结构的实现，最后是执行过程中可能出现的问题如内存访问越界和缓冲区溢出。</p>
-<p>值得一提的是，处理器大都具有向后兼容的特性，故在处理器架构中有大量复杂和隐秘的特性，这些属于处理器发展过程中积累的历史性问题，在本章会尽量避免，力图展示现代处理器的特性。Ggg</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/" data-id="ckbqdbgi00003p4wdeeu400kg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-间歇性踌躇满志与持续性混吃等死" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/" class="article-date">
-  <time datetime="2020-05-31T08:46:07.000Z" itemprop="datePublished">2020-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/">间歇性踌躇满志与持续性混吃等死</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  
-</div>
-
-
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/" data-id="ckb0z3tod000je4wd7pbt7mdo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机科学中的微言小义" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" class="article-date">
-  <time datetime="2020-05-29T14:22:08.000Z" itemprop="datePublished">2020-05-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">计算机科学中的微言小义</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  
-</div>
-
-
-        <ol>
-<li>C语言编程中可以通过符号变量使代码中出现的幻数更加易读，也便于对程序的修改</li>
-<li>在进行某种程序语言的学习时，不必苛求考虑到代码中出现的所有特殊情况，这显然是一种舍本逐末，因为所有的特殊情况都可以通过增加代码量来解决，却并不能增加你对语言本身的理解。</li>
-<li>关于“用战略上的勤奋来掩饰战术上的懒惰”在学习计算机中的含义。通过死板的照着书上的代码抄一遍或者通过花费较长时间对书上的所有实例和练习题进行自己实现都不是好的学习方式，前者容易理解；后者的缺陷在于将学习的周期拉的很长，极容易舍本逐末，太在意细节而忽视了迅速搭建框架，而细节上的不足可以通过回过头实现或者直接动手做项目来弥补。</li>
-<li>由于自身阅读代码能力有限，可能会导致无法理解一段代码的完整含义，此时不要害怕，先看看后面对代码的优化过程，你可能会体会到其含义。（此条感悟针对于类似CSAPP的讲解原理的书）</li>
-<li>在学习计算机科学的过程中，我们可能因为对细节和原理的过分追求而忽视了计算机科学的核心要义——更高效的完整任务，将人从繁重的工作中解脱出来。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" data-id="ckb0z3tpl001pe4wd4tt7bnoj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-生活中的微言小义" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" class="article-date">
-  <time datetime="2020-05-29T05:58:10.000Z" itemprop="datePublished">2020-05-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">生活中的微言小义</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  
-</div>
-
-
-        <ol>
-<li>当你发表自以为某种行为是正确的观点时，警惕自己是否通过这种对这种行为的合理化放弃了更深的挖掘。</li>
-<li>我以前一直以为自己不会把一本书读两遍，那太无趣了，直到我读了K&amp;R的《C语言程序设计》，才发现一本书可以做到如此精炼，这样的书读一遍是万万不够的；于是我担忧自己之前自己囫囵吞枣错过了很多好书，又“惊喜”的发现自己实在没读过多少书，唯一值得重读的或许只有《百年孤独》吧。</li>
-<li></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" data-id="ckb0z3to5000ae4wdbzwngx4v" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter2信息的表示和处理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/25/chapter2%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/" class="article-date">
-  <time datetime="2020-05-25T14:21:31.000Z" itemprop="datePublished">2020-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/25/chapter2%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/">chapter2信息的表示和处理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本章将讲述无符号数、补码表示的有符号数、整数和浮点数，探讨这些数据和计算机对数据执行操作时的属性。描述过程中会用到数学语言。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/05/25/chapter2%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/25/chapter2%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/" data-id="ckbrf31qg00005kwdgrfy8e8c" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-关于生活的感悟" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/25/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%9F%E6%82%9F/" class="article-date">
-  <time datetime="2020-05-25T14:00:29.000Z" itemprop="datePublished">2020-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/25/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%9F%E6%82%9F/">关于生活的感悟</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        这是一篇加密文章，涉及个人隐私，仅供自己查看。
-        
-          <p class="article-more-link">
-            <a href="/2020/05/25/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%9F%E6%82%9F/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/25/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%9F%E6%82%9F/" data-id="ckb0z3toa000ee4wd2w6s0cv0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-关于计算机科学的感悟" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/" class="article-date">
-  <time datetime="2020-05-25T14:00:11.000Z" itemprop="datePublished">2020-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a>►<a class="article-category-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/">关于计算机科学的感悟</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络与交流"><span class="toc-text">网络与交流</span></a></li></ol>
-</div>
-
-
-        <h3 id="网络与交流"><a href="#网络与交流" class="headerlink" title="网络与交流"></a>网络与交流</h3><p>网络可以看作一种特殊的I/O设备，输入输出便意味着交流，网络组成的最基本单元即是一对一的交流，显然由请求方、回应方以及二者间的交流协议构成。这种简单的模型是一种优雅的抽象。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/" data-id="ckb0z3to20006e4wdg4t00we5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
-  </nav>
 
 </section>
         
