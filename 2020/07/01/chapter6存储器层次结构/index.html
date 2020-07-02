@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
 <meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%89%B9%E6%80%A7.png">
 <meta property="article:published_time" content="2020-07-01T10:17:22.000Z">
-<meta property="article:modified_time" content="2020-07-02T11:03:37.703Z">
+<meta property="article:modified_time" content="2020-07-02T11:05:53.712Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
@@ -112,6 +112,7 @@
 <p>实际上，存储器系统时一个具有不同容量、成本和访问时间的存储设备的层次结构，而CPU寄存器保存着最常用的数据。正如第一章所说，小的、速度更快、高一级的存储器可以看作大的、速度较慢、低一级的存储器的缓冲区域（此处可以对存储器速度作实际的说明，指令执行过程中，对寄存器访问周期数为0，高速缓存为4~75，主存上百，磁盘千万数量级）。</p>
 <p>要使得程序运行具有更快的速度，则需要将其数据项存储在层次结构中较高的地方，以使CPU更快的访问，这体现了计算机程序的局部性（locality）属性。</p>
 <p>本章将讲述基本的存储技术——SRAM、DRAM、ROM以及旋转的和固态的硬盘，重点是高速缓存存储器，它们是链接CPU和主存的桥梁。</p>
+<a id="more"></a>
 <h2 id="存储技术"><a href="#存储技术" class="headerlink" title="存储技术"></a>存储技术</h2><p>存储器容量已从早期的数千字节扩展到几TB，并以每年两倍的速度增长。</p>
 <h3 id="随机访问存储器（RAM）"><a href="#随机访问存储器（RAM）" class="headerlink" title="随机访问存储器（RAM）"></a>随机访问存储器（RAM）</h3><p>分为SRAM和DRAM，SRAM作为高速缓存存储器；DRAM作为主存以及图形系统的帧缓冲区。SRAM和DRAM的数量级分别为几MB和几百上千MB。</p>
 <ul>

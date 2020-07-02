@@ -94,112 +94,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#存储技术"><span class="toc-text">存储技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#随机访问存储器（RAM）"><span class="toc-text">随机访问存储器（RAM）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘存储"><span class="toc-text">磁盘存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#固态硬盘"><span class="toc-text">固态硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储技术趋势"><span class="toc-text">存储技术趋势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部性"><span class="toc-text">局部性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对程序数据引用的局部性"><span class="toc-text">对程序数据引用的局部性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取指令的局部性"><span class="toc-text">取指令的局部性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#局部性小结"><span class="toc-text">局部性小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储器层次结构"><span class="toc-text">存储器层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器层次结构中的缓存"><span class="toc-text">存储器层次结构中的缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器层次结构概念小结"><span class="toc-text">存储器层次结构概念小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高速缓存存储器"><span class="toc-text">高速缓存存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用的高速缓存存储器组织结构"><span class="toc-text">通用的高速缓存存储器组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直接映射高速缓存"><span class="toc-text">直接映射高速缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组相联高速缓存（set-associative-cache）"><span class="toc-text">组相联高速缓存（set associative cache）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全相联高速缓存（fully-associative-cache）"><span class="toc-text">全相联高速缓存（fully associative cache）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有关写的问题"><span class="toc-text">有关写的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个真实的高速缓存层次据结构的解剖"><span class="toc-text">一个真实的高速缓存层次据结构的解剖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高速缓存参数的性能影响"><span class="toc-text">高速缓存参数的性能影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写高速缓存友好的代码"><span class="toc-text">编写高速缓存友好的代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综合：高速缓存对程序性能的影响"><span class="toc-text">综合：高速缓存对程序性能的影响</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器山（mark，具体描述细节暂略）"><span class="toc-text">存储器山（mark，具体描述细节暂略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新排列循环以提高空间局部性（mark，具体描述细节暂略）"><span class="toc-text">重新排列循环以提高空间局部性（mark，具体描述细节暂略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在程序中利用局部性"><span class="toc-text">在程序中利用局部性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
-</div>
-
-
         <p>目前来看，我们对计算机的认识依赖于一个简单的模型，CPU执行指令，存储器血死为CPU存放指令和数据，并且将存储器看作一个线性的字节数组，CPU可以在常数时间内访问每个存储器为止。</p>
 <p>实际上，存储器系统时一个具有不同容量、成本和访问时间的存储设备的层次结构，而CPU寄存器保存着最常用的数据。正如第一章所说，小的、速度更快、高一级的存储器可以看作大的、速度较慢、低一级的存储器的缓冲区域（此处可以对存储器速度作实际的说明，指令执行过程中，对寄存器访问周期数为0，高速缓存为4~75，主存上百，磁盘千万数量级）。</p>
 <p>要使得程序运行具有更快的速度，则需要将其数据项存储在层次结构中较高的地方，以使CPU更快的访问，这体现了计算机程序的局部性（locality）属性。</p>
 <p>本章将讲述基本的存储技术——SRAM、DRAM、ROM以及旋转的和固态的硬盘，重点是高速缓存存储器，它们是链接CPU和主存的桥梁。</p>
-<h2 id="存储技术"><a href="#存储技术" class="headerlink" title="存储技术"></a>存储技术</h2><p>存储器容量已从早期的数千字节扩展到几TB，并以每年两倍的速度增长。</p>
-<h3 id="随机访问存储器（RAM）"><a href="#随机访问存储器（RAM）" class="headerlink" title="随机访问存储器（RAM）"></a>随机访问存储器（RAM）</h3><p>分为SRAM和DRAM，SRAM作为高速缓存存储器；DRAM作为主存以及图形系统的帧缓冲区。SRAM和DRAM的数量级分别为几MB和几百上千MB。</p>
-<ul>
-<li>SRAM：每个位即bit存储在一个双稳态的存储器单元里，它的特性在于可以无限期的保持在两个不同的电压配置（即状态）之一。对干扰并不敏感，干扰消除后恢复稳定。</li>
-<li>DRAM：将每个bit存储为对一个电容的充电，电容大小为$30 * 10^{-15}$法拉。对干扰敏感，当电容电压被扰乱，就永不恢复，暴露在光线下会导致电容电压改变。很多因素会导致其漏电，此时DRAM单元会在10~100ms内失去电荷，但运行的时钟周期单位为ns，故其可以胜任存储功能，但需要周期性的刷新。因为其抗干扰能力有限，有些系统会使用纠错码。</li>
-<li>传统的DRAM：每个组成基本单元可分为d个超单元，每个超单元分为$\omega$位，$d * \omega$的DRAM存储了$d\omega$位信息，d个超单元组织成r x c的的长方形阵列，故有d = rc。信息通过引脚流入和流出芯片，常见的数据引脚双向传递信息，地址引脚提供超单元地址信息。此外，二维阵列与一维数组相比减少了引脚数目，但是分步访问增加了访问时间。</li>
-<li>内存模块：DRAM封装在内存模块中，插在主板的扩展槽上，以64位传输数据。虽然单个超单元只存储主存的一个字节，但通过使用多个芯片，将分装芯片的内存模块连接到内存控制器，能够聚合成主存。</li>
-<li>增强的DRAM：为跟上处理器速度，新的DRAM也会不断推出，它们都基于传统的DRAM单元进行优化。常见种类有：快页模式DRAM（FPM　DRAM）；扩展数据输出DRAM（EDO DRAM）；同步DRAM（SDRAM）；双倍数据速率同步DRAM（DDR SDRAM）；视频RAM（VRAM）。目前，DDR3 SDRAM已被逐渐淘汰，DDR4已经基本普及。</li>
-<li>非易失性存储器：断电后，SRAM和DRAM会丢失它们的信息，因此它们是易失性的。目前，有多种非易失性存储器，如：ROM（包括PROM、EPROM、EEPROM）、基于EEPROM的闪存（如基于闪存的固态硬盘SSD）（存储在ROM设备中的程序被称为固件，它们在计算机系统通电后运行，如PC的BIOS例程）</li>
-<li>访问主存：数据流通过称为总线的共享电子线路在处理器和DRAM主存之间来回，数据传送通过总线事务（又分为读事务和写事务）完成。在总线结构中，I/O桥通过一对总线（系统总线和内存总线）将CPU和主存连接起来。</li>
-</ul>
-<h3 id="磁盘存储"><a href="#磁盘存储" class="headerlink" title="磁盘存储"></a>磁盘存储</h3><p>磁盘大小可达到TB数量级，但是读取速率比DRAM慢了10万倍，比SRAM慢了100万倍。</p>
-<ul>
-<li>磁盘构造：磁盘由一个或多个盘片组成，盘片围绕主轴旋转。</li>
-<li>磁盘容量：由记录密度、磁道密度、面密度等技术因素决定。</li>
-<li>磁盘操作：磁盘用读/写头来读写存储在磁性表面的位，读写头连接到传动臂一端，每个盘片都有与之对应的独立的读写头。读写头对扇区的访问时间由寻道时间、旋转时间和传送时间三部分组成。</li>
-<li>逻辑磁盘块：为对操作系统隐藏磁盘构造的复杂性，磁盘被抽象成一个包含B个扇区大小的逻辑块的序列，磁盘封装中包含一个硬件/固件设备，称之为磁盘控制器，用以维护逻辑块号和实际扇区的映射关系。</li>
-<li>连接I/O设备：鼠标、键盘等I/O设备通过I/O总线（如Intel的外围设备互连，PCI）与CPU和主存相连，且I/O总线与CPU架构无关，PC和Mac都可以使用PCI总线。I/O总线比系统总线和内存总线慢，但可以容纳种类繁多的第三方I/O设备，这些设备又可以分为三类：1）使用中转机构USB控制器连接到USB总线的设备，如键盘、鼠标、调制解调器、打印机、固态硬盘等；2）图形卡（或适配器），负责代表CPU在显示器上画像素；3）主机总线适配器将磁盘连接到I/O总线。</li>
-<li>访问磁盘：图6-12总结了当CPU从磁盘读取数据时的步骤：第一步，CPU将命令、逻辑块号和目的内存地址写到与磁盘相关联的内存映射地址，发起一个磁盘读；第二步，磁盘控制器将逻辑块号翻译成扇区地址，并通过传送将信息传送给主存；第三步，传送完成时，磁盘控制器用中断的方式通知CPU。</li>
-</ul>
-<h3 id="固态硬盘"><a href="#固态硬盘" class="headerlink" title="固态硬盘"></a>固态硬盘</h3><p>SSD（Solid State Disk）是一种基于闪存的存储技术。一个闪存由B个块（每个块32到128页，16KB到512KB）的序列组成，每个块又由P（512B到4KB）页组成。只有当一页所属的块整个被擦除后（块的所有位置为1），才能写这一页。由于写操作需要擦除块或者将带有数据的页复制到新块，所以比读操作慢。</p>
-<h3 id="存储技术趋势"><a href="#存储技术趋势" class="headerlink" title="存储技术趋势"></a>存储技术趋势</h3><p>不同的存储技术由不同的价格和性能折中。从几十年的发展趋势看，对内存和硬盘来说，增加存储密度（从而降低成本）比降低访问时间容易得多。此外，CPU的速度增加得更多，因此现在DRAM和磁盘的性能滞后于CPU的性能，现代计算机通过频繁使用基于SRAM的高速缓存，试图弥补处理器和内存之间的差距。</p>
-<h2 id="局部性"><a href="#局部性" class="headerlink" title="局部性"></a>局部性</h2><p>局部性是一个持久的概念，对硬件和软件的设计和性能影响深远，分为时间局部性和空间局部性。</p>
-<h3 id="对程序数据引用的局部性"><a href="#对程序数据引用的局部性" class="headerlink" title="对程序数据引用的局部性"></a>对程序数据引用的局部性</h3><p>我们对数组中元素的顺序访问为步长为一的引用模式，也被称为顺序引用模式，推广到每个k个元素进行访问即为步长为k的引用模式，随着k增大，空间局部性下降。故对二维数组来说，按行访问和按列访问，步长由1增加到N。</p>
-<h3 id="取指令的局部性"><a href="#取指令的局部性" class="headerlink" title="取指令的局部性"></a>取指令的局部性</h3><p>对for循环体来说，循环体内的指令按照连续内存顺序执行，故具有良好的空间局部性，循环体重复执行多次，故具有良好的时间局部性 。相较于数据，代码较为稳定。</p>
-<h3 id="局部性小结"><a href="#局部性小结" class="headerlink" title="局部性小结"></a>局部性小结</h3><p>目前只是从性质上对局部性做了说明，后续会通过高速缓存命中率和不命中率来量化局部性的概念。</p>
-<h2 id="存储器层次结构"><a href="#存储器层次结构" class="headerlink" title="存储器层次结构"></a>存储器层次结构</h2><p>前两节描述了存储技术和局部性的概念。硬件上访问速度的差异和软件上局部性的特性催生出了存储器层次结构这一对存储器的组织方式。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图1 存储器层次结构"></p>
-<h3 id="存储器层次结构中的缓存"><a href="#存储器层次结构中的缓存" class="headerlink" title="存储器层次结构中的缓存"></a>存储器层次结构中的缓存</h3><p>高速缓存（cache）是一个小而快速的存储设备，使用cache的过程称为缓存（caching）。位于k层的更快更小的存储设备作为位于k+1层的更慢更大的存储设备的缓存。k层和k+1层的存储设备都被划分成块，k层缓存保存k+1层块的子集副本，数据以块为传送单元在二者间传递，不同的相邻的存储设备间块大小不同。以下是关于缓存的几个概念：</p>
-<ul>
-<li>缓存命中：即k层中某个块存储了需要访问的k+1层的数据。</li>
-<li>缓存不命中：与上面相反，此时需要k层从k+1层中取出所需的块，如果k层已满，会导致一个块被覆盖。</li>
-<li>缓存不命中的种类：冷缓存导致的冷不命中；限制性的放置策略导致的冲突不命中；缓存不能容纳整个工作集导致的容量不命中。</li>
-<li>缓存管理：编译器管理寄存器文件；L1、L2、L3由内置在缓存中的硬件逻辑管理；DRAM由操作系统软件和CPU上的地址翻译硬件共同管理。</li>
-</ul>
-<h3 id="存储器层次结构概念小结"><a href="#存储器层次结构概念小结" class="headerlink" title="存储器层次结构概念小结"></a>存储器层次结构概念小结</h3><p>整个存储体系都建立在局部性原理之上，下图展示了存储设备中的各种属于和缩写：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%90%84%E5%B1%82%E6%AC%A1%E7%BC%93%E5%AD%98.png" alt="图2 各层次缓存"></p>
-<h2 id="高速缓存存储器"><a href="#高速缓存存储器" class="headerlink" title="高速缓存存储器"></a>高速缓存存储器</h2><p>由于CPU和主存间的性能差异，在它们之间插入了三级高速缓存L1、L2和L3，为简化模型，后续叙述设定CPU和主存之间只有L1。</p>
-<h3 id="通用的高速缓存存储器组织结构"><a href="#通用的高速缓存存储器组织结构" class="headerlink" title="通用的高速缓存存储器组织结构"></a>通用的高速缓存存储器组织结构</h3><p>高速缓存结构将m个地址位划分成t个标记位、s个组索引位和b个块偏移位，故其结构可以用（S, E, B, m）来描述。其中$2^m$表示内存地址（k+1层存储器）的最大数量，B x E x S表示高速缓存（k层）大小。</p>
-<h3 id="直接映射高速缓存"><a href="#直接映射高速缓存" class="headerlink" title="直接映射高速缓存"></a>直接映射高速缓存</h3><p>每个组只有一行即E=1的高速缓存称为直接映射高速缓存。高速缓存确定CPU的一个请求是否命中，然后抽取出被请求的字的过程，分为三步：组选择、行匹配和字抽取。</p>
-<ul>
-<li>直接映射高速缓存的组选择：从CPU请求的$\omega$位地址中抽取除s个组索引位，进而选择对应的组。</li>
-<li>直接映射高速缓存的行匹配：因为每个组只有一行，故只需确定该行设置了有效位并且高速缓存行中的标记和$\omega$中的地址标记相匹配。与组相联相比省去了行的搜索。</li>
-<li>直接映射高速缓存的字选择：块偏移位提供了所需要字的第一个字节的偏移。</li>
-<li>直接映射高速缓存中不命中时的行替换：从下一层去除被请求的块，存储到对应组对应行中。</li>
-<li>综合：运行中的直接映射高速缓存：标记位和索引位共同决定了地址对应的块，行E决定了每个组能容纳的块数E，每行容纳一个块。</li>
-<li>直接映射高速缓存中的冲突不命中：书中介绍了精彩的数组的例子来说明访问两个数组时反复覆盖对方导致的抖动。</li>
-</ul>
-<p>之所以使用中间位作为索引，是使得k+1层的中连续的块可以映射到k层高速缓存中不同的组中，从而使得高速缓存使用有较高的效率。</p>
-<h3 id="组相联高速缓存（set-associative-cache）"><a href="#组相联高速缓存（set-associative-cache）" class="headerlink" title="组相联高速缓存（set associative cache）"></a>组相联高速缓存（set associative cache）</h3><p>组相联放松了每个组只有一行的限制，缓解了冲突不命中的问题。此处讨论1&lt;E&lt;C/B的情况。</p>
-<ul>
-<li>组选择：同直接映射相同。</li>
-<li>行匹配和字选择：组中的任何一行都可以包含任何映射到这个组的内存块，故相较直接映射更为复杂，高速缓存需要搜索族中的每一行寻找一个有效的行，其标记与地址中的标记相匹配。</li>
-<li>不命中时的行替换：若组中含有空行，则将内存中的对应块存储在空行中；若无空行，则使用随机替换、LRF或LRU等策略。值得一提的是，越远离CPU，一次不命中的开销就越昂贵，就需要使用更好的替换策略，即使使用这种策略需要额外的时间和硬件。</li>
-</ul>
-<h3 id="全相联高速缓存（fully-associative-cache）"><a href="#全相联高速缓存（fully-associative-cache）" class="headerlink" title="全相联高速缓存（fully associative cache）"></a>全相联高速缓存（fully associative cache）</h3><p>即E=C/B，一个组包含所有的行。此时地址中不含组索引位，地址被划分成了一个标记和一个块迁移。</p>
-<ul>
-<li>组选择：只有一个组，故不需要选择，与组相联相比省去了组选择。</li>
-<li>行匹配和字选择：同组相联相同，但规模更大。</li>
-</ul>
-<p>由于构建又大又快的全相联高速缓存代价大，难度高，因此只适合做小的高速缓存，如虚拟内存系统中的翻译备用缓冲器（TLB）。</p>
-<h3 id="有关写的问题"><a href="#有关写的问题" class="headerlink" title="有关写的问题"></a>有关写的问题</h3><p>高速缓存关于读的操作非常简单，无非分命中和不命中两种情况。写的情况要复杂一些：</p>
-<ul>
-<li>更新在高速缓存中已经更新的字$\omega$在低一层中的副本：有两种策略，分别为直写和写回。</li>
-<li>处理写不命中：同样有两种策略，分别为写分配和非写分配。</li>
-</ul>
-<p>其中直写通常是非写分配的，写回通常是写分配的。目前建议采用使用写回写分配的模型，目前写回策略导致的高复杂性已经不是阻碍，且这种模型也同读操作一样使用了局部性原理。</p>
-<h3 id="一个真实的高速缓存层次据结构的解剖"><a href="#一个真实的高速缓存层次据结构的解剖" class="headerlink" title="一个真实的高速缓存层次据结构的解剖"></a>一个真实的高速缓存层次据结构的解剖</h3><p>高速缓存既保存数据，也保存指令，分别称作d-cache和i-cache，目前为止我们只讨论了d-cache，同时也有同时保存数据和指令的统一高速缓存（unified cache）。现代处理器通常包含了d-cache和i-cache，故处理器可以同时读指令字和数据字，这种将二者分开的策略减少了冲突不命中的概率，也可能引起容量不命中增加，但是随着高速缓存容量的扩大，这种选择是有益的。</p>
-<p>下面两个图反映了Core i7高速缓存的高速缓存层次结构和基本特性，让我们对硬件有一个直观的认识。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图3 高速缓存层次结构"></p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%89%B9%E6%80%A7.png" alt="图4 高速缓存特性"></p>
-<h3 id="高速缓存参数的性能影响"><a href="#高速缓存参数的性能影响" class="headerlink" title="高速缓存参数的性能影响"></a>高速缓存参数的性能影响</h3><p>有许多指标衡量高速缓存的性能：不命中率、命中率、命中时间、不命中处罚。</p>
-<p>下面做一些关于性能定性的考量：</p>
-<ul>
-<li>高速缓存大小的影响：较大的高速缓存会提高命中率，同时会增加命中时间和使其运行更快的难度。</li>
-<li>块大小的影响：较大的块可以更好的利用程序中的空间局部性。同时，对于给定大小的高速缓存，块越大，高速缓存行数越少，会不利于程序中的时间局部性，并且会招致更严重的不命中处罚。在Core i7中折中为64B。</li>
-<li>相联度的影响：较高的相联度降低了抖动出现的可能性，同时也增加了实现代价、命中时间和不命中处罚。对性能要求高的高速缓存，采用较低的相联度，L1和L2采用8路组相联，L3采用16路组相联。</li>
-<li>写策略的影响：从高速缓存往下层走，策略从直写过渡到写回。</li>
-</ul>
-<h2 id="编写高速缓存友好的代码"><a href="#编写高速缓存友好的代码" class="headerlink" title="编写高速缓存友好的代码"></a>编写高速缓存友好的代码</h2><p>对高速缓存友好，等价于更好的运用局部性原理。以下是一些基本方法：</p>
-<ul>
-<li>让最常见的情况运行的快。</li>
-<li>尽量减小每个循环内部的缓存不命中数量：分析得到，对局部变量的反复引用和步长为1的引用模式都是好的。</li>
-</ul>
-<h2 id="综合：高速缓存对程序性能的影响"><a href="#综合：高速缓存对程序性能的影响" class="headerlink" title="综合：高速缓存对程序性能的影响"></a>综合：高速缓存对程序性能的影响</h2><p>此节将前面学习的理论与实际程序联系起来，综合了对存储器层次结构的讨论。</p>
-<h3 id="存储器山（mark，具体描述细节暂略）"><a href="#存储器山（mark，具体描述细节暂略）" class="headerlink" title="存储器山（mark，具体描述细节暂略）"></a>存储器山（<strong>mark</strong>，具体描述细节暂略）</h3><p>一个程序在s秒的时间内读n个字节，其读吞吐量为n/s，通常以MB/s作为单位。</p>
-<p>书中展示了一个用以生成存储器山的程序，每个计算机都有表明它存储器系统能力特色的唯一的存储器山。</p>
-<h3 id="重新排列循环以提高空间局部性（mark，具体描述细节暂略）"><a href="#重新排列循环以提高空间局部性（mark，具体描述细节暂略）" class="headerlink" title="重新排列循环以提高空间局部性（mark，具体描述细节暂略）"></a>重新排列循环以提高空间局部性（<strong>mark</strong>，具体描述细节暂略）</h3><p>通过更改矩阵相乘的程序中嵌套循环中局部变量i，j，k的顺序，可以得到执行操作数均为$O(n^3)$的六个程序版本。</p>
-<h3 id="在程序中利用局部性"><a href="#在程序中利用局部性" class="headerlink" title="在程序中利用局部性"></a>在程序中利用局部性</h3><p>利用局部性的层次结构，程序访问存储为止的实际速率由称之为存储器山的函数描述。以下是用于编写更有效的程序的技术：</p>
-<ul>
-<li>将注意里集中在内循环上，大部分计算和内存访问都发生在这里</li>
-<li>按照数据对象存储在内存中的顺序，以步长1来读数据，从而使得程序的空间局部性最大</li>
-<li>一旦从存储器中读入了一个数据对象，就尽可能多的使用它，从而使程序达到更大的时间局部性</li>
-</ul>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本章讲述了基本存储技术（RAM、ROM和磁盘）以及存储原理；并讲述了利用局部性原理组织的存储器层次结构；接下来分析了运用局部性原理用以提高程序运行效率的方法。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
