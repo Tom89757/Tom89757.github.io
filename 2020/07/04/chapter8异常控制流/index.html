@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>chapter8异常控制流 | Tom89757&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="从处理器通电开始，到断电为止，程序计数器PC中的值不断地在指向不同指令的地址间转换，可以将这些地址的值按顺序组成一个序列，这种转换称为控制转移，这个序列称为处理器的控制流。 与内部程序无关的系统状态的变化需要控制流发生突变来进行回应，内部程序中的跳转、调用和返回指令同样回导致突变。这些突变被称之为异常控制流（Exceptional Control Flow, ECF），它可以发生在计算机系统的各个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter8异常控制流">
+<meta property="og:url" content="http://yoursite.com/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/index.html">
+<meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="从处理器通电开始，到断电为止，程序计数器PC中的值不断地在指向不同指令的地址间转换，可以将这些地址的值按顺序组成一个序列，这种转换称为控制转移，这个序列称为处理器的控制流。 与内部程序无关的系统状态的变化需要控制流发生突变来进行回应，内部程序中的跳转、调用和返回指令同样回导致突变。这些突变被称之为异常控制流（Exceptional Control Flow, ECF），它可以发生在计算机系统的各个">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.2%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.2%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.5%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.png">
+<meta property="article:published_time" content="2020-07-03T16:10:08.000Z">
+<meta property="article:modified_time" content="2020-07-05T08:27:25.283Z">
+<meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="深入理解计算机系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tom89757&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界在我面前展开</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-chapter8异常控制流" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/" class="article-date">
+  <time datetime="2020-07-03T16:10:08.000Z" itemprop="datePublished">2020-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chapter8异常控制流
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-异常"><span class="toc-text">8.1 异常</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-text">异常处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常的类别"><span class="toc-text">异常的类别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-x86-64系统中的异常"><span class="toc-text">Linux&#x2F;x86-64系统中的异常</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2-进程"><span class="toc-text">8.2 进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑控制流"><span class="toc-text">逻辑控制流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并发流"><span class="toc-text">并发流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#私有地址空间"><span class="toc-text">私有地址空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户模式和内核模式"><span class="toc-text">用户模式和内核模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上下文切换"><span class="toc-text">上下文切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3-系统调用错误处理"><span class="toc-text">8.3 系统调用错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-4-进程控制"><span class="toc-text">8.4 进程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取进程ID"><span class="toc-text">获取进程ID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建和终止进程"><span class="toc-text">创建和终止进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回收子进程"><span class="toc-text">回收子进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#让进程休眠"><span class="toc-text">让进程休眠</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载并运行程序"><span class="toc-text">加载并运行程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用fork和execve运行程序（mark，暂不懂）"><span class="toc-text">利用fork和execve运行程序（mark，暂不懂）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-5-信号"><span class="toc-text">8.5 信号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#信号术语"><span class="toc-text">信号术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送信号"><span class="toc-text">发送信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接收信号"><span class="toc-text">接收信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阻塞和解除阻塞信号"><span class="toc-text">阻塞和解除阻塞信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写信号处理程序"><span class="toc-text">编写信号处理程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步流以避免讨厌的并发错误（具体细节mark）"><span class="toc-text">同步流以避免讨厌的并发错误（具体细节mark）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显式地等待信号（具体细节mark）"><span class="toc-text">显式地等待信号（具体细节mark）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-6-非本地跳转"><span class="toc-text">8.6 非本地跳转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-7-操作进程的工具"><span class="toc-text">8.7 操作进程的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-8-小结"><span class="toc-text">8.8 小结</span></a></li></ol>
+</div>
+
+
+        <p>从处理器通电开始，到断电为止，程序计数器PC中的值不断地在指向不同指令的地址间转换，可以将这些地址的值按顺序组成一个序列，这种转换称为控制转移，这个序列称为处理器的控制流。</p>
+<p>与内部程序无关的系统状态的变化需要控制流发生突变来进行回应，内部程序中的跳转、调用和返回指令同样回导致突变。这些突变被称之为异常控制流（Exceptional Control Flow, ECF），它可以发生在计算机系统的各个层次，硬件层、操作系统层、应用层。</p>
+<p>对程序员来说，理解ECF的好处有：</p>
+<ul>
+<li>帮助理解重要的系统概念。ECF是操作系统用来实现I/O、进程和虚拟内存的基本机制。</li>
+<li>帮助理解应用程序如何与操作系统交互。</li>
+<li>帮助编写有趣的新应用程序。如Unix shell和Web服务器。</li>
+<li>帮助理解并发。理解ECFui理解并发的第一步。</li>
+<li>帮助理解软件异常如何工作。软件异常允许程序进行非本地跳转来响应错误情况，非本地跳转是一种应用层ECF。</li>
+</ul>
+<p>目前已经了解应用如何与硬件交互，本章将学习应用如何与操作系统交互，这些交互都围绕ECF展开。异常位于硬件与操作系统交界处，而进程和信号位于应用和操作系统交界处。</p>
+<a id="more"></a>
+<h2 id="8-1-异常"><a href="#8-1-异常" class="headerlink" title="8.1 异常"></a>8.1 异常</h2><p>异常是异常控制流的一种形式，由硬件和操作系统共同实现。虽然不同机器中有所差别，但体现了相似的基本思想。</p>
+<p>在处理器中，状态被编码为不同的位和信号，状态变化称为事件（event）。当处理器检测到事件发生时，会通过异常表进行间接过程调用，运行一个处理此类事件的操作系统子程序（异常处理程序）。异常处理程序完成处理后，根据引起异常的事件类型，会发生3种情况：</p>
+<ul>
+<li>返回当前指令$I_{curr}$，即事件发生时正在执行的指令。</li>
+<li>返回下一条指令$I_next$。</li>
+<li>终止程序。</li>
+</ul>
+<p>上述异常为硬件级别的异常，和C++和Java中使用catch、throw和try语句捕捉到的应用级即软件级别的异常有所不同。</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>系统为每种类型的异常都分配了一个唯一的非负整数的异常号。一些号码由处理器的设计者分配（被零除、缺页、内存访问违例、断点和算术运算溢出），另一些号码由操作系统内核（操作系统常驻内存的部分）的设计者分配（系统调用和外部I/O信号）。</p>
+<p>系统启动时，操作系统分配和初始化一张异常表，每个表目k包含异常k的处理程序的地址。异常表的起始地址存放在异常表基址寄存器中，是一种特殊的CPU寄存器。异常和过程调用有以下不同：</p>
+<ul>
+<li>过程调用时，在跳转到处理程序前，处理器将返回地址压入栈中；而根据异常类型，返回地址是当前指令或者下一条指令。</li>
+<li>处理器也把一些额外的处理器状态压入栈中。</li>
+<li>如果控制将用户程序转移到内核，所有这些项目都被压入到内核栈中，而不是用户栈中。</li>
+<li>异常处理程序运行在内核模式下，意味着对所有系统资源都有完全的访问权限。</li>
+</ul>
+<h3 id="异常的类别"><a href="#异常的类别" class="headerlink" title="异常的类别"></a>异常的类别</h3><p>分为四类：中断、陷阱、故障和终止。</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png" alt="图1 异常类别"></p>
+<ul>
+<li>中断：异步发生，来自处理器外部的I/O设备的信号的结果。</li>
+<li>陷阱和系统调用：有意的异常，是执行一条指令的结果。陷阱最重要的用途实在用户程序和内核之间提供一个像过程一样的接口，称为系统调用。处理器提供<code>syscall n</code>指令使得用户程序可以调用内核程序，使得用户模式可以切换到内核模式。</li>
+<li>故障：由错误情况引起，可能被故障处理程序修正。如缺页异常，当引用的虚拟地址对应的物理页面不再内存中时，就会发生缺页。</li>
+<li>终止：不可修复的致命错误造成的结果。如DRAM或SRAM被损坏时发生的奇偶错误。</li>
+</ul>
+<p>陷阱、故障和终止为同步发生的，是执行当前指令的结果，称之为故障指令。</p>
+<h3 id="Linux-x86-64系统中的异常"><a href="#Linux-x86-64系统中的异常" class="headerlink" title="Linux/x86-64系统中的异常"></a>Linux/x86-64系统中的异常</h3><p>在x86-64中有高达256种异常类型。0到31是Intel架构师定义的异常，32到255是操作系统定义的中断和陷阱。</p>
+<ul>
+<li>Linux/x86-64故障和终止：除法错误（浮点异常Floating exception）；一般保护故障（如引用未定义的虚拟内存区域，段故障Segmentation fault）；缺页；机器检查（致命的硬件错误）。</li>
+<li>Linux/x86-64 系统调用：有上百种，包括读文件、写文件和创建一个新进程。标准C库中将系统调用与包装函数关联起来，它们均可以称为系统级函数，用以请求内核服务。</li>
+</ul>
+<p>异步异常为中断，同步异常为陷阱、故障和终止。后续将它们统称为异常。</p>
+<h2 id="8-2-进程"><a href="#8-2-进程" class="headerlink" title="8.2 进程"></a>8.2 进程</h2><p>进程的概念营造了一个假象，我们的程序是系统中当前运行的唯一的程序。进程的经典定义为一个执行中程序的实例，系统中每个程序都运行在某个进程的上下文中。每次用户向shell输入一个可执行目标文件的名字，运行程序时，shell就会创建一个新的进程，并在这个进程的上下文中运行目标文件。</p>
+<p>本书不讨论操作系统如何实现进程的细节，只关注进程提供给应用程序的关键抽象：</p>
+<ul>
+<li>一个独立的逻辑控制流，提供一个我们的程序独占处理器的假象。</li>
+<li>一个私有的地址空间，提供一个我们的程序独占内存系统的假象。</li>
+</ul>
+<h3 id="逻辑控制流"><a href="#逻辑控制流" class="headerlink" title="逻辑控制流"></a>逻辑控制流</h3><p>执行程序时，PC中一系列的地址序列称为逻辑控制流，简称逻辑流。对于运行三个进程的系统来说，处理器的一个物理控制流分为3个逻辑流，每个进程轮流使用处理器。虽然表面上看每个进程独占处理器，但指令执行时CPU周期性的卡顿（人无法察觉，但可以通过每条指令使用的时间体现）暗示了这只是表象。</p>
+<h3 id="并发流"><a href="#并发流" class="headerlink" title="并发流"></a>并发流</h3><p>一个逻辑流的执行在时间上和另一个重叠，称为并发流，两个流并发运行。多个流并发执行称为并发；一个进程和其他进程轮流执行称为多任务；一个进程执行它的控制流的一部分的每一时间段称为时间片，故多任务也叫做时间分片。并发流和处理器核数和计算机数无关，两个流运行在不同的处理器或计算机上称之为并行流，并行流时并发流的子集。</p>
+<h3 id="私有地址空间"><a href="#私有地址空间" class="headerlink" title="私有地址空间"></a>私有地址空间</h3><p>进程为每个程序提供它子集的私有地址空间。下图展现了x86-64Linux教程为程序分配的私有地址空间的通用结构。</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter8.2%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4.png" alt="图2 进程地址空间"></p>
+<h3 id="用户模式和内核模式"><a href="#用户模式和内核模式" class="headerlink" title="用户模式和内核模式"></a>用户模式和内核模式</h3><p>为了使操作系统内核提供一个无懈可击的进程抽象，处理器需要提供一种机制，限制一个应用可以执行的指令和它可以访问的地址空间范围。</p>
+<p>处理器通过某个控制寄存器中的模式位来实现这种机制，设置模式位时，进程运行在内核模式，未设置时，运行在用户模式，用户程序必须通过系统调用接口间接访问内核代码和数据。当异常发生时，控制传递到异常处理程序，模式由用户模式却换到内核模式，返回时又切换回用户模式。</p>
+<p>此外，Linux通过/proc和/sys文件系统，将较为底层的信息输出到这些系统中的文件中，使用户可以访问得到关于内核和系统的信息。</p>
+<h3 id="上下文切换"><a href="#上下文切换" class="headerlink" title="上下文切换"></a>上下文切换</h3><p>内核为每个进程维持一个上下文，上下文是内核重新启动一个被抢占的进程所需的状态。内核可以抢占当前进程并重新开始一个先前被抢占的进程，这种策略称为调度，由内核中的调度器代码处理，这种控制的转移通过上下文切换来实现。上下文切换包含以下行为：</p>
+<ul>
+<li>保存当前进程的上下文。</li>
+<li>恢复某个先前被抢占的进程所保存的上下文。</li>
+<li>将控制传递给这个新恢复的进程。</li>
+</ul>
+<p>上下文切换可能由以下情况引发：</p>
+<ul>
+<li>内核代替用户执行系统调用。如用户程序访问磁盘或者休眠。</li>
+<li>中断引发。所有的系统都有某种产生周期性定时器中断的机制，定时器中断时，内核判定当前进程已运行了足够长的时间，并切换到新进程。</li>
+</ul>
+<p>下图为进程上下文切换的过程：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter8.2%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2.png" alt="图3 进程上下文切换"></p>
+<h2 id="8-3-系统调用错误处理"><a href="#8-3-系统调用错误处理" class="headerlink" title="8.3 系统调用错误处理"></a>8.3 系统调用错误处理</h2><p>当Unix系统级函数遇到错误时，通常回返回-1，并设置全局整数变量errno值。书中使用首字母大写的错误处理包装函数保持代码的简洁，同时说明并没有忽略错误检查。</p>
+<h2 id="8-4-进程控制"><a href="#8-4-进程控制" class="headerlink" title="8.4 进程控制"></a>8.4 进程控制</h2><p>Unix提供了大量从C程序中操作进程的系统调用，这一节将描述这些重要的函数。</p>
+<h3 id="获取进程ID"><a href="#获取进程ID" class="headerlink" title="获取进程ID"></a>获取进程ID</h3><p>每个进程都有一个唯一的正数进程ID（PID），getpid函数返回调用进程的PID，getppid函数返回它的父进程（创建调用的进程的进程）的PID。</p>
+<h3 id="创建和终止进程"><a href="#创建和终止进程" class="headerlink" title="创建和终止进程"></a>创建和终止进程</h3><p>从程序员角度，进程处于运行、停止和终止三种状态之一。</p>
+<ul>
+<li>运行：进程正在执行，或者等待被内核调度执行。</li>
+<li>停止：进程被挂起，且不会被调度，直到收到SIGCONT信号。</li>
+<li>终止：进程永远停止，这是因为收到终止进程的信号，从主程序返回或调用eixt函数。</li>
+</ul>
+<p>父进程使用fork函数创建一个与之几乎相同的新的子进程，它们最大的区别在于有不同的PID。运行该程序时，有如下特征：</p>
+<ul>
+<li>调用一次，返回两次。分别返回到父进程和子进程。</li>
+<li>并发执行。内核交替执行两个进程的逻辑控制流中的指令，故无法确定谁先完成。</li>
+<li>相同但是独立的地址空间。但是对进程中的变量的改变是独立的，因为它们都有自己的私有地址空间。</li>
+<li>共享文件。二者有相同的stdout文件，输出都指向屏幕。</li>
+</ul>
+<p>可以通过画进程图理解fork函数，它是一种简单的刻画程序语句的偏序的前趋图。j进程图有助于理解带有嵌套fork调用的程序。</p>
+<h3 id="回收子进程"><a href="#回收子进程" class="headerlink" title="回收子进程"></a>回收子进程</h3><p>当一个进程由于某种原因终止时，内核并不是立即把它从系统中清除，而是保持已终止状态直到父进程回收，终止但未回收的进程称为僵死进程（僵死进程虽未运行，依然消耗内存资源）；如果父进程终止，内核安排PID为1的init进程为它的孤儿进程的养父，init进程不会终止，是所有进程的祖先，它会回收终止的父进程尚未回收的子进程。</p>
+<p>进程通过调用waitpid函数等待它的子进程终止或停止。下面介绍它的使用：</p>
+<p><code>pid_t waitpid(pid_t pid, int *statusp, int options);</code></p>
+<ul>
+<li>判定等待集合的成员：由参数pid确定，if(pid &gt; 0) 单独子进程 else if(pid = -1) 父进程所有子进程。</li>
+<li>修改默认行为：options设置为常量WNOHANG、WUNTRACED和WCONTINUED的各种组合修改默认行为。</li>
+<li>检查已回收子进程的退出状态：如果statusp参数非空，waitpid会在status中放上关于导致返回的子进程的状态信息。</li>
+<li>错误条件：如果调用进程无子进程，waitpid返回-1，设置errno为ECHILD；如果waitpid被一个信号中断，返回-1，设置errno为EINTR。</li>
+<li>wait函数：waitpid函数的简单版本，等价于调用waitpid(-1, &amp;status, 0)。</li>
+<li>使用waitpid示例。书中展示了通过将子进程PID保存在数组里实现顺序回收的方法。</li>
+</ul>
+<h3 id="让进程休眠"><a href="#让进程休眠" class="headerlink" title="让进程休眠"></a>让进程休眠</h3><p>sleep函数将一个进程挂起一段指定的时间，请求时间量到了，sleep返回0，否则返回剩余需要休眠时间值，后者可能由信号中断导致。pause函数让调用函数休眠直至收到一个信号。</p>
+<h3 id="加载并运行程序"><a href="#加载并运行程序" class="headerlink" title="加载并运行程序"></a>加载并运行程序</h3><p>execve函数在当前进程的上下文中加载并运行一个新程序。与fork一次调用两次返回不同，execve一次调用从不返回。在execve加载了filename后，调用启动代码，启动代码设置栈，并将控制传递给新程序的主函数。</p>
+<p>fork创建了新的进程，但在新的子进程中运行相同的程序；而execve并没有创建新的进程，但从当前教程的上下文中加载并运行一个新的程序，它覆盖了当前进程的地址空间，并继承了调用execve函数时已打开的所有文件描述符。</p>
+<h3 id="利用fork和execve运行程序（mark，暂不懂）"><a href="#利用fork和execve运行程序（mark，暂不懂）" class="headerlink" title="利用fork和execve运行程序（mark，暂不懂）"></a>利用fork和execve运行程序（<strong>mark</strong>，暂不懂）</h3><h2 id="8-5-信号"><a href="#8-5-信号" class="headerlink" title="8.5 信号"></a>8.5 信号</h2><p>目前为止，学习了硬件和软件如何合作提供基本的底层异常机制，也看到操作系统通过异常支持上下文切换。本节将学习一种更高层的 软件形式的异常——Linux信号，它通知进程系统发生了一个某种类型的时间，允许进程和内核中断其他进程。</p>
+<p>底层的硬件异常由内核异常处理程序处理，对用户进程不可见，而信号则可以通知用户进程发生了异常。</p>
+<h3 id="信号术语"><a href="#信号术语" class="headerlink" title="信号术语"></a>信号术语</h3><p>发送一个信号到目的进程由以下步骤组成：</p>
+<ul>
+<li>发送信号：内核通过更新目的进程上下文中的某个状态，发送一个信号给目的进程。</li>
+<li>接收信号：目的进程被内核强迫以某种方式对信号的发送作出反应。进程会忽略、终止或通过将控制转移给信号处理程序来捕获信号。一个发出而没有被接收的信号为待处理信号，内核为进程在pending位向量中维护待处理信号的集合，当信号被接收后对应位置信号被清除。</li>
+</ul>
+<h3 id="发送信号"><a href="#发送信号" class="headerlink" title="发送信号"></a>发送信号</h3><p>Unix系统提供大量基于进程组向进程发送信号的机制。</p>
+<ul>
+<li>进程组：每个进程只属于一个进程组，进程组由ID标识，getpgrp返回ID。默认父进程和子进程同属一个进程组，进程可以通过setpgid函数改变自己或其他进程的进程组。</li>
+<li>用/bin/kill程序发送信号：<code>/bin/kill -9 -15213</code>，为负的-15213会将信号发送到进程组15213的每个进程。</li>
+<li>从键盘发送信号：Unix shell使用作业（job）表示为对一条命令行求值而创建的进程。在任意时刻，至多只有一个前台作业和0个或多个后台作业。相应的快捷键Ctrl + C和Ctrl + Z分别终止和挂起前台作业。</li>
+<li>用kill函数发送信号。</li>
+<li>用alarm函数发送信号。</li>
+</ul>
+<h3 id="接收信号"><a href="#接收信号" class="headerlink" title="接收信号"></a>接收信号</h3><p>当内核把进程p从内核模式切换回用户模式时（从系统调用返回或是完成了一次上下文切换），会检查进程p的违背阻塞的待处理信号的集合，集合非空，会选择某个信号k（通常是最小的k）执行对应行为，执行完成后控制传递给$I_{next}$。</p>
+<p>信号默认行为有：进程终止；进程终止并转储内存；进程停止直到被SIGOUT重启；进程忽略该信号。可以通过signal函数修改和信号相关联的默认行为（除了SIGSTOP和SIGKILL）：</p>
+<p><code>sighandler_t signal(int signum, sighandler_t, handler);</code>，handler值可能为SIG_IGN，SIG_DEL或用户定义的函数地址，该函数指向信号处理程序。调用信号处理程序称为捕获信号，执行信号处理程序称为处理信号。信号处理程序可以被其他信号处理程序中断：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter8.5%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.png" alt="图4 处理程序中断处理程序"></p>
+<h3 id="阻塞和解除阻塞信号"><a href="#阻塞和解除阻塞信号" class="headerlink" title="阻塞和解除阻塞信号"></a>阻塞和解除阻塞信号</h3><p>Linux提供阻塞信号的隐式和显式形式：</p>
+<ul>
+<li>隐式阻塞机制：默认阻塞任何当前处理程序正在处理信号类型的待处理的信号。</li>
+<li>显式阻塞机制：使用sigprocmask函数和它的捕获函数，明确阻塞和解除选定信号。（具体细节<strong>mark</strong>）</li>
+</ul>
+<h3 id="编写信号处理程序"><a href="#编写信号处理程序" class="headerlink" title="编写信号处理程序"></a>编写信号处理程序</h3><p>处理程序有几个属性使得它们很难推理分析：</p>
+<ul>
+<li>处理程序和主程序并发执行，共享全局变量，二者可能互相干扰。</li>
+<li>如何以及何时接收信号的规则常常有违人的直觉。</li>
+<li>不同的系统有不同的信号处理语义。</li>
+</ul>
+<p>下面是编写安全、正确和可移植的信号处理程序的一些基本规则：</p>
+<p>1）安全的信号处理：并发使得可能引发不可预测和不可重复的错误，下面是防止发生这些错误的一些规则：</p>
+<ul>
+<li>处理程序尽可能简单。</li>
+<li>在处理程序中只调用异步信号安全的函数，它们是可重入的或者不能被信号处理程序中断。（具体细节<strong>mark</strong>）</li>
+<li>保存和恢复errno。在进入处理程序前将errno保存在一个局部变量中。</li>
+<li>阻塞所有的信号，保护对共享数据结构的访问。</li>
+<li>用volatile声明全局变量。<code>volatile int g</code>强迫编译器每次在代码中引用g时，都从内存中读取，而不是使用寄存器中缓存的g副本。</li>
+<li>用sig_atomic_t声明标志。处理程序会写全局标志记录收到了信号，主程序周期性的读这个标志，响应信号，再清除该标志。<code>volatile sig_atomic_t flag</code>使得该标志的读写不会被中断。</li>
+</ul>
+<p>上面是相对保守的规则，更像是一种未雨绸缪，而不是防微杜渐。</p>
+<p>2）正确的信号处理：我们知道信号的处理并不排队，因为pending位向量中每种类型的信号只对应一位。书中以一个父进程回收三个子进程为例，说明了信号可能发生的丢弃，故不能用信号来对其他进程中发生的事件计数。书中对回收程序进行了修改，使得父进程能够回收所有的僵死子进程。</p>
+<p>3）可移植的信号处理：对Unix类系统来说，不同的系统可能有不同的信号处理语义。</p>
+<ul>
+<li>signal函数的语义各有不同。</li>
+<li>系统调用可以被中断。read、write和accept这样的系统调用会阻塞进程一段较长的时间，称为慢速系统调用，一些早期版本中Unix系统中的慢速系统调用被信号中断后，信号处理程序返回时不会继续调用，而是终止。</li>
+</ul>
+<p>为解决这些问题，Posix标准定义了sigaction函数，允许用户在设置信号处理时，并且指定它们想要的信号处理语义。sigaction函数在signal函数的包装函数Signal函数中被调用。</p>
+<h3 id="同步流以避免讨厌的并发错误（具体细节mark）"><a href="#同步流以避免讨厌的并发错误（具体细节mark）" class="headerlink" title="同步流以避免讨厌的并发错误（具体细节mark）"></a>同步流以避免讨厌的并发错误（具体细节<strong>mark</strong>）</h3><p>并发运行时流交错的数量与指令的数量呈指数关系。这导致并发编程是一个很深且重要的问题，将在第12章更详细的讨论。</p>
+<h3 id="显式地等待信号（具体细节mark）"><a href="#显式地等待信号（具体细节mark）" class="headerlink" title="显式地等待信号（具体细节mark）"></a>显式地等待信号（具体细节<strong>mark</strong>）</h3><p>有时候主程序需要显式地等待某个信号处理程序运行，如Linux shell创建一个前台作业时，必须等待作业终止才能接收下一条用户命令。</p>
+<h2 id="8-6-非本地跳转"><a href="#8-6-非本地跳转" class="headerlink" title="8.6 非本地跳转"></a>8.6 非本地跳转</h2><p>C语言提供的一种用户级异常控制流程序，英文为nonlocal jump，直接将控制从一个函数转移到另一个当前正在执行的函数，不经过正常的调用-返回序列。通过setjmp和longjmp函数提供。</p>
+<p>它的一个重要应用时允许从一个深层嵌套的函数调用中立即返回，通常由检测到某个错误情况引起，但这种行为可能导致中间调用分配的数据结构没有被释放导致内存泄漏；另一个重要的应用是使一个信号处理程序分支到一个特殊的代码位置。（具体细节<strong>mark</strong>）</p>
+<h2 id="8-7-操作进程的工具"><a href="#8-7-操作进程的工具" class="headerlink" title="8.7 操作进程的工具"></a>8.7 操作进程的工具</h2><p>Linux系统提供STRACE、PS、TOP、PMAP和/proc等工具监控和操作进程：</p>
+<ul>
+<li>STRACE：打印一个正在运行的程序和它的子进程调用的每个系统调用的痕迹。</li>
+<li>PS：列出当前系统中的进程（包括僵死进程）。</li>
+<li>TOP：打印出关于当前进程资源使用的信息。</li>
+<li>PMAP：显式进程的内存映射。</li>
+<li>/proc：一个虚拟文件系统，以ASCAII文本格式输出内核数据结构的内容，允许普通用户程序访问。</li>
+</ul>
+<h2 id="8-8-小结"><a href="#8-8-小结" class="headerlink" title="8.8 小结"></a>8.8 小结</h2><p>异常控制流（ECF）发生在计算机系统的各个层次，是计算机系统提供并发的基本机制。</p>
+<p>在硬件层，异常是由处理器中的事件触发的控制流中的突变，异常分为四类，其中中断为异步，系统调用（陷阱）、故障和终止则为同步；在操作系统层，内核用ECF提供进程的基本概念，进程提供给应用两个重要抽象——逻辑控制流和私有地址空间。</p>
+<p>在操作系统和应用程序的接口处，应用程序可以创建子进程，等待子进程停止或终止，运行新的程序或捕获其他进程的信号，这就涉及到信号处理；在应用层，C程序可以通过非本地跳转规避正常的调用/返回栈规则。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/" data-id="ckc6ftu1t0000pgwda02r5ca4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于学习大部头书籍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chapter7链接</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F/">人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 15px;">微言小义</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 15px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 15px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/">关于学习大部头书籍</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/">chapter8异常控制流</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/">chapter7链接</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter6存储器层次结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/">chapter5优化程序性能</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Tom89757<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+</body>
+</html>

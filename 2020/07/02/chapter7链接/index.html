@@ -14,11 +14,16 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="链接是将各种代码和数据片段收集并组合成为一个单一文件的过程，这个文件可以被加载到内存并执行。链接过程可以执行在编译、加载甚至运行时，它使得分离编译得以实现。理解链接有以下好处：  帮助构造大性程序。当构造大性程序时经常会遇到缺少模块、缺少库或者不兼容的库版本等引起的链接器错误。 帮助避免一些危险的编程错误。如错误的定义多个全局变量时。 帮助理解语言的作用域规则如何实现。全局和局部对程序来说到底意味">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter7.8ELF%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chpater7.9%E8%BF%90%E8%A1%8C%E6%97%B6%E5%86%85%E5%AD%98%E6%98%A0%E5%83%8F.png">
 <meta property="article:published_time" content="2020-07-02T12:54:22.000Z">
-<meta property="article:modified_time" content="2020-07-02T17:03:29.641Z">
+<meta property="article:modified_time" content="2020-07-04T02:48:04.117Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -99,7 +104,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-编译器驱动程序"><span class="toc-text">7.1 编译器驱动程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-静态链接"><span class="toc-text">7.2 静态链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-目标文件"><span class="toc-text">7.3 目标文件</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-编译器驱动程序"><span class="toc-text">7.1 编译器驱动程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-静态链接"><span class="toc-text">7.2 静态链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-目标文件"><span class="toc-text">7.3 目标文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4-可重定位目标文件"><span class="toc-text">7.4 可重定位目标文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-5-符号和符号表"><span class="toc-text">7.5 符号和符号表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-6-符号解析"><span class="toc-text">7.6 符号解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#链接器如何解析多重定义的全局符号"><span class="toc-text">链接器如何解析多重定义的全局符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与静态库链接"><span class="toc-text">与静态库链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链接器如何使用静态库来解析引用"><span class="toc-text">链接器如何使用静态库来解析引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-7-重定位"><span class="toc-text">7.7 重定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#重定位条目"><span class="toc-text">重定位条目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重定位符号引用"><span class="toc-text">重定位符号引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-8-可执行目标文件"><span class="toc-text">7.8 可执行目标文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-9-加载可执行目标文件"><span class="toc-text">7.9 加载可执行目标文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-10-动态链接共享库"><span class="toc-text">7.10 动态链接共享库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-11-从应用给欻是中加载和链接共享库"><span class="toc-text">7.11 从应用给欻是中加载和链接共享库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-12-位置无关代码（mark，暂看不懂）"><span class="toc-text">7.12 位置无关代码（mark，暂看不懂）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-13-库打桩机制（mark，暂不懂）"><span class="toc-text">7.13 库打桩机制（mark，暂不懂）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编译时打桩"><span class="toc-text">编译时打桩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链接时打桩"><span class="toc-text">链接时打桩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行时打桩"><span class="toc-text">运行时打桩</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-14-处理目标文件的工具"><span class="toc-text">7.14 处理目标文件的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-15-小结"><span class="toc-text">7.15 小结</span></a></li></ol>
 </div>
 
 
@@ -112,6 +117,7 @@
 <li>可以利用共享库。许多软件产品在运行时通过共享库升级程序；Web服务器依赖于共享库的动态链接提供动态内容。</li>
 </ul>
 <p>本章按照传统静态链接到加载时的共享库的动态链接再到运行时的共享库的动态链接的顺序进行讲述。</p>
+<a id="more"></a>
 <h2 id="7-1-编译器驱动程序"><a href="#7-1-编译器驱动程序" class="headerlink" title="7.1 编译器驱动程序"></a>7.1 编译器驱动程序</h2><p>大多数编译系统都会提供编译器驱动程序（compiler driver），它代表用户在需要时调用语言预处理器、编译器、汇编器和链接器。</p>
 <p>使用命令调动GCC驱动程序：<code>gcc -Og -o prog main.c sum.c</code>，生成可执行目标二进制文件prog。</p>
 <p>运行<code>./prog</code>后shell调用系统中一个叫做加载器的函数，它将prog中的代码和数据复制到内存，然后将控制转移到这个程序的开头。</p>
@@ -127,6 +133,86 @@
 <li>可执行目标文件：可直接复制到内存并执行。</li>
 <li>共享目标文件：一种特殊的可重定位目标文件，可以在加载或运行时动态的加载进内存并链接。</li>
 </ul>
+<p>一个目标模块就是一个字节序列，一个目标文件则是一个以文件形式存放在磁盘中的目标模块。</p>
+<h2 id="7-4-可重定位目标文件"><a href="#7-4-可重定位目标文件" class="headerlink" title="7.4 可重定位目标文件"></a>7.4 可重定位目标文件</h2><p>书中P467给出了一个典型的ELF文件的格式，并描述了ELF头和节头部表之间的节所包含的信息。（未初始化的数据保存在.bss文件中，起源于块存储开始（Block Storage Start），现在部分理解为Better Save Space）。下图展示了文件中包含的各类信息。</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图1 可重定位目标文件"></p>
+<h2 id="7-5-符号和符号表"><a href="#7-5-符号和符号表" class="headerlink" title="7.5 符号和符号表"></a>7.5 符号和符号表</h2><p>每个可重定位目标模块m有一个符号表，包含m定义和引用的符号的信息，符号分为三类：</p>
+<ul>
+<li>由m定义并被其他模块引用的全局符号，对应m中的非静态的C函数和全局变量。</li>
+<li>由其他模块定义并被m引用的全局符号，称为外部符号，对应其他模块中的非静态的C函数和全局变量。</li>
+<li>只被模块ｍ定义和引用的局部符号，对应与ｍ中带static属性的C函数和全局变量。</li>
+</ul>
+<p>与局部静态变量不同，而局部的非静态变量的符号并不被符号表包含，因为它们在栈中被管理。</p>
+<p>符号表使用编译器输出到汇编语言.s文件中的符号，由汇编器构造。每个符号都被分配到目标文件的某个节，由section字段表示，该字段是到节头部表的索引，还有三个特殊的伪节ABS、UNDEF和COMMON，它们在节头部表中没有条目，且只在可重定位目标文件中存在。</p>
+<p>GNU READELF是一个查看目标文件内容的工具。</p>
+<h2 id="7-6-符号解析"><a href="#7-6-符号解析" class="headerlink" title="7.6 符号解析"></a>7.6 符号解析</h2><p>链接器解析符号引用：将每个引用与它输入的可重定位目标文件的符号表中的一个确定的符号定义关联起来。</p>
+<ul>
+<li>对局部符号的引用，较为明了。局部变量和静态局部变量的定义唯一。</li>
+<li>对全局符号的引用，较为棘手。当在输入模块中找不到被引用符号时，会输出错误信息；当多个目标文件中定义相同名字的全局符号时，会标志错误或从中选择一个定义。</li>
+</ul>
+<h3 id="链接器如何解析多重定义的全局符号"><a href="#链接器如何解析多重定义的全局符号" class="headerlink" title="链接器如何解析多重定义的全局符号"></a>链接器如何解析多重定义的全局符号</h3><p>链接器的输入是一组可重定位目标模块，每个模块定义一组符号。多个模块定义同名的全局符号时，Linux编译系统会采用如下方法：</p>
+<p>编译时，编译器将函数和已初始化的全局变量设置为强符号，未初始化的全局变量设置为弱符号，并包含在可重定位目标文件的符号表中。以下是用以处理多重定义符号名的规则：</p>
+<ul>
+<li>规则1：不允许有多个同名的强符号。</li>
+<li>规则2：如果有一个强符号和多个弱符号同名，选择强符号。</li>
+<li>规则3：如果有多个弱符号同名，从弱符号中任选一个。</li>
+</ul>
+<p>这些规则会导致在一些大型的程序中，出现难以察觉的错误。可以通过使用<code>GCC -fno -common</code>选项调用连接器，从而在遇到多重定义的管局符号时，触发一个错误。</p>
+<h3 id="与静态库链接"><a href="#与静态库链接" class="headerlink" title="与静态库链接"></a>与静态库链接</h3><p>所有的编译系统都提供一种机制，将所有相关的目标模块打包成为一个单独的文件，称为静态库，可作为链接器的输入。库的概念使得对标准函数的调用更为高效，避免给编译器增加复杂性（使编译器识别对标准函数的调用），也避免了对磁盘空间和内存的浪费，并使得对标准函数的改变变得便捷（直接将所有的标准函数放在一个单独的可重定位目标模块中）。</p>
+<p>静态库的概念相当于将所有的标准函数编译并封装到一个个子库中，便于编译和汇编时的引用。在Linux系统中，静态库以存档的文件格式存放在磁盘中，每个成员目标文件名后缀为.a。以下为创建静态库并调用库中例程的命令行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gcc -c addvec.c multvec.c</span><br><span class="line">ar rcs libvector.a addvec.o multvec.o</span><br><span class="line">gcc -c mian2.c</span><br><span class="line">gcc -static -o prog2c main2.o -L. -lvector.a</span><br></pre></td></tr></table></figure>
+<p>AR是用于创建静态库的工具，<code>-static</code>参数告诉编译器驱动程序，链接器应该创建一个完全链接的可执行目标文件，可以加载到内存中执行，而无需进一步的链接。-L表示在当前目录下查找libvector.a，-lvector.a是缩写。</p>
+<h3 id="链接器如何使用静态库来解析引用"><a href="#链接器如何使用静态库来解析引用" class="headerlink" title="链接器如何使用静态库来解析引用"></a>链接器如何使用静态库来解析引用</h3><p>链接器按照命令行顺序扫描可重定位目标文件和存档文件，扫描中链接器维护一个可重定位目标文件的集合E，一个未解析的符号集合U和一个在前面输入文件中已定义的符号集合D，初始时三者均为空。以下是符号解析的步骤：</p>
+<ul>
+<li>对输入文件f，链接器如果判断其为目标文件，链接器会把f添加到E，修改U和Ｄ反映f中的符号定义和引用，并继续下一个输入文件。</li>
+<li>对存档文件f，链接器尝试匹配U中未解析的符号和由存档文件成员定义的符号，将匹配的成员添加到E中，并修改U和D，直至成员全部进行了匹配，不包含在E中的成员会被丢弃，继续下一个输入文件。</li>
+<li>如果当链接器完成扫描后，U非空，链接器会输出错误并终止，否则合并和重定位E中的目标文件，构建可执行文件。</li>
+</ul>
+<p>上述扫描策略对命令行顺序要求很重要，即静态库文件必须在目标文件之后，否则会报错。当库之间存在调用或者相互依赖时，顺序问题更为复杂。</p>
+<h2 id="7-7-重定位"><a href="#7-7-重定位" class="headerlink" title="7.7 重定位"></a>7.7 重定位</h2><p>完成符号解析后，代码中的每个符号引用正好和一个符号定义关联起来，链接器知晓输入目标模块中的代码姐和数据节的确切大小，从而可以开始重定位步骤。重定位分为两步：</p>
+<ul>
+<li>重定位节和符号定义：相同类型的节合并为统一类型的聚合节，再将内存地址赋给聚合节，输入模块定义的每个节以及输入模块定义的每个符号，从而使得程序中的每条指令和全局变量由唯一的运行时内存地址。</li>
+<li>重定位节中的符号引用：链接器依赖于重定位条目这种数据结构，修改代码节和数据节中对每个符号的引用，使它们指向正确的运行时地址。</li>
+</ul>
+<h3 id="重定位条目"><a href="#重定位条目" class="headerlink" title="重定位条目"></a>重定位条目</h3><p>汇编器生成一个目标模块时，会对最终位置未知的目标引用保存在重定位条目中，告诉链接器在将目标文件合并成可执行文件时如何修改该引用。代码和已初始化数据的重定位条目分别放在.rel.text和.rel.data中。书中P478展现了ELF重定位条目的格式。</p>
+<p>书中介绍了两种重定位模型R_X86_64_PC32和R_X86_64_32，分别重定位一个使用32位PC相对地址和绝对地址的引用，适用于x86-64小型代码模型，代码和数据的总体大小小于2GB。</p>
+<h3 id="重定位符号引用"><a href="#重定位符号引用" class="headerlink" title="重定位符号引用"></a>重定位符号引用</h3><ul>
+<li>重定位PC相对引用：在对函数进行引用时，对函数的调用指令call执行后，PC地址更新为指向函数例程的第一条指令的地址。</li>
+<li>重定位绝对引用：更为简单，直接计算出指向数组第一个字节的地址。</li>
+</ul>
+<p>综合到一起，得到最终可执行目标文件中已重定位的.text节和.data节，加载时直接将其复制到内存，不需要进行修改即可执行。</p>
+<h2 id="7-8-可执行目标文件"><a href="#7-8-可执行目标文件" class="headerlink" title="7.8 可执行目标文件"></a>7.8 可执行目标文件</h2><p>至此我们已经得到了可执行目标文件，里面包含了加载程序到内存并运行它所需的所有信息。下图展示了ELF格式的可重定位目标文件和可执行目标文件中的各类信息。</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图2 可重定位目标文件"><img src="http://qcd48jfwa.bkt.clouddn.com/chapter7.8ELF%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图3 可执行目标文件"></p>
+<p>与可重定位文件相比，可执行文件中多了段头部表、.init节，少了.rel节，段头部表描述可执行文件与内存的映射关系，.init节用于程序的初始化代码，由于文件已被重定位，故.rel节不再被需要。</p>
+<p>在目标文件中，段需要进行对齐，从而使之更有效率的传送到内存中，这种要求与虚拟内存的组织方式相关。</p>
+<h2 id="7-9-加载可执行目标文件"><a href="#7-9-加载可执行目标文件" class="headerlink" title="7.9 加载可执行目标文件"></a>7.9 加载可执行目标文件</h2><p>在执行<code>./prog</code>后，shell会认为prog为一个可执行目标程序，通过调用某个驻留在存储器中的被称为加载器的操作系统代码来运行它，Linux程序可以调用execve函数调用加载器。加载器将可执行目标文件中的代码和数据从磁盘复制到内存中，然后通过跳转到程序的第一条指令或入口点开始运行，这个过程叫做加载。下图为Linux x86-64运行时内存映像：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chpater7.9%E8%BF%90%E8%A1%8C%E6%97%B6%E5%86%85%E5%AD%98%E6%98%A0%E5%83%8F.png" alt="图4 运行时内存映像"></p>
+<p>后续第8章和第9章会对加载的概念作更准确的阐述。</p>
+<h2 id="7-10-动态链接共享库"><a href="#7-10-动态链接共享库" class="headerlink" title="7.10 动态链接共享库"></a>7.10 动态链接共享库</h2><p>静态库和所有的软件一样，需要定期维护和更新，需要静态库的新版本时，需要将程序与新版库重新连接；同时，由于在上百个进程中一些常用函数如printf和scanf几乎都会被加载，这是对内存的一种浪费。故通过共享库来解决静态库导致的这种缺陷。</p>
+<p>共享库是一个目标模块，在运行或加载时，可以加载到任意的内存地址，并和一个在内存中的程序链接起来，此过程称为动态链接，由动态链接器执行。共享库也成为共享目标，在Linux系统中后缀为.so，在windows中大量使用了共享库（DDL，动态链接库）。可执行目标文件既可以共享某个库唯一的.so文件中的代码和数据；也可以共享某个库在内存中的.text节的副本。</p>
+<p>下面是构造共享库和链接共享库的命令行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -shared -fpic -o libvector.so addvec.c multvec.c</span><br><span class="line">gcc -o prog21 main2.c .&#x2F;libvector.so</span><br></pre></td></tr></table></figure>
+<p>在生成可执行目标文件时，链接器复制了一些重定位和符号表信息，从而使得加载执行时部分链接的可执行文件可以链接动态库文件正常执行。</p>
+<h2 id="7-11-从应用给欻是中加载和链接共享库"><a href="#7-11-从应用给欻是中加载和链接共享库" class="headerlink" title="7.11 从应用给欻是中加载和链接共享库"></a>7.11 从应用给欻是中加载和链接共享库</h2><p>动态链接功能强大，可以用于分发软件（如windows应用的开发者利用共享库分发软件更新）和构建高性能Web服务器（生成动态内容）。</p>
+<p>书上介绍了Linux系统为动态莲姐姐其提供的一个简单的接口，允许应用程序在运行时加载和链接共享库，<strong>mark</strong>，但比较跳跃难懂。</p>
+<h2 id="7-12-位置无关代码（mark，暂看不懂）"><a href="#7-12-位置无关代码（mark，暂看不懂）" class="headerlink" title="7.12 位置无关代码（mark，暂看不懂）"></a>7.12 位置无关代码（<strong>mark</strong>，暂看不懂）</h2><p>下面是实现多个进程共享程序在内存中的一个副本的方法：</p>
+<ul>
+<li>给每个共享库分配一个事先预备的专用的地址空间片，要求加载器总是在这个地址加载共享库。这回导致一个共享库不被使用时也占用空间，同时难以管理（当库更新，数量不断增多时）。</li>
+<li>使得共享库可以加载到内存的任何位置而无需链接器修改，即运用位置无关代码的概念。</li>
+</ul>
+<p>1）PIC数据引用</p>
+<p>在加载目标模块时，数据段和代码段的距离保持不变。</p>
+<p>2）PIC函数调用</p>
+<p>GNU编译系统使用延迟绑定的技术将过程地址的绑定推迟到第一次调用该过程时，从而避免动态链接器在加载时进行成百上千个起始并不需要的重定位。虽然第一次调用时开销很大，后续的每次调用只会花费一条指令和一个间接的内存引用。</p>
+<h2 id="7-13-库打桩机制（mark，暂不懂）"><a href="#7-13-库打桩机制（mark，暂不懂）" class="headerlink" title="7.13 库打桩机制（mark，暂不懂）"></a>7.13 库打桩机制（<strong>mark</strong>，暂不懂）</h2><p>Linux链接器支持库打桩（library interpositioning），它允许截获对共享库函数的调用，取而代之执行自己的代码。通过打桩机制，可以追踪对某个特殊库函数的调用次数，验证和追踪它的输入和输出值，甚至将它替换成一个完全不同的实现。</p>
+<p>基本思想是：对一个需要打桩的目标函数，构造一个原型与之完全一样的包装函数，从而欺骗系统调用包装函数。</p>
+<h3 id="编译时打桩"><a href="#编译时打桩" class="headerlink" title="编译时打桩"></a>编译时打桩</h3><p>以下命令行是进行编译时打桩的过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -DCOMPILETIME -c mymalloc.c</span><br><span class="line">gcc -I. -o intc int.c mymalloc.c</span><br></pre></td></tr></table></figure>
+<p>运行intc程序即可得到对目标函数的追踪信息。</p>
+<h3 id="链接时打桩"><a href="#链接时打桩" class="headerlink" title="链接时打桩"></a>链接时打桩</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gcc -DLINKTIME -c mymalloc.c</span><br><span class="line">gcc -c int.c</span><br><span class="line">gcc -Wl,--wrap,malloc -Wl,--wrap,free -o intl int.o mymalloc.o</span><br></pre></td></tr></table></figure>
+<h3 id="运行时打桩"><a href="#运行时打桩" class="headerlink" title="运行时打桩"></a>运行时打桩</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gcc -DRUNTIME -shared -fpic -o mymalloc.so mymalloc.c -ldl</span><br><span class="line">gcc -o intr int.c</span><br><span class="line">LD_PRELOAD&#x3D;&quot;.&#x2F;mymalloc.so&quot; .&#x2F;intr</span><br></pre></td></tr></table></figure>
+<h2 id="7-14-处理目标文件的工具"><a href="#7-14-处理目标文件的工具" class="headerlink" title="7.14 处理目标文件的工具"></a>7.14 处理目标文件的工具</h2><p>在Linux系统中有大量工具可以帮助理解和分析目标文件，见P498。</p>
+<h2 id="7-15-小结"><a href="#7-15-小结" class="headerlink" title="7.15 小结"></a>7.15 小结</h2><p>本章讲述了两种链接方式——静态链接器和动态链接器，两种库——静态库和动态链接库，三种目标文件——可重定位的、可执行的、共享的，并且描述了由可重定位目标文件得到可执行目标文件的过程。链接器的两个主要任务是符号解析和重定位。</p>
 
       
     </div>
@@ -141,6 +227,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter8异常控制流
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
@@ -204,6 +299,14 @@
       <ul>
         
           <li>
+            <a href="/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/">关于学习大部头书籍</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/">chapter8异常控制流</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/">chapter7链接</a>
           </li>
         
@@ -213,14 +316,6 @@
         
           <li>
             <a href="/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/">chapter5优化程序性能</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">chapter4处理器体系结构</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/">chapter3程序的机器级表示</a>
           </li>
         
       </ul>
