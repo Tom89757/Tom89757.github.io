@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>chapter9虚拟内存 | Tom89757&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一个系统中的进程与其他进程共享CPU和主存资源。为了有效地管理内存并且少出错，现代系统提供了一种对主存的抽象概念——虚拟内存（VM）。它是硬件异常、硬件地址翻译、主存、磁盘文件和内核软件的完美交互，他为每个进程提供了一个大的、一致的和私有的地址空间。 虚拟内存提供了三种重要的能力：  把主存看成是一个存储在磁盘上的地址空间的高速缓存，主存中只保留活动区域在磁盘和主存间传送数据。 为每个进程提供了一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter9虚拟内存">
+<meta property="og:url" content="http://yoursite.com/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/index.html">
+<meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="一个系统中的进程与其他进程共享CPU和主存资源。为了有效地管理内存并且少出错，现代系统提供了一种对主存的抽象概念——虚拟内存（VM）。它是硬件异常、硬件地址翻译、主存、磁盘文件和内核软件的完美交互，他为每个进程提供了一个大的、一致的和私有的地址空间。 虚拟内存提供了三种重要的能力：  把主存看成是一个存储在磁盘上的地址空间的高速缓存，主存中只保留活动区域在磁盘和主存间传送数据。 为每个进程提供了一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter9.6%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91%E7%AC%A6%E5%8F%B7.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter9.6%E4%BD%BF%E7%94%A8%E9%A1%B5%E8%A1%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter9.6%E9%A1%B5%E9%9D%A2%E5%91%BD%E4%B8%AD%E5%92%8C%E7%BC%BA%E9%A1%B5.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter9.6.1%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%BB%93%E5%90%88.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter9.6.3%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter9.7.2Linux%E7%BB%84%E7%BB%87%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter9.8.3%E5%8A%A0%E8%BD%BD%E5%99%A8%E6%98%A0%E5%B0%84%E5%88%B0%E7%94%A8%E6%88%B7%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4.png">
+<meta property="article:published_time" content="2020-07-05T11:01:28.000Z">
+<meta property="article:modified_time" content="2020-07-07T07:42:46.066Z">
+<meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="深入理解计算机系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter9.6%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91%E7%AC%A6%E5%8F%B7.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tom89757&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界在我面前展开</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-chapter9虚拟内存" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" class="article-date">
+  <time datetime="2020-07-05T11:01:28.000Z" itemprop="datePublished">2020-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chapter9虚拟内存
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-物理和虚拟寻址"><span class="toc-text">9.1 物理和虚拟寻址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-地址空间"><span class="toc-text">9.2 地址空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-3-虚拟内存作为缓存的工具"><span class="toc-text">9.3 虚拟内存作为缓存的工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DRAM的组织结构"><span class="toc-text">DRAM的组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页表"><span class="toc-text">页表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页命中"><span class="toc-text">页命中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缺页"><span class="toc-text">缺页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分配页面"><span class="toc-text">分配页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#又是局部性救了我们"><span class="toc-text">又是局部性救了我们</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-4-虚拟内存作为内存管理的工具"><span class="toc-text">9.4 虚拟内存作为内存管理的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-5-虚拟内存作为内存保护的工具"><span class="toc-text">9.5 虚拟内存作为内存保护的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-6-地址翻译"><span class="toc-text">9.6 地址翻译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#结合高速缓存和虚拟内存"><span class="toc-text">结合高速缓存和虚拟内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用TLB加速地址翻译"><span class="toc-text">利用TLB加速地址翻译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多级页表"><span class="toc-text">多级页表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#综合：端到端的地址翻译"><span class="toc-text">综合：端到端的地址翻译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-7-案例研究：Intel-Core-i7-Linux-内存系统"><span class="toc-text">9.7 案例研究：Intel Core i7&#x2F;Linux 内存系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Core-i7-地址翻译（具体细节mark）"><span class="toc-text">Core i7 地址翻译（具体细节mark）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-虚拟内存系统"><span class="toc-text">Linux 虚拟内存系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-8-内存映射"><span class="toc-text">9.8 内存映射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#再看共享对象"><span class="toc-text">再看共享对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再看fork函数"><span class="toc-text">再看fork函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再看execve函数"><span class="toc-text">再看execve函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用mmap函数的用户级内存映射"><span class="toc-text">使用mmap函数的用户级内存映射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-9-动态内存分配"><span class="toc-text">9.9 动态内存分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#malloc和free函数"><span class="toc-text">malloc和free函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用动态内存分配"><span class="toc-text">为什么使用动态内存分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分配器的要求和目标"><span class="toc-text">分配器的要求和目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#碎片"><span class="toc-text">碎片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现问题"><span class="toc-text">实现问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式空闲链表"><span class="toc-text">隐式空闲链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#放置已分配的块"><span class="toc-text">放置已分配的块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分割空闲块"><span class="toc-text">分割空闲块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获得额外的堆内存"><span class="toc-text">获得额外的堆内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并空闲块"><span class="toc-text">合并空闲块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带边界标记和合并"><span class="toc-text">带边界标记和合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#综合实现一个简单的分配器（略mark）"><span class="toc-text">综合实现一个简单的分配器（略mark）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显式空闲链表"><span class="toc-text">显式空闲链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分离的空闲链表"><span class="toc-text">分离的空闲链表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-10-垃圾收集"><span class="toc-text">9.10 垃圾收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾收集器的基本知识"><span class="toc-text">垃圾收集器的基本知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mark-amp-Sweep垃圾收集器"><span class="toc-text">Mark&amp;Sweep垃圾收集器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C程序的保守Mark-amp-Sweep"><span class="toc-text">C程序的保守Mark&amp;Sweep</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-11-C程序中常见的与内存有关的错误"><span class="toc-text">9.11 C程序中常见的与内存有关的错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#间接引用坏指针"><span class="toc-text">间接引用坏指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读未初始化的内存"><span class="toc-text">读未初始化的内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#允许栈缓冲区溢出"><span class="toc-text">允许栈缓冲区溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#假设指针和它们指向的对象是相同大小的"><span class="toc-text">假设指针和它们指向的对象是相同大小的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#造成错位错误"><span class="toc-text">造成错位错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用指针，而不是它所指向的对象"><span class="toc-text">引用指针，而不是它所指向的对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#误解指针运算"><span class="toc-text">误解指针运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用不存在的变量"><span class="toc-text">引用不存在的变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用空闲堆块中的数据"><span class="toc-text">引用空闲堆块中的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引起内存泄漏"><span class="toc-text">引起内存泄漏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-12-小结"><span class="toc-text">9.12 小结</span></a></li></ol>
+</div>
+
+
+        <p>一个系统中的进程与其他进程共享CPU和主存资源。为了有效地管理内存并且少出错，现代系统提供了一种对主存的抽象概念——虚拟内存（VM）。它是硬件异常、硬件地址翻译、主存、磁盘文件和内核软件的完美交互，他为每个进程提供了一个大的、一致的和私有的地址空间。</p>
+<p>虚拟内存提供了三种重要的能力：</p>
+<ul>
+<li>把主存看成是一个存储在磁盘上的地址空间的高速缓存，主存中只保留活动区域在磁盘和主存间传送数据。</li>
+<li>为每个进程提供了一致的地址空间，简化内存管理。</li>
+<li>保护每个进程的地址空间不被其他进程破环。</li>
+</ul>
+<p>程序员需要理解它处于以下原因：</p>
+<ul>
+<li>它是核心。虚拟内存遍布计算机系统的所有层面。</li>
+<li>它很强大。通过它可以销毁内存片、将内存片映射到磁盘文件的某个部分，和其他进程共享内存。</li>
+<li>它很危险。程序分配地址空间时都会与它交互，使用不但会导致严重错误。</li>
+</ul>
+<p>本章讲述虚拟内存如何工作，以及如何在程序中使用和管理虚拟内存和与内存相关的错误。</p>
+<a id="more"></a>
+<h2 id="9-1-物理和虚拟寻址"><a href="#9-1-物理和虚拟寻址" class="headerlink" title="9.1 物理和虚拟寻址"></a>9.1 物理和虚拟寻址</h2><p>主存被组织成一个由M个连续字节组成的数组，可以通过唯一的物理地址访问每个字节。早期PC使用物理寻址，现代处理器使用虚拟寻址（virtual addressing）。</p>
+<p>CPU通过生成一个虚拟地址访问主存。在虚拟地址送到内存前，通过地址翻译转换为物理地址，地址翻译需要CPU和操作系统间的紧密合作。CPU芯片上叫做内存管理系统的硬件，利用存放在主存中的查询表动态翻译虚拟地址，该表内容由操作系统管理。</p>
+<h2 id="9-2-地址空间"><a href="#9-2-地址空间" class="headerlink" title="9.2 地址空间"></a>9.2 地址空间</h2><p>地址空间是一个非负整数地址的有序集合，下面的讨论假设使用的是地址为连续整数的线性地址空间，与之关联的是系统的物理地址空间。主存中每个字节都有一个选自虚拟地址空间的虚拟地址和一个选自物理地址空间的物理地址，两种不同的地址为其间的映射提供了可能。</p>
+<h2 id="9-3-虚拟内存作为缓存的工具"><a href="#9-3-虚拟内存作为缓存的工具" class="headerlink" title="9.3 虚拟内存作为缓存的工具"></a>9.3 虚拟内存作为缓存的工具</h2><p>磁盘上的数据分割为块，作为磁盘与主存间的传输单元。VM系统通过将虚拟内存分割为虚拟页大小固定的块来处理该问题；物理内存则被分割为同样大小的块（物理页或页帧）。任意时刻，虚拟页的集合分为三个不相交的子集：未分配的（没有任何数据与之关联）、缓存的（当前已缓存在物理内存中的已分配页）和未缓存的。</p>
+<h3 id="DRAM的组织结构"><a href="#DRAM的组织结构" class="headerlink" title="DRAM的组织结构"></a>DRAM的组织结构</h3><p>DRAM缓存用来表示虚拟内存系统的缓存，它在主存中缓存虚拟页，其组成结构由巨大的不命中开销驱动。为减少不命中处罚和访问第一个字节开销，虚拟页往往很大（4KB到2MB）。</p>
+<p>DRAM缓存为全相联的，故其只分为一个缓存组，包含多个缓存行，因而任何虚拟页都可以放置在任何物理页中，且总是使用写回，而不是直写。</p>
+<h3 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h3><p>页表是地址翻译硬件将一个虚拟地址转换为物理地址时的参照信息，它存储在物理内存中。操作系统维护页表内容，并在磁盘和DRAM之间传送页。</p>
+<p>虚拟地址空间的每个页在页表中一个固定偏移量处都有一个页表条目（Page Table Entry，PTE）。假设每个PTE由一个有效位和一个n位地址字段组成，根据有效位设置与否确定该虚拟页是否被DRAM缓存。</p>
+<h3 id="页命中"><a href="#页命中" class="headerlink" title="页命中"></a>页命中</h3><p>对于某个被缓存的虚拟页VP，地址翻译硬件将虚拟地址作为一个索引来定位其对应的PTE，并从内存中读取它。</p>
+<h3 id="缺页"><a href="#缺页" class="headerlink" title="缺页"></a>缺页</h3><p>DRAM缓存不命中称为缺页。缺页异常调用内核中的缺页异常处理程序，程序选择一个牺牲页，如果牺牲页的内容被修改，内核将其复制回磁盘，并将缺少的虚拟页从磁盘上的物理地址复制到物理内存中，同时该牺牲页和虚拟页的PTE都会更新。</p>
+<p>虚拟内存的概念出现在CPU和主存之间的高速缓存SRAM出现之前，故虚拟内存系统使用了和SRAM缓存不同的术语。例如，虚拟内存中块被称为页，磁盘和内存间传送页称为交换或页面调度。现代系统都使用按序页面调度的方式，即当不命中发生时，才将页从磁盘换入内存。</p>
+<h3 id="分配页面"><a href="#分配页面" class="headerlink" title="分配页面"></a>分配页面</h3><p>当操作系统分配一个新的虚拟内存页时，例如调用malloc时，在磁盘中创建空间并更新PTE，使它指向磁盘上这个新创建的页面。</p>
+<h3 id="又是局部性救了我们"><a href="#又是局部性救了我们" class="headerlink" title="又是局部性救了我们"></a>又是局部性救了我们</h3><p>虚拟内存不命中处罚很大，但是局部性使得它并没有很低的效率。局部性使得程序趋向于在一个较小的活动页面集合上工作，这个集合称之为工作集，初始开销即将工作集页面换入内存后，对工作集的引用会一直命中，从而保证效率。但是当工作集大小超过物理内存的大小时，就会导致频繁的页面调度，发生抖动现象，使效率大幅下降。</p>
+<h2 id="9-4-虚拟内存作为内存管理的工具"><a href="#9-4-虚拟内存作为内存管理的工具" class="headerlink" title="9.4 虚拟内存作为内存管理的工具"></a>9.4 虚拟内存作为内存管理的工具</h2><p>目前为止，提供了一种使用DRAM来缓存一个更大的虚拟地址空间的机制，这种机制同时页大大简化了内存管理。</p>
+<p>实际上，操作系统为每个进程提供一个独立的页表，多个虚拟页面可以映射到同一个共享物理页面上。按需页面调度和独立的虚拟地址空间的结合，简化了链接和加载、代码和数据共享，以及应用程序的内存分配。</p>
+<ul>
+<li>简化链接：独立地址空间允许每个进程的内存映像使用相同的基本格式，而不管其实际物理内存地址。格式的一致性简化了链接器的设计和实现，允许链接器生成完全链接的可执行文件，这些文件独立于物理内存中数据和代码的最终位置。</li>
+<li>简化加载：Linux加载器为代码和数据段分配虚拟页，把他们标记为未缓存的，并将PTE指向目标文件中适当的位置。</li>
+<li>简化共享：通过将不同进程中适当的虚拟页面映射到相同的物理页面，从而安排多个进程共享这部分代码的一个副本。</li>
+<li>简化内存分配：当用户进程中的程序要求额外的堆空间时（如调用malloc），操作系统分配适当大小的连续的虚拟内存页面，并映射到任意位置的同样大小的物理页面。</li>
+</ul>
+<h2 id="9-5-虚拟内存作为内存保护的工具"><a href="#9-5-虚拟内存作为内存保护的工具" class="headerlink" title="9.5 虚拟内存作为内存保护的工具"></a>9.5 虚拟内存作为内存保护的工具</h2><p>用户进程不应该修改它的只读代码段，不应该读或修改任何内核中的代码和数据结构，不应该读或写其他进程的私有内存，不应该修改任何与其他进程的共享内存，这就需要计算机系统进行管理。</p>
+<p>可以通过给PTE添加额外的许可位来控制对一个虚拟页面内容的访问。每个PTE调价三个许可位：</p>
+<ul>
+<li>SUP位：表示进程是否必须运行在内核模式下才能访问该页。</li>
+<li>READ和WRITE位：控制对页面的读和写访问。</li>
+</ul>
+<p>如果一条指令违反了这些许可条件，CPU触发一个一般保护故障，将控制传递给内核中的异常处理程序，Linux shell一般将其报告未“段错误”。</p>
+<h2 id="9-6-地址翻译"><a href="#9-6-地址翻译" class="headerlink" title="9.6 地址翻译"></a>9.6 地址翻译</h2><p>本节省略了大量的细节，尤其是和时序相关的细节。</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter9.6%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91%E7%AC%A6%E5%8F%B7.png" alt="图1 地址翻译符号"></p>
+<p>形式上看，地址翻译是一个N元素的虚拟地址空间（VAS）中的元素和一个M元素的物理地址空间（PAS）中元素的映射：</p>
+<script type="math/tex; mode=display">
+MAP:VAS \rightarrow PAS \cup \varnothing</script><p>MMU（内存管理单元）通过以下机制实现这种映射：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter9.6%E4%BD%BF%E7%94%A8%E9%A1%B5%E8%A1%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91.png" alt="图2 使用页表的地址翻译"></p>
+<p>a图反映了当页面命中时CPU硬件（只涉及硬件）执行的步骤；b图反映了当缺页时，硬件和操作系统内核（硬件和软件）所作的处理：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter9.6%E9%A1%B5%E9%9D%A2%E5%91%BD%E4%B8%AD%E5%92%8C%E7%BC%BA%E9%A1%B5.png" alt="图3 页面命中和缺页"></p>
+<p>当发生缺页时，调用了操作系统内核中的缺页异常处理程序，故使用了软件。</p>
+<h3 id="结合高速缓存和虚拟内存"><a href="#结合高速缓存和虚拟内存" class="headerlink" title="结合高速缓存和虚拟内存"></a>结合高速缓存和虚拟内存</h3><p>在使用虚拟内存和SRAM高速缓存的系统中，访问SRAM缓存有两种选择：虚拟地址和物理地址，大多数系统选择物理地址。地址翻译发生在高速缓存查找之前，因而物理寻址的高速缓存可以和虚拟内存结合起来：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter9.6.1%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%BB%93%E5%90%88.png" alt="图4 高速缓存和虚拟内存结合"></p>
+<h3 id="利用TLB加速地址翻译"><a href="#利用TLB加速地址翻译" class="headerlink" title="利用TLB加速地址翻译"></a>利用TLB加速地址翻译</h3><p>TLB的每一行保存着由单个PTE组成的块，对它的访问速度非常快。当TLB命中时，地址翻译都是在芯片上的MMU中执行；不命中时，从L1缓存中取出相应的PTE存放在TLB中。</p>
+<h3 id="多级页表"><a href="#多级页表" class="headerlink" title="多级页表"></a>多级页表</h3><p>目前为止，一直假设系统只用一个单独的页表进行地址翻译，这样所需的页表会非常大。压缩页表的常用访问时使用层次结构的页表：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter9.6.3%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84.png" alt="图5 两级页表层次结构"></p>
+<h3 id="综合：端到端的地址翻译"><a href="#综合：端到端的地址翻译" class="headerlink" title="综合：端到端的地址翻译"></a>综合：端到端的地址翻译</h3><p>通过一个具体的端到端的地址翻译示例，综合一下刚学过的内容，示例运行在一个由TLB和L1 d-cache的小系统上。（具体细节<strong>mark</strong>）</p>
+<h2 id="9-7-案例研究：Intel-Core-i7-Linux-内存系统"><a href="#9-7-案例研究：Intel-Core-i7-Linux-内存系统" class="headerlink" title="9.7 案例研究：Intel Core i7/Linux 内存系统"></a>9.7 案例研究：Intel Core i7/Linux 内存系统</h2><p>以一个实际系统的案例研究总结对虚拟内存的讨论。</p>
+<h3 id="Core-i7-地址翻译（具体细节mark）"><a href="#Core-i7-地址翻译（具体细节mark）" class="headerlink" title="Core i7 地址翻译（具体细节mark）"></a>Core i7 地址翻译（具体细节<strong>mark</strong>）</h3><h3 id="Linux-虚拟内存系统"><a href="#Linux-虚拟内存系统" class="headerlink" title="Linux 虚拟内存系统"></a>Linux 虚拟内存系统</h3><p>虚拟内存系统要求硬件和内核软件间的紧密合作。此处对Linux系统作简要描述，大致说明一个实际操作系统如何组织虚拟内存以及如何处理缺页。如前面所言，Linux位每个进程维护了一个单独的虚拟地址空间，其中内核虚拟内存部分分为两部分，一部分由各进程共享，另一部分各进程各不相同。</p>
+<ul>
+<li>Linux虚拟内存区域：Linux将虚拟内存组织成区域（也叫段）的集合，每个区域由虚拟内存的连续片组成，代码段、数据段、堆、共享库段和用户栈都是不同的区域，每个存在的虚拟页都保存在某个区域中。区域意味着虚拟地址空间之间可以有间隙。下图中，task_struct为每个进程都拥有的单独的任务结构，mm_struct描述了虚拟内存的当前状态，pgd指向第一级页表的基址，mmap指向区域结构的链表，链表中的每个元素包含一个区域的信息。</li>
+</ul>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter9.7.2Linux%E7%BB%84%E7%BB%87%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.png" alt="图6 Linux组织虚拟内存"></p>
+<ul>
+<li>Linux缺页异常处理：当翻译某个虚拟地址A触发缺页时，导致控制转移给内核的缺页处理程序，程序会依次判断A是否合法（在区域结构定义的区域内），若不合法，触发段错误；进而判断试图进行的内存访问是否合法，即检查进程对这个页面拥有的权限，如果不合法，会触发保护异常；此时，缺页是由对合法的虚拟地址进程进行合法的操作造成，会进行页面调用。</li>
+</ul>
+<h2 id="9-8-内存映射"><a href="#9-8-内存映射" class="headerlink" title="9.8 内存映射"></a>9.8 内存映射</h2><p>内存映射指Linux将一个虚拟内存区域与一个磁盘上的对象关联起来，以初始化虚拟内存区域的内容。该区域可以映射到两种类型对象中的一种：</p>
+<ul>
+<li>Linux文件系统中的普通文件：例如一个可执行目标文件，文件区被分为页大小的片，每一片包含一个虚拟页面的初始内容，按需进行页面调度。</li>
+<li>匿名文件：匿名文件由内核创建，包含的全是二进制零。在CPU第一次引用映射到匿名文件的一个区域内的虚拟页面时，磁盘与内存间无数据传送。</li>
+</ul>
+<p>一旦一个虚拟页面被初始化，它就在一个由内核维护的专门的交换文件（也叫交换空间）中换来换去，交换空间限制着当前运行着的进程能够分配的虚拟页面的总数。</p>
+<h3 id="再看共享对象"><a href="#再看共享对象" class="headerlink" title="再看共享对象"></a>再看共享对象</h3><p>内存映射提供了一种清晰的机制，用来控制多个进程共享对象。映射到虚拟内存的一个区域的对象分为共享对象和私有对象，对共享对象所在区域的写操作对其他共享该对象的进程可见，并且这些变化也反映在磁盘的原始对象中，私有对象则反之；两种对象所映射的区域分别叫做共享区域和私有区域。</p>
+<p>私有对象使用一种叫做写时复制的巧妙技术被映射到虚拟内存中。（不懂，<strong>mark</strong>）</p>
+<h3 id="再看fork函数"><a href="#再看fork函数" class="headerlink" title="再看fork函数"></a>再看fork函数</h3><p>理解虚拟内存和内存映射，我们可以清晰知道fork函数如何创建一个带有自己独立虚拟地址空间的新进程。</p>
+<h3 id="再看execve函数"><a href="#再看execve函数" class="headerlink" title="再看execve函数"></a>再看execve函数</h3><p>在当前进程执行execve调用后，加载并运行目标文件需要以下步骤：删除已存在的用户区域；映射私有区域；映射共享区域；设置程序计数器PC。</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter9.8.3%E5%8A%A0%E8%BD%BD%E5%99%A8%E6%98%A0%E5%B0%84%E5%88%B0%E7%94%A8%E6%88%B7%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4.png" alt="图7 加载器映射到用户地址空间"></p>
+<h3 id="使用mmap函数的用户级内存映射"><a href="#使用mmap函数的用户级内存映射" class="headerlink" title="使用mmap函数的用户级内存映射"></a>使用mmap函数的用户级内存映射</h3><p>Linux进程可以使用mmap函数来创建新的虚拟内存区域，并将对象映射到这些区域中。（具体细节<strong>mark</strong>）</p>
+<h2 id="9-9-动态内存分配"><a href="#9-9-动态内存分配" class="headerlink" title="9.9 动态内存分配"></a>9.9 动态内存分配</h2><p>低级的mmap和munmap函数可以来创建和删除虚拟内存的区域，但是当运行时需要额外虚拟内存时，用动态内存分配器更方便，也有更好的可移植性。</p>
+<p>动态内存分配器维护着一个进程的虚拟内存区域，称为堆，分配器将堆视为一组不同大小的块的集合，每个块要么已分配，要么空闲。分配器有两种基本风格，不同之处在于由那个实体来负责释放已分配的块：</p>
+<ul>
+<li>显式分配器：要求应用显式地释放任何已分配的块，如C语言中的malloc函数对应的释放函数free。</li>
+<li>隐式分配器：自动释放未使用的已分配的块，这个过程也叫垃圾收集。</li>
+</ul>
+<p>下面主要讨论显式分配器，集中于管理堆内存的分配器。</p>
+<h3 id="malloc和free函数"><a href="#malloc和free函数" class="headerlink" title="malloc和free函数"></a>malloc和free函数</h3><p>C标准库提供了一个称为malloc程序包的显式分配器，通过调用malloc函数从堆中分配块。malloc函数返回一个指针，指向大小为指定字节的内存块，这个块会为可能包含在这个块内的任何数据对象类型做对齐。（具体细节<strong>mark</strong>）</p>
+<h3 id="为什么使用动态内存分配"><a href="#为什么使用动态内存分配" class="headerlink" title="为什么使用动态内存分配"></a>为什么使用动态内存分配</h3><p>最重要的原因是：直到程序实际运行时，才知道某些数据结构的大小。</p>
+<h3 id="分配器的要求和目标"><a href="#分配器的要求和目标" class="headerlink" title="分配器的要求和目标"></a>分配器的要求和目标</h3><p>显式分配器必须在一些相当严格的约束条件下工作：</p>
+<ul>
+<li>处理任意请求序列：一个应用可以有任意的分配请求和释放请求序列，只要每个释放请求必须对应于一个当前已分配快，这个块是由一个之前的分配请求获得的。</li>
+<li>立即响应请求：不允许分配器为了提高性能重新排列或缓冲请求。</li>
+<li>只使用堆：为了使分配器可扩展，分配器使用的任何非标量数据结构必须存在堆里。</li>
+<li>对齐块：使得块可以保存任何类型的数据对象。</li>
+<li>不修改已分配的块：分配器只能操作或者改变空闲块。</li>
+</ul>
+<p>由于这些限制条件，分配器的两个性格目标通常相互冲突：</p>
+<ul>
+<li>最大化吞吐率：通过使满足分配和释放请求的平均时间最小化。</li>
+<li>最大化内存利用率：一个系统中被所有进程分配的虚拟内存的全部数量受磁盘上交换空间数量限制。</li>
+</ul>
+<h3 id="碎片"><a href="#碎片" class="headerlink" title="碎片"></a>碎片</h3><p>造成堆利用率低的主要原因是一种称为碎片的现象，当虽然有未使用的内存但不能用来满足分配请求时，就会发生这种现象，碎片分为两种：</p>
+<ul>
+<li>内部碎片：在已分配块比有效载荷大，它由二者之差量化。内部碎片的数量只取决于请求的模式和分配器的实现方式。</li>
+<li>外部碎片：空闲内存合计起来足够满足一个分配请求，但是没有一个单独的空闲块足够大来处理这个请求。除上述内部碎片取决因素外，还取决于未来请求的模式。</li>
+</ul>
+<h3 id="实现问题"><a href="#实现问题" class="headerlink" title="实现问题"></a>实现问题</h3><p>最简单的分配器会将堆组织成一个大的字节数组和指向数组第一个字节的指针p，但是这种实现方式回导致分配器从不重复使用任何块，内存利用率极差。所以要设计一个好的分配器，需要考虑多个问题：空闲块组织；放置；分割；合并。</p>
+<h3 id="隐式空闲链表"><a href="#隐式空闲链表" class="headerlink" title="隐式空闲链表"></a>隐式空闲链表</h3><p>分配器需要一些数据结构，用来区分块边界，以及区分已分配块和空闲块，大多数分配器将这些信息嵌入块本身。我们可以将堆组织为一个连续的已分配块和空闲块的序列，这种结构称为隐式空闲链表，因为空闲块通过头部中的大小字段隐含地连接。虽然这种结构很简单，但是放置分配的块所需的搜索事件与块总数成正比。另外，对齐要求使得堆中的块大小存在最小值。</p>
+<h3 id="放置已分配的块"><a href="#放置已分配的块" class="headerlink" title="放置已分配的块"></a>放置已分配的块</h3><p>当一个应用请求一个k字节的块时，分配器搜索空闲链表，查找一个足够大的可以放置所请求块的空闲块。分配器执行搜索的方式由放置策略确定，常见策略有首次适配、下一次适配和最佳适配。</p>
+<h3 id="分割空闲块"><a href="#分割空闲块" class="headerlink" title="分割空闲块"></a>分割空闲块</h3><p>分配器找到一个匹配的空闲块后，有两种选择：一种是直接使用整个空闲块，会产生内部碎片，适用于最佳适配；另一种是将空闲块分割成分配块和新的空闲块。</p>
+<h3 id="获得额外的堆内存"><a href="#获得额外的堆内存" class="headerlink" title="获得额外的堆内存"></a>获得额外的堆内存</h3><p>分配器不能为请求块找到合适的空闲块时，同样有两种选择：一种是合并空闲块，因为合并后不一定合适，所以不一定能解决问题；另一种是分配器调用sbrk函数相内核请求额外的堆内存。</p>
+<h3 id="合并空闲块"><a href="#合并空闲块" class="headerlink" title="合并空闲块"></a>合并空闲块</h3><p>分配器释放一个已分配块后，可能有其他空闲块与新释放的空闲块相邻，即出现假碎片现象。解决假碎片问题的方式是合并相邻的空闲块，合并可分为立即合并（块可能反复合并然后分割，导致抖动）和推迟合并。</p>
+<h3 id="带边界标记和合并"><a href="#带边界标记和合并" class="headerlink" title="带边界标记和合并"></a>带边界标记和合并</h3><p>称想要释放的块为当前块。当前块的头部指向下一个块的头部时，检查下一个块是否空闲，若空闲在常数时间内可将二者合并；若空闲块在当前块的前面，检查和合并则需要非常数的时间。如果在每个块的结尾添加一个脚部（本质上是头部的一个副本），则可以将第二种情况优化到常数时间。（具体细节<strong>mark</strong>）</p>
+<h3 id="综合实现一个简单的分配器（略mark）"><a href="#综合实现一个简单的分配器（略mark）" class="headerlink" title="综合实现一个简单的分配器（略mark）"></a>综合实现一个简单的分配器（略<strong>mark</strong>）</h3><h3 id="显式空闲链表"><a href="#显式空闲链表" class="headerlink" title="显式空闲链表"></a>显式空闲链表</h3><p>对隐式空闲链表来说，块分配和堆块的总数称线性关系。更好的方法是将空闲块组织为某种形式的显式数据结构。将堆组织成双向空闲链表，每个空闲块都包含一个前驱和后续指针，使首次适配的分配时间由块总数线性减少到空闲块数量线性。有两种方式维护链表：</p>
+<ul>
+<li>使用后进先出（LIFO）的方式维护链表，将新释放的块放置在链表的开始处。与首次适配的放置策略结合，释放一个块可以在常数时间内完成。</li>
+<li>按照地址顺序维护链表，链表中每个块的地址小于它后继的地址。它与上面相比有更高的内存利用率，但释放一个块需要线性时间。</li>
+</ul>
+<h3 id="分离的空闲链表"><a href="#分离的空闲链表" class="headerlink" title="分离的空闲链表"></a>分离的空闲链表</h3><p>一种流行的减少分配时间的方法，称为分配存储，即维护多个空闲链表，每个链表中的块有大致相等的大小。将所有可能的块大小分为一些等价类，也叫做大小类。下面描述两种基本的方法：</p>
+<ul>
+<li>简单分离存储：每个大小类的空闲链表包含大小相等的块，每个块的大小就是大小类中最大元素的大小。对这种方式来说，分离和释放都在常数时间内完成，也不需要标记和脚部，缺点在于容易造成内部和外部碎片。</li>
+<li>分离适配：分配器维护一个空闲链表的数组。其与上述方法的区别在于会对找到的合适的块进行分割，并将剩余部分插入到另一个适当的空闲链表中。C标准库中的GNU malloc包即使用这种方式。</li>
+<li>伙伴系统：分离适配的特例，其中每个大小类都是2的幂。可以实现快速搜索和快速合并，但可能导致显著的内部碎片。</li>
+</ul>
+<h2 id="9-10-垃圾收集"><a href="#9-10-垃圾收集" class="headerlink" title="9.10 垃圾收集"></a>9.10 垃圾收集</h2><p>应用要负责释放所有不再需要的已分配块，未能释放已分配的块是一种常见的编程错误。</p>
+<p>垃圾收集器是一种动态内存分配器，自动释放程序不再需要的已分配块，这些块称为垃圾，自动回收堆存储的过程叫做垃圾收集。在一个支持垃圾收集的系统中，应用显式分配堆块，但是对已分配的块的释放是隐式的。</p>
+<h3 id="垃圾收集器的基本知识"><a href="#垃圾收集器的基本知识" class="headerlink" title="垃圾收集器的基本知识"></a>垃圾收集器的基本知识</h3><p>垃圾收集器将内存式位一张有向可达图，改图节点被分为一组根节点和一组堆节点。垃圾收集器维护内存为可达图的表示，将不可达节点释放并将它们返回给空闲链表，定期的回收它们。ML和Java等语言对创建和使用指针有严格控制，能够维持可达图的精确表示；而C/C++则不能维持可达图的精切表示，一些不可达节点可能被错误地标记为可达。</p>
+<p>可以将收集器视作一个和应用并行的独立线程，故可以让malloc函数利用收集器来调用free函数更精准的释放已分配块。</p>
+<h3 id="Mark-amp-Sweep垃圾收集器"><a href="#Mark-amp-Sweep垃圾收集器" class="headerlink" title="Mark&amp;Sweep垃圾收集器"></a>Mark&amp;Sweep垃圾收集器</h3><p>该收集器由标记和清除阶段组成。标记阶段标记处根节点所有可达和已分配的后继，清楚阶段释放每个未被标记的已分配的块。</p>
+<h3 id="C程序的保守Mark-amp-Sweep"><a href="#C程序的保守Mark-amp-Sweep" class="headerlink" title="C程序的保守Mark&amp;Sweep"></a>C程序的保守Mark&amp;Sweep</h3><p>看不懂<strong>mark</strong></p>
+<h2 id="9-11-C程序中常见的与内存有关的错误"><a href="#9-11-C程序中常见的与内存有关的错误" class="headerlink" title="9.11 C程序中常见的与内存有关的错误"></a>9.11 C程序中常见的与内存有关的错误</h2><p>与内存有关的错误，在时间和空间上，经常在距错误源一段距离后才表现出来，因此是令人苦恼的错误。</p>
+<h3 id="间接引用坏指针"><a href="#间接引用坏指针" class="headerlink" title="间接引用坏指针"></a>间接引用坏指针</h3><p>在进程的虚拟地址空间中有较大的洞，没有映射到任何有意义的数据，试图间接引用指向这些洞的指针会导致段错误；虚拟内存的某些区域是只读的，对这些区域进行读操作会触发保护异常。</p>
+<h3 id="读未初始化的内存"><a href="#读未初始化的内存" class="headerlink" title="读未初始化的内存"></a>读未初始化的内存</h3><p>一个常见的错误是假设堆内存初始化为零。（对未初始化的全局C变量，其确实被加载器初始化为零）</p>
+<h3 id="允许栈缓冲区溢出"><a href="#允许栈缓冲区溢出" class="headerlink" title="允许栈缓冲区溢出"></a>允许栈缓冲区溢出</h3><p>正如3.10.3节中，如果一个程序不检查输入串大小就写入栈中的目标缓冲区，就会出现缓冲区溢出错误。</p>
+<h3 id="假设指针和它们指向的对象是相同大小的"><a href="#假设指针和它们指向的对象是相同大小的" class="headerlink" title="假设指针和它们指向的对象是相同大小的"></a>假设指针和它们指向的对象是相同大小的</h3><p>将<code>sizeof(int *)</code>错写成<code>sizeof(int)</code>。</p>
+<h3 id="造成错位错误"><a href="#造成错位错误" class="headerlink" title="造成错位错误"></a>造成错位错误</h3><p>创建了包含n个元素的数组，却尝试初始化数组的第n+1个元素，导致对不期望的某个内存位置的覆盖。</p>
+<h3 id="引用指针，而不是它所指向的对象"><a href="#引用指针，而不是它所指向的对象" class="headerlink" title="引用指针，而不是它所指向的对象"></a>引用指针，而不是它所指向的对象</h3><p>所得教训是，对优先级有疑问时，使用括号。</p>
+<h3 id="误解指针运算"><a href="#误解指针运算" class="headerlink" title="误解指针运算"></a>误解指针运算</h3><p>忘记指针的算术操作是以它们指向的对象的大小为单位进行，而这种大小单位不一定为字节。</p>
+<h3 id="引用不存在的变量"><a href="#引用不存在的变量" class="headerlink" title="引用不存在的变量"></a>引用不存在的变量</h3><p>如不理解栈的规则，导致引用不再合法的本地变量。</p>
+<h3 id="引用空闲堆块中的数据"><a href="#引用空闲堆块中的数据" class="headerlink" title="引用空闲堆块中的数据"></a>引用空闲堆块中的数据</h3><h3 id="引起内存泄漏"><a href="#引起内存泄漏" class="headerlink" title="引起内存泄漏"></a>引起内存泄漏</h3><p>忘记释放已分配块，在堆里创建了垃圾。</p>
+<h2 id="9-12-小结"><a href="#9-12-小结" class="headerlink" title="9.12 小结"></a>9.12 小结</h2><p>虚拟内存是对主存的抽象；虚拟内存提供三个重要功能；TLB；内存映射；动态内存分配器；C程序中与内存相关的错误。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" data-id="ckcatbi9p0003tgwd3na3a54k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter10系统级I/O
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于学习大部头书籍</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F/">人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 15px;">微言小义</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 15px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 15px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">chapter11网络编程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/">chapter10系统级I/O</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">chapter9虚拟内存</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/">关于学习大部头书籍</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/">chapter8异常控制流</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Tom89757<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+</body>
+</html>
