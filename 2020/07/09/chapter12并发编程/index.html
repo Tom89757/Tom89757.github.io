@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>chapter12并发编程 | Tom89757&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如第8章所说，如果逻辑控制流在时间上重叠，它们就是并发（concurrency）的。并发出现在计算机系统的不同层次，如Linux信号处理程序、硬件异常处理程序和进程。并发并不限于内核，应用级程序中也大有可为。  访问慢速I&#x2F;O设备：等待I&#x2F;O设备（如磁盘）数据到达时，可以运行其他进程，使CPU保持繁忙。 与人交互：如在使用大型带UI的应用程序时进行的多种操作。 通过推迟工作降低延迟：如对动态内存分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter12并发编程">
+<meta property="og:url" content="http://yoursite.com/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="如第8章所说，如果逻辑控制流在时间上重叠，它们就是并发（concurrency）的。并发出现在计算机系统的不同层次，如Linux信号处理程序、硬件异常处理程序和进程。并发并不限于内核，应用级程序中也大有可为。  访问慢速I&#x2F;O设备：等待I&#x2F;O设备（如磁盘）数据到达时，可以运行其他进程，使CPU保持繁忙。 与人交互：如在使用大型带UI的应用程序时进行的多种操作。 通过推迟工作降低延迟：如对动态内存分">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF2%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.3.1%E5%B9%B6%E5%8F%91%E7%BA%BF%E7%A8%8B%E6%89%A7%E8%A1%8C.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.5.3%E4%BD%BF%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9D%A5%E4%BA%92%E6%96%A5.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.5.4%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.6%E5%90%84%E7%B1%BB%E5%9E%8B%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.3%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E4%BC%9A%E6%AD%BB%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E6%97%A0%E6%AD%BB%E9%94%81%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png">
+<meta property="article:published_time" content="2020-07-09T07:51:52.000Z">
+<meta property="article:modified_time" content="2020-07-09T18:21:53.802Z">
+<meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="深入理解计算机系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tom89757&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界在我面前展开</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-chapter12并发编程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="article-date">
+  <time datetime="2020-07-09T07:51:52.000Z" itemprop="datePublished">2020-07-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chapter12并发编程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#12-1-基于进程的并发编程"><span class="toc-text">12.1 基于进程的并发编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本进程的并发服务器"><span class="toc-text">基本进程的并发服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的优劣"><span class="toc-text">进程的优劣</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-2-基于I-O多路复用的并发编程"><span class="toc-text">12.2 基于I&#x2F;O多路复用的并发编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于I-O多路复用的并发事件驱动服务器"><span class="toc-text">基于I&#x2F;O多路复用的并发事件驱动服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O多路复用技术的优劣"><span class="toc-text">I&#x2F;O多路复用技术的优劣</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-3-基于线程的并发编程"><span class="toc-text">12.3 基于线程的并发编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线程执行模型"><span class="toc-text">线程执行模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Posix线程"><span class="toc-text">Posix线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建线程"><span class="toc-text">创建线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终止线程"><span class="toc-text">终止线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回收已终止线程的资源"><span class="toc-text">回收已终止线程的资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分离线程"><span class="toc-text">分离线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化线程"><span class="toc-text">初始化线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于线程的并发服务器"><span class="toc-text">基于线程的并发服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程程序中的共享变量"><span class="toc-text">多线程程序中的共享变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线程内存模型"><span class="toc-text">线程内存模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将变量映射到内存"><span class="toc-text">将变量映射到内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共享变量"><span class="toc-text">共享变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-5-用信号量同步线程"><span class="toc-text">12.5 用信号量同步线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进度图"><span class="toc-text">进度图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#信号量"><span class="toc-text">信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用信号量来实现互斥"><span class="toc-text">使用信号量来实现互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用信号量来共享资源"><span class="toc-text">利用信号量来共享资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于预线程化的并发服务器"><span class="toc-text">基于预线程化的并发服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-6-使用线程提供并行性"><span class="toc-text">12.6 使用线程提供并行性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-7-其他并发问题"><span class="toc-text">12.7 其他并发问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线程安全"><span class="toc-text">线程安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可重入性"><span class="toc-text">可重入性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在线程化的程序中使用已存在的库函数"><span class="toc-text">在线程化的程序中使用已存在的库函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#竞争"><span class="toc-text">竞争</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁"><span class="toc-text">死锁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-8-小结"><span class="toc-text">12.8 小结</span></a></li></ol>
+</div>
+
+
+        <p>如第8章所说，如果逻辑控制流在时间上重叠，它们就是并发（concurrency）的。并发出现在计算机系统的不同层次，如Linux信号处理程序、硬件异常处理程序和进程。并发并不限于内核，应用级程序中也大有可为。</p>
+<ul>
+<li>访问慢速I/O设备：等待I/O设备（如磁盘）数据到达时，可以运行其他进程，使CPU保持繁忙。</li>
+<li>与人交互：如在使用大型带UI的应用程序时进行的多种操作。</li>
+<li>通过推迟工作降低延迟：如对动态内存分配器来说可以推迟合并，降低单个free操作的延迟。</li>
+<li>服务多个网络客户端：创建并发服务器，为每个客户端创建单独的逻辑流。</li>
+<li>在多核机器上进行并行计算：使多个流并行执行，而不是交错执行。</li>
+<li>进程：每个逻辑控制流都是一个进程，由内核来调度和维护。</li>
+<li>I/O多路复用：程序是一个单独的进程，程序中所有的复用流共享同一个地址空间。</li>
+<li>线程：线程是运行在一个单一进程上下文中的逻辑流，由内核进行调度，同时像I/O复用流一样共享一个虚拟地址空间。</li>
+</ul>
+<p>本章研究上述三种不同的并发编程技术——进程、I/O多路复用和线程。以一个并发网络服务器作为贯穿全章的应用程序。</p>
+<a id="more"></a>
+<h2 id="12-1-基于进程的并发编程"><a href="#12-1-基于进程的并发编程" class="headerlink" title="12.1 基于进程的并发编程"></a>12.1 基于进程的并发编程</h2><p>构造并发程序最简单的方式是使用进程，使用诸如fork、exec和waitpid等函数。下图是父进程使用fork派生出两个子进程实现处理多个客户端请求的过程：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="图1 客户端1与服务器"></p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF2%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="图2 客户端2与服务器"></p>
+<h3 id="基本进程的并发服务器"><a href="#基本进程的并发服务器" class="headerlink" title="基本进程的并发服务器"></a>基本进程的并发服务器</h3><p>书中展示了一个基于进程的echo服务器的代码。关于服务器需要注意：</p>
+<ul>
+<li>通常服务器需要运行较长时间，因此需要调用SIGCHLD程序回收僵死子进程的资源。</li>
+<li>其次，父子进程必须关闭它们各自的已连接描述符副本，避免内存泄漏。</li>
+<li>因为套接字的文件表表项中的引用计数为0，连接才终止，所以需要关闭父子进程的已连接描述符。</li>
+</ul>
+<h3 id="进程的优劣"><a href="#进程的优劣" class="headerlink" title="进程的优劣"></a>进程的优劣</h3><p>在利用父子进程共享状态信息时，模型时清晰的，即：二者共享文件表，但不共享虚拟地址空间。其优缺点为：</p>
+<ul>
+<li>优点：一个进程不会不小心覆盖另一个进程的虚拟内存。</li>
+<li>缺点：独立的地址空间使得进程共享状态信息变得困难，需要使用显式的IPC（进程间通信）机制；此外，基于进程的设计比较慢，因为进程控制和IPC代价很高。</li>
+</ul>
+<h2 id="12-2-基于I-O多路复用的并发编程"><a href="#12-2-基于I-O多路复用的并发编程" class="headerlink" title="12.2 基于I/O多路复用的并发编程"></a>12.2 基于I/O多路复用的并发编程</h2><p>要求服务器能够对用户在标准输入键入的交互命令作出响应时，服务器必须响应两个独立的I/O事件：</p>
+<ul>
+<li>网络客户端发起连接请求</li>
+<li>用户在键盘键入命令行</li>
+</ul>
+<p>此时，我们使用基于I/O多路复用技术，其基于select函数。（具体细节<strong>mark</strong>）</p>
+<h3 id="基于I-O多路复用的并发事件驱动服务器"><a href="#基于I-O多路复用的并发事件驱动服务器" class="headerlink" title="基于I/O多路复用的并发事件驱动服务器"></a>基于I/O多路复用的并发事件驱动服务器</h3><p>I/O多路复用可以用作并发事件驱动程序的基础。将逻辑流化为状态机，不严格地说，状态机就是一组状态、输入事件和转移，每个转移将一个（输入状态，输入事件）对映射到输出状态。</p>
+<p>对每个客户端k，基于I/O多路复用的并发服务器创建一个新的状态机$s_k$，并将它和已连接描述符联系起来，每个状态机$s_k$都有一个状态（等待描述符$d_k$准备好可读）、一个输入事件（“描述符$d_k$准备好可以读了”）和一个转移（“从描述符$d_k$读一个文本行”）。（具体细节<strong>mark</strong>）</p>
+<h3 id="I-O多路复用技术的优劣"><a href="#I-O多路复用技术的优劣" class="headerlink" title="I/O多路复用技术的优劣"></a>I/O多路复用技术的优劣</h3><p>其优点为：</p>
+<ul>
+<li>与进程相比给程序员更多对程序行为的控制。</li>
+<li>运行在单一进程上下文中，因此每个逻辑流都能访问该进程的全部地址空间，在流之间共享数据变得很容易。</li>
+<li>与单个进程相比，方便调试。</li>
+<li>由于不需要进行进程的上下文切换来调度新的流，更为高效。</li>
+</ul>
+<p>其缺点为：</p>
+<ul>
+<li>编码复杂，并且岁并发粒度减少，复杂性上升。</li>
+<li>不能充分利用多核处理器。</li>
+</ul>
+<h2 id="12-3-基于线程的并发编程"><a href="#12-3-基于线程的并发编程" class="headerlink" title="12.3 基于线程的并发编程"></a>12.3 基于线程的并发编程</h2><p>线程是上述两种并发方式的混合。线程是运行在进程上下文中的逻辑流，现代系统允许我们编写一个进程里同时运行多个线程的程序，线程由内核自动调度，每个线程有自己的线程上下文，包括一个完整的线程ID、栈、栈指针、程序计数器、通用目的寄存器和条件码，所有运行在同一个进程里的线程共享同一个虚拟地址空间。</p>
+<h3 id="线程执行模型"><a href="#线程执行模型" class="headerlink" title="线程执行模型"></a>线程执行模型</h3><p>其执行模型与多进程相似，如图所示：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.3.1%E5%B9%B6%E5%8F%91%E7%BA%BF%E7%A8%8B%E6%89%A7%E8%A1%8C.png" alt="图3 并发线程执行"></p>
+<h3 id="Posix线程"><a href="#Posix线程" class="headerlink" title="Posix线程"></a>Posix线程</h3><p>Posix线程是在C程序中处理线程的一个标准接口，它大概定义了大约60个函数。允许程序创建、杀死和回收线程，与对等线程安全的共享数据，还可以通知对等线程系统状态的变化。（具体细节<strong>mark</strong>）</p>
+<h3 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h3><p>线程通过pthread_create函数创建其他线程（具体细节<strong>mark</strong>）：</p>
+<p><code>int pthread_create(pthread_t *tid, pthread_attr_t *attr, func *f, void *arg);</code></p>
+<h3 id="终止线程"><a href="#终止线程" class="headerlink" title="终止线程"></a>终止线程</h3><p>一个线程以下列方式之一终止：</p>
+<ul>
+<li>当顶层的线程例程返回时，线程回隐式地终止。</li>
+<li>通过调用pthread_exit函数，线程回显式地终止。如果主线程调用该函数，它会等待所有对等线程终止，再终止主线程和整个进程。</li>
+<li>某个对等线程调用Linux的exit函数，该函数终止进程以及所有与该进程有关的线程。</li>
+<li>另一个对等线程通过以当前线程ID作为参数调用pthread_cancel函数终止当前线程。</li>
+</ul>
+<h3 id="回收已终止线程的资源"><a href="#回收已终止线程的资源" class="headerlink" title="回收已终止线程的资源"></a>回收已终止线程的资源</h3><p>线程通过调用pthread_join函数等待其他线程终止。pthread_join函数会阻塞直到线程tid终止，将线程例程返回的通用（void <em>）指针赋值为thread return 指向的位置，然后回收已终止线程占用的所有内存资源。（具体细节<em>*mark</em></em>）</p>
+<h3 id="分离线程"><a href="#分离线程" class="headerlink" title="分离线程"></a>分离线程</h3><p>在任何一时间点上，线程是可结合的和分离的。</p>
+<ul>
+<li>一个可回收线程能够被其他线程收回和杀死，但是在被其他线程回收之前，它所占用的内存资源并不释放。</li>
+<li>一个分离线程不会被其他线程收回和杀死，但是在其终止时，内存资源自动释放。</li>
+</ul>
+<p>默认情况下线程被创建成可结合的，可用pthread_detach函数分离可结合线程，线程可以分离自己。在现实应用中，使用分离的线程是更好的。</p>
+<h3 id="初始化线程"><a href="#初始化线程" class="headerlink" title="初始化线程"></a>初始化线程</h3><p>pthread_once函数允许初始化与线程例程相关的状态。（具体细节<strong>mark</strong>）</p>
+<h3 id="基于线程的并发服务器"><a href="#基于线程的并发服务器" class="headerlink" title="基于线程的并发服务器"></a>基于线程的并发服务器</h3><p>书中P695展示了基于线程的并发echo服务器的代码。需要考虑竞争的情况，所以要将accept返回的每个已连接描述符分配的它自己的动态分配的内存块；此外，需要考虑内存泄漏的问题，即需要分离每个线程，并进一步小心释放主线程分配的内存块。（具体细节<strong>mark</strong>）</p>
+<h2 id="多线程程序中的共享变量"><a href="#多线程程序中的共享变量" class="headerlink" title="多线程程序中的共享变量"></a>多线程程序中的共享变量</h2><p>多线程很容易共享相同的程序变量。下面将从线程的基础内存模型、变量实例如何映射到内存和多少线程共享变量实例三个方面对其进行说明。书中P697展示了由创建两个对等线程的主线程组成的程序。</p>
+<h3 id="线程内存模型"><a href="#线程内存模型" class="headerlink" title="线程内存模型"></a>线程内存模型</h3><p>一组并发线程运行在一个进程的上下文中，每个线程都有自己的线程上下文，并且共享进程上下文的所有其他部分，包括整个用户虚拟地址空间，同时也共享打开的文件的集合。虽然每个线程有自己独立的线程栈，但其他线程也可以正常访问。</p>
+<h3 id="将变量映射到内存"><a href="#将变量映射到内存" class="headerlink" title="将变量映射到内存"></a>将变量映射到内存</h3><p>多线程的C程序中变量根据它们的存储类型被映射到虚拟内存：</p>
+<ul>
+<li>全局变量：定义在函数之外的变量，运行时虚拟内存只包含每个全局变量的一个实例。</li>
+<li>本地自动变量：定义在函数内部但没有static属性的变量。运行时，每个线程的栈都包含自己的所有本地自动变量的实例。</li>
+<li>本地静态变量：定义在函数内部并由static属性的变量。虚拟内存的读/写区域只包含在程序中声明的每个本地静态变量的一个实例。</li>
+</ul>
+<h3 id="共享变量"><a href="#共享变量" class="headerlink" title="共享变量"></a>共享变量</h3><p>一个变量v共享，当且仅当它的一个实例被一个以上的线程引用。本地自动变量也能被共享。</p>
+<h2 id="12-5-用信号量同步线程"><a href="#12-5-用信号量同步线程" class="headerlink" title="12.5 用信号量同步线程"></a>12.5 用信号量同步线程</h2><p>共享变量引入了同步错误的可能性。书中P698展示了<code>badcnt.c</code>的同步错误实例。（具体细节<strong>mark</strong>）</p>
+<h3 id="进度图"><a href="#进度图" class="headerlink" title="进度图"></a>进度图</h3><p>进度图将n个并发线程的执行模型化为一条n维笛卡尔空间中的轨迹线，每条轴k对应于线程k的进度，每个点反映了所有线程当前状态。</p>
+<p>进度图将执行执行模型转化为从一种状态到另一种状态的转换，在该空间中，转换只能由向上或向右的有向边表示。书中描述了临界区、互斥、（不）安全区、（不）安全轨迹线等概念。（具体细节<strong>mark</strong>）</p>
+<h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>Edsger Dijkstra基于一种叫做信号量的特殊类型变量，提出了一种经典的用于同步不同的执行线程的方法。</p>
+<p>信号量s是具有非负整数值的全局变量，只能由两种特殊操作P和V来处理：</p>
+<ul>
+<li>P：如果s非零，P将s减去1并返回；如果s为零，P将线程挂起，直到s非零，然后V重启该线程 ，P将s减去1并返回。</li>
+<li>V：V将s加上1。如果线程阻塞在P操作等待s变为非零，V会重启线程中的一个，该线程执行P将s减去1。</li>
+</ul>
+<p>当多个线程等待同一个信号量时，不能确定V操作重启那个线程；P和V的测试和加减操作不可分隔，不会中断；上述P、V的定义确保一个正确初始化的信号量不会变为负值，这被称为信号量不变性。</p>
+<h3 id="使用信号量来实现互斥"><a href="#使用信号量来实现互斥" class="headerlink" title="使用信号量来实现互斥"></a>使用信号量来实现互斥</h3><p>将每个共享变量与一个初始值为1的信号量s联起起来，然后用P和V操作将相应的临界区包围起来。书中描述了二元信息量、互斥锁、加锁、解锁和计数信号量等概念。P和V操作的结合创建了一组状态，这组状态构成了禁止区，并保证线程轨迹线不会经过禁止区。（具体细节<strong>mark</strong>）</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.5.3%E4%BD%BF%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9D%A5%E4%BA%92%E6%96%A5.png" alt="图4 使用信号量来互斥"></p>
+<h3 id="利用信号量来共享资源"><a href="#利用信号量来共享资源" class="headerlink" title="利用信号量来共享资源"></a>利用信号量来共享资源</h3><p>信号量的另一种重要作用是调度对共享资源的访问，一个线程用信号量操作通知另一个线程程序状态中的某个条件已经为真。</p>
+<p>1）生产者-消费者问题，生产者和消费者线程共享一个由n个槽的有限缓冲区，其具体特性如图：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.5.4%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98.png" alt="图5 生产者-消费者问题"></p>
+<p>我们不仅需要保证对缓冲区访问的互斥，还需要调度对缓冲区的访问（缓冲区出现满/空的情况）。（具体细节<strong>mark</strong>）</p>
+<p>2）读者-写者问题</p>
+<p>是对互斥问题的概括。一组并发的线程要访问一个共享对象，如一个主存中的数据结构或者一个磁盘上的数据库。有些线程只读对象，称为读者；有些线程只修改对象，称为写者。写者需要拥有对对象独占的访问，读者可以与无限多个其他的读者共享对象。（一个生活中典型的实例是在线航空预订系统）</p>
+<p>根据读者和写者的优先级，该问题有两个变种：</p>
+<ul>
+<li>读者优先，读者不会因为有一个写者在等待而等待。</li>
+<li>写者优先，一旦一个写者准备好开始写，就会尽快完成写操作。</li>
+</ul>
+<p>对上述两种问题的解答可能导致饥饿，即一个线程无限期的阻塞，无法进展，例如当有读者（写者）不断的到达。</p>
+<h3 id="基于预线程化的并发服务器"><a href="#基于预线程化的并发服务器" class="headerlink" title="基于预线程化的并发服务器"></a>基于预线程化的并发服务器</h3><p>这里展示了信号量在一个基于预线程化的并发服务器上的应用。（具体细节<strong>mark</strong>）</p>
+<h2 id="12-6-使用线程提供并行性"><a href="#12-6-使用线程提供并行性" class="headerlink" title="12.6 使用线程提供并行性"></a>12.6 使用线程提供并行性</h2><p>现代机器大多具有多核处理器，操作系统可以在多个核上并行地调度这些并发线程。下图展示了顺序、并发和并行程序集合之间的关系：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.6%E5%90%84%E7%B1%BB%E5%9E%8B%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB.png" alt="图5 程序集合关系"></p>
+<p>书中P711展示了一个将累加运算转变为多线程的实例。（具体实现<strong>mark</strong>）</p>
+<p>该实例凸显了并行编程的一项重要教训：同步开销巨大。避免同步的方法是让每个对等线程在一个私有变量中计算他自己的部分和，这个私有变量捕鱼其他任何线程共享，各线程的私有变量存储在一个数组中。</p>
+<p>刻画并行程序的性能：</p>
+<ul>
+<li><p>运行时间：当线程数大于处理器核数时，运行时间有所增长，这是因为一部分时间花费在同一个核上运行的多个线程的上下文切换上，因此习惯每个核上只运行一个线程。</p>
+</li>
+<li><p>加速比：$S_p = \frac{T_1}{T_p}$，有根据$T_1$为顺序执行（或单核并发执行）分为绝对加速比核相对加速比。与之相关的量为效率$E_p = \frac{S_p}{p} = \frac{T_1}{pT_p}$，其范围为(0, 100]，效率越高，在同步和通信上花费的时间越少。</p>
+</li>
+<li><p>增加核数量处理规模不变的问题称为强扩展；增加核数量处理规模增大的问题称为弱扩展。</p>
+</li>
+</ul>
+<h2 id="12-7-其他并发问题"><a href="#12-7-其他并发问题" class="headerlink" title="12.7 其他并发问题"></a>12.7 其他并发问题</h2><p>一旦要求同步对共享数据的访问，问题陡然变得复杂。本节展示了在写并发程序时需要注意的一些问题（并不完整），以线程为例，但在其他并发程序中同样会出现。</p>
+<h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p>一个函数称为线程安全，当且仅当被多个并发线程反复调用时，会一致产生正确的结果。此处定义四个（不相交的）线程不安全函数类：</p>
+<ol>
+<li>不保护共享变量的函数。一个简单的解决办法是增加P/V操作，尽管这会导致同步操作使运行时间变长。</li>
+<li>保持跨越多个调用的状态的函数：如一个伪随机数生成器，因为当前调用的结果依赖于前次调用的中间结果。解决办法是重写它，使得它不再使用任何static数据，而是依靠调用者在参数中传递状态信息。（不太懂<strong>mark</strong>）</li>
+<li>返回指向静态变量的指针的函数：被一个线程使用的结果可能被另一个线程悄悄覆盖。解决方法是重写或者加锁-复制。</li>
+<li>调用线程不安全函数的函数：f调用g，若g为2，只能重写；若g为1或3，可以使用互斥锁保护调用位置核任何得到的共享数据。</li>
+</ol>
+<h3 id="可重入性"><a href="#可重入性" class="headerlink" title="可重入性"></a>可重入性</h3><p>可重入函数是一类重要的线程安全函数，当被多个线程调用时，它不会引入任何共享数据。其又可分为显式可重入和隐式可重入（不太懂，<strong>mark</strong>）。</p>
+<h3 id="在线程化的程序中使用已存在的库函数"><a href="#在线程化的程序中使用已存在的库函数" class="headerlink" title="在线程化的程序中使用已存在的库函数"></a>在线程化的程序中使用已存在的库函数</h3><p>大多数Linux函数都是线程安全的，下图列出了常见的意外：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.3%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0.png" alt="图6 常见的线程不安全的库函数"></p>
+<h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><p>当一个程序的正确性依赖于一个线程要在另一个线程到达y点之前到达它的控制流中的x点，就会发生竞争。通常发生竞争是因为程序员忘记了一个准则：多线程程序必须对任何可行的轨迹线都准确工作。书中P719展示了一个简单的实例。</p>
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>由信号量引起，指一组线程被阻塞了，等待一个永远也不会为真的条件，可以通过进度图来理解。如下图：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E4%BC%9A%E6%AD%BB%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png" alt="图7 一个会死锁的程序的进度图"></p>
+<p>使用两个以上的信号量时，若两个信号量的区域重叠，可能会形成一个称为死锁状态的区域，若进度图上的轨迹进入了这个区域，死锁即不可避免。</p>
+<p>当使用二元信号量实现互斥时，可以应用一个简单而有效的规则避免死锁——互斥锁加锁顺序规则：给定所有互斥操作的一个全序，如果每个线程都是以一种顺序获得互斥锁并以相反的顺序释放，那么这个程序就是无死锁的。</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E6%97%A0%E6%AD%BB%E9%94%81%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png" alt="图8 一个无死锁程序的进度图"></p>
+<h2 id="12-8-小结"><a href="#12-8-小结" class="headerlink" title="12.8 小结"></a>12.8 小结</h2><p>一个并发程序是由在时间上重叠的一组逻辑流组成，本章介绍了三种不同的构建并发程序的机制：进程、I/O多路复用和线程。</p>
+<p>进程由内核自动调度，有各自的虚拟地址空间，需要显式的IPC机制；时间驱动程序创建自己的并发逻辑流，流被模型化为状态机，I/O多路复用显式的调度这些流；线程时这些方法的集合，由内核调度，运行在单一进程的上下文中，共享同一个虚拟地址空间。</p>
+<p>信号量概念的提出用以解决对共享数据的并发访问，信号量操作提供了对共享数据的互斥访问，也给生产者－消费者问题和读者－写者两个变种的问题提供了解决方案。</p>
+<p>并发也引入了一些难题，如四类线程不安全函数、竞争和死锁等问题，所幸这些问题的解决都有迹可循。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" data-id="ckcf4dg5h000068wdcdic2prw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chapter11网络编程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F/">人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 15px;">微言小义</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 15px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 15px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">chapter12并发编程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">chapter11网络编程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/">chapter10系统级I/O</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">chapter9虚拟内存</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/">关于学习大部头书籍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Tom89757<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+</body>
+</html>

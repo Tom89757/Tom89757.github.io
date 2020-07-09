@@ -7,16 +7,24 @@
   
   <title>chapter11网络编程 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。 前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="chapter11网络编程">
 <meta property="og:url" content="http://yoursite.com/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。 前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E5%80%9F%E5%8A%A9%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.3%E4%B8%80%E4%B8%AA%E5%9B%A0%E7%89%B9%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%92%8C%E8%BD%AF%E4%BB%B6%E7%BB%84%E7%BB%87.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.4%E5%9F%BA%E4%BA%8E%E5%A5%97%E6%8E%A5%E5%AD%97%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0.png">
+<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.4.6%E7%9B%91%E5%90%AC%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%92%8C%E5%B7%B2%E8%BF%9E%E6%8E%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6.png">
 <meta property="article:published_time" content="2020-07-07T11:13:00.000Z">
-<meta property="article:modified_time" content="2020-07-07T11:15:46.368Z">
+<meta property="article:modified_time" content="2020-07-09T07:50:47.268Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -97,11 +105,110 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-1-客户端-服务器编程模型"><span class="toc-text">11.1 客户端-服务器编程模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-2-网络"><span class="toc-text">11.2 网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-3-全球IP因特网"><span class="toc-text">11.3 全球IP因特网</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IP地址"><span class="toc-text">IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因特网域名"><span class="toc-text">因特网域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因特网连接"><span class="toc-text">因特网连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-4-套接字接口"><span class="toc-text">11.4 套接字接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#套接字地址结构"><span class="toc-text">套接字地址结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket函数"><span class="toc-text">socket函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#connect函数"><span class="toc-text">connect函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind函数"><span class="toc-text">bind函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listen函数"><span class="toc-text">listen函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#accept函数"><span class="toc-text">accept函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主机和服务的转换"><span class="toc-text">主机和服务的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#套接字接口的辅助函数"><span class="toc-text">套接字接口的辅助函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#echo客户端和服务器的示例"><span class="toc-text">echo客户端和服务器的示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-5-Web服务器"><span class="toc-text">11.5 Web服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web基础"><span class="toc-text">Web基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web内容"><span class="toc-text">Web内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP事务（具体细节mark）"><span class="toc-text">HTTP事务（具体细节mark）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务动态内容"><span class="toc-text">服务动态内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-6-综合：TINY-Web-服务器"><span class="toc-text">11.6 综合：TINY Web 服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-7-小结"><span class="toc-text">11.7 小结</span></a></li></ol>
 </div>
 
 
-        <a id="more"></a>
+        <p>所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。</p>
+<p>前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。</p>
+<a id="more"></a>
+<h2 id="11-1-客户端-服务器编程模型"><a href="#11-1-客户端-服务器编程模型" class="headerlink" title="11.1 客户端-服务器编程模型"></a>11.1 客户端-服务器编程模型</h2><p>每个网络应用基于该模型，因而每个应用都是由一个服务器进程和一个或多个客户端进程组成。服务器管理某种资源，并且通过操作这种资源来为它的客户端提供某种服务（书中举例为Web服务器、FTP服务器和电子邮件服务器）。</p>
+<p>该模型中的基本操作是事务，一个事务由4步组成：</p>
+<ul>
+<li>客户端需要服务时，向服务器发送一个请求。如Web浏览器需要一个文件时，向Web服务器发送一个请求。</li>
+<li>服务器收到请求后，解释它，并以适当的方式操作资源。如Web服务器收到请求后，读一个磁盘文件。</li>
+<li>服务器给客户端发送一个响应，并等待下一个请求。如Web服务器将文件送回客户端。</li>
+<li>客户端收到响应并处理它。如Web浏览器收到来自服务器的一页后，在屏幕上展示。</li>
+</ul>
+<p>客户端和服务器都是进程，而不是主机，故一个主机上可以运行多种不同的客户端和服务器。</p>
+<h2 id="11-2-网络"><a href="#11-2-网络" class="headerlink" title="11.2 网络"></a>11.2 网络</h2><p>客户端和服务器通过计算机网络的硬件和软件资源来通信。下面从程序员的角度提供一个切实可行的思维模型：</p>
+<ul>
+<li>对主机而言，网络也是一种I/O设备，是数据源和数据接收方。</li>
+<li>物理上说，网络是一个按照地理远近组成的层次系统。</li>
+</ul>
+<p>1）局域网是最低层的层次系统，它由以太网段、网桥以及电缆连接而成，如下图所示（书中涉及了端口、帧、集线器、电缆和网桥等概念）：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png" alt="图1 桥接以太网"></p>
+<p>2）在层次更高级别中，多个不兼容（<strong>mark</strong>）的局域网可以通过叫做路由器的特殊计算机连接起来，组成一个internet（互联网络）。路由器可以用来由各种局域网和广域网构建互联网络。</p>
+<p>互联网重要特性即是由采用完全不同和不兼容技术的各种局域网和广域网组成，源主机和目的主机通过协议软件跨过诸多网络进行数据传送。这种运行在每台主机和路由器的协议软件消除了不同网络的差异，它所实现的协议控制主机和路由器协同工作实现数据传输。该协议提供两种基本能力：</p>
+<ul>
+<li>命名机制：互联网络协议通过一种一致的主机地址格式消除了不同局域网和广域网对主机命名的差异，唯一标识一台主机。</li>
+<li>传送机制：同样，协议定义了一种将传输的数据为捆扎成不连续的片（称为包）的统一方式，消除了不同技术封装数据的差异。包由包头和有效载荷组成。</li>
+</ul>
+<p>下图展示了两台在不兼容的局域网上的主机利用协议传送数据的示例：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E5%80%9F%E5%8A%A9%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81.png" alt="图2 借助协议的数据传送"></p>
+<p>该示例回避了复杂的问题，却抓住了互联网络思想的精髓——封装。</p>
+<h2 id="11-3-全球IP因特网"><a href="#11-3-全球IP因特网" class="headerlink" title="11.3 全球IP因特网"></a>11.3 全球IP因特网</h2><p>全球IP因特网是最著名和最成功的互联网络实现。下图展示了因特网客户端-服务端应用程序的基本硬件和软件组织：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.3%E4%B8%80%E4%B8%AA%E5%9B%A0%E7%89%B9%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%92%8C%E8%BD%AF%E4%BB%B6%E7%BB%84%E7%BB%87.png" alt="图3 一个因特网应用程序的硬件和软件组织"></p>
+<p>每个因特网主机都支持TCP/IP协议并运行实现该协议的软件，因特网的客户端和服务器混合使用套接字接口函数和Unix I/O函数进行通信。通常将套接字函数实现为系统调用，这些系统调用会陷入内核，并调用各种内核模式的TCP/IP函数。</p>
+<p>TCP/IP协议实际上是一个协议族，每个协议提供不同的功能，IP提供基本的命名方法和递送机制（主机间数据传输），而TCP在世构建在IP上的复杂协议，提供了进程间可靠的双向连接。为简化讨论，将其视作整体。</p>
+<p>从程序员的角度，将因特网看作一个世界范围的主机集合，其有如下特性：</p>
+<ul>
+<li>主机集合被映射为一组32位的IP地址。</li>
+<li>这组IP地址被映射为一组称为因特网域名的标识符。</li>
+<li>因特网主机上的进程能够通过连接和任何其他因特网主机上的进程通信。</li>
+</ul>
+<h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><p>32位无符号整数，网络程序将IP地址存放在结构中，这是不理想的，应该为IP地址定义一个标量类型，但是已经有大量应用基于此定义；并且由于在不同主机上字节顺序有大端、小端之分，TCP/IP定义大端为统一的网络字节顺序，Unix提供了函数在主机和网络字节顺序间转换。</p>
+<p>IP地址通常是以点分十进制表示，同样有函数实现两种进制间的转换。</p>
+<h3 id="因特网域名"><a href="#因特网域名" class="headerlink" title="因特网域名"></a>因特网域名</h3><p>客户端和服务器间的通信使用IP地址，它是面向机器的；为使普通用户容易理解，因特网定义了域名和将域名映射到对应IP地址的机制，域名是由句点分隔的单词（字母、数字和破折号），域名集合形成层次结构，它以树的形式呈现。</p>
+<p>一级域名由ICANN组织定义；二级域名由ICANN的各个授权代理按照先到先服务的基础分配。一个组织得到二级域名后可在这个子域中随机创建新域名。</p>
+<p>域名集合和IP地址集合间的映射由DOS维护（早先通过HOSTS.TXT文件手工维护），DNS数据库由上百万的主机条目结构组成，每条定义一组域名和一组IP地址之间的映射。</p>
+<p>每个因特网主机都有本地定义的域名（localhost），这个域名总是映射为回送地址（127.0.0.1）。它为引用运行在同一台机器上的客户端和服务器提供了一种便利和可移植的方式，有利于调试。</p>
+<p>域名和IP地址间的映射可以为一对一、多对一、多对多。</p>
+<h3 id="因特网连接"><a href="#因特网连接" class="headerlink" title="因特网连接"></a>因特网连接</h3><p>因特网客户端和服务器通过在连接上发送和接收字节流来通信，这种连接是点对点的一对进程的连接，数据可以双向流动。</p>
+<p>套接字是连接的端点，每个套接字都有相应的地址，由一个因特网地址和一个16位的整数端口组成，用“地址：端口”表示。客户端发起连接请求时，客户端套接字地址端口由内核随机分配，为临时端口；而服务器套接字地址端口通常为知名端口，文件/etc/services包含机器提供的知名名字和知名端口的映射。</p>
+<p>一个连接由两端的套接字地址唯一确定，称为套接字对，表示为元组：<code>(cliaddr:cliport, servaddr:servport)</code>。</p>
+<h2 id="11-4-套接字接口"><a href="#11-4-套接字接口" class="headerlink" title="11.4 套接字接口"></a>11.4 套接字接口</h2><p>一组函数，和Unix I/O函数结合起来，用以创建网络应用。下图展示了典型的套接字接口中包含的函数：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.4%E5%9F%BA%E4%BA%8E%E5%A5%97%E6%8E%A5%E5%AD%97%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0.png" alt="图4 基于套接字接口的网络应用概述"></p>
+<p>下述函数不讨论具体细节（<strong>mark</strong>）。</p>
+<h3 id="套接字地址结构"><a href="#套接字地址结构" class="headerlink" title="套接字地址结构"></a>套接字地址结构</h3><p>对Linux内核来说，套接字是通信的端点；对Linux程序来说，套接字是有相应描述符的文件。套接字地址存放在一个类型为sockaddr_in的结构中。</p>
+<h3 id="socket函数"><a href="#socket函数" class="headerlink" title="socket函数"></a>socket函数</h3><p>客户端和服务器使用socker函数创建一个套接字描述符。用如下硬编码的参数调用socket函数，使得套接字成为连接的一个端点：</p>
+<p><code>clientfd = Socket(AF_INET, SOCK_STREAM, 0);</code>。可通过getaddrinfo函数自动生成这些参数。</p>
+<h3 id="connect函数"><a href="#connect函数" class="headerlink" title="connect函数"></a>connect函数</h3><p>客户端通过调用connect函数建立和服务器的连接，该函数试图与套接字地址为addr的服务器建立一个因特网连接。</p>
+<h3 id="bind函数"><a href="#bind函数" class="headerlink" title="bind函数"></a>bind函数</h3><p>bind函数告诉内核将addr中的服务器套接字地址和套接字描述符sockfd联系起来。</p>
+<h3 id="listen函数"><a href="#listen函数" class="headerlink" title="listen函数"></a>listen函数</h3><p>在客户端和服务器建立连接的过程中，前者主动，后者被动。默认情况下，内核认为socket函数创建的描述符对应于主动套接字，存在于一个连接的客户端，服务器则调用listen函数告诉内核描述符被服务器使用。</p>
+<h3 id="accept函数"><a href="#accept函数" class="headerlink" title="accept函数"></a>accept函数</h3><p>服务器通过调用accept函数等待来自客户端的连接请求。accept函数等待来自客户端的连接请求到达监听描述符listenfd，然后在addr中填写客户端的套接字地址，并返回一个已连接描述符connfd，客户端描述符clientfd和connfd之间可通过读写来传送数据。下图描绘了监听描述符和已连接描述符的角色：</p>
+<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.4.6%E7%9B%91%E5%90%AC%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%92%8C%E5%B7%B2%E8%BF%9E%E6%8E%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6.png" alt="图5 监听描述符和已连接描述符的角色"></p>
+<h3 id="主机和服务的转换"><a href="#主机和服务的转换" class="headerlink" title="主机和服务的转换"></a>主机和服务的转换</h3><p>Linux提供函数实现二进制套接字地址结构和主机名、主机地址、服务名和端口号的字符串表示之间的相互转化。和套接字函数一起使用，是我们能编写独立于任何特定版本的IP协议的网络程序（具体细节<strong>mark</strong>）</p>
+<ul>
+<li>getaddinfo函数：将主机名、主机地址、服务名和端口号的字符串表示转化成套接字地址结构。</li>
+<li>getnameinfo函数：与上述函数相反，将一个套接字地址结构转换成相应的主机和服务名字符串。</li>
+</ul>
+<h3 id="套接字接口的辅助函数"><a href="#套接字接口的辅助函数" class="headerlink" title="套接字接口的辅助函数"></a>套接字接口的辅助函数</h3><p>上述getnameinfo函数有些复杂，我们用高级的辅助函数包装它们后回方便很多，称为open_clientfd和open_listenfd，客户端和服务器互相通信时可以使用这些函数。（具体细节<strong>mark</strong>）</p>
+<ul>
+<li>open_clientfd函数：客户端调用它建立与服务器的连接。</li>
+<li>open_listenfd函数：服务器调用它创建一个监听描述符，准备好接受连接请求。</li>
+</ul>
+<h3 id="echo客户端和服务器的示例"><a href="#echo客户端和服务器的示例" class="headerlink" title="echo客户端和服务器的示例"></a>echo客户端和服务器的示例</h3><p>学习套接字接口的最好方法是研究示例代码，书中P663展示了一个echo客户端的代码。（具体细节<strong>mark</strong>）</p>
+<h2 id="11-5-Web服务器"><a href="#11-5-Web服务器" class="headerlink" title="11.5 Web服务器"></a>11.5 Web服务器</h2><p>上一节在一个简单的echo服务器的上下文中讨论了网络编程，这节将展示利用网络编程的基本概念，创建一个虽小但功能齐全的Web服务器。</p>
+<h3 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h3><p>Web客户端和服务器之间的交互用的是一个基于文本的应用级协议，叫做HTTP。Web服务和常规的文件检索服务（FTP）的区别在于Web内容可以用一种叫做HTML的语言来编写。</p>
+<h3 id="Web内容"><a href="#Web内容" class="headerlink" title="Web内容"></a>Web内容</h3><p>对于Web客户端和服务器而言，内容是与一个MIME类型相关的字节序列。Web服务器以两种不同的方式向客户端提供内容：</p>
+<ul>
+<li>取一个磁盘文件，并将它的内容返回给客户端。磁盘文件为静态内容，而返回文件给客户端的过程称为服务静态内容。</li>
+<li>运行一个可执行文件，并将它的输出返回给客户端。可执行文件产生的输出为动态内容，返回输出到客户端的过程称为服务动态内容。</li>
+</ul>
+<p>每条Web服务器返回的内容都和它管理的某个文件相关联，每个文件都有一个唯一的名字，称为URL，如：</p>
+<p><code>http://www.goolge.com:80/index.html</code>。其中客户端通过前缀<code>http://www.goolge.com:80</code>定位服务器，并确定监听端口；服务器通过后缀<code>/index.html</code>确定发现系统中的文件，并确定是动态还是静态内容（一些URL后缀中还包含诸如<code>?15000&amp;213</code>，？用于分隔文件名和参数，数字表示参数，参数通过&amp;分隔）。关于URL还有以下内容进行补充：</p>
+<ul>
+<li>每个服务器对它所管理的文件的静态或动态类型有自己的规则，传统规则是将同一类型的文件放在同一文件夹中。</li>
+<li><code>/index.html</code>中的<code>/</code>表示服务器上存放某一网站的主目录，该目录还存放了全部不同类型文件所在的文件夹。</li>
+<li>最小的URL后缀是<code>/</code>，所有服务器将其扩展为默认的主页<code>/index.html</code>，这也是为何键入一个域名可以到达一个网站的主页，因为浏览器自动在域名后添加<code>/</code>，并将请求发送给服务器。</li>
+</ul>
+<h3 id="HTTP事务（具体细节mark）"><a href="#HTTP事务（具体细节mark）" class="headerlink" title="HTTP事务（具体细节mark）"></a>HTTP事务（具体细节<strong>mark</strong>）</h3><p>HTTP基于因特网上的连接来传送文本行，可以使用Linux的TELNET程序来和因特网上的任何Web服务器执行事务。书中展示了使用TELNET向AOL Web服务器请求主页。</p>
+<ul>
+<li>HTTP请求：有一个请求行和后面跟随的0到多个请求报头，再跟随一个空的文本行来终止报头列表。请求行的形式为<code>method URI version</code>，URI（Uniform Resource Identifier，同一资源标识符）为URL后缀；请求报头为服务器提供了额外的信息，例如浏览器的商标名或浏览器理解的MIME类型，格式为<code>header-name:header-data</code>。</li>
+<li>HTTP响应：和请求类似，有一个响应行和后面跟随的0到多个响应报头，再跟随一个空的文本行终止报头，最后跟随一个响应主体。响应行格式为<code>version status-code status-message</code>。</li>
+</ul>
+<h3 id="服务动态内容"><a href="#服务动态内容" class="headerlink" title="服务动态内容"></a>服务动态内容</h3><p>服务器时如何向客户端提供动态内容的呢？一个称为GCI（Common Gateway Interface，通用网关接口）用以解决可能出现的问题。</p>
+<ul>
+<li>客户端如何将程序参数传递给服务器：GET请求的参数在URI中传递。（POST请求参数在请求主体中传递）</li>
+<li>服务器如何将参数传递给子进程：如收到请求<code>GET /cgi-bin/adder?15000&amp;213 HTTP/1.1</code>，服务器调用fork创建子进程，将CGI环境变量设置为“15000&amp;213”，并调用execve在子进程上下文中执行<code>/cgi-bin/adder</code>程序，即CGI程序。</li>
+<li>服务器如何将其他信息传递给子进程：CGI定义了大量环境变量，CGI程序可以在运行时设置它们。</li>
+<li>子进程将它的输出发送到哪里：CGI将它的动态内容发送到标准输出，在子进程加载并运行CGI程序之前，它使用Linux dup2函数将标准输出重定向到与客户端相关联的已连接描述符。</li>
+</ul>
+<p>由于父进程不知道子进程生成的内容的类型或大小，子进程需要负责生成Content-type和Content-length响应报头，以及终止报头的空行。</p>
+<h2 id="11-6-综合：TINY-Web-服务器"><a href="#11-6-综合：TINY-Web-服务器" class="headerlink" title="11.6 综合：TINY Web 服务器"></a>11.6 综合：TINY Web 服务器</h2><p>书上开发了一个虽小但功能齐全的称为TINY的Web服务器结束对网络编程的讨论。（由于时间关系，具体细节<strong>mark</strong>）</p>
+<h2 id="11-7-小结"><a href="#11-7-小结" class="headerlink" title="11.7 小结"></a>11.7 小结</h2><p>每个网络应用都基于客户端-服务器模型；客户端和服务器通过因特网这个全球网络来通信；客户端和服务器通过套接字接口连接；Web服务器使用HTTP协议和它们的客户端（例如浏览器）彼此通信。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -115,6 +222,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter12并发编程
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/" id="article-nav-older" class="article-nav-link-wrap">
@@ -178,6 +294,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">chapter12并发编程</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">chapter11网络编程</a>
           </li>
         
@@ -191,10 +311,6 @@
         
           <li>
             <a href="/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/">关于学习大部头书籍</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/">chapter8异常控制流</a>
           </li>
         
       </ul>
