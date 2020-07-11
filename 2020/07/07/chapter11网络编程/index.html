@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   
-  <title>chapter11网络编程 | Tom89757&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tom89757.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"path":"search.xml"};
+  </script>
+
   <meta name="description" content="所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。 前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chapter11网络编程">
@@ -25,90 +40,234 @@
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<link rel="canonical" href="https://tom89757.github.io/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Tom89757&#39;s blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">世界在我面前展开</a>
-        </h2>
-      
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>chapter11网络编程 | Tom89757's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tom89757.github.io"></form>
-      </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Tom89757's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">世界在我面前展开</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-chapter11网络编程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="article-date">
-  <time datetime="2020-07-07T11:13:00.000Z" itemprop="datePublished">2020-07-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      chapter11网络编程
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-1-客户端-服务器编程模型"><span class="toc-text">11.1 客户端-服务器编程模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-2-网络"><span class="toc-text">11.2 网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-3-全球IP因特网"><span class="toc-text">11.3 全球IP因特网</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IP地址"><span class="toc-text">IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因特网域名"><span class="toc-text">因特网域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因特网连接"><span class="toc-text">因特网连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-4-套接字接口"><span class="toc-text">11.4 套接字接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#套接字地址结构"><span class="toc-text">套接字地址结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket函数"><span class="toc-text">socket函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#connect函数"><span class="toc-text">connect函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind函数"><span class="toc-text">bind函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listen函数"><span class="toc-text">listen函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#accept函数"><span class="toc-text">accept函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主机和服务的转换"><span class="toc-text">主机和服务的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#套接字接口的辅助函数"><span class="toc-text">套接字接口的辅助函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#echo客户端和服务器的示例"><span class="toc-text">echo客户端和服务器的示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-5-Web服务器"><span class="toc-text">11.5 Web服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web基础"><span class="toc-text">Web基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web内容"><span class="toc-text">Web内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP事务（具体细节mark）"><span class="toc-text">HTTP事务（具体细节mark）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务动态内容"><span class="toc-text">服务动态内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-6-综合：TINY-Web-服务器"><span class="toc-text">11.6 综合：TINY Web 服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-7-小结"><span class="toc-text">11.7 小结</span></a></li></ol>
 </div>
 
 
+
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#11-1-客户端-服务器编程模型"><span class="nav-number">1.</span> <span class="nav-text">11.1 客户端-服务器编程模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2-网络"><span class="nav-number">2.</span> <span class="nav-text">11.2 网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-3-全球IP因特网"><span class="nav-number">3.</span> <span class="nav-text">11.3 全球IP因特网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址"><span class="nav-number">3.1.</span> <span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#因特网域名"><span class="nav-number">3.2.</span> <span class="nav-text">因特网域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#因特网连接"><span class="nav-number">3.3.</span> <span class="nav-text">因特网连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-4-套接字接口"><span class="nav-number">4.</span> <span class="nav-text">11.4 套接字接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#套接字地址结构"><span class="nav-number">4.1.</span> <span class="nav-text">套接字地址结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#socket函数"><span class="nav-number">4.2.</span> <span class="nav-text">socket函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connect函数"><span class="nav-number">4.3.</span> <span class="nav-text">connect函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind函数"><span class="nav-number">4.4.</span> <span class="nav-text">bind函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#listen函数"><span class="nav-number">4.5.</span> <span class="nav-text">listen函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#accept函数"><span class="nav-number">4.6.</span> <span class="nav-text">accept函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主机和服务的转换"><span class="nav-number">4.7.</span> <span class="nav-text">主机和服务的转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#套接字接口的辅助函数"><span class="nav-number">4.8.</span> <span class="nav-text">套接字接口的辅助函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo客户端和服务器的示例"><span class="nav-number">4.9.</span> <span class="nav-text">echo客户端和服务器的示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-5-Web服务器"><span class="nav-number">5.</span> <span class="nav-text">11.5 Web服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web基础"><span class="nav-number">5.1.</span> <span class="nav-text">Web基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web内容"><span class="nav-number">5.2.</span> <span class="nav-text">Web内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP事务（具体细节mark）"><span class="nav-number">5.3.</span> <span class="nav-text">HTTP事务（具体细节mark）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务动态内容"><span class="nav-number">5.4.</span> <span class="nav-text">服务动态内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-6-综合：TINY-Web-服务器"><span class="nav-number">6.</span> <span class="nav-text">11.6 综合：TINY Web 服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-7-小结"><span class="nav-number">7.</span> <span class="nav-text">11.7 小结</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Tom89757</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Tom89757">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tom89757's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          chapter11网络编程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-07 19:13:00" itemprop="dateCreated datePublished" datetime="2020-07-07T19:13:00+08:00">2020-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-11 14:14:43" itemprop="dateModified" datetime="2020-07-11T14:14:43+08:00">2020-07-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
         <p>所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。</p>
 <p>前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。</p>
 <a id="more"></a>
@@ -209,171 +368,132 @@
 <h2 id="11-6-综合：TINY-Web-服务器"><a href="#11-6-综合：TINY-Web-服务器" class="headerlink" title="11.6 综合：TINY Web 服务器"></a>11.6 综合：TINY Web 服务器</h2><p>书上开发了一个虽小但功能齐全的称为TINY的Web服务器结束对网络编程的讨论。（由于时间关系，具体细节<strong>mark</strong>）</p>
 <h2 id="11-7-小结"><a href="#11-7-小结" class="headerlink" title="11.7 小结"></a>11.7 小结</h2><p>每个网络应用都基于客户端-服务器模型；客户端和服务器通过因特网这个全球网络来通信；客户端和服务器通过套接字接口连接；Web服务器使用HTTP协议和它们的客户端（例如浏览器）彼此通信。</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" data-id="ckcbu7vl4000010wde9av2gd7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag"># 深入理解计算机系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/" rel="prev" title="chapter10系统级I/O">
+      <i class="fa fa-chevron-left"></i> chapter10系统级I/O
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="next" title="chapter12并发编程">
+      chapter12并发编程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tom89757</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
     </footer>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          chapter12并发编程
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">chapter10系统级I/O</div>
-    </a>
-  
-</nav>
 
   
-</article>
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F/">人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
-    </div>
-  </div>
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 15px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 10px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 15px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 15px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
-    </div>
-  </div>
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/">chapter1引论</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">chapter12并发编程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">chapter11网络编程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/">chapter10系统级I/O</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">chapter9虚拟内存</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 Tom89757<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
 
 </body>
 </html>
