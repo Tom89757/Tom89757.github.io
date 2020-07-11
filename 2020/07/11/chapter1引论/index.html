@@ -5,14 +5,19 @@
   
 
   
-  <title>Tag: 术语 | Tom89757&#39;s blog</title>
+  <title>chapter1引论 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tom89757&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E6%9C%AF%E8%AF%AD/index.html">
+  <meta name="description" content="本章将阐述学习本书的目的，简要回顾离散数学和程序设计的概念，具体为：  程序在较大输入时的运行性能和适当输入时的运行性能同等重要。 总结学习本书所需要的数学基础。 简要复习递归。  1.1 本书讨论的内容书中抛出了一个选择问题“在N个数中，选出其中的第k大的数”，并给出了两种思路：第一种思路是使用冒泡排序对所有数进行排列；第二种思路是先将前k个数组成有序数组，再将剩下的N-k个数与数组中的每个数比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter1引论">
+<meta property="og:url" content="http://yoursite.com/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="本章将阐述学习本书的目的，简要回顾离散数学和程序设计的概念，具体为：  程序在较大输入时的运行性能和适当输入时的运行性能同等重要。 总结学习本书所需要的数学基础。 简要复习递归。  1.1 本书讨论的内容书中抛出了一个选择问题“在N个数中，选出其中的第k大的数”，并给出了两种思路：第一种思路是使用冒泡排序对所有数进行排列；第二种思路是先将前k个数组成有序数组，再将剩下的N-k个数与数组中的每个数比">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-11T06:07:31.000Z">
+<meta property="article:modified_time" content="2020-07-11T09:19:26.664Z">
 <meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
@@ -66,39 +71,97 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/06/%E7%BC%96%E7%A8%8B%E8%8B%B1%E6%96%87%E6%9C%AF%E8%AF%AD/" class="archive-article-date">
-  <time datetime="2020-05-06T15:08:25.000Z" itemprop="datePublished">5月 6</time>
+        <section id="main"><article id="post-chapter1引论" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/" class="article-date">
+  <time datetime="2020-07-11T06:07:31.000Z" itemprop="datePublished">2020-07-11</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/06/%E7%BC%96%E7%A8%8B%E8%8B%B1%E6%96%87%E6%9C%AF%E8%AF%AD/">编程英文术语</a>
+    <h1 class="article-title" itemprop="name">
+      chapter1引论
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-本书讨论的内容"><span class="toc-text">1.1 本书讨论的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-数学知识复习"><span class="toc-text">1.2 数学知识复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#指数（简单，略）"><span class="toc-text">指数（简单，略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数（简单，略）"><span class="toc-text">对数（简单，略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#级数"><span class="toc-text">级数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模运算"><span class="toc-text">模运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证明方法"><span class="toc-text">证明方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-递归简论"><span class="toc-text">1.3 递归简论</span></a></li></ol>
+</div>
+
+
+        <p>本章将阐述学习本书的目的，简要回顾离散数学和程序设计的概念，具体为：</p>
+<ul>
+<li>程序在较大输入时的运行性能和适当输入时的运行性能同等重要。</li>
+<li>总结学习本书所需要的数学基础。</li>
+<li>简要复习递归。</li>
+</ul>
+<h2 id="1-1-本书讨论的内容"><a href="#1-1-本书讨论的内容" class="headerlink" title="1.1 本书讨论的内容"></a>1.1 本书讨论的内容</h2><p>书中抛出了一个选择问题“在N个数中，选出其中的第k大的数”，并给出了两种思路：第一种思路是使用冒泡排序对所有数进行排列；第二种思路是先将前k个数组成有序数组，再将剩下的N-k个数与数组中的每个数比较，并归位。这两种思路在规模较大时均不合格，书中第7章给出了更高效的解法。</p>
+<p>抛出的另一个问题是“寻找二维字母表中的单词”，同样有两种思路：第一种思路是检查每个有序三元组（行，列，方向）；第二种思路是检查有序四元组（行，列，方向，字符数）。同样在规模较大时这两种思路难以令人接受，后续会给出合理的算法。</p>
+<p>本书将看到：在未具体编码时对于大量输入如何估计程序的运行时间；找到彻底改进程序速度以及确定程序瓶颈的方法。</p>
+<h2 id="1-2-数学知识复习"><a href="#1-2-数学知识复习" class="headerlink" title="1.2 数学知识复习"></a>1.2 数学知识复习</h2><h3 id="指数（简单，略）"><a href="#指数（简单，略）" class="headerlink" title="指数（简单，略）"></a>指数（简单，略）</h3><h3 id="对数（简单，略）"><a href="#对数（简单，略）" class="headerlink" title="对数（简单，略）"></a>对数（简单，略）</h3><h3 id="级数"><a href="#级数" class="headerlink" title="级数"></a>级数</h3><ul>
+<li>几何级数（等比）：简单，略</li>
+<li>算术级数（等差）：两个值得记的公式</li>
+</ul>
+<p>$H<em>N = \sum^N</em>{i=1}\frac{1}{i} \approx \log_e N$</p>
+<p>$\sum^N_{i=1}i^k \approx \frac{N^{k+1}}{|k+1|}$</p>
+<h3 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h3><p>N整除A-B，则说明A和B模N同余，记作$A \equiv B(mod N)$。</p>
+<h3 id="证明方法"><a href="#证明方法" class="headerlink" title="证明方法"></a>证明方法</h3><ul>
+<li>归纳法：简单，略。</li>
+<li>通过反例证明：即找特例证明某个结论不成立。</li>
+<li>反证法：通过假设定理不成立，证明该假设导致某个已知的性质不成立，如证明存在无穷个素数。</li>
+</ul>
+<h2 id="1-3-递归简论"><a href="#1-3-递归简论" class="headerlink" title="1.3 递归简论"></a>1.3 递归简论</h2><p>递归运算往往意味着先处理基准情形；对于数值运算使用递归是不被期望的；递归调用和其他的调用没有本质不同，无非是很多函数调用被挂起，等待与之对应的函数调用的返回值；当递归调用无法递归到基准情形时，就会导致无穷调用，直到程序崩溃。以上递归性质可以推导出递归的两个基本法则：</p>
+<ul>
+<li>基准情形：递归必须有基准情形，它们不需要进行递归调用即可求解。</li>
+<li>不断推进：递归调用必须向产生基准情形的方向不断推进。</li>
+<li>设计法则（由下面实例得出）：假设所有的递归调用都能运行。这意味着不需要执着于递归</li>
+</ul>
+<p>下面是一个使用递归的实例：</p>
+<ul>
+<li>打印输出数：书中对输出数N的打印函数使用了mod操作，该操作耗费巨大。</li>
+<li>递归与归纳：书中对上述函数能够解决问题给予了严格证明。</li>
+<li>根据该实例可以总结出递归的第三个法则：设计法则。这意味着不用执着于簿记管理的细节，即不用追踪大量递归调用。后续会介绍递归的系统开销（<strong>mark</strong>）</li>
+<li>合成效益法则：在求解一个问题的同一实例时，切勿在不同的递归调用种做重复性的工作。后续会给予证明。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/" data-id="ckchftq7b0000owwd5rp6838f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chapter12并发编程</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>

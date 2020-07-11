@@ -68,6 +68,89 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chapter1引论" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/" class="article-date">
+  <time datetime="2020-07-11T06:07:31.000Z" itemprop="datePublished">2020-07-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/">chapter1引论</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-本书讨论的内容"><span class="toc-text">1.1 本书讨论的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-数学知识复习"><span class="toc-text">1.2 数学知识复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#指数（简单，略）"><span class="toc-text">指数（简单，略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数（简单，略）"><span class="toc-text">对数（简单，略）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#级数"><span class="toc-text">级数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模运算"><span class="toc-text">模运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#证明方法"><span class="toc-text">证明方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-递归简论"><span class="toc-text">1.3 递归简论</span></a></li></ol>
+</div>
+
+
+        <p>本章将阐述学习本书的目的，简要回顾离散数学和程序设计的概念，具体为：</p>
+<ul>
+<li>程序在较大输入时的运行性能和适当输入时的运行性能同等重要。</li>
+<li>总结学习本书所需要的数学基础。</li>
+<li>简要复习递归。</li>
+</ul>
+<h2 id="1-1-本书讨论的内容"><a href="#1-1-本书讨论的内容" class="headerlink" title="1.1 本书讨论的内容"></a>1.1 本书讨论的内容</h2><p>书中抛出了一个选择问题“在N个数中，选出其中的第k大的数”，并给出了两种思路：第一种思路是使用冒泡排序对所有数进行排列；第二种思路是先将前k个数组成有序数组，再将剩下的N-k个数与数组中的每个数比较，并归位。这两种思路在规模较大时均不合格，书中第7章给出了更高效的解法。</p>
+<p>抛出的另一个问题是“寻找二维字母表中的单词”，同样有两种思路：第一种思路是检查每个有序三元组（行，列，方向）；第二种思路是检查有序四元组（行，列，方向，字符数）。同样在规模较大时这两种思路难以令人接受，后续会给出合理的算法。</p>
+<p>本书将看到：在未具体编码时对于大量输入如何估计程序的运行时间；找到彻底改进程序速度以及确定程序瓶颈的方法。</p>
+<h2 id="1-2-数学知识复习"><a href="#1-2-数学知识复习" class="headerlink" title="1.2 数学知识复习"></a>1.2 数学知识复习</h2><h3 id="指数（简单，略）"><a href="#指数（简单，略）" class="headerlink" title="指数（简单，略）"></a>指数（简单，略）</h3><h3 id="对数（简单，略）"><a href="#对数（简单，略）" class="headerlink" title="对数（简单，略）"></a>对数（简单，略）</h3><h3 id="级数"><a href="#级数" class="headerlink" title="级数"></a>级数</h3><ul>
+<li>几何级数（等比）：简单，略</li>
+<li>算术级数（等差）：两个值得记的公式</li>
+</ul>
+<p>$H<em>N = \sum^N</em>{i=1}\frac{1}{i} \approx \log_e N$</p>
+<p>$\sum^N_{i=1}i^k \approx \frac{N^{k+1}}{|k+1|}$</p>
+<h3 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h3><p>N整除A-B，则说明A和B模N同余，记作$A \equiv B(mod N)$。</p>
+<h3 id="证明方法"><a href="#证明方法" class="headerlink" title="证明方法"></a>证明方法</h3><ul>
+<li>归纳法：简单，略。</li>
+<li>通过反例证明：即找特例证明某个结论不成立。</li>
+<li>反证法：通过假设定理不成立，证明该假设导致某个已知的性质不成立，如证明存在无穷个素数。</li>
+</ul>
+<h2 id="1-3-递归简论"><a href="#1-3-递归简论" class="headerlink" title="1.3 递归简论"></a>1.3 递归简论</h2><p>递归运算往往意味着先处理基准情形；对于数值运算使用递归是不被期望的；递归调用和其他的调用没有本质不同，无非是很多函数调用被挂起，等待与之对应的函数调用的返回值；当递归调用无法递归到基准情形时，就会导致无穷调用，直到程序崩溃。以上递归性质可以推导出递归的两个基本法则：</p>
+<ul>
+<li>基准情形：递归必须有基准情形，它们不需要进行递归调用即可求解。</li>
+<li>不断推进：递归调用必须向产生基准情形的方向不断推进。</li>
+<li>设计法则（由下面实例得出）：假设所有的递归调用都能运行。这意味着不需要执着于递归</li>
+</ul>
+<p>下面是一个使用递归的实例：</p>
+<ul>
+<li>打印输出数：书中对输出数N的打印函数使用了mod操作，该操作耗费巨大。</li>
+<li>递归与归纳：书中对上述函数能够解决问题给予了严格证明。</li>
+<li>根据该实例可以总结出递归的第三个法则：设计法则。这意味着不用执着于簿记管理的细节，即不用追踪大量递归调用。后续会介绍递归的系统开销（<strong>mark</strong>）</li>
+<li>合成效益法则：在求解一个问题的同一实例时，切勿在不同的递归调用种做重复性的工作。后续会给予证明。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/" data-id="ckchftq7b0000owwd5rp6838f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-chapter12并发编程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="article-date">
@@ -551,54 +634,6 @@
 
 
   
-    <article id="post-chapter4处理器体系结构" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="article-date">
-  <time datetime="2020-06-27T17:30:52.000Z" itemprop="datePublished">2020-06-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">chapter4处理器体系结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个处理器支持的指令和指令的字节级编码称为它的指令集架构（ISA）。理解处理器的ISA指令可以让我们更好的理解计算机如何工作，ISA模型看上去是指令按顺序一条一条执行，实际上为提高性能，采用了同一时刻执行指令的不同部分的策略，并且使用巧妙的机制使得它与顺序执行等价。书中使用Y86-64指令集、HCL（Hardware Control Language，硬件控制语言）以及对应的编译器和模拟器实现一个较为完整的处理器系统的构建。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" data-id="ckc24lvbt00036swdd9fu2r8w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -624,7 +659,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
     </div>
   </div>
 
@@ -634,7 +669,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 15px;">微言小义</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 15px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 15px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 15px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 10px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 15px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 15px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
     </div>
   </div>
 
@@ -656,6 +691,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/">chapter1引论</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">chapter12并发编程</a>
           </li>
         
@@ -669,10 +708,6 @@
         
           <li>
             <a href="/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">chapter9虚拟内存</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/">关于学习大部头书籍</a>
           </li>
         
       </ul>
@@ -720,22 +755,5 @@
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-
 </body>
 </html>
