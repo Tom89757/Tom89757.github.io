@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Tom89757&#39;s blog</title>
+  
+  <subtitle>世界在我面前展开</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://tom89757.github.io/"/>
+  <updated>2020-07-12T05:06:10.145Z</updated>
+  <id>https://tom89757.github.io/</id>
+  
+  <author>
+    <name>Tom89757</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chapter2算法分析</title>
+    <link href="https://tom89757.github.io/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
+    <id>https://tom89757.github.io/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</id>
+    <published>2020-07-11T15:37:36.000Z</published>
+    <updated>2020-07-12T05:06:10.145Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter1引论</title>
+    <link href="https://tom89757.github.io/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/"/>
+    <id>https://tom89757.github.io/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/</id>
+    <published>2020-07-11T06:07:31.000Z</published>
+    <updated>2020-07-12T05:04:36.954Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本章将阐述学习本书的目的，简要回顾离散数学和程序设计的概念，具体为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;程序在较大输入时的运行性能和适当输入时的运行性能同等重要。&lt;/li&gt;
+&lt;li&gt;总结学习本书所需要的数学基础。&lt;/li&gt;
+&lt;li&gt;简要复习递归。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter12并发编程</title>
+    <link href="https://tom89757.github.io/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    <id>https://tom89757.github.io/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</id>
+    <published>2020-07-09T07:51:52.000Z</published>
+    <updated>2020-07-11T06:14:50.504Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如第8章所说，如果逻辑控制流在时间上重叠，它们就是并发（concurrency）的。并发出现在计算机系统的不同层次，如Linux信号处理程序、硬件异常处理程序和进程。并发并不限于内核，应用级程序中也大有可为。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;访问慢速I/O设备：等待I/O设备（如磁盘）数据到达时，可以运行其他进程，使CPU保持繁忙。&lt;/li&gt;
+&lt;li&gt;与人交互：如在使用大型带UI的应用程序时进行的多种操作。&lt;/li&gt;
+&lt;li&gt;通过推迟工作降低延迟：如对动态内存分配器来说可以推迟合并，降低单个free操作的延迟。&lt;/li&gt;
+&lt;li&gt;服务多个网络客户端：创建并发服务器，为每个客户端创建单独的逻辑流。&lt;/li&gt;
+&lt;li&gt;在多核机器上进行并行计算：使多个流并行执行，而不是交错执行。&lt;/li&gt;
+&lt;li&gt;进程：每个逻辑控制流都是一个进程，由内核来调度和维护。&lt;/li&gt;
+&lt;li&gt;I/O多路复用：程序是一个单独的进程，程序中所有的复用流共享同一个地址空间。&lt;/li&gt;
+&lt;li&gt;线程：线程是运行在一个单一进程上下文中的逻辑流，由内核进行调度，同时像I/O复用流一样共享一个虚拟地址空间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本章研究上述三种不同的并发编程技术——进程、I/O多路复用和线程。以一个并发网络服务器作为贯穿全章的应用程序。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter11网络编程</title>
+    <link href="https://tom89757.github.io/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <id>https://tom89757.github.io/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
+    <published>2020-07-07T11:13:00.000Z</published>
+    <updated>2020-07-11T06:14:43.330Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。&lt;/p&gt;
+&lt;p&gt;前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter10系统级I/O</title>
+    <link href="https://tom89757.github.io/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/"/>
+    <id>https://tom89757.github.io/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/</id>
+    <published>2020-07-06T17:57:45.000Z</published>
+    <updated>2020-07-11T06:14:36.432Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I/O（输入/输出）是在主存和外部设备（磁盘驱动器、终端和网络）之间复制数据的过程。所有语言的运行时系统都提供执行I/O的较高级别的工具。在Linux系统中，使用内核提供的Unix I/O函数实现高级语言中的I/O函数。我们学习Unix I/O函数有以下原因：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;了解Unix I/O帮助理解其他的系统概念。I/O与其他系统概念之间经常出现循环依赖，我们需要做的就是闭合这个循环。&lt;/li&gt;
+&lt;li&gt;有时除了使用Unix I/O以外别无选择。标准I/O库没有提供提取文件元数据的方式；一些情况下使用它进行网络编程非常冒险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本章学习Unix I/O和标准 I/O的一般概念，并展示如何在C程序中可靠地使用它们。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter9虚拟内存</title>
+    <link href="https://tom89757.github.io/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"/>
+    <id>https://tom89757.github.io/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</id>
+    <published>2020-07-05T11:01:28.000Z</published>
+    <updated>2020-07-11T06:14:28.657Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一个系统中的进程与其他进程共享CPU和主存资源。为了有效地管理内存并且少出错，现代系统提供了一种对主存的抽象概念——虚拟内存（VM）。它是硬件异常、硬件地址翻译、主存、磁盘文件和内核软件的完美交互，他为每个进程提供了一个大的、一致的和私有的地址空间。&lt;/p&gt;
+&lt;p&gt;虚拟内存提供了三种重要的能力：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把主存看成是一个存储在磁盘上的地址空间的高速缓存，主存中只保留活动区域在磁盘和主存间传送数据。&lt;/li&gt;
+&lt;li&gt;为每个进程提供了一致的地址空间，简化内存管理。&lt;/li&gt;
+&lt;li&gt;保护每个进程的地址空间不被其他进程破环。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;程序员需要理解它处于以下原因：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;它是核心。虚拟内存遍布计算机系统的所有层面。&lt;/li&gt;
+&lt;li&gt;它很强大。通过它可以销毁内存片、将内存片映射到磁盘文件的某个部分，和其他进程共享内存。&lt;/li&gt;
+&lt;li&gt;它很危险。程序分配地址空间时都会与它交互，使用不但会导致严重错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本章讲述虚拟内存如何工作，以及如何在程序中使用和管理虚拟内存和与内存相关的错误。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于学习大部头书籍</title>
+    <link href="https://tom89757.github.io/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/"/>
+    <id>https://tom89757.github.io/2020/07/04/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E5%A4%A7%E9%83%A8%E5%A4%B4%E4%B9%A6%E7%B1%8D/</id>
+    <published>2020-07-04T04:52:41.000Z</published>
+    <updated>2020-07-04T04:52:41.942Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>chapter8异常控制流</title>
+    <link href="https://tom89757.github.io/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/"/>
+    <id>https://tom89757.github.io/2020/07/04/chapter8%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81/</id>
+    <published>2020-07-03T16:10:08.000Z</published>
+    <updated>2020-07-11T06:14:21.958Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从处理器通电开始，到断电为止，程序计数器PC中的值不断地在指向不同指令的地址间转换，可以将这些地址的值按顺序组成一个序列，这种转换称为控制转移，这个序列称为处理器的控制流。&lt;/p&gt;
+&lt;p&gt;与内部程序无关的系统状态的变化需要控制流发生突变来进行回应，内部程序中的跳转、调用和返回指令同样回导致突变。这些突变被称之为异常控制流（Exceptional Control Flow, ECF），它可以发生在计算机系统的各个层次，硬件层、操作系统层、应用层。&lt;/p&gt;
+&lt;p&gt;对程序员来说，理解ECF的好处有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;帮助理解重要的系统概念。ECF是操作系统用来实现I/O、进程和虚拟内存的基本机制。&lt;/li&gt;
+&lt;li&gt;帮助理解应用程序如何与操作系统交互。&lt;/li&gt;
+&lt;li&gt;帮助编写有趣的新应用程序。如Unix shell和Web服务器。&lt;/li&gt;
+&lt;li&gt;帮助理解并发。理解ECFui理解并发的第一步。&lt;/li&gt;
+&lt;li&gt;帮助理解软件异常如何工作。软件异常允许程序进行非本地跳转来响应错误情况，非本地跳转是一种应用层ECF。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目前已经了解应用如何与硬件交互，本章将学习应用如何与操作系统交互，这些交互都围绕ECF展开。异常位于硬件与操作系统交界处，而进程和信号位于应用和操作系统交界处。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter7链接</title>
+    <link href="https://tom89757.github.io/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/"/>
+    <id>https://tom89757.github.io/2020/07/02/chapter7%E9%93%BE%E6%8E%A5/</id>
+    <published>2020-07-02T12:54:22.000Z</published>
+    <updated>2020-07-11T06:14:14.277Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;链接是将各种代码和数据片段收集并组合成为一个单一文件的过程，这个文件可以被加载到内存并执行。链接过程可以执行在编译、加载甚至运行时，它使得分离编译得以实现。理解链接有以下好处：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;帮助构造大性程序。当构造大性程序时经常会遇到缺少模块、缺少库或者不兼容的库版本等引起的链接器错误。&lt;/li&gt;
+&lt;li&gt;帮助避免一些危险的编程错误。如错误的定义多个全局变量时。&lt;/li&gt;
+&lt;li&gt;帮助理解语言的作用域规则如何实现。全局和局部对程序来说到底意味着什么。&lt;/li&gt;
+&lt;li&gt;帮助理解其他的系统概念。如加载和运行程序、虚拟内存、分页、内存映射。&lt;/li&gt;
+&lt;li&gt;可以利用共享库。许多软件产品在运行时通过共享库升级程序；Web服务器依赖于共享库的动态链接提供动态内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本章按照传统静态链接到加载时的共享库的动态链接再到运行时的共享库的动态链接的顺序进行讲述。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter6存储器层次结构</title>
+    <link href="https://tom89757.github.io/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/"/>
+    <id>https://tom89757.github.io/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/</id>
+    <published>2020-07-01T10:17:22.000Z</published>
+    <updated>2020-07-11T06:14:07.145Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目前来看，我们对计算机的认识依赖于一个简单的模型，CPU执行指令，存储器血死为CPU存放指令和数据，并且将存储器看作一个线性的字节数组，CPU可以在常数时间内访问每个存储器为止。&lt;/p&gt;
+&lt;p&gt;实际上，存储器系统时一个具有不同容量、成本和访问时间的存储设备的层次结构，而CPU寄存器保存着最常用的数据。正如第一章所说，小的、速度更快、高一级的存储器可以看作大的、速度较慢、低一级的存储器的缓冲区域（此处可以对存储器速度作实际的说明，指令执行过程中，对寄存器访问周期数为0，高速缓存为4~75，主存上百，磁盘千万数量级）。&lt;/p&gt;
+&lt;p&gt;要使得程序运行具有更快的速度，则需要将其数据项存储在层次结构中较高的地方，以使CPU更快的访问，这体现了计算机程序的局部性（locality）属性。&lt;/p&gt;
+&lt;p&gt;本章将讲述基本的存储技术——SRAM、DRAM、ROM以及旋转的和固态的硬盘，重点是高速缓存存储器，它们是链接CPU和主存的桥梁。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter5优化程序性能</title>
+    <link href="https://tom89757.github.io/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/"/>
+    <id>https://tom89757.github.io/2020/06/28/chapter5%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/</id>
+    <published>2020-06-28T08:43:57.000Z</published>
+    <updated>2020-07-11T06:13:54.600Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;程序的第一目标是在所有可能的情况下正确工作，另一方面就需要尽可能提高程序的运行速度。编写高效程序需要做到以下几点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择一组适当的算法和数据结构。&lt;/li&gt;
+&lt;li&gt;理解优化编译器的能力和局限性。对C语言代码的优化通常很难进行，对其性能的提升往往体现在C程序的编写层面，这意味着对C语言程序员更高的要求。&lt;/li&gt;
+&lt;li&gt;将大任务量的任务进行分解，实现在多核多处理器上的并行运算。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter4处理器体系结构</title>
+    <link href="https://tom89757.github.io/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
+    <id>https://tom89757.github.io/2020/06/28/chapter4%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/</id>
+    <published>2020-06-27T17:30:52.000Z</published>
+    <updated>2020-07-11T06:11:26.469Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一个处理器支持的指令和指令的字节级编码称为它的指令集架构（ISA）。理解处理器的ISA指令可以让我们更好的理解计算机如何工作，ISA模型看上去是指令按顺序一条一条执行，实际上为提高性能，采用了同一时刻执行指令的不同部分的策略，并且使用巧妙的机制使得它与顺序执行等价。书中使用Y86-64指令集、HCL（Hardware Control Language，硬件控制语言）以及对应的编译器和模拟器实现一个较为完整的处理器系统的构建。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter3程序的机器级表示</title>
+    <link href="https://tom89757.github.io/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/"/>
+    <id>https://tom89757.github.io/2020/06/22/chapter3%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/</id>
+    <published>2020-06-21T18:37:08.000Z</published>
+    <updated>2020-07-11T06:11:17.474Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;计算机根据字节序列储存的信息执行处理数据、管理内存、读写数据和网络通信等操作。根据第一章的内容，我们知道由C语言程序转换为可执行的二进制程序需要经过预处理、编译、汇编、链接等过程。与早期编程使用的汇编语言相比，高级语言提供了更高层次的抽象，从而使得程序的开发过程对人来说更易理解，开发效率更高，并且通过编译器提供的类型检查可以市对数据的操作具有一致性；并且，高级语言编写的程序具有更好的可迁移性，可以在多种机器上运行，这与只能在特定机器上运行的汇编语言程序不同。&lt;/p&gt;
+&lt;p&gt;但学习汇编语言对当今的程序员来说依然有用，因为汇编语言更接近计算机的底层，也就让我们更接近计算机运行程序的本质，从而高屋建瓴的观察到代码中隐藏的不合理或者低效率的部分。因此，阅读和理解汇编语言对一个优秀的程序员来说依然必要。&lt;/p&gt;
+&lt;p&gt;本章的讲述基于x86-64，他是现在最常见处理器的机器语言。本章将先建立C语言、汇编语言和机器语言的关系，然后依次介绍细节，从数据的表示、处理和控制的实现，到过程的实现如运行栈的维护和局部变量的存储，再到数据结构的实现，最后是执行过程中可能出现的问题如内存访问越界和缓冲区溢出。&lt;/p&gt;
+&lt;p&gt;值得一提的是，处理器大都具有向后兼容的特性，故在处理器架构中有大量复杂和隐秘的特性，这些属于处理器发展过程中积累的历史性问题，在本章会尽量避免，力图展示现代处理器的特性。Ggg&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>间歇性踌躇满志与持续性混吃等死</title>
+    <link href="https://tom89757.github.io/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/"/>
+    <id>https://tom89757.github.io/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/</id>
+    <published>2020-05-31T08:46:07.000Z</published>
+    <updated>2020-05-31T08:46:07.208Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机科学中的微言小义</title>
+    <link href="https://tom89757.github.io/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/"/>
+    <id>https://tom89757.github.io/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/</id>
+    <published>2020-05-29T14:22:08.000Z</published>
+    <updated>2020-06-29T17:07:15.822Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="感悟" scheme="https://tom89757.github.io/categories/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="计算机科学" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/"/>
+    
+      <category term="微言小义" scheme="https://tom89757.github.io/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生活中的微言小义</title>
+    <link href="https://tom89757.github.io/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/"/>
+    <id>https://tom89757.github.io/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/</id>
+    <published>2020-05-29T05:58:10.000Z</published>
+    <updated>2020-06-04T13:07:23.141Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="感悟" scheme="https://tom89757.github.io/categories/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="生活" scheme="https://tom89757.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="微言小义" scheme="https://tom89757.github.io/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter2信息的表示和处理</title>
+    <link href="https://tom89757.github.io/2020/05/25/chapter2%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/"/>
+    <id>https://tom89757.github.io/2020/05/25/chapter2%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/</id>
+    <published>2020-05-25T14:21:31.000Z</published>
+    <updated>2020-07-11T06:11:08.477Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本章将讲述无符号数、补码表示的有符号数、整数和浮点数，探讨这些数据和计算机对数据执行操作时的属性。描述过程中会用到数学语言。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于生活的感悟</title>
+    <link href="https://tom89757.github.io/2020/05/25/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%9F%E6%82%9F/"/>
+    <id>https://tom89757.github.io/2020/05/25/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%9F%E6%82%9F/</id>
+    <published>2020-05-25T14:00:29.000Z</published>
+    <updated>2020-06-05T11:31:01.211Z</updated>
+    
+    <summary type="html">
+    
+      这是一篇加密文章，涉及个人隐私，仅供自己查看。
+    
+    </summary>
+    
+    
+      <category term="感悟" scheme="https://tom89757.github.io/categories/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="生活" scheme="https://tom89757.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于计算机科学的感悟</title>
+    <link href="https://tom89757.github.io/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/"/>
+    <id>https://tom89757.github.io/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/</id>
+    <published>2020-05-25T14:00:11.000Z</published>
+    <updated>2020-06-29T16:41:27.720Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="感悟" scheme="https://tom89757.github.io/categories/%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="概念" scheme="https://tom89757.github.io/categories/%E6%A6%82%E5%BF%B5/"/>
+    
+    
+      <category term="计算机科学" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于编程语言类型的几组概念的厘清</title>
+    <link href="https://tom89757.github.io/2020/05/24/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8E%98%E6%B8%85/"/>
+    <id>https://tom89757.github.io/2020/05/24/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8E%98%E6%B8%85/</id>
+    <published>2020-05-24T11:16:34.000Z</published>
+    <updated>2020-05-25T14:09:28.534Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="概念" scheme="https://tom89757.github.io/categories/%E6%A6%82%E5%BF%B5/"/>
+    
+    
+      <category term="编程语言" scheme="https://tom89757.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="语言类型" scheme="https://tom89757.github.io/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/"/>
+    
+  </entry>
+  
+</feed>
