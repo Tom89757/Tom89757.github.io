@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-07-12T05:06:10.145Z</updated>
+  <updated>2020-07-13T16:45:25.838Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,13 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter3表、栈和队列</title>
+    <link href="https://tom89757.github.io/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    <id>https://tom89757.github.io/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/</id>
+    <published>2020-07-13T10:51:45.000Z</published>
+    <updated>2020-07-13T16:45:25.838Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本章将讨论最简单的三种数据结构——表、栈和队列，每个程序中都将至少明确一种这样的数据结构，栈更是无处不在。本章中，我们将：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;介绍抽象数据类型（ADT）的概念。&lt;/li&gt;
+&lt;li&gt;阐述如何对表进行有效操作。&lt;/li&gt;
+&lt;li&gt;介绍栈ADT及其在实现递归方面的应用。&lt;/li&gt;
+&lt;li&gt;介绍队列ADT及其在操作系统和算法设计中的应用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter2算法分析</title>
     <link href="https://tom89757.github.io/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
     <id>https://tom89757.github.io/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</id>
     <published>2020-07-11T15:37:36.000Z</published>
-    <updated>2020-07-12T05:06:10.145Z</updated>
+    <updated>2020-07-13T10:51:30.284Z</updated>
     
     <summary type="html">
+    
+      &lt;p&gt;算法是求解一个问题需要遵循的、被清楚指定的简单指令的集合。除了算法原理外，我们还需要关注它所花费的时间和占用的空间。在本章中，将讨论：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何估计一个程序所花费的时间。&lt;/li&gt;
+&lt;li&gt;如何将一个程序的运行时间从年/天降低到秒。&lt;/li&gt;
+&lt;li&gt;粗心使用递归将招致什么后果。&lt;/li&gt;
+&lt;li&gt;两个实例：将一个数自乘得到其幂以及计算两个数的最大公因数的有效算法&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -40,7 +76,7 @@
     <link href="https://tom89757.github.io/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/"/>
     <id>https://tom89757.github.io/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/</id>
     <published>2020-07-11T06:07:31.000Z</published>
-    <updated>2020-07-12T05:04:36.954Z</updated>
+    <updated>2020-07-13T07:13:28.804Z</updated>
     
     <summary type="html">
     
@@ -365,7 +401,7 @@
     <link href="https://tom89757.github.io/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/"/>
     <id>https://tom89757.github.io/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/</id>
     <published>2020-05-29T14:22:08.000Z</published>
-    <updated>2020-06-29T17:07:15.822Z</updated>
+    <updated>2020-07-12T15:08:12.438Z</updated>
     
     <summary type="html">
     
@@ -394,7 +430,7 @@
     <link href="https://tom89757.github.io/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/"/>
     <id>https://tom89757.github.io/2020/05/29/%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/</id>
     <published>2020-05-29T05:58:10.000Z</published>
-    <updated>2020-06-04T13:07:23.141Z</updated>
+    <updated>2020-07-12T13:39:07.572Z</updated>
     
     <summary type="html">
     
@@ -465,7 +501,7 @@
     <link href="https://tom89757.github.io/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/"/>
     <id>https://tom89757.github.io/2020/05/25/%E5%85%B3%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E7%9A%84%E6%84%9F%E6%82%9F/</id>
     <published>2020-05-25T14:00:11.000Z</published>
-    <updated>2020-06-29T16:41:27.720Z</updated>
+    <updated>2020-07-12T07:12:40.163Z</updated>
     
     <summary type="html">
     
@@ -486,27 +522,6 @@
     
     
       <category term="计算机科学" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于编程语言类型的几组概念的厘清</title>
-    <link href="https://tom89757.github.io/2020/05/24/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8E%98%E6%B8%85/"/>
-    <id>https://tom89757.github.io/2020/05/24/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8E%98%E6%B8%85/</id>
-    <published>2020-05-24T11:16:34.000Z</published>
-    <updated>2020-05-25T14:09:28.534Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="概念" scheme="https://tom89757.github.io/categories/%E6%A6%82%E5%BF%B5/"/>
-    
-    
-      <category term="编程语言" scheme="https://tom89757.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="语言类型" scheme="https://tom89757.github.io/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/"/>
     
   </entry>
   

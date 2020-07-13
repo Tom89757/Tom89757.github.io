@@ -5,14 +5,19 @@
   
 
   
-  <title>Tag: 语言类型 | Tom89757&#39;s blog</title>
+  <title>chapter3表、栈和队列 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tom89757&#39;s blog">
-<meta property="og:url" content="https://tom89757.github.io/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/index.html">
+  <meta name="description" content="本章将讨论最简单的三种数据结构——表、栈和队列，每个程序中都将至少明确一种这样的数据结构，栈更是无处不在。本章中，我们将：  介绍抽象数据类型（ADT）的概念。 阐述如何对表进行有效操作。 介绍栈ADT及其在实现递归方面的应用。 介绍队列ADT及其在操作系统和算法设计中的应用。  在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter3表、栈和队列">
+<meta property="og:url" content="https://tom89757.github.io/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="本章将讨论最简单的三种数据结构——表、栈和队列，每个程序中都将至少明确一种这样的数据结构，栈更是无处不在。本章中，我们将：  介绍抽象数据类型（ADT）的概念。 阐述如何对表进行有效操作。 介绍栈ADT及其在实现递归方面的应用。 介绍队列ADT及其在操作系统和算法设计中的应用。  在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-13T10:51:45.000Z">
+<meta property="article:modified_time" content="2020-07-13T16:45:25.838Z">
 <meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
@@ -69,39 +74,85 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/24/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8E%98%E6%B8%85/" class="archive-article-date">
-  <time datetime="2020-05-24T11:16:34.000Z" itemprop="datePublished">5月 24</time>
+        <section id="main"><article id="post-chapter3表、栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" class="article-date">
+  <time datetime="2020-07-13T10:51:45.000Z" itemprop="datePublished">2020-07-13</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/24/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8E%98%E6%B8%85/">关于编程语言类型的几组概念的厘清</a>
+    <h1 class="article-title" itemprop="name">
+      chapter3表、栈和队列
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-抽象数据类型"><span class="toc-text">3.1 抽象数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-表ADT"><span class="toc-text">3.2 表ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#表的简单数组实现"><span class="toc-text">表的简单数组实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-text">链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序涉及细节"><span class="toc-text">程序涉及细节</span></a></li></ol></li></ol>
+</div>
+
+
+        <p>本章将讨论最简单的三种数据结构——表、栈和队列，每个程序中都将至少明确一种这样的数据结构，栈更是无处不在。本章中，我们将：</p>
+<ul>
+<li>介绍抽象数据类型（ADT）的概念。</li>
+<li>阐述如何对表进行有效操作。</li>
+<li>介绍栈ADT及其在实现递归方面的应用。</li>
+<li>介绍队列ADT及其在操作系统和算法设计中的应用。</li>
+</ul>
+<p>在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。</p>
+<a id="more"></a>
+<h2 id="3-1-抽象数据类型"><a href="#3-1-抽象数据类型" class="headerlink" title="3.1 抽象数据类型"></a>3.1 抽象数据类型</h2><p>程序设计的基本法则之一是例程不应该超过一页，这通过程序的模块化实现。模块化使得调试更为容易，有利于多人共同编写程序，由于可将某种依赖关系局限在一个例程中从而便于修改。</p>
+<p>抽象数据类型（ADT，Abstract Data Type）是模块化设计的扩充，是一些操作的集合，它是数学的抽象，但并未涉及如何实现操作，如表、集合和图以及它们的操作，都可以看作ADT。本章中讨论的表、栈和队列是ADT的最基本的例子，本章中将给出多种方法实现它们。</p>
+<h2 id="3-2-表ADT"><a href="#3-2-表ADT" class="headerlink" title="3.2 表ADT"></a>3.2 表ADT</h2><p>对表这样的ADT来说，需要明确空表、后继、前驱等概念以及PrintList、MakeEmpty、Insert、Delete、FindKth等操作，上述操作基本是必须的，也可添加Next和Previous操作来返回元素的后继元和前驱元。</p>
+<h3 id="表的简单数组实现"><a href="#表的简单数组实现" class="headerlink" title="表的简单数组实现"></a>表的简单数组实现</h3><p>对表的所有操作都可以使用数组来实现。但是这种实现下表中元素的插入和删除均需要$O(N)$的时间，故简单数组一般不用来实现表这种结构。</p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>为避免插入和删除的线性开销，我们允许表不连续存储。链表由一系列不必在内存中连续的结构组成。每个结构包含表元素和指向该元素后继元对应结构的指针Next，最后一个元素的Next指针指向NULL，在ANSI C标准中NULL为零。</p>
+<p>该实现中，FindKth操作不如数组实现的效率高，需要线性时间，但Insert和Delete操作都只需常数时间。</p>
+<h3 id="程序涉及细节"><a href="#程序涉及细节" class="headerlink" title="程序涉及细节"></a>程序涉及细节</h3><p>仅使用上述描述可能出现以下问题：</p>
+<ul>
+<li>不能够在表的起始端直观的插入元素。</li>
+<li>不能直观的删除表的起始端元素。</li>
+<li>删除元素要求我们记住被删除元素前面的表元<strong>mark</strong>。</li>
+</ul>
+<p>以上问题可以通过增加表头（哑节点）解决，即增加一个指向起始端元素的节点。为使得删除操作更为直观，我们实现了FindPrevious例程，用以返回要删除表元的前驱元的位置。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" data-id="ckckqns6p000024wddqujebv1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chapter2算法分析</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>

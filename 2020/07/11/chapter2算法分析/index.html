@@ -7,16 +7,20 @@
   
   <title>chapter2算法分析 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="算法是求解一个问题需要遵循的、被清楚指定的简单指令的集合。除了算法原理外，我们还需要关注它所花费的时间和占用的空间。在本章中，将讨论：  如何估计一个程序所花费的时间。 如何将一个程序的运行时间从年&#x2F;天降低到秒。 粗心使用递归将招致什么后果。 两个实例：将一个数自乘得到其幂以及计算两个数的最大公因数的有效算法">
+<meta property="og:type" content="article">
 <meta property="og:title" content="chapter2算法分析">
 <meta property="og:url" content="https://tom89757.github.io/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="算法是求解一个问题需要遵循的、被清楚指定的简单指令的集合。除了算法原理外，我们还需要关注它所花费的时间和占用的空间。在本章中，将讨论：  如何估计一个程序所花费的时间。 如何将一个程序的运行时间从年&#x2F;天降低到秒。 粗心使用递归将招致什么后果。 两个实例：将一个数自乘得到其幂以及计算两个数的最大公因数的有效算法">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter2.3%E4%B8%8D%E5%90%8C%E7%AE%97%E6%B3%95%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4.png">
 <meta property="article:published_time" content="2020-07-11T15:37:36.000Z">
-<meta property="article:modified_time" content="2020-07-12T05:06:10.145Z">
+<meta property="article:modified_time" content="2020-07-13T10:51:30.284Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter2.3%E4%B8%8D%E5%90%8C%E7%AE%97%E6%B3%95%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -100,11 +104,88 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-数学基础"><span class="toc-text">2.1 数学基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-模型"><span class="toc-text">2.2 模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-要分析的问题"><span class="toc-text">2.3 要分析的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-运行时间计算"><span class="toc-text">2.4 运行时间计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一个简单的例子"><span class="toc-text">一个简单的例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最大子序列和"><span class="toc-text">最大子序列和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行时间中的对数"><span class="toc-text">运行时间中的对数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检验你的分析"><span class="toc-text">检验你的分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析结果"><span class="toc-text">分析结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
 </div>
 
 
-        
+        <p>算法是求解一个问题需要遵循的、被清楚指定的简单指令的集合。除了算法原理外，我们还需要关注它所花费的时间和占用的空间。在本章中，将讨论：</p>
+<ul>
+<li>如何估计一个程序所花费的时间。</li>
+<li>如何将一个程序的运行时间从年/天降低到秒。</li>
+<li>粗心使用递归将招致什么后果。</li>
+<li>两个实例：将一个数自乘得到其幂以及计算两个数的最大公因数的有效算法</li>
+</ul>
+<a id="more"></a>
+<h2 id="2-1-数学基础"><a href="#2-1-数学基础" class="headerlink" title="2.1 数学基础"></a>2.1 数学基础</h2><p>书中使用4个数学定义对$O(f(N))$、$\Omega(g(N))$、$\Theta(h(N))$和$o(p(N))$做了严格说明。前两个分别为时间$T(N)$的上界和下界，后两个在此做进一步说明（需要注意的是，定义中已经包含不等含义，故结论使用的均为等号）：</p>
+<ul>
+<li>若$T(N) = O(f(N))$且$T(N) = \Omega(g(N))$，则$T(N) = \Theta(h(N))$。</li>
+<li>若$T(N) = O(f(N))$且$T(N) \neq \Theta(h(N))$，则$T(N) = o(p(N))$。</li>
+</ul>
+<p>还有三个法则：</p>
+<ul>
+<li><p>法则1：如果$T_1(N) = O(f(N))且T_2(N) = O(g(N))$，则有</p>
+<p>1）$T_1(N) + T_2(N) = max(O(f(N)), O(g(N)))$；</p>
+<p>2）$T_1(N) <em> T_2(N) = O(f(N) </em> g(N))$。</p>
+</li>
+<li><p>法则2：如果$T(N)$是一个k次表达式，则$T(N) = \Theta(N^k)$。</p>
+</li>
+<li><p>法则3：对任意常数k，$log^kN = O(N)$。这说明对数增长得十分缓慢，这个法则也是进行增长率比较的利器。</p>
+</li>
+</ul>
+<p>进而引出相对增长率的概念，计算极限$\lim_{n \to \infty}f(N)/g(N)$来确定两个函数$f(N)$和$g(N)$的相对增长率，有以下四种情况：</p>
+<ul>
+<li>情况1：极限为0：$f(N) = o(g(N))$。</li>
+<li>情况2：极限为$c \neq 0$：$f(N) = \Theta(g(N))$。</li>
+<li>情况3：极限为$\infty$：$g(N) = o(f(N))$。</li>
+<li>情况4：极限摆动，二者无关，本书不讨论这种情况。</li>
+</ul>
+<h2 id="2-2-模型"><a href="#2-2-模型" class="headerlink" title="2.2 模型"></a>2.2 模型</h2><p>用于进行算法分析的模型基本上为一台计算机，该模型只能进行简单指令的处理（加法、乘法、赋值和比较），且具有无限的内存。</p>
+<h2 id="2-3-要分析的问题"><a href="#2-3-要分析的问题" class="headerlink" title="2.3 要分析的问题"></a>2.3 要分析的问题</h2><p>问题即资源耗费，资源即运行时间（主要）和空间。在本书中，只讨论影响运行时间的软件层面的因素，更具体来说，只讨论算法和对算法的输入，输入的大小是主要的考虑方面。为便于分析，我们定义了两个函数$T<em>{avg}(N)$和$T</em>{worst}(N)$，后者为我们默认分析的点，前者的分析则较为复杂，也难以提供有效信息。</p>
+<p>书中给出了一个实例，最大的子序列和问题：给出整数$A<em>1, A_2, …, A_N$（可能有负数），求$\sum^j</em>{k=i}A_k$的最大值（当整数序列均为0时和最大值为0）。书中给出了不同序列规模下四种算法的运行时间：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter2.3%E4%B8%8D%E5%90%8C%E7%AE%97%E6%B3%95%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4.png" alt="图1 不同算法的运行时间"></p>
+<p>图中时间不包括读入数据所需时间。对很多有效算法来说，读入数据往往比求解问题所需时间还多，这意味着从差算法到好算法性能瓶颈发生了转变，我们优化算法时就要追求这种转变。下图将运行时间用曲线图表示出来：</p>
+<p><img src="" alt="图2 不同算法运行时间图"></p>
+<h2 id="2-4-运行时间计算"><a href="#2-4-运行时间计算" class="headerlink" title="2.4 运行时间计算"></a>2.4 运行时间计算</h2><p>前面画图只是粗略的估计，最好的办法应该是编程运行。在此，我们会做一个折中，将编程运行的结果进行分析（实际上基于代码语句即可），抽象出几个用于估计时间的法则和流程：</p>
+<h3 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h3><p>根据计算$\sum^N_{i=1}i^3$可以得到若干法则：</p>
+<ul>
+<li>法则1——for循环：运行时间至多是循环内语句运行时间乘以迭代次数。</li>
+<li>法则2——嵌套的for循环：从里向外分析，具体描述略。</li>
+<li>法则3——顺序语句：将各个语句的运行时间求和即可。</li>
+<li>法则4——if/else语句：不超过判断时间加上max(S1, S2)，其中S1、S2为两个分支语句运行时间。</li>
+</ul>
+<p>分析策略是由内向外，若有函数调用，先首先分析它们；若有递归过程，则观察该递归是否可以转化为for循环。</p>
+<ul>
+<li>当可以转换为for循环时，容易分析。</li>
+<li>当不能转换为for循环时，则需要将运行时间转换为递推关系。虽然好的递归往往意味着难以转换为for循环，但书中展示了一个不能转换为for循环但时间耗费极高的例子（计算Fabonacci数，体现了递归使用法则4的重要性），故这可能只是个必要不充分条件。</li>
+</ul>
+<h3 id="最大子序列和"><a href="#最大子序列和" class="headerlink" title="最大子序列和"></a>最大子序列和</h3><ul>
+<li>算法1：三层嵌套，运行时间为$\sum^{N-1}<em>{i=0} \sum^{N-1}</em>{j=i} \sum^{j}_{k=i}$，简化为$O(1·N·N·N) = O(N^3)$。该算法中，可以观察到进行了大量重复计算，算法2将对其进行改进。</li>
+<li>算法2：两层嵌套，运行时间为$\sum^{N-1}<em>{i=0} \sum^{N-1}</em>{j=i}$，简化为$O(1·N·N) = O(N^2)$。该算法可以进一步优化为算法3，采用分而治之的策略，但是代码量大幅增加。</li>
+<li>算法3：分而治之，假设$N=2^k$，运行时间满足$T(1) = 1; T(N) = 2T(N/2) + O(N)$，推导（<strong>mark</strong>第7章讲述推导方法）得$T(N)=O(N\log N)$。（当$N \neq 2^k$时，运行时间依然正确）</li>
+<li>算法4：一层循环，该算法凭借惊人的洞察将过程优化为只需一层循环。该算法只需要常量空间且以线性时间运行，被称为联机算法，几乎是完美的算法。</li>
+</ul>
+<h3 id="运行时间中的对数"><a href="#运行时间中的对数" class="headerlink" title="运行时间中的对数"></a>运行时间中的对数</h3><p>分析算法的难点在于包含对数的运行时间。可将对数出现的情况概括为一般法则：</p>
+<p>如果一个算法用常数时间（$O(1)$）将问题大小削减为其一部分（通常为1/2），则该问题算法就是$O(\log N)$的；如果使用常数时间只是将问题减少为一个常数（如将问题减少1），则算法为$O(N)$的。这种运行时间分析不包含读入过程，以下是具有对数特点的3个例子：</p>
+<ul>
+<li>对分查找（也叫二分查找、折半查找）：给定一个整数$X$和整数$A<em>0, A_1, …, A</em>{N-1}$，后者已经预先排序并在内存中，求使得$A_i = X$的下标$i$，如果$X$不在数据中，则返回$i=-1$。它提供了一种在$O(\log N)$内实现查找操作的算法。</li>
+<li>欧几里得算法：计算两个整数的最大公因数。在迭代过程中余数并不按照常数因子递减，但每次余数总小于被除数的1/2，故所需运行时间$O(\log N)$，粗略上看最坏情况为$2\log N$，事实上可以改进为$1.44\log N$，而平均值则需要极其复杂的数学分析。</li>
+<li>幂运算：计算$X^N$。采用递归算法，最多需要$2 \log N$次乘法运算。</li>
+</ul>
+<h3 id="检验你的分析"><a href="#检验你的分析" class="headerlink" title="检验你的分析"></a>检验你的分析</h3><p>完成分析后，对分析结果进行检验，有几种方式：</p>
+<ul>
+<li>编程比较实际运行时间，对不同的大O，当规模N增大相同时（如2倍），运行时间增加幅度不同。值得注意时，当N较小时，不同大O对应的时间变化可能相差不大，如$O(N)$和$O(N\log N)$。</li>
+<li>对N的某个范围（通常用2的倍数隔开）计算比值$T(N) / f(N)$，如果$f(N)$是运行时间的理想近似，其比值收敛于一个常数。</li>
+</ul>
+<h3 id="分析结果"><a href="#分析结果" class="headerlink" title="分析结果"></a>分析结果</h3><p>经验上看，有时分析会估计过大，这可能由于两种情况：</p>
+<ul>
+<li>观察不够机敏，需要更细致的分析。</li>
+<li>最坏情况显著拉低了平均值，但是又无法对其进行改进。</li>
+</ul>
+<p>总之，对平均情况的分析是机器复杂，在许多情形下甚至无法准确计算。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本章中只涉及到对简单程序的分析，如对循环和递归的计数。事实上在一些情况下对简单程序的分析较为复杂，如希尔排序算法（第7章）和保持不相交集算法（第8章）。</p>
+<p>下界分析并未过多涉及，但其证明一般最为困难，第7章将涉及。</p>
+<p>本章中提到的Gcd算法和求幂算法在密码学中有所应用（<strong>mark</strong>，以后有时间再了解）。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -118,6 +199,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter3表、栈和队列
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/" id="article-nav-older" class="article-nav-link-wrap">
@@ -159,7 +249,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 15px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 15px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 15px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 15px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
     </div>
   </div>
 
@@ -181,6 +271,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">chapter3表、栈和队列</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">chapter2算法分析</a>
           </li>
         
@@ -194,10 +288,6 @@
         
           <li>
             <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">chapter11网络编程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/">chapter10系统级I/O</a>
           </li>
         
       </ul>

@@ -15,7 +15,7 @@
 <meta property="og:description" content="本章将阐述学习本书的目的，简要回顾离散数学和程序设计的概念，具体为：  程序在较大输入时的运行性能和适当输入时的运行性能同等重要。 总结学习本书所需要的数学基础。 简要复习递归。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-11T06:07:31.000Z">
-<meta property="article:modified_time" content="2020-07-12T05:04:36.954Z">
+<meta property="article:modified_time" content="2020-07-13T07:13:28.804Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
@@ -124,7 +124,7 @@
 H_N = \sum^N_{i=1}\frac{1}{i} \approx \log_e N</script><script type="math/tex; mode=display">
 \sum^N_{i=1}i^k \approx \frac{N^{k+1}}{|k+1|}​</script><h3 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h3><p>N整除A-B，则说明A和B模N同余，记作$A \equiv B(mod N)$。</p>
 <h3 id="证明方法"><a href="#证明方法" class="headerlink" title="证明方法"></a>证明方法</h3><ul>
-<li>归纳法：简单，略。</li>
+<li>归纳法：简单，略。书中证明了$Fib(N) &lt; (\frac{5}{3})^N$。</li>
 <li>通过反例证明：即找特例证明某个结论不成立。</li>
 <li>反证法：通过假设定理不成立，证明该假设导致某个已知的性质不成立，如证明存在无穷个素数。</li>
 </ul>
@@ -132,14 +132,14 @@ H_N = \sum^N_{i=1}\frac{1}{i} \approx \log_e N</script><script type="math/tex; m
 <ul>
 <li>基准情形：递归必须有基准情形，它们不需要进行递归调用即可求解。</li>
 <li>不断推进：递归调用必须向产生基准情形的方向不断推进。</li>
-<li>设计法则（由下面实例得出）：假设所有的递归调用都能运行。这意味着不需要执着于递归</li>
+<li>设计法则（由下面实例得出）：假设所有的递归调用都能运行。这意味着不需要执着于大量递归调用的细节</li>
+<li>合成效益法则：在求解一个问题的同一实例时，切勿在不同的递归调用中做重复性的工作。后续会给予证明。</li>
 </ul>
 <p>下面是一个使用递归的实例：</p>
 <ul>
 <li>打印输出数：书中对输出数N的打印函数使用了mod操作，该操作耗费巨大。</li>
 <li>递归与归纳：书中对上述函数能够解决问题给予了严格证明。</li>
 <li>根据该实例可以总结出递归的第三个法则：设计法则。这意味着不用执着于簿记管理的细节，即不用追踪大量递归调用。后续会介绍递归的系统开销（<strong>mark</strong>）</li>
-<li>合成效益法则：在求解一个问题的同一实例时，切勿在不同的递归调用种做重复性的工作。后续会给予证明。</li>
 </ul>
 
       
@@ -205,7 +205,7 @@ H_N = \sum^N_{i=1}\frac{1}{i} \approx \log_e N</script><script type="math/tex; m
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 15px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 15px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 15px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 15px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
     </div>
   </div>
 
@@ -227,6 +227,10 @@ H_N = \sum^N_{i=1}\frac{1}{i} \approx \log_e N</script><script type="math/tex; m
       <ul>
         
           <li>
+            <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">chapter3表、栈和队列</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">chapter2算法分析</a>
           </li>
         
@@ -240,10 +244,6 @@ H_N = \sum^N_{i=1}\frac{1}{i} \approx \log_e N</script><script type="math/tex; m
         
           <li>
             <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">chapter11网络编程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/">chapter10系统级I/O</a>
           </li>
         
       </ul>
