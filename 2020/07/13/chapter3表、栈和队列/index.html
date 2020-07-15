@@ -14,11 +14,16 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="本章将讨论最简单的三种数据结构——表、栈和队列，每个程序中都将至少明确一种这样的数据结构，栈更是无处不在。本章中，我们将：  介绍抽象数据类型（ADT）的概念。 阐述如何对表进行有效操作。 介绍栈ADT及其在实现递归方面的应用。 介绍队列ADT及其在操作系统和算法设计中的应用。  在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.7%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E7%9A%84%E5%A4%9A%E8%A1%A8%E5%AE%9E%E7%8E%B0.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.3.2%E6%A0%88ADT%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.4.2%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png">
 <meta property="article:published_time" content="2020-07-13T10:51:45.000Z">
-<meta property="article:modified_time" content="2020-07-13T16:45:25.838Z">
+<meta property="article:modified_time" content="2020-07-14T14:48:04.119Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -102,7 +107,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-抽象数据类型"><span class="toc-text">3.1 抽象数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-表ADT"><span class="toc-text">3.2 表ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#表的简单数组实现"><span class="toc-text">表的简单数组实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-text">链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序涉及细节"><span class="toc-text">程序涉及细节</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-抽象数据类型"><span class="toc-text">3.1 抽象数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-表ADT"><span class="toc-text">3.2 表ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#表的简单数组实现"><span class="toc-text">表的简单数组实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表"><span class="toc-text">链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序涉及细节"><span class="toc-text">程序涉及细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的错误"><span class="toc-text">常见的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双链表"><span class="toc-text">双链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子"><span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表的游标实现"><span class="toc-text">链表的游标实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-栈ADT"><span class="toc-text">3.3 栈ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的模型"><span class="toc-text">栈的模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的实现"><span class="toc-text">栈的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-text">应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-队列ADT"><span class="toc-text">3.4 队列ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#队列模型"><span class="toc-text">队列模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的数组实现"><span class="toc-text">队列的数组实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的应用"><span class="toc-text">队列的应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
 </div>
 
 
@@ -127,7 +132,84 @@
 <li>不能直观的删除表的起始端元素。</li>
 <li>删除元素要求我们记住被删除元素前面的表元<strong>mark</strong>。</li>
 </ul>
-<p>以上问题可以通过增加表头（哑节点）解决，即增加一个指向起始端元素的节点。为使得删除操作更为直观，我们实现了FindPrevious例程，用以返回要删除表元的前驱元的位置。</p>
+<p>以上问题可以通过增加表头（哑节点）解决，即增加一个指向起始端元素的节点。为使得删除操作更为直观，我们实现了FindPrevious例程，用以返回要删除表元的前驱元的位置。下图是链表的类型声明：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图1 链表的类型声明"></p>
+<p>这里依次罗列书中编写链表相关例程的顺序，以把握从头实现一种数据结构的逻辑和细节：</p>
+<ol>
+<li><code>int IsEmpty(LIst L)</code>：测试空表。</li>
+<li><code>int IsLast(Position P, List L)</code>：测试当前元素是否为表的最后一个元素。</li>
+<li><code>Position Find(ElementType X, List L)</code>：返回某个元素在表中的位置。（需要避免使用递归来实现该例程<strong>mark</strong>）</li>
+<li><code>Position FindPrevious(ElementType X, List L)</code>：找出表中某个元素的前驱。</li>
+<li><code>void Delete(ElementType X, List L)</code>：删除表中的某个元素（使用了<code>FindPrevious</code>例程）。</li>
+<li><code>void Insert(ElementType X, List L, Position P)</code>：在表中某个位置插入一个元素。</li>
+</ol>
+<h3 id="常见的错误"><a href="#常见的错误" class="headerlink" title="常见的错误"></a>常见的错误</h3><p>常见错误有以下几种：</p>
+<ol>
+<li>指针变量包含了伪地址，错误信息为“memory access violation”或“segmentation violation”。（如变量初始化失败或者指针为NULLL）</li>
+<li>何时使用或不使用malloc来获取新的单元。（关于malloc的使用不太懂<strong>mark</strong>）</li>
+</ol>
+<h3 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h3><p>出与对倒序扫描链表的需求，在数据结构（即每个节点）上增加一个域，将其变为双向链表。这增加了所需空间，插入和删除的开销，但简化了删除操作。</p>
+<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p>在链表或双链表的基础上，让最后的单元反过来指向第一个单元。表头可有可无，他在某些应用程序中很流行。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>书中提供了三种使用链表的例子：</p>
+<ol>
+<li>多项式ADT：用表定义一元（非负幂）多项式的抽象数据类型。对$F(x) = \sum^N_{i=0}A_iX^i$，可以使用简单数组存储这些系数，然后编写一些对多项式进行加减乘除及其它操作的例程，适用于稠密多项式；也可以使用单链表，多项式的每一项包含在一个单元中，其困难在于两个多项式相乘时必须合并同类项<strong>mark</strong>。</li>
+<li>基数排序：也称卡式排序，是桶式排序的推广，即使用多趟桶式排序。当按照最低位到最高位的顺序排序时，即可得到从小到大的顺序序列，运行时间为$O(P(N+B))$，其中P为排序趟数，N为要被排序的元素个数，B为桶数。</li>
+<li>多重表：下图展示了注册问题的多表实现，其本质上是将每个班注册学生的表和每个学生注册班级的表合二为一，是一个二维循环表。这样的存储形式节省空间而花费时间，这是考虑到每个学生注册班级数较少所作出的选择；当学生注册班级数较多时，可以考虑给每个非表头增加指向学生和班级的表头的指针，通过花费空间来节省时间。</li>
+</ol>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.7%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E7%9A%84%E5%A4%9A%E8%A1%A8%E5%AE%9E%E7%8E%B0.png" alt="图2 注册问题的多表实现"></p>
+<h3 id="链表的游标实现"><a href="#链表的游标实现" class="headerlink" title="链表的游标实现"></a>链表的游标实现</h3><p>诸如BASIC和FORTRAN等语言不支持指针，实现链表时采用游标实现法。链表的指针实现中包含两个重要条件：</p>
+<ol>
+<li><p>数据存储在一组结构体中，每个结构体包含数据和指向下一个结构体的指针。</p>
+</li>
+<li><p>需要新的结构体时可以通过malloc函数从内存中获得空间，并可通过调用free释放空间。</p>
+</li>
+</ol>
+<p>游标法自然需要模仿实现这两种条件：</p>
+<ul>
+<li>条件1：逻辑上看，需要一个全局的结构体数组，该数组中的任何单元的数组下标可以用来表示一个地址。</li>
+<li>条件2：让CursorSpace数组中的单元代行malloc和free的职能。为此，将保留一个表（即freelist表），该表由不在任何表中的单元构成，malloc操作则对应从freelist表中删除第一个单元，free操作则对应将该单元放在表头的后面作为第一个单元。（不太懂<strong>mark</strong>）</li>
+</ul>
+<h2 id="3-3-栈ADT"><a href="#3-3-栈ADT" class="headerlink" title="3.3 栈ADT"></a>3.3 栈ADT</h2><h3 id="栈的模型"><a href="#栈的模型" class="headerlink" title="栈的模型"></a>栈的模型</h3><p>栈是限制插入和删除只能在一个位置上进行的表（LIFO表），该位置是表的末端，叫做栈顶（top）。基本操作是进栈（push）和出栈（pop）。对空栈进行Pop或Top是ADT错误，而运行Push时空间用尽则为实现错误。</p>
+<p>对栈而言，栈顶元素是唯一可见的元素，也是唯一可操作的元素。</p>
+<h3 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h3><p>由于栈是一个表，任何实现表的方法都能实现栈，此处给出指针和数组两种实现方法。值得补充的是，从好的编程原则上看，调用例程不需要知道实现的是哪种方法。</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.3.2%E6%A0%88ADT%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png" alt="图3 栈数组实现的类型声明"></p>
+<ol>
+<li><p>栈的链表实现：使用单链表，通过在表前端插入实现Push，通过删除表前端元素实现Pop，Top操作则是检查前端元素并返回它的值。这种实现方法使得对malloc和free操作的调用开销昂贵，这种开销可以通过使用第二个栈在一定程度上避免。</p>
+</li>
+<li><p>栈的数组实现：避免了指针的使用，更为流行，其唯一潜在危害在于需要提前声明数组大小，但这不是太大的问题。虽然基本操作以非常短的常数时间进行，但错误检测会影响栈的执行效率，现实中需根据错误处理场合决定是否省去错误检测。</p>
+<p>栈定义为一个指向一个结构体的指针，该结构体包含TopOfStack域和Capacity域。（Pop操作在C语言中会返回弹出的元素，事实证明这是方便的）</p>
+</li>
+</ol>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>下面给出栈的三个应用，其中第三个例子深刻说明程序如何被组织。</p>
+<ol>
+<li><p>平衡符号：使用栈来检查各种括号是否成对出现。</p>
+</li>
+<li><p>后缀表达式：也叫逆波兰表达式，其求值过程恰好是正确的顺序，其花费时间为$O(N)$。</p>
+</li>
+<li><p>中缀到后缀的转换：用栈将一个中缀表达式（我们习惯使用的）转换为后缀式。这种转换只需$O(N)$，因为只需一趟输入。</p>
+</li>
+<li><p>函数调用：函数调用和函数返回类似于开括号和闭括号，函数调用与栈的关系在CSAPP中有更具体的说明，关键无非是主函数当前状态的保存、处理器的控制转移和调用函数返回到主函数的保存状态，这些通过栈来实现。在许多系统中并不检测栈溢出，程序可能会崩溃而没有明显的说明。</p>
+<p>书中举了尾递归的例子来说明可能导致越出栈空间的情形，尾递归可以通过将递归调用变为goto语句，并在其前加上对函数每个参数的赋值语句而手工消除。但事实上，此处应该使用更自然的while循环来实现。</p>
+<p>值得指出的是，非递归程序一般说来确实比等价的递归程序快，但却损失了部分代码的清晰性。</p>
+</li>
+</ol>
+<h2 id="3-4-队列ADT"><a href="#3-4-队列ADT" class="headerlink" title="3.4 队列ADT"></a>3.4 队列ADT</h2><p>队列（queue）也是表（FIFO），其在一端插入而在另一端删除。</p>
+<h3 id="队列模型"><a href="#队列模型" class="headerlink" title="队列模型"></a>队列模型</h3><p>其基本操作是入队（Enqueue）和出队（Dequeue），入队是在队尾（rear）插入一个元素，出队是删除在队头（front）的元素。</p>
+<h3 id="队列的数组实现"><a href="#队列的数组实现" class="headerlink" title="队列的数组实现"></a>队列的数组实现</h3><p>同栈一样，任何实现表的方法同样适用于队列的实现。链表实现简单明了，书上作为练习；下面着重讨论队列的数组实现：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.4.2%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png" alt="图4 队列数组实现的类型声明"></p>
+<p>为避免队列未满但队尾已经到达队列末端，将实现改进为循环数组（circular array）实现。循环队列中有两件事需要警惕：</p>
+<ul>
+<li>检测队列是否为空很重要，因为队列为空时，Dequeue操作将返回不确定值。</li>
+<li>某些程序设计人员使用不同方法表示队列的队头和队尾。采用任意风格时，需确保所有例程一致。</li>
+</ul>
+<h3 id="队列的应用"><a href="#队列的应用" class="headerlink" title="队列的应用"></a>队列的应用</h3><p>有几种使用队列提供运行效率的算法，第9章的图论中有更具体的描述。此处给出应用队列的例子：</p>
+<ul>
+<li>生活中的排队。</li>
+<li>计算机网络中放置磁盘的文件服务器，采用先到先使用的原则。</li>
+<li>通过概率计算用户排队预计等待时间和等待服务的队列能够排多长的解决问题的方式称为排队论（数学的分支）。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本章主要描述了ADT的概念，并给出了三种常用ADT——表、栈和队列的类型声明以及各种例程的实现，每种ADT都给出了数组和链表两种实现方法，并对其优劣作了简要说明。需要说明的是，根据好的编程原则，不论使用哪种实现方法，对ADT例程的调用应该是等价的，即不必知道是哪种实现就可以进行例程调用。</p>
+<p>同时，书中给出了三种ADT在现实中的应用，佐证了其重要性。后续章节中还会出现它们的身影。</p>
 
       
     </div>
@@ -142,6 +224,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/14/chapter4%E6%A0%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter4树
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
@@ -173,7 +264,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li></ul>
     </div>
   </div>
 
@@ -183,7 +274,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 13.33px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a>
     </div>
   </div>
 
@@ -205,6 +296,14 @@
       <ul>
         
           <li>
+            <a href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/">chapter5散列</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/chapter4%E6%A0%91/">chapter4树</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">chapter3表、栈和队列</a>
           </li>
         
@@ -214,14 +313,6 @@
         
           <li>
             <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/">chapter1引论</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">chapter12并发编程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">chapter11网络编程</a>
           </li>
         
       </ul>

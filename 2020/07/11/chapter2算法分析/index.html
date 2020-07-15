@@ -15,8 +15,9 @@
 <meta property="og:description" content="算法是求解一个问题需要遵循的、被清楚指定的简单指令的集合。除了算法原理外，我们还需要关注它所花费的时间和占用的空间。在本章中，将讨论：  如何估计一个程序所花费的时间。 如何将一个程序的运行时间从年&#x2F;天降低到秒。 粗心使用递归将招致什么后果。 两个实例：将一个数自乘得到其幂以及计算两个数的最大公因数的有效算法">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter2.3%E4%B8%8D%E5%90%8C%E7%AE%97%E6%B3%95%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter2.3%E4%B8%8D%E5%90%8C%E7%AE%97%E6%B3%95%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E6%9B%B2%E7%BA%BF%E5%9B%BE.png">
 <meta property="article:published_time" content="2020-07-11T15:37:36.000Z">
-<meta property="article:modified_time" content="2020-07-13T10:51:30.284Z">
+<meta property="article:modified_time" content="2020-07-14T09:10:06.461Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
@@ -144,7 +145,7 @@
 <p>书中给出了一个实例，最大的子序列和问题：给出整数$A<em>1, A_2, …, A_N$（可能有负数），求$\sum^j</em>{k=i}A_k$的最大值（当整数序列均为0时和最大值为0）。书中给出了不同序列规模下四种算法的运行时间：</p>
 <p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter2.3%E4%B8%8D%E5%90%8C%E7%AE%97%E6%B3%95%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4.png" alt="图1 不同算法的运行时间"></p>
 <p>图中时间不包括读入数据所需时间。对很多有效算法来说，读入数据往往比求解问题所需时间还多，这意味着从差算法到好算法性能瓶颈发生了转变，我们优化算法时就要追求这种转变。下图将运行时间用曲线图表示出来：</p>
-<p><img src="" alt="图2 不同算法运行时间图"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter2.3%E4%B8%8D%E5%90%8C%E7%AE%97%E6%B3%95%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E6%9B%B2%E7%BA%BF%E5%9B%BE.png" alt="图2 不同算法运行时间图"></p>
 <h2 id="2-4-运行时间计算"><a href="#2-4-运行时间计算" class="headerlink" title="2.4 运行时间计算"></a>2.4 运行时间计算</h2><p>前面画图只是粗略的估计，最好的办法应该是编程运行。在此，我们会做一个折中，将编程运行的结果进行分析（实际上基于代码语句即可），抽象出几个用于估计时间的法则和流程：</p>
 <h3 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h3><p>根据计算$\sum^N_{i=1}i^3$可以得到若干法则：</p>
 <ul>
@@ -239,7 +240,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="tag">语言类型</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li></ul>
     </div>
   </div>
 
@@ -249,7 +250,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a> <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" style="font-size: 10px;">语言类型</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 13.33px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a>
     </div>
   </div>
 
@@ -271,6 +272,14 @@
       <ul>
         
           <li>
+            <a href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/">chapter5散列</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/chapter4%E6%A0%91/">chapter4树</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">chapter3表、栈和队列</a>
           </li>
         
@@ -280,14 +289,6 @@
         
           <li>
             <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/">chapter1引论</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">chapter12并发编程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">chapter11网络编程</a>
           </li>
         
       </ul>

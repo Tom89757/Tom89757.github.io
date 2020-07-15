@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>chapter4树 | Tom89757&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对于大量的输入数据，链表的线性访问时间太慢，不宜使用。本章描述的树其大部分操作的运行时间平均为$O(\log N)$。在本章，我们将：  了解树时如何用于实现几个流行的操作系统的文件系统的。 看到树如何能够用来计算算术表达式的值。 指出如何利用树支持以$O(\log N)$平均时间进行的各种搜索操作，以及如何细化以得到最坏时间界$O(\log N)$。还将讨论当数据存储在磁盘上时如何实现这些操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter4树">
+<meta property="og:url" content="https://tom89757.github.io/2020/07/14/chapter4%E6%A0%91/index.html">
+<meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="对于大量的输入数据，链表的线性访问时间太慢，不宜使用。本章描述的树其大部分操作的运行时间平均为$O(\log N)$。在本章，我们将：  了解树时如何用于实现几个流行的操作系统的文件系统的。 看到树如何能够用来计算算术表达式的值。 指出如何利用树支持以$O(\log N)$平均时间进行的各种搜索操作，以及如何细化以得到最坏时间界$O(\log N)$。还将讨论当数据存储在磁盘上时如何实现这些操作。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.3%E6%96%87%E4%BB%B6%E5%90%8E%E7%BB%AD%E5%A4%A7%E5%B0%8F.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.2.2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.2.2%E6%9E%84%E5%BB%BA%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.2%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84Find%E6%93%8D%E4%BD%9C.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.3FindMin%E7%9A%84%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.3FindMax%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC1.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC2.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC1.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC2.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2AVL%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%89%8D.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%90%8E.png">
+<meta property="article:published_time" content="2020-07-14T14:17:00.000Z">
+<meta property="article:modified_time" content="2020-07-15T17:59:08.916Z">
+<meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="数据结构与算法分析(C)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tom89757&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界在我面前展开</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/Tom89757" target="_blank" rel="noopener" title="Github"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tom89757.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-chapter4树" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/14/chapter4%E6%A0%91/" class="article-date">
+  <time datetime="2020-07-14T14:17:00.000Z" itemprop="datePublished">2020-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chapter4树
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-预备知识"><span class="toc-text">1.1 预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#树的实现"><span class="toc-text">树的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#树的遍历及应用"><span class="toc-text">树的遍历及应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-二叉树"><span class="toc-text">4.2 二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表达式树"><span class="toc-text">表达式树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-查找树ADT——二叉查找树"><span class="toc-text">4.3 查找树ADT——二叉查找树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MakeEmpty"><span class="toc-text">MakeEmpty</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Find"><span class="toc-text">Find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FindMin和FindMax"><span class="toc-text">FindMin和FindMax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Insert"><span class="toc-text">Insert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delete"><span class="toc-text">Delete</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#平均情形分析"><span class="toc-text">平均情形分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-AVL树（最老的一种平衡查找树）"><span class="toc-text">4.4 AVL树（最老的一种平衡查找树）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单旋转"><span class="toc-text">单旋转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双旋转"><span class="toc-text">双旋转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-伸展树"><span class="toc-text">4.5 伸展树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一个简单的想法"><span class="toc-text">一个简单的想法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#展开"><span class="toc-text">展开</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-树的遍历"><span class="toc-text">4.6 树的遍历</span></a></li></ol>
+</div>
+
+
+        <p>对于大量的输入数据，链表的线性访问时间太慢，不宜使用。本章描述的树其大部分操作的运行时间平均为$O(\log N)$。在本章，我们将：</p>
+<ul>
+<li>了解树时如何用于实现几个流行的操作系统的文件系统的。</li>
+<li>看到树如何能够用来计算算术表达式的值。</li>
+<li>指出如何利用树支持以$O(\log N)$平均时间进行的各种搜索操作，以及如何细化以得到最坏时间界$O(\log N)$。还将讨论当数据存储在磁盘上时如何实现这些操作。</li>
+</ul>
+<a id="more"></a>
+<h2 id="1-1-预备知识"><a href="#1-1-预备知识" class="headerlink" title="1.1 预备知识"></a>1.1 预备知识</h2><p>树可以用多种方式定义，其中一种自然的方法是递归。由递归定义知，树是N个节点和N-1条边的集合，其中一个节点为根。关于树还定义了父亲、儿子、树叶、兄弟、祖父、孙子等概念。</p>
+<p>此外，由路径的概念还引申出了深度（根到节点的唯一路径的长）、高（节点到一片树叶最长路径的长）、祖先、后裔、真祖先、真后裔等概念。</p>
+<h3 id="树的实现"><a href="#树的实现" class="headerlink" title="树的实现"></a>树的实现</h3><p>实现数的一种自然的方法是，每个节点除了存储数据外，还存储指向儿子的指针，并且很自然的想到众多儿子使用以第一儿子为首元素的链表存储，这样每个节点还需要存储指向下一兄弟的指针。</p>
+<h3 id="树的遍历及应用"><a href="#树的遍历及应用" class="headerlink" title="树的遍历及应用"></a>树的遍历及应用</h3><p>树的流行应用是众多操作系统的目录结构。以UNIX系统为例：</p>
+<p>树这种结构将系统中的文件很好的组织起来，系统的目录实际上是包含它的所有儿子的一个文件。（此外，每个目录还有一项指向目录自身和另一项指向该目录的子目录，故文件系统实际是类树）</p>
+<p>书中描述了列出目录中所有文件名字的算法：输出格式是，深度为$d_i$的文件的名字将在$d_i$次tab缩进后打印出来。该算法的核心为递归程序ListDir。这是一种<strong>先序遍历</strong>，遍历节点，再遍历其儿子节点。</p>
+<p>另一种遍历树的方式为<strong>后序遍历</strong>：在遍历节点的儿子节点后，再遍历该节点。书中描述了计算某个目录包含的所有文件（包括目录）或某个文件所占块多少的算法。</p>
+<p>下图分别展示了通过先序遍历输出的文件名和通过后序遍历输出的文件大小：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png" alt="图1 目录先序列表"> <img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.3%E6%96%87%E4%BB%B6%E5%90%8E%E7%BB%AD%E5%A4%A7%E5%B0%8F.png" alt="图2 文件后序大小"></p>
+<h2 id="4-2-二叉树"><a href="#4-2-二叉树" class="headerlink" title="4.2 二叉树"></a>4.2 二叉树</h2><p>二叉树的每个节点的儿子节点不超过两个。对二叉树来说，其深度大小尤为重要，涉及到诸多关于树的算法。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>在树的声明中，一个节点就是由关键字信息加上两个指向儿子节点的指针组成的结构，该声明与双链表类似。二叉树的主要用处之一是在编译器的设计领域：</p>
+<h3 id="表达式树"><a href="#表达式树" class="headerlink" title="表达式树"></a>表达式树</h3><p>其树叶是操作数，而其它节点为操作符。</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.2.2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png" alt="图3 表达式树"></p>
+<p>通过递归产生带括号的左表达式，然后打印根处运算符，在递归产生带括号的右表达式，可以得到中缀表达式，这种遍历方式称为种虚遍历，即（左，节点，右），它是二叉树特有的方式；另一种方式为后序遍历，即（左，右，节点），得到后缀表达式（逆波兰表达式），4.1节在一般的树中已经展示了这种遍历方式；第三种遍历方式为先序遍历，即（节点，左，右），得到前缀表达式，这种表达式不常见，因为它既不符合直观，也不符合运算顺序。</p>
+<blockquote>
+<p>下面构造一棵表达式树</p>
+</blockquote>
+<p>书中给出了一种将后缀表达式转变为表达式树的算法，使用了栈这种数据结构。</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.2.2%E6%9E%84%E5%BB%BA%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png" alt="图4 构建表达式树"></p>
+<h2 id="4-3-查找树ADT——二叉查找树"><a href="#4-3-查找树ADT——二叉查找树" class="headerlink" title="4.3 查找树ADT——二叉查找树"></a>4.3 查找树ADT——二叉查找树</h2><p>为简化问题，我们假设树的每个节点对应的关键字为整数且互异。二叉查找树的性质是，对每个节点X，该节点的左子树中所有关键字小于X的关键字，右子树中所有关键字大于X的关键字。</p>
+<p>下图是对二叉查找树进行的操作的声明，这些例程的实现通常使用递归：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%A3%B0%E6%98%8E.png" alt="图5 二叉查找树声明"></p>
+<h3 id="MakeEmpty"><a href="#MakeEmpty" class="headerlink" title="MakeEmpty"></a>MakeEmpty</h3><p>对树进行初始化：<code>SearchTree MakeEmpty(SearchTree T)</code>。使用递归实现。</p>
+<h3 id="Find"><a href="#Find" class="headerlink" title="Find"></a>Find</h3><p>该操作需要返回指向树T中具有关键字X的节点的指针，若节点不存在返回NULL。</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.2%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84Find%E6%93%8D%E4%BD%9C.png" alt="图6 二叉查找树的Find操作"></p>
+<p>该例程中使用了尾递归，由于所使用的栈空间为$O(\log N)$，所以是合理的。</p>
+<h3 id="FindMin和FindMax"><a href="#FindMin和FindMax" class="headerlink" title="FindMin和FindMax"></a>FindMin和FindMax</h3><p>这两个例程分别返回树中最大元和最小元。书中分别使用了递归和非递归对例程进行了实现。</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.3FindMin%E7%9A%84%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png" alt="图7 FindMin操作的递归实现"> <img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.3FindMax%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png" alt="图8 FindMax操作的非递归实现"></p>
+<h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><p>在插入某个元素时，其过程与Find操作类似，重复元的插入则要复杂一些，一般通过添加附加域或辅助数据结构来存储。</p>
+<p>书中将Insert函数的返回值设为一个返回指向新树根的指针的函数，该树根的关键字即为插入元素。</p>
+<h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><p>和诸多数据结构相似，最困难的操作是删除，发现待删除节点后需要考虑几种可能的情况：</p>
+<ul>
+<li>节点是一片树叶，可以立即删除。</li>
+<li>节点只有一个儿子，在父节点调整指针绕过该节点后删除。该节点可以删除的前提条件是指向它的指针已被省去。</li>
+<li>节点有两个儿子，用其右子树中最小的数据代替该节点并递归的删除用于替代的节点（这个节点必定没有儿子或者只有一个右儿子）。</li>
+<li>如果删除次数不多，采用懒惰删除的策略：当一个元素要被删除时，仍保留在树中，只是做了个被删除的记号。（不太懂<strong>mark</strong>）</li>
+</ul>
+<h3 id="平均情形分析"><a href="#平均情形分析" class="headerlink" title="平均情形分析"></a>平均情形分析</h3><p>除MakeEmpty外，我们期望所有操作都是$O(\log N)$的，等价于节点的深度为$O(\log N)$。本节即要证明：假设所有的树出现的机会均等，则树的所有节点的平均深度为$O(\log N)$。一棵树的所有节点的深度和为内部路径长，故我们的目的是计算树的平均内部路径长。</p>
+<p>设$D(N)$表示节点数为N的树的内部路径长，则可得公式：$D(N) = D(i) + D(N-i-1) + N - 1$。对二叉查找树来说，$D(i)$和$D(N-i-1)$的大小均为$(1/N)\sum^{N-1}<em>{j=0}D(j)$，故上式等价于：$D(N)=\frac{2}{N}\sum^{N-1}</em>{j=0}D(j) + N - 1$。第7章将求解该递推关系，得到：$D(N)=O(N\log N)$。</p>
+<p>书中对二叉树的所有情形是否等可能出现作了更细致的讨论，这个问题的出现于删除操作的不平衡有关，因为删除操作总是使用右子树的一个节点代替删除节点；此外，当向一棵树输入预先排序的数据时，插入操作将会非常耗费时间，这时需要引入平衡查找树的概念，即所有节点的深度均不可过深。</p>
+<h2 id="4-4-AVL树（最老的一种平衡查找树）"><a href="#4-4-AVL树（最老的一种平衡查找树）" class="headerlink" title="4.4 AVL树（最老的一种平衡查找树）"></a>4.4 AVL树（最老的一种平衡查找树）</h2><p>AVL（Adelson-Velskii和Landis）树是带有平衡条件的二叉查找树，即必须保证树的深度是$O(\log N)$。对平衡条件进行权衡后，将AVL树定义为一颗每个节点的左子树和右子树的高度最多差一，在这种要求下，可以得到一个AVL树的高度最多为$1.44\log (N+2) - 1.328$。</p>
+<p>在高度为h的AVL树中，最小节点数S(h)由S(h) = S(h-1) + S(h-2) + 1 给出，S(0) = 1，S(1) = 2，显然S(h)与Fabonacci数列有关。</p>
+<p>当对AVL树进行插入操作时，树的平衡特性可能遭到破坏，此时我们需要借助被称之为旋转的策略将树恢复，恢复后才算插入操作完成。容易得到，只有从插入点到根节点路径上的节点的平衡可能改变，故我们可以沿这条路径找到一个节点，该节点破坏了平衡条件。</p>
+<p>记该节点（沿路径上行找到的第一个节点）为$\alpha$，则不平衡分为四种情形，四种情形又可分为两种情况：</p>
+<ol>
+<li><p>对$\alpha$的左儿子的左子树或右儿子的右子树进行插入。</p>
+</li>
+<li><p>对$\alpha$的左儿子的右子树或右儿子的左子树进行插入。</p>
+</li>
+</ol>
+<h3 id="单旋转"><a href="#单旋转" class="headerlink" title="单旋转"></a>单旋转</h3><p>对应上述的第一种情况。下图呈现了单旋转的效果：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC1.png" alt="图9 调整情形1的单旋转"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC2.png" alt="图10 调整情形4的单旋转"></p>
+<h3 id="双旋转"><a href="#双旋转" class="headerlink" title="双旋转"></a>双旋转</h3><p>上述单旋转对情形2和情形3无用，故需使用双旋转，如下图所示：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC1.png" alt="图11 调整情形2的双旋转"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC2.png" alt="图12 调整情形3的双旋转"></p>
+<p>事实上，上述图并没有体现出双旋转的精髓，其精髓在于通过两次单旋转恢复平衡。更进一步看，单旋转和双旋转的本质都是：将平衡破坏的节点对应的树扩展为3个节点和4个子树构成的树，该树在水平线上的投影的顺序便是各节点和字数关键字的大小顺序，投影中必然有一个节点位于最中间，旋转的目的便是将该节点调整至该树根节点的位置。</p>
+<p>下面是编写AVL树时考虑的两个因素：</p>
+<ol>
+<li>由上面恢复平衡的方法可知，通过一次旋转即可恢复平衡，所以使用非递归的程序要比递归程序快得多，但是相对来说更为困难，所以在对程序运行速度要求不高时仍使用递归编写。</li>
+<li>关于高度信息的存储有两种策略，一种是使用两个二进制位（+1、0、-1）来表示高度差；另一种是在每个节点存储高度。当使用递归编写程序时，显然速度不是主要考虑的问题，因此选择后一种策略。</li>
+</ol>
+<p>下图是AVL树的节点声明：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2AVL%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E5%A3%B0%E6%98%8E.png" alt="图13 "></p>
+<p>关于AVL的各种例程较为复杂，暂时不作具体描述（<strong>mark</strong>）。值得补充的是，AVL树的删除多少比插入复杂，如果删除操作相对较少，懒惰删除是一种好的策略。</p>
+<h2 id="4-5-伸展树"><a href="#4-5-伸展树" class="headerlink" title="4.5 伸展树"></a>4.5 伸展树</h2><p>伸展树是与AVL树类型不同一种相对简单的数据结构，AVL树需要时刻保持树的平衡，伸展树则对深度没有要求，但需要保证从空树开始任意连续M次对树的操作最多花费$O(M \log N)$时间。这里引出摊还的概念，一颗伸展树每次操作的摊还代价为$O(\log N)$，与AVL树相当，尽管每次操作所花费的时间在$O(1)$到$O(N)$间变化。它是从把一个操作序列作为整体来看的，伸展树保证不存在坏的操作序列。</p>
+<p>伸展树的基本想法是，当一个节点被访问后，它会经过一系列的AVL旋转操作被转移到根上。这一想法的精髓在于，当被访问节点的深度较大时，往往意味着从它到根的路径上的节点深度也较大，故经过一系列AVL旋转操作后这条路径上的节点的深度都有所下降，对这些节点的访问所花费的时间也会减少。</p>
+<p>故虽然伸展树不要求树的时刻平衡，但每次对伸展树节点的访问都是对树的重新构造，具有平衡树的作用。并且根据计算机中无处不在的局部性原理，可以推出伸展树的策略可以有效降低一个操作序列花费的总时间。它与AVL相比的优点在于，它不用时刻保留高度或平衡信息，故它节省空间且实现它的例程代码更为简洁。</p>
+<h3 id="一个简单的想法"><a href="#一个简单的想法" class="headerlink" title="一个简单的想法"></a>一个简单的想法</h3><p>实施重新构造的一种方法是执行单旋转，自下而上进行，即在访问路径的每一个节点和其父节点之间实施旋转。</p>
+<p>上述操作的结果时，将访问节点$k_1$一直推到树根，使得对$k_1$的进一步访问很容易（只是暂时，下一次对另一节点的访问将更改其位置），但是却将其祖父节点$k_3$几乎推向$k_1$原有的深度，并且这种操作导致的副作用并不会随多次访问节点终止。并且容易证明，在一颗只有左儿子的树中，对树叶节点到根节点的顺序访问耗费的总时间为$O(N_2)$，且在它们都被访问后，该树转变回原始状态，这种糟糕的访问顺序可能会卷土重来。</p>
+<h3 id="展开"><a href="#展开" class="headerlink" title="展开"></a>展开</h3><p>展开的本质是，<strong>有选择</strong>地从底部向上沿着访问路径旋转。令X是访问路径上的一个节点，当X父节点不是根节点时，X必定有父亲P和祖父G，此时X、P和G的空间位置存在两种情形：</p>
+<ol>
+<li>之字形：zig-zag或zag-zig，此时执行AVL中的双旋转，X与P旋转然后X与G旋转，两次旋转方向相反。</li>
+<li>一字形：zig-zig或zag-zag，此时执行两次AVL中的单旋转，P与G旋转然后X与P旋转，两次旋转方向相同，注意两种情形旋转顺序的区别。</li>
+</ol>
+<p>以下是一颗伸展树在访问节点$k_1$前后的结构图对比：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%89%8D.png" alt="图14 访问前"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%90%8E.png" alt="图15 访问后"></p>
+<p>展开操作不仅将访问的节点移动到根处，而且把访问路径上的大部分节点深度大致减少一半。书中显示在32个节点的书中访问关键字1到9的结果，一定程度上呈现了展开操作的特性（在清华大学邓俊辉老师的数据结构课程视频中有更直观的呈现）。</p>
+<p>当访问路径太长导致超出正常查找时间时，将访问节点转移至根节点所做的诸多旋转操作对之后的访问操作有益；当访问耗时很少时，所执行的旋转操作则并不那么有益甚至有害。第11章将对每个操作不会超过$O(\log N)$作出证明(<strong>mark</strong>)。</p>
+<p>伸展树中删除节点的操作也因为其特性变得简单，我们只需访问待删除节点将其转移至根处，删除该节点，然后将左子树$T_L$的最大元素转移至根处，再将右子树$T_R$作为该元素的右儿子，从而结束整个删除操作。</p>
+<p>前面已经指出，伸展树的编程比AVL简单，且节省了存储平衡信息的空间；但相比之下，其结构的变化更为复杂，从而使得对它结构的分析要麻烦很多；此外，伸展树仍然有可以优化的地方，第12章将具体呈现。</p>
+<h2 id="4-6-树的遍历"><a href="#4-6-树的遍历" class="headerlink" title="4.6 树的遍历"></a>4.6 树的遍历</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/14/chapter4%E6%A0%91/" data-id="ckcnohct7000010wdelajgg8j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter5散列
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chapter3表、栈和队列</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F/">人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 13.33px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/">chapter5散列</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/chapter4%E6%A0%91/">chapter4树</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">chapter3表、栈和队列</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">chapter2算法分析</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/">chapter1引论</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Tom89757<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+</body>
+</html>
