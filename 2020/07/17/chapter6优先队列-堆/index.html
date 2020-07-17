@@ -14,11 +14,19 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="由于对队列中元素的输出顺序有所要求，所以需要一种新的可以满足该要求的数据结构。这种要求并不少见：当有多个文件要打印时，先打印短的文件；操作系统调度程序时，必须决定在若干进程中首先运行哪个进程。为此本章描述了一类特殊的队列——优先队列（priority queue），接下来我们将讨论：  优先队列ADT的有效实现。 优先队列的使用。 优先队列的高级实现。  书上说这类数据结构是计算机科学中最讲究的一">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%A0%86.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E4%B8%8A%E6%BB%A4.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E6%8F%92%E5%85%A5.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E4%B8%8B%E6%BB%A4.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E5%88%A0%E9%99%A4.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.4%E6%97%A0%E5%BA%8F%E6%A0%91%E5%88%B0%E6%9C%89%E5%BA%8F%E5%A0%86.png">
 <meta property="article:published_time" content="2020-07-16T17:18:29.000Z">
-<meta property="article:modified_time" content="2020-07-16T17:31:42.890Z">
+<meta property="article:modified_time" content="2020-07-17T15:53:09.165Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -102,7 +110,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-模型"><span class="toc-text">6.1 模型</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-模型"><span class="toc-text">6.1 模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-一些简单的实现"><span class="toc-text">6.2 一些简单的实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-二叉堆"><span class="toc-text">6.3 二叉堆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#结构性质"><span class="toc-text">结构性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆序性质"><span class="toc-text">堆序性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础的堆操作"><span class="toc-text">基础的堆操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它的堆操作"><span class="toc-text">其它的堆操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-优先队列的应用"><span class="toc-text">6.4 优先队列的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选择问题"><span class="toc-text">选择问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件模拟"><span class="toc-text">事件模拟</span></a></li></ol></li></ol>
 </div>
 
 
@@ -114,7 +122,60 @@
 </ol>
 <p>书上说这类数据结构是计算机科学中最讲究的一种，让我们拭目以待。</p>
 <a id="more"></a>
-<h2 id="6-1-模型"><a href="#6-1-模型" class="headerlink" title="6.1 模型"></a>6.1 模型</h2>
+<h2 id="6-1-模型"><a href="#6-1-模型" class="headerlink" title="6.1 模型"></a>6.1 模型</h2><p>优先队列至少允许两种操作Insert和DeleteMin，二者分别与队列中的Enqueue和Dequeue操作等价，此外可能还需要添加一些除基础模型之外的扩展操作。</p>
+<p>除上述所说的操作系统调度外，优先队列还可用于排序和贪婪算法的实现。</p>
+<h2 id="6-2-一些简单的实现"><a href="#6-2-一些简单的实现" class="headerlink" title="6.2 一些简单的实现"></a>6.2 一些简单的实现</h2><p>下面罗列3种优先队列简单的实现方式：</p>
+<ol>
+<li>使用链表在表头以$O(1)$执行插入操作，然后以$O(N)$遍历链表删除最小元。</li>
+<li>始终让表保持排序状态，插入代价为$O(N)$而删除操作为$O(1)$。显然这种方法比第1种代价更为高昂。</li>
+<li>使用二叉查找树，插入和删除均为$O(\log N)$。这未免有些大材小用，因为它还支持了很多不需要的操作。</li>
+</ol>
+<p>为此，我们使用一种契合需求的新的数据结构——二叉堆，它以最坏情形时间$O(\log N)$支持插入和删除最小元操作。</p>
+<h2 id="6-3-二叉堆"><a href="#6-3-二叉堆" class="headerlink" title="6.3 二叉堆"></a>6.3 二叉堆</h2><p>英文为binary heap，无上下文提示时堆（heap）一般都指二叉堆。与二叉查找树一样，堆具有结构性和堆序性两种性质，每次对堆的操作直到两种性质均满足才终止。</p>
+<h3 id="结构性质"><a href="#结构性质" class="headerlink" title="结构性质"></a>结构性质</h3><p>堆是一颗除底层外全部填满的完全二叉树，底层的元素从左到右依次填入。根据完全二叉树的这种结构性质，很容易推出一颗高度为$h$的完全二叉树节点数为$2^h \sim 2^{h+1}-1$，节点数为$N$的完全二叉树高为$\left\lfloor \log N \right\rfloor$。完全二叉树的规律性使得可以使用数组表示而不需要指针。</p>
+<p>在此对表示完全二叉树的数组的性质作数学化的描述：对于数组中的每个位置$i$上的元素来说，其左儿子在位置$2i$，其右儿子在位置$2i+1$，它的父亲在位置$\left\lfloor i/2 \right\rfloor$。正因为此，不需要指针即可快速遍历整个数组，需要补充的是在建立数组前最大的堆大小需要事先估计且数组需要保留一个位置0。</p>
+<p>故一个堆数据结构将由一个数组（不用管关键字类型）、一个代表最大值的整数以及当前的堆大小组成。后续将始终把堆画成树。</p>
+<h3 id="堆序性质"><a href="#堆序性质" class="headerlink" title="堆序性质"></a>堆序性质</h3><p>堆序（heap order）性是使操作得以快速进行的性质。要事先快速进行DeleteMin的操作，意味着最小元处于根上，由递归性质可知每颗子树的根节点都小于它的所在后裔。故对堆中的每个节点$X$，$X$的父亲中的关键字小于（或等于）$X$中的关键字，根节点除外。下面是优先队列的声明（具体细节暂略<strong>mark</strong>）：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png" alt="图1 优先队列的声明"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%A0%86.png" alt="图2 创建空堆"></p>
+<h3 id="基础的堆操作"><a href="#基础的堆操作" class="headerlink" title="基础的堆操作"></a>基础的堆操作</h3><ul>
+<li>Insert：将元素$X$插入到堆，需要在下一个空闲位置创建一个空穴。如果$X$插入空穴中而不破环堆序性，则插入完成，否则将空穴的父节点移入空穴中，同时空穴向根上行一步，重复此过程直到$X$可以放入空穴中，这一过程称为上滤。以下为其图示和代码实现：</li>
+</ul>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E4%B8%8A%E6%BB%A4.png" alt="图3 上滤"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E6%8F%92%E5%85%A5.png" alt="图4 二叉堆插入例程"></p>
+<p>该实现的细节在于先确定空穴的正确位置，再将$X$插入其中，这样避免了插入到空穴再上滤所需频繁的交换操作。</p>
+<p>此外，正如前面提到的，在表示堆的数组中保留了位置0，此处是用以存放一个标记，该标记的值必须小于（或等于）堆中的任意值，其类似于链表中的头节点，从而避免每次循环都要执行一次的与局部变量$i$与0的比较。</p>
+<p>已证明一次插入平均需要2.607次比较，Insert将元素上移1.607层。</p>
+<ul>
+<li>DeleteMin：最小元处于根节点处，故该操作的难点在于删除它。删除最小元后，需要将堆的最后一个元素$X$移动到新的位置。此处采取与上滤相反的操作，删除最小元后，根节点处成为空穴，将根节点的左右儿子中较小者移入空穴，空穴下移一层，直至$X$能够移入空穴，这个步骤称之为下滤。以下为图示和代码实现：</li>
+</ul>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E4%B8%8B%E6%BB%A4.png" alt="图5 下滤"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E5%88%A0%E9%99%A4.png" alt="图6 二叉堆删除例程"></p>
+<p>值得补充的是，如果堆的节点总数为偶数时，将遇到一个节点只有一个儿子的情况，故每次循环都要进行一次测试。一种解决方式是，当堆节点数为偶数时，在堆的终端后面的位置加上一个大于任何元素的标记。即使如此，每次循环仍然需要测试何时到达底层。</p>
+<p>最坏情形的运行时间为$O(\log N)$，并且由于堆终端元素总是堆中接近最大的元素，故平均运行时间也为$O(\log N)$。</p>
+<h3 id="其它的堆操作"><a href="#其它的堆操作" class="headerlink" title="其它的堆操作"></a>其它的堆操作</h3><p>根据堆的堆序性可知，堆所包含的关于序的信息很少，对最小元处于根节点的堆来说，只能得知最大元在树叶上，而树叶占据了半数的节点。（若想直到每个元素的位置，需要引入诸如散列表等数据结构）</p>
+<p>假设通过某种其他方法<strong>得知每个元素的位置</strong>，其他操作的开销将变小，下面罗列几种操作：</p>
+<ul>
+<li><p>DecreaseKey（降低关键字的值）：$DecreaseKey(P,\Delta,H)$可以降低位置P处的关键字值，系统管理程序能够借助该操作使指定程序以最高优先级运行。</p>
+</li>
+<li><p>IncreaseKey（增加关键字的值）：调度程序可自动降低过多消耗CPU资源的进程的优先级。</p>
+</li>
+<li><p>Delete（删除）：通过先后执行$DecreaseKey(P,\infty,H)$和$DeleteMin(H)$完成。</p>
+</li>
+<li><p>BuildHeap（构建堆）：$BuildHeap(H)$将N个关键字作为输入放入空堆中，其期望运行时间为$O(N)$。书中通过数学描述严格证明了以下定理：</p>
+<p>包含$2^{h+1}-1$个节点、高为$h$的理想二叉树的节点的高度的和为$2^{h+1}-1-(h+1)$。（具体过程暂略<strong>mark</strong>）书中通过下图说明了构建堆所需的操作数（虚线条数之和）的上界为堆中所有节点的高度之和：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.4%E6%97%A0%E5%BA%8F%E6%A0%91%E5%88%B0%E6%9C%89%E5%BA%8F%E5%A0%86.png" alt="图7 无序树到有序堆"></p>
+</li>
+</ul>
+<h2 id="6-4-优先队列的应用"><a href="#6-4-优先队列的应用" class="headerlink" title="6.4 优先队列的应用"></a>6.4 优先队列的应用</h2><p>堆不仅可用于操作系统对进程的调度，在后面第9章中图论算法中也有应用。下面，我们将介绍应用堆来求解两个问题。</p>
+<h3 id="选择问题"><a href="#选择问题" class="headerlink" title="选择问题"></a>选择问题</h3><p>问题描述为：输入N个元素以及一个整数k，找出其中第k大的元素（等价于找出第(N-k+1)小的元素）。第一章给出了两种算法解决方案，第一种将元素全排序得到有序数组，时间复杂度为$O(N^2)$；第二种算法将N个元素里面的k个进行排序，然后将第k个元素与剩下的元素依次进行比较，从而得到k个最大元素的有序序列，时间复杂度为$O(N·k)$，当$k=\left\lceil N/2 \right\rceil$时，时间复杂度达到上界$O(N^2)$。</p>
+<p>下面介绍两种运用堆算法，使得当$k=\left\lceil N/2 \right\rceil$时，均以$O(N \log N)$运行：</p>
+<ul>
+<li>算法A：先使用BuildHeap构建堆，然后执行k次DeleteMin操作，当然为解决该问题，应该将最大元放在根节点。</li>
+<li>算法B：延续上述第二种算法的思路，不过使用堆来实现k个最大元素组成的集合。</li>
+</ul>
+<p>后续第7章和第10章将给出时间复杂度为$O(N)$的算法。</p>
+<h3 id="事件模拟"><a href="#事件模拟" class="headerlink" title="事件模拟"></a>事件模拟</h3>
       
     </div>
     <footer class="article-footer">
@@ -128,6 +189,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter7排序
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/" id="article-nav-older" class="article-nav-link-wrap">
@@ -191,6 +261,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/">chapter7排序</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/">chapter6优先队列(堆)</a>
           </li>
         
@@ -204,10 +278,6 @@
         
           <li>
             <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">chapter3表、栈和队列</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">chapter2算法分析</a>
           </li>
         
       </ul>
