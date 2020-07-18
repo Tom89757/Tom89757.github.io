@@ -14,17 +14,17 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。 前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E5%80%9F%E5%8A%A9%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.3%E4%B8%80%E4%B8%AA%E5%9B%A0%E7%89%B9%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%92%8C%E8%BD%AF%E4%BB%B6%E7%BB%84%E7%BB%87.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.4%E5%9F%BA%E4%BA%8E%E5%A5%97%E6%8E%A5%E5%AD%97%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.4.6%E7%9B%91%E5%90%AC%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%92%8C%E5%B7%B2%E8%BF%9E%E6%8E%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.2%E5%80%9F%E5%8A%A9%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.3%E4%B8%80%E4%B8%AA%E5%9B%A0%E7%89%B9%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%92%8C%E8%BD%AF%E4%BB%B6%E7%BB%84%E7%BB%87.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.4%E5%9F%BA%E4%BA%8E%E5%A5%97%E6%8E%A5%E5%AD%97%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.4.6%E7%9B%91%E5%90%AC%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%92%8C%E5%B7%B2%E8%BF%9E%E6%8E%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6.png">
 <meta property="article:published_time" content="2020-07-07T11:13:00.000Z">
-<meta property="article:modified_time" content="2020-07-11T06:14:43.330Z">
+<meta property="article:modified_time" content="2020-07-18T16:36:53.971Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png">
+<meta name="twitter:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -130,7 +130,7 @@
 <li>物理上说，网络是一个按照地理远近组成的层次系统。</li>
 </ul>
 <p>1）局域网是最低层的层次系统，它由以太网段、网桥以及电缆连接而成，如下图所示（书中涉及了端口、帧、集线器、电缆和网桥等概念）：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png" alt="图1 桥接以太网"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.2%E6%A1%A5%E6%8E%A5%E5%B1%80%E5%9F%9F%E7%BD%91.png" alt="图1 桥接以太网"></p>
 <p>2）在层次更高级别中，多个不兼容（<strong>mark</strong>）的局域网可以通过叫做路由器的特殊计算机连接起来，组成一个internet（互联网络）。路由器可以用来由各种局域网和广域网构建互联网络。</p>
 <p>互联网重要特性即是由采用完全不同和不兼容技术的各种局域网和广域网组成，源主机和目的主机通过协议软件跨过诸多网络进行数据传送。这种运行在每台主机和路由器的协议软件消除了不同网络的差异，它所实现的协议控制主机和路由器协同工作实现数据传输。该协议提供两种基本能力：</p>
 <ul>
@@ -138,10 +138,10 @@
 <li>传送机制：同样，协议定义了一种将传输的数据为捆扎成不连续的片（称为包）的统一方式，消除了不同技术封装数据的差异。包由包头和有效载荷组成。</li>
 </ul>
 <p>下图展示了两台在不兼容的局域网上的主机利用协议传送数据的示例：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.2%E5%80%9F%E5%8A%A9%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81.png" alt="图2 借助协议的数据传送"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.2%E5%80%9F%E5%8A%A9%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81.png" alt="图2 借助协议的数据传送"></p>
 <p>该示例回避了复杂的问题，却抓住了互联网络思想的精髓——封装。</p>
 <h2 id="11-3-全球IP因特网"><a href="#11-3-全球IP因特网" class="headerlink" title="11.3 全球IP因特网"></a>11.3 全球IP因特网</h2><p>全球IP因特网是最著名和最成功的互联网络实现。下图展示了因特网客户端-服务端应用程序的基本硬件和软件组织：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.3%E4%B8%80%E4%B8%AA%E5%9B%A0%E7%89%B9%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%92%8C%E8%BD%AF%E4%BB%B6%E7%BB%84%E7%BB%87.png" alt="图3 一个因特网应用程序的硬件和软件组织"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.3%E4%B8%80%E4%B8%AA%E5%9B%A0%E7%89%B9%E7%BD%91%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%92%8C%E8%BD%AF%E4%BB%B6%E7%BB%84%E7%BB%87.png" alt="图3 一个因特网应用程序的硬件和软件组织"></p>
 <p>每个因特网主机都支持TCP/IP协议并运行实现该协议的软件，因特网的客户端和服务器混合使用套接字接口函数和Unix I/O函数进行通信。通常将套接字函数实现为系统调用，这些系统调用会陷入内核，并调用各种内核模式的TCP/IP函数。</p>
 <p>TCP/IP协议实际上是一个协议族，每个协议提供不同的功能，IP提供基本的命名方法和递送机制（主机间数据传输），而TCP在世构建在IP上的复杂协议，提供了进程间可靠的双向连接。为简化讨论，将其视作整体。</p>
 <p>从程序员的角度，将因特网看作一个世界范围的主机集合，其有如下特性：</p>
@@ -161,7 +161,7 @@
 <p>套接字是连接的端点，每个套接字都有相应的地址，由一个因特网地址和一个16位的整数端口组成，用“地址：端口”表示。客户端发起连接请求时，客户端套接字地址端口由内核随机分配，为临时端口；而服务器套接字地址端口通常为知名端口，文件/etc/services包含机器提供的知名名字和知名端口的映射。</p>
 <p>一个连接由两端的套接字地址唯一确定，称为套接字对，表示为元组：<code>(cliaddr:cliport, servaddr:servport)</code>。</p>
 <h2 id="11-4-套接字接口"><a href="#11-4-套接字接口" class="headerlink" title="11.4 套接字接口"></a>11.4 套接字接口</h2><p>一组函数，和Unix I/O函数结合起来，用以创建网络应用。下图展示了典型的套接字接口中包含的函数：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.4%E5%9F%BA%E4%BA%8E%E5%A5%97%E6%8E%A5%E5%AD%97%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0.png" alt="图4 基于套接字接口的网络应用概述"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.4%E5%9F%BA%E4%BA%8E%E5%A5%97%E6%8E%A5%E5%AD%97%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0.png" alt="图4 基于套接字接口的网络应用概述"></p>
 <p>下述函数不讨论具体细节（<strong>mark</strong>）。</p>
 <h3 id="套接字地址结构"><a href="#套接字地址结构" class="headerlink" title="套接字地址结构"></a>套接字地址结构</h3><p>对Linux内核来说，套接字是通信的端点；对Linux程序来说，套接字是有相应描述符的文件。套接字地址存放在一个类型为sockaddr_in的结构中。</p>
 <h3 id="socket函数"><a href="#socket函数" class="headerlink" title="socket函数"></a>socket函数</h3><p>客户端和服务器使用socker函数创建一个套接字描述符。用如下硬编码的参数调用socket函数，使得套接字成为连接的一个端点：</p>
@@ -170,7 +170,7 @@
 <h3 id="bind函数"><a href="#bind函数" class="headerlink" title="bind函数"></a>bind函数</h3><p>bind函数告诉内核将addr中的服务器套接字地址和套接字描述符sockfd联系起来。</p>
 <h3 id="listen函数"><a href="#listen函数" class="headerlink" title="listen函数"></a>listen函数</h3><p>在客户端和服务器建立连接的过程中，前者主动，后者被动。默认情况下，内核认为socket函数创建的描述符对应于主动套接字，存在于一个连接的客户端，服务器则调用listen函数告诉内核描述符被服务器使用。</p>
 <h3 id="accept函数"><a href="#accept函数" class="headerlink" title="accept函数"></a>accept函数</h3><p>服务器通过调用accept函数等待来自客户端的连接请求。accept函数等待来自客户端的连接请求到达监听描述符listenfd，然后在addr中填写客户端的套接字地址，并返回一个已连接描述符connfd，客户端描述符clientfd和connfd之间可通过读写来传送数据。下图描绘了监听描述符和已连接描述符的角色：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter11.4.6%E7%9B%91%E5%90%AC%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%92%8C%E5%B7%B2%E8%BF%9E%E6%8E%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6.png" alt="图5 监听描述符和已连接描述符的角色"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter11.4.6%E7%9B%91%E5%90%AC%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%92%8C%E5%B7%B2%E8%BF%9E%E6%8E%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6.png" alt="图5 监听描述符和已连接描述符的角色"></p>
 <h3 id="主机和服务的转换"><a href="#主机和服务的转换" class="headerlink" title="主机和服务的转换"></a>主机和服务的转换</h3><p>Linux提供函数实现二进制套接字地址结构和主机名、主机地址、服务名和端口号的字符串表示之间的相互转化。和套接字函数一起使用，是我们能编写独立于任何特定版本的IP协议的网络程序（具体细节<strong>mark</strong>）</p>
 <ul>
 <li>getaddinfo函数：将主机名、主机地址、服务名和端口号的字符串表示转化成套接字地址结构。</li>

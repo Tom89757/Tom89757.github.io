@@ -14,16 +14,16 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="从处理器通电开始，到断电为止，程序计数器PC中的值不断地在指向不同指令的地址间转换，可以将这些地址的值按顺序组成一个序列，这种转换称为控制转移，这个序列称为处理器的控制流。 与内部程序无关的系统状态的变化需要控制流发生突变来进行回应，内部程序中的跳转、调用和返回指令同样回导致突变。这些突变被称之为异常控制流（Exceptional Control Flow, ECF），它可以发生在计算机系统的各个">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.2%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.2%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.5%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.2%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.2%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.5%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.png">
 <meta property="article:published_time" content="2020-07-03T16:10:08.000Z">
-<meta property="article:modified_time" content="2020-07-11T06:14:21.958Z">
+<meta property="article:modified_time" content="2020-07-18T16:36:54.323Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png">
+<meta name="twitter:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -140,7 +140,7 @@
 <li>异常处理程序运行在内核模式下，意味着对所有系统资源都有完全的访问权限。</li>
 </ul>
 <h3 id="异常的类别"><a href="#异常的类别" class="headerlink" title="异常的类别"></a>异常的类别</h3><p>分为四类：中断、陷阱、故障和终止。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png" alt="图1 异常类别"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.1%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%88%AB.png" alt="图1 异常类别"></p>
 <ul>
 <li>中断：异步发生，来自处理器外部的I/O设备的信号的结果。</li>
 <li>陷阱和系统调用：有意的异常，是执行一条指令的结果。陷阱最重要的用途实在用户程序和内核之间提供一个像过程一样的接口，称为系统调用。处理器提供<code>syscall n</code>指令使得用户程序可以调用内核程序，使得用户模式可以切换到内核模式。</li>
@@ -163,7 +163,7 @@
 <h3 id="逻辑控制流"><a href="#逻辑控制流" class="headerlink" title="逻辑控制流"></a>逻辑控制流</h3><p>执行程序时，PC中一系列的地址序列称为逻辑控制流，简称逻辑流。对于运行三个进程的系统来说，处理器的一个物理控制流分为3个逻辑流，每个进程轮流使用处理器。虽然表面上看每个进程独占处理器，但指令执行时CPU周期性的卡顿（人无法察觉，但可以通过每条指令使用的时间体现）暗示了这只是表象。</p>
 <h3 id="并发流"><a href="#并发流" class="headerlink" title="并发流"></a>并发流</h3><p>一个逻辑流的执行在时间上和另一个重叠，称为并发流，两个流并发运行。多个流并发执行称为并发；一个进程和其他进程轮流执行称为多任务；一个进程执行它的控制流的一部分的每一时间段称为时间片，故多任务也叫做时间分片。并发流和处理器核数和计算机数无关，两个流运行在不同的处理器或计算机上称之为并行流，并行流时并发流的子集。</p>
 <h3 id="私有地址空间"><a href="#私有地址空间" class="headerlink" title="私有地址空间"></a>私有地址空间</h3><p>进程为每个程序提供它子集的私有地址空间。下图展现了x86-64Linux教程为程序分配的私有地址空间的通用结构。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter8.2%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4.png" alt="图2 进程地址空间"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.2%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4.png" alt="图2 进程地址空间"></p>
 <h3 id="用户模式和内核模式"><a href="#用户模式和内核模式" class="headerlink" title="用户模式和内核模式"></a>用户模式和内核模式</h3><p>为了使操作系统内核提供一个无懈可击的进程抽象，处理器需要提供一种机制，限制一个应用可以执行的指令和它可以访问的地址空间范围。</p>
 <p>处理器通过某个控制寄存器中的模式位来实现这种机制，设置模式位时，进程运行在内核模式，未设置时，运行在用户模式，用户程序必须通过系统调用接口间接访问内核代码和数据。当异常发生时，控制传递到异常处理程序，模式由用户模式却换到内核模式，返回时又切换回用户模式。</p>
 <p>此外，Linux通过/proc和/sys文件系统，将较为底层的信息输出到这些系统中的文件中，使用户可以访问得到关于内核和系统的信息。</p>
@@ -179,7 +179,7 @@
 <li>中断引发。所有的系统都有某种产生周期性定时器中断的机制，定时器中断时，内核判定当前进程已运行了足够长的时间，并切换到新进程。</li>
 </ul>
 <p>下图为进程上下文切换的过程：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter8.2%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2.png" alt="图3 进程上下文切换"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.2%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2.png" alt="图3 进程上下文切换"></p>
 <h2 id="8-3-系统调用错误处理"><a href="#8-3-系统调用错误处理" class="headerlink" title="8.3 系统调用错误处理"></a>8.3 系统调用错误处理</h2><p>当Unix系统级函数遇到错误时，通常回返回-1，并设置全局整数变量errno值。书中使用首字母大写的错误处理包装函数保持代码的简洁，同时说明并没有忽略错误检查。</p>
 <h2 id="8-4-进程控制"><a href="#8-4-进程控制" class="headerlink" title="8.4 进程控制"></a>8.4 进程控制</h2><p>Unix提供了大量从C程序中操作进程的系统调用，这一节将描述这些重要的函数。</p>
 <h3 id="获取进程ID"><a href="#获取进程ID" class="headerlink" title="获取进程ID"></a>获取进程ID</h3><p>每个进程都有一个唯一的正数进程ID（PID），getpid函数返回调用进程的PID，getppid函数返回它的父进程（创建调用的进程的进程）的PID。</p>
@@ -229,7 +229,7 @@
 <h3 id="接收信号"><a href="#接收信号" class="headerlink" title="接收信号"></a>接收信号</h3><p>当内核把进程p从内核模式切换回用户模式时（从系统调用返回或是完成了一次上下文切换），会检查进程p的违背阻塞的待处理信号的集合，集合非空，会选择某个信号k（通常是最小的k）执行对应行为，执行完成后控制传递给$I_{next}$。</p>
 <p>信号默认行为有：进程终止；进程终止并转储内存；进程停止直到被SIGOUT重启；进程忽略该信号。可以通过signal函数修改和信号相关联的默认行为（除了SIGSTOP和SIGKILL）：</p>
 <p><code>sighandler_t signal(int signum, sighandler_t, handler);</code>，handler值可能为SIG_IGN，SIG_DEL或用户定义的函数地址，该函数指向信号处理程序。调用信号处理程序称为捕获信号，执行信号处理程序称为处理信号。信号处理程序可以被其他信号处理程序中断：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter8.5%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.png" alt="图4 处理程序中断处理程序"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter8.5%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.png" alt="图4 处理程序中断处理程序"></p>
 <h3 id="阻塞和解除阻塞信号"><a href="#阻塞和解除阻塞信号" class="headerlink" title="阻塞和解除阻塞信号"></a>阻塞和解除阻塞信号</h3><p>Linux提供阻塞信号的隐式和显式形式：</p>
 <ul>
 <li>隐式阻塞机制：默认阻塞任何当前处理程序正在处理信号类型的待处理的信号。</li>

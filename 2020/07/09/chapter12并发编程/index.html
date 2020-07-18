@@ -14,21 +14,21 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="如第8章所说，如果逻辑控制流在时间上重叠，它们就是并发（concurrency）的。并发出现在计算机系统的不同层次，如Linux信号处理程序、硬件异常处理程序和进程。并发并不限于内核，应用级程序中也大有可为。  访问慢速I&#x2F;O设备：等待I&#x2F;O设备（如磁盘）数据到达时，可以运行其他进程，使CPU保持繁忙。 与人交互：如在使用大型带UI的应用程序时进行的多种操作。 通过推迟工作降低延迟：如对动态内存分">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF2%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.3.1%E5%B9%B6%E5%8F%91%E7%BA%BF%E7%A8%8B%E6%89%A7%E8%A1%8C.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.5.3%E4%BD%BF%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9D%A5%E4%BA%92%E6%96%A5.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.5.4%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.6%E5%90%84%E7%B1%BB%E5%9E%8B%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.3%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E4%BC%9A%E6%AD%BB%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E6%97%A0%E6%AD%BB%E9%94%81%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF2%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.3.1%E5%B9%B6%E5%8F%91%E7%BA%BF%E7%A8%8B%E6%89%A7%E8%A1%8C.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.5.3%E4%BD%BF%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9D%A5%E4%BA%92%E6%96%A5.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.5.4%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.6%E5%90%84%E7%B1%BB%E5%9E%8B%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.7.3%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E4%BC%9A%E6%AD%BB%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E6%97%A0%E6%AD%BB%E9%94%81%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png">
 <meta property="article:published_time" content="2020-07-09T07:51:52.000Z">
-<meta property="article:modified_time" content="2020-07-11T06:14:50.504Z">
+<meta property="article:modified_time" content="2020-07-18T16:36:54.006Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta name="twitter:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -139,8 +139,8 @@
 <hr>
 <hr>
 <h2 id="12-1-基于进程的并发编程"><a href="#12-1-基于进程的并发编程" class="headerlink" title="12.1 基于进程的并发编程"></a>12.1 基于进程的并发编程</h2><p>构造并发程序最简单的方式是使用进程，使用诸如fork、exec和waitpid等函数。下图是父进程使用fork派生出两个子进程实现处理多个客户端请求的过程：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="图1 客户端1与服务器"></p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF2%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="图2 客户端2与服务器"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF1%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="图1 客户端1与服务器"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.1%E5%AE%A2%E6%88%B7%E7%AB%AF2%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="图2 客户端2与服务器"></p>
 <h3 id="基本进程的并发服务器"><a href="#基本进程的并发服务器" class="headerlink" title="基本进程的并发服务器"></a>基本进程的并发服务器</h3><p>书中展示了一个基于进程的echo服务器的代码。关于服务器需要注意：</p>
 <ul>
 <li>通常服务器需要运行较长时间，因此需要调用SIGCHLD程序回收僵死子进程的资源。</li>
@@ -174,7 +174,7 @@
 </ul>
 <h2 id="12-3-基于线程的并发编程"><a href="#12-3-基于线程的并发编程" class="headerlink" title="12.3 基于线程的并发编程"></a>12.3 基于线程的并发编程</h2><p>线程是上述两种并发方式的混合。线程是运行在进程上下文中的逻辑流，现代系统允许我们编写一个进程里同时运行多个线程的程序，线程由内核自动调度，每个线程有自己的线程上下文，包括一个完整的线程ID、栈、栈指针、程序计数器、通用目的寄存器和条件码，所有运行在同一个进程里的线程共享同一个虚拟地址空间。</p>
 <h3 id="线程执行模型"><a href="#线程执行模型" class="headerlink" title="线程执行模型"></a>线程执行模型</h3><p>其执行模型与多进程相似，如图所示：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.3.1%E5%B9%B6%E5%8F%91%E7%BA%BF%E7%A8%8B%E6%89%A7%E8%A1%8C.png" alt="图3 并发线程执行"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.3.1%E5%B9%B6%E5%8F%91%E7%BA%BF%E7%A8%8B%E6%89%A7%E8%A1%8C.png" alt="图3 并发线程执行"></p>
 <h3 id="Posix线程"><a href="#Posix线程" class="headerlink" title="Posix线程"></a>Posix线程</h3><p>Posix线程是在C程序中处理线程的一个标准接口，它大概定义了大约60个函数。允许程序创建、杀死和回收线程，与对等线程安全的共享数据，还可以通知对等线程系统状态的变化。（具体细节<strong>mark</strong>）</p>
 <h3 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h3><p>线程通过pthread_create函数创建其他线程（具体细节<strong>mark</strong>）：</p>
 <p><code>int pthread_create(pthread_t *tid, pthread_attr_t *attr, func *f, void *arg);</code></p>
@@ -214,10 +214,10 @@
 </ul>
 <p>当多个线程等待同一个信号量时，不能确定V操作重启那个线程；P和V的测试和加减操作不可分隔，不会中断；上述P、V的定义确保一个正确初始化的信号量不会变为负值，这被称为信号量不变性。</p>
 <h3 id="使用信号量来实现互斥"><a href="#使用信号量来实现互斥" class="headerlink" title="使用信号量来实现互斥"></a>使用信号量来实现互斥</h3><p>将每个共享变量与一个初始值为1的信号量s联起起来，然后用P和V操作将相应的临界区包围起来。书中描述了二元信息量、互斥锁、加锁、解锁和计数信号量等概念。P和V操作的结合创建了一组状态，这组状态构成了禁止区，并保证线程轨迹线不会经过禁止区。（具体细节<strong>mark</strong>）</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.5.3%E4%BD%BF%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9D%A5%E4%BA%92%E6%96%A5.png" alt="图4 使用信号量来互斥"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.5.3%E4%BD%BF%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9D%A5%E4%BA%92%E6%96%A5.png" alt="图4 使用信号量来互斥"></p>
 <h3 id="利用信号量来共享资源"><a href="#利用信号量来共享资源" class="headerlink" title="利用信号量来共享资源"></a>利用信号量来共享资源</h3><p>信号量的另一种重要作用是调度对共享资源的访问，一个线程用信号量操作通知另一个线程程序状态中的某个条件已经为真。</p>
 <p>1）生产者-消费者问题，生产者和消费者线程共享一个由n个槽的有限缓冲区，其具体特性如图：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.5.4%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98.png" alt="图5 生产者-消费者问题"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.5.4%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98.png" alt="图5 生产者-消费者问题"></p>
 <p>我们不仅需要保证对缓冲区访问的互斥，还需要调度对缓冲区的访问（缓冲区出现满/空的情况）。（具体细节<strong>mark</strong>）</p>
 <p>2）读者-写者问题</p>
 <p>是对互斥问题的概括。一组并发的线程要访问一个共享对象，如一个主存中的数据结构或者一个磁盘上的数据库。有些线程只读对象，称为读者；有些线程只修改对象，称为写者。写者需要拥有对对象独占的访问，读者可以与无限多个其他的读者共享对象。（一个生活中典型的实例是在线航空预订系统）</p>
@@ -229,7 +229,7 @@
 <p>对上述两种问题的解答可能导致饥饿，即一个线程无限期的阻塞，无法进展，例如当有读者（写者）不断的到达。</p>
 <h3 id="基于预线程化的并发服务器"><a href="#基于预线程化的并发服务器" class="headerlink" title="基于预线程化的并发服务器"></a>基于预线程化的并发服务器</h3><p>这里展示了信号量在一个基于预线程化的并发服务器上的应用。（具体细节<strong>mark</strong>）</p>
 <h2 id="12-6-使用线程提供并行性"><a href="#12-6-使用线程提供并行性" class="headerlink" title="12.6 使用线程提供并行性"></a>12.6 使用线程提供并行性</h2><p>现代机器大多具有多核处理器，操作系统可以在多个核上并行地调度这些并发线程。下图展示了顺序、并发和并行程序集合之间的关系：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.6%E5%90%84%E7%B1%BB%E5%9E%8B%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB.png" alt="图5 程序集合关系"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.6%E5%90%84%E7%B1%BB%E5%9E%8B%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB.png" alt="图5 程序集合关系"></p>
 <p>书中P711展示了一个将累加运算转变为多线程的实例。（具体实现<strong>mark</strong>）</p>
 <p>该实例凸显了并行编程的一项重要教训：同步开销巨大。避免同步的方法是让每个对等线程在一个私有变量中计算他自己的部分和，这个私有变量捕鱼其他任何线程共享，各线程的私有变量存储在一个数组中。</p>
 <p>刻画并行程序的性能：</p>
@@ -251,13 +251,13 @@
 </ol>
 <h3 id="可重入性"><a href="#可重入性" class="headerlink" title="可重入性"></a>可重入性</h3><p>可重入函数是一类重要的线程安全函数，当被多个线程调用时，它不会引入任何共享数据。其又可分为显式可重入和隐式可重入（不太懂，<strong>mark</strong>）。</p>
 <h3 id="在线程化的程序中使用已存在的库函数"><a href="#在线程化的程序中使用已存在的库函数" class="headerlink" title="在线程化的程序中使用已存在的库函数"></a>在线程化的程序中使用已存在的库函数</h3><p>大多数Linux函数都是线程安全的，下图列出了常见的意外：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.3%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0.png" alt="图6 常见的线程不安全的库函数"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.7.3%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0.png" alt="图6 常见的线程不安全的库函数"></p>
 <h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><p>当一个程序的正确性依赖于一个线程要在另一个线程到达y点之前到达它的控制流中的x点，就会发生竞争。通常发生竞争是因为程序员忘记了一个准则：多线程程序必须对任何可行的轨迹线都准确工作。书中P719展示了一个简单的实例。</p>
 <h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>由信号量引起，指一组线程被阻塞了，等待一个永远也不会为真的条件，可以通过进度图来理解。如下图：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E4%BC%9A%E6%AD%BB%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png" alt="图7 一个会死锁的程序的进度图"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E4%BC%9A%E6%AD%BB%E9%94%81%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png" alt="图7 一个会死锁的程序的进度图"></p>
 <p>使用两个以上的信号量时，若两个信号量的区域重叠，可能会形成一个称为死锁状态的区域，若进度图上的轨迹进入了这个区域，死锁即不可避免。</p>
 <p>当使用二元信号量实现互斥时，可以应用一个简单而有效的规则避免死锁——互斥锁加锁顺序规则：给定所有互斥操作的一个全序，如果每个线程都是以一种顺序获得互斥锁并以相反的顺序释放，那么这个程序就是无死锁的。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E6%97%A0%E6%AD%BB%E9%94%81%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png" alt="图8 一个无死锁程序的进度图"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter12.7.5%E4%B8%80%E4%B8%AA%E6%97%A0%E6%AD%BB%E9%94%81%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%9B%E5%BA%A6%E5%9B%BE.png" alt="图8 一个无死锁程序的进度图"></p>
 <h2 id="12-8-小结"><a href="#12-8-小结" class="headerlink" title="12.8 小结"></a>12.8 小结</h2><p>一个并发程序是由在时间上重叠的一组逻辑流组成，本章介绍了三种不同的构建并发程序的机制：进程、I/O多路复用和线程。</p>
 <p>进程由内核自动调度，有各自的虚拟地址空间，需要显式的IPC机制；时间驱动程序创建自己的并发逻辑流，流被模型化为状态机，I/O多路复用显式的调度这些流；线程时这些方法的集合，由内核调度，运行在单一进程的上下文中，共享同一个虚拟地址空间。</p>
 <p>信号量概念的提出用以解决对共享数据的并发访问，信号量操作提供了对共享数据的互斥访问，也给生产者－消费者问题和读者－写者两个变种的问题提供了解决方案。</p>

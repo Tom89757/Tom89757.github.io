@@ -14,16 +14,16 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="链接是将各种代码和数据片段收集并组合成为一个单一文件的过程，这个文件可以被加载到内存并执行。链接过程可以执行在编译、加载甚至运行时，它使得分离编译得以实现。理解链接有以下好处：  帮助构造大性程序。当构造大性程序时经常会遇到缺少模块、缺少库或者不兼容的库版本等引起的链接器错误。 帮助避免一些危险的编程错误。如错误的定义多个全局变量时。 帮助理解语言的作用域规则如何实现。全局和局部对程序来说到底意味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter7.8ELF%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chpater7.9%E8%BF%90%E8%A1%8C%E6%97%B6%E5%86%85%E5%AD%98%E6%98%A0%E5%83%8F.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter7.8ELF%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chpater7.9%E8%BF%90%E8%A1%8C%E6%97%B6%E5%86%85%E5%AD%98%E6%98%A0%E5%83%8F.png">
 <meta property="article:published_time" content="2020-07-02T12:54:22.000Z">
-<meta property="article:modified_time" content="2020-07-11T06:14:14.277Z">
+<meta property="article:modified_time" content="2020-07-18T16:36:54.297Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
+<meta name="twitter:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -138,7 +138,7 @@
 </ul>
 <p>一个目标模块就是一个字节序列，一个目标文件则是一个以文件形式存放在磁盘中的目标模块。</p>
 <h2 id="7-4-可重定位目标文件"><a href="#7-4-可重定位目标文件" class="headerlink" title="7.4 可重定位目标文件"></a>7.4 可重定位目标文件</h2><p>书中P467给出了一个典型的ELF文件的格式，并描述了ELF头和节头部表之间的节所包含的信息。（未初始化的数据保存在.bss文件中，起源于块存储开始（Block Storage Start），现在部分理解为Better Save Space）。下图展示了文件中包含的各类信息。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图1 可重定位目标文件"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图1 可重定位目标文件"></p>
 <h2 id="7-5-符号和符号表"><a href="#7-5-符号和符号表" class="headerlink" title="7.5 符号和符号表"></a>7.5 符号和符号表</h2><p>每个可重定位目标模块m有一个符号表，包含m定义和引用的符号的信息，符号分为三类：</p>
 <ul>
 <li>由m定义并被其他模块引用的全局符号，对应m中的非静态的C函数和全局变量。</li>
@@ -185,11 +185,11 @@
 </ul>
 <p>综合到一起，得到最终可执行目标文件中已重定位的.text节和.data节，加载时直接将其复制到内存，不需要进行修改即可执行。</p>
 <h2 id="7-8-可执行目标文件"><a href="#7-8-可执行目标文件" class="headerlink" title="7.8 可执行目标文件"></a>7.8 可执行目标文件</h2><p>至此我们已经得到了可执行目标文件，里面包含了加载程序到内存并运行它所需的所有信息。下图展示了ELF格式的可重定位目标文件和可执行目标文件中的各类信息。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图2 可重定位目标文件"><img src="http://qcd48jfwa.bkt.clouddn.com/chapter7.8ELF%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图3 可执行目标文件"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter7.4ELF%E5%8F%AF%E9%87%8D%E5%AE%9A%E4%BD%8D%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图2 可重定位目标文件"><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter7.8ELF%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6.png" alt="图3 可执行目标文件"></p>
 <p>与可重定位文件相比，可执行文件中多了段头部表、.init节，少了.rel节，段头部表描述可执行文件与内存的映射关系，.init节用于程序的初始化代码，由于文件已被重定位，故.rel节不再被需要。</p>
 <p>在目标文件中，段需要进行对齐，从而使之更有效率的传送到内存中，这种要求与虚拟内存的组织方式相关。</p>
 <h2 id="7-9-加载可执行目标文件"><a href="#7-9-加载可执行目标文件" class="headerlink" title="7.9 加载可执行目标文件"></a>7.9 加载可执行目标文件</h2><p>在执行<code>./prog</code>后，shell会认为prog为一个可执行目标程序，通过调用某个驻留在存储器中的被称为加载器的操作系统代码来运行它，Linux程序可以调用execve函数调用加载器。加载器将可执行目标文件中的代码和数据从磁盘复制到内存中，然后通过跳转到程序的第一条指令或入口点开始运行，这个过程叫做加载。下图为Linux x86-64运行时内存映像：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chpater7.9%E8%BF%90%E8%A1%8C%E6%97%B6%E5%86%85%E5%AD%98%E6%98%A0%E5%83%8F.png" alt="图4 运行时内存映像"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chpater7.9%E8%BF%90%E8%A1%8C%E6%97%B6%E5%86%85%E5%AD%98%E6%98%A0%E5%83%8F.png" alt="图4 运行时内存映像"></p>
 <p>后续第8章和第9章会对加载的概念作更准确的阐述。</p>
 <h2 id="7-10-动态链接共享库"><a href="#7-10-动态链接共享库" class="headerlink" title="7.10 动态链接共享库"></a>7.10 动态链接共享库</h2><p>静态库和所有的软件一样，需要定期维护和更新，需要静态库的新版本时，需要将程序与新版库重新连接；同时，由于在上百个进程中一些常用函数如printf和scanf几乎都会被加载，这是对内存的一种浪费。故通过共享库来解决静态库导致的这种缺陷。</p>
 <p>共享库是一个目标模块，在运行或加载时，可以加载到任意的内存地址，并和一个在内存中的程序链接起来，此过程称为动态链接，由动态链接器执行。共享库也成为共享目标，在Linux系统中后缀为.so，在windows中大量使用了共享库（DDL，动态链接库）。可执行目标文件既可以共享某个库唯一的.so文件中的代码和数据；也可以共享某个库在内存中的.text节的副本。</p>

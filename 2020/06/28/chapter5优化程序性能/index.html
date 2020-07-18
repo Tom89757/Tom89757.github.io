@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="程序的第一目标是在所有可能的情况下正确工作，另一方面就需要尽可能提高程序的运行速度。编写高效程序需要做到以下几点：  选择一组适当的算法和数据结构。 理解优化编译器的能力和局限性。对C语言代码的优化通常很难进行，对其性能的提升往往体现在C程序的编写层面，这意味着对C语言程序员更高的要求。 将大任务量的任务进行分解，实现在多核多处理器上的并行运算。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter5.7%E6%95%B4%E4%BD%93%E6%93%8D%E4%BD%9C.png?imageView2/0/q/100">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter5.7%E6%95%B4%E4%BD%93%E6%93%8D%E4%BD%9C.png?imageView2/0/q/100">
 <meta property="article:published_time" content="2020-06-28T08:43:57.000Z">
-<meta property="article:modified_time" content="2020-07-11T06:13:54.600Z">
+<meta property="article:modified_time" content="2020-07-18T16:36:54.247Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter5.7%E6%95%B4%E4%BD%93%E6%93%8D%E4%BD%9C.png?imageView2/0/q/100">
+<meta name="twitter:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter5.7%E6%95%B4%E4%BD%93%E6%93%8D%E4%BD%9C.png?imageView2/0/q/100">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -134,7 +134,7 @@
 <h2 id="5-6-消除不必要的内存引用"><a href="#5-6-消除不必要的内存引用" class="headerlink" title="5.6 消除不必要的内存引用"></a>5.6 消除不必要的内存引用</h2><p>书中将对参数值的反复覆盖改为引进临时变量然后赋值给参数来达到减少读写操作次数的目的，并通过构建内存别名说明这种优化的合理性，同时说明了编译器在编译时的保守性，</p>
 <h2 id="5-7-理解现代处理器"><a href="#5-7-理解现代处理器" class="headerlink" title="5.7 理解现代处理器"></a>5.7 理解现代处理器</h2><p>尽管在代码级上，处理器看似是一次执行一条指令；在机器级上，实际是指令级并行。有两种下界描述了程序的最大性能，当一系列操作必须按照严格顺序执行时就会遇到延迟界限，在下一条指令执行时本指令必须结束；吞吐量界限体现了处理器功能单元的原始计算能力，它是程序性能的终极界限。</p>
 <h3 id="整体操作"><a href="#整体操作" class="headerlink" title="整体操作"></a>整体操作</h3><p>书中描述了被称为超标量的处理器设计，它可以在每个时钟周期执行多个操作，并且是乱序的（第4章为按序的），与按序处理器相比它需要更大、更复杂的硬件，但也能达到更大的指令级并行度。整个设计分为指令控制单元ICU（从内存中取出指令，并根据指令序列生成针对程序数据的基本操作）和执行单元EU（执行这些操作）。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter5.7%E6%95%B4%E4%BD%93%E6%93%8D%E4%BD%9C.png?imageView2/0/q/100" alt="图1 乱序处理器整体框架"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter5.7%E6%95%B4%E4%BD%93%E6%93%8D%E4%BD%9C.png?imageView2/0/q/100" alt="图1 乱序处理器整体框架"></p>
 <p>上图展现了指令从读取到译码再到执行的全过程。值得一提的是，如果分支结果预测错误，需要回过头去取指、译码和发送到执行单元。</p>
 <p>其主要流程为：1）指令控制单元：通过汇编代码给出的指令地址从指令高速缓存中取指，并对指令进行译码成基本操作；2）由执行单元的不同功能单元执行这些操作，并将运算结果复制到寄存器或数据高速缓存中。</p>
 <p>指令译码时，关于指令的信息被放置在一个先进先出的队列中，直到1）指令操作完成且引起这条指令的分支点都被确认为预测正确2）或引起该指令的某个分支点预测错误，指令会退役或被清空，其本质都是退出队列。</p>

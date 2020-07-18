@@ -14,17 +14,17 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="I&#x2F;O（输入&#x2F;输出）是在主存和外部设备（磁盘驱动器、终端和网络）之间复制数据的过程。所有语言的运行时系统都提供执行I&#x2F;O的较高级别的工具。在Linux系统中，使用内核提供的Unix I&#x2F;O函数实现高级语言中的I&#x2F;O函数。我们学习Unix I&#x2F;O函数有以下原因：  了解Unix I&#x2F;O帮助理解其他的系统概念。I&#x2F;O与其他系统概念之间经常出现循环依赖，我们需要做的就是闭合这个循环。 有时除了使用Uni">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter10.8%E7%88%B6%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%BC%95%E7%94%A8%E6%96%87%E4%BB%B6.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter10.9%20%E8%B0%83%E7%94%A8dup2.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter10.11%E5%90%84%E7%A7%8DI-O%E5%8C%85%E5%85%B3%E7%B3%BB.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.8%E7%88%B6%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%BC%95%E7%94%A8%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.9%20%E8%B0%83%E7%94%A8dup2.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.11%E5%90%84%E7%A7%8DI-O%E5%8C%85%E5%85%B3%E7%B3%BB.png">
 <meta property="article:published_time" content="2020-07-06T17:57:45.000Z">
-<meta property="article:modified_time" content="2020-07-11T06:14:36.432Z">
+<meta property="article:modified_time" content="2020-07-18T16:36:53.900Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png">
+<meta name="twitter:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -169,11 +169,11 @@
 <li>v-node表：同文件表一样，所有进程共享该表。每个表项包含前面stat结构中的大多数信息。</li>
 </ul>
 <p>下图展示了不同情况下两个进程对文件的引用：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png" alt="图1 描述符引用不同文件"></p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png" alt="图2 描述符引用相同文件"></p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter10.8%E7%88%B6%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%BC%95%E7%94%A8%E6%96%87%E4%BB%B6.png" alt="图3 父子进程引用文件"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png" alt="图1 描述符引用不同文件"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.8%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%BC%95%E7%94%A8%E7%9B%B8%E5%90%8C%E6%96%87%E4%BB%B6.png" alt="图2 描述符引用相同文件"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.8%E7%88%B6%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%BC%95%E7%94%A8%E6%96%87%E4%BB%B6.png" alt="图3 父子进程引用文件"></p>
 <h2 id="10-9-I-O重定向"><a href="#10-9-I-O重定向" class="headerlink" title="10.9 I/O重定向"></a>10.9 I/O重定向</h2><p>Linux shell提供了I/O重定向操作符，其由dup2函数实现。下图是调用dup2(4, 1)后的情况，4、1分别对应文件B和A。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter10.9%20%E8%B0%83%E7%94%A8dup2.png" alt="图4 调用dup2后的内核数据据结构"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.9%20%E8%B0%83%E7%94%A8dup2.png" alt="图4 调用dup2后的内核数据据结构"></p>
 <h2 id="10-10-标准I-O"><a href="#10-10-标准I-O" class="headerlink" title="10.10 标准I/O"></a>10.10 标准I/O</h2><p>C语言定义了一组高级输入输出函数，称为标准I/O库，为程序员提供了Unix I/O的较高级别的替代。这个库（libc）提供了如下函数：</p>
 <ul>
 <li>打开和关闭文件的函数（fopen和fclose）</li>
@@ -184,7 +184,7 @@
 <p>标准库将一个打开的文件模型化为一个流，对程序员而言一个流就是一个指向FILE类型的结构的指针。每个ANSI C程序开始时都有三个打开的流stdin/stdout/stderr。</p>
 <p>类型为FILE的流是对文件描述符和流缓冲区的抽象，流缓冲区的目的和RIO读缓冲区一样——使开销较高的Linux I/O系统调用的数量尽可能小，这在一次只读取文件的少量数据时尤其有效。</p>
 <h2 id="10-11-综合：我该使用那些I-O函数"><a href="#10-11-综合：我该使用那些I-O函数" class="headerlink" title="10.11 综合：我该使用那些I/O函数"></a>10.11 综合：我该使用那些I/O函数</h2><p>下图总结了本章中讨论的各种I/O包：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter10.11%E5%90%84%E7%A7%8DI-O%E5%8C%85%E5%85%B3%E7%B3%BB.png" alt="图5 Unix I/O、标准I/O和RIO之间的关系"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter10.11%E5%90%84%E7%A7%8DI-O%E5%8C%85%E5%85%B3%E7%B3%BB.png" alt="图5 Unix I/O、标准I/O和RIO之间的关系"></p>
 <p>Unix I/O模型实在操作系统内核中实现的。应用程序可以通过注入open、close、lseek、read、write和stat等函数访问Unix I/O。较高级别的RIO和标准I/O函数都是基于Unix I/O函数实现，RIO函数是专为本书开发的read和write的健壮的包装函数，标准I/O函数提供了Unix I/O函数的一个更加完整的带缓冲的替代品，包括格式化的I/O例程，如printf和scanf。</p>
 <p>下面是使用I/O函数的一些指导原则：</p>
 <ul>

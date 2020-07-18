@@ -14,16 +14,16 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="目前来看，我们对计算机的认识依赖于一个简单的模型，CPU执行指令，存储器血死为CPU存放指令和数据，并且将存储器看作一个线性的字节数组，CPU可以在常数时间内访问每个存储器为止。 实际上，存储器系统时一个具有不同容量、成本和访问时间的存储设备的层次结构，而CPU寄存器保存着最常用的数据。正如第一章所说，小的、速度更快、高一级的存储器可以看作大的、速度较慢、低一级的存储器的缓冲区域（此处可以对存储器">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%90%84%E5%B1%82%E6%AC%A1%E7%BC%93%E5%AD%98.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%89%B9%E6%80%A7.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.3%E5%90%84%E5%B1%82%E6%AC%A1%E7%BC%93%E5%AD%98.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%89%B9%E6%80%A7.png">
 <meta property="article:published_time" content="2020-07-01T10:17:22.000Z">
-<meta property="article:modified_time" content="2020-07-11T06:14:07.145Z">
+<meta property="article:modified_time" content="2020-07-18T16:40:08.358Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="深入理解计算机系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
+<meta name="twitter:image" content="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -143,7 +143,7 @@
 <h3 id="取指令的局部性"><a href="#取指令的局部性" class="headerlink" title="取指令的局部性"></a>取指令的局部性</h3><p>对for循环体来说，循环体内的指令按照连续内存顺序执行，故具有良好的空间局部性，循环体重复执行多次，故具有良好的时间局部性 。相较于数据，代码较为稳定。</p>
 <h3 id="局部性小结"><a href="#局部性小结" class="headerlink" title="局部性小结"></a>局部性小结</h3><p>目前只是从性质上对局部性做了说明，后续会通过高速缓存命中率和不命中率来量化局部性的概念。</p>
 <h2 id="6-3-存储器层次结构"><a href="#6-3-存储器层次结构" class="headerlink" title="6.3 存储器层次结构"></a>6.3 存储器层次结构</h2><p>前两节描述了存储技术和局部性的概念。硬件上访问速度的差异和软件上局部性的特性催生出了存储器层次结构这一对存储器的组织方式。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图1 存储器层次结构"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.3%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图1 存储器层次结构"></p>
 <h3 id="存储器层次结构中的缓存"><a href="#存储器层次结构中的缓存" class="headerlink" title="存储器层次结构中的缓存"></a>存储器层次结构中的缓存</h3><p>高速缓存（cache）是一个小而快速的存储设备，使用cache的过程称为缓存（caching）。位于k层的更快更小的存储设备作为位于k+1层的更慢更大的存储设备的缓存。k层和k+1层的存储设备都被划分成块，k层缓存保存k+1层块的子集副本，数据以块为传送单元在二者间传递，不同的相邻的存储设备间块大小不同。以下是关于缓存的几个概念：</p>
 <ul>
 <li>缓存命中：即k层中某个块存储了需要访问的k+1层的数据。</li>
@@ -152,7 +152,7 @@
 <li>缓存管理：编译器管理寄存器文件；L1、L2、L3由内置在缓存中的硬件逻辑管理；DRAM由操作系统软件和CPU上的地址翻译硬件共同管理。</li>
 </ul>
 <h3 id="存储器层次结构概念小结"><a href="#存储器层次结构概念小结" class="headerlink" title="存储器层次结构概念小结"></a>存储器层次结构概念小结</h3><p>整个存储体系都建立在局部性原理之上，下图展示了存储设备中的各种属于和缩写：</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.3%E5%90%84%E5%B1%82%E6%AC%A1%E7%BC%93%E5%AD%98.png" alt="图2 各层次缓存"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.3%E5%90%84%E5%B1%82%E6%AC%A1%E7%BC%93%E5%AD%98.png" alt="图2 各层次缓存"></p>
 <h2 id="6-4-高速缓存存储器"><a href="#6-4-高速缓存存储器" class="headerlink" title="6.4 高速缓存存储器"></a>6.4 高速缓存存储器</h2><p>由于CPU和主存间的性能差异，在它们之间插入了三级高速缓存L1、L2和L3，为简化模型，后续叙述设定CPU和主存之间只有L1。</p>
 <h3 id="通用的高速缓存存储器组织结构"><a href="#通用的高速缓存存储器组织结构" class="headerlink" title="通用的高速缓存存储器组织结构"></a>通用的高速缓存存储器组织结构</h3><p>高速缓存结构将m个地址位划分成t个标记位、s个组索引位和b个块偏移位，故其结构可以用（S, E, B, m）来描述。其中$2^m$表示内存地址（k+1层存储器）的最大数量，B x E x S表示高速缓存（k层）大小。</p>
 <h3 id="直接映射高速缓存"><a href="#直接映射高速缓存" class="headerlink" title="直接映射高速缓存"></a>直接映射高速缓存</h3><p>每个组只有一行即E=1的高速缓存称为直接映射高速缓存。高速缓存确定CPU的一个请求是否命中，然后抽取出被请求的字的过程，分为三步：组选择、行匹配和字抽取。</p>
@@ -185,8 +185,8 @@
 <p>其中直写通常是非写分配的，写回通常是写分配的。目前建议采用使用写回写分配的模型，目前写回策略导致的高复杂性已经不是阻碍，且这种模型也同读操作一样使用了局部性原理。</p>
 <h3 id="一个真实的高速缓存层次据结构的解剖"><a href="#一个真实的高速缓存层次据结构的解剖" class="headerlink" title="一个真实的高速缓存层次据结构的解剖"></a>一个真实的高速缓存层次据结构的解剖</h3><p>高速缓存既保存数据，也保存指令，分别称作d-cache和i-cache，目前为止我们只讨论了d-cache，同时也有同时保存数据和指令的统一高速缓存（unified cache）。现代处理器通常包含了d-cache和i-cache，故处理器可以同时读指令字和数据字，这种将二者分开的策略减少了冲突不命中的概率，也可能引起容量不命中增加，但是随着高速缓存容量的扩大，这种选择是有益的。</p>
 <p>下面两个图反映了Core i7高速缓存的高速缓存层次结构和基本特性，让我们对硬件有一个直观的认识。</p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图3 高速缓存层次结构"></p>
-<p><img src="http://qcd48jfwa.bkt.clouddn.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%89%B9%E6%80%A7.png" alt="图4 高速缓存特性"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图3 高速缓存层次结构"></p>
+<p><img src="https://cs-csapp-1302648630.cos.ap-shanghai.myqcloud.com/chapter6.4%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E7%89%B9%E6%80%A7.png" alt="图4 高速缓存特性"></p>
 <h3 id="高速缓存参数的性能影响"><a href="#高速缓存参数的性能影响" class="headerlink" title="高速缓存参数的性能影响"></a>高速缓存参数的性能影响</h3><p>有许多指标衡量高速缓存的性能：不命中率、命中率、命中时间、不命中处罚。</p>
 <p>下面做一些关于性能定性的考量：</p>
 <ul>
