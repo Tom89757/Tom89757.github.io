@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-07-21T12:47:54.997Z</updated>
+  <updated>2020-07-21T17:14:20.893Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,22 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter9图论算法</title>
+    <link href="https://tom89757.github.io/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/"/>
+    <id>https://tom89757.github.io/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/</id>
+    <published>2020-07-21T16:52:35.000Z</published>
+    <updated>2020-07-21T17:14:20.893Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter8不相交集ADT</title>
     <link href="https://tom89757.github.io/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/"/>
     <id>https://tom89757.github.io/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/</id>
     <published>2020-07-21T12:38:12.000Z</published>
-    <updated>2020-07-21T12:47:54.997Z</updated>
+    <updated>2020-07-21T17:12:21.342Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;本章描述解决等价问题的一种有效数据结构。它实现简单，可以使用一个简单数组；运行快，每种操作只需常数运行时间；但是分析困难，最坏情况的函数形式不同于之前见过的任何形式。&lt;/p&gt;
 &lt;p&gt;对于这种不相交集ADT，我们将：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;讨论如何能够以最小的编程代价实现。&lt;/li&gt;
-&lt;li&gt;通过两个简单的观察极大地增加它的速度。&lt;/li&gt;
-&lt;li&gt;分析一种快速实现方法的运行时间。&lt;/li&gt;
-&lt;li&gt;介绍一个简单的应用。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;讨论如何能够以最小的编程代价实现。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过两个简单的观察极大地增加它的速度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;分析一种快速实现方法的运行时间。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;介绍一个简单的应用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -517,21 +548,6 @@
     
     
       <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>间歇性踌躇满志与持续性混吃等死</title>
-    <link href="https://tom89757.github.io/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/"/>
-    <id>https://tom89757.github.io/2020/05/31/%E9%97%B4%E6%AD%87%E6%80%A7%E8%B8%8C%E8%BA%87%E6%BB%A1%E5%BF%97%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%80%A7%E6%B7%B7%E5%90%83%E7%AD%89%E6%AD%BB/</id>
-    <published>2020-05-31T08:46:07.000Z</published>
-    <updated>2020-05-31T08:46:07.208Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
     
   </entry>
   
