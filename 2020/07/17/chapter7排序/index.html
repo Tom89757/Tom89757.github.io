@@ -14,11 +14,31 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="本章讨论数组的排序问题，为了简化问题，数组中的元素均为整数。本章主要讨论在主存中完成的内部排序，这意味着排序元素较少（$\leq 10^6$），在本章末尾将讨论在磁盘上完成的外部排序。 对内部排序的讨论将包含：  存在一种容易的算法以$O(N^2)$排序，如插入排序。 一种在实践中有效的算法——希尔排序，以$o(N^2)$运行。 稍微复杂的以$O(N \log N)$运行的算法。 任何通用的排序算">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.2%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.4%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.4%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.5%E5%A0%86%E6%8E%92%E5%BA%8F.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.6%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.6Merge%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.2%E5%88%86%E5%89%B2%E7%AD%96%E7%95%A5.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.4%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.4%E5%AE%9E%E7%8E%B0%E4%B8%89%E6%95%B0%E4%B8%AD%E5%80%BC%E5%88%86%E5%89%B2.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.4%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B8%BB%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.6%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9%E4%B8%BB%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.9.1%E4%B8%89%E5%85%83%E7%B4%A0%E6%8E%92%E5%BA%8F%E7%9A%84%E5%86%B3%E7%AD%96%E6%A0%91.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.3%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F1.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.3%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F2.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.3%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F3.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.4%E5%A4%9A%E8%B7%AF%E5%90%88%E5%B9%B6.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.5%E5%A4%9A%E7%9B%B8%E5%90%88%E5%B9%B6.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.6%E9%A1%BA%E4%B8%B2%E6%9E%84%E5%BB%BA.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.6%E7%AE%97%E6%B3%95%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83.png">
 <meta property="article:published_time" content="2020-07-17T15:54:32.000Z">
-<meta property="article:modified_time" content="2020-07-17T16:09:36.519Z">
+<meta property="article:modified_time" content="2020-07-21T12:11:36.434Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.2%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -102,7 +122,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-预备知识"><span class="toc-text">7.1 预备知识</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-预备知识"><span class="toc-text">7.1 预备知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-插入排序"><span class="toc-text">7.2 插入排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算法"><span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入排序的分析"><span class="toc-text">插入排序的分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-一些简单排序算法的下界"><span class="toc-text">7.3 一些简单排序算法的下界</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4-希尔排序"><span class="toc-text">7.4 希尔排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-5-堆排序"><span class="toc-text">7.5 堆排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-6-归并排序"><span class="toc-text">7.6 归并排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-7-快速排序"><span class="toc-text">7.7 快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选取枢纽元"><span class="toc-text">选取枢纽元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分割策略"><span class="toc-text">分割策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小数组"><span class="toc-text">小数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实际的快速排序例程"><span class="toc-text">实际的快速排序例程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速排序的分析"><span class="toc-text">快速排序的分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择的线性期望时间算法"><span class="toc-text">选择的线性期望时间算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-8-大型结构的排序"><span class="toc-text">7.8 大型结构的排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-9-排序的一般下界"><span class="toc-text">7.9 排序的一般下界</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#决策树"><span class="toc-text">决策树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-9-桶式排序"><span class="toc-text">7.9 桶式排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-10-外部排序"><span class="toc-text">7.10 外部排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么需要新的算法"><span class="toc-text">为什么需要新的算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部排序模型"><span class="toc-text">外部排序模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单算法"><span class="toc-text">简单算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多路合并"><span class="toc-text">多路合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多相合并"><span class="toc-text">多相合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换选择"><span class="toc-text">替换选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
 </div>
 
 
@@ -115,7 +135,150 @@
 <li>任何通用的排序算法均需要$\Omega(N \log N)$次比较。</li>
 </ol>
 <p>排序算法收到青睐的原因在于，它们中可能包含一些有趣的、重要的代码优化和设计思想，且对排序算法可以作精确的分析。</p>
-<h2 id="7-1-预备知识"><a href="#7-1-预备知识" class="headerlink" title="7.1 预备知识"></a>7.1 预备知识</h2>
+<a id="more"></a>
+<h2 id="7-1-预备知识"><a href="#7-1-预备知识" class="headerlink" title="7.1 预备知识"></a>7.1 预备知识</h2><p>本章描述的算法均可互换，每个算法接收一个含有元素的数组和一个包含元素个数的整数。我们假设N是传递到排序例程中的元素个数，N经检查合法，所有的排序元素均从位置0开始；“&lt;”和“&gt;”是除赋值运算符“=”外仅有的允许对输入数据进行的操作。在这两个条件下的排序称为基于比较的排序。</p>
+<h2 id="7-2-插入排序"><a href="#7-2-插入排序" class="headerlink" title="7.2 插入排序"></a>7.2 插入排序</h2><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>插入排序是最简单的算法之一，由N-1趟排序组成。对于P=1趟到P=N-1趟，在第P趟，我们将位置P上的元素向左移动到它在前P+1个元素中的正确位置上（该算法并没有我想象算法那样直观，我以为是第P趟排序后P-1位置上元素为排序状态，但实际上比我所认为的算法更合理，我所设想的算法的操作次数确定为$N(N-1)/2$）。插入排序的精髓在于总是保持前面已经进行排序的元素处于排序状态，类似于斗地主整理手牌。下图展示了插入排序的过程和例程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.2%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png" alt="图1 插入排序"></p>
+<h3 id="插入排序的分析"><a href="#插入排序的分析" class="headerlink" title="插入排序的分析"></a>插入排序的分析</h3><p>当反序输入时，可以到达插入排序的上界$O(N^2)$，上图第4行的测试最多执行P+1次，求和可得操作次数为$\Theta(N^2)$；另一方面，如果输入序列已为期望的排序状态，运行时间为$O(N)$。由于两种情况时间复杂度相差较大，后续会考虑插入排序的平均情形。</p>
+<h2 id="7-3-一些简单排序算法的下界"><a href="#7-3-一些简单排序算法的下界" class="headerlink" title="7.3 一些简单排序算法的下界"></a>7.3 一些简单排序算法的下界</h2><p>此处定义逆序（inversion）的概念：一个逆序指数组中具有$i &lt; j$但$A[i]&gt;A[j]$的序偶$(A[i], A[j])$。一个数组中逆序的个数正是由插入排序（非直接）执行的交换次数。记$O(I)$为数组中的逆序数，则插入排序的运行时间为$O(I+N)$，其中$O(N)$项是其他的工作，这意味着当$I=O(N)$时，插入排序以线性时间运行。书上给出了以下定理的证明：</p>
+<ol>
+<li>N个互异数的数组的平均逆序数是$N(N-1)/4$。其证明思路为表L和它的反序表L’的逆序总个数总是为$N(N-1)/2$。</li>
+<li>通过交换相邻元素进行排序的任何算法平均需要$\Omega(N^2)$时间。每次交换减少一个逆序，结合上述定理1可证。</li>
+</ol>
+<p>下界的证明标志着类似于插入排序的交换相邻元素的算法的时间复杂度为$\Theta(N^2)$，这是我们所不愿意看到的，我们期望时间复杂度为$o(N^2)$（亚二次），即下界小于$\Omega(N^2)$。</p>
+<p>插入排序每次交换删除一个相邻元素构成的逆序，为提高算法效率，一种可行的思路是一次交换删除多于一个逆序，这意味着交换的两个元素不相邻。</p>
+<h2 id="7-4-希尔排序"><a href="#7-4-希尔排序" class="headerlink" title="7.4 希尔排序"></a>7.4 希尔排序</h2><p>希尔排序是冲破二次时间屏障的第一批算法之一，过了若干年才证明其亚二次时间界。它通过比较相距一定间隔的元素来工作，各趟比较所有的距离随算法的进行而减小，直到值比较相邻元素的最后一趟排序为止，故又被称作缩小增量排序。</p>
+<p>希尔排序使用一个序列$h_1, h_2, …, h_t$，其中$h_1=1$，叫做增量序列，序列的每一项即是每趟排序元素进行比较相距的距离，相隔$h_k$的元素被排序后，则称整个文件是$h_k$-排序的。希尔排序的一个重要性质在于一个$h_k$-排序的文件在后面的排序中仍然保持其$h_k$-排序的特性。</p>
+<p>下图是进行5，3，1增量序列排序的过程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.4%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png" alt="图2 希尔排序"></p>
+<p>一趟$h<em>k$排序的作用就是对$h_k$个独立的子数组执行一次插入排序。增量序列的一种流行（但不好）的选择是使用Shell建议的序列：$h_t=\left\lfloor N/2 \right\rfloor$和$h_k=\left\lfloor h</em>{k+1}/2 \right\rfloor$。下图为希尔排序例程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.4%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%E4%BE%8B%E7%A8%8B.png" alt="图3 希尔排序例程"></p>
+<p><strong>希尔排序的最坏情形分析</strong></p>
+<p>希尔排序的运行时间依赖于增量序列的选择，它的平均情形分析除最平凡的一些增量序列外，是一个长期未解决的问题。书上证明了两个特别的增量序列下最坏情形的精确的界，书上证明了以下定理：</p>
+<ul>
+<li>使用希尔增量时希尔排序的最坏情形运行时间未$\Theta(N^2)$。</li>
+<li>使用Hibbard增量的希尔派刷的最坏情形运行时间未$\Theta(N^{3/2})$。</li>
+</ul>
+<p>具体证明过程较为复杂，暂略<strong>mark</strong></p>
+<h2 id="7-5-堆排序"><a href="#7-5-堆排序" class="headerlink" title="7.5 堆排序"></a>7.5 堆排序</h2><p>优先队列可以用于花费$O(N \log N)$的排序，称之为堆排序。实践中其慢于使用Sedgewick增量序列的希尔排序。</p>
+<p>第6章中，建立N个元素的二叉堆花费$O(N)$时间，执行N次DeleteMin操作花费$O(N \log N)$时间，因而排序时间为$O(N \log N)$。在排序过程中需要引用一个额外数组，但这可以通过利用每次DeleteMin操作后堆最后空出来的单元来存放刚删除的元素来避免，这样在删除堆中最后一个元素后将得到一个元素的递减序列，同理可以通过建立max堆得到递增序列。下图为实现堆排序的代码：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.5%E5%A0%86%E6%8E%92%E5%BA%8F.png" alt="图4 堆排序"></p>
+<p><strong>堆排序的分析</strong></p>
+<p>对堆排序来说，第一阶段构建堆最多用到2N次比较，第二阶段，第i次DeleteMin最多用到$2\left\lfloor \log i \right\rfloor$次比较，可得到最坏情形下堆排序最多使用$2N \log N-O(N)$次比较。书中通过严格论证证明了以下定理：</p>
+<p>对N个互异项的随机排序进行堆排序，所有的平均比较次数为$2N \log N - O(N \log \log N)$。</p>
+<p>过程较为复杂，由于时间关系，此处不作具体描述<strong>mark</strong>。</p>
+<h2 id="7-6-归并排序"><a href="#7-6-归并排序" class="headerlink" title="7.6 归并排序"></a>7.6 归并排序</h2><p>归并排序以最坏情形$O(N \log N)$运行时间运行，所使用的比较次数几乎最优，它是递归算法一个很好的实例。该算法的基本操作是合并两个已排序的表，基本的合并算法是，取两个输入数组A和B，一个输出数组C，以及三个计数器Aptr、Bptr、Cptr，塔曼初始置于对应数组的开始端。A[Aptr]和B[Bptr]中的较小者被拷贝到C中的下一个位置，相关的计数器向前推进一步。具体实例的步骤在P183面有详细图示。</p>
+<p>显然，每次比较A和B中元素的总个数都会减1，故最多进行N-1次比较。该算法采用了分而治之的策略，这是递归的有力用法之一。下图展示了归并排序例程和Merge例程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.6%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%BE%8B%E7%A8%8B.png" alt="图5 归并排序例程"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.6Merge%E4%BE%8B%E7%A8%8B.png" alt="图6 Merge例程"></p>
+<p><strong>归并排序的分析</strong></p>
+<p>归并排序是用于分析递归例程方法的经典实例：必须给运行时间写出一个递归关系。为方便分析，假设元素总数为N，将N=1时所花费的常数时间记为1，可以得到如下递归关系：</p>
+<script type="math/tex; mode=display">
+T(1)=1 \\
+T(N)=2T(N/2)+N</script><p>此时有两种求解方式：</p>
+<ul>
+<li>叠缩求和：$\frac{T(N)}{N}=\frac{T(N/2)}{N/2}+1$。最后可推出$T(N)=N+N \log N=O(N \log N)$。</li>
+<li>在等式右边连续的代入递归关系，推出$T(N)=2^kT(N/{2^k})+k·N$，当$k=\log N$时，同样可得上式。</li>
+</ul>
+<p>归并排序很难用于主存排序，主要问题在于合并两个排序的表需要线性附加程序，在整个算法中还要花费将数据拷贝到临时数组在拷贝回来这样一些复杂的工作，从而严重放慢排序速度。尽管这种拷贝可以通过非递归实现等方式避免，快速排序仍然是重要内部排序应用的首先。</p>
+<h2 id="7-7-快速排序"><a href="#7-7-快速排序" class="headerlink" title="7.7 快速排序"></a>7.7 快速排序</h2><p>顾名思义，快速排序是实践中最快的已知排序算法，平均运行时间为$O(N \log N)$（最坏情形下为$O(N^2)$，但容易避免）。其核心在于非常精炼且高度优化的内部循环，它同样采取分治的递归策略，将数组S进行快排的步骤如下：</p>
+<ol>
+<li>如果S中元素个数是0或1，则返回。</li>
+<li>取S中任意元素v，称之为枢纽元（pivot）。</li>
+<li>将S-{v}分成两个不相交的集合：$S_1=\{ x\in S- \{ v \} | x \leq v \}$和$S_2=\{ x\in S- \{ v \} | x \geq v \}$。</li>
+<li>返回{quicksort(S1)}后，继而v，继而{quicksort(S2)}。</li>
+</ol>
+<p>下图展示了对一个数据集进行快排的过程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.2%E5%88%86%E5%89%B2%E7%AD%96%E7%95%A5.png" alt="图7 说明快速排序各步的例子"></p>
+<p>目前并没有体现除快排比归并排序更快的原因。快排与归并排序的区别在于快排并不保证两个子问题大小相等，但在实际使用时（依赖于大量分析和经验）快排在上面第3步的分隔是在适当的位置上进行且非常高效，其高效弥补了大小不等的递归调用的缺憾。</p>
+<p>下面将填补对快排算法细节的描述。</p>
+<h3 id="选取枢纽元"><a href="#选取枢纽元" class="headerlink" title="选取枢纽元"></a>选取枢纽元</h3><p>我们的目的是选取合适的枢纽元，下面介绍几种选取方法：</p>
+<ul>
+<li>一种错误的方法：将第一个元素用作枢纽元，这对随机输入来说可以接收，但对输入是预排序或者反序的情况来说，将产生极其劣质的分割，并且实际上预排序的输入十分常见；另一种想法是选取前两个互异的关键字中的较大者作为枢纽元，这与上述方法具有相同害处。</li>
+<li>一种安全的做法：随机选取枢纽元，这是非常安全的策略（除非随机数生成器有问题）。但问题在于随机数的生成十分昂贵，不能减少算法其余部分的平均运行时间。</li>
+<li>三数中值分割法：枢纽元的最好选择是数组的中值，但是中值很难算出，只能采用估计量。一般做法是使用左端、右端和中心位置上的三个元素的中值作为枢纽元。这种策略消除了预排序输入的坏情形，且减少了快速排序大约5%的运行时间。</li>
+</ul>
+<h3 id="分割策略"><a href="#分割策略" class="headerlink" title="分割策略"></a>分割策略</h3><p>书上给出了一种用于分割的策略，并给出了使用这种策略的实例（该实例中所有元素互异）。</p>
+<p>该方法的第一步为将枢纽元与最后的元素交换使得枢纽元离开被分割的连续数据段；最后一步为将指向大于枢纽元的i指向的当前元素与处于数组最后的枢纽元交换，使枢纽元归位。</p>
+<p>一个重要的细节在于，当数组中出现等于枢纽元的元素时，指向该元素的i和j是否应当停止。自然来看，二者应当采取相同的操作以避免出现分割偏向一方的倾向。此时有两种选择：都停止或者都不停止。</p>
+<ul>
+<li>都停止会使等于枢纽元的元素频繁发生交换而这种交换并无实际意义。</li>
+<li>都不停止则需要避免i和j越界，使实现的难度加大，考虑数组元素全都相等的极端情况，此时在一次分割后枢纽元会处于数组极其靠后的位置，两个子数组极不均衡。</li>
+</ul>
+<p>进行利弊权衡后，都停止是一种更好的选择。当进行快排的数组较大时，如有100000个元素时，如果有5000个元素相等，就必须考虑到上述选择问题以使着5000个元素被有效排序。</p>
+<h3 id="小数组"><a href="#小数组" class="headerlink" title="小数组"></a>小数组</h3><p>当数组元素$N \leq 20$时，使用插入排序比快速排序更好。如果使用快排，递归的调用使得实际排序过程中出现了许多对小数组的快排过程，这是我们不愿意看到的。</p>
+<h3 id="实际的快速排序例程"><a href="#实际的快速排序例程" class="headerlink" title="实际的快速排序例程"></a>实际的快速排序例程</h3><p>下面仅给出快排的例程，暂不对代码作具体分析<strong>mark</strong>。</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.4%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F.png" alt="图8 快速排序的驱动程序"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.4%E5%AE%9E%E7%8E%B0%E4%B8%89%E6%95%B0%E4%B8%AD%E5%80%BC%E5%88%86%E5%89%B2.png" alt="图9 实现三数中值分割方法的程序"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.4%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B8%BB%E4%BE%8B%E7%A8%8B.png" alt="图10 快速排序的主例程"></p>
+<h3 id="快速排序的分析"><a href="#快速排序的分析" class="headerlink" title="快速排序的分析"></a>快速排序的分析</h3><p>如同归并排序，快速排序同样是递归的。取$T(o)=T(1)=1$，简化考虑因素，可得以下递归关系：</p>
+<script type="math/tex; mode=display">
+T(N) = T(i) + T(N-i-1) + cN</script><p>下面考察三种情况：</p>
+<ul>
+<li><p>最坏情形：枢纽元始终为最小元素，此时$i=0$，则有$T(N)=T(N-1)+cN$，推得</p>
+<script type="math/tex; mode=display">
+T(N) = T(1) + c\sum_{i=2}^{N}i = O(N^2)</script></li>
+<li><p>最好情形：枢纽元正好位于中间，假设两个子数组个伪原数组的一半，则有$T(N)=2T(N/2)+cN$，推得：</p>
+<script type="math/tex; mode=display">
+T(N)=cN \log N + N = O(N \log N)</script></li>
+<li><p>平均情形的分析：这是分析中最难的部分，假设对于$S_1$每个文件大小都是等可能的，即子数组的每个大小均有1/N。这种情况的分析较为复杂，此处暂略<strong>mark</strong>，给出最终结果为：</p>
+<script type="math/tex; mode=display">
+\frac{T(N)}{N+1} = O(\log N) \\
+T(N) = O(N \log N)</script></li>
+</ul>
+<h3 id="选择的线性期望时间算法"><a href="#选择的线性期望时间算法" class="headerlink" title="选择的线性期望时间算法"></a>选择的线性期望时间算法</h3><p>可以修改快速排序解决选择问题，即第1章的第6章提及的“找出集合S中第k小元素”的问题。第6章中优先队列找到第k个最大元花费时间为$O(N+k\log N)$。此处，使用快速排序为该选择问题得到一个更好的时间界，不妨将这种算法称为快速选择，其与快排的前三步相同，完整步骤如下：</p>
+<ol>
+<li>如果|S|=1，那么k=1，返回唯一元素。</li>
+<li>选取一个枢纽元$v \in S$。</li>
+<li>将集合S-{v}分割为S1和S2。</li>
+<li>如果$k \leq |S_1|$，那么第k个最小元必然在S1中，此时返回quickselect(S1, k)；如果k=1+|S1|，返回枢纽值；否则，第k个最小元在S2中，它是S2中第（k - |S1| - 1）个最小元，返回quickselect(S2, k - |S1| -1)。</li>
+</ol>
+<p>与快速排序相比，快速选择只做了一次递归调用，其最坏情形发生在S1或S2有一个为空时，此时为$O(N^2)$，但其平均运行时间为$O(N)$（书上作为练习<strong>mark</strong>）。下图为快速选择例程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.7.6%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9%E4%B8%BB%E4%BE%8B%E7%A8%8B.png" alt="图11 快速选择的主例程"></p>
+<h2 id="7-8-大型结构的排序"><a href="#7-8-大型结构的排序" class="headerlink" title="7.8 大型结构的排序"></a>7.8 大型结构的排序</h2><p>前面的排序讨论，都假设排序元素为简单的整数。对大性结构来说，往往需要通过某个关键字对其排序。此时，让输入数组包含指向结构的指针，通过比较指针指向的关键字，然后在条件满足时交换指针进行排序，本质上排序仍然像对整数排序那样进行。这种方法称之为间接排序。</p>
+<h2 id="7-9-排序的一般下界"><a href="#7-9-排序的一般下界" class="headerlink" title="7.9 排序的一般下界"></a>7.9 排序的一般下界</h2><p>本节证明任何只用到比较的算法在最坏情形下需要$\Omega(N \log N)$次比较（从而需要$\Omega(N \log N)$时间），从而得出这些算法不能继续在数量级上优化的结论，因此归并排序和堆排序在一个常数因子范围内是最优的；进一步证明在平均情形下，只用到比较的任意排序算法都需要进行$\Omega(N \log N)$次比较，这意味快速排序在相差一个常数因子的范围内是最优的。我们将证明：</p>
+<p>只用到排序的任何排序算法在最坏情形下都需要$\left\lceil \log (N!) \right\rceil$次比较并平均需要$\log (N!)$次比较。为简化分析，假设排序的N个元素互异。</p>
+<h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><p>决策树适用于证明下界的抽象概念。此处，决策树是一颗二叉树，每个节点表示在元素之间一组可能的排序，它与已经进行的比较一致，比较的结果是树的边。下图为三元素排序的决策树：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.9.1%E4%B8%89%E5%85%83%E7%B4%A0%E6%8E%92%E5%BA%8F%E7%9A%84%E5%86%B3%E7%AD%96%E6%A0%91.png" alt="图12 三元素排序的决策树"></p>
+<p>只使用比较进行排序的每一种算法都可以用决策树来表示。但显然，当输入数据很少时，画出决策树才可行。排序最坏情形下使用的比较次数等于最深树叶的深度，平均比较次数等于树叶的平均深度。书中对决策树的以下性质进行了证明：</p>
+<ol>
+<li><p>令T是深度为d的二叉树，则T最多有$2^d$片树叶。（归纳证明）</p>
+</li>
+<li><p>具有L片树叶的二叉树的深度至少为$\left\lceil \log L \right\rceil$。由1得。</p>
+</li>
+</ol>
+<p>进而可得：</p>
+<ol>
+<li><p>只使用元素间比较的任何排序算法在最坏情形下至少需要$\left\lceil \log (N!) \right\rceil$次比较。（因为N个元素的决策树必然有N!片树叶，然后由2得）</p>
+</li>
+<li><p>只使用元素间比较的任何排序算法需要进行$\Omega(N \log N)$次比较。易证，等价于证明：</p>
+<script type="math/tex; mode=display">
+\log (N!) = \Omega(N \log N)</script></li>
+</ol>
+<p>书中将证明平均情况作为练习，其等价于证明：具有L片树叶的任意二叉树的平均深度至少为$\log L$。<strong>mark</strong></p>
+<h2 id="7-9-桶式排序"><a href="#7-9-桶式排序" class="headerlink" title="7.9 桶式排序"></a>7.9 桶式排序</h2><p>在一些特殊情况下，以线性时间进行排序仍然可能，如果输入数据序列都由小于M的正整数组成，则可以通过分配一个大小为M的数组（即桶），在线性时间内完成排序。当输入只是一些小的整数的时候，桶式排序比快速排序更为合理。</p>
+<h2 id="7-10-外部排序"><a href="#7-10-外部排序" class="headerlink" title="7.10 外部排序"></a>7.10 外部排序</h2><p>迄今为止，考察过的排序算法都将输入数据装入内存。当输入数据量太大装不进内存时，需要使用外部排序来处理很大的输入。</p>
+<h3 id="为什么需要新的算法"><a href="#为什么需要新的算法" class="headerlink" title="为什么需要新的算法"></a>为什么需要新的算法</h3><p>大部分内存排序算法都用到内存可直接寻址的事实，当数据在磁带上时，因为磁带上的元素只能被顺序访问，效率大打折扣。故此，对数据进行排序的时间与从磁盘读入数据的时间相比，无足轻重，尽管后者仅为$O(N)$的。</p>
+<h3 id="外部排序模型"><a href="#外部排序模型" class="headerlink" title="外部排序模型"></a>外部排序模型</h3><p>外部排序对设备的依赖性要比内部排序严重得多。我们假设至少有三个磁带驱动器进行排序工作，两个执行有效排序，第三个进行简化工作。</p>
+<h3 id="简单算法"><a href="#简单算法" class="headerlink" title="简单算法"></a>简单算法</h3><p>基本的外部排序算法使用归并排序中的Merge例程。下图展示了当内存一次容纳M=3个记录时进行外部排序的过程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.3%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F1.png" alt="图13 外部排序过程1"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.3%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F2.png" alt="图14 外部排序过程1"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.3%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F3.png" alt="图15 外部排序过程1"></p>
+<p>该算法需要$\left\lfloor \log (N/M) \right\rfloor$趟工作，外加一趟构造初始的顺串。所以上述趟数为3趟（除构造初始顺串）。</p>
+<h3 id="多路合并"><a href="#多路合并" class="headerlink" title="多路合并"></a>多路合并</h3><p>如果有额外的磁带，我们可以减少将输入数据排序所需要的趟数，将基本的2-路合并扩充为k-路合并。下图为3-路合并的过程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.4%E5%A4%9A%E8%B7%AF%E5%90%88%E5%B9%B6.png" alt="图16 3-路合并"></p>
+<p>该算法需要$\left\lfloor \log_k (N/M) \right\rfloor$趟操作。所以上述趟数为2趟（除构造初始顺串）。</p>
+<h3 id="多相合并"><a href="#多相合并" class="headerlink" title="多相合并"></a>多相合并</h3><p>上述k-路合并需要2k盘磁带，实际上可以改进到只需k+1盘磁带。下面将用3盘磁带实现2-路合并作为实例：</p>
+<p>实际上有两种方式，书上P201着重阐述了第二种，由于描述较为复杂，此处只给出第二种图示，其精髓在于将顺串不均衡的分为两份，然后不断在空闲的磁盘上完成合并，使顺串数不断减少至1，下图展示了将34个顺串初始不均衡分为21和13的过程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.5%E5%A4%9A%E7%9B%B8%E5%90%88%E5%B9%B6.png" alt="图17 多相合并"></p>
+<p>如果顺串的个数使一个斐波那契数$F<em>N$，那么分配这些顺串最好的方式就是把它们分为两个斐波那契数$F</em>{N-1}$和$F_{N-2}$；否则为了将顺串个数补足成一个斐波那契数必须用一些哑顺串来填补磁带。当将上述2-相合并扩充为k-相合并时，需要使用k阶斐波那契数。</p>
+<h3 id="替换选择"><a href="#替换选择" class="headerlink" title="替换选择"></a>替换选择</h3><p>最后考虑顺串的构造。书上给出了一种称为替换选择的算法用来产生顺串。下图展示了其过程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.6%E9%A1%BA%E4%B8%B2%E6%9E%84%E5%BB%BA.png" alt="图17 顺串构建的例"></p>
+<p>与标准算法不同，替换算法产生的顺串数较少，甚至可能只有少数的非常长的长串。这可以节省操作的趟数，由于外部排序花费的时间太多，因而这种节省可能对效率产生显著影响。在进行外部排序时考虑替换算法是由价值的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于最一般的内部排序应用程序，选用的方法插入排序、希尔排序和快速排序。它们的选用根据输入的大小来决定，下表展示了每个算法在一台较慢的计算机上处理各种不同大小的文件时的运行时间：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter7.11.6%E7%AE%97%E6%B3%95%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83.png" alt="图17 算法比较/s"></p>
+<p>快速排序是本章的重点，因为它是中大型文件的首选算法。插入排序适用于小的或者是接近排好序的输入数据；希尔排序虽然比快速排序慢（当数据较多时），但是简单明了；堆排序比希尔排序慢，这主要由于为了移动数据，堆排序需要两次比较，当然其可以进行改进；合并排序比快排慢且更加复杂，但是是外部排序的中心思想。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -129,6 +292,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter8不相交集ADT
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/" id="article-nav-older" class="article-nav-link-wrap">
@@ -170,7 +342,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 13.33px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a>
     </div>
   </div>
 
@@ -192,6 +364,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/">chapter8不相交集ADT</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/">chapter7排序</a>
           </li>
         
@@ -205,10 +381,6 @@
         
           <li>
             <a href="/2020/07/14/chapter4%E6%A0%91/">chapter4树</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">chapter3表、栈和队列</a>
           </li>
         
       </ul>
