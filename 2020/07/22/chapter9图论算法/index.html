@@ -7,18 +7,37 @@
   
   <title>chapter9图论算法 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本章中，讨论图论中几个一般的问题：  介绍几个现实生活中发生的问题，它们可以转化为图论问题。 给出一些算法以解决几个普通的图论问题。 适当选择数据结构可以极大地降低算法的运行时间。 介绍一个称为深度优先搜索的重要技巧，并指出他如何能够以线性时间求解若干表面上非平凡的问题。  9.1 若干定义">
+  <meta name="description" content="本章中，讨论图论中几个一般的问题：  介绍几个现实生活中发生的问题，它们可以转化为图论问题。 给出一些算法以解决几个普通的图论问题。 适当选择数据结构可以极大地降低算法的运行时间。 介绍一个称为深度优先搜索的重要技巧，并指出他如何能够以线性时间求解若干表面上非平凡的问题。  9.1 若干定义一个图$G&#x3D;(V, E)$由顶点集$V$和边集$E$组成，每条边就是一个点对$(v, w)$，根据点对有序或">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chapter9图论算法">
 <meta property="og:url" content="https://tom89757.github.io/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
-<meta property="og:description" content="本章中，讨论图论中几个一般的问题：  介绍几个现实生活中发生的问题，它们可以转化为图论问题。 给出一些算法以解决几个普通的图论问题。 适当选择数据结构可以极大地降低算法的运行时间。 介绍一个称为深度优先搜索的重要技巧，并指出他如何能够以线性时间求解若干表面上非平凡的问题。  9.1 若干定义">
+<meta property="og:description" content="本章中，讨论图论中几个一般的问题：  介绍几个现实生活中发生的问题，它们可以转化为图论问题。 给出一些算法以解决几个普通的图论问题。 适当选择数据结构可以极大地降低算法的运行时间。 介绍一个称为深度优先搜索的重要技巧，并指出他如何能够以线性时间求解若干表面上非平凡的问题。  9.1 若干定义一个图$G&#x3D;(V, E)$由顶点集$V$和边集$E$组成，每条边就是一个点对$(v, w)$，根据点对有序或">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E8%AF%BE%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E6%97%A0%E5%9C%88%E5%9B%BE.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E7%AE%80%E5%8D%95%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3%E5%B8%A6%E6%9D%83%E6%9C%89%E5%90%91%E5%9B%BE.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%97%A0%E6%9D%83%E5%9B%BEG.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E4%BC%AA%E4%BB%A3%E7%A0%81.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E5%9D%8F%E6%83%85%E5%BD%A2.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E4%BC%98%E5%8C%96%E4%BC%AA%E4%BB%A3%E7%A0%81.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%95%B0%E6%8D%AE%E5%8F%98%E5%8C%96.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E5%9B%BE%E5%92%8C%E8%A1%A8.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E8%A1%A8%E5%8F%98%E5%8C%96%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E7%AE%97%E6%B3%95%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.3%E4%BC%AA%E4%BB%A3%E7%A0%81.png">
 <meta property="article:published_time" content="2020-07-21T16:52:35.000Z">
-<meta property="article:modified_time" content="2020-07-21T17:14:20.893Z">
+<meta property="article:modified_time" content="2020-07-22T17:54:08.969Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E8%AF%BE%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E6%97%A0%E5%9C%88%E5%9B%BE.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -102,7 +121,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-若干定义"><span class="toc-text">9.1 若干定义</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-若干定义"><span class="toc-text">9.1 若干定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图的表示"><span class="toc-text">图的表示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-拓扑排序"><span class="toc-text">9.2 拓扑排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-3-最短路径算法"><span class="toc-text">9.3 最短路径算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无权最短路径"><span class="toc-text">无权最短路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra算法"><span class="toc-text">Dijkstra算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具有负值边的图"><span class="toc-text">具有负值边的图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无圈图"><span class="toc-text">无圈图</span></a></li></ol></li></ol>
 </div>
 
 
@@ -113,7 +132,81 @@
 <li>适当选择数据结构可以极大地降低算法的运行时间。</li>
 <li>介绍一个称为深度优先搜索的重要技巧，并指出他如何能够以线性时间求解若干表面上非平凡的问题。</li>
 </ol>
-<h2 id="9-1-若干定义"><a href="#9-1-若干定义" class="headerlink" title="9.1 若干定义"></a>9.1 若干定义</h2>
+<h2 id="9-1-若干定义"><a href="#9-1-若干定义" class="headerlink" title="9.1 若干定义"></a>9.1 若干定义</h2><p>一个图$G=(V, E)$由顶点集$V$和边集$E$组成，每条边就是一个点对$(v, w)$，根据点对有序或无序分为有向图和无向图，有时边还具有第三种成分，称作权或者值。</p>
+<p>路径是一个顶点序列$w<em>1, w_2, …, w_N$使得$(w_i, w</em>{i+1}) \in E$；路径不包含顶点时，其长度为0。图含有一条从一个顶点到它自身的边$(v,v)$，路径$v, v$有时称作一个环。简单路径则是指该路径上的所有顶点互异（第一个和最后一个顶点可能相同）。</p>
+<p>有向图中的圈是满足$w_1=w_N$且长至少为1的一条路径，该路径为简单路径，则该圈为简单圈；对无向图，边应该是互异的，如路径$v, u, v$并不构成圈，因为边$(v,u)$和$(u,v)$相同。无圈的有向图简称为DAG。</p>
+<p>接下来是连通的概念，在一个无向图中从每个顶点到每个其它顶点都存在一条路径时，则称该无向图是连通的。若一个有向图具有这样的性质，称之为强连通；若有向图去掉方向后形成的图（基础图）是连通的，则称该有向图为弱连通的。完全图是每一对顶点间都存在一条边的图。</p>
+<p>总结一下，上面依次提到了“<strong>图/顶点/边/有向图/无向图、路径/环/简单路径、圈/简单圈/DAG（无圈有向图）、连通/强连通/基础图/弱连通/完全图</strong>”等概念。</p>
+<ul>
+<li>现实中航空系统可以用图进行模拟。我们期望该系统抽象成的图是强连通的，我们想要求解的问题是：能够迅速确定两个机场之间的最佳航线，“最佳”可以是最短路径，也可以是最小权重。</li>
+<li>同样交通流也可以使用图来模型化，我们期望找到最短路或者交通瓶颈最可能的位置。</li>
+</ul>
+<p>由于使用图来表示的模型可能非常巨大，所以使用的算法效率十分重要。</p>
+<h3 id="图的表示"><a href="#图的表示" class="headerlink" title="图的表示"></a>图的表示</h3><p>下面考虑有向图的表示方法（无向图类似），因为现实中大多数为有向图结构。</p>
+<ul>
+<li>一种简单的方法是使用称之为邻接矩阵的二维数组。优点是简单，缺点则是空间需求为$\Theta(|V|^2)$。当图是稠密的，$|E| = \Theta(|V|^2)$，使用它是好的选择；但大多情况下并非如此，当顶点数达到一定程度时，显然满足图稠密是不可能的。</li>
+<li>图是稀疏的，应当使用邻接表。对每个顶点，使用一个表存放所有邻接的顶点。此时空间需求为$O(|E|+|V|)$。</li>
+</ul>
+<p>邻接表是表示图的标准方法（无向图中每条边出现在两个表中，使用双倍空间）。在图论算法中通常需要找出某个给定顶点邻接的所有顶点，这可以通过简单的扫描邻接表来完成。</p>
+<p>现实中顶点的名字不是数字，故需要建立从名字到数字的映射，最容易的方法是散列表。在该散列表中我们对每个顶点存储一个名字以及一个范围在1到$|V|$之间的内部编号，编号在读入图的时候指定，输入每条边时，检查是否两个顶点均在散列表中，若没有，则分配下一个可用的编号给该顶点并将名字和对应编号插入散列表。</p>
+<p>变换后我们使用顶点编号进行算法操作，但输出时需要输出顶点名，故还需要对每个内部编号记录相应的顶点名，这意味着顶点名需要被记录两次，当顶点名过大时，需要花费大量的空间。书中给出了两种方式：使用字符串数组（顶点名过大时消耗大量空间）和使用指向散列表内的指针数组（使得散列表的元素不是通过基本的散列表操作访问）。本章尽可能使用ADT的伪代码，使算法更清晰。</p>
+<h2 id="9-2-拓扑排序"><a href="#9-2-拓扑排序" class="headerlink" title="9.2 拓扑排序"></a>9.2 拓扑排序</h2><p>对有向无圈图的一种排序，使得如果存在一条从$v_i$到$v_j$的路径，在排序中$v_j$出现在$v_i$的后面。下图为表示课程街斗的无圈图：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E8%AF%BE%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E6%97%A0%E5%9C%88%E5%9B%BE.png" alt="图1 课程结构"></p>
+<p>显然图含有圈时，拓扑排序是不可能的；此外，排序并不唯一。</p>
+<p>一个简单的求拓扑排序的算法的描述时：先找出任意一个没有进入边的顶点，然后打印出该顶点，并将它和它的边一起从图中删除，对其它的边作相同处理。为方便描述，引入入度（和出度）的概念，以下是拓扑排序伪代码（初始图读入邻接表中）：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E7%AE%80%E5%8D%95%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png" alt="图2 简单的拓扑排序伪代码"></p>
+<p>找入度为0的顶点的操作为顺序扫描，该算法的运行时间为$O(|V|^2)$，运行时间里包含了很多重复劳动；我们可以通过将所有（未分配拓扑编号）的入度为0的顶点放在一个特殊的盒子中来消除无效劳动。</p>
+<p>我们使用一个初始为空的队列来存放所有入度为0的顶点，然后通过删除顶点让新的顶点入队，拓扑排序就是顶点出队的顺序。</p>
+<p>下面展示了一个对上述无圈图（初始图读入邻接表中）应用拓扑排序的结果以及拓扑排序的伪代码：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C.png" alt="图3 拓扑排序结果"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png" alt="图4 拓扑排序伪代码"></p>
+<p>显然for循环体对每条边最多执行一次，队列操作对每个顶点最多执行一次，初始化各步花费的时间也与图的大小成正比，故执行该算法所用时间为$O(|E| + |V|)$。</p>
+<h2 id="9-3-最短路径算法"><a href="#9-3-最短路径算法" class="headerlink" title="9.3 最短路径算法"></a>9.3 最短路径算法</h2><p>输入是一个赋权图：与每条边$(v<em>i, v_j)$相关联的是穿越该弧的代价（权值）$c</em>{i,j}$。一条路径$v<em>1v_2…v_n$的赋权路径长为$\sum</em>{i=1}^{N-1}c_{i,j}$，无权路径长为n-1。</p>
+<p><strong>单源最短路径问题</strong></p>
+<p>给定一个赋权图G=(V, E)和一个特定顶点s作为输入，找出从s到G中每一个其它顶点的最短赋权路径。下图展示了两个带权值的有向图：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3%E5%B8%A6%E6%9D%83%E6%9C%89%E5%90%91%E5%9B%BE.png" alt="图5 带权有向图"></p>
+<p>当一条路径中出现负值圈时，该路径的最短路径是不确定的，因为可以进行多次负值圈循环。为方便起见，无负值圈时，从s到s的最短路径为0。</p>
+<p>最短路径应用广泛，在计算机的通信、运输路线的规划等方面有重要应用。虽然我们期望找出从一个顶点s到另一个顶点t的最短路径，但是目前所开发的算法，找出从s到所有顶点的路径比找出从s到特定顶点的路径所需的时间反而更短。下面将考察求解该问题的4种形态的算法：</p>
+<ul>
+<li>无权最短路径以及如何在$O(|E|+|V|)$时间解决它</li>
+<li>如果没有负边，如何求解赋权最短路径问题，其运行时间为$O(|E|\log |V|)$。</li>
+<li>图有负边时，提供一个简单算法，时间界为$O(|E|·|V|)$。</li>
+<li>线性时间解决特殊情形的赋权无圈图的最短路径问题。</li>
+</ul>
+<h3 id="无权最短路径"><a href="#无权最短路径" class="headerlink" title="无权最短路径"></a>无权最短路径</h3><p>我们求解下面无权图的最短路径问题。</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%97%A0%E6%9D%83%E5%9B%BEG.png" alt="图6 无权图G"></p>
+<p>暂时我们只考虑最短路径的长而不是具体路径，依次寻找从特定顶点s（假设为$v_3$）出发距离为0、1、2、3的顶点，此时所有顶点均被计算，算法结束。下图展示了算法的最终结果：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84.png" alt="图7 最短路径最终结果"></p>
+<p>上述算法称为广度优先搜索（breadth-first search）：其按层处理顶点，距开始顶点最近的顶点首先被赋值，最远的顶点则最后被赋值，类似于树的层序遍历。下图展示了用于记录该过程的表的初始配置，其中Known中的项在顶点被处理后置为1；$d_v$表示开始顶点到该顶点的距离；$p_v$中表示引起$d_v$变化的最后的顶点。</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE.png" alt="图8 表的初始配置"></p>
+<p>下图展示了无权最短路径算法的伪代码</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图9 伪代码"></p>
+<p>通过追溯$p_v$变量，可以打印实际路径，后续会描述具体实现。双层循环使得该算法为$O(|V|^2)$，其低效在于当所有顶点变为Known状态时，外层循环仍然继续。虽然可通过附加测试避免其发生，但是最坏情形的出现仍无法避免。如将从顶点$v_9$开始的下图作为输入时：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E5%9D%8F%E6%83%85%E5%BD%A2.png" alt="图10 坏情形"></p>
+<p>上述算法的低效同样在于大量的重复劳动，这可以通过类似于拓扑排序的优化方法来排除其低效性。在任意时刻，只存在两种类型的位置顶点，它们的$d_v$分别为$CurrDist$和$CurrDist + 1$，可以将两种顶点分别装在两个盒子中。该想法可以使用队列进行具体实现，以下为对应伪代码：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E4%BC%98%E5%8C%96%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图11 优化后伪代码"></p>
+<p>我们看到，使用邻接表的情况下，运行时间为$O(|E|+|V|)$：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%95%B0%E6%8D%AE%E5%8F%98%E5%8C%96.png" alt="图12 算法运行时数据变化"></p>
+<h3 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h3><p>图是赋权图时，问题显著变得困难，但仍然延续无权图的思路，保留所有与前面相同的信息，Known/$d_v$/$p_v$。我们使用的算法为Dijkstra算法，这个30年的算法时贪婪算法最好的例子。贪婪算法的核心在于：分阶段求解问题，在每个阶段都把出现的当作最好的去处理；其问题在于：该算法不总成功。</p>
+<p>Dijkstra算法按阶段进行，在每个阶段，Dijkstra算法选择一个顶点v，它在所有未知顶点中具有最小的$d<em>v$，同时算法声明从s到v的最短路径时已知的，阶段的其余部分由$d_v$值的更新工作组成，当$d_v$的新值$d_v+c</em>{v,w}$是一个改进的值时我们就置$d<em>w=d_v+c</em>{v,w}$。下图展示了有向图G、表的初始配置和过程中表的变化：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E5%9B%BE%E5%92%8C%E8%A1%A8.png" alt="图13 图和表"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E8%A1%A8%E5%8F%98%E5%8C%96%E8%BF%87%E7%A8%8B.png" alt="图14 表变化过程"></p>
+<p>下图展示了Dijkstra算法的各个阶段（图示显示了$d_v$和Known）：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5.png" alt="图15 各个阶段"></p>
+<p>下面则展示了该算法的声明、表初始化例程和主要算法例程：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E7%AE%97%E6%B3%95%E5%A3%B0%E6%98%8E.png" alt="图16 算法声明"></p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E4%BE%8B%E7%A8%8B.png" alt="图17 例程"></p>
+<p>反证法可以证明，只要边没有负值，该算法总能顺利完成，有边出现负值时算法可能得出错误答案。书中对图是稠密和稀疏两种情况作了具体讨论，使用扫描表找出最小值$d_v$时：当图是稠密的，算法总的运行时间$O(|E|+|V|^2)=O(|V|^2)$，基本上最优，其与边数呈线性关系；当图是稀疏的，算法运行时间是边数的2次幂，这难以让人接收。</p>
+<p>对图是稀疏的情况，需要将距离存储在优先队列中，其思路类似于无权图算法的改进，但更复杂一些。（书中给出了两种方法，<strong>看不太懂，mark</strong>）</p>
+<h3 id="具有负值边的图"><a href="#具有负值边的图" class="headerlink" title="具有负值边的图"></a>具有负值边的图</h3><p>图具有负值的边时，Dijkstra算法行不通，当一个顶点u被声明为已知的，如果存在从某个另外的未知顶点v回到u的负的路径，从s到u的路径却不会更新。一个诱人的方案是将一个常数$\Delta$加到每条边的值上，但其直接实现行不通，因为当一条路径的边数较多时，总路径长度增加也更多。</p>
+<p>将赋权的和无权的算法结合起来将会解决这个问题，但是要付出运行时间激烈增长的代价，其精髓在于：不使用关于未知和已知的顶点的概念，即不记录顶点的Known状态。下图为对应伪代码：</p>
+<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.3%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图18 伪代码"></p>
+<p>当没有负值圈时，该算法能够正常运行，但是第6~10行的代码可能不只执行一次，每个顶点最多可以出队|V|次，使用邻接表时运行时间为$O(|E|·|V|)$，比Dijkstra算法慢很多，幸好现实中绝大多数无负值边；当有负值圈时，算法将无限循环，可以通过在任意顶点出队$|V|+1$次后中值算法运行，保证其终止。</p>
+<h3 id="无圈图"><a href="#无圈图" class="headerlink" title="无圈图"></a>无圈图</h3><p>如果知道图是无圈的，可以通过改变声明顶点为已知顺序（顶点选取法则），来改进Dijkstra算法。新法则以拓扑顺序选择顶点，由于选择和更新可以在拓扑排序执行的时候进行，因此算法可以一趟完成。使用该法则不需要使用优先队列，算法运行时间为$O(|E|+|V|)$。</p>
+<p>无圈图可以模拟某种下坡滑雪问题，因为只能走下坡，所以不可能有圈；另一种应用是不可逆化学反应模型，用顶点代表物质状态，用边代表状态转变，边的权代表释放能量，如果只能从高能状态转变到低能状态，则图是无圈的。</p>
+<p>无圈图更重要的应用是关键路径分析法，此处引出动作节点图的概念，动作意味着不可逆，每个节点表示必须执行的动作以及完成动作所花费的时间，我们假设互相不依赖的动作可以由不同的服务器并行执行。如下图：</p>
+<p><img src="" alt="图19 动作节点图"></p>
+
       
     </div>
     <footer class="article-footer">
@@ -127,6 +220,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A6%81%E5%92%8C%E6%8A%80%E6%9C%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter1计算机概要和技术
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/" id="article-nav-older" class="article-nav-link-wrap">
@@ -158,7 +260,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
     </div>
   </div>
 
@@ -168,7 +270,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 13.33px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 16.67px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.33px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 13.33px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 13.33px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 13.33px;">计算机组成与设计</a>
     </div>
   </div>
 
@@ -190,23 +292,23 @@
       <ul>
         
           <li>
-            <a href="/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/">chapter9图论算法</a>
+            <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/">408计算机网络考纲</a>
           </li>
         
           <li>
-            <a href="/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/">chapter8不相交集ADT</a>
+            <a href="/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/">408操作系统考纲</a>
           </li>
         
           <li>
-            <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/">chapter7排序</a>
+            <a href="/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/">408数据结构考纲</a>
           </li>
         
           <li>
-            <a href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/">chapter6优先队列(堆)</a>
+            <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/">408计算机组成原理考纲</a>
           </li>
         
           <li>
-            <a href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/">chapter5散列</a>
+            <a href="/2020/07/23/chapter10%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7/">chapter10算法设计技巧</a>
           </li>
         
       </ul>
