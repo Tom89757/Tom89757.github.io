@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-07-25T15:46:36.981Z</updated>
+  <updated>2020-07-25T17:14:19.399Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tom89757.github.io/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/"/>
     <id>https://tom89757.github.io/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/</id>
     <published>2020-07-25T15:44:04.000Z</published>
-    <updated>2020-07-25T15:46:36.981Z</updated>
+    <updated>2020-07-25T17:14:19.399Z</updated>
     
     <summary type="html">
     
@@ -78,17 +78,17 @@
     <link href="https://tom89757.github.io/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/"/>
     <id>https://tom89757.github.io/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/</id>
     <published>2020-07-23T15:36:32.000Z</published>
-    <updated>2020-07-25T16:05:54.483Z</updated>
+    <updated>2020-07-25T17:14:49.931Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;数据结构（45分）&lt;/p&gt;
+&lt;p&gt;【考察目标】&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;掌握数据结构的基本概念、基本原理和基本方法。&lt;/li&gt;
+&lt;li&gt;掌握数据的逻辑结构、存储结构及基本操作的实现，能够对算法进行基本的时间复杂度与空间复杂度分析。&lt;/li&gt;
+&lt;li&gt;能够运用数据结构就基本原理和方法进行问题的分析与求解，具备采用C或C++语言设计与实现算法的能力。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -105,17 +105,17 @@
     <link href="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/"/>
     <id>https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/</id>
     <published>2020-07-23T15:36:18.000Z</published>
-    <updated>2020-07-25T15:49:07.538Z</updated>
+    <updated>2020-07-25T17:15:08.259Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;计算机组成原理（45分）&lt;/p&gt;
+&lt;p&gt;【考察目标】&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;理解单处理器计算机系统中各部件的内部工作原理、组成结构以及相互连接方式，具有完整的计算机系统的整机概念。&lt;/li&gt;
+&lt;li&gt;理解计算机系统层次化结构概念，熟悉硬件与软件之间的界面，掌握指令集体系结构的基本知识和基本实现方法。&lt;/li&gt;
+&lt;li&gt;能够综合运用计算机组成的基本原理和基本方法，对有关计算机硬件系统中的理论和实际问题进行计算、分析，对一些基本部件进行简单设计；并能对高级程序设计语言（如C语言）中的相关问题进行分析。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
