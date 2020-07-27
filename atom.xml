@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-07-25T17:14:19.399Z</updated>
+  <updated>2020-07-27T18:02:55.743Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,60 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter3计算机的算术运算</title>
+    <link href="https://tom89757.github.io/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/"/>
+    <id>https://tom89757.github.io/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/</id>
+    <published>2020-07-27T16:41:29.000Z</published>
+    <updated>2020-07-27T18:02:55.743Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;3-1-引言&quot;&gt;&lt;a href=&quot;#3-1-引言&quot; class=&quot;headerlink&quot; title=&quot;3.1 引言&quot;&gt;&lt;/a&gt;3.1 引言&lt;/h2&gt;&lt;p&gt;本章回答的问题有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;小数和其他实数如何表示？&lt;/li&gt;
+&lt;li&gt;当一个操作生成了一个无法表示的大数时如何处理？&lt;/li&gt;
+&lt;li&gt;上述问题隐含着一个秘密：怎样用硬件真正地做乘法和除法？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本章的目的就是讲述实数的表示方法、算术的算法、实现这些算法的硬件，以及如何在指令集中表示有关的内容。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter2指令：计算机的语言</title>
     <link href="https://tom89757.github.io/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/"/>
     <id>https://tom89757.github.io/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/</id>
     <published>2020-07-25T15:44:04.000Z</published>
-    <updated>2020-07-25T17:14:19.399Z</updated>
+    <updated>2020-07-27T17:08:44.183Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;2-1-引言&quot;&gt;&lt;a href=&quot;#2-1-引言&quot; class=&quot;headerlink&quot; title=&quot;2.1 引言&quot;&gt;&lt;/a&gt;2.1 引言&lt;/h2&gt;&lt;p&gt;计算机语言中的基本单词称为指令，一台计算机的全部指令称为该计算机的指令集。指令集分为两种形式，人们编程书写的形式和计算机识别的形式。本章将自顶向下，从助记符表示的汇编语言过渡到计算机的真实语言；下一章继续向下探究，解释算术运算的硬件以及浮点数的表示方法。&lt;/p&gt;
+&lt;p&gt;本书选择MIPS指令集，其与ARMv7、Intel x86和ARMv8等指令集具有相似之处，这是因为所有的计算机必须实现一些类似的基本操作。此外，计算机设计者有一个共同目标：找到一种语言，可方便硬件和编译器的设计，且使性能最佳，同时使成本和功耗最低。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>408计算机网络考纲</title>
+    <link href="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/"/>
+    <id>https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/</id>
+    <published>2020-07-23T15:37:05.000Z</published>
+    <updated>2020-07-27T18:49:58.128Z</updated>
     
     <summary type="html">
     
@@ -39,22 +88,7 @@
       <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>408计算机网络考纲</title>
-    <link href="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/"/>
-    <id>https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/</id>
-    <published>2020-07-23T15:37:05.000Z</published>
-    <updated>2020-07-23T15:37:05.958Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
+      <category term="计算机网络" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -63,13 +97,25 @@
     <link href="https://tom89757.github.io/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/"/>
     <id>https://tom89757.github.io/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/</id>
     <published>2020-07-23T15:36:50.000Z</published>
-    <updated>2020-07-23T15:36:50.261Z</updated>
+    <updated>2020-07-27T18:26:41.469Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
     
     </summary>
     
     
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="操作系统" scheme="https://tom89757.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -105,7 +151,7 @@
     <link href="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/"/>
     <id>https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/</id>
     <published>2020-07-23T15:36:18.000Z</published>
-    <updated>2020-07-25T17:15:08.259Z</updated>
+    <updated>2020-07-26T16:14:04.053Z</updated>
     
     <summary type="html">
     
@@ -496,40 +542,6 @@
 &lt;li&gt;有时除了使用Unix I/O以外别无选择。标准I/O库没有提供提取文件元数据的方式；一些情况下使用它进行网络编程非常冒险。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;本章学习Unix I/O和标准 I/O的一般概念，并展示如何在C程序中可靠地使用它们。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter9虚拟内存</title>
-    <link href="https://tom89757.github.io/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"/>
-    <id>https://tom89757.github.io/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</id>
-    <published>2020-07-05T11:01:28.000Z</published>
-    <updated>2020-07-18T16:36:54.355Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一个系统中的进程与其他进程共享CPU和主存资源。为了有效地管理内存并且少出错，现代系统提供了一种对主存的抽象概念——虚拟内存（VM）。它是硬件异常、硬件地址翻译、主存、磁盘文件和内核软件的完美交互，他为每个进程提供了一个大的、一致的和私有的地址空间。&lt;/p&gt;
-&lt;p&gt;虚拟内存提供了三种重要的能力：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把主存看成是一个存储在磁盘上的地址空间的高速缓存，主存中只保留活动区域在磁盘和主存间传送数据。&lt;/li&gt;
-&lt;li&gt;为每个进程提供了一致的地址空间，简化内存管理。&lt;/li&gt;
-&lt;li&gt;保护每个进程的地址空间不被其他进程破环。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;程序员需要理解它处于以下原因：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;它是核心。虚拟内存遍布计算机系统的所有层面。&lt;/li&gt;
-&lt;li&gt;它很强大。通过它可以销毁内存片、将内存片映射到磁盘文件的某个部分，和其他进程共享内存。&lt;/li&gt;
-&lt;li&gt;它很危险。程序分配地址空间时都会与它交互，使用不但会导致严重错误。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本章讲述虚拟内存如何工作，以及如何在程序中使用和管理虚拟内存和与内存相关的错误。&lt;/p&gt;
     
     </summary>
     

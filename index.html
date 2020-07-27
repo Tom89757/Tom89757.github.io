@@ -71,6 +71,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chapter3计算机的算术运算" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/" class="article-date">
+  <time datetime="2020-07-27T16:41:29.000Z" itemprop="datePublished">2020-07-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/">chapter3计算机的算术运算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="3-1-引言"><a href="#3-1-引言" class="headerlink" title="3.1 引言"></a>3.1 引言</h2><p>本章回答的问题有：</p>
+<ul>
+<li>小数和其他实数如何表示？</li>
+<li>当一个操作生成了一个无法表示的大数时如何处理？</li>
+<li>上述问题隐含着一个秘密：怎样用硬件真正地做乘法和除法？</li>
+</ul>
+<p>本章的目的就是讲述实数的表示方法、算术的算法、实现这些算法的硬件，以及如何在指令集中表示有关的内容。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/" data-id="ckd4vlyn10000uowdadgqcwf1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-chapter2指令：计算机的语言" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/" class="article-date">
@@ -97,18 +151,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-引言"><span class="toc-text">2.1 引言</span></a></li></ol>
-</div>
-
-
         <h2 id="2-1-引言"><a href="#2-1-引言" class="headerlink" title="2.1 引言"></a>2.1 引言</h2><p>计算机语言中的基本单词称为指令，一台计算机的全部指令称为该计算机的指令集。指令集分为两种形式，人们编程书写的形式和计算机识别的形式。本章将自顶向下，从助记符表示的汇编语言过渡到计算机的真实语言；下一章继续向下探究，解释算术运算的硬件以及浮点数的表示方法。</p>
 <p>本书选择MIPS指令集，其与ARMv7、Intel x86和ARMv8等指令集具有相似之处，这是因为所有的计算机必须实现一些类似的基本操作。此外，计算机设计者有一个共同目标：找到一种语言，可方便硬件和编译器的设计，且使性能最佳，同时使成本和功耗最低。</p>
-<p>MIPS指令集是符合“设备简单性”原则的一种指令集，本章的目标是介绍它如何用硬件表示，以及它与高级编程语言（主要是C，提及Java）的关系。下图展示了MIPS指令集的总体情况：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter2.1MIPS%E6%8C%87%E4%BB%A4%E9%9B%86.png" alt="图1 MIPS指令集"></p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter2.1MIPS%E6%8C%87%E4%BB%A4%E9%9B%862.png" alt="图2 MIPS指令集"></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -131,6 +180,10 @@
   <time datetime="2020-07-23T15:37:05.000Z" itemprop="datePublished">2020-07-23</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -149,17 +202,159 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、计算机网络体系结构"><span class="toc-text">一、计算机网络体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）计算机网络概述"><span class="toc-text">（一）计算机网络概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）计算机网络体系结构与参考模型"><span class="toc-text">（二）计算机网络体系结构与参考模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、物理层"><span class="toc-text">二、物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）通信基础"><span class="toc-text">（一）通信基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）传输介质"><span class="toc-text">（二）传输介质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）物理层设备"><span class="toc-text">（三）物理层设备</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据链路层"><span class="toc-text">三、数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）数据链路层的功能"><span class="toc-text">（一）数据链路层的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）组帧"><span class="toc-text">（二）组帧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）差错控制"><span class="toc-text">（三）差错控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）流量控制与可靠传输机制"><span class="toc-text">（四）流量控制与可靠传输机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（五）介质访问控制"><span class="toc-text">（五）介质访问控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（六）局域网"><span class="toc-text">（六）局域网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（七）广域网"><span class="toc-text">（七）广域网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（八）数据链路层设备"><span class="toc-text">（八）数据链路层设备</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、网络层"><span class="toc-text">四、网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）网络层的功能"><span class="toc-text">（一）网络层的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）路由算法"><span class="toc-text">（二）路由算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）IPv4"><span class="toc-text">（三）IPv4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）IPv6"><span class="toc-text">（四）IPv6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（五）路由协议"><span class="toc-text">（五）路由协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（六）IP组播"><span class="toc-text">（六）IP组播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（七）移动IP"><span class="toc-text">（七）移动IP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、传输层"><span class="toc-text">五、传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）传输层提供的服务"><span class="toc-text">（一）传输层提供的服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）UDP协议"><span class="toc-text">（二）UDP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）TCP协议"><span class="toc-text">（三）TCP协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、应用层"><span class="toc-text">六、应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）网络应用模型"><span class="toc-text">（一）网络应用模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）DNS系统"><span class="toc-text">（二）DNS系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）FTP"><span class="toc-text">（三）FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）电子邮件"><span class="toc-text">（四）电子邮件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（五）WWW"><span class="toc-text">（五）WWW</span></a></li></ol></li></ol>
 </div>
 
 
-        
+        <p>计算机网络（25分）</p>
+<p>【考察目标】</p>
+<ol>
+<li>掌握计算机网络的基本概念、基本原理和基本方法。</li>
+<li>掌握计算机网络的体系结构和典型网络协议，链接典型网络设备的组成和特点，理解典型网络设备的工作原理。</li>
+<li>能够运用计算机网络的基本概念、基本原理和基本方法进行网络系统的分析、设计和应用。</li>
+</ol>
+<h2 id="一、计算机网络体系结构"><a href="#一、计算机网络体系结构" class="headerlink" title="一、计算机网络体系结构"></a>一、计算机网络体系结构</h2><h3 id="（一）计算机网络概述"><a href="#（一）计算机网络概述" class="headerlink" title="（一）计算机网络概述"></a>（一）计算机网络概述</h3><ol>
+<li>计算机网络的概念、组成与功能</li>
+<li>计算机网络的分类</li>
+<li>计算机网络的标准化工作及相关知识</li>
+</ol>
+<h3 id="（二）计算机网络体系结构与参考模型"><a href="#（二）计算机网络体系结构与参考模型" class="headerlink" title="（二）计算机网络体系结构与参考模型"></a>（二）计算机网络体系结构与参考模型</h3><ol>
+<li>计算机网络分层结构</li>
+<li>计算机网络协议、接口、服务等概念</li>
+<li>ISO/OSI参考模型和TCP/IP模型</li>
+</ol>
+<h2 id="二、物理层"><a href="#二、物理层" class="headerlink" title="二、物理层"></a>二、物理层</h2><h3 id="（一）通信基础"><a href="#（一）通信基础" class="headerlink" title="（一）通信基础"></a>（一）通信基础</h3><ol>
+<li>信道、信号、宽带、码元、波特、速率、信源与信宿等基本概念</li>
+<li>奈奎斯特定理与香农定理</li>
+<li>编码与调制</li>
+<li>电路金环、报文交换与分组交换</li>
+<li>数据报与虚电路</li>
+</ol>
+<h3 id="（二）传输介质"><a href="#（二）传输介质" class="headerlink" title="（二）传输介质"></a>（二）传输介质</h3><ol>
+<li>双绞线、同轴电缆、光纤与无线传输介质</li>
+<li>物理层接口的特性</li>
+</ol>
+<h3 id="（三）物理层设备"><a href="#（三）物理层设备" class="headerlink" title="（三）物理层设备"></a>（三）物理层设备</h3><ol>
+<li>中继器</li>
+<li>集线器</li>
+</ol>
+<h2 id="三、数据链路层"><a href="#三、数据链路层" class="headerlink" title="三、数据链路层"></a>三、数据链路层</h2><h3 id="（一）数据链路层的功能"><a href="#（一）数据链路层的功能" class="headerlink" title="（一）数据链路层的功能"></a>（一）数据链路层的功能</h3><h3 id="（二）组帧"><a href="#（二）组帧" class="headerlink" title="（二）组帧"></a>（二）组帧</h3><h3 id="（三）差错控制"><a href="#（三）差错控制" class="headerlink" title="（三）差错控制"></a>（三）差错控制</h3><ol>
+<li>检错编码</li>
+<li>纠错编码</li>
+</ol>
+<h3 id="（四）流量控制与可靠传输机制"><a href="#（四）流量控制与可靠传输机制" class="headerlink" title="（四）流量控制与可靠传输机制"></a>（四）流量控制与可靠传输机制</h3><ol>
+<li>流量控制、可靠传输与滑轮窗口机制</li>
+<li>停止-等待协议</li>
+<li>后退N帧协议（GBN）</li>
+<li>选择重传协议（SR）</li>
+</ol>
+<h3 id="（五）介质访问控制"><a href="#（五）介质访问控制" class="headerlink" title="（五）介质访问控制"></a>（五）介质访问控制</h3><ol>
+<li>信道划分：频分多路复用、时分多路复用、波分多路复用、码分多路复用的概念和基本原理。</li>
+<li>随即访问：ALOHA协议；CSMA协议；CSMA/CD协议；CSMA/CA协议。</li>
+<li>轮询访问：令牌传递协议</li>
+</ol>
+<h3 id="（六）局域网"><a href="#（六）局域网" class="headerlink" title="（六）局域网"></a>（六）局域网</h3><ol>
+<li>局域网的基本概念与体系结构</li>
+<li>以太网与IEEE 802.3</li>
+<li>IEEE 802.11</li>
+<li>令牌环网的基本原理</li>
+</ol>
+<h3 id="（七）广域网"><a href="#（七）广域网" class="headerlink" title="（七）广域网"></a>（七）广域网</h3><ol>
+<li>广域网的基本概念</li>
+<li>PPP协议</li>
+<li>HDLC协议</li>
+</ol>
+<h3 id="（八）数据链路层设备"><a href="#（八）数据链路层设备" class="headerlink" title="（八）数据链路层设备"></a>（八）数据链路层设备</h3><ol>
+<li>网桥的概念和基本原理</li>
+<li>局域网交换机及其工作原理</li>
+</ol>
+<h2 id="四、网络层"><a href="#四、网络层" class="headerlink" title="四、网络层"></a>四、网络层</h2><h3 id="（一）网络层的功能"><a href="#（一）网络层的功能" class="headerlink" title="（一）网络层的功能"></a>（一）网络层的功能</h3><ol>
+<li>异构网络互联</li>
+<li>路由与转发</li>
+<li>拥塞控制</li>
+</ol>
+<h3 id="（二）路由算法"><a href="#（二）路由算法" class="headerlink" title="（二）路由算法"></a>（二）路由算法</h3><ol>
+<li>静态路由与动态路由</li>
+<li>距离-向量路由算法</li>
+<li>链路状态路由算法</li>
+<li>层次路由</li>
+</ol>
+<h3 id="（三）IPv4"><a href="#（三）IPv4" class="headerlink" title="（三）IPv4"></a>（三）IPv4</h3><ol>
+<li>IPv4分组</li>
+<li>IPv4地址与NAT</li>
+<li>子网划分与子网掩码、CIDR</li>
+<li>ARP协议、DHCP协议与ICMP协议</li>
+</ol>
+<h3 id="（四）IPv6"><a href="#（四）IPv6" class="headerlink" title="（四）IPv6"></a>（四）IPv6</h3><ol>
+<li>IPv6的主要特点</li>
+<li>IPv6地址</li>
+</ol>
+<h3 id="（五）路由协议"><a href="#（五）路由协议" class="headerlink" title="（五）路由协议"></a>（五）路由协议</h3><ol>
+<li>自治系统</li>
+<li>域内路由与域间路由</li>
+<li>RIP路由协议</li>
+<li>OSPF路由协议</li>
+<li>BGP路由协议</li>
+</ol>
+<h3 id="（六）IP组播"><a href="#（六）IP组播" class="headerlink" title="（六）IP组播"></a>（六）IP组播</h3><ol>
+<li>组播的概念</li>
+<li>IP组播地址</li>
+</ol>
+<h3 id="（七）移动IP"><a href="#（七）移动IP" class="headerlink" title="（七）移动IP"></a>（七）移动IP</h3><ol>
+<li>移动IP的概念</li>
+<li>移动IP的通信过程</li>
+</ol>
+<p>（八）网络层设备</p>
+<ol>
+<li>路由器的组成和功能</li>
+<li>路由表与路由转发</li>
+</ol>
+<h2 id="五、传输层"><a href="#五、传输层" class="headerlink" title="五、传输层"></a>五、传输层</h2><h3 id="（一）传输层提供的服务"><a href="#（一）传输层提供的服务" class="headerlink" title="（一）传输层提供的服务"></a>（一）传输层提供的服务</h3><ol>
+<li>传输层的功能</li>
+<li>传输层寻址与端口</li>
+<li>无连接服务与面向连接服务</li>
+</ol>
+<h3 id="（二）UDP协议"><a href="#（二）UDP协议" class="headerlink" title="（二）UDP协议"></a>（二）UDP协议</h3><ol>
+<li>UDP数据报</li>
+<li>UDP校验</li>
+</ol>
+<h3 id="（三）TCP协议"><a href="#（三）TCP协议" class="headerlink" title="（三）TCP协议"></a>（三）TCP协议</h3><ol>
+<li>TCP段</li>
+<li>TCP连接管理</li>
+<li>TCP可靠运输</li>
+<li>TCP流量控制与拥塞控制</li>
+</ol>
+<h2 id="六、应用层"><a href="#六、应用层" class="headerlink" title="六、应用层"></a>六、应用层</h2><h3 id="（一）网络应用模型"><a href="#（一）网络应用模型" class="headerlink" title="（一）网络应用模型"></a>（一）网络应用模型</h3><ol>
+<li>客户/服务器模型</li>
+<li>P2P模型</li>
+</ol>
+<h3 id="（二）DNS系统"><a href="#（二）DNS系统" class="headerlink" title="（二）DNS系统"></a>（二）DNS系统</h3><ol>
+<li>层次域名空间</li>
+<li>域名服务器</li>
+<li>域名解析过程</li>
+</ol>
+<h3 id="（三）FTP"><a href="#（三）FTP" class="headerlink" title="（三）FTP"></a>（三）FTP</h3><ol>
+<li>FTP协议的工作原理</li>
+<li>控制连接与数据连接</li>
+</ol>
+<h3 id="（四）电子邮件"><a href="#（四）电子邮件" class="headerlink" title="（四）电子邮件"></a>（四）电子邮件</h3><ol>
+<li>电子邮件系统的组成结构</li>
+<li>电子邮件格式与MIME</li>
+<li>SMTP协议与POP3协议</li>
+</ol>
+<h3 id="（五）WWW"><a href="#（五）WWW" class="headerlink" title="（五）WWW"></a>（五）WWW</h3><ol>
+<li>WWW的概念与组成结构</li>
+<li>HTTP协议</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
       <a data-url="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/" data-id="ckd1x4h0p000ascwddqc68e8f" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
     </footer>
   </div>
   
@@ -174,6 +369,10 @@
   <time datetime="2020-07-23T15:36:50.000Z" itemprop="datePublished">2020-07-23</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -192,17 +391,107 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、操作系统概述"><span class="toc-text">一、操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）操作系统的概念、特征、功能和提供的服务"><span class="toc-text">（一）操作系统的概念、特征、功能和提供的服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）操作系统的发展和分类"><span class="toc-text">（二）操作系统的发展和分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）操作系统的运行环境"><span class="toc-text">（三）操作系统的运行环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）操作系统体系结构"><span class="toc-text">（四）操作系统体系结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、进程管理"><span class="toc-text">二、进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）进程与线程"><span class="toc-text">（一）进程与线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）处理机调度"><span class="toc-text">（二）处理机调度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）同步与互斥"><span class="toc-text">（三）同步与互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）死锁"><span class="toc-text">（四）死锁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、内存管理"><span class="toc-text">三、内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）内存管理基础"><span class="toc-text">（一）内存管理基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）虚拟内存管理"><span class="toc-text">（二）虚拟内存管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、文件管理"><span class="toc-text">四、文件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）文件系统基础"><span class="toc-text">（一）文件系统基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）文件系统实现"><span class="toc-text">（二）文件系统实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）磁盘组织与管理"><span class="toc-text">（三）磁盘组织与管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、输入输出（I-O）管理"><span class="toc-text">五、输入输出（I&#x2F;O）管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）I-O管理概述"><span class="toc-text">（一）I&#x2F;O管理概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）I-O核心子系统"><span class="toc-text">（二）I&#x2F;O核心子系统</span></a></li></ol></li></ol>
 </div>
 
 
-        
+        <p>操作系统（35分）</p>
+<p>【考察目标】</p>
+<ol>
+<li>掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。</li>
+<li>掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。</li>
+<li>能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用C语言描述相关算法。</li>
+</ol>
+<h2 id="一、操作系统概述"><a href="#一、操作系统概述" class="headerlink" title="一、操作系统概述"></a>一、操作系统概述</h2><h3 id="（一）操作系统的概念、特征、功能和提供的服务"><a href="#（一）操作系统的概念、特征、功能和提供的服务" class="headerlink" title="（一）操作系统的概念、特征、功能和提供的服务"></a>（一）操作系统的概念、特征、功能和提供的服务</h3><h3 id="（二）操作系统的发展和分类"><a href="#（二）操作系统的发展和分类" class="headerlink" title="（二）操作系统的发展和分类"></a>（二）操作系统的发展和分类</h3><h3 id="（三）操作系统的运行环境"><a href="#（三）操作系统的运行环境" class="headerlink" title="（三）操作系统的运行环境"></a>（三）操作系统的运行环境</h3><ol>
+<li>内核态和用户态</li>
+<li>中断、异常</li>
+<li>系统调用</li>
+</ol>
+<h3 id="（四）操作系统体系结构"><a href="#（四）操作系统体系结构" class="headerlink" title="（四）操作系统体系结构"></a>（四）操作系统体系结构</h3><h2 id="二、进程管理"><a href="#二、进程管理" class="headerlink" title="二、进程管理"></a>二、进程管理</h2><h3 id="（一）进程与线程"><a href="#（一）进程与线程" class="headerlink" title="（一）进程与线程"></a>（一）进程与线程</h3><ol>
+<li>进程概念</li>
+<li>进程的状态与转换</li>
+<li>进程控制</li>
+<li>进程组织</li>
+<li><p>进程通信：共享存储系统；消息传递系统；管道通信。</p>
+</li>
+<li><p>线程概念与多线程模型</p>
+</li>
+</ol>
+<h3 id="（二）处理机调度"><a href="#（二）处理机调度" class="headerlink" title="（二）处理机调度"></a>（二）处理机调度</h3><ol>
+<li>调度的基本概念</li>
+<li>调度时机、切换与过程</li>
+<li>调度的基本准则</li>
+<li>调度方式</li>
+<li>典型调度算法：先来先服务调度算法；短作业（短进程、短线程）有限调度算法；事件片轮转调度算法；优先级调度算法；高响应比优先调度算法；多级反馈队列调度算法。</li>
+</ol>
+<h3 id="（三）同步与互斥"><a href="#（三）同步与互斥" class="headerlink" title="（三）同步与互斥"></a>（三）同步与互斥</h3><ol>
+<li>进程同步对基本概念</li>
+<li><p>实现临界区互斥的基本方法：软件实现方法；硬件实现方法。</p>
+</li>
+<li><p>信号量</p>
+</li>
+<li>管程</li>
+<li>经典同步问题：生产者-消费者问题；读者-写者问题；哲学家进餐问题。</li>
+</ol>
+<h3 id="（四）死锁"><a href="#（四）死锁" class="headerlink" title="（四）死锁"></a>（四）死锁</h3><ol>
+<li>死锁的概念</li>
+<li>死锁处理策略</li>
+<li>死锁预防</li>
+<li><p>死锁避免：系统安全状态，银行家算法</p>
+</li>
+<li><p>死锁检测和解除</p>
+</li>
+</ol>
+<h2 id="三、内存管理"><a href="#三、内存管理" class="headerlink" title="三、内存管理"></a>三、内存管理</h2><h3 id="（一）内存管理基础"><a href="#（一）内存管理基础" class="headerlink" title="（一）内存管理基础"></a>（一）内存管理基础</h3><ol>
+<li>内存管理概念：程序装入与链接；逻辑地址与物理地址空间；内存保护。</li>
+<li>交换与覆盖</li>
+<li>连续分配管理方式</li>
+<li>非连续分配管理方式：分页管理方式；分段管理方式；段页式管理方式。</li>
+</ol>
+<h3 id="（二）虚拟内存管理"><a href="#（二）虚拟内存管理" class="headerlink" title="（二）虚拟内存管理"></a>（二）虚拟内存管理</h3><ol>
+<li>虚拟内存基本概念</li>
+<li>请求分页管理方式</li>
+<li>页面置换算法：最佳置换算法（OPT）；先进先出置换算法（FIFO）；最近最少使用置换算法（LRU）；时钟置换算法（CLOCK）。</li>
+<li>页面分配策略</li>
+<li>工作集</li>
+<li>抖动</li>
+</ol>
+<h2 id="四、文件管理"><a href="#四、文件管理" class="headerlink" title="四、文件管理"></a>四、文件管理</h2><h3 id="（一）文件系统基础"><a href="#（一）文件系统基础" class="headerlink" title="（一）文件系统基础"></a>（一）文件系统基础</h3><ol>
+<li>文件概念</li>
+<li>文件的逻辑结构：顺序文件；索引文件；索引顺序文件。</li>
+<li>目录结构：文件控制块和索引节点；单级目录结构和两级目录结构；树形目录结构；图形目录结构。</li>
+<li>文件共享</li>
+<li>文件保护：访问类型；访问控制。</li>
+</ol>
+<h3 id="（二）文件系统实现"><a href="#（二）文件系统实现" class="headerlink" title="（二）文件系统实现"></a>（二）文件系统实现</h3><ol>
+<li>文件系统层次结构</li>
+<li>目录实现</li>
+<li>文件实现</li>
+</ol>
+<h3 id="（三）磁盘组织与管理"><a href="#（三）磁盘组织与管理" class="headerlink" title="（三）磁盘组织与管理"></a>（三）磁盘组织与管理</h3><ol>
+<li>磁盘的结构</li>
+<li>磁盘调度算法</li>
+<li>磁盘的管理</li>
+</ol>
+<h2 id="五、输入输出（I-O）管理"><a href="#五、输入输出（I-O）管理" class="headerlink" title="五、输入输出（I/O）管理"></a>五、输入输出（I/O）管理</h2><h3 id="（一）I-O管理概述"><a href="#（一）I-O管理概述" class="headerlink" title="（一）I/O管理概述"></a>（一）I/O管理概述</h3><ol>
+<li>I/O控制方式</li>
+<li>I/O 软件层次结构</li>
+</ol>
+<h3 id="（二）I-O核心子系统"><a href="#（二）I-O核心子系统" class="headerlink" title="（二）I/O核心子系统"></a>（二）I/O核心子系统</h3><ol>
+<li>I/O调度概念</li>
+<li>高速缓存与缓冲区</li>
+<li>设备分配与回收</li>
+<li>假脱机技术（SPOOLing）</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
       <a data-url="https://tom89757.github.io/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/" data-id="ckd1x4h0c0001scwd4po08hmi" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
     </footer>
   </div>
   
@@ -613,67 +902,11 @@
 
 
   
-    <article id="post-chapter7排序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time datetime="2020-07-17T15:54:32.000Z" itemprop="datePublished">2020-07-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/">chapter7排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本章讨论数组的排序问题，为了简化问题，数组中的元素均为整数。本章主要讨论在主存中完成的内部排序，这意味着排序元素较少（$\leq 10^6$），在本章末尾将讨论在磁盘上完成的外部排序。</p>
-<p>对内部排序的讨论将包含：</p>
-<ol>
-<li>存在一种容易的算法以$O(N^2)$排序，如插入排序。</li>
-<li>一种在实践中有效的算法——希尔排序，以$o(N^2)$运行。</li>
-<li>稍微复杂的以$O(N \log N)$运行的算法。</li>
-<li>任何通用的排序算法均需要$\Omega(N \log N)$次比较。</li>
-</ol>
-<p>排序算法收到青睐的原因在于，它们中可能包含一些有趣的、重要的代码优化和设计思想，且对排序算法可以作精确的分析。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/" data-id="ckd1x4h34003sscwdbnwue7b2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
   </nav>
 
 </section>
@@ -694,7 +927,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -704,7 +937,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12.5px;">微言小义</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 17.5px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.5px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12.5px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12.5px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 15px;">计算机组成与设计</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12.5px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 17.5px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.5px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12.5px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12.5px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 15px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a>
     </div>
   </div>
 
@@ -726,6 +959,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/">chapter3计算机的算术运算</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/">chapter2指令：计算机的语言</a>
           </li>
         
@@ -739,10 +976,6 @@
         
           <li>
             <a href="/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/">408数据结构考纲</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/">408计算机组成原理考纲</a>
           </li>
         
       </ul>
