@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-07-27T18:02:55.743Z</updated>
+  <updated>2020-07-29T18:03:15.259Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter4处理器</title>
+    <link href="https://tom89757.github.io/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/"/>
+    <id>https://tom89757.github.io/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/</id>
+    <published>2020-07-29T17:50:13.000Z</published>
+    <updated>2020-07-29T18:03:15.259Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter3计算机的算术运算</title>
     <link href="https://tom89757.github.io/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/"/>
     <id>https://tom89757.github.io/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/</id>
     <published>2020-07-27T16:41:29.000Z</published>
-    <updated>2020-07-27T18:02:55.743Z</updated>
+    <updated>2020-07-29T18:02:38.277Z</updated>
     
     <summary type="html">
     
@@ -516,32 +543,6 @@
     
       &lt;p&gt;所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。&lt;/p&gt;
 &lt;p&gt;前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter10系统级I/O</title>
-    <link href="https://tom89757.github.io/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/"/>
-    <id>https://tom89757.github.io/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/</id>
-    <published>2020-07-06T17:57:45.000Z</published>
-    <updated>2020-07-18T16:36:53.900Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I/O（输入/输出）是在主存和外部设备（磁盘驱动器、终端和网络）之间复制数据的过程。所有语言的运行时系统都提供执行I/O的较高级别的工具。在Linux系统中，使用内核提供的Unix I/O函数实现高级语言中的I/O函数。我们学习Unix I/O函数有以下原因：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;了解Unix I/O帮助理解其他的系统概念。I/O与其他系统概念之间经常出现循环依赖，我们需要做的就是闭合这个循环。&lt;/li&gt;
-&lt;li&gt;有时除了使用Unix I/O以外别无选择。标准I/O库没有提供提取文件元数据的方式；一些情况下使用它进行网络编程非常冒险。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本章学习Unix I/O和标准 I/O的一般概念，并展示如何在C程序中可靠地使用它们。&lt;/p&gt;
     
     </summary>
     

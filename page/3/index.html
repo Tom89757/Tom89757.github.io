@@ -71,6 +71,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chapter10系统级I-O" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/" class="article-date">
+  <time datetime="2020-07-06T17:57:45.000Z" itemprop="datePublished">2020-07-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/">chapter10系统级I/O</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I/O（输入/输出）是在主存和外部设备（磁盘驱动器、终端和网络）之间复制数据的过程。所有语言的运行时系统都提供执行I/O的较高级别的工具。在Linux系统中，使用内核提供的Unix I/O函数实现高级语言中的I/O函数。我们学习Unix I/O函数有以下原因：</p>
+<ul>
+<li>了解Unix I/O帮助理解其他的系统概念。I/O与其他系统概念之间经常出现循环依赖，我们需要做的就是闭合这个循环。</li>
+<li>有时除了使用Unix I/O以外别无选择。标准I/O库没有提供提取文件元数据的方式；一些情况下使用它进行网络编程非常冒险。</li>
+</ul>
+<p>本章学习Unix I/O和标准 I/O的一般概念，并展示如何在C程序中可靠地使用它们。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/07/chapter10%E7%B3%BB%E7%BB%9F%E7%BA%A7I-O/" data-id="ckd1x4h0v000bscwd6ji70o4y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-chapter9虚拟内存" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/05/chapter9%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" class="article-date">
@@ -535,66 +588,6 @@
 
 
   
-    <article id="post-计算机科学中的微言小义" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" class="article-date">
-  <time datetime="2020-05-29T14:22:08.000Z" itemprop="datePublished">2020-05-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/">计算机科学中的微言小义</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  
-</div>
-
-
-        <ol>
-<li>在进行某种程序语言的学习时，不必苛求考虑到代码中出现的所有特殊情况，这显然是一种舍本逐末，因为所有的特殊情况都可以通过增加代码量来解决，却并不能增加你对语言本身的理解。</li>
-<li>关于“用战略上的勤奋来掩饰战术上的懒惰”在学习计算机中的含义。通过死板的照着书上的代码抄一遍或者通过花费较长时间对书上的所有实例和练习题进行自己实现都不是好的学习方式，前者容易理解；后者的缺陷在于将学习的周期拉的很长，极容易舍本逐末，太在意细节而忽视了迅速搭建框架，而细节上的不足可以通过回过头实现或者直接动手做项目来弥补。</li>
-<li>由于自身阅读代码能力有限，可能会导致无法理解一段代码的完整含义，此时不要害怕，先看看后面对代码的优化过程，你可能会体会到其含义。（此条感悟针对于类似CSAPP的讲解原理的书）</li>
-<li><p>在学习计算机科学的过程中，我们可能因为对细节和原理的过分追求而忽视了计算机科学的核心要义——更高效的完整任务，将人从繁重的工作中解脱出来。</p>
-</li>
-<li><p>虽然显然计算机科学是一门实践的科学，但在做一些繁琐且不成体系的事情（如搭建博客、搭建和调试环境）时，很容易让我内心变得浮躁，因为太多的细节问题让人困惑却难以找到准确的解决办法，于是时间在浏览各种不解决问题的博客中飞快流逝，原本学习的节奏也被打乱，只想做一些不懂脑子的事情。</p>
-</li>
-<li><p>对于一些工具类的需求，如Latex符号表之类，如果无法找到对应官网的话，在维基百科中可能有对应页面。</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/05/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" data-id="ckd1x4h2s002wscwdhrmkbop6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -652,6 +645,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/">chapter4处理器</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/">chapter3计算机的算术运算</a>
           </li>
         
@@ -665,10 +662,6 @@
         
           <li>
             <a href="/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/">408操作系统考纲</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/">408数据结构考纲</a>
           </li>
         
       </ul>
