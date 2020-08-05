@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>chapter5大容量和高速度：开发存储器层次结构 | Tom89757&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="5.1 引言这一章主要探讨如何帮助程序员构建一个容量无限大的虚拟快速存储器。（在CSAPP中已有专门的一章讲述存储器层次结构，故本章会看得较快） 一个好的类比是，就像你不会同时以相同的概率查阅图书馆中的每一本书那样，一个程序也不会同时以相同的概率访问它全部的代码或数据。从中可以归纳出局部性原理，分为时间局部性（temporal locality）和空间局部性（spatial locality）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter5大容量和高速度：开发存储器层次结构">
+<meta property="og:url" content="https://tom89757.github.io/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="5.1 引言这一章主要探讨如何帮助程序员构建一个容量无限大的虚拟快速存储器。（在CSAPP中已有专门的一章讲述存储器层次结构，故本章会看得较快） 一个好的类比是，就像你不会同时以相同的概率查阅图书馆中的每一本书那样，一个程序也不会同时以相同的概率访问它全部的代码或数据。从中可以归纳出局部性原理，分为时间局部性（temporal locality）和空间局部性（spatial locality）。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.1%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E5%92%8C%E5%9D%97.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.1%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.2%E5%AD%98%E5%82%A8%E5%99%A8%E6%8A%80%E6%9C%AF.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.2.2DRAM%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%84%E7%BB%87.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.2.2DRAM%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%8F%91%E5%B1%95.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.1cache%E8%AE%BF%E9%97%AE.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.1%E8%AE%BF%E9%97%AE%E7%BB%86%E8%8A%82.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.1cache%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.4cache%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.4%E7%BC%BA%E5%A4%B1%E7%8E%87.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.4.1%E6%9C%BA%E5%88%B6%E5%92%8C%E5%A4%9A%E8%B7%AF%E7%BB%84%E7%9B%B8%E8%81%94.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.4.2%E5%9B%9B%E8%B7%AF%E7%BB%84%E7%9B%B8%E8%81%94cache.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.4.4%E5%BF%AB%E6%8E%92%E5%92%8C%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.5.2%E6%B1%89%E6%98%8E%E7%BA%A0%E9%94%99%E7%A0%81.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7%E6%98%A0%E5%B0%84.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.1%E5%BD%A2%E6%88%90%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.2%E9%A1%B5%E8%A1%A8%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.4TLB%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.4TLB.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.4%E8%AF%BB%E6%88%96%E5%86%99%E7%9B%B4%E8%BE%BE%E6%93%8D%E4%BD%9C.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.5%E7%BC%BA%E5%A4%B1%E7%BB%84%E5%90%88.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.7MIPS%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.8%E5%AD%98%E5%82%A8%E5%99%A8%E5%A4%A7%E5%B0%8F.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.1%E7%9B%B8%E8%81%94%E5%BA%A6.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.1%E7%9B%B8%E8%81%94%E5%BA%A6%E5%92%8C%E7%BC%BA%E5%A4%B1%E7%8E%87.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.2%E5%9D%97%E5%AE%9A%E4%BD%8D.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.5%E5%90%84%E8%B7%AF%E7%BB%84%E7%9B%B8%E8%81%94.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.5%E5%9B%BE%E8%AF%B4%E6%98%8E.png">
+<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.5%E8%AE%BE%E8%AE%A1%E5%8F%98%E5%8C%96.png">
+<meta property="article:published_time" content="2020-08-01T18:25:51.000Z">
+<meta property="article:modified_time" content="2020-08-05T17:00:37.034Z">
+<meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="计算机组成与设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter5.1%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E5%92%8C%E5%9D%97.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tom89757&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界在我面前展开</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/Tom89757" target="_blank" rel="noopener" title="Github"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tom89757.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-chapter5大容量和高速度：开发存储器层次结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="article-date">
+  <time datetime="2020-08-01T18:25:51.000Z" itemprop="datePublished">2020-08-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chapter5大容量和高速度：开发存储器层次结构
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-引言"><span class="toc-text">5.1 引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-存储器技术"><span class="toc-text">5.2 存储器技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SRAM技术"><span class="toc-text">SRAM技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DRAM技术"><span class="toc-text">DRAM技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闪存"><span class="toc-text">闪存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘存储器"><span class="toc-text">磁盘存储器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-cache的基本原理"><span class="toc-text">5.3 cache的基本原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cache访问"><span class="toc-text">cache访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache缺失处理"><span class="toc-text">cache缺失处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写操作处理"><span class="toc-text">写操作处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个cache的例子：内置FastMATH处理器"><span class="toc-text">一个cache的例子：内置FastMATH处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-cache性能的评估与改进"><span class="toc-text">5.4 cache性能的评估与改进</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通过更灵活地放置块来减少cache缺失"><span class="toc-text">通过更灵活地放置块来减少cache缺失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在cache中查找一个块"><span class="toc-text">在cache中查找一个块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换块的选择"><span class="toc-text">替换块的选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用多级cache结构减少缺失代价"><span class="toc-text">使用多级cache结构减少缺失代价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过分块进行软件优化"><span class="toc-text">通过分块进行软件优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结-1"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-可信存储器层次"><span class="toc-text">5.5 可信存储器层次</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#失效的定义"><span class="toc-text">失效的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#纠正一位错、检测两位错的汉明编码（SEC-DED）"><span class="toc-text">纠正一位错、检测两位错的汉明编码（SEC&#x2F;DED）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-虚拟机"><span class="toc-text">5.6 虚拟机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机监视器的必备条件"><span class="toc-text">虚拟机监视器的必备条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令集系统结构（缺乏）对虚拟机的支持"><span class="toc-text">指令集系统结构（缺乏）对虚拟机的支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保护和指令集系统结构"><span class="toc-text">保护和指令集系统结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-7-虚拟存储器"><span class="toc-text">5.7 虚拟存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#页的存放和查找"><span class="toc-text">页的存放和查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缺页故障"><span class="toc-text">缺页故障</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于写"><span class="toc-text">关于写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加快地址转换：TLB"><span class="toc-text">加快地址转换：TLB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集成虚拟存储器、TLB和cache"><span class="toc-text">集成虚拟存储器、TLB和cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟存储器的保护"><span class="toc-text">虚拟存储器的保护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理TLB缺失和缺页"><span class="toc-text">处理TLB缺失和缺页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结-2"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-8-存储器层次的一般框架"><span class="toc-text">5.8 存储器层次的一般框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题1：一个块可以被放在何处"><span class="toc-text">问题1：一个块可以被放在何处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题2：如何找到一个块"><span class="toc-text">问题2：如何找到一个块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题3：当cache缺失时替换那一块"><span class="toc-text">问题3：当cache缺失时替换那一块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题4：写操作如何处理"><span class="toc-text">问题4：写操作如何处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3C：一种理解存储器层次结构行为的直观模型"><span class="toc-text">3C：一种理解存储器层次结构行为的直观模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-9-使用有限状态机来控制简单的cache"><span class="toc-text">5.9 使用有限状态机来控制简单的cache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一个简单的cache"><span class="toc-text">一个简单的cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有限状态机"><span class="toc-text">有限状态机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个简单的cache控制器的有限状态机"><span class="toc-text">一个简单的cache控制器的有限状态机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-10-并行与存储器层次结构：cache一致性"><span class="toc-text">5.10 并行与存储器层次结构：cache一致性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现一致性的基本方案"><span class="toc-text">实现一致性的基本方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监听协议"><span class="toc-text">监听协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-11-并行域存储器层次结构：冗余廉价磁盘阵列"><span class="toc-text">5.11 并行域存储器层次结构：冗余廉价磁盘阵列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-12-高级内容：实现cache控制器"><span class="toc-text">5.12 高级内容：实现cache控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-13-实例：ARM-Cortex-A8-和-Intel-Core-i7的存储器层次结构"><span class="toc-text">5.13 实例：ARM Cortex-A8 和 Intel Core i7的存储器层次结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-14-运行更快：cache分块和矩阵乘法"><span class="toc-text">5.14 运行更快：cache分块和矩阵乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-15-谬误与陷阱"><span class="toc-text">5.15 谬误与陷阱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-16-本章小结"><span class="toc-text">5.16 本章小结</span></a></li></ol>
+</div>
+
+
+        <h2 id="5-1-引言"><a href="#5-1-引言" class="headerlink" title="5.1 引言"></a>5.1 引言</h2><p>这一章主要探讨如何帮助程序员构建一个容量无限大的虚拟快速存储器。（在CSAPP中已有专门的一章讲述存储器层次结构，故本章会看得较快）</p>
+<p>一个好的类比是，就像你不会同时以相同的概率查阅图书馆中的每一本书那样，一个程序也不会同时以相同的概率访问它全部的代码或数据。从中可以归纳出局部性原理，分为时间局部性（temporal locality）和空间局部性（spatial locality）。</p>
+<a id="more"></a>
+<p>程序本身的局部性是相当自然的，如循环中一组指令的反复使用体现了时间局部性，指令顺序执行则体现了空间局部性。根据局部性原理我们自然地将计算机存储器组织为存储器层次结构（memory hierarchy），显然该结构遵循“越小越快”的伟大思想。存储器的层次结构意味着数据与程序也组织为层次化结构，离处理器越远的层次访问时间越长，并且这种访问只能在相邻层次间进行，这意味着存储器层次结构需要提供在相邻层次间（而不需要考虑更远层次的传输）进行数据传输的机制，这又体现了“使用抽象简化设计”的思想。</p>
+<p>下图展示了存储器层次的基本结构和两层次间信息交换的最小单元——块：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.1%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E5%92%8C%E5%9D%97.png" alt="图1 存储器层次和块"></p>
+<p>书中依次介绍了命中和缺失、命中率和缺失率、命中时间和缺失代价等概念。为了提高存储器层次结构的性能，我们的目的是减少命中时间和缺失代价，同时提高命中率。下面对命中时间和缺失代价进行严格定义：</p>
+<ul>
+<li>命中时间：访问某存储器层次结构所需要的时间，包括了判断当前访问是命中还是雀巢所需的时间。</li>
+<li>缺失代价：将相应的块从底层存储器 替换到高层存储器所需的时间，包括访问块、将数据逐层传输、将数据插入发生缺失的层和将信息块传送给请求者的时间。</li>
+</ul>
+<p>由于所有程序都花费大量时间访问存储器，因为存储系统必然成为评估机器性能的一个主要指标，这也是我们需要理解存储器层次结构的必要性所在。下图展示了存储器的层次结构：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.1%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图2 存储器层次结构"></p>
+<p>一个好的存储器层次结构应该拥有高的命中率，这意味着整个存储器系统拥有接近最快（最高层）的访问速度和接近最大（最低层）的存储空间。</p>
+<h2 id="5-2-存储器技术"><a href="#5-2-存储器技术" class="headerlink" title="5.2 存储器技术"></a>5.2 存储器技术</h2><p>如CSAPP中所描述，高速缓存通过SRAM实现，主存则通过DRAM实现，它们在速度和成本上有区别，其本质在于DRAM每bit占用的存储空间较少，故等量的硅制造的DRAM的容量比SRAM大。另外两种为闪存和磁盘，分别对应个人移动设备和PC中的二级存储器。下图展示了四种存储器技术的速度和成本：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.2%E5%AD%98%E5%82%A8%E5%99%A8%E6%8A%80%E6%9C%AF.png" alt="图3 存储器技术"></p>
+<h3 id="SRAM技术"><a href="#SRAM技术" class="headerlink" title="SRAM技术"></a>SRAM技术</h3><p>一种组织成存储阵列结构的简单集成电路，通常具有一个读写端口。由于摩尔定律的推动，当今处理器芯片中集成了多层次的cache。SRAM不需要刷新，可理解为其存储信息更为稳定，其访问时间与周期时间非常接近。</p>
+<h3 id="DRAM技术"><a href="#DRAM技术" class="headerlink" title="DRAM技术"></a>DRAM技术</h3><p>DRAm使用电容保存电荷的方式存储数据，因此不能长久的保存数据，故需要周期性刷新。此外，它存储每bit只使用一个晶体管，故存储密度比SRAM更高，这也是其成本更低的原因。此处暂不描述其实现细节<strong>mark</strong>。下图展示了DRAM的内部组织：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.2.2DRAM%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%84%E7%BB%87.png" alt="图4 DRAM的内部组织"></p>
+<p>下图展示了DRAM存储器的发展：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.2.2DRAM%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%8F%91%E5%B1%95.png" alt="图5 DRAM存储器发展"></p>
+<h3 id="闪存"><a href="#闪存" class="headerlink" title="闪存"></a>闪存</h3><p>一种电可擦除的可编程只读存储器，对闪存的写操作会使存储器受损，故其擦除次数有限。为应对该限制，闪存通过其自带的控制器用来将写操作从已经写入很多次的块中映射到写入次数较少的块中，从而使写操作尽量分散，这种技术称之为损耗均衡（wear leveling）。采用这种技术，个人移动设备很难达到闪存的写极限。</p>
+<h3 id="磁盘存储器"><a href="#磁盘存储器" class="headerlink" title="磁盘存储器"></a>磁盘存储器</h3><p>在CSAPP中已经有了较为详细的介绍，此处不再赘述。简单回顾以下磁道、扇区、寻道等概念，此外，书中还提及了旋转延时和传输时间等概念。</p>
+<p>此外，磁盘同闪存一样，是非易失的，但是其不存在写损耗问题；与此同时，其没有闪存性能稳定，且速度比闪存慢1000倍。</p>
+<h2 id="5-3-cache的基本原理"><a href="#5-3-cache的基本原理" class="headerlink" title="5.3 cache的基本原理"></a>5.3 cache的基本原理</h2><p>关于cache的组织结构，<a href="[https://tom89757.github.io/2020/07/01/chapter6%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/](https://tom89757.github.io/2020/07/01/chapter6存储器层次结构/">CSAPP6.4节</a>) 中有更易于理解的描述，此处不再赘述，值得注意的是直接映射、标记和有效位等概念。</p>
+<h3 id="cache访问"><a href="#cache访问" class="headerlink" title="cache访问"></a>cache访问</h3><p>下图是对一个容量位8块的空cache进行9次访问的一个序列：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.1cache%E8%AE%BF%E9%97%AE.png" alt="图6 cache访问"></p>
+<p>下图则对每一次访问行为作了具体的描述：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.1%E8%AE%BF%E9%97%AE%E7%BB%86%E8%8A%82.png" alt="图7 访问细节"></p>
+<p>在直接映射中，只有一个位置可以存放最新请求的数据项，因此对于哪个数据项被替换也只有一种选择。在CSAPP中的描述为，每一组只有一行。下图展示了cache组织结构的细节：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.1cache%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.png" alt="图8 cache组织结构"></p>
+<p>书中对cache的总bit数作了严格的数学化描述（假设为32位地址，$2^n$个块，块大小为$2^m$个字）：</p>
+<script type="math/tex; mode=display">
+2^n * (2^m * 32 + (32 - n - m - 2) + 1) = 2^n * (2^m * 32 + 31 -n - m)</script><p>书中P264展示了两个根据上述公式计算cache所含bit数和所映射的块的例子，此处略。</p>
+<h3 id="cache缺失处理"><a href="#cache缺失处理" class="headerlink" title="cache缺失处理"></a>cache缺失处理</h3><p>cache缺失由两部分共同完成：处理器控制单元以及一个进行初始化主存访问和重新填充cache的独立控制器。我们假定下面的讨论基于顺序执行处理器，当cache缺失时其被阻塞，下面是指令cache缺失时的处理步骤：</p>
+<ol>
+<li>把PC的原始值（当前PC减去4）送到存储器中。</li>
+<li>通知主存执行一次读操作，并等待主存访问完成。</li>
+<li>写cache项，将从主存取回的数据写入cache中存放数据的部分，并将地址的高位（从ALU中得到）写入标记域，设置有效位。</li>
+<li>重启指令执行第一步，重新取指，这次该指令在cache中。</li>
+</ol>
+<p>数据访问时对cache的控制基本相同。上述讨论的为进行读操作时发生缺失的处理策略。</p>
+<h3 id="写操作处理"><a href="#写操作处理" class="headerlink" title="写操作处理"></a>写操作处理</h3><p>对于store指令来说，其将数据写入数据cache而不改变主存的内容，故指令完成时cache和主存不一致。要使得二者一致，最简单的方法是同时将数据写入cache和主存，这称之为写直达（write-through）。当发生写缺失时，从主存中取出对应块中的字，然后将其存储cache中。</p>
+<p>显然，上述策略将花费大量时钟周期将数据写入主存，另一种策略是写缓冲（write buffer）：</p>
+<p>当一个数据在等待写入主存时，先将其放入写缓冲中，指令继续执行；当写缓冲满后，处理器执行到一个写操作后必须停下来直到写缓冲中有一个空位置。这种策略并不是永远奏效，当存储器完成写操作的速度慢于处理器产生写操作的速度时，即指令序列中包含的写操作比例较大时，再多的缓冲器也没有用。</p>
+<p>另一种策略称之为写回（write-back）：</p>
+<p>当发生写操作时，新值仅仅被写入cache块中，只有当修改过的块被替换时才需要写到较低层存储结构中。书中P267讨论了写回的细节，此处略<strong>mark</strong>。</p>
+<h3 id="一个cache的例子：内置FastMATH处理器"><a href="#一个cache的例子：内置FastMATH处理器" class="headerlink" title="一个cache的例子：内置FastMATH处理器"></a>一个cache的例子：内置FastMATH处理器</h3><p>内置FastMATH处理器是一个快速的嵌入式微处理器，它采用MIPS架构。下图为其cache的结构：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.4cache%E7%BB%93%E6%9E%84.png" alt="图9 cache结构"></p>
+<p>其cache执行读请求的步骤与上小结相同，此处不再赘述。值得补充的是，该处理器同时提供了写直达和写回机制，供操作系统选择。</p>
+<p>下图展示了该处理器的缺失率：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.3.4%E7%BC%BA%E5%A4%B1%E7%8E%87.png" alt="图10 缺失率"></p>
+<p>值得一提的是，虽然混合cache（指令cache和数据cache并未分离）相比二者分离，缺失率有轻微的下降，但是二者分离使得指令和数据可以同时访问，cache带宽加备，这一好处足以抵消缺失率的上升。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>本节一次介绍了cache的结构、访问、缺失处理和写操作处理，从每块只有一个字的简单cache过渡到块容量更大的更复杂的cache，通过数学化描述展示了cache的访问原理，最后还通过处理器实例贴合现实，说明了指令和数据cache分离所带来的带宽加倍。</p>
+<p>补充：使用较大的块可以降低缺失率，但同时也增加了缺失代价；可通过增加主存带宽更高效地传输数据块，增加DRAM外部带宽的方法包括增加存储器位宽和交叉存取。</p>
+<h2 id="5-4-cache性能的评估与改进"><a href="#5-4-cache性能的评估与改进" class="headerlink" title="5.4 cache性能的评估与改进"></a>5.4 cache性能的评估与改进</h2><p>书中给出了一个求CPU时间的公式：</p>
+<script type="math/tex; mode=display">
+CPU时间 = (CPU执行时间周期数 + 存储器阻塞的时钟周期数) * 时钟周期时间</script><p>而对于存储器阻塞来说，又有：</p>
+<script type="math/tex; mode=display">
+存储器阻塞的时钟周期数 = 读操作引起阻塞的时钟周期数 + 写操作引起阻塞的时钟周期数</script><p>而对读、写操作引起的阻塞来说，又有：</p>
+<script type="math/tex; mode=display">
+读操作阻塞的时钟周期数 = (读的次数 / 程序数) * 读缺失率 * 读缺失代价 \\
+写操作阻塞的时钟周期数 = [(写的次数/程序数) * 写缺失率 * 写缺失代价] + 写缓冲区阻塞</script><p>当采用写直达cache策略时，假设写缓冲区阻塞可以忽略，我们可以合并读写操作并共用一个缺失率和缺失代价：</p>
+<script type="math/tex; mode=display">
+存储器阻塞时钟周期数 = (存储器访问次数 / 程序数) * 缺失率 * 缺失代价</script><p>等价于：</p>
+<script type="math/tex; mode=display">
+存储器阻塞时钟周期数 = (指令数 / 程序数) * (缺失数 / 指令数) * 缺失代价</script><p>书中P271展示了一个计算CPU时间的例子，此处略。从中得到的启示是：</p>
+<p>根据Amdahl定律，仅仅提高时钟频率而不改进存储系统也会因cache缺失的增加而加剧性能的流失。</p>
+<p>此外，为了分别找到在命中和缺失情况下数据访问时间对性能影响的证据，设计人员会使用平均存储器访问时间（AMAT）作为检测cache设计的方法：</p>
+<script type="math/tex; mode=display">
+AMAT = 命中时间 + 缺失率 * 缺失代价</script><h3 id="通过更灵活地放置块来减少cache缺失"><a href="#通过更灵活地放置块来减少cache缺失" class="headerlink" title="通过更灵活地放置块来减少cache缺失"></a>通过更灵活地放置块来减少cache缺失</h3><p>前面讨论的均为直接映射，事实上它是cache组织结构的一种极端情况，另一种极端情况为全相联，前者意味着存储器中任何一块被直接映射到其高速缓存即cache的唯一位置；后者则意味着存储器中任何一块可以被放置在cache中的任何位置。一种折中的策略为组相联：存储器中的一块被放置在cache中的部分位置。</p>
+<p>正因为此，直接映射和组相联中存储块所在的组分别由以下公式给出：</p>
+<script type="math/tex; mode=display">
+(块号) \mod (cache中的块数) \\
+(块号) \mod (cache中的组数)</script><p>下图展示了三种策略的机制以及一个多路组相联的cache：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.4.1%E6%9C%BA%E5%88%B6%E5%92%8C%E5%A4%9A%E8%B7%AF%E7%BB%84%E7%9B%B8%E8%81%94.png" alt="图11 机制和多路组相联"></p>
+<p>很自然的推出，提高相联度降低了缺失率，但是增加了命中时间。书中展示了例题，此处略。</p>
+<h3 id="在cache中查找一个块"><a href="#在cache中查找一个块" class="headerlink" title="在cache中查找一个块"></a>在cache中查找一个块</h3><p>组相联与直接映射的区别在于，在被选中的组中每一块的标记都要进行检测，在CSAPP中这一步骤称之为行匹配。为提高检索速度，并行检索是必要的。下图展示了一个四路组相联的cache：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.4.2%E5%9B%9B%E8%B7%AF%E7%BB%84%E7%9B%B8%E8%81%94cache.png" alt="图12 四路组相联cache"></p>
+<p>在任何存储器层次结构中选择直接映射、组相联还是全相联，需要在缺失代价和相联度实现的代价之间进行权衡，既要考虑时间，也要考虑额外的硬件。</p>
+<h3 id="替换块的选择"><a href="#替换块的选择" class="headerlink" title="替换块的选择"></a>替换块的选择</h3><p>组相联中，在选中的组中挑选被替换的块，最常用的方法是最近最少使用（Least Recently Used，LRU）法。LRU替换算法的实现是通过追踪每一块的相对使用情况，可以通过在每组中单独保留一位来指出哪一项被访问过，当相联度很高时，LRU的实现变得困难。需要另谋出路。</p>
+<h3 id="使用多级cache结构减少缺失代价"><a href="#使用多级cache结构减少缺失代价" class="headerlink" title="使用多级cache结构减少缺失代价"></a>使用多级cache结构减少缺失代价</h3><p>为了进一步减小现代处理器高时钟频率与日益增长的DRAM访问时间之间的差距，大多数微处理器都会增加额外多级cache。书中展示了一个实例，此处略。</p>
+<p>与单级cache相比，多级cache中的一级cache通常很小，其致力于减少命中时间获得较短的时钟周期，二级cache则主要针对改善缺失率以减少长时间的访存代价。下图展示了指令缺失在实际应用中的呈现：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.4.4%E5%BF%AB%E6%8E%92%E5%92%8C%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F.png" alt="图13 快排和基数排序"></p>
+<h3 id="通过分块进行软件优化"><a href="#通过分块进行软件优化" class="headerlink" title="通过分块进行软件优化"></a>通过分块进行软件优化</h3><p>许多软件优化技术通过对cache中的数据进行重用，提升了数据的时间局部性并因此降低缺失率，这些技术对cache的性能提升是巨大的。</p>
+<p>由于处理多个数组时，有时按行访问，有时按列访问，故需要开发新的访问算法——分块算法。分块算法对子矩阵（或称为块）进行操作，书中展示了实例，此处暂略<strong>mark</strong>。</p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>本节集中讨论了4个问题：cache性能、利用相联度来降低缺失率、利用多级cache来降低缺失代价和利用软件优化技术提高cache的有效性。</p>
+<h2 id="5-5-可信存储器层次"><a href="#5-5-可信存储器层次" class="headerlink" title="5.5 可信存储器层次"></a>5.5 可信存储器层次</h2><p>前面集中展示了如何提高存储器的性能，但是再高的性能如果存储器存储数据的可靠性不够也无济于事。提高可信性的最好方法是冗余技术。</p>
+<h3 id="失效的定义"><a href="#失效的定义" class="headerlink" title="失效的定义"></a>失效的定义</h3><p>系统有两种服务状态：服务实现和服务中断。失效导致从服务实现到服务中断的切换，从服务中断切换到服务实现则称为恢复。失效又可分为间歇性和永久性，据此引出两个新的术语：可靠性和可用性。</p>
+<ul>
+<li>可靠性：是一个系统或模块能够持续提高用户需求的服务的度量，即从开始使用到失效的时间间隔。其度量方式包括平均无故障时间（mean time to failure，MTTF）和年失效率（annual failure rate，AFR）。</li>
+<li>可用性：是指系统正常工作时间在连续两次服务中断间隔时间中所占的比例。服务中断使用维修平均时间（mean time to repair，MTTR）来度量，失效间隔平均时间（mean time between failure，MTBF）= MTTF + MTTR。可用性 = MTTF / (MTTF + MTTR)</li>
+</ul>
+<p>值得补充的是，可信性无法度量，可以度量的是可靠性和可用性。显然我们可以通过减少MTTF或者MTTR来提高可用性，前者可以通过以下技术：</p>
+<ol>
+<li>故障避免技术：通过合理构建系统避免故障出现</li>
+<li>故障容忍技术：采用冗余措施，当发生故障时，通过冗余措施保证系统继续工作</li>
+<li>故障预报技术：对故障进行预测，从而允许在器件失效前进行替换</li>
+</ol>
+<p>后者则可以采用故障检测、诊断和修复的工具来减少故障维修花费的时间。</p>
+<h3 id="纠正一位错、检测两位错的汉明编码（SEC-DED）"><a href="#纠正一位错、检测两位错的汉明编码（SEC-DED）" class="headerlink" title="纠正一位错、检测两位错的汉明编码（SEC/DED）"></a>纠正一位错、检测两位错的汉明编码（SEC/DED）</h3><p>在理解错误检测编码前，需要理解二进制数间的距离，即汉明距离。</p>
+<p>汉明使用奇偶校验码进行错误检测，这意味着N + 1（奇偶校验位）位码字中1的个数永远为偶数，该设定只能检测出1位（其实是奇数位）的错误。此时码字间最小的汉明距离为2（如果一个字有1位发生翻转，则其校验位同样翻转，故与翻转前的码字距离为2）</p>
+<p>为做到检错的同时可以纠错，汉明发明了汉明纠错码（Hamming Error Correction Code，ECC），此时码字间的最小汉明距离为3：</p>
+<ol>
+<li>对数据部分从左到右由1开始一次编号。（这与通常从右到左编号相反）</li>
+<li>将所有编号为2的整数次幂的位标记为奇偶校验位（1，2，4，8，16…）。</li>
+<li>其他剩余位置用作数据位（位置3，5，6，7，9，10，11，12，13，14，15，…）。</li>
+<li>奇偶校验位的位置决定了其对应的数据位。</li>
+<li>设置奇偶校验位，对各组进行偶校验。</li>
+</ol>
+<p>如下图所示：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.5.2%E6%B1%89%E6%98%8E%E7%BA%A0%E9%94%99%E7%A0%81.png" alt="图14 汉明纠错码"></p>
+<p>汉明并没有止步于此，通过付出增加1位的代价，使码字的最小汉明距离变为4，可以在纠正1位错的同时检测2位错。其操作为：在计算出上述的汉明奇偶校验位后，最后计算出整个字的偶校验位，并放置在最低位。</p>
+<p>纠1位错检2位错（SEC/DED，Single error correcting / Double error detection）的技术现在广泛应用于服务器的内存。方便的是，8个字节的数据块做SEC/DED时恰好只需要一个字节的额外开销，这也是为什么许多双列直插式存储模块宽度位72位。</p>
+<p>书中计算了SEC所需要的位数，有$2^p \ge p + d + 1$，即 $p \ge \log (p + d + 1)$。如d = 8 时，有p = 4。</p>
+<p>此外，书中提及，在大型系统中，出现多位错的概率和整个内存芯片出错的概率变大，仅使用奇偶校验位或者SEC/DED是不够的，需要使用一种称为chipkill的技术；在网络系统中可能出现突发型错误，此时需要使用循环冗余校验，具体细节略。</p>
+<h2 id="5-6-虚拟机"><a href="#5-6-虚拟机" class="headerlink" title="5.6 虚拟机"></a>5.6 虚拟机</h2><p>虚拟机一直是大型机中的重要组成部分，但在单用户计算机中被忽视，其最近受到关注是因为：</p>
+<ol>
+<li>在现代计算机系统中，隔离和安全的重要性在增长。</li>
+<li>标准操作系统在安全性和可靠性方面存在缺陷。</li>
+<li>在多个不相关的用户间共享一台计算机，尤其在云计算中。</li>
+<li>处理器速度大幅增长，使得虚拟机引起的开销降至可以接受的范围内。</li>
+</ol>
+<p>以下的讨论基于（操作）系统虚拟机：</p>
+<p>在一个传统的平台上，一个单独的操作系统拥有所有的硬件资源，但是通过虚拟机，多个操作系统共享硬件资源。为了更好地描述虚拟机技术，书中引出了虚拟机监视器（virtual machine monitor，VMM，也叫管理程序）和主机的概念。</p>
+<p>虚拟机不仅可以提供保护功能，还有其他两个优势：</p>
+<ol>
+<li>软件管理：虚拟机典型的调度包括，一些虚拟机运行旧的操作系统，多数虚拟机运行当前的操作系统，少数虚拟机用来测试下一代操作系统版本。</li>
+<li>硬件管理：虚拟机允许独立的软件堆能在共享硬件的同时独立运行；也支持将正在运行的虚拟机移植到另一台计算机上。</li>
+</ol>
+<p>处理器虚拟化的开销取决于需要由VMM进行模拟的指令数目一级模拟速度的快慢。</p>
+<h3 id="虚拟机监视器的必备条件"><a href="#虚拟机监视器的必备条件" class="headerlink" title="虚拟机监视器的必备条件"></a>虚拟机监视器的必备条件</h3><p>虚拟机监视器（VMM）给客户软件提供了一个软件接口，分开每个客户端的状态，并且需要将自己从客户端软件中（包括客户操作系统）隔离。</p>
+<p>系统级虚拟机的基本必备条件如下：</p>
+<ul>
+<li>至少两个处理器模式，系统级和用户级</li>
+<li>特权级指令集合只能在系统模式下使用，如果在用户模式下执行将会产生trap中断；所有系统资源只能由这些指令控制。</li>
+</ul>
+<h3 id="指令集系统结构（缺乏）对虚拟机的支持"><a href="#指令集系统结构（缺乏）对虚拟机的支持" class="headerlink" title="指令集系统结构（缺乏）对虚拟机的支持"></a>指令集系统结构（缺乏）对虚拟机的支持</h3><p>由于虚拟机只是近期才考虑应用于桌面系统和基于PC的服务器，所以大部分指令集在创建时都没有考虑虚拟化的影响。</p>
+<h3 id="保护和指令集系统结构"><a href="#保护和指令集系统结构" class="headerlink" title="保护和指令集系统结构"></a>保护和指令集系统结构</h3><p>保护需要同时依赖于体系结构和操作系统。在过去，IBM的大型机硬件和VMM采用以下三个策略改善虚拟机的性能：</p>
+<ol>
+<li>降低处理器虚拟化的开销</li>
+<li>降低由虚拟化引起的中断开销</li>
+<li>中断发生时交给相应的虚拟机，而不用调用VMM，从而降低开销</li>
+</ol>
+<h2 id="5-7-虚拟存储器"><a href="#5-7-虚拟存储器" class="headerlink" title="5.7 虚拟存储器"></a>5.7 虚拟存储器</h2><p>虚拟存储器是一种将主存用作辅助存储器高速缓存的技术，即将主存作为磁盘（辅助存储器）的高速缓存。构造虚拟存储器出与两个动机：</p>
+<ol>
+<li>允许云计算在多个虚拟机之间有效而安全地共享存储器</li>
+<li>消除一个小而受限的主存容量对程序设计造成的影响</li>
+</ol>
+<p>目前第1条为主要动机，我们需要在虚拟机之间进行保护，确保每个程序只能对划分给它的那部分主存进行读写操作。虚拟存储器使得我们能更有效地共享处理器和主存，实现了程序地址空间到物理地址的转换，加强了各个程序地址空间之间的保护。</p>
+<p>同时，虚拟存储器将程序员从“谨小慎微的分配硬件资源”的困境中解脱出来，虚拟存储器自动管理由主存（物理存储器）和硬盘（辅助存储器）组成的两级存储器层次结构。</p>
+<p>出与不同的历史根源，虚拟存储器和cache使用不同的术语描述，尽管它们具有相似的工作原理。书中一次介绍了页、缺页、虚拟地址、物理地址等概念，用它们可以描述对主存的访问。下图展示了分页的虚拟寻址的存储器被映射到主存中，称为地址转换：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2.png" alt="图15 地址转换"></p>
+<p>虚拟器还提供重定位简化执行时的程序加载过程。（书上没说清楚）</p>
+<p>虚拟存储器中地址被划分为虚页号和页偏移。下图展示了虚页号到物理页号的转换：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7%E6%98%A0%E5%B0%84.png" alt="图16 映射"></p>
+<p>页缺失的昂贵代价是采用虚拟存储系统的原因，一次缺页将花费数百万个时钟周期。下面是设计虚拟存储系统时需要考虑的一些关键性因素：</p>
+<ol>
+<li>为了弥补较长的访问时间，页应该足够大。</li>
+<li>允许存储器中的页以全相联的方式放置以降低缺页率。</li>
+<li>缺页可以用软件处理，以避免访问磁盘导致的巨大开销；软件可以使用更先进的算法选择替换页，尽量降低缺页率。</li>
+<li>采用写回机制。</li>
+</ol>
+<h3 id="页的存放和查找"><a href="#页的存放和查找" class="headerlink" title="页的存放和查找"></a>页的存放和查找</h3><p>设计人员通过对页的放置进行优化来降低缺页频率。当采用全相联方式组织页时，缺页发生时操作系统可以选择任意页来进行替换。全相联映射的难点在于项的定位，为此在虚拟存储系统中使用一个索引存储器的表来定位页，该表称为页表（page table）。</p>
+<p>每个程序都有它自己的页表，用来将程序的虚拟地址空间映射到主存中。为了指出页表在存储器中三位置，硬件包含一个指向页表首地址的页表寄存器（page table register）。我们假定页表存储在存储器中一个固定的连续区域内。</p>
+<p>下图展示了硬件形成物理地址的过程：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.1%E5%BD%A2%E6%88%90%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80.png" alt="图17 形成物理地址"></p>
+<h3 id="缺页故障"><a href="#缺页故障" class="headerlink" title="缺页故障"></a>缺页故障</h3><p>当正在访问的页表中某一项有效位为0时，就会发生缺失，此时操作系统获得控制权，控制的转移由异常机制完成。接着操作系统根据虚拟地址找到目标页在磁盘或者闪存中的位置，将其取回主存。</p>
+<p>此外，由于无法获知存储器中某一页什么时候将被替换出去，操作系统在创建进程的时候会在闪存或磁盘上为进程中所有的页创建空间，称为交换区（swap space），同样有页表或者类似的数据结构记录每个虚拟页在磁盘上的位置。下图为页表结构：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.2%E9%A1%B5%E8%A1%A8%E7%BB%93%E6%9E%84.png" alt="图18 页表结构"></p>
+<p>操作系统同样会创建一个数据结构跟踪记录使用每个物理页的是哪些进程和哪些虚拟地址。当缺页发生时，操作系统会使用LRU替换策略。（由于准确执行LRU算法代价太高，操作系统会近似实现它，如通过使用引用位来记录最近某页的使用情况）</p>
+<p>书中还介绍了用于减少页表大小的技术，此处略<strong>mark</strong>。</p>
+<h3 id="关于写"><a href="#关于写" class="headerlink" title="关于写"></a>关于写</h3><p>访问cache时，可以使用写直达机制，但是需要一个写缓冲区来隐藏写延迟。但是由于访问磁盘需要数百万个时钟周期，所以不能再使用写缓冲的机制，因为缓冲区会很快填满。故虚拟存储器必须使用写回机制，对存储器中的页进行单独的写操作，并且再该页被替换出存储器时在被复制到磁盘中去。</p>
+<h3 id="加快地址转换：TLB"><a href="#加快地址转换：TLB" class="headerlink" title="加快地址转换：TLB"></a>加快地址转换：TLB</h3><p>由于页表存放在主存中，因此程序每次访存至少需要两次：第一次访存先获得物理地址，第二次访存才获得数据。利用局部性原理，现代处理器都包含一个特殊的cache以追踪最近使用过的地址变换，即快表（Translation-Lookaside Buffer，TLB），准确翻译是地址变换高速缓存。下图展示了TLB的结构：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.4TLB%E7%BB%93%E6%9E%84.png" alt="图19 TLB结构"></p>
+<p>TLB的一些典型的值为：</p>
+<ul>
+<li>TLB大小：16~512个项。</li>
+<li>块大小：1~2个页表项（通常为4到8个字节）</li>
+<li>命中时间：0.5~1个时钟周期。</li>
+<li>缺失代价：10~100个时钟周期。</li>
+<li>缺失率：0.01%~1%。</li>
+</ul>
+<p>关于TLB相联度的选择多样。可以选择全相联的组织方式，此时缺失率较低，并且TLB本身很小，实现代价不大；也可以选择相联度低且容量大的TLB，因为TLB的缺失比缺页频繁得多，使用相联度高的策略进行替换时代价较大。</p>
+<p><strong>内置FastMATH TLB</strong></p>
+<p>下图展示了TLB和cache的关系：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.4TLB.png" alt="图20 TLB"></p>
+<p>下图则展示了处理一次读或写请求的步骤：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.4%E8%AF%BB%E6%88%96%E5%86%99%E7%9B%B4%E8%BE%BE%E6%93%8D%E4%BD%9C.png" alt="图21 读或写直达操作"></p>
+<p>值得补充的是，TLB中提供了写访问位，其构成了保护机制的一部分，后续会进一步讨论。</p>
+<h3 id="集成虚拟存储器、TLB和cache"><a href="#集成虚拟存储器、TLB和cache" class="headerlink" title="集成虚拟存储器、TLB和cache"></a>集成虚拟存储器、TLB和cache</h3><p>最好的情况下，虚拟地址由TLB进行转换，然后被送到cache，找到相应的数据，取回并送入处理器；</p>
+<p>最坏的情况下，访问再存储器层次结构的TLB、页表和cache这三个部件中都发生缺失。</p>
+<p>下图展示了三种缺失发生时可能的组合：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.5%E7%BC%BA%E5%A4%B1%E7%BB%84%E5%90%88.png" alt="图22 缺失组合"></p>
+<p>此外，书中P301精解部分对cache的访问作了详细的讨论，此处略<strong>mark</strong>。</p>
+<h3 id="虚拟存储器的保护"><a href="#虚拟存储器的保护" class="headerlink" title="虚拟存储器的保护"></a>虚拟存储器的保护</h3><p>虚拟存储器最重要的功能就是允许多个进程共享一个主存，同时为这些进程和操作系统提供存储保护。</p>
+<p>为了使操作系统能保护虚拟存储系统，硬件至少提供下面三种基本能力：</p>
+<ol>
+<li>支持至少两种模式，并指出当前运行的进程是用户进程还是操作系统进程。</li>
+<li>提供一部分处理器的状态，这部分内容是用户进程可读不可写的。</li>
+<li>提供能让处理器再用户态和管理态下相互切换的机制——系统调用和异常返回。</li>
+</ol>
+<p>使用这些机制将页表保存在操作系统进程的地址空间中，既可以让操作系统更改页表，调度内存资源，又可以保护页表不被用户进程更改。</p>
+<p>我们同样要防止一个进程读取另一个进程的数据，这就要求操作系统给进程分配的虚拟地址空间映射到不相交的物理页上；于此同时，我们同样希望操作系统协助一个用户进程对其它进程以受限的方式（如只读）共享信息。</p>
+<p>书中P303精解部分对进程的上下文切换作了详细的描述，此处略<strong>mark</strong>。</p>
+<h3 id="处理TLB缺失和缺页"><a href="#处理TLB缺失和缺页" class="headerlink" title="处理TLB缺失和缺页"></a>处理TLB缺失和缺页</h3><p>当TLB中没有一个表项能匹配虚拟地址时，TLB缺失就会发生，分为两种情况：</p>
+<ol>
+<li>页在主存中，只需要创建缺失的TLB表项。</li>
+<li>页不在主存中，需要将控制权进给操作系统来解决缺页。</li>
+</ol>
+<p>此外，TLB缺失或者缺页必须在访存发生的同一个时钟周期的末尾被判定，因此下一个时钟周期就开始进行异常处理而不是正常的指令执行。若非如此，紧接着执行的load或者store指令将会改写寄存器。</p>
+<p>书中硬件/软件接口部分讨论了当异常接连发生时所采用的机制，此处略<strong>mark</strong>。</p>
+<p>下图展示了MIPS控制寄存器：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.7.7MIPS%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8.png" alt="图23 MIPS控制寄存器"></p>
+<p>一旦操作系统知道了引起缺页的虚拟地址，它必须完成一下三个步骤：</p>
+<ol>
+<li>使用虚拟地址查找页表项，并在磁盘上找到被访问的页的位置。</li>
+<li>选择替换一个物理页；如果被选中的页被修改过，需要在把新的虚拟页装入之前将这个物理页写回到磁盘上。</li>
+<li>启动读操作，将被访问的页从磁盘上取回到所选择的物理页的位置上。</li>
+</ol>
+<p>根据发生TLB缺失还是发生缺页，控制权被转移到不同的操作系统程序，从而分别处理TLB缺失和缺页引发的异常。书中对这些过程作了详细的描述，此处略<strong>mark</strong>。</p>
+<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><p>虚拟存储器是管理主存和磁盘之间数据缓存的一级存储器层次，它允许单个程序在主存有限的范围内扩展地址空间，同时支持多个活跃的进程共享主存。磁盘的速度很慢，这意味着缺页的代价很高，以下是降低缺页代价的策略：</p>
+<ol>
+<li>增大页的容量以便利用空间局部性降低缺失率。</li>
+<li>使用页表实现的虚拟地址和物理地址之间的映射采用全相联的方式，这样虚拟页可以被放置到主存中的任何位置。</li>
+<li>操作系统使用类似LRU和访问位之类的技术选择替换哪一页。</li>
+</ol>
+<p>为了使进程地址空间收到保护以及防止页表被进程改写，只有操作系统具有更改页表的权限（操作系统进程运行时处于管理模式）；为了加快处理器对存储器的访问速度，在处理器中内置了TLB，其扮演了地址转换cache的角色。</p>
+<p>cache、存储器和TLB都建立在一组共同的原理和策略基础上，下一节将讨论这个共同的架构。</p>
+<h2 id="5-8-存储器层次的一般框架"><a href="#5-8-存储器层次的一般框架" class="headerlink" title="5.8 存储器层次的一般框架"></a>5.8 存储器层次的一般框架</h2><p>下图展示了不同层次的存储器的大小：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.8%E5%AD%98%E5%82%A8%E5%99%A8%E5%A4%A7%E5%B0%8F.png" alt="图24 存储器大小"></p>
+<h3 id="问题1：一个块可以被放在何处"><a href="#问题1：一个块可以被放在何处" class="headerlink" title="问题1：一个块可以被放在何处"></a>问题1：一个块可以被放在何处</h3><p>下图展示了不同的相联方案：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.1%E7%9B%B8%E8%81%94%E5%BA%A6.png" alt="图25 相联度"></p>
+<p>下图则展示了相联度增加时缺失率的变化：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.1%E7%9B%B8%E8%81%94%E5%BA%A6%E5%92%8C%E7%BC%BA%E5%A4%B1%E7%8E%87.png" alt="图26 相联度和缺失率"></p>
+<h3 id="问题2：如何找到一个块"><a href="#问题2：如何找到一个块" class="headerlink" title="问题2：如何找到一个块"></a>问题2：如何找到一个块</h3><p>确定一个块的存放位置取决于块放置机制，如下图所示：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.2%E5%9D%97%E5%AE%9A%E4%BD%8D.png" alt="图27 块定位"></p>
+<p>相联度的选择取决于缺失代价和相联度实现代价的权衡情况，包括了时间和额外硬件开销。</p>
+<p>虚拟存储系统通常使用全相联映射和额外的页表；cache和TLB则通常使用组相联映射。</p>
+<h3 id="问题3：当cache缺失时替换那一块"><a href="#问题3：当cache缺失时替换那一块" class="headerlink" title="问题3：当cache缺失时替换那一块"></a>问题3：当cache缺失时替换那一块</h3><p>在组相联或者全相联cache中，有两种主要的替换策略：</p>
+<ol>
+<li>随机法：随机选择候选块，可能使用一些硬件协助实现。例如，对于TLB缺失，MIPS支持随机替换。</li>
+<li>最近最少使用算法：被替换的块时最久没有被使用过的块。</li>
+</ol>
+<p>根据相联度、cache大小以及缺失代价选取不同的替换策略。</p>
+<h3 id="问题4：写操作如何处理"><a href="#问题4：写操作如何处理" class="headerlink" title="问题4：写操作如何处理"></a>问题4：写操作如何处理</h3><p>处理写操作有两种选择：</p>
+<ol>
+<li>写直达：信息被同时写到cache的块和存储器层次结构低一层的块（对cache来说是主存）中。</li>
+<li>写回：信息仅仅写到cache的块，被改写的块只有在它被替换时才写回到主存。虚拟存储系统由于写直达所需时钟周期数过大只能使用写回。</li>
+</ol>
+<p>书中列举二者的优点，此处不再赘述。</p>
+<h3 id="3C：一种理解存储器层次结构行为的直观模型"><a href="#3C：一种理解存储器层次结构行为的直观模型" class="headerlink" title="3C：一种理解存储器层次结构行为的直观模型"></a>3C：一种理解存储器层次结构行为的直观模型</h3><p>该模型可以很好的洞察存储器层次结构中引起缺失的原因以及层次结构的变化对缺失的影响。在该模型中，所有的缺失被分为以下三类（3C模型：three Cs model）：</p>
+<ol>
+<li>强制缺失（compulsory miss）：也称为冷启动缺失（cold-start miss），对从没有在cache中出现的块的第一次进行访问引起的缺失。</li>
+<li>容量缺失（capacity miss）：由于cache容纳不了一个程序执行所需要的所有块而引起的cache缺失，当某些块被替换出去，随后再被调入时，将发生容量缺失。</li>
+<li>冲突缺失（conflict miss）：也称为碰撞缺失（collision miss），在组相联或者直接映射的cache中，多个块竞争同一个组时引起的cache缺失。冲突缺失在同样大小的全相联cache中不存在。</li>
+</ol>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.5%E5%90%84%E8%B7%AF%E7%BB%84%E7%9B%B8%E8%81%94.png" alt="图28 各路组相联"></p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.5%E5%9B%BE%E8%AF%B4%E6%98%8E.png" alt="图29 图的说明"></p>
+<p>下图展示了设计的变化对存储器层次结构的正面和负面影响：</p>
+<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter5.8.5%E8%AE%BE%E8%AE%A1%E5%8F%98%E5%8C%96.png" alt="图30 设计变化"></p>
+<h2 id="5-9-使用有限状态机来控制简单的cache"><a href="#5-9-使用有限状态机来控制简单的cache" class="headerlink" title="5.9 使用有限状态机来控制简单的cache"></a>5.9 使用有限状态机来控制简单的cache</h2><p>本节我们讨论如何实现对cache的控制。</p>
+<h3 id="一个简单的cache"><a href="#一个简单的cache" class="headerlink" title="一个简单的cache"></a>一个简单的cache</h3><p>本小结对cache的关键特征进行了罗列，此处略。</p>
+<h3 id="有限状态机"><a href="#有限状态机" class="headerlink" title="有限状态机"></a>有限状态机</h3><p>目前我并不熟悉有限状态机的概念，其细节再附录B中给出。暂略<strong>mark</strong></p>
+<h3 id="一个简单的cache控制器的有限状态机"><a href="#一个简单的cache控制器的有限状态机" class="headerlink" title="一个简单的cache控制器的有限状态机"></a>一个简单的cache控制器的有限状态机</h3><p>暂略<strong>mark</strong></p>
+<h2 id="5-10-并行与存储器层次结构：cache一致性"><a href="#5-10-并行与存储器层次结构：cache一致性" class="headerlink" title="5.10 并行与存储器层次结构：cache一致性"></a>5.10 并行与存储器层次结构：cache一致性</h2><p>多核处理器可能会共享一个公共的地址空间，这意味着多个cache共享数据，这就可能带来cache一致性问题，如下图所示：</p>
+<p><img src="" alt="图31 cache一致性问题"></p>
+<p>一致性的简单定义是：在一个存储器系统中读取任何一个数据项的返回结果总是最近写入的值。但显然应该追求更为准确精细的描述，书中列出了三条满足一致性所需的条件，此处不详述。其关键概念为写串行化，即保证对同一个地址的写操作在所有处理器看来都具有相同的顺序。</p>
+<h3 id="实现一致性的基本方案"><a href="#实现一致性的基本方案" class="headerlink" title="实现一致性的基本方案"></a>实现一致性的基本方案</h3><p>在多处理器系统中，cache通过提供共享数据的迁移和复制来支持一致性：</p>
+<ul>
+<li>迁移：数据项可以移入本地cache并以透明的方式使用。</li>
+<li>复制：当共享数据被同时读取时，cache在本地对数据项作了备份。</li>
+</ul>
+<p>许多多处理器通过引入被称之为cache一致性协议的硬件协议来维护cache一致性，其关键在于跟踪所有共享数据块的状态。最常用的cache协议是监听（snooping）协议。</p>
+<h3 id="监听协议"><a href="#监听协议" class="headerlink" title="监听协议"></a>监听协议</h3><p>实现一致性的一种方法是：在处理器写数据之前，保证该处理能独占地访问该数据项。这种协议称为写无效协议（write invalidate protocol），因为它在执行写操作时令其他副本无效。</p>
+<p>下图展示了一个基于监听总线的写无效协议的例子，其中cache使用写回机制：</p>
+<p><img src="" alt="图32 写无效协议"></p>
+<p>当cache的块较大时，这种协议可能引起假共享（false sharing）：当两个不想管的共享变量存放在相同的cache块中时，尽管每个处理器访问的是不同的变量，但是在处理器之间还是将整个块进行交换。</p>
+<p>关于cache的一致性和连贯性的问题，其实现涉及到极为复杂的考虑和极为严谨的设计，书中也只作了简单介绍，此处略<strong>mark</strong>。</p>
+<h2 id="5-11-并行域存储器层次结构：冗余廉价磁盘阵列"><a href="#5-11-并行域存储器层次结构：冗余廉价磁盘阵列" class="headerlink" title="5.11 并行域存储器层次结构：冗余廉价磁盘阵列"></a>5.11 并行域存储器层次结构：冗余廉价磁盘阵列</h2><p>在配套网站上，讲述了如何采用多块磁盘并行工作来提高吞吐率，其是冗余廉价磁盘阵列（Redundant Arrays of Inexpensive Disks，RAID）产生的灵感所在。</p>
+<h2 id="5-12-高级内容：实现cache控制器"><a href="#5-12-高级内容：实现cache控制器" class="headerlink" title="5.12 高级内容：实现cache控制器"></a>5.12 高级内容：实现cache控制器</h2><p>在配套网站上，介绍了如何实现cache的控制，就如同在第4章中实现对单周期、流水的数据通路的控制一样。本节依次介绍了有限状态机、在简单的cache中实现cache控制器以及用硬件语言描述cache控制器，并展示了cache一致性实现的实例和实现难点。</p>
+<h2 id="5-13-实例：ARM-Cortex-A8-和-Intel-Core-i7的存储器层次结构"><a href="#5-13-实例：ARM-Cortex-A8-和-Intel-Core-i7的存储器层次结构" class="headerlink" title="5.13 实例：ARM Cortex-A8 和 Intel Core i7的存储器层次结构"></a>5.13 实例：ARM Cortex-A8 和 Intel Core i7的存储器层次结构</h2><p>本节讲述了两种微处理器的存储器层次，基于《计算机体系结构：量化研究方法》第五版的2.6节。</p>
+<p>这不是目前学习的重点，暂略<strong>mark</strong>。</p>
+<h2 id="5-14-运行更快：cache分块和矩阵乘法"><a href="#5-14-运行更快：cache分块和矩阵乘法" class="headerlink" title="5.14 运行更快：cache分块和矩阵乘法"></a>5.14 运行更快：cache分块和矩阵乘法</h2><p>本节同样通过矩阵乘法这一经典的实例来说明cache分块对算法性能的改进，暂略<strong>mark</strong>。</p>
+<h2 id="5-15-谬误与陷阱"><a href="#5-15-谬误与陷阱" class="headerlink" title="5.15 谬误与陷阱"></a>5.15 谬误与陷阱</h2><ul>
+<li>陷阱1：在写程序或编译器生成代码时忽略存储系统的行为。</li>
+</ul>
+<p>前面介绍的排序算法和cache分块技术证明考虑存储系统行为可以很容易使得算法性能翻倍。</p>
+<ul>
+<li>陷阱2：在模拟cache的时候，忘记说明字节编址或者cache块大小。</li>
+</ul>
+<p>不说明字节编址或者cache块大小时，我们无法确定某一字节被放置在哪个cache块中。</p>
+<ul>
+<li>陷阱3：对于共享cache，组相联度少于核的数量或者共享该cache的线程数。</li>
+</ul>
+<p>当组相联度过低而不满足上述要求时，可能引发冲突缺失而导致严重的性能缺陷。</p>
+<ul>
+<li>陷阱4：用存储器平均访问时间来评估乱序处理器的存储器层次结构。</li>
+</ul>
+<p>在乱序处理中，当发生cache缺失时，指令继续执行，此时无法通过存储器访问时间来评估存储系统；当然，缺失时阻塞是能够评估的。</p>
+<ul>
+<li>陷阱5：通过在未分段地址空间的顶部增加段来扩展地址空间。</li>
+</ul>
+<p>这是上世纪可能使用的操作，年代久远，暂不理解<strong>mark</strong>。</p>
+<ul>
+<li>谬误1：实际的磁盘故障率和规格书中声明的一致。</li>
+</ul>
+<p>实际上，根据研究评估，实际结果往往比规格书中声明的故障率高出3到6倍。</p>
+<ul>
+<li>谬误2：操作系统是调度磁盘访问的最好地方。</li>
+</ul>
+<p>磁盘调度的读操作比操作系统调度的读操作花费的旋转周期可能更短。</p>
+<ul>
+<li>陷阱6：在不为虚拟化设计的指令集体系结构上实现虚拟机监视器。</li>
+</ul>
+<p>不太懂，<strong>mark</strong>。</p>
+<h2 id="5-16-本章小结"><a href="#5-16-本章小结" class="headerlink" title="5.16 本章小结"></a>5.16 本章小结</h2><p>本章的关键概念是局部性原理和多级cache。为充分发挥存储系统的性能，可以依赖于软件，一方面可以通过重新组织程序结构，另一方面是通过预取在数据块真正被访问之前将其读入cache从而降低缺失率。</p>
+<p>存储器层次结构对系统性能的重要性不断增长，要对其予以重视。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" data-id="ckdhmot220000awwd5s0u71c3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter6从客户端到云的并行处理器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/01/chapter1-5-OS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chapter1-5-OS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E7%94%9F/">人生</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%82%9F/">感悟</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A6%82%E5%BF%B5/">概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E5%88%92/">计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12.5px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 12.5px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 17.5px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.5px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12.5px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12.5px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 15px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/">chapter6从客户端到云的并行处理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter5大容量和高速度：开发存储器层次结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/01/chapter1-5-OS/">chapter1-5-OS</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/">chapter4处理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/">chapter3计算机的算术运算</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Tom89757<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+</body>
+</html>

@@ -7,15 +7,15 @@
   
   <title>计算机科学中几组概念的厘清 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="强类型语言、弱类型语言和静态语言、动态语言： 抽象数据类型、数据类型和数据结构： 进程、线程和协程： 函数、方法、例程和接口： 主存和内存：">
+  <meta name="description" content="强类型语言、弱类型语言和静态语言、动态语言： 抽象数据类型、数据类型和数据结构： 进程、线程和协程： 函数、方法、例程和接口： 主存和内存： 操作系统与虚拟机：  根据维基百科 虚拟机 的定义： 虚拟机（英语：virtual machine），在计算机科学中的体系结构里，是指一种特殊的软件，可以在计算机平台和终端用户之间创建一种环境，而终端用户则是基于虚拟机这个软件所创建的环境来操作其它软件。虚">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机科学中几组概念的厘清">
 <meta property="og:url" content="https://tom89757.github.io/2020/05/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8E%98%E6%B8%85/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
-<meta property="og:description" content="强类型语言、弱类型语言和静态语言、动态语言： 抽象数据类型、数据类型和数据结构： 进程、线程和协程： 函数、方法、例程和接口： 主存和内存：">
+<meta property="og:description" content="强类型语言、弱类型语言和静态语言、动态语言： 抽象数据类型、数据类型和数据结构： 进程、线程和协程： 函数、方法、例程和接口： 主存和内存： 操作系统与虚拟机：  根据维基百科 虚拟机 的定义： 虚拟机（英语：virtual machine），在计算机科学中的体系结构里，是指一种特殊的软件，可以在计算机平台和终端用户之间创建一种环境，而终端用户则是基于虚拟机这个软件所创建的环境来操作其它软件。虚">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-24T11:16:34.000Z">
-<meta property="article:modified_time" content="2020-07-25T03:44:32.539Z">
+<meta property="article:modified_time" content="2020-08-04T14:50:48.667Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="几组概念">
 <meta name="twitter:card" content="summary">
@@ -112,7 +112,28 @@
 <li>进程、线程和协程：</li>
 <li>函数、方法、例程和接口：</li>
 <li>主存和内存：</li>
+<li>操作系统与虚拟机：</li>
 </ol>
+<p>根据维基百科 <a href="https://zh.wikipedia.org/wiki/虛擬機器" target="_blank" rel="noopener">虚拟机</a> 的定义：</p>
+<p>虚拟机（英语：virtual machine），在计算机科学中的体系结构里，是指一种特殊的软件，可以在计算机平台和终端用户之间创建一种环境，而终端用户则是基于虚拟机这个软件所创建的环境来操作其它软件。虚拟机（VM）是计算机系统的仿真器，通过软件模拟具有完整硬件系统功能的、运行在一个完全隔离环境中的完整计算机系统，能提供物理计算机的功能。</p>
+<p>有不同种类的虚拟机，每种虚拟机具有不同的功能：</p>
+<ul>
+<li>系统虚拟机：（也称为全虚拟化虚拟机）可代替物理计算机。它提供了运行整个操作系统所需的功能。虚拟机监视器（hypervisor）共享和管理硬件，从而允许有相互隔离但存在于同一物理机器上的多个环境。现代虚拟机监视器使用虚拟化专用硬件（主要是主机CPU）来进行硬件辅助虚拟化。如VirtualBox、Vmware。</li>
+<li>程序虚拟机 ：被设计用来在与平台无关的环境中执行计算机程序。</li>
+</ul>
+<p>显然，问题问的应该是系统虚拟机与操作系统的关系。</p>
+<p>再看维基百科上 <a href="https://zh.wikipedia.org/wiki/操作系统" target="_blank" rel="noopener">操作系统</a> 的定义：</p>
+<p>操作系统（英语：Operating System，缩写：OS）是一组主管并控制计算机操作、运用和运行硬件、软件资源和提供公共服务来组织用户交互的相互关联的系统软件程序，同时也是计算机系统的内核与基石。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务。操作系统也提供一个让用户与系统交互的操作界面。</p>
+<p>通过对定义的比较，我们不能将二者对等，可以感觉到虚拟机更为抽象，而操作系统更为具体，并且虚拟机通过将硬件系统虚拟化，提供了运行整个操作系统所需的功能。这样看来，虚拟机为操作系统提供了一个系统级环境，它更接近底层。</p>
+<p>但讨论不应该这样结束，上面定义中说虚拟机在计算机平台和终端用户之间创建一种环境，操作系统不也同样如此吗？</p>
+<p>再看一下《计算机组成与设计：硬件/软件接口》中的说法：</p>
+<p>在一个传统的平台上，一个单独的操作系统拥有所有的硬件资源，但是通过使用虚拟机，多个操作系统共享硬件资源。</p>
+<p>这样的话，虚拟机确实是通过模拟完整硬件系统功能来创建环境，使得多个操作系统可以运行在同一个主机（即同一套硬件）上。但讨论同样不应该就此结束，如果一个PC上没有装VirtualBox之类的虚拟机，这种模拟就不存在吗？操作系统难道不是也是通过这样模拟硬件为应用级程序提供环境吗？</p>
+<p>再看一下《操作系统导论》中的说法：</p>
+<p>操作系统主要使用一种称为虚拟化的通用技术，将物理资源（如处理器、内存或硬盘）转换为更通用、更强大且更易于使用的虚拟形式，故我们有时将操作系统称为虚拟机。</p>
+<p>看到这，我真的是一脸懵，它们两个到底啥关系。直到看到《计算机组成与设计：硬件/软件接口》中的这样一段话，才让我稍微厘清了头绪：由于虚拟机只是近期才考虑应用于桌面系统和基于PC的服务器，所以大部分指令集在创建时都没有考虑虚拟化的思想。当然，这里的近期指2012年之前。</p>
+<p>看来，虚拟机是提供一个可以运行完整软件堆（即操作系统）的抽象，它的目标是使得操作系统相互隔离地运行在同一个主机上，虚拟化是它用来实现这一目标的技术；操作系统想要调度主机的硬件资源，同样需要通过虚拟化技术来模拟一个完整的系统，这也是上述《操作系统导论》中也将之称为虚拟机的原因。它们的区别在哪呢？我认为是功能完整性不同，虚拟机可以看作是操作系统的简化版，它只是对物理资源进行了完整模拟，使得（Virtual或VMware上的）操作系统可以基于这些模拟使用物理资源；而操作系统（如Windows 10）则同样通过虚拟化的技术，对物理资源进行更为复杂的调度，前者着重于多个操作系统的隔离运行，后者致力于提供更强大的功能和更好的用户体验。</p>
+<p>目前水平有限，上面讨论确实还不尽人意，欢迎大家讨论指正。</p>
 
       
     </div>
@@ -177,7 +198,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12.5px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 17.5px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.5px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12.5px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12.5px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 15px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12.5px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 12.5px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 17.5px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.5px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12.5px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12.5px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 15px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a>
     </div>
   </div>
 
@@ -186,7 +207,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
     </div>
   </div>
 
@@ -199,23 +220,23 @@
       <ul>
         
           <li>
+            <a href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/">chapter6从客户端到云的并行处理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter5大容量和高速度：开发存储器层次结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/01/chapter1-5-OS/">chapter1-5-OS</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/">chapter4处理器</a>
           </li>
         
           <li>
             <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/">chapter3计算机的算术运算</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/">chapter2指令：计算机的语言</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/">408计算机网络考纲</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/">408操作系统考纲</a>
           </li>
         
       </ul>

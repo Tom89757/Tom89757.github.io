@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-07-31T16:49:45.974Z</updated>
+  <updated>2020-08-05T17:10:34.036Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>chapter4处理器</title>
-    <link href="https://tom89757.github.io/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/"/>
-    <id>https://tom89757.github.io/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/</id>
-    <published>2020-07-29T17:50:13.000Z</published>
-    <updated>2020-07-31T16:49:45.974Z</updated>
+    <title>chapter6从客户端到云的并行处理器</title>
+    <link href="https://tom89757.github.io/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/"/>
+    <id>https://tom89757.github.io/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/</id>
+    <published>2020-08-02T17:18:39.000Z</published>
+    <updated>2020-08-05T17:10:34.036Z</updated>
     
     <summary type="html">
     
@@ -32,6 +32,78 @@
           
         
       
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter5大容量和高速度：开发存储器层次结构</title>
+    <link href="https://tom89757.github.io/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/"/>
+    <id>https://tom89757.github.io/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/</id>
+    <published>2020-08-01T18:25:51.000Z</published>
+    <updated>2020-08-05T17:00:37.034Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;5-1-引言&quot;&gt;&lt;a href=&quot;#5-1-引言&quot; class=&quot;headerlink&quot; title=&quot;5.1 引言&quot;&gt;&lt;/a&gt;5.1 引言&lt;/h2&gt;&lt;p&gt;这一章主要探讨如何帮助程序员构建一个容量无限大的虚拟快速存储器。（在CSAPP中已有专门的一章讲述存储器层次结构，故本章会看得较快）&lt;/p&gt;
+&lt;p&gt;一个好的类比是，就像你不会同时以相同的概率查阅图书馆中的每一本书那样，一个程序也不会同时以相同的概率访问它全部的代码或数据。从中可以归纳出局部性原理，分为时间局部性（temporal locality）和空间局部性（spatial locality）。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter1-5-OS</title>
+    <link href="https://tom89757.github.io/2020/08/01/chapter1-5-OS/"/>
+    <id>https://tom89757.github.io/2020/08/01/chapter1-5-OS/</id>
+    <published>2020-07-31T18:01:14.000Z</published>
+    <updated>2020-08-02T17:59:31.127Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="操作系统" scheme="https://tom89757.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chapter4处理器</title>
+    <link href="https://tom89757.github.io/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/"/>
+    <id>https://tom89757.github.io/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/</id>
+    <published>2020-07-29T17:50:13.000Z</published>
+    <updated>2020-08-02T17:19:50.458Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;4-1-引言&quot;&gt;&lt;a href=&quot;#4-1-引言&quot; class=&quot;headerlink&quot; title=&quot;4.1 引言&quot;&gt;&lt;/a&gt;4.1 引言&lt;/h2&gt;&lt;p&gt;目前为止，第1、2、3章分别讲述了计算机组成概念和性能计算公式、MIPS常见指令和算术操作。本章讲述处理器，其实现方式决定了时钟周期长度和CPI，我们将位MIPS指令集的两种不同实现方式分别建立数据通路和控制单元。&lt;/p&gt;
+&lt;p&gt;处理器本身的复杂意味着不可能剖析每个细节，故我们将从一个高度抽象和简化的概述开始，先建立数据通路，进一步构建简单的处理器实现MIPS这样的指令集，进而可以实现更复杂的指令集x86。&lt;/p&gt;
+&lt;p&gt;本章实际上涵盖面较广，我会选择性的学习。&lt;/p&gt;
     
     </summary>
     
@@ -471,86 +543,6 @@
     
     
       <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter1引论</title>
-    <link href="https://tom89757.github.io/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/"/>
-    <id>https://tom89757.github.io/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/</id>
-    <published>2020-07-11T06:07:31.000Z</published>
-    <updated>2020-07-18T16:36:54.055Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本章将阐述学习本书的目的，简要回顾离散数学和程序设计的概念，具体为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;程序在较大输入时的运行性能和适当输入时的运行性能同等重要。&lt;/li&gt;
-&lt;li&gt;总结学习本书所需要的数学基础。&lt;/li&gt;
-&lt;li&gt;简要复习递归。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter12并发编程</title>
-    <link href="https://tom89757.github.io/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    <id>https://tom89757.github.io/2020/07/09/chapter12%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</id>
-    <published>2020-07-09T07:51:52.000Z</published>
-    <updated>2020-07-18T16:36:54.006Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如第8章所说，如果逻辑控制流在时间上重叠，它们就是并发（concurrency）的。并发出现在计算机系统的不同层次，如Linux信号处理程序、硬件异常处理程序和进程。并发并不限于内核，应用级程序中也大有可为。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;访问慢速I/O设备：等待I/O设备（如磁盘）数据到达时，可以运行其他进程，使CPU保持繁忙。&lt;/li&gt;
-&lt;li&gt;与人交互：如在使用大型带UI的应用程序时进行的多种操作。&lt;/li&gt;
-&lt;li&gt;通过推迟工作降低延迟：如对动态内存分配器来说可以推迟合并，降低单个free操作的延迟。&lt;/li&gt;
-&lt;li&gt;服务多个网络客户端：创建并发服务器，为每个客户端创建单独的逻辑流。&lt;/li&gt;
-&lt;li&gt;在多核机器上进行并行计算：使多个流并行执行，而不是交错执行。&lt;/li&gt;
-&lt;li&gt;进程：每个逻辑控制流都是一个进程，由内核来调度和维护。&lt;/li&gt;
-&lt;li&gt;I/O多路复用：程序是一个单独的进程，程序中所有的复用流共享同一个地址空间。&lt;/li&gt;
-&lt;li&gt;线程：线程是运行在一个单一进程上下文中的逻辑流，由内核进行调度，同时像I/O复用流一样共享一个虚拟地址空间。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本章研究上述三种不同的并发编程技术——进程、I/O多路复用和线程。以一个并发网络服务器作为贯穿全章的应用程序。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter11网络编程</title>
-    <link href="https://tom89757.github.io/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    <id>https://tom89757.github.io/2020/07/07/chapter11%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
-    <published>2020-07-07T11:13:00.000Z</published>
-    <updated>2020-07-18T16:36:53.971Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;所有网络应用基于相同的基本编程模型，有着相似的整体逻辑结构，并且依赖相同的编程接口。&lt;/p&gt;
-&lt;p&gt;前面学习的进程、信号、字节顺序、内存映射以及动态内存分配都会出现，还要理解新概念，理解基本的客户端-服务器编程模型，编写使用因特网提供的服务的客户端-服务器程序。最后将概念结合，开发一个虽小但功能齐全的Web服务器，能在为真实的Web浏览器提供静态和动态的文本和图形内容。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="深入理解计算机系统" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   

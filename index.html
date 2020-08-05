@@ -71,6 +71,158 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chapter6从客户端到云的并行处理器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/" class="article-date">
+  <time datetime="2020-08-02T17:18:39.000Z" itemprop="datePublished">2020-08-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/">chapter6从客户端到云的并行处理器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-引言"><span class="toc-text">6.1 引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-创建并行处理程序的难点"><span class="toc-text">6.2 创建并行处理程序的难点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-SISD、MIMD、SIMD、SPMD和向量机"><span class="toc-text">6.3 SISD、MIMD、SIMD、SPMD和向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在x86中的SIMD：多媒体扩展"><span class="toc-text">在x86中的SIMD：多媒体扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向量机"><span class="toc-text">向量机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向量与标量的对比"><span class="toc-text">向量与标量的对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向量与多媒体扩展的对比"><span class="toc-text">向量与多媒体扩展的对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-硬件与多线程"><span class="toc-text">6.4 硬件与多线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-5-多核和其他共享内存多处理器"><span class="toc-text">6.5 多核和其他共享内存多处理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-6-图形处理单元简介"><span class="toc-text">6.6 图形处理单元简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NVIDIA-GPU-体系结构简介"><span class="toc-text">NVIDIA GPU 体系结构简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NVIDIA-GPU-存储结构"><span class="toc-text">NVIDIA GPU 存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GPU展望"><span class="toc-text">GPU展望</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-7-集群、仓储级计算机和其他消息传递多处理器"><span class="toc-text">6.7 集群、仓储级计算机和其他消息传递多处理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-8-多处理器网络拓扑简介"><span class="toc-text">6.8 多处理器网络拓扑简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-9-与外界通信：集群网络"><span class="toc-text">6.9 与外界通信：集群网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-10-多处理器测试集程序和性能模型"><span class="toc-text">6.10 多处理器测试集程序和性能模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#性能模型"><span class="toc-text">性能模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Roofline-模型"><span class="toc-text">Roofline 模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两代-Opteron-的比较"><span class="toc-text">两代 Opteron 的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-11-实例：评测-Intel-Core-i7-960-和-NVIDIA-Tesla-GPU-的-Roofline-模型"><span class="toc-text">6.11 实例：评测 Intel Core i7 960 和 NVIDIA Tesla GPU 的 Roofline 模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-12-运行更快：多处理器和矩阵乘法"><span class="toc-text">6.12 运行更快：多处理器和矩阵乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-13-谬误与陷阱"><span class="toc-text">6.13 谬误与陷阱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-14-本章小结"><span class="toc-text">6.14 本章小结</span></a></li></ol>
+</div>
+
+
+        <p>本章目前不是学习的重点，暂略<strong>mark</strong>。以下列出目录结构：</p>
+<h2 id="6-1-引言"><a href="#6-1-引言" class="headerlink" title="6.1 引言"></a>6.1 引言</h2><h2 id="6-2-创建并行处理程序的难点"><a href="#6-2-创建并行处理程序的难点" class="headerlink" title="6.2 创建并行处理程序的难点"></a>6.2 创建并行处理程序的难点</h2><h2 id="6-3-SISD、MIMD、SIMD、SPMD和向量机"><a href="#6-3-SISD、MIMD、SIMD、SPMD和向量机" class="headerlink" title="6.3 SISD、MIMD、SIMD、SPMD和向量机"></a>6.3 SISD、MIMD、SIMD、SPMD和向量机</h2><h3 id="在x86中的SIMD：多媒体扩展"><a href="#在x86中的SIMD：多媒体扩展" class="headerlink" title="在x86中的SIMD：多媒体扩展"></a>在x86中的SIMD：多媒体扩展</h3><h3 id="向量机"><a href="#向量机" class="headerlink" title="向量机"></a>向量机</h3><h3 id="向量与标量的对比"><a href="#向量与标量的对比" class="headerlink" title="向量与标量的对比"></a>向量与标量的对比</h3><h3 id="向量与多媒体扩展的对比"><a href="#向量与多媒体扩展的对比" class="headerlink" title="向量与多媒体扩展的对比"></a>向量与多媒体扩展的对比</h3><h2 id="6-4-硬件与多线程"><a href="#6-4-硬件与多线程" class="headerlink" title="6.4 硬件与多线程"></a>6.4 硬件与多线程</h2><h2 id="6-5-多核和其他共享内存多处理器"><a href="#6-5-多核和其他共享内存多处理器" class="headerlink" title="6.5 多核和其他共享内存多处理器"></a>6.5 多核和其他共享内存多处理器</h2><h2 id="6-6-图形处理单元简介"><a href="#6-6-图形处理单元简介" class="headerlink" title="6.6 图形处理单元简介"></a>6.6 图形处理单元简介</h2><h3 id="NVIDIA-GPU-体系结构简介"><a href="#NVIDIA-GPU-体系结构简介" class="headerlink" title="NVIDIA GPU 体系结构简介"></a>NVIDIA GPU 体系结构简介</h3><h3 id="NVIDIA-GPU-存储结构"><a href="#NVIDIA-GPU-存储结构" class="headerlink" title="NVIDIA GPU 存储结构"></a>NVIDIA GPU 存储结构</h3><h3 id="GPU展望"><a href="#GPU展望" class="headerlink" title="GPU展望"></a>GPU展望</h3><h2 id="6-7-集群、仓储级计算机和其他消息传递多处理器"><a href="#6-7-集群、仓储级计算机和其他消息传递多处理器" class="headerlink" title="6.7 集群、仓储级计算机和其他消息传递多处理器"></a>6.7 集群、仓储级计算机和其他消息传递多处理器</h2><h2 id="6-8-多处理器网络拓扑简介"><a href="#6-8-多处理器网络拓扑简介" class="headerlink" title="6.8 多处理器网络拓扑简介"></a>6.8 多处理器网络拓扑简介</h2><h2 id="6-9-与外界通信：集群网络"><a href="#6-9-与外界通信：集群网络" class="headerlink" title="6.9 与外界通信：集群网络"></a>6.9 与外界通信：集群网络</h2><h2 id="6-10-多处理器测试集程序和性能模型"><a href="#6-10-多处理器测试集程序和性能模型" class="headerlink" title="6.10 多处理器测试集程序和性能模型"></a>6.10 多处理器测试集程序和性能模型</h2><h3 id="性能模型"><a href="#性能模型" class="headerlink" title="性能模型"></a>性能模型</h3><h3 id="Roofline-模型"><a href="#Roofline-模型" class="headerlink" title="Roofline 模型"></a>Roofline 模型</h3><h3 id="两代-Opteron-的比较"><a href="#两代-Opteron-的比较" class="headerlink" title="两代 Opteron 的比较"></a>两代 Opteron 的比较</h3><h2 id="6-11-实例：评测-Intel-Core-i7-960-和-NVIDIA-Tesla-GPU-的-Roofline-模型"><a href="#6-11-实例：评测-Intel-Core-i7-960-和-NVIDIA-Tesla-GPU-的-Roofline-模型" class="headerlink" title="6.11 实例：评测 Intel Core i7 960 和 NVIDIA Tesla GPU 的 Roofline 模型"></a>6.11 实例：评测 Intel Core i7 960 和 NVIDIA Tesla GPU 的 Roofline 模型</h2><h2 id="6-12-运行更快：多处理器和矩阵乘法"><a href="#6-12-运行更快：多处理器和矩阵乘法" class="headerlink" title="6.12 运行更快：多处理器和矩阵乘法"></a>6.12 运行更快：多处理器和矩阵乘法</h2><h2 id="6-13-谬误与陷阱"><a href="#6-13-谬误与陷阱" class="headerlink" title="6.13 谬误与陷阱"></a>6.13 谬误与陷阱</h2><h2 id="6-14-本章小结"><a href="#6-14-本章小结" class="headerlink" title="6.14 本章小结"></a>6.14 本章小结</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/" data-id="ckdhmot7g0001awwddzmsfem2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-chapter5大容量和高速度：开发存储器层次结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="article-date">
+  <time datetime="2020-08-01T18:25:51.000Z" itemprop="datePublished">2020-08-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter5大容量和高速度：开发存储器层次结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="5-1-引言"><a href="#5-1-引言" class="headerlink" title="5.1 引言"></a>5.1 引言</h2><p>这一章主要探讨如何帮助程序员构建一个容量无限大的虚拟快速存储器。（在CSAPP中已有专门的一章讲述存储器层次结构，故本章会看得较快）</p>
+<p>一个好的类比是，就像你不会同时以相同的概率查阅图书馆中的每一本书那样，一个程序也不会同时以相同的概率访问它全部的代码或数据。从中可以归纳出局部性原理，分为时间局部性（temporal locality）和空间局部性（spatial locality）。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" data-id="ckdhmot220000awwd5s0u71c3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-chapter1-5-OS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/01/chapter1-5-OS/" class="article-date">
+  <time datetime="2020-07-31T18:01:14.000Z" itemprop="datePublished">2020-08-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/01/chapter1-5-OS/">chapter1-5-OS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章-关于本章的对话"><span class="toc-text">第1章 关于本章的对话</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第2章-操作系统介绍"><span class="toc-text">第2章 操作系统介绍</span></a></li></ol>
+</div>
+
+
+        <h1 id="第1章-关于本章的对话"><a href="#第1章-关于本章的对话" class="headerlink" title="第1章 关于本章的对话"></a>第1章 关于本章的对话</h1><p>本书的灵感来源于理查德·费曼先生的物理学讲义，其讲义分为六个部分——力学、光学、电磁辐射和热力学、电磁学、热动力学、量子力学；操作系统的难度大概是物理学的一半，而本书贯穿始终的为三个概念——虚拟化（virtualization）、并发（concurrency）和持久性（persistence），正好也为6个的一半，有趣。</p>
+<h1 id="第2章-操作系统介绍"><a href="#第2章-操作系统介绍" class="headerlink" title="第2章 操作系统介绍"></a>第2章 操作系统介绍</h1><p>按照冯诺依曼计算机模型，在指令执行时，会发生取指、译码、运算、访存、写回等步骤，完成后继续执行下一条指令。</p>
+<p>而操作系统的存在使得程序运行变得更为容易，它允许程序共享内容，让程序能够与设备交互，以及其他类似的有趣的工作，构成操作系统的一类软件负责确保系统既易于使用又正确高效地执行。</p>
+<p>为实现操作系统的目的，主要使用一种通用的技术——虚拟化，具体来说，操作系统将物理资源（处理器、内存或磁盘）转换为更通用、更强大且更易于使用的虚拟形式，故操作系统有时也称为虚拟机。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/08/01/chapter1-5-OS/" data-id="ckdhmot7l0006awwd9vm89khw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-chapter4处理器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/" class="article-date">
@@ -97,63 +249,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-引言"><span class="toc-text">4.1 引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一个基本的MIPS实现"><span class="toc-text">一个基本的MIPS实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-逻辑设计的一般方法"><span class="toc-text">4.2 逻辑设计的一般方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-建立数据通路"><span class="toc-text">4.3 建立数据通路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个简单的数据通路"><span class="toc-text">创建一个简单的数据通路</span></a></li></ol></li></ol>
-</div>
-
-
         <h2 id="4-1-引言"><a href="#4-1-引言" class="headerlink" title="4.1 引言"></a>4.1 引言</h2><p>目前为止，第1、2、3章分别讲述了计算机组成概念和性能计算公式、MIPS常见指令和算术操作。本章讲述处理器，其实现方式决定了时钟周期长度和CPI，我们将位MIPS指令集的两种不同实现方式分别建立数据通路和控制单元。</p>
 <p>处理器本身的复杂意味着不可能剖析每个细节，故我们将从一个高度抽象和简化的概述开始，先建立数据通路，进一步构建简单的处理器实现MIPS这样的指令集，进而可以实现更复杂的指令集x86。</p>
 <p>本章实际上涵盖面较广，我会选择性的学习。</p>
-<h3 id="一个基本的MIPS实现"><a href="#一个基本的MIPS实现" class="headerlink" title="一个基本的MIPS实现"></a>一个基本的MIPS实现</h3><p>首先实现MIPS指令集的一个核心子集：</p>
-<ul>
-<li>存储器访问指令：lw和sw。</li>
-<li>算术逻辑指令：add、sub、AND、OR和slt。</li>
-<li>分支指令：beq和j。</li>
-</ul>
-<p>该子集可以说明建立在数据通路和控制单元时的关键原理，并可以在此基础上实现其他指令。</p>
-<p>这些指令的实现过程大致相同，而与具体的指令类型无关，实现每条指令的前两步为：</p>
-<ol>
-<li>程序计数器PC指向指令所在的存储单元，并从中去除指令。</li>
-<li>通过指令字段内容，选择读取一个或两个寄存器。</li>
-</ol>
-<p>对上述三种类型的指令来说，后续的步骤大致相同，这也体现了MIPS指令集的规整性。除跳转指令外，其他的指令都会通过ALU计算地址、执行运算或者进行比较，之后则根据ALU处理结果来读取或存储数据、改变下一条指令地址（默认为PC+4）。</p>
-<p>下图展示了MIPS实现的抽象视图：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter4.1MIPS%E5%AD%90%E9%9B%86%E5%AE%9E%E7%8E%B0.png" alt="图1 MIPS子集实现"></p>
-<p>该图忽视了指令执行过程中的两个重要方面：</p>
-<ol>
-<li>在许多位置，某个单元的数据可能来自两个不同的单元。故需要一个称为多选器的逻辑单元来选择数据。附录中描述了多选器根据控制信号选择不同输入的过程，控制信号主要由当前执行指令中包含的信息决定。</li>
-<li>许多单元的控制依赖于当前执行指令的类型。ALU根据不同的指令执行不同的操作，这些操作由控制信号确定。</li>
-</ol>
-<p>下图在上图的基础上增加了三个必需的多选器和主要功能单元的控制信号。还增加了一个控制单元，其以指令为输入，决定功能单元和两个多选器的控制信号。</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter4.1%E6%94%B9%E8%BF%9B%E7%89%88.png" alt="图2 改进版"></p>
-<h2 id="4-2-逻辑设计的一般方法"><a href="#4-2-逻辑设计的一般方法" class="headerlink" title="4.2 逻辑设计的一般方法"></a>4.2 逻辑设计的一般方法</h2><p>在考虑计算机的设计时，必须决定及其的逻辑实现以及机器时钟。MIPS实现中的数据通路功能部件包括两种不同的逻辑单元：</p>
-<ul>
-<li>组合单元：一个操作单元，用于处理数据值，如与门或ALU。</li>
-<li>状态单元：一个存储单元，用于存储状态，如寄存器或存储器。</li>
-</ul>
-<p>组合单元都用于处理数据值，其输出只取决于输入；状态单元则带有内部存储功能，关机后重启计算机状态单元中的值可回复，指令存储器、寄存器以及数据存储器等都是状态单元，一个状态单元至少有两个输入（待写入数据值和何时写入的时钟信号）和一个输出（已写入数据值）。</p>
-<p>书中给出了时钟方法的概念，它规定了信号可以读出和写入的事件；进而给出了边沿触发的时钟方法的概念，用于简化后续描述。根据上述概念，可以将组合单元理解为状态单元的中间站，数据在组合单元中逗留、运算，却始终只在存储单元中保存。下图展示了组合逻辑（组合单元）、状态单元和时钟周期的关系（所有信号在一个时钟周期内从状态单元1到状态单元2）：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter4.2%E5%85%B3%E7%B3%BB.png" alt="图3 关系"></p>
-<p>书中给出了控制信号和数据信号、有效和无效等概念，其中有效表示信号为逻辑高，无效表示信号为逻辑低。下图展示了一种边沿触发方法：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter4.2%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91.png" alt="图4 一种边沿触发方法"></p>
-<p>在接下来的图示中，粗线表示总线（宽度为1位以上），多根总线合起来构成更宽的总线，虚线和实线分别表示跨之信号和数据信号。</p>
-<h2 id="4-3-建立数据通路"><a href="#4-3-建立数据通路" class="headerlink" title="4.3 建立数据通路"></a>4.3 建立数据通路</h2><p>首先分析每条指令需要哪些数据通路部件（及对应的控制信号）。下图分别展示了指令存储器、程序计数器和加法器：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter4.3%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E9%83%A8%E4%BB%B6.png" alt="图5 数据通路部件"></p>
-<p>先讨论R型指令，这类指令读两个寄存器，对它们的内容进行ALU操作，再返回结果，其包括add、sub、AND、OR和slt指令。R型指令有3个寄存器操作数，一共需要4个输入（3个寄存器号和1个数据）和两个输出（2个数据）。下图分别展示了寄存器堆和ALU：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter4.3%E5%AF%84%E5%AD%98%E5%99%A8%E5%A0%86%E5%92%8CALU.png" alt="图6 寄存器堆和ALU"></p>
-<p>再考虑MIPS的存取指令，值得注意的是16位的地址偏移量需要进行符号扩展。最后考虑beq指令，其指令格式为：<code>beq $t1, $t2, offset</code>，其核心在于计算分支目标地址和通过比较操作数确定是否执行分支目标地址处的指令（本章仅实现非延迟的分支，即分支后的那条指令不总被执行）。下图展示了一个数据存储器单元和一个符号扩展单元：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter4.3%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%99%A8%E5%8D%95%E5%85%83%E5%92%8C%E7%AC%A6%E5%8F%B7%E6%89%A9%E5%B1%95%E5%8D%95%E5%85%83.png" alt="图7 单元"></p>
-<p>下图则展示了分支数据通路：</p>
-<p><img src="" alt="图8 分支数据通路"></p>
-<h3 id="创建一个简单的数据通路"><a href="#创建一个简单的数据通路" class="headerlink" title="创建一个简单的数据通路"></a>创建一个简单的数据通路</h3><p>我们可以把已经学习过的数据通路单元连在一起并加上控制来完成一个简单的MIPS子集实现方案，每个时钟周期执行一条完整的指令，这意味着每条指令执行过程中任何数据通路单元都只能被用一次，如果需要使用多次需要复制。</p>
-<p>由于R型指令和访存指令的相似性，可以将二者合并，下图为访存指令和R型指令数据通路的合并：</p>
-<p><img src="" alt="图9 访存指令和R型指令"></p>
-<p>再加上之前的取指数据通路，分支数据通路，可以合并建立一个简单的MIPS体系结构数据通路，如下图所示：</p>
-<p><img src="" alt="图10 核心MIPS数据通路"></p>
-<p>在上述数据通路的基础上，可以加上控制单元，控制单元必须能够接收输入，产生每个状态单元的写信号、每个多选器的选择信号和ALU的控制信号。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -489,241 +592,6 @@
 
 
   
-    <article id="post-chapter10算法设计技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/23/chapter10%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7/" class="article-date">
-  <time datetime="2020-07-22T18:20:05.000Z" itemprop="datePublished">2020-07-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/chapter10%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7/">chapter10算法设计技巧</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-贪婪算法"><span class="toc-text">10.1 贪婪算法</span></a></li></ol>
-</div>
-
-
-        <p>迄今，我们已经涉及一些算法的有效实现。当一个算法给定时，实际的数据结构无须指定，需要编程人员选择适当的数据结构。</p>
-<p>本章将视角从算法的实现转向算法的设计。目前为止，我们看到的算法大多简单直接，第9章中一些算法较为深奥。本章我们将几种讨论用于求解问题的五种常用类型的算法，面对许多问题时它们中的一种可能有效。我们将：</p>
-<ol>
-<li>看到一般的处理方法。</li>
-<li>考察几个例子。</li>
-<li>在适当的地方概括地讨论时间和空间复杂性。</li>
-</ol>
-<h2 id="10-1-贪婪算法"><a href="#10-1-贪婪算法" class="headerlink" title="10.1 贪婪算法"></a>10.1 贪婪算法</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/23/chapter10%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7/" data-id="ckd1x4h1m0011scwdajx55dxz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter1计算机概要和技术" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A6%81%E5%92%8C%E6%8A%80%E6%9C%AF/" class="article-date">
-  <time datetime="2020-07-22T17:02:06.000Z" itemprop="datePublished">2020-07-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A6%81%E5%92%8C%E6%8A%80%E6%9C%AF/">chapter1计算机概要和技术</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-1-引言"><a href="#1-1-引言" class="headerlink" title="1.1 引言"></a>1.1 引言</h2><p>随着计算机科学的发展，现在已经出现了科学探索的新方式，即计算机科学家联合理论和实验科学家，共同探索天文学、生物学、化学和物理学的前沿问题。</p>
-<p>随着计算机革命进行，车载计算机、收集、人类基因项目、万维网、搜索引擎等过去幻想的事物映射到了现实。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A6%81%E5%92%8C%E6%8A%80%E6%9C%AF/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A6%81%E5%92%8C%E6%8A%80%E6%9C%AF/" data-id="ckd1x4h1d000kscwdbsbaf77g" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter9图论算法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/" class="article-date">
-  <time datetime="2020-07-21T16:52:35.000Z" itemprop="datePublished">2020-07-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/">chapter9图论算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      	
-<div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-若干定义"><span class="toc-text">9.1 若干定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图的表示"><span class="toc-text">图的表示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-拓扑排序"><span class="toc-text">9.2 拓扑排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-3-最短路径算法"><span class="toc-text">9.3 最短路径算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无权最短路径"><span class="toc-text">无权最短路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra算法"><span class="toc-text">Dijkstra算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具有负值边的图"><span class="toc-text">具有负值边的图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无圈图"><span class="toc-text">无圈图</span></a></li></ol></li></ol>
-</div>
-
-
-        <p>本章中，讨论图论中几个一般的问题：</p>
-<ol>
-<li>介绍几个现实生活中发生的问题，它们可以转化为图论问题。</li>
-<li>给出一些算法以解决几个普通的图论问题。</li>
-<li>适当选择数据结构可以极大地降低算法的运行时间。</li>
-<li>介绍一个称为深度优先搜索的重要技巧，并指出他如何能够以线性时间求解若干表面上非平凡的问题。</li>
-</ol>
-<h2 id="9-1-若干定义"><a href="#9-1-若干定义" class="headerlink" title="9.1 若干定义"></a>9.1 若干定义</h2><p>一个图$G=(V, E)$由顶点集$V$和边集$E$组成，每条边就是一个点对$(v, w)$，根据点对有序或无序分为有向图和无向图，有时边还具有第三种成分，称作权或者值。</p>
-<p>路径是一个顶点序列$w<em>1, w_2, …, w_N$使得$(w_i, w</em>{i+1}) \in E$；路径不包含顶点时，其长度为0。图含有一条从一个顶点到它自身的边$(v,v)$，路径$v, v$有时称作一个环。简单路径则是指该路径上的所有顶点互异（第一个和最后一个顶点可能相同）。</p>
-<p>有向图中的圈是满足$w_1=w_N$且长至少为1的一条路径，该路径为简单路径，则该圈为简单圈；对无向图，边应该是互异的，如路径$v, u, v$并不构成圈，因为边$(v,u)$和$(u,v)$相同。无圈的有向图简称为DAG。</p>
-<p>接下来是连通的概念，在一个无向图中从每个顶点到每个其它顶点都存在一条路径时，则称该无向图是连通的。若一个有向图具有这样的性质，称之为强连通；若有向图去掉方向后形成的图（基础图）是连通的，则称该有向图为弱连通的。完全图是每一对顶点间都存在一条边的图。</p>
-<p>总结一下，上面依次提到了“<strong>图/顶点/边/有向图/无向图、路径/环/简单路径、圈/简单圈/DAG（无圈有向图）、连通/强连通/基础图/弱连通/完全图</strong>”等概念。</p>
-<ul>
-<li>现实中航空系统可以用图进行模拟。我们期望该系统抽象成的图是强连通的，我们想要求解的问题是：能够迅速确定两个机场之间的最佳航线，“最佳”可以是最短路径，也可以是最小权重。</li>
-<li>同样交通流也可以使用图来模型化，我们期望找到最短路或者交通瓶颈最可能的位置。</li>
-</ul>
-<p>由于使用图来表示的模型可能非常巨大，所以使用的算法效率十分重要。</p>
-<h3 id="图的表示"><a href="#图的表示" class="headerlink" title="图的表示"></a>图的表示</h3><p>下面考虑有向图的表示方法（无向图类似），因为现实中大多数为有向图结构。</p>
-<ul>
-<li>一种简单的方法是使用称之为邻接矩阵的二维数组。优点是简单，缺点则是空间需求为$\Theta(|V|^2)$。当图是稠密的，$|E| = \Theta(|V|^2)$，使用它是好的选择；但大多情况下并非如此，当顶点数达到一定程度时，显然满足图稠密是不可能的。</li>
-<li>图是稀疏的，应当使用邻接表。对每个顶点，使用一个表存放所有邻接的顶点。此时空间需求为$O(|E|+|V|)$。</li>
-</ul>
-<p>邻接表是表示图的标准方法（无向图中每条边出现在两个表中，使用双倍空间）。在图论算法中通常需要找出某个给定顶点邻接的所有顶点，这可以通过简单的扫描邻接表来完成。</p>
-<p>现实中顶点的名字不是数字，故需要建立从名字到数字的映射，最容易的方法是散列表。在该散列表中我们对每个顶点存储一个名字以及一个范围在1到$|V|$之间的内部编号，编号在读入图的时候指定，输入每条边时，检查是否两个顶点均在散列表中，若没有，则分配下一个可用的编号给该顶点并将名字和对应编号插入散列表。</p>
-<p>变换后我们使用顶点编号进行算法操作，但输出时需要输出顶点名，故还需要对每个内部编号记录相应的顶点名，这意味着顶点名需要被记录两次，当顶点名过大时，需要花费大量的空间。书中给出了两种方式：使用字符串数组（顶点名过大时消耗大量空间）和使用指向散列表内的指针数组（使得散列表的元素不是通过基本的散列表操作访问）。本章尽可能使用ADT的伪代码，使算法更清晰。</p>
-<h2 id="9-2-拓扑排序"><a href="#9-2-拓扑排序" class="headerlink" title="9.2 拓扑排序"></a>9.2 拓扑排序</h2><p>对有向无圈图的一种排序，使得如果存在一条从$v_i$到$v_j$的路径，在排序中$v_j$出现在$v_i$的后面。下图为表示课程街斗的无圈图：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E8%AF%BE%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E6%97%A0%E5%9C%88%E5%9B%BE.png" alt="图1 课程结构"></p>
-<p>显然图含有圈时，拓扑排序是不可能的；此外，排序并不唯一。</p>
-<p>一个简单的求拓扑排序的算法的描述时：先找出任意一个没有进入边的顶点，然后打印出该顶点，并将它和它的边一起从图中删除，对其它的边作相同处理。为方便描述，引入入度（和出度）的概念，以下是拓扑排序伪代码（初始图读入邻接表中）：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E7%AE%80%E5%8D%95%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png" alt="图2 简单的拓扑排序伪代码"></p>
-<p>找入度为0的顶点的操作为顺序扫描，该算法的运行时间为$O(|V|^2)$，运行时间里包含了很多重复劳动；我们可以通过将所有（未分配拓扑编号）的入度为0的顶点放在一个特殊的盒子中来消除无效劳动。</p>
-<p>我们使用一个初始为空的队列来存放所有入度为0的顶点，然后通过删除顶点让新的顶点入队，拓扑排序就是顶点出队的顺序。</p>
-<p>下面展示了一个对上述无圈图（初始图读入邻接表中）应用拓扑排序的结果以及拓扑排序的伪代码：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C.png" alt="图3 拓扑排序结果"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png" alt="图4 拓扑排序伪代码"></p>
-<p>显然for循环体对每条边最多执行一次，队列操作对每个顶点最多执行一次，初始化各步花费的时间也与图的大小成正比，故执行该算法所用时间为$O(|E| + |V|)$。</p>
-<h2 id="9-3-最短路径算法"><a href="#9-3-最短路径算法" class="headerlink" title="9.3 最短路径算法"></a>9.3 最短路径算法</h2><p>输入是一个赋权图：与每条边$(v<em>i, v_j)$相关联的是穿越该弧的代价（权值）$c</em>{i,j}$。一条路径$v<em>1v_2…v_n$的赋权路径长为$\sum</em>{i=1}^{N-1}c_{i,j}$，无权路径长为n-1。</p>
-<p><strong>单源最短路径问题</strong></p>
-<p>给定一个赋权图G=(V, E)和一个特定顶点s作为输入，找出从s到G中每一个其它顶点的最短赋权路径。下图展示了两个带权值的有向图：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3%E5%B8%A6%E6%9D%83%E6%9C%89%E5%90%91%E5%9B%BE.png" alt="图5 带权有向图"></p>
-<p>当一条路径中出现负值圈时，该路径的最短路径是不确定的，因为可以进行多次负值圈循环。为方便起见，无负值圈时，从s到s的最短路径为0。</p>
-<p>最短路径应用广泛，在计算机的通信、运输路线的规划等方面有重要应用。虽然我们期望找出从一个顶点s到另一个顶点t的最短路径，但是目前所开发的算法，找出从s到所有顶点的路径比找出从s到特定顶点的路径所需的时间反而更短。下面将考察求解该问题的4种形态的算法：</p>
-<ul>
-<li>无权最短路径以及如何在$O(|E|+|V|)$时间解决它</li>
-<li>如果没有负边，如何求解赋权最短路径问题，其运行时间为$O(|E|\log |V|)$。</li>
-<li>图有负边时，提供一个简单算法，时间界为$O(|E|·|V|)$。</li>
-<li>线性时间解决特殊情形的赋权无圈图的最短路径问题。</li>
-</ul>
-<h3 id="无权最短路径"><a href="#无权最短路径" class="headerlink" title="无权最短路径"></a>无权最短路径</h3><p>我们求解下面无权图的最短路径问题。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%97%A0%E6%9D%83%E5%9B%BEG.png" alt="图6 无权图G"></p>
-<p>暂时我们只考虑最短路径的长而不是具体路径，依次寻找从特定顶点s（假设为$v_3$）出发距离为0、1、2、3的顶点，此时所有顶点均被计算，算法结束。下图展示了算法的最终结果：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84.png" alt="图7 最短路径最终结果"></p>
-<p>上述算法称为广度优先搜索（breadth-first search）：其按层处理顶点，距开始顶点最近的顶点首先被赋值，最远的顶点则最后被赋值，类似于树的层序遍历。下图展示了用于记录该过程的表的初始配置，其中Known中的项在顶点被处理后置为1；$d_v$表示开始顶点到该顶点的距离；$p_v$中表示引起$d_v$变化的最后的顶点。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE.png" alt="图8 表的初始配置"></p>
-<p>下图展示了无权最短路径算法的伪代码</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图9 伪代码"></p>
-<p>通过追溯$p_v$变量，可以打印实际路径，后续会描述具体实现。双层循环使得该算法为$O(|V|^2)$，其低效在于当所有顶点变为Known状态时，外层循环仍然继续。虽然可通过附加测试避免其发生，但是最坏情形的出现仍无法避免。如将从顶点$v_9$开始的下图作为输入时：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E5%9D%8F%E6%83%85%E5%BD%A2.png" alt="图10 坏情形"></p>
-<p>上述算法的低效同样在于大量的重复劳动，这可以通过类似于拓扑排序的优化方法来排除其低效性。在任意时刻，只存在两种类型的位置顶点，它们的$d_v$分别为$CurrDist$和$CurrDist + 1$，可以将两种顶点分别装在两个盒子中。该想法可以使用队列进行具体实现，以下为对应伪代码：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E4%BC%98%E5%8C%96%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图11 优化后伪代码"></p>
-<p>我们看到，使用邻接表的情况下，运行时间为$O(|E|+|V|)$：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%95%B0%E6%8D%AE%E5%8F%98%E5%8C%96.png" alt="图12 算法运行时数据变化"></p>
-<h3 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h3><p>图是赋权图时，问题显著变得困难，但仍然延续无权图的思路，保留所有与前面相同的信息，Known/$d_v$/$p_v$。我们使用的算法为Dijkstra算法，这个30年的算法时贪婪算法最好的例子。贪婪算法的核心在于：分阶段求解问题，在每个阶段都把出现的当作最好的去处理；其问题在于：该算法不总成功。</p>
-<p>Dijkstra算法按阶段进行，在每个阶段，Dijkstra算法选择一个顶点v，它在所有未知顶点中具有最小的$d<em>v$，同时算法声明从s到v的最短路径时已知的，阶段的其余部分由$d_v$值的更新工作组成，当$d_v$的新值$d_v+c</em>{v,w}$是一个改进的值时我们就置$d<em>w=d_v+c</em>{v,w}$。下图展示了有向图G、表的初始配置和过程中表的变化：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E5%9B%BE%E5%92%8C%E8%A1%A8.png" alt="图13 图和表"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E8%A1%A8%E5%8F%98%E5%8C%96%E8%BF%87%E7%A8%8B.png" alt="图14 表变化过程"></p>
-<p>下图展示了Dijkstra算法的各个阶段（图示显示了$d_v$和Known）：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5.png" alt="图15 各个阶段"></p>
-<p>下面则展示了该算法的声明、表初始化例程和主要算法例程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E7%AE%97%E6%B3%95%E5%A3%B0%E6%98%8E.png" alt="图16 算法声明"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E4%BE%8B%E7%A8%8B.png" alt="图17 例程"></p>
-<p>反证法可以证明，只要边没有负值，该算法总能顺利完成，有边出现负值时算法可能得出错误答案。书中对图是稠密和稀疏两种情况作了具体讨论，使用扫描表找出最小值$d_v$时：当图是稠密的，算法总的运行时间$O(|E|+|V|^2)=O(|V|^2)$，基本上最优，其与边数呈线性关系；当图是稀疏的，算法运行时间是边数的2次幂，这难以让人接收。</p>
-<p>对图是稀疏的情况，需要将距离存储在优先队列中，其思路类似于无权图算法的改进，但更复杂一些。（书中给出了两种方法，<strong>看不太懂，mark</strong>）</p>
-<h3 id="具有负值边的图"><a href="#具有负值边的图" class="headerlink" title="具有负值边的图"></a>具有负值边的图</h3><p>图具有负值的边时，Dijkstra算法行不通，当一个顶点u被声明为已知的，如果存在从某个另外的未知顶点v回到u的负的路径，从s到u的路径却不会更新。一个诱人的方案是将一个常数$\Delta$加到每条边的值上，但其直接实现行不通，因为当一条路径的边数较多时，总路径长度增加也更多。</p>
-<p>将赋权的和无权的算法结合起来将会解决这个问题，但是要付出运行时间激烈增长的代价，其精髓在于：不使用关于未知和已知的顶点的概念，即不记录顶点的Known状态。下图为对应伪代码：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.3%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图18 伪代码"></p>
-<p>当没有负值圈时，该算法能够正常运行，但是第6~10行的代码可能不只执行一次，每个顶点最多可以出队|V|次，使用邻接表时运行时间为$O(|E|·|V|)$，比Dijkstra算法慢很多，幸好现实中绝大多数无负值边；当有负值圈时，算法将无限循环，可以通过在任意顶点出队$|V|+1$次后中值算法运行，保证其终止。</p>
-<h3 id="无圈图"><a href="#无圈图" class="headerlink" title="无圈图"></a>无圈图</h3><p>如果知道图是无圈的，可以通过改变声明顶点为已知顺序（顶点选取法则），来改进Dijkstra算法。新法则以拓扑顺序选择顶点，由于选择和更新可以在拓扑排序执行的时候进行，因此算法可以一趟完成。使用该法则不需要使用优先队列，算法运行时间为$O(|E|+|V|)$。</p>
-<p>无圈图可以模拟某种下坡滑雪问题，因为只能走下坡，所以不可能有圈；另一种应用是不可逆化学反应模型，用顶点代表物质状态，用边代表状态转变，边的权代表释放能量，如果只能从高能状态转变到低能状态，则图是无圈的。</p>
-<p>无圈图更重要的应用是关键路径分析法，此处引出动作节点图的概念，动作意味着不可逆，每个节点表示必须执行的动作以及完成动作所花费的时间，我们假设互相不依赖的动作可以由不同的服务器并行执行。如下图：</p>
-<p><img src="" alt="图19 动作节点图"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/" data-id="ckd1x4h2c0024scwdbd1c46qq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -759,7 +627,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12.5px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 17.5px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.5px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12.5px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12.5px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 15px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12.5px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 12.5px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 17.5px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.5px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12.5px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12.5px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 15px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a>
     </div>
   </div>
 
@@ -768,7 +636,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
     </div>
   </div>
 
@@ -781,23 +649,23 @@
       <ul>
         
           <li>
+            <a href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/">chapter6从客户端到云的并行处理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter5大容量和高速度：开发存储器层次结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/01/chapter1-5-OS/">chapter1-5-OS</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/">chapter4处理器</a>
           </li>
         
           <li>
             <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/">chapter3计算机的算术运算</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/">chapter2指令：计算机的语言</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/">408计算机网络考纲</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/">408操作系统考纲</a>
           </li>
         
       </ul>
