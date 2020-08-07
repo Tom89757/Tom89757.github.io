@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-08-05T17:10:34.036Z</updated>
+  <updated>2020-08-07T05:28:01.037Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chapter1引论</title>
+    <link href="https://tom89757.github.io/2020/08/07/chapter1%E5%BC%95%E8%AE%BA-1/"/>
+    <id>https://tom89757.github.io/2020/08/07/chapter1%E5%BC%95%E8%AE%BA-1/</id>
+    <published>2020-08-07T05:26:02.000Z</published>
+    <updated>2020-08-07T05:28:01.037Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="操作系统" scheme="https://tom89757.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>chapter6从客户端到云的并行处理器</title>
@@ -70,7 +89,7 @@
     <link href="https://tom89757.github.io/2020/08/01/chapter1-5-OS/"/>
     <id>https://tom89757.github.io/2020/08/01/chapter1-5-OS/</id>
     <published>2020-07-31T18:01:14.000Z</published>
-    <updated>2020-08-02T17:59:31.127Z</updated>
+    <updated>2020-08-07T05:24:48.197Z</updated>
     
     <summary type="html">
     
@@ -508,33 +527,6 @@
 &lt;li&gt;介绍队列ADT及其在操作系统和算法设计中的应用。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter2算法分析</title>
-    <link href="https://tom89757.github.io/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"/>
-    <id>https://tom89757.github.io/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</id>
-    <published>2020-07-11T15:37:36.000Z</published>
-    <updated>2020-07-18T16:36:54.077Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;算法是求解一个问题需要遵循的、被清楚指定的简单指令的集合。除了算法原理外，我们还需要关注它所花费的时间和占用的空间。在本章中，将讨论：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;如何估计一个程序所花费的时间。&lt;/li&gt;
-&lt;li&gt;如何将一个程序的运行时间从年/天降低到秒。&lt;/li&gt;
-&lt;li&gt;粗心使用递归将招致什么后果。&lt;/li&gt;
-&lt;li&gt;两个实例：将一个数自乘得到其幂以及计算两个数的最大公因数的有效算法&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
