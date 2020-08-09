@@ -7,16 +7,40 @@
   
   <title>chapter1引论 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="操作系统的任务是为用户程序提供一个更好、更简单、更清晰的计算机模型，并管理（处理器、主存、磁盘、打印机、键盘、鼠标、显示器、网络接口以及各种输入&#x2F;输出设备）等设备。用户通过基于文本的shell和基于图标的图形用户界面（GUI，Graphical User Interface）来与操作系统交互，但shell和GUI本身并不是OS的一部分。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="chapter1引论">
 <meta property="og:url" content="https://tom89757.github.io/2020/08/07/chapter1%E5%BC%95%E8%AE%BA-1/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="操作系统的任务是为用户程序提供一个更好、更简单、更清晰的计算机模型，并管理（处理器、主存、磁盘、打印机、键盘、鼠标、显示器、网络接口以及各种输入&#x2F;输出设备）等设备。用户通过基于文本的shell和基于图标的图形用户界面（GUI，Graphical User Interface）来与操作系统交互，但shell和GUI本身并不是OS的一部分。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%89%80%E5%A4%84%E7%9A%84%E4%BD%8D%E7%BD%AE.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.2.2%E6%89%B9%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.2.2FMS%E4%BD%9C%E4%B8%9A%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.3PC%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.3.1%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%92%8C%E8%B6%85%E6%A0%87%E9%87%8FCPU.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.3.2%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.3.4%E4%B8%AD%E6%96%AD%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.3.5%E5%A4%A7%E5%9E%8Bx86%E7%B3%BB%E7%BB%9F.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.5.3%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.6%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8read.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.6POSIX%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.6.1%E4%B8%80%E4%B8%AAshell.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.6.3%E7%9B%AE%E5%BD%95.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.6.3%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.6.5%E5%AF%B9%E6%AF%94.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.7.1%E5%8D%95%E4%BD%93%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.7.3MINIX3%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.7.4%E7%BD%91%E7%BB%9C%E4%B8%8A%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.7.5%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.8.3%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1.11%E5%85%AC%E5%88%B6%E5%89%8D%E7%BC%80.png">
 <meta property="article:published_time" content="2020-08-07T05:26:02.000Z">
-<meta property="article:modified_time" content="2020-08-07T05:28:01.037Z">
+<meta property="article:modified_time" content="2020-08-09T17:59:13.961Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qeohngkoy.bkt.clouddn.com/chapter1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%89%80%E5%A4%84%E7%9A%84%E4%BD%8D%E7%BD%AE.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -100,11 +124,203 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-什么是操作系统"><span class="toc-text">1.1 什么是操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作为扩展机器的操作系统"><span class="toc-text">作为扩展机器的操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为资源管理者的操作系统"><span class="toc-text">作为资源管理者的操作系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-操作系统的历史"><span class="toc-text">1.2 操作系统的历史</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一代（1945-1955）：真空管和穿孔卡片"><span class="toc-text">第一代（1945~1955）：真空管和穿孔卡片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二代（1955-1965）：晶体管和批处理系统"><span class="toc-text">第二代（1955~1965）：晶体管和批处理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三代（1965-1980）：集成电路和多道程序设计"><span class="toc-text">第三代（1965~1980）：集成电路和多道程序设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四代（1980年至今）：个人计算机"><span class="toc-text">第四代（1980年至今）：个人计算机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第五代（1990年至今）：移动计算机"><span class="toc-text">第五代（1990年至今）：移动计算机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-计算机硬件简介"><span class="toc-text">1.3 计算机硬件简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#处理器"><span class="toc-text">处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器"><span class="toc-text">存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘"><span class="toc-text">磁盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O设备"><span class="toc-text">I&#x2F;O设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总线"><span class="toc-text">总线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动计算机"><span class="toc-text">启动计算机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-操作系统大观园"><span class="toc-text">1.4 操作系统大观园</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大型机操作系统"><span class="toc-text">大型机操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器操作系统"><span class="toc-text">服务器操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多处理器操作系统"><span class="toc-text">多处理器操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#个人计算机操作系统"><span class="toc-text">个人计算机操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#掌上计算机操作系统"><span class="toc-text">掌上计算机操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌入式操作系统"><span class="toc-text">嵌入式操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传感器节点操作系统"><span class="toc-text">传感器节点操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实时操作系统"><span class="toc-text">实时操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#智能卡操作系统"><span class="toc-text">智能卡操作系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-操作系统概念"><span class="toc-text">1.5 操作系统概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程（process）"><span class="toc-text">进程（process）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地址空间（address-space）"><span class="toc-text">地址空间（address space）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件"><span class="toc-text">文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入-输出"><span class="toc-text">输入&#x2F;输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保护"><span class="toc-text">保护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell"><span class="toc-text">shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#个体重复系统发育"><span class="toc-text">个体重复系统发育</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-系统调用"><span class="toc-text">1.6 系统调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用于进程管理的系统调用"><span class="toc-text">用于进程管理的系统调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用于文件管理的系统调用"><span class="toc-text">用于文件管理的系统调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用于目录管理的系统调用"><span class="toc-text">用于目录管理的系统调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各种系统调用"><span class="toc-text">各种系统调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-Win32-API"><span class="toc-text">Windows Win32 API</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-操作系统结构"><span class="toc-text">1.7 操作系统结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单体系统"><span class="toc-text">单体系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层次式系统"><span class="toc-text">层次式系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微内核"><span class="toc-text">微内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端-服务器模式"><span class="toc-text">客户端-服务器模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机"><span class="toc-text">虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外核"><span class="toc-text">外核</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-依靠C的世界"><span class="toc-text">1.8 依靠C的世界</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言"><span class="toc-text">C语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#头文件"><span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大型编程项目"><span class="toc-text">大型编程项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行模型"><span class="toc-text">运行模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-有关操作系统的研究"><span class="toc-text">1.9 有关操作系统的研究</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-本书其他部分概要"><span class="toc-text">1.10 本书其他部分概要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-公制单位"><span class="toc-text">1.11 公制单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-小结"><span class="toc-text">1.12 小结</span></a></li></ol>
 </div>
 
 
-        
+        <p>操作系统的任务是为用户程序提供一个更好、更简单、更清晰的计算机模型，并管理（处理器、主存、磁盘、打印机、键盘、鼠标、显示器、网络接口以及各种输入/输出设备）等设备。用户通过基于文本的shell和基于图标的图形用户界面（GUI，Graphical User Interface）来与操作系统交互，但shell和GUI本身并不是OS的一部分。</p>
+<a id="more"></a>
+<p>下图为计算机系统的简化视图：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%89%80%E5%A4%84%E7%9A%84%E4%BD%8D%E7%BD%AE.png" alt="图1 操作系统所处的位置"></p>
+<p>本书中，将会不断讨论内核态和用户态之间的区别。用户接口程序（shell、GUI）处于用户态的最低层次，允许用户运行如：浏览器、音乐播放器等；操作系统则处于软件的最低层次，运行在裸机之上，为其他软件提供基础的运行环境。</p>
+<p>值得补充的是，在内核态或者用户态下运行有时并不能区分操作系统和应用程序，因为一些在用户态下运行的程序协助操作系统完成特权功能。</p>
+<p>操作系统大型、复杂且长寿。以Windows和Linux为例，其内核代码达500万数量级。</p>
+<p>本章将简要叙述操作系统的含义、历史、分类、一些基本概念及其结构，后续章节则围绕这些内容具体展开。</p>
+<h2 id="1-1-什么是操作系统"><a href="#1-1-什么是操作系统" class="headerlink" title="1.1 什么是操作系统"></a>1.1 什么是操作系统</h2><p>其难以准确定义，最常见的定义是“运行在内核态下的软件”，但如上面所言，并不精准。横看成岭侧成峰，下面将从不同角度来看操作系统：</p>
+<h3 id="作为扩展机器的操作系统"><a href="#作为扩展机器的操作系统" class="headerlink" title="作为扩展机器的操作系统"></a>作为扩展机器的操作系统</h3><p>硬盘驱动（disk drive）软件提供了读写硬盘块的接口，可用来与硬盘交互。但其仍过于底层，操作系统还提供硬盘的更高层次的抽象：文件，程序可以通过该抽象读、写和创建文件。</p>
+<p>抽象将复杂的任务简化为两个部分：有关抽象的定义和实现、使用抽象解决相应问题。而操作系统的任务就是创建好的抽象，并实现和管理它所创建的抽象对象；换种表述方法，操作系统的一个主要任务是将丑陋的硬件隐藏起来，呈现给程序和程序员以良好、清晰、优雅、一致的抽象。</p>
+<p>操作系统及其抽象为应用程序（程序员）服务，而用户接口则为最终用户（普通用户）服务。本书的重点对象为操作系统提供给应用程序的抽象，不会对用户接口（shell和GUI）着过多笔墨。</p>
+<h3 id="作为资源管理者的操作系统"><a href="#作为资源管理者的操作系统" class="headerlink" title="作为资源管理者的操作系统"></a>作为资源管理者的操作系统</h3><p>上面是从自顶而下的观点来看操作系统，这里将从自底向上的角度来看操作系统，OS用来管理一个复杂系统的各个部分。操作系统的任务是在相互竞争的程序之间有序地控制对处理器、存储器以及其他I/O接口设备的分配。</p>
+<p>多道程序、多个用户要求操作系统完成以下任务：记录哪个程序在使用什么资源，对资源请求进行分配，评估使用代价，并且为不同的程序和用户调节互相冲突的资源请求。</p>
+<p>资源管理通过两种方式实现资源的多路复用（共享）：</p>
+<ul>
+<li>在时间上复用：不同的程序或用户轮流使用它。如进程的切换实现轮流使用CPU。</li>
+<li>在空间上复用：每个程序或用户都得到资源的一部分。如多个运行程序入驻内存。</li>
+</ul>
+<p>上述方式的细节和可能导致的问题都由OS实现和解决。</p>
+<h2 id="1-2-操作系统的历史"><a href="#1-2-操作系统的历史" class="headerlink" title="1.2 操作系统的历史"></a>1.2 操作系统的历史</h2><p>操作系统与其所运行的计算机体系结构联系密切，故下面的阶段划分基于操作系统的分代映射到计算机的分代。虽显粗糙，但有所启发。</p>
+<h3 id="第一代（1945-1955）：真空管和穿孔卡片"><a href="#第一代（1945-1955）：真空管和穿孔卡片" class="headerlink" title="第一代（1945~1955）：真空管和穿孔卡片"></a>第一代（1945~1955）：真空管和穿孔卡片</h3><p>该阶段程序使用纯粹的机器语言编写，计算机所包含的真空管数目不过数万。</p>
+<h3 id="第二代（1955-1965）：晶体管和批处理系统"><a href="#第二代（1955-1965）：晶体管和批处理系统" class="headerlink" title="第二代（1955~1965）：晶体管和批处理系统"></a>第二代（1955~1965）：晶体管和批处理系统</h3><p>大型机出现，设计人员、生产人员、操作人员、程序人员和维护人员之间第一次有了明确分工。为减少机时浪费，采用批处理系统（batch system）：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.2.2%E6%89%B9%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F.png" alt="图2 批处理系统"></p>
+<p>下面展示了典型的FMS作业结构（仅作了解）：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.2.2FMS%E4%BD%9C%E4%B8%9A%E7%BB%93%E6%9E%84.png" alt="图3 典型的FMS作业结构"></p>
+<p>当时，典型的操作系统是FMS和IBSYS。</p>
+<h3 id="第三代（1965-1980）：集成电路和多道程序设计"><a href="#第三代（1965-1980）：集成电路和多道程序设计" class="headerlink" title="第三代（1965~1980）：集成电路和多道程序设计"></a>第三代（1965~1980）：集成电路和多道程序设计</h3><p>IBM开发了不同用途、性能和价格的软件兼容的360计算机系列，它是第一个采用（小规模）集成电路（IC）的主流机型。兼容不同用途的操作系统意味着系统的庞大和难以维护，操作系统中的错误不断消除又不断引入。</p>
+<p>可喜的是，多道程序设计（multiprogramming）技术开始在操作系统中使用；同时的外部设备联机操作（Simultaneour Peripheral Operation On Line，SPOOLing）技术也投入使用，将人们从费时的磁盘搬运中解脱出来。其本质仍是批处理系统，令程序员懊恼的是，其不像第一代计算机可以在程序运行时进行调试。</p>
+<p>调试的需求促进了分时系统（timesharing）的出现，第三代计算机则促进其流行。兼容分时系统CTSS和公用计算服务系统MULTICS依次出现，且都由MIT完成。到20世纪末，公用计算服务的概念已被抛弃，却以云计算（cloud computing）的形式回归，并流行至今。</p>
+<p>与此同时，小型机崛起，PDP机型系列出现，并且基于一台PDP-7开发的单用户MULTICS系统促进后续UNIX操作系统的诞生。UNIX系统出现了诸多变种，为使得编写的程序在任何版本的UNIX上执行，IEEE推行了POSIX标准，POSIX定义了凡是UNIX系统必须支持的小型系统调用接口。后续计算机科学领域各种标准的推行促进了计算机科学的繁荣。</p>
+<p>UNIX的小型克隆MINIX和受MINIX启发由Linus Torvalds开发的Linux是操作系统中的精品，也推动了开源软件运动轰轰烈烈的进行。</p>
+<h3 id="第四代（1980年至今）：个人计算机"><a href="#第四代（1980年至今）：个人计算机" class="headerlink" title="第四代（1980年至今）：个人计算机"></a>第四代（1980年至今）：个人计算机</h3><p>LSI（Large Scale Integration，大规模集成）电路的发展，使计算机进入了PC时代。第一个配有磁盘的微型计算机和为它编写的第一个基于磁盘的操作系统CP/M接续出现。然后便是Intel、Digital Research、IBM和Bill Gates之间的命运纠葛，有人失去了机会，有人引领了潮流，MS-DOS系统主导了IBM PC市场，二者实现了共赢。</p>
+<p>接下来，斯坦福研究院的Doug Engelbart发明了图形用户界面，为Steve Jobs苹果帝国和Bill Gates微软帝国的建立埋下了伏笔。用户友好的需求在PC领域迅速扩大，苹果公司抢占先机，微软公司紧随其后。微软的操作系统不断更替，分解为了客户端、服务器端和嵌入式系统三条路线，其中的佼佼者是Windows 7；与此同时，UNIX系统的发展并没有停止，Linux成为诸多用户的另一个选择。（补充说明：本书使用x86代表所有使用指令集体系结构家族的现代处理器）</p>
+<p>此外，网络操作系统和分布式操作系统在个人计算机中兴起，文件得以在机器间传输，应用得以在多个处理器上运行。</p>
+<h3 id="第五代（1990年至今）：移动计算机"><a href="#第五代（1990年至今）：移动计算机" class="headerlink" title="第五代（1990年至今）：移动计算机"></a>第五代（1990年至今）：移动计算机</h3><p>第一台移动电话重达80斤，第一台手持电话（2斤）也仅是电话。直到诺基亚发布了N9000，通话和计算才合二为一，标志着第一台只能手机的诞生。随着智能手机的普及，Android和iOS操作系统占据了手机操作系统份额的前两席，且并没有如预测的那般被取代。</p>
+<h2 id="1-3-计算机硬件简介"><a href="#1-3-计算机硬件简介" class="headerlink" title="1.3 计算机硬件简介"></a>1.3 计算机硬件简介</h2><p>一台个人计算机可以抽象为下图的模型：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.3PC%E6%A8%A1%E5%9E%8B.png" alt="图4 PC模型"></p>
+<h3 id="处理器"><a href="#处理器" class="headerlink" title="处理器"></a>处理器</h3><p>在COAD中已经描述了在CPU每个周期中指令执行的过程。每个CPU都有一套可执行的专门指令集，x86处理器不能执行ARM程序。访存速度慢，所以有寄存器和cache；指令需要顺序执行，所以有程序计数器PC；处理器需要实现过程调用和多路复用，所以有堆栈指针和程序状态字（Program Status Word，PSW）寄存器。</p>
+<p>为提高性能，流水线机制和更先进的超标量CPU都已问世，二者都需要保证其运行结果与顺序运行结果相同，如下图所示：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.3.1%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%92%8C%E8%B6%85%E6%A0%87%E9%87%8FCPU.png" alt="图5 流水线和超标量CPU"></p>
+<p>为从操作系统获得服务，用户程序使用系统调用陷入内核以调用操作系统。</p>
+<p><strong>多线程和多核芯片</strong></p>
+<p>集成电路规模的增大萌生了超标量体系结构，在硬件上表现为功能部件的增多；但其增长仍然受限，进一步需要控制逻辑数量的增加，即催生了多线程（或称超线程）的机制，CPU可以保持两个不同的线程状态，在纳秒级的时间尺度内来回切换。与此同时，多核CPU芯片出现，相应也需要多处理器操作系统来调度。</p>
+<p>GPU与CPU截然不同，它集成了成千上万各微核，擅长处理大量并行的简单计算，但不太能胜任串行任务，且很难编程。</p>
+<h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>理想的存储器应该（访存）迅速，容量大，便宜。但当前无法满足这三个目标，只能采用存储器层次结构来组织，以达到与处理器性能相匹配的需求。以下是典型的存储器层次结构：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.3.2%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="图6 存储器层次结构"></p>
+<p>缓存的应用无处不在，如将文件的长路径名转换成的磁盘地址缓存起来；或将Web网页的URL转换城的IP地址缓存起来。缓存系统的实现需要考虑以下问题：</p>
+<ol>
+<li>何时把一个新的内容放入缓存。</li>
+<li>把新内容放在缓存的哪一行上。</li>
+<li>在需要时，应该把哪个内容从缓存中移走。</li>
+<li>应该把新移走的内容放在低一层存储器的哪个位置。</li>
+</ol>
+<p>此处需要补充的是只读存储器（Read Only Memory，ROM）和CMOS。前者在工厂中就已被编程完毕，有些计算机中用于启动计算机的引导加载模块就存放在ROM中；后者为易失性存储器，由独立的小电池驱动，用以保持当前时间和日期，计算机关机后仍保持运转。</p>
+<h3 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h3><p>磁盘的原理此处不再赘述。需要注意的是固态硬盘和磁盘的区别。</p>
+<h3 id="I-O设备"><a href="#I-O设备" class="headerlink" title="I/O设备"></a>I/O设备</h3><p>I/O设备一般分为两个部分，设备控制器和设备本身。控制器是插在电路板上的一块或一组芯片，其从操作系统接收命令，在物理层次上控制设备，如从设备读取或写入数据。</p>
+<p>控制器为操作系统提供一个简单的接口，但接口的实现是复杂的，因此在控制器中经常安装一个小的嵌入式计算机；设备本身也为控制器提供一个简单的接口，并且其被标准化，从而使一个SATA（串行高级技术附件，Serial Advanced Technology Attachment）磁盘控制器可以适配任意一种SATA磁盘。操作系统看到的是控制器提供的接口。</p>
+<p>专门与控制器对话，发出命令并接收响应的程序，称为设备控制程序（device driver），每类设备控制器需要不同的驱动程序，绝大多数设备驱动程序在内核态运行。设备驱动程序可以以三种方式装入操作系统，此处不描述细节<strong>mark</strong>。</p>
+<p>每个设备控制器都有少量用于通信的寄存器，设备驱动程序从操作系统获得一条命令，翻译成相应的值，并写进设备寄存器。设备寄存器的集合构成了I/O端口空间或者设备寄存器被映射到操作系统的地址空间，两种方式应用都很广泛。</p>
+<p>实现输入/输出的方式有三种：</p>
+<ol>
+<li><p>用户程序发出一个系统调用，内核将其翻译成一个对应设备驱动程序的过程调用，设备驱动程序启动I/O直至过程调用结束，操作系统将控制返回给调用者。这种方式称为忙等待，其缺点是占据CPU，CPU一直检查设备直到对应I/O操作完成。</p>
+</li>
+<li><p>设备驱动程序启动设备并让设备在操作完成时发出一个中断，驱动程序在此时返回。在操作过程中操作系统阻塞调用者，直至收到驱动程序发出中断通知操作完成。下图展示了中断相关过程：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.3.4%E4%B8%AD%E6%96%AD%E8%BF%87%E7%A8%8B.png" alt="图7 中断过程"></p>
+<p>值得补充的是，中断处理程序是中断设备的设备驱动程序的一部分。</p>
+</li>
+<li><p>为I/O使用一种特殊的直接存储器访问（Direct Memory Access，DMA）芯片。它可以控制在内存和某些控制器之间的位流，而无须持续的CPU干扰。当DMA芯片完成时，它引发一个中断。</p>
+</li>
+</ol>
+<p>中断可能在不适宜的时刻发生，例如此时已经有中断程序正在进行或者有其它中断排队，因此需要复杂的控制机制使得中断正确执行。</p>
+<h3 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h3><p>随着处理器和存储器速度增长，前面的PC模型已不能处理总线的交通流量，催生了下面大型x86系统结构的诞生，该结构中包含诸多总线：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.3.5%E5%A4%A7%E5%9E%8Bx86%E7%B3%BB%E7%BB%9F.png" alt="图8 大型x86结构"></p>
+<p>操作系统必须了解所有总线的配置和管理，其中主要的总线为PCIe（Peripheral Component Interconnect Express）总线。PCIe的问世，意味着总线从之前的共享总线架构（shared bus architecture）转变为串行总线架构（serial bus architecture），通过一条称之为数据通路的链路传递集合了所有位的一条消息。</p>
+<p>上图中，不同的硬件之间使用不同的总线进行对话，从而将所有硬件连接成一个整体。</p>
+<p>值得补充的是以下几个概念：</p>
+<ul>
+<li>USB：通用串行总线（Universal Serial Bus）是用来将所有慢速I/O设备（如键盘和鼠标）与计算机连接的。目前的USB 3.0 标准能达到不小于5GB/s的速率，尽管仍然被认为很慢。</li>
+<li>SCSI：小型计算机系统接口（Small Computer System Interface）总线是一种高速总线，用在高速硬盘、扫描仪和其它需要较大带宽的设备上。现在主要用于服务器和工作站中，速度可以达到640MB/s。</li>
+<li>即插即用：plug and play，系统自动收集有关I/O设备的信息，集中赋予中断级别和I/O地址，然后通知每块I/O卡所使用的数值。这项工作与计算机的启动密切相关。</li>
+</ul>
+<h3 id="启动计算机"><a href="#启动计算机" class="headerlink" title="启动计算机"></a>启动计算机</h3><p>每台计算机有一个主板，每个主板上有一个称之为基本输入输出系统（Basic Input Output System，BIOS）的程序，在BIOS内有底层I/O软件，包括读键盘、写屏幕、进行磁盘I/O以及其他过程。该程序存放在一块闪存中，为非易失性的，但可以在出错时由操作系统更新。</p>
+<p>书中P19描述了计算机启动时发生了什么，此处不作具体描述。</p>
+<h2 id="1-4-操作系统大观园"><a href="#1-4-操作系统大观园" class="headerlink" title="1.4 操作系统大观园"></a>1.4 操作系统大观园</h2><p>本节将介绍各种类型操作系统中典型的9种。</p>
+<h3 id="大型机操作系统"><a href="#大型机操作系统" class="headerlink" title="大型机操作系统"></a>大型机操作系统</h3><p>大型机与PC的主要差别在于I/O处理能力。用于大型机的操作系统主要提供三类服务：批处理、事务处理和分时，三者分别对应不受用户干预的周期性作业、大量小的请求和多用户的同时登录。</p>
+<h3 id="服务器操作系统"><a href="#服务器操作系统" class="headerlink" title="服务器操作系统"></a>服务器操作系统</h3><p>通过网络同时为多用户提供服务，允许用户共享硬件和软件资源。</p>
+<h3 id="多处理器操作系统"><a href="#多处理器操作系统" class="headerlink" title="多处理器操作系统"></a>多处理器操作系统</h3><p>将多个CPU连接成单个系统，以获得大量联合计算能力，根据连接和共享方式分为并行计算机、多计算机或多处理器，目前使用小型多核处理器的PC也是其中的一种，这些机器需要对应的多处理器操作系统和应用程序才能充分利用好性能。</p>
+<h3 id="个人计算机操作系统"><a href="#个人计算机操作系统" class="headerlink" title="个人计算机操作系统"></a>个人计算机操作系统</h3><p>PC操作系统都支持多道程序处理，为用户带来了良好的用户体验。</p>
+<h3 id="掌上计算机操作系统"><a href="#掌上计算机操作系统" class="headerlink" title="掌上计算机操作系统"></a>掌上计算机操作系统</h3><p>后PC时代，手机和平板电脑等掌上计算机兴起，并占据了多数人的生活。大多数设备基于多核CPU、GPS、摄像头及其他的传感器、大量内存和精密的操作系统，数不清的第三方应用app可以在上面运行。</p>
+<h3 id="嵌入式操作系统"><a href="#嵌入式操作系统" class="headerlink" title="嵌入式操作系统"></a>嵌入式操作系统</h3><p>嵌入式系统在用来控制设备的计算机中运行，不允许用户安装软件，因为所有的软件已经保存在ROM中。实际上，区分嵌入式系统和掌上设备的主要特征便是：嵌入式系统中不会安装不可信的软件。</p>
+<h3 id="传感器节点操作系统"><a href="#传感器节点操作系统" class="headerlink" title="传感器节点操作系统"></a>传感器节点操作系统</h3><p>微小传感器节点网络用途广泛，这些组成网络的节点是可以彼此通信并且使用无线通信基站的微型计算机，可用于建筑物周边保护、国土边界保卫、森林火灾探测、气象预测用的温度和降水测量、战场上敌方运动的信息收集等。如TinyOS系统。</p>
+<h3 id="实时操作系统"><a href="#实时操作系统" class="headerlink" title="实时操作系统"></a>实时操作系统</h3><p>以时间作为关键参数，可分为两种：</p>
+<ol>
+<li>硬实时系统：保证某个特定的动作在给定的时间内完成。</li>
+<li>软实时系统：可以接受偶尔违反最终时限，如多媒体系统和智能手机系统。</li>
+</ol>
+<p>掌上、嵌入式和实时系统的分类之间多有重叠。另一个角度的区分是，嵌入式和掌上系统多面向用户，实时系统多用于工业。</p>
+<h3 id="智能卡操作系统"><a href="#智能卡操作系统" class="headerlink" title="智能卡操作系统"></a>智能卡操作系统</h3><p>智能卡是一种包含一块CPU芯片的信用卡，其上运行着最小的操作系统，有非常严格的运行能耗和存储空间的限制。有些卡同样支持多道程序处理，其操作系统管理和包含物理资源。</p>
+<h2 id="1-5-操作系统概念"><a href="#1-5-操作系统概念" class="headerlink" title="1.5 操作系统概念"></a>1.5 操作系统概念</h2><p>操作系统中有不少核心概念，本书将围绕这些概念展开，并主要以UNIX系统作为实例。</p>
+<h3 id="进程（process）"><a href="#进程（process）" class="headerlink" title="进程（process）"></a>进程（process）</h3><p>进程即正在运行的一个程序，与之相关的是地址空间。用来理解进程概念的最好实例是多道程序设计系统，因为其需要管理和调度多个同时执行的进程。一个（挂起的）进程包括进程的地址空间和进程表。</p>
+<p>需要了解的概念还有进程树和进程间通信、UID和超级用户。</p>
+<h3 id="地址空间（address-space）"><a href="#地址空间（address-space）" class="headerlink" title="地址空间（address space）"></a>地址空间（address space）</h3><p>虚拟内存的技术允许一个进程使用比主存更大的地址空间，操作系统可以把部分地址空间装入主存，部分留在磁盘上。</p>
+<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>操作系统的一项主要功能是隐藏磁盘和其他I/O设备的细节特性，给程序员提供一个良好、清晰的独立于设备的抽象文件模型。在文件读写前后，分别需要打开文件和关闭文件。</p>
+<p>关于文件系统还需要掌握的概念有目录，目录意味着文件同样组织成树状结构，但文件树和之前的进程树有所不同，前者层次更深，保存时间更长，且访问限制更少，而后者很少超过3层，通常存在几分钟，且只有父进程可以控制和访问子进程。下图展示了大学院系的文件系统：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.5.3%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.png" alt="图9 文件系统"></p>
+<p>书中还依次介绍了文件描述符、安装文件系统、特殊文件、管道等概念，此处不作具体描述。</p>
+<h3 id="输入-输出"><a href="#输入-输出" class="headerlink" title="输入/输出"></a>输入/输出</h3><p>所有的计算机都有获取输入和产生输出的物理设备，如键盘、显示器、打印机等，对这些设备的管理全都依靠操作系统。</p>
+<p>每个操作系统都有管理其I/O设备的I/O子系统，构成I/O子系统的软件包括设备独立的通用软件和与专门设备对应的设备驱动程序。</p>
+<h3 id="保护"><a href="#保护" class="headerlink" title="保护"></a>保护</h3><p>计算机信息的管理系统也倚仗操作系统，如文件仅供授权用户访问，对UNIX系统而言，访问权限通过一个9位的二进制保护代码决定。</p>
+<p>除文件保护外，还有很多安全性问题，如保护系统不被人类或非人类入侵。</p>
+<h3 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h3><p>操作系统是进行系统调用的代码，而编辑器、编译器、汇编程序、链接程序、效用程序以及命令解释器等都不是操作系统的组成部分。</p>
+<p>UNIX的命令解释器shell虽说不是操作系统的组成部分，但是它是终端用户与操作系统之间的接口，体现了许多操作系统的特性，并很好地说明了操作系统的用法。</p>
+<p>书中展示了shell的用法，由于已经有使用经验，此处不再赘述。</p>
+<h3 id="个体重复系统发育"><a href="#个体重复系统发育" class="headerlink" title="个体重复系统发育"></a>个体重复系统发育</h3><p>从达尔文《物种起源》中的个体重复系统发育概念获得关联和启发，那些过时的概念可能在当前被重新考察或者重现。例如，从过去到如今，程序的执行方式在直接执行和解释执行之间反复切换。下面考察几个硬件和概念：</p>
+<ol>
+<li>大型内存：在过去内存发展的过程中，其一直影响着操作系统的编写语言，编写语言同样在汇编语言和高级语言之间不断切换。</li>
+<li>保护硬件：保护硬件同样在计算机发展中扮演时有时无的角色，其伴随着多道程序处理的有无，当然，保护硬件当然是有益的，只是随着计算机向更小型发展的过程中硬件制约了其使用。</li>
+<li>硬盘：存储文件的硬件由磁带变为磁盘，再变为硬盘，并伴随着文件系统的出现。</li>
+<li>虚拟内存：虚拟内存通过在RAM和磁盘中反复移动信息块的方式，提供了运行比机器物理内存大的程序的能力。</li>
+</ol>
+<p>综上，随着计算机不断向小型化、远程化和高性能化的方向发展，一些设计思想不断被抛弃和重现，所以想要捕捉技术更迭的蛛丝马迹，不妨经常回回头。</p>
+<h2 id="1-6-系统调用"><a href="#1-6-系统调用" class="headerlink" title="1.6 系统调用"></a>1.6 系统调用</h2><p>操作系统为用户提供抽象和对计算机资源进行管理。对用户程序而言，与操作系统的交互主要是处理抽象，因为资源的管理部分透明且自动完成。在下面的叙述中，我们将避免含糊的描述，以一个系统（如UNIX）为实例展示二者的交互过程。</p>
+<p>书中以read系统调用为例，展示了用户程序进行系统调用的过程。对read的调用通过C程序完成，其调用形式为<code>count = read(fd, buffr, nbytes)</code>。下图展示了完成系统调用read的11个步骤：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.6%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8read.png" alt="图10 系统调用read"></p>
+<p>书中描述了进行系统调用的主要步骤以及TRAP指令和过程指令两个方面的区别。这里不对步骤作具体描述，只说明一下区别：过程调用指令并不切换到内核模式并且其指令可以跳转到任意地址上。</p>
+<p>下图中列举了POSIX中约100个过程调用中最重要的部分，并分为4类：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.6POSIX%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8.png" alt="图11 POSIX系统调用"></p>
+<p>POSIX标准定义了构造系统所必须提供的一套过程，但是并没有规定它们是系统调用、库调用还是其他的形式，即POSIX过程并不与系统调用形成一一映射，但多数POSIX过程确实是系统调用。</p>
+<h3 id="用于进程管理的系统调用"><a href="#用于进程管理的系统调用" class="headerlink" title="用于进程管理的系统调用"></a>用于进程管理的系统调用</h3><p>上图中第一组调用用于进程管理。书中以fork为例，描述了shell进行fork调用的细节和过程，此处不作具体描述。需要掌握的概念是进程标识符（Process IDentifier，PID）。下图用一个高度简化的shell说明fork、waitpid以及execve的使用：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.6.1%E4%B8%80%E4%B8%AAshell.png" alt="图12 一个shell"></p>
+<p>书中接着以命令行<code>cp file1 file2</code>为例说明了上图中执行命令的过程，cp主程序的声明为<code>main(argc, argv, evp)</code>，此处不作具体描述。</p>
+<h3 id="用于文件管理的系统调用"><a href="#用于文件管理的系统调用" class="headerlink" title="用于文件管理的系统调用"></a>用于文件管理的系统调用</h3><p>在读写文件前后，分别用open和close打开和关闭文件，open中的O_CREAT参数可用于创建文件。此外，lseek调用使得能够访问文件的任意位置。</p>
+<p>UNIX为每个文件保存了该文件的类型（普通文件、特殊文件、目录等）、大小、最后修改时间以及其他信息，程序可通过stat系统调用查看。</p>
+<h3 id="用于目录管理的系统调用"><a href="#用于目录管理的系统调用" class="headerlink" title="用于目录管理的系统调用"></a>用于目录管理的系统调用</h3><p>本小节讨论与目录或整个文件系统有关的某些系统调用。书中展示了系统调用link的实例：<code>link(&quot;/usr/jim/memo, /usr/ast/note&quot;);</code>，其中jim和ast为用户。在UNIX中，每个文件都有唯一的i-编号，目录就是一个包含了文件的(i-编号，ASCII名称)对集合的文件。下图展示了执行上述命令后目录文件的变化：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.6.3%E7%9B%AE%E5%BD%95.png" alt="图13 目录"></p>
+<p>前面提到的mount系统调用则允许将两个文件系统合并为一个，执行<code>mount(&quot;/dev/sdb0&quot;, &quot;/mnt&quot;, 0);</code>后，文件系统的变化如下：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.6.3%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.png" alt="图14 文件系统"></p>
+<h3 id="各种系统调用"><a href="#各种系统调用" class="headerlink" title="各种系统调用"></a>各种系统调用</h3><p>除上面介绍的系统调用外，UNIX中还有其他的系统调用，如chdir用以改变当前的工作目录，chmod系统调用可以改变文件的模式，kill调用供用户或用户进程发送信号。POSIX标准则还定义了若干处理时间的进程，如time以秒为单位返回当前时间。</p>
+<h3 id="Windows-Win32-API"><a href="#Windows-Win32-API" class="headerlink" title="Windows Win32 API"></a>Windows Win32 API</h3><p>前面的讨论都基于UNIX系统，此处简要考察Windows。二者的区别在于编程方式：</p>
+<ul>
+<li>UNIX程序包括做各种处理的代码以及完成特定服务的系统调用。</li>
+<li>Windows程序通常是事件驱动程序。其中主程序等待某些事件发生，然后调用一个过程处理该事件。</li>
+</ul>
+<p>与UNIX不同，Windows中的库调用与实际的系统调用几乎不对应。微软定义了一套Win32应用编程接口（Application Program Interface，API），程序员用它获得操作系统的服务。Win32 API数量庞大，其中一大部分不是系统调用，只是在用户空间的库调用，并且在不同Windows版本中存在差异，无法严格区分。后续在讨论Windows的系统调用时，将其称之为Win32过程以免混淆。</p>
+<p>下图展示了UNIX调用与Win32 API的对比：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.6.5%E5%AF%B9%E6%AF%94.png" alt="图15 对比"></p>
+<h2 id="1-7-操作系统结构"><a href="#1-7-操作系统结构" class="headerlink" title="1.7 操作系统结构"></a>1.7 操作系统结构</h2><p>前面分析了操作系统的外部（如程序员接口），现在将分析其内部。下面将考察六种不同的结构设计，来体会过去出现过的操作系统设计思想。</p>
+<h3 id="单体系统"><a href="#单体系统" class="headerlink" title="单体系统"></a>单体系统</h3><p>大多数常见的组织中，整个操作系统在内核态以单一程序的方式运行，以过程集合的方式编写，链接成一个大型可执行二进制程序，每个过程可以自由调用其他过程。下面是这类操作系统建议的基本结构：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.7.1%E5%8D%95%E4%BD%93%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.png" alt="图16 单体系统结构"></p>
+<p>其中主程序用来处理服务过程请求，服务过程用来执行系统调用，使用过程用来辅助服务过程。</p>
+<h3 id="层次式系统"><a href="#层次式系统" class="headerlink" title="层次式系统"></a>层次式系统</h3><p>上述系统进一步通用化就变成一个层次式结构的操作系统，其上层软件都在下一层软件基础上构建。如THE操作系统，此处不描述具体层次细节。更进一步，MULTICS系统中采用了环状结构，内环比外环具有更高的级别。</p>
+<h3 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h3><p>分层时，设计者需要划分内核-用户的边界，尽可能减少内核态中的功能，减少系统因内核态功能出现错误而无法运行的概率。</p>
+<p>微内核设计的思想是：将操作系统划分成小的、良好定义的模块，只有其中一个模块——微内核运行在内核态，其他模块作为普通用户进程运行。与单体系统相比，微内核设计中设备驱动和文件系统作为普通用户进程，降低了因它们发生故障导致停机的概率。</p>
+<p>除了基于Mach微内核的OS X外，通常的桌面操作系统并不使用微内核。知名的微内核MINIX3将模块化的思想推到了极致，下图展示了其系统结构：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.7.3MINIX3%E7%BB%93%E6%9E%84.png" alt="图17 MINIX3结构"></p>
+<p>此处不描述其具体细节。</p>
+<h3 id="客户端-服务器模式"><a href="#客户端-服务器模式" class="headerlink" title="客户端-服务器模式"></a>客户端-服务器模式</h3><p>这是微内核模式的一个轻微变体，其将进程分为两类：服务器和客户端，每个服务器提供某种服务，而客户端则使用这些服务。其本质是将进程分为服务器进程和客户端进程。实际上，该模式是一种可以应用在单机或网络机器上的抽象，其目的是信息传递。下图展示了网络上的该模型：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.7.4%E7%BD%91%E7%BB%9C%E4%B8%8A%E6%A8%A1%E5%9E%8B.png" alt="图18 网络上模型"></p>
+<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><ol>
+<li><p>VM /370：其源于分时系统，分时系统给人带来的启发是多道程序处理和对裸机的模拟和扩展，这促进了虚拟机的萌芽。该系统的核心为虚拟机监控程序（virtual machine monitor），其在裸机上运行并具备多道程序功能。</p>
+<p>该系统向上层提供了若干虚拟机——裸机硬件的精确复制，每台虚拟机上都可以运行一台裸机所能够运行的任何类型的操作系统。虚拟机的现代化身z/VM通常用于运行多个完整的操作系统。</p>
+</li>
+<li><p>虚拟机的再次发现：虚拟机不仅满足了在同一套硬件上运行多个操作系统的需求，也降低了租用成本。此处不描述虚拟机发展的细节，但仍对第一类和第二类虚拟机管理程序做简单区分，后者利用宿主操作系统并通过其文件系统创建进程、存储文件等，前者由于没有底层支持，必须自行实现这些功能。</p>
+</li>
+</ol>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.7.5%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.png" alt="图19 虚拟机管理程序"></p>
+<ol>
+<li>Java虚拟机（JVM）：JVM是一种体系结构。Java编译器为JVM生成代码，这些代码可由软件JVM解释器执行，因此JVM代码可传送到任何具有JVM解释器的计算机上并执行。</li>
+</ol>
+<h3 id="外核"><a href="#外核" class="headerlink" title="外核"></a>外核</h3><p>外核程序在内核态执行，它为虚拟机分配资源，并检查使用这些资源的企图，以确保没有机器使用其他人的资源，其本质在于给每个用户整个资源的一个子集并保护其不被其他用户使用。</p>
+<p>外核机制减少了映像层，使得虚拟机不用维护页表重映像磁盘地址，外核只需记录已经分配给各虚拟机的有关资源，保持多个虚拟机不发生冲突。</p>
+<h2 id="1-8-依靠C的世界"><a href="#1-8-依靠C的世界" class="headerlink" title="1.8 依靠C的世界"></a>1.8 依靠C的世界</h2><p>本节试图简要介绍编写操作系统的环境。</p>
+<h3 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h3><p>下面将介绍C语言与类Python语言（尤其是Java）之间的关键区别。C语言有Python和Java中没有的显式指针，在C中分配的存储空间由程序员使用指针明确分配和释放，这也是使用C（以及C++）语言编写操作系统的主要原因之一。</p>
+<h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><p>本小节介绍了头文件、宏等概念，前者包含供一个或多个代码文件（.c文件）使用的声明以及定义，也可以包括简单的宏。</p>
+<h3 id="大型编程项目"><a href="#大型编程项目" class="headerlink" title="大型编程项目"></a>大型编程项目</h3><p>下图展示了编译C和头文件来构建可执行文件的过程，此处不描述具体细节：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.8.3%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6.png" alt="图20 可执行文件"></p>
+<p>书中对UNIX系统中的make程序作了介绍，它读入Makefile，Makefile说明哪个文件与哪个文件相关。make在构建程序二进制码时，检查此可需要哪个目标文件，并且对于每个文件，检查自从上次该目标文件创建之后是否有任何它依赖的文件（代码和头文件）被修改，如果修改，将目标文件重新编译。</p>
+<h3 id="运行模型"><a href="#运行模型" class="headerlink" title="运行模型"></a>运行模型</h3><p>在操作系统二进制代码链接完成后，计算机就可以重新启动，新的操作系统开始运行。运行过程中，操作系统由文本段、数据段和堆栈段组成。其中文本段不可修改，数据段则可修改，堆栈段随函数的调用和返回时刻增长和缩小。</p>
+<h2 id="1-9-有关操作系统的研究"><a href="#1-9-有关操作系统的研究" class="headerlink" title="1.9 有关操作系统的研究"></a>1.9 有关操作系统的研究</h2><p>所有的操作系统人员都认识到，目前的操作系统是一个不灵活、不可靠、不安全和带有错误的大系统。正因如此，本书中会介绍最近操作系统的研究工作，展现那些为打造更好的操作系统所做的努力。</p>
+<h2 id="1-10-本书其他部分概要"><a href="#1-10-本书其他部分概要" class="headerlink" title="1.10 本书其他部分概要"></a>1.10 本书其他部分概要</h2><p>本章描述了操作系统的途径，后续会介绍具体细节。</p>
+<ol>
+<li>对程序员来说，操作系统的基本目的是提供一些基本的抽象，其中最重要的是：进程和线程、地址空间以及文件，这也是后续2到4章的内容。</li>
+<li>5到6章则介绍了输入/输出和死锁，至此完成了对单CPU操作系统基本原理的学习。</li>
+<li>后面的7到8章介绍了更高级的内容，分别是虚拟化和多处理机系统（包括多处理器、并行计算机以及分布式系统）。</li>
+<li>第9章则是操作系统安全，将设计威胁、保护机制和安全模型。</li>
+<li>最后的10到12章则展示了操作系统的实例以及关于操作系统设计的一些思考。</li>
+</ol>
+<h2 id="1-11-公制单位"><a href="#1-11-公制单位" class="headerlink" title="1.11 公制单位"></a>1.11 公制单位</h2><p>下图展示了主要的公制前缀，以避免混淆：</p>
+<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter1.11%E5%85%AC%E5%88%B6%E5%89%8D%E7%BC%80.png" alt="图21 公制前缀"></p>
+<h2 id="1-12-小结"><a href="#1-12-小结" class="headerlink" title="1.12 小结"></a>1.12 小结</h2><p>操作系统自底向上为应用程序提供抽象，自顶向下则管理硬件资源。本书主要面向编写应用程序的程序员，故主要围绕操作系统提供的抽象展开，其中最重要的抽象是：进程和线程、地址空间和文件。</p>
+<p>此外，本章还对操作系统的发展、硬件以及操作系统的核心——系统调用以及操作系统的类型作了介绍，让我们从宏观上把握了操作系统的概念和用途。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -118,6 +334,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/08/10/chapter2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter2进程与线程
+        
+      </div>
+    </a>
   
   
     <a href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
@@ -181,6 +406,10 @@
       <ul>
         
           <li>
+            <a href="/2020/08/10/chapter2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">chapter2进程与线程</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/07/chapter1%E5%BC%95%E8%AE%BA-1/">chapter1引论</a>
           </li>
         
@@ -194,10 +423,6 @@
         
           <li>
             <a href="/2020/08/01/chapter1-5-OS/">chapter1-5-OS</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/">chapter4处理器</a>
           </li>
         
       </ul>

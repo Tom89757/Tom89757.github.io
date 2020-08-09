@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-08-07T05:28:01.037Z</updated>
+  <updated>2020-08-09T18:11:46.984Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,13 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter2进程与线程</title>
+    <link href="https://tom89757.github.io/2020/08/10/chapter2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/"/>
+    <id>https://tom89757.github.io/2020/08/10/chapter2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/</id>
+    <published>2020-08-09T18:00:53.000Z</published>
+    <updated>2020-08-09T18:11:46.984Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="操作系统" scheme="https://tom89757.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter1引论</title>
     <link href="https://tom89757.github.io/2020/08/07/chapter1%E5%BC%95%E8%AE%BA-1/"/>
     <id>https://tom89757.github.io/2020/08/07/chapter1%E5%BC%95%E8%AE%BA-1/</id>
     <published>2020-08-07T05:26:02.000Z</published>
-    <updated>2020-08-07T05:28:01.037Z</updated>
+    <updated>2020-08-09T17:59:13.961Z</updated>
     
     <summary type="html">
+    
+      &lt;p&gt;操作系统的任务是为用户程序提供一个更好、更简单、更清晰的计算机模型，并管理（处理器、主存、磁盘、打印机、键盘、鼠标、显示器、网络接口以及各种输入/输出设备）等设备。用户通过基于文本的shell和基于图标的图形用户界面（GUI，Graphical User Interface）来与操作系统交互，但shell和GUI本身并不是OS的一部分。&lt;/p&gt;
     
     </summary>
     
@@ -499,34 +520,6 @@
 &lt;li&gt;看到树如何能够用来计算算术表达式的值。&lt;/li&gt;
 &lt;li&gt;指出如何利用树支持以$O(\log N)$平均时间进行的各种搜索操作，以及如何细化以得到最坏时间界$O(\log N)$。还将讨论当数据存储在磁盘上时如何实现这些操作。&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter3表、栈和队列</title>
-    <link href="https://tom89757.github.io/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
-    <id>https://tom89757.github.io/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/</id>
-    <published>2020-07-13T10:51:45.000Z</published>
-    <updated>2020-07-18T16:36:54.136Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本章将讨论最简单的三种数据结构——表、栈和队列，每个程序中都将至少明确一种这样的数据结构，栈更是无处不在。本章中，我们将：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;介绍抽象数据类型（ADT）的概念。&lt;/li&gt;
-&lt;li&gt;阐述如何对表进行有效操作。&lt;/li&gt;
-&lt;li&gt;介绍栈ADT及其在实现递归方面的应用。&lt;/li&gt;
-&lt;li&gt;介绍队列ADT及其在操作系统和算法设计中的应用。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。&lt;/p&gt;
     
     </summary>
     
