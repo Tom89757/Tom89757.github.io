@@ -71,6 +71,159 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chapter4处理器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/" class="article-date">
+  <time datetime="2020-07-29T17:50:13.000Z" itemprop="datePublished">2020-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/">chapter4处理器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="4-1-引言"><a href="#4-1-引言" class="headerlink" title="4.1 引言"></a>4.1 引言</h2><p>目前为止，第1、2、3章分别讲述了计算机组成概念和性能计算公式、MIPS常见指令和算术操作。本章讲述处理器，其实现方式决定了时钟周期长度和CPI，我们将位MIPS指令集的两种不同实现方式分别建立数据通路和控制单元。</p>
+<p>处理器本身的复杂意味着不可能剖析每个细节，故我们将从一个高度抽象和简化的概述开始，先建立数据通路，进一步构建简单的处理器实现MIPS这样的指令集，进而可以实现更复杂的指令集x86。</p>
+<p>本章实际上涵盖面较广，我会选择性的学习。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/30/chapter4%E5%A4%84%E7%90%86%E5%99%A8/" data-id="ckd7ohowp00000cwdejdh56yo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-chapter3计算机的算术运算" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/" class="article-date">
+  <time datetime="2020-07-27T16:41:29.000Z" itemprop="datePublished">2020-07-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/">chapter3计算机的算术运算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="3-1-引言"><a href="#3-1-引言" class="headerlink" title="3.1 引言"></a>3.1 引言</h2><p>本章回答的问题有：</p>
+<ul>
+<li>小数和其他实数如何表示？</li>
+<li>当一个操作生成了一个无法表示的大数时如何处理？</li>
+<li>上述问题隐含着一个秘密：怎样用硬件真正地做乘法和除法？</li>
+</ul>
+<p>本章的目的就是讲述实数的表示方法、算术的算法、实现这些算法的硬件，以及如何在指令集中表示有关的内容。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/" data-id="ckd4vlyn10000uowdadgqcwf1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-chapter2指令：计算机的语言" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/" class="article-date">
+  <time datetime="2020-07-25T15:44:04.000Z" itemprop="datePublished">2020-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/">chapter2指令：计算机的语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2-1-引言"><a href="#2-1-引言" class="headerlink" title="2.1 引言"></a>2.1 引言</h2><p>计算机语言中的基本单词称为指令，一台计算机的全部指令称为该计算机的指令集。指令集分为两种形式，人们编程书写的形式和计算机识别的形式。本章将自顶向下，从助记符表示的汇编语言过渡到计算机的真实语言；下一章继续向下探究，解释算术运算的硬件以及浮点数的表示方法。</p>
+<p>本书选择MIPS指令集，其与ARMv7、Intel x86和ARMv8等指令集具有相似之处，这是因为所有的计算机必须实现一些类似的基本操作。此外，计算机设计者有一个共同目标：找到一种语言，可方便硬件和编译器的设计，且使性能最佳，同时使成本和功耗最低。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/" data-id="ckd1x4h1j000vscwdb86r7x0r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-408计算机网络考纲" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/" class="article-date">
@@ -522,180 +675,11 @@
 
 
   
-    <article id="post-chapter8不相交集ADT" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/" class="article-date">
-  <time datetime="2020-07-21T12:38:12.000Z" itemprop="datePublished">2020-07-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/">chapter8不相交集ADT</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本章描述解决等价问题的一种有效数据结构。它实现简单，可以使用一个简单数组；运行快，每种操作只需常数运行时间；但是分析困难，最坏情况的函数形式不同于之前见过的任何形式。</p>
-<p>对于这种不相交集ADT，我们将：</p>
-<ol>
-<li><p>讨论如何能够以最小的编程代价实现。</p>
-</li>
-<li><p>通过两个简单的观察极大地增加它的速度。</p>
-</li>
-<li><p>分析一种快速实现方法的运行时间。</p>
-</li>
-<li><p>介绍一个简单的应用。</p>
-</li>
-</ol>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/21/chapter8%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86ADT/" data-id="ckd1x4h2a0021scwdcaxjfosc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter7排序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time datetime="2020-07-17T15:54:32.000Z" itemprop="datePublished">2020-07-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/">chapter7排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本章讨论数组的排序问题，为了简化问题，数组中的元素均为整数。本章主要讨论在主存中完成的内部排序，这意味着排序元素较少（$\leq 10^6$），在本章末尾将讨论在磁盘上完成的外部排序。</p>
-<p>对内部排序的讨论将包含：</p>
-<ol>
-<li>存在一种容易的算法以$O(N^2)$排序，如插入排序。</li>
-<li>一种在实践中有效的算法——希尔排序，以$o(N^2)$运行。</li>
-<li>稍微复杂的以$O(N \log N)$运行的算法。</li>
-<li>任何通用的排序算法均需要$\Omega(N \log N)$次比较。</li>
-</ol>
-<p>排序算法收到青睐的原因在于，它们中可能包含一些有趣的、重要的代码优化和设计思想，且对排序算法可以作精确的分析。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/" data-id="ckd1x4h34003sscwdbnwue7b2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter6优先队列-堆" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/" class="article-date">
-  <time datetime="2020-07-16T17:18:29.000Z" itemprop="datePublished">2020-07-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/">chapter6优先队列(堆)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于对队列中元素的输出顺序有所要求，所以需要一种新的可以满足该要求的数据结构。这种要求并不少见：当有多个文件要打印时，先打印短的文件；操作系统调度程序时，必须决定在若干进程中首先运行哪个进程。为此本章描述了一类特殊的队列——优先队列（priority queue），接下来我们将讨论：</p>
-<ol>
-<li>优先队列ADT的有效实现。</li>
-<li>优先队列的使用。</li>
-<li>优先队列的高级实现。</li>
-</ol>
-<p>书上说这类数据结构是计算机科学中最讲究的一种，让我们拭目以待。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/" data-id="ckd1x4h23001pscwd42uchfmz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页 &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">下一页 &amp;raquo;</a>
   </nav>
 
 </section>
@@ -716,7 +700,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -726,7 +710,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 11.67px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 15px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18.33px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 11.67px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 11.67px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 11.67px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16.67px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13.33px;">计算机网络</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 10px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 11.67px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 15px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18.33px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 11.67px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 11.67px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 11.67px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16.67px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13.33px;">计算机网络</a>
     </div>
   </div>
 
@@ -748,23 +732,23 @@
       <ul>
         
           <li>
+            <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E8%80%83%E7%BA%B2/">数学一概率论与数理统计考纲</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%80%83%E7%BA%B2/">数学一线性代数考纲</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E5%BE%AE%E7%A7%AF%E5%88%86%E8%80%83%E7%BA%B2/">数学一微积分考纲</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/">chapter2应用层</a>
           </li>
         
           <li>
             <a href="/2020/08/13/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91/">chapter1计算机网络和因特网</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/10/chapter2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">chapter2进程与线程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/07/chapter1%E5%BC%95%E8%AE%BA-1/">chapter1引论</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/">chapter6从客户端到云的并行处理器</a>
           </li>
         
       </ul>

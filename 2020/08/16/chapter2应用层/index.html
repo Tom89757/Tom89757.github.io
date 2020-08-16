@@ -7,16 +7,24 @@
   
   <title>chapter2应用层 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。 本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。 2.1 应用层协议原理研发网络应用程序的核心在于写出能够运行在不同端系统和通过网络彼此通信的程序，两个典型的例子是Web应用程序和P2P文件共">
+<meta property="og:type" content="article">
 <meta property="og:title" content="chapter2应用层">
 <meta property="og:url" content="https://tom89757.github.io/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。 本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。 2.1 应用层协议原理研发网络应用程序的核心在于写出能够运行在不同端系统和通过网络彼此通信的程序，两个典型的例子是Web应用程序和P2P文件共">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.1%E4%B8%A4%E7%A7%8D%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.2%E9%80%9A%E4%BF%A1.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.3%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%A6%81%E6%B1%82.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.4%E8%BF%90%E8%BE%93%E5%8D%8F%E8%AE%AE%E9%80%89%E6%8B%A9.png">
 <meta property="article:published_time" content="2020-08-16T05:01:03.000Z">
-<meta property="article:modified_time" content="2020-08-16T05:42:55.510Z">
+<meta property="article:modified_time" content="2020-08-16T14:43:07.722Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -100,11 +108,78 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-应用层协议原理"><span class="toc-text">2.1 应用层协议原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络应用程序体系结构"><span class="toc-text">网络应用程序体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程通信"><span class="toc-text">进程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可供应用程序使用的运输服务"><span class="toc-text">可供应用程序使用的运输服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因特网提供的运输服务"><span class="toc-text">因特网提供的运输服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用层协议"><span class="toc-text">应用层协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本书涉及的网络应用"><span class="toc-text">本书涉及的网络应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Web和HTTP"><span class="toc-text">2.2 Web和HTTP</span></a></li></ol>
 </div>
 
 
-        
+        <p>网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。</p>
+<p>本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。</p>
+<h2 id="2-1-应用层协议原理"><a href="#2-1-应用层协议原理" class="headerlink" title="2.1 应用层协议原理"></a>2.1 应用层协议原理</h2><p>研发网络应用程序的核心在于写出能够运行在不同端系统和通过网络彼此通信的程序，两个典型的例子是Web应用程序和P2P文件共享系统。我们只能基于端系统而不是网络核心设备（如路由器、链路层交换机）来开发应用程序软件，这种限制实际上促进了大量网络应用程序的迅速研发和部署。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1.png" alt="图1 网络应用通信"></p>
+<h3 id="网络应用程序体系结构"><a href="#网络应用程序体系结构" class="headerlink" title="网络应用程序体系结构"></a>网络应用程序体系结构</h3><p>在开发应用程序之前，需要确定其体系结构，它由应用程序研发者设计，规定了如何在各种端系统上组织该应用程序。目前最主流的两种体系结构是：客户端-服务器体系结构和对等（P2P）体系结构。</p>
+<p><strong>客户-服务器体系结构</strong></p>
+<p>一个总是打开的服务器服务于来自诸多称为客户的主机的请求。其特征为：</p>
+<ol>
+<li>客户间不直接通信。</li>
+<li>服务器具有固定的、周知的地址，即IP地址。客户端能够通过向该IP地址发送分组与之联系。</li>
+</ol>
+<p>其中的典型例子为Web、FTP、Telnet和电子邮件，如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.1%E4%B8%A4%E7%A7%8D%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="图2 两种体系结构"></p>
+<p>庞大的网络需要配备了大量主机的数据中心来创建虚拟服务器，如搜索引擎、因特网商务、基于Web的电子邮件、社交网络等就应用了多个数据中心。</p>
+<p><strong>P2P体系结构</strong></p>
+<p>应用程序在间接连接的主机对（称为对等方）之间直接使用通信，而对位于数据中心的专用服务器有最小（或者没有）依赖。目前流行的流量密集型应用都由P2P结构组织，如文件共享（如BitTorrent）、对等方协助下载加速器（如迅雷）、因特网电话和视频回忆（如Skype）。（当然，也有两种结构混合的体系结构，如即时讯息应用）</p>
+<h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><p>在多个端系统之间，进行通信的是进程而不是程序，进程是程序的实例。在两个不同端系统上的进程，通过阔约计算机网络交换报文而相互通信。</p>
+<p><strong>客户和服务器进程</strong></p>
+<p>网络应用程序间的通信在成对的进程间进行，两个进程分别标识为客户（client）和服务器（server），前者发起通信，后者在会话开始时等待联系。</p>
+<p><strong>进程与计算机网络之间的接口</strong></p>
+<p>进程通过称为套接字（socket）的软件接口向网络发送报文和从网络接收报文。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.2%E9%80%9A%E4%BF%A1.png" alt="图3 通信"></p>
+<p>套接字也成为应用程序和网络之间的应用程序编程接口（Application Programming Interface，API）。应用程序开发者可以控制套接字在应用层端的一切，但是对套接字的运输层端几乎没有控制权，仅有的对运输层给控制在于：选择运输层协议；也许能设定几个运输层参数。</p>
+<p><strong>进程寻址</strong></p>
+<p>在一台主机上发送分组的进程需要有接收进程的地址，该地址由两种信息标识：</p>
+<ol>
+<li>主机地址，即IP地址。</li>
+<li>在目的主机中指定接收进程的标识符。目的地端口号即用于标识接收进程，且部分端口号已标准化，如端口号80用于标识Web服务器，端口号25用于标识邮件服务器进程（使用SMTP协议）</li>
+</ol>
+<h3 id="可供应用程序使用的运输服务"><a href="#可供应用程序使用的运输服务" class="headerlink" title="可供应用程序使用的运输服务"></a>可供应用程序使用的运输服务</h3><p>套接字是应用程序进程和运输层协议之间的接口，当开发应用时需要选择一种可用的运输层协议，其需要满足调用它的应用程序所需的服务。应用程序所需的服务可分为4类：</p>
+<ol>
+<li><p>可靠数据传输：分组可能在计算机网络中丢失，如缓存溢出或某些比特损坏。当一个协议能够确保数据正确、完全的由一端交付给另一端时，该协议就是提供了可靠数据传输（reliable data transfer）服务。一些容忍丢失的应用（lost-tolerant application）如多媒体应用可以接受不提供该服务的运输层协议。</p>
+</li>
+<li><p>吞吐量：之前介绍了可用吞吐量的概念，对两个通信的进程来说，其为发送进程向接收进程交付比特的速率。自然，可用吞吐量随时间波动，这也自然生发出对稳定的吞吐量的需求，这种需求同样由运输层协议实现，协议可以确保吞吐量的最低值，如因特网电话进程要求的最低值为32kbps。</p>
+<p>具有吞吐量要求的应用程序称为带宽敏感的应用（bandwidth-sensitive application），为与网络传输速率相协调又衍生出了自适应编码技术和弹性应用（如电子邮件、文件传输和Web传送）的概念。</p>
+</li>
+<li><p>定时：运输层协议也能提供定时保证。如因特网电话、虚拟环境、电话会议和多方游戏等为了通信的有效性对数据交付有严格的时间限制。</p>
+</li>
+<li><p>安全性：运输层协议能够为应用程序提供一种或多种安全性服务。如通过加密提供机密性、数据完整性、端点鉴别。在第8章会详细讨论。</p>
+</li>
+</ol>
+<p>下图展示了各种网络应用的要求：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.3%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%A6%81%E6%B1%82.png" alt="图4 网络应用要求"></p>
+<h3 id="因特网提供的运输服务"><a href="#因特网提供的运输服务" class="headerlink" title="因特网提供的运输服务"></a>因特网提供的运输服务</h3><p>因特网为应用程序提供两个运输层协议：TCP和UDP，每个协议为应用程序提供了不同的服务集合。</p>
+<p><strong>TCP服务</strong></p>
+<p>TCP服务包括面向连接服务和可靠数据传输服务。</p>
+<ul>
+<li>面向连接的服务：在应用层数据报文开始流动之前，TCP让客户和服务器胡亮交换运输层控制信息，这个握手过程提醒客户和服务器为大量分组的到来做好准备。握手后一个TCP连接在两个进程的套接字之间建立，结束报文发送后该连接需被拆除。</li>
+<li>可靠的数据传送服务：通信进程能够依靠TCP，无差错、按适当顺序交付所有发送的数据。</li>
+</ul>
+<p>TCP协议还具有拥塞控制机制，用于抑制网络拥塞时的发送进程和限制TCP连接使带宽公平共享。</p>
+<p>（TCP/UDP都没有加密机制，目前已研发出加强版——SSL（Secure Sockets Layer，安全套接字层），提供加密、数据完整性和端点鉴别等服务，但是SSL在应用层上实现）</p>
+<p><strong>UDP服务</strong></p>
+<p>UDP是一种不提供不必要服务的轻量级运输协议，仅提供最小服务。UDP无握手过程（故无连接），提供不可靠数据传送服务，且没有拥塞控制机制。</p>
+<p><strong>因特网传输协议所不提供的服务</strong></p>
+<p>上面的描述并没有讨论TCP/UDP是否提供吞吐量和定时服务，实际上答案是否定的。但是，时间敏感应用仍然可以在互联网上运行，这涉及到一些设计技巧（第9章讨论），尽管因特网不为这些应用提供带宽和定时保证。</p>
+<p>下图展示了一些流行的应用选用的运输协议：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.4%E8%BF%90%E8%BE%93%E5%8D%8F%E8%AE%AE%E9%80%89%E6%8B%A9.png" alt="图5 运输协议选择"></p>
+<h3 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h3><p>应用层协议（application-layer protocol）定义了运行在不同端系统上的应用程序如何相互传递报文，具体来说，它定义了以下内容：</p>
+<ul>
+<li>交换的报文类型，例如请求报文和响应报文。</li>
+<li>各种报文类型的语法，如报文中的各个字段及这些字段如何描述。</li>
+<li>字段的语义，即这些字段中的信息的含义。</li>
+<li>确定一个进程何时以及如何发送报文，对报文进行响应的规则。</li>
+</ul>
+<p>应用层协议分为公用（如HTTP）和专用（如Skype使用的协议），其只是网络应用的一部分。以Web这种网络应用为例，其组成部分有：文档格式的标准（HTML）、Web浏览器、Web服务器、一个应用层协议（HTTP），显然，HTTP只是Web应用的一个（重要）部分。</p>
+<h3 id="本书涉及的网络应用"><a href="#本书涉及的网络应用" class="headerlink" title="本书涉及的网络应用"></a>本书涉及的网络应用</h3><p>本章中详细讨论5种重要的应用：Web、文件传输、电子邮件、目录服务、流式视频和P2P。</p>
+<h2 id="2-2-Web和HTTP"><a href="#2-2-Web和HTTP" class="headerlink" title="2.2 Web和HTTP"></a>2.2 Web和HTTP</h2>
       
     </div>
     <footer class="article-footer">
@@ -118,6 +193,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E5%BE%AE%E7%A7%AF%E5%88%86%E8%80%83%E7%BA%B2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数学一微积分考纲
+        
+      </div>
+    </a>
   
   
     <a href="/2020/08/13/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91/" id="article-nav-older" class="article-nav-link-wrap">
@@ -149,7 +233,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -159,7 +243,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 11.67px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 15px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18.33px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 11.67px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 11.67px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 11.67px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16.67px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13.33px;">计算机网络</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 10px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 11.67px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 15px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18.33px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 11.67px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 11.67px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 11.67px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16.67px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13.33px;">计算机网络</a>
     </div>
   </div>
 
@@ -181,23 +265,23 @@
       <ul>
         
           <li>
+            <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E8%80%83%E7%BA%B2/">数学一概率论与数理统计考纲</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%80%83%E7%BA%B2/">数学一线性代数考纲</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E5%BE%AE%E7%A7%AF%E5%88%86%E8%80%83%E7%BA%B2/">数学一微积分考纲</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/">chapter2应用层</a>
           </li>
         
           <li>
             <a href="/2020/08/13/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91/">chapter1计算机网络和因特网</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/10/chapter2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">chapter2进程与线程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/07/chapter1%E5%BC%95%E8%AE%BA-1/">chapter1引论</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/03/chapter6%E4%BB%8E%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%88%B0%E4%BA%91%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86%E5%99%A8/">chapter6从客户端到云的并行处理器</a>
           </li>
         
       </ul>
