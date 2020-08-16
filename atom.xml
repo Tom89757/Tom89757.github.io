@@ -75,17 +75,12 @@
     <link href="https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E5%BE%AE%E7%A7%AF%E5%88%86%E8%80%83%E7%BA%B2/"/>
     <id>https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E5%BE%AE%E7%A7%AF%E5%88%86%E8%80%83%E7%BA%B2/</id>
     <published>2020-08-16T17:05:52.000Z</published>
-    <updated>2020-08-16T18:25:17.401Z</updated>
+    <updated>2020-08-16T18:32:09.748Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;微积分（或高等数学）（约56%）&lt;/p&gt;
+&lt;h2 id=&quot;一、函数、极限、连续&quot;&gt;&lt;a href=&quot;#一、函数、极限、连续&quot; class=&quot;headerlink&quot; title=&quot;一、函数、极限、连续&quot;&gt;&lt;/a&gt;一、函数、极限、连续&lt;/h2&gt;&lt;h3 id=&quot;考试内容&quot;&gt;&lt;a href=&quot;#考试内容&quot; class=&quot;headerlink&quot; title=&quot;考试内容&quot;&gt;&lt;/a&gt;考试内容&lt;/h3&gt;&lt;p&gt;函数的概念及表示法    函数的有界性、单调性、周期性和奇偶性    复合函数、反函数、分段函数和隐函数    基本初等函数的性质及其图形    初等函数    函数关系的建立.&lt;/p&gt;
     
     </summary>
     
@@ -102,17 +97,12 @@
     <link href="https://tom89757.github.io/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/"/>
     <id>https://tom89757.github.io/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/</id>
     <published>2020-08-16T05:01:03.000Z</published>
-    <updated>2020-08-16T14:43:07.722Z</updated>
+    <updated>2020-08-16T18:29:16.526Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。&lt;/p&gt;
+&lt;p&gt;本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。&lt;/p&gt;
     
     </summary>
     
@@ -129,17 +119,16 @@
     <link href="https://tom89757.github.io/2020/08/13/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91/"/>
     <id>https://tom89757.github.io/2020/08/13/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91/</id>
     <published>2020-08-12T16:14:16.000Z</published>
-    <updated>2020-08-16T04:50:03.871Z</updated>
+    <updated>2020-08-16T18:29:35.694Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;本章目标是从整体上勾勒出计算机网络的概貌，描述本书内容的框架。&lt;/p&gt;
+&lt;h2 id=&quot;1-1-什么是因特网&quot;&gt;&lt;a href=&quot;#1-1-什么是因特网&quot; class=&quot;headerlink&quot; title=&quot;1.1 什么是因特网&quot;&gt;&lt;/a&gt;1.1 什么是因特网&lt;/h2&gt;&lt;p&gt;可以从两个角度回答这个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;描述因特网的具体组成，即构成因特网的基本硬件和软件组件。&lt;/li&gt;
+&lt;li&gt;为分布式应用提供服务的联网基础设施。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     

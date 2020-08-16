@@ -7,12 +7,12 @@
   
   <title>chapter2应用层 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。 本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。 2.1 应用层协议原理研发网络应用程序的核心在于写出能够运行在不同端系统和通过网络彼此通信的程序，两个典型的例子是Web应用程序和P2P文件共">
+  <meta name="description" content="网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。 本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chapter2应用层">
 <meta property="og:url" content="https://tom89757.github.io/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
-<meta property="og:description" content="网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。 本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。 2.1 应用层协议原理研发网络应用程序的核心在于写出能够运行在不同端系统和通过网络彼此通信的程序，两个典型的例子是Web应用程序和P2P文件共">
+<meta property="og:description" content="网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。 本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1.png">
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.1%E4%B8%A4%E7%A7%8D%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.3%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%A6%81%E6%B1%82.png">
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1.4%E8%BF%90%E8%BE%93%E5%8D%8F%E8%AE%AE%E9%80%89%E6%8B%A9.png">
 <meta property="article:published_time" content="2020-08-16T05:01:03.000Z">
-<meta property="article:modified_time" content="2020-08-16T14:43:07.722Z">
+<meta property="article:modified_time" content="2020-08-16T18:29:16.526Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -114,6 +114,7 @@
 
         <p>网络应用是计算机网络存在的理由。正因为此，各种网络应用层出不穷，极大丰富了人们的生活。</p>
 <p>本章中，学习有关网络应用的原理和实现方面的知识。从定义关键的应用层概念开始，详细考察集中网络应用程序，并学习如何使用套接字接口开发运行在TCP和UDP上的网络应用程序。</p>
+<a id="more"></a>
 <h2 id="2-1-应用层协议原理"><a href="#2-1-应用层协议原理" class="headerlink" title="2.1 应用层协议原理"></a>2.1 应用层协议原理</h2><p>研发网络应用程序的核心在于写出能够运行在不同端系统和通过网络彼此通信的程序，两个典型的例子是Web应用程序和P2P文件共享系统。我们只能基于端系统而不是网络核心设备（如路由器、链路层交换机）来开发应用程序软件，这种限制实际上促进了大量网络应用程序的迅速研发和部署。如下图所示：</p>
 <p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter2.1%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1.png" alt="图1 网络应用通信"></p>
 <h3 id="网络应用程序体系结构"><a href="#网络应用程序体系结构" class="headerlink" title="网络应用程序体系结构"></a>网络应用程序体系结构</h3><p>在开发应用程序之前，需要确定其体系结构，它由应用程序研发者设计，规定了如何在各种端系统上组织该应用程序。目前最主流的两种体系结构是：客户端-服务器体系结构和对等（P2P）体系结构。</p>
