@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-08-16T18:27:14.576Z</updated>
+  <updated>2020-08-18T14:31:15.898Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chapter3运输层</title>
+    <link href="https://tom89757.github.io/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/"/>
+    <id>https://tom89757.github.io/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/</id>
+    <published>2020-08-18T11:32:26.000Z</published>
+    <updated>2020-08-18T14:31:15.898Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="计算机网络" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>数学一概率论与数理统计考纲</title>
@@ -75,7 +102,7 @@
     <link href="https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E5%BE%AE%E7%A7%AF%E5%88%86%E8%80%83%E7%BA%B2/"/>
     <id>https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E5%BE%AE%E7%A7%AF%E5%88%86%E8%80%83%E7%BA%B2/</id>
     <published>2020-08-16T17:05:52.000Z</published>
-    <updated>2020-08-16T18:32:09.748Z</updated>
+    <updated>2020-08-16T18:35:34.912Z</updated>
     
     <summary type="html">
     
@@ -97,7 +124,7 @@
     <link href="https://tom89757.github.io/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/"/>
     <id>https://tom89757.github.io/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/</id>
     <published>2020-08-16T05:01:03.000Z</published>
-    <updated>2020-08-16T18:29:16.526Z</updated>
+    <updated>2020-08-18T11:28:12.132Z</updated>
     
     <summary type="html">
     
@@ -484,33 +511,6 @@
     
     
       <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter9图论算法</title>
-    <link href="https://tom89757.github.io/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/"/>
-    <id>https://tom89757.github.io/2020/07/22/chapter9%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95/</id>
-    <published>2020-07-21T16:52:35.000Z</published>
-    <updated>2020-07-22T17:54:08.969Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
     
   </entry>
   

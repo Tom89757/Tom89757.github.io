@@ -5,14 +5,19 @@
   
 
   
-  <title>Tag: 前端 | Tom89757&#39;s blog</title>
+  <title>chapter3运输层 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tom89757&#39;s blog">
-<meta property="og:url" content="https://tom89757.github.io/tags/%E5%89%8D%E7%AB%AF/index.html">
+  <meta name="description" content="运输层位于应用层和网络层之间。我们将交替地讨论运输层的原理和这些原理在现有的协议中是如何实现的。 3.1 概述和运输层服务运输层协议为运行在不同主机上的应用进程之间提供了逻辑通信（logic communication）功能。使用逻辑通信应用程序可以交换报文，而不用考虑承载这些报文的物理基础设施的细节。如下图所示：  运输协议在端系统而不是路由器中实现。应用层报文生成运输层报文段，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chapter3运输层">
+<meta property="og:url" content="https://tom89757.github.io/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="运输层位于应用层和网络层之间。我们将交替地讨论运输层的原理和这些原理在现有的协议中是如何实现的。 3.1 概述和运输层服务运输层协议为运行在不同主机上的应用进程之间提供了逻辑通信（logic communication）功能。使用逻辑通信应用程序可以交换报文，而不用考虑承载这些报文的物理基础设施的细节。如下图所示：  运输协议在端系统而不是路由器中实现。应用层报文生成运输层报文段，">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-18T11:32:26.000Z">
+<meta property="article:modified_time" content="2020-08-18T14:31:15.898Z">
 <meta property="article:author" content="Tom89757">
+<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
@@ -69,39 +74,67 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/20/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" class="archive-article-date">
-  <time datetime="2020-05-20T12:36:46.000Z" itemprop="datePublished">5月 20</time>
+        <section id="main"><article id="post-chapter3运输层" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/" class="article-date">
+  <time datetime="2020-08-18T11:32:26.000Z" itemprop="datePublished">2020-08-18</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/20/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">前端之路学习计划</a>
+    <h1 class="article-title" itemprop="name">
+      chapter3运输层
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-概述和运输层服务"><span class="toc-text">3.1 概述和运输层服务</span></a></li></ol>
+</div>
+
+
+        <p>运输层位于应用层和网络层之间。我们将交替地讨论运输层的原理和这些原理在现有的协议中是如何实现的。</p>
+<h2 id="3-1-概述和运输层服务"><a href="#3-1-概述和运输层服务" class="headerlink" title="3.1 概述和运输层服务"></a>3.1 概述和运输层服务</h2><p>运输层协议为运行在不同主机上的应用进程之间提供了逻辑通信（logic communication）功能。使用逻辑通信应用程序可以交换报文，而不用考虑承载这些报文的物理基础设施的细节。如下图所示：</p>
+<p><img src="" alt="图1 逻辑通信"></p>
+<p>运输协议在端系统而不是路由器中实现。应用层报文生成运输层报文段，</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/" data-id="cke01p8nu0000k8wdhhsvh9j5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E8%80%83%E7%BA%B2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数学一概率论与数理统计考纲</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
