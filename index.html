@@ -71,6 +71,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chapter4网络层：数据平面" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/" class="article-date">
+  <time datetime="2020-08-21T17:39:36.000Z" itemprop="datePublished">2020-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/">chapter4网络层：数据平面</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  
+</div>
+
+
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/" data-id="cke4jlj0u0000d8wd5chnd0ac" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-chapter3运输层" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/" class="article-date">
@@ -99,14 +148,287 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-概述和运输层服务"><span class="toc-text">3.1 概述和运输层服务</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-概述和运输层服务"><span class="toc-text">3.1 概述和运输层服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#运输层和网络层的关系"><span class="toc-text">运输层和网络层的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因特网运输层概述"><span class="toc-text">因特网运输层概述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-多路复用和多路分解"><span class="toc-text">3.2 多路复用和多路分解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web服务器与TCP"><span class="toc-text">Web服务器与TCP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-无连接传输：UDP"><span class="toc-text">3.3 无连接传输：UDP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UDP报文段结构"><span class="toc-text">UDP报文段结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UDP检验和"><span class="toc-text">UDP检验和</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-可靠数据传输原理"><span class="toc-text">3.4 可靠数据传输原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造可靠数据传输协议"><span class="toc-text">构造可靠数据传输协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流水线可靠数据传输协议"><span class="toc-text">流水线可靠数据传输协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回退N步"><span class="toc-text">回退N步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择重传"><span class="toc-text">选择重传</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-面向连接的传输：TCP"><span class="toc-text">3.5 面向连接的传输：TCP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP连接"><span class="toc-text">TCP连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-报文段结构"><span class="toc-text">TCP 报文段结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#往返时间的估计与超时"><span class="toc-text">往返时间的估计与超时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可靠数据传输"><span class="toc-text">可靠数据传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流量控制"><span class="toc-text">流量控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP连接管理"><span class="toc-text">TCP连接管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-拥塞控制原理"><span class="toc-text">3.6 拥塞控制原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#拥塞原因与代价"><span class="toc-text">拥塞原因与代价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拥塞控制方法"><span class="toc-text">拥塞控制方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-TCP拥塞控制"><span class="toc-text">3.7 TCP拥塞控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#公平性"><span class="toc-text">公平性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#明确拥塞通告：网络辅助拥塞控制"><span class="toc-text">明确拥塞通告：网络辅助拥塞控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-小结"><span class="toc-text">3.8 小结</span></a></li></ol>
 </div>
 
 
         <p>运输层位于应用层和网络层之间。我们将交替地讨论运输层的原理和这些原理在现有的协议中是如何实现的。</p>
 <h2 id="3-1-概述和运输层服务"><a href="#3-1-概述和运输层服务" class="headerlink" title="3.1 概述和运输层服务"></a>3.1 概述和运输层服务</h2><p>运输层协议为运行在不同主机上的应用进程之间提供了逻辑通信（logic communication）功能。使用逻辑通信应用程序可以交换报文，而不用考虑承载这些报文的物理基础设施的细节。如下图所示：</p>
-<p><img src="" alt="图1 逻辑通信"></p>
-<p>运输协议在端系统而不是路由器中实现。应用层报文生成运输层报文段，</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.1%E9%80%BB%E8%BE%91%E9%80%9A%E4%BF%A1.png" alt="图1 逻辑通信"></p>
+<p>运输协议在端系统而不是路由器中实现。应用层报文生成运输层报文段，继而封装为网络层数据报，网络路由器仅作用于该数据报的网络层字段，而不会检查运输层报文段。</p>
+<h3 id="运输层和网络层的关系"><a href="#运输层和网络层的关系" class="headerlink" title="运输层和网络层的关系"></a>运输层和网络层的关系</h3><p>网络层提供了主机之间的逻辑通信，而运输层为运行在不同主机上的进程提供了逻辑通信。书中通过传统邮政服务的例子精彩地展示了它们之间细微但是重要的差别。</p>
+<p>运输层协议只工作在端系统中，将来自应用进程的报文移动到网络边缘（即网络层），或反之。中间路由器既不处理也不识别运输层加在应用层报文的任何信息。</p>
+<p>自然地，运输层协议为进程提供的服务受制于底层网络层协议的服务模型。然而，即使网络层协议会使分组丢失、篡改、冗余或者不具有机密性，运输层协议也能为应用程序提供可靠的数据传输服务和加密服务。</p>
+<h3 id="因特网运输层概述"><a href="#因特网运输层概述" class="headerlink" title="因特网运输层概述"></a>因特网运输层概述</h3><p>运输层协议只有两种：UDP和TCP。如2.7节所描述的，应用程序开发人员在生成套接字时必须指定选择其中的一种。</p>
+<p>在讨论UDP和TCP之前，先介绍网络层协议中的IP（Internet Protocol，网络协议），其服务模型为尽力而为交付服务（best-effort delivery service），故其不确保报文段的交付、按序交付和完整性，因而成为不可靠服务。</p>
+<p>UDP和TCP最基本的责任是，将两个端系统间IP的交付服务扩展为运行在端系统上的两个进程间的交付服务，这种扩展称为运输层的多路复用（transport-layer multiplexing）和多路分解（demultiplexing）。</p>
+<p>进程到进程的数据交付和差错检查是两种最低限度的运输层服务，也是UDP仅提供的两种服务（UDP同样为不可靠服务）。TCP则提供几种附加服务：可靠数据传输；拥塞机制。这两种服务也给TCP协议带去了复杂性。</p>
+<h2 id="3-2-多路复用和多路分解"><a href="#3-2-多路复用和多路分解" class="headerlink" title="3.2 多路复用和多路分解"></a>3.2 多路复用和多路分解</h2><p>多路复用和多路分解服务是所有计算机网络都需要的。书中展示了一个4个网络应用进程同时运行的实例，如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.2%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%92%8C%E5%A4%9A%E8%B7%AF%E5%88%86%E8%A7%A3.png" alt="图2 多路复用和多路分解"></p>
+<p>一个进程有一个或多个套接字，相当于从网络向进程传递数据和从进程向网络传递数据的门户。接收主机如何将一个到达的运输层报文段定向到对应的套接字呢？这引出了两个概念：</p>
+<ul>
+<li>多路分解：运输层报文段具有几个字段，运输层检查这些字段可以标识出接收套接字。将运输层报文段中的数据交付到正确的套接字的工作即为多路分解。</li>
+<li>多路复用：在源主机从不同套接字收集数据块，并为每个数据块封装上首部信息，从而生成报文段，并将它们传递到网络层，这些称为多路复用。</li>
+</ul>
+<p>上述只是描述了多路复用和分解的作用，下面描述在主机中它们的具体机制。先看实现多路复用需满足的条件：</p>
+<ol>
+<li>套接字有唯一标识符。</li>
+<li>每个报文段有特殊字段来指示该报文段所要交付到的套接字。当我们开发一个新的应用程序时，必须为其分配一个端口号。如下图所示：</li>
+</ol>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.2%E7%AB%AF%E5%8F%A3%E5%AD%97%E6%AE%B5.png" alt="图3 端口字段"></p>
+<p>上述两个条件便能使运输层通过识别端口号定向到相应套接字，UDP中的多路复用机制大致如此，但是TCP中的多路复用机制要更为复杂：</p>
+<p><strong>无连接的多路复用与多路分解</strong></p>
+<p>对UDP而言，下面的代码即创建了一个套接字并为其分配了端口：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line">clentSocket.bind(<span class="string">''</span>, <span class="number">19157</span>)</span><br></pre></td></tr></table></figure>
+<p>通常，应用程序客户端让运输层自动透明地分配端口号，服务器则分配特定端口号。使用UDP源主机和目的主机的通信过程如下：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.2%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%8F%8D%E8%BD%AC.png" alt="图4 端口号反转"></p>
+<p><strong>面向连接的多路复用与多路分解</strong></p>
+<p>与UDP套接字由一个二元组(目的IP地址，目的端口号)标识不同，TCP套接字由一个四元组(源IP地址，源端口号，目的IP地址，目的端口号)来标识。如2.7.2中所描述的，TCP通信涉及到两种套接字——欢迎套接字和连接套接字。对每个不同的四元组，虽然目的IP地址和目的端口号相同，也会创建不同的连接套接字。</p>
+<p>服务器主机可以支持很多并行的TCP套接字，每个套接字与一个进程相联系，并由其四元组来标识每个套接字。书中还介绍了端口扫描及其工具 <a href="http://nmap.org/" target="_blank" rel="noopener">Nmap</a> 。</p>
+<p>下图展示了两个客户使用相同的目的端口号（80）与同一个Web服务器通信：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.2%E5%A4%9A%E5%AE%A2%E6%88%B7%E9%80%9A%E4%BF%A1.png" alt="图5 多客户通信"></p>
+<h3 id="Web服务器与TCP"><a href="#Web服务器与TCP" class="headerlink" title="Web服务器与TCP"></a>Web服务器与TCP</h3><p>需要说明的是，连接套接字与进程之间并不总是一一对应的关系，当今的高性能Web服务器通常只使用一个进程，但是为每个新的客户连接创建一个具有新连接套接字的新线程。</p>
+<h2 id="3-3-无连接传输：UDP"><a href="#3-3-无连接传输：UDP" class="headerlink" title="3.3 无连接传输：UDP"></a>3.3 无连接传输：UDP</h2><p>运输层最低限度上必须提供一种复用/分解服务，以便在网络层与正确的应用级进程之间传递数据。实际上，UDP正是提供了这样一种最低限度的服务。UDP从应用进程得到数据，附加上用于多路复用/分解服务的源和目的端口号字段，以及两个其他的小字段，然后将形成的报文段交给网络层。在发送报文段之前，没有握手的步骤，故UDP称为无连接的。</p>
+<p>DNS是一个通常使用UDP的应用层协议的例子。虽然TCP提供了可靠数据传输服务，TCP却不是所有应用的首选，许多应用更适合UDP，其原因如下：</p>
+<ol>
+<li>关于发送什么数据以及何时发送的应用层控制更为精细：TCP的拥塞控制机制不适合实时应用，实时应用对服务器的响应有所要求，且能容忍部分数据丢失，且实时应用对超出UDP所能提供的服务可以通过其他方式实现。</li>
+<li>无须建立连接：无须三次握手，使得UDP避免了连接时延，这可能是DNS选择UDP的主要原因。</li>
+<li>无连接状态：TCP需要在端系统中维护连接状态，状态包括接收和发送缓存、拥塞控制参数以及序号与确认号的参数。UDP不维护连接状态，不追踪参数，可以使服务器承载更多的活跃用户。</li>
+<li>分组首部开销小。每个TCP报文段有20字节的首部开销，而UDP仅有8字节。</li>
+</ol>
+<p>下图展示了流行的因特网应用及其使用的运输协议：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.3%E5%9B%A0%E7%89%B9%E7%BD%91%E5%BA%94%E7%94%A8%E8%BF%90%E8%BE%93%E5%8D%8F%E8%AE%AE.png" alt="图6 因特网应用运输协议"></p>
+<p>UDP缺乏拥塞控制能够导致UDP发送方和接收方之间的高丢包率，并挤垮TCP会话，已提出的新机制可以促使所有的数据源（包括UDP源）执行自适应的拥塞控制。此外，UDP应用可能实现可靠数据传输，这需要通过在应用程序中建立可靠性机制完成，如谷歌浏览器中使用的QUIC协议即在应用层协议中实现了可靠性。</p>
+<h3 id="UDP报文段结构"><a href="#UDP报文段结构" class="headerlink" title="UDP报文段结构"></a>UDP报文段结构</h3><p>如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.3.1UDP%E6%8A%A5%E6%96%87%E6%AE%B5.png" alt="图7 UDP报文段"></p>
+<p>其中长度指示了UDP报文段中的字节数（首部加数据），检验和检查在该报文段中是否出现差错。</p>
+<h3 id="UDP检验和"><a href="#UDP检验和" class="headerlink" title="UDP检验和"></a>UDP检验和</h3><p>检验和用于确定当UDP报文段从源向目的地移动时，其中的比特是否发生了改变，改变可能由链路中噪声干扰或者存储在路由器中时引入问题。书中给出了一个计算检验和的简单例子，RFC 1071中描述了具体细节。检验和的功能主要通过反码求和来实现。</p>
+<p>虽然许多链路层协议都提供了差错检测，但是不能保证源和目的之间的所有链路提供。此外，当报文段存储在某台路由器的内存中时，也可能引入比特差错。这些问题使得设计师提出了端到端原则（end-end principle），即在端到端的基础上在运输层提供差错检测。</p>
+<p>然而，UDP并不提供差错修复功能，在检测到差错时，它要么丢弃受损的报文段，要么对应用程序给出警告。</p>
+<h2 id="3-4-可靠数据传输原理"><a href="#3-4-可靠数据传输原理" class="headerlink" title="3.4 可靠数据传输原理"></a>3.4 可靠数据传输原理</h2><p>可靠数据传输的实现问题在运输层、链路层和应用层均有实现。下图展示了我们学习可靠数据传输的框架：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93.png" alt="图8 可靠数据传输"></p>
+<p>上图中可靠信道即是可靠数据传输协议（reliable data transfer protocol）实现的服务抽象。可靠协议的下层协议可能是不可靠的（如TCP下层的IP），故这种抽象的实现具有挑战。</p>
+<p>本节将使用分组而不是报文段来描述数据块，因为理论适用于一般的计算机网络而不只是运输层；同时，仅考虑单项数据传输，以减少乏味的细节描述。</p>
+<h3 id="构造可靠数据传输协议"><a href="#构造可靠数据传输协议" class="headerlink" title="构造可靠数据传输协议"></a>构造可靠数据传输协议</h3><p>接下来我们一步步研究一系列协议，一个比一个复杂，最后得到一个完美可靠的数据传输协议：</p>
+<p><strong>1. 经完全可靠信道的可靠数据传输：rdt1.0</strong></p>
+<p>先考虑最简单的情况：底层信道完全可靠，称该协议为rdt1.0，下图展示了rdt1.0 发送方和接收方的优先状态机的定义：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.1rdt1.0.png" alt="图9 rdt1.0"></p>
+<p><strong>2.经具有比特差错信道的可靠数据传输：rdt2.0</strong></p>
+<p>该模型更为实际，考虑了分组中比特受损的因素，比特差错通常出现在网络的物理部件中。书中还引出了自动重传请求（Automatic Repeat reQuest，ARQ）协议，它是基于重传机制的可靠数据传输协议。该协议使得内容接收有误时将内容重传，下面是ARQ协议需要的用来处理比特差错的三种功能：</p>
+<ol>
+<li>差错检测：第5章详细描述了差错检测和纠错技术，这些技术要求有额外的比特从发送方发送到接收方，并将其汇集到rdt2.0数据分组的分组检验和字段中。</li>
+<li>接收方反馈：rdt2.0协议要求接收方向发送方回送ACK（肯定确认，positive acknowledgement）和NAK（否定确认，negative acknowledgement）分组，这些分组只需一个比特：如用0表示NAK，用1表示ACK。</li>
+<li>重传。接收方收到有差错的分组时，发送方将重传该分组文。</li>
+</ol>
+<p>如下图所示，表示了rdt2.0的FSM，其采用了差错检测、肯定确认和否定确认：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.1rdt2.0.png" alt="图10 rdt2.0"></p>
+<p>当发送方出与等待ACK或NAK的状态时，它不能从上层获得更多的数据，即rdt_send()事件不可能出现。这种行为使得rdt2.0又被称为停等（stop-and-wait）协议。</p>
+<p>然而，rdt2.0仍然存在致命的缺陷，尤其是没有考虑ACK或NAK分组受损的可能性。我们面临的挑战是，检验并纠正ACK/NAK分组中的差错。书中带着我们进行了自然而流畅的思考，这是生化环材等专业不能带来的，呜呼哀哉！考虑处理受损ACK和NAK时的三种可能性：</p>
+<ul>
+<li>引入新型的发送方到接收方的分组，这会导致恶性循环，需要不断引入分组，且无法确保解决问题。</li>
+<li>增加足够的检验和比特，以检测和纠正差错。</li>
+<li>引入冗余分组，但使得接收方不知道接受的分组是新分组还是重传分组。</li>
+</ul>
+<p>解决上述问题的简单方法是，让发送方对数据分组编号，并将该编号放在数据分组中的新字段中。对停等协议来说，1比特序号就足够。下图展示了对rdt2.1的FSM描述，这是rdt2.0的修订版：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.1rdt2.1%E5%8F%91%E9%80%81%E6%96%B9.png" alt="图11 rdt2.1发送方"></p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.1rdt2.1%E6%8E%A5%E6%94%B6%E6%96%B9.png" alt="图12 rdt2.1接收方"></p>
+<p>rdt2.1的FSM状态数是rdt2.0的两倍，这是因为协议状态必须反映出目前正发送的分组或希望接收的分组的序号是0还是1。</p>
+<p>rdt2.2是在有比特差错信道上实现的一个无NAK的可靠数据传输协议，如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.1rdt2.2%E5%8F%91%E9%80%81%E6%96%B9.png" alt="图13 rdt2.2发送方"></p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.1rdt2.2%E6%8E%A5%E6%94%B6%E6%96%B9.png" alt="图14 rdt2.2接收方"></p>
+<p>目前还看不太懂，暂略<strong>mark</strong>。</p>
+<p><strong>3.经具有比特差错的丢包信道的可靠数据传输：rdt3.0</strong></p>
+<p>现在假定除了比特受损外，底层信道还会丢包，这在计算机网络中并不罕见。协议此处需要处理两个问题：怎样检测丢包以及发生丢包后该做些什么。</p>
+<p>我们让发送包负责检测和恢复丢包工作，由发送方明智地选择一个时间值，以判断可能发生了丢包。当然，这引入了冗余数据分组的可能性，但rdt2.2协议已经能通过分组序号来处理冗余分组情况。</p>
+<p>为了实现基于事件的重传机制，需要一个倒计时计时器（countdown timer）。发送方需要做到：每次发送一个分组时，便启动一个定时器；响应定时器中断并采取适当动作；终止定时器。下图展示了rdt3.0的发送方FSM：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.1rdt3.0%E5%8F%91%E9%80%81%E6%96%B9.png" alt="图15 rdt3.0发送方"></p>
+<p>下图则展示了rdt3.0发生各种情况的过程：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.1%E5%90%84%E7%A7%8D%E6%83%85%E5%86%B5.png" alt="图16 各种情况"></p>
+<p>综上，在数据传输协议中，通过检验和、序号、定时器、肯定和否定确认分组这些技术，成功地构造了一个可靠数据传输协议。</p>
+<h3 id="流水线可靠数据传输协议"><a href="#流水线可靠数据传输协议" class="headerlink" title="流水线可靠数据传输协议"></a>流水线可靠数据传输协议</h3><p>rdt3.0是一个停等协议，这注定其性能不佳。书中介绍了发送方利用率的概念，计算出停等协议具有非常低的发送方利用率$U_{sendr}$。该性能问题的一个简单解决方法是，不以停等方式运行，允许发送方发送多个分组而无须等待确认，如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.2%E5%81%9C%E7%AD%89%E5%92%8C%E6%B5%81%E6%B0%B4%E7%BA%BF.png" alt="图17 停等协议和流水线协议"></p>
+<p>下图则展示了停等和流水线发送的细节差异：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.2%E5%81%9C%E7%AD%89%E5%92%8C%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%8F%91%E9%80%81.png" alt="图18 停等和流水线发送"></p>
+<p>流水线技术给原本的可靠数据传输协议带来如下影响：</p>
+<ul>
+<li>必须增加序号范围，因为每个输送中的分组必须有唯一序号。</li>
+<li>协议的发送方和接收方两端也许不得不缓存多个分组。</li>
+<li>所需序号范围和对缓冲的要求取决于数据传输协议如何处理丢失、损坏及延时过大的分组。解决流水线差错修复有两种基本方法：回退N步（Go-Back-N，GBN）和选择重传（Selective Repeat，SR）。</li>
+</ul>
+<h3 id="回退N步"><a href="#回退N步" class="headerlink" title="回退N步"></a>回退N步</h3><p>在回退N步协议中，允许发送方发送多个分组而不需等待确认，但它也受限于在流水线中未确认的分组数不能超过某个最大允许数N。下图显示了发送方看到的GBN协议的序号范围：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.3GBN.png" alt="图19 GBN"></p>
+<p>下面给出了基于ACK、无NAK的GBN协议的发送方和接收方的扩展FSM描述，其增加了变量base和nextseqnum，为扩展FSM。</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.3GBN%E5%8F%91%E9%80%81%E6%96%B9.png" alt="图20 GBN发送方"></p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.3GBN%E6%8E%A5%E6%94%B6%E6%96%B9.png" alt="图21 GBN接收方"></p>
+<p>GBN必须响应三种类型的事件：</p>
+<ul>
+<li>上层的调用：当窗口未满时产生分组。</li>
+<li>收到一个ACK：对序号为n的分组采取累计确认的方式，表明接收方已正确接收到序号为n的前面且包括n在内的分组。</li>
+<li>超时事件：出现超时时，发送方重传所有已发送但未被确认过的分组。</li>
+</ul>
+<p>在GBN协议中，接收方丢弃所有失序分组。下图展示了运行中的GBN：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.3%E8%BF%90%E8%A1%8C%E4%B8%AD%E7%9A%84GBN.png" alt="图22 运行中的GBN"></p>
+<p>GBN协议的实现同样可能以各种过程形式出现，每个过程实现了在响应各种可能出现的事件时采取的动作。这是一种基于事件的编程（event-based programming）方式。</p>
+<h3 id="选择重传"><a href="#选择重传" class="headerlink" title="选择重传"></a>选择重传</h3><p>选择重传（Selective Repeat，SR）协议通过让发送方仅重传那些它怀疑在接收方出错（丢失或受损）的分组而避免了不必要的重传。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.4%E5%BA%8F%E5%8F%B7%E7%A9%BA%E9%97%B4.png" alt="图23 序号空间"></p>
+<p>书中展示了SR发送方和接收方的事件与动作，此处略。下图展示了一个SR操作的实例：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.4SR%E6%93%8D%E4%BD%9C.png" alt="图26 SR操作"></p>
+<p>SR协议的关键在于，对于哪些分组被正确接收，哪些没有，发送方和接收方并不总是能看到相同的结果，这意味着发送方和接收方的窗口并不总是一致。下图展示了SR接收方窗口太大的困境：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.4%E6%8E%A5%E6%94%B6%E6%96%B9%E7%AA%97%E5%8F%A3%E5%A4%AA%E5%A4%A7.png" alt="图27 接收方窗口太大"></p>
+<p>此时，无法区分上述两种情况，即无法区分是第1个分组的重传还是第5个分组的初次传输。习题中给出，窗口长度必须小于或等于序号空间大小的一半。</p>
+<p>至此结束了关于可靠数据传输协议的讨论，下表总结用于实现它的机制：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.4.4%E4%BC%A0%E8%BE%93%E6%9C%BA%E5%88%B6.png" alt="表1 传输机制"></p>
+<p>上述讨论都基于“分组在发送方和接收方的信道中不能被重新排序”的前提，实际上分组重新排序在网络中可能发生，此时需要确保一个序号不被使用，指导发送方确信任何先前发送的序号为x的分组都不在网络中为止。这一机制可以通过假定一个分组在网络中存活事件不会超过一个最大值来实现，如3分钟。</p>
+<h2 id="3-5-面向连接的传输：TCP"><a href="#3-5-面向连接的传输：TCP" class="headerlink" title="3.5 面向连接的传输：TCP"></a>3.5 面向连接的传输：TCP</h2><p>TCP是因特网运输层的面向连接的可靠的运输协议，它依赖于上一节提到的差错检测、重传、累积确认、定时器以及用于序号和确认号的首部字段等技术。</p>
+<h3 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h3><p>在进行数据传输前，两个进程必须握手，相互发送预备报文段，以建立确保数据传输的参数。TCP连接的共同状态仅保留在两个端系统的TCP程序中，中间的网络元素（如路由器）不会维持TCP状态，实际上，路由器对TCP连接视而不见，只看到了传输的数据报。</p>
+<p>TCP连接提供全双工服务（full-duplex service），即数据流动是双向的。书中描述了建立TCP连接的简要过程，其涉及到三个报文段的发送，故称为三次握手，前两次报文段不包含应用层数据。</p>
+<p>书中提出了（send buffer）、最大报文段长度（Maximum Segment Size，MSS）和最大传输单元（Maximum Transmission Unit，MTU）等概念，描述了传输数据的过程，其中MSS是指报文段里应用层数据的最大长度（通常为1460字节，不包括TCP/IP首部的40个字节），MTU是最大链路层帧长度（以太网和PPP链路层协议都具有1500字节的MTU）。TCP连接的两端都有各自的发送缓存和接收缓存。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.1TCP%E7%BC%93%E5%AD%98.png" alt="图28 TCP缓存"></p>
+<h3 id="TCP-报文段结构"><a href="#TCP-报文段结构" class="headerlink" title="TCP 报文段结构"></a>TCP 报文段结构</h3><p>TCP报文段由首部字段和一个数据字段组成，如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.2TCP%E6%8A%A5%E6%96%87%E6%AE%B5%E7%BB%93%E6%9E%84.png" alt="图29 TCP报文段结构"></p>
+<p>书中对上述报文段的各字段作了详细说明，此处略。</p>
+<p><strong>序号和确认号</strong></p>
+<p>TCP把数据看成无结构、有序的字节流，序号即是该报文段首字节的字节流编号。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.2%E5%BA%8F%E5%8F%B7.png" alt="图30 序号"></p>
+<p>确认号与序号相关，主机A填充进报文段的确认号是主机A期望从主机B收到的下一字节的序号。书中举了两个例子说明确认号和序号的关系，并引出了在TCP中的累积确认（cumulative acknowledgment）的概念和报文段失序到达的问题，后者由TCP编程人员解决，实践中通常保留失序字节数据。</p>
+<p><strong>Telnet：序号和确认号的一个学习案例</strong></p>
+<p>Telnet由RFC 854定义，是一个用于远程登录的流行应用层协议。它运行在TCP之上，被设计成可在任意一对主机之间工作。（现在更流行的是SSH协议 ，因为其提供了加密功能）下图展示了一个经TCP的简单Telnet应用的确认号和序号：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.2Telnet%E5%BA%94%E7%94%A8.png" alt="图31 Telnet应用"></p>
+<h3 id="往返时间的估计与超时"><a href="#往返时间的估计与超时" class="headerlink" title="往返时间的估计与超时"></a>往返时间的估计与超时</h3><p>正如前面讲述的rdt协议，TCP采用超时/重传机制处理报文段的丢失问题。但当涉及到具体的TCP协议时，许多微妙的细节问题需要考量。</p>
+<p><strong>估计往返时间</strong></p>
+<p>TCP仅在某个时刻做一次SampleRTT测量，并且不为重传的报文段做测量。由于SampleRTT随时间波动，TCP会维持一个SampleRTT均值（称为EstimateRTT），计算公式如下：</p>
+<script type="math/tex; mode=display">
+EstimatedRTT = (1 - \alpha)·EstimatedRTT + \alpha·SampleRTT</script><p>上述公式体现了加权的思想，在RFC 5298中建议$\alpha$取值0.125。这种对最近的RTT测量值赋更高的权称之为指数加权移动平均（Exponential Weighted Moving Average，EWMA）。下图展示了RTT样本和RTT估计：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.3RTT.png" alt="图32 RTT"></p>
+<p>还有一个用于估算SampleRTT偏离EstimatedRTT程度的量：DevRTT（$\beta$推荐取0.25）：</p>
+<script type="math/tex; mode=display">
+DevRTT = (1 - \beta)·DevRTT + \beta · |SampleRTT - EstimatedRTT|</script><p><strong>设置和管理重传超时间隔</strong></p>
+<p>自然的想法是，超时间隔应该为EstimatedRTT加上一定余量，超时间隔TimeoutInterval的计算公式如下：</p>
+<script type="math/tex; mode=display">
+TimeoutInterval = EstimatedRTT + 4·DevRTT</script><p>需要补充的是，TCP使用了流水线的思想，一个发送方能够具有的未被确认报文段的具体数量是由TCP的流量控制和拥塞控制机制决定的。</p>
+<h3 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h3><p>IP服务并不可靠，IP不保证数据报的交付、按序交付和完整性。TCP的可靠数据传输服务则确保一个进程从其接收缓存中读出的数据流是无损坏、无间隙、非冗余和按序的数据流（即该字节流与连接的另一方端系统发送出的字节流完全相同）。在RFC 6298中，推荐的定时器管理过程仅使用单一的重传定时器，即使有多个已发送但还未确认的报文段。</p>
+<p>书中递进地讨论TCP如何提供可靠数据传输服务，先讨论超时机制，再讨论冗余确认技术。下图展示了一个高度简化的TCP发送方描述：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.4%E7%AE%80%E5%8C%96%E7%9A%84TCP%E5%8F%91%E9%80%81%E6%96%B9.png" alt="图33 简化的TCP发送方"></p>
+<p><strong>一些有趣的情况</strong></p>
+<p>下图展示了主机A向主机B发送报文段发生的两种情况：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.4%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5.png" alt="图34 两种情况"></p>
+<p>下图展示了最后的第三种情况：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.4%E7%AC%AC%E4%B8%89%E7%A7%8D%E6%83%85%E5%86%B5.png" alt="图34 第三种情况"></p>
+<p><strong>超时间隔加倍</strong></p>
+<p>每次TCP重传时都会将下一次的超时间隔设为先前值的两倍，而不是前面所说的从EstimatedRTT和DevRTT推断出的值。每当收到上层的数据和收到ACK时，超时间隔又由后者推算得到。这是一种形式受限的拥塞控制。</p>
+<p><strong>快速重传</strong></p>
+<p>上述超时重传机制延迟重传丢失的分组，增加了端到端时延。通过冗余ACK（duplicate ACK）再次确认某个报文段的ACK，即能检测到该报文段后续的报文段发生了缺失。下表展示了产生TCP ACK的建议：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.4ACK.png" alt="表2 ACK"></p>
+<p>快速重传的机制是，一旦收到3个冗余ACK，TCP就执行快速重传（fast retransmit），即在该报文段的定时器过期之前重传丢失的报文段。</p>
+<p><strong>是回退N步还是选择重传</strong></p>
+<p>根据TCP采用的差错修复机制，它是一个GBN协议还是一个SR协议呢？其累积确认和维持的SendBase和NextSeqNum使他像是一个GBN风格的协议，而其将正确接收但失序的报文段缓存起来，且重传报文段的频率远低于GBN，又使其风格接近SR。因此，TCP是一个GBN协议和SR协议的混合体。</p>
+<p>值得补充的是，RFC 2018中对TCP提出的选择确认（selective ackonwledgement）机制允许TCP有选择地确认接收的失序报文段，使其更接近SR协议。</p>
+<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>当TCP连接收到正确、按序的字节后，就将其放入接收缓存，当发送方发送的数据太快、太多时，就会发生缓存溢出。流量控制服务（flow-control service）便消除了发送方使接收方缓存溢出的可能性，它本质上是一个速度匹配服务，即发送方的发送速率与接收方应用程序的读取速率相匹配。需要强调的是，拥塞控制（congestion control）和流量控制虽然采取动作相似，针对的情况却不同。</p>
+<p>TCP通过让发送方维护一个称为接收窗口（receive window）的变量提供流量控制。书中定义了RcvBuffer、LastByteRead、LastByteRcvd、rwnd（接收窗口）等数值，则有以下关系式：</p>
+<script type="math/tex; mode=display">
+LastByteRcvd - LastByteRead \le RcvBuffer  \\
+rwnd = RcvBuffer - [LastByteRcvd - LastByteRead]</script><p>下图对这些数值之间的关系进行了展示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.5%E6%95%B0%E5%80%BC%E5%85%B3%E7%B3%BB.png" alt="图38 数值关系"></p>
+<p>在主机A向主机B发送数据的整个连接周期内，须保证：</p>
+<script type="math/tex; mode=display">
+LastByteSent - LastByteAcked \le rwnd</script><p>书中补充了当主机B接收缓存被占满后的处理过程，此时主机A会继续向B发送只有一个字节数据的报文段，以使B向A发送缓存清空后的rwnd值。与TCP相比，UDP并不提供流量控制，故其报文段可能丢失。</p>
+<h3 id="TCP连接管理"><a href="#TCP连接管理" class="headerlink" title="TCP连接管理"></a>TCP连接管理</h3><p>本小节考察如何建立和拆除一条TCP连接。TCP连接的建立会显著增加人们感受到的时延，流行的SYN洪泛攻击便利用了TCP连接管理中的弱点来达到攻击目的。客户中的TCP会用以下方式与服务器中的TCP建立一条TCP连接：</p>
+<ul>
+<li>第一步：客户端向服务器端的TCP发送一个特殊的TCP报文段，其中包括标志位（SYN比特置为1）和初始序号（client_iyn）。</li>
+<li>第二步：服务器从包含上述报文段的数据报中提取出TCP SYN报文段，为该TCP连接分配TCP缓存和变量，并向客户TCP发送允许连接的报文段。该报文段称为SYNACK 报文段（SYNACK segment），其包含了SYN比特（置为1）、确认号字段（client_syn + 1）和服务器初始序号（server_isn）。</li>
+<li>第三步：收到SYNACK报文段后，客户也要给该连接分配缓存和变量。客户主机接下来给服务器发送的一个报文段对服务器的允许连接的报文段进行了确认（将server_isn + 1放入了确认号字段，并将SYN置为0，因为连接已经建立）该报文段可以携带客户到服务器的数据。</li>
+</ul>
+<p>完成这3个步骤，客户端与服务器之间的连接建立，可以相互发送包含应用层数据的报文段，发送过程中SYN比特置为0，表明处于连接状态。建立该连接的过程即是三次握手，书上描述了一个攀岩者和保护者的比喻，实在形象且巧妙。下图展示了TCP三次握手的过程：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.6TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png" alt="图39 TCP三次握手"></p>
+<p>下图则展示了关闭TCP连接的过程：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.6%E5%85%B3%E9%97%ADTCP%E8%BF%9E%E6%8E%A5.png" alt="图40 关闭TCP连接"></p>
+<p>在一个TCP连接的生命周期内，每台主机中的TCP协议在各种TCP状态间切换，下图展示了客户TCP会经历的一系列典型TCP状态：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.6%E5%AE%A2%E6%88%B7TCP%E7%8A%B6%E6%80%81.png" alt="图41 客户TCP状态"></p>
+<p>下图则展示了服务器TCP经理的一系列TCP状态：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.5.6%E6%9C%8D%E5%8A%A1%E5%99%A8TCP%E7%8A%B6%E6%80%81.png" alt="图42 服务器TCP状态"></p>
+<p>书中介绍了SYN 洪泛攻击（SYN flood attack），这是一种经典的DoS攻击，可以通过SYN cookie防御系统防范，这种系统部署在大多数主流操作系统中。其具体工作原理略。</p>
+<p>上述讨论都基于“客户和服务器都准备通信”，即服务器正在监听客户发送其SYN报文段的端口。书中讨论一种“目的主机收到的TCP报文段的端口号或源IP地址与该主机上正在进行的套接字都不匹配”的情形，此时该主机向源发送一个将RST标志位置为1的特殊重置报文段；而当目的主机收到的报文段为UDP分组时，则发送特殊的ICMP数据报，这将在第4章讨论。</p>
+<p>至此，可以对nmap端口扫描工具的工作原理作进一步说明，此处略。</p>
+<h2 id="3-6-拥塞控制原理"><a href="#3-6-拥塞控制原理" class="headerlink" title="3.6 拥塞控制原理"></a>3.6 拥塞控制原理</h2><p>至此，我们直到当网络变得拥塞时由于路由器缓存溢出可能就会导致丢包，分组重传作为丢包的处理方式，同时也可以作为网络拥塞的征兆。然而，它却不能处理导致网络拥塞的原因，故我们需要其它的机制在网络拥塞发生时遏制发送方。拥塞控制和可靠数据传输一样，是组网技术的10个基础性问题之一。</p>
+<h3 id="拥塞原因与代价"><a href="#拥塞原因与代价" class="headerlink" title="拥塞原因与代价"></a>拥塞原因与代价</h3><p>通过分析3个复杂性越来越高的发生拥塞的情况，开始我们对拥塞控制的一般性研究。</p>
+<p><strong>1.情况1：两个发送方和一台具有无穷大缓存的路由器</strong></p>
+<p>如下图所示（共享式输出链路容量为R）：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.6.1%E6%8B%A5%E5%A1%9E%E6%83%85%E5%86%B51.png" alt="图43 拥塞情况1"></p>
+<p>下图则描述了主机A的连接性能：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.6.1%E6%83%85%E5%86%B51%E6%80%A7%E8%83%BD.png" alt="图44 情况1性能"></p>
+<p>可以看出，当主机A和B的发送速率接近R/2时，时延将会以指数速率增加。这意味着，当分组的到达速率接近链路容量时，分组经历巨大的排队时延。</p>
+<p><strong>2.情况2：两个发送方和一台具有有限缓存的路由器</strong></p>
+<p>路由器容量有限，当分组到达一个已满的缓存时会被丢弃，但会被重传。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.6.1%E6%83%85%E5%86%B52.png" alt="图45 情况2"></p>
+<p>该情况下性能严重依赖于重传方式。下图展示了该情况下各种条件下的性能：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.6.1%E6%83%85%E5%86%B52%E6%80%A7%E8%83%BD.png" alt="图46 情况2性能"></p>
+<p>a图中未发生重传，b图中发生重传（不重传还未确认丢失的分组），c图中发生重传（重传超时但还未确认丢失的分组）。可以看到，当网络拥塞时，其代价不仅是需要通过重传因溢出丢失的分组，还有因为超时重传不必要的分组副本。</p>
+<p><strong>情况3：4个发送方和具有有限缓存的堕胎路由器及多跳路径</strong></p>
+<p>4台主机发送分组，每台通过交叠的两跳路径传输，假设每台主机采用超时/重传机制实现可靠数据传输服务。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.6.1%E6%83%85%E5%86%B53.png" alt="图46 情况3"></p>
+<ul>
+<li>当流量$\lambda<em>{in}$（故$\lambda</em>{in`}$）不大时，很少发生溢出，故吞吐量接近供给载荷。</li>
+<li>当流量$\lambda<em>{in}$（故$\lambda</em>{in`}$）很大时，A-C端到端吞吐量将趋近于0。</li>
+</ul>
+<p>下图展示了该情况下的性能：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.6.1%E6%83%85%E5%86%B53%E6%80%A7%E8%83%BD.png" alt="图47 情况3性能"></p>
+<p>可以观察到网络拥塞的另一种代价，当一个分组沿一条路径被丢弃时，上游路由器转发该分组使用的传输容量被浪费掉。</p>
+<h3 id="拥塞控制方法"><a href="#拥塞控制方法" class="headerlink" title="拥塞控制方法"></a>拥塞控制方法</h3><p>此处，指出在实践中采用的两种主要拥塞控制方法，可根据网络层是否为运输层拥塞控制提供了显式帮助，来区分拥塞控制方法：</p>
+<ul>
+<li>端到端拥塞控制：网络层未提供显式支持。TCP通过对网络行为的观察（如超时或3次冗余）推断网络拥塞，因为IP层不会向端系统提供有关网络拥塞的反馈信息。</li>
+<li>网络辅助的拥塞控制：路由器向发送方提供关于网络拥塞状态的显式反馈信息。</li>
+</ul>
+<p>下图展示了两种网络辅助的拥塞控制的拥塞信息的反馈方式：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.6.2%E6%8B%A5%E5%A1%9E%E4%BF%A1%E6%81%AF.png" alt="图49 拥塞信息"></p>
+<p>第一种由路由器向发送方直接发送阻塞分组（choke packet）；第二种（更为通用）通过路由器标记或更新发送方流向接收方的分组中的某个字段来指示拥塞的产生。</p>
+<h2 id="3-7-TCP拥塞控制"><a href="#3-7-TCP拥塞控制" class="headerlink" title="3.7 TCP拥塞控制"></a>3.7 TCP拥塞控制</h2><p>由于IP层不向端系统提供显式的网络拥塞信息，故TCP必须使用端到端拥塞控制。</p>
+<p>TCP通过让每个发送方根据所感知到的网络拥塞程度来限制向连接发送流量的速率。这引出三个问题：如何限制速率、如何感知拥塞、采用何种算法。</p>
+<p>TCP连接的每一端都是由一个接收缓存、一个发送缓存和几个变量（LastByteRead，rwnd）组成，TCP拥塞控制机制跟踪一个额外的变量——拥塞窗口（congestion window，用cwnd表示）。变量之间满足：</p>
+<script type="math/tex; mode=display">
+LastByteSent - LastByteAcked \le min \{cwnd, rwnd\}</script><p>假设接收缓存足够大，即rwnd始终大于cwnd，则发送方未被确认的数据量仅受限于cwnd。TCP使用确认来触发（或计时）增大它的拥塞窗口长度（及其传输速率），TCP被说成是自计时（self-clocking）的。那么TCP发送方如何确定适当的发送速率使得网络不会阻塞的同时带宽得到有效利用呢？它使用以下指导性原则：</p>
+<ul>
+<li>一个丢失的报文段表意味着拥塞，因此当丢失报文段时应当降低TCP发送方的速率。</li>
+<li>一个确认报文段指示该网络正在向接收方金福发送方的报文段，因此，当对先前未确认报文段的确认到达时，能够增加发送方的速率。</li>
+<li>带宽检测。</li>
+</ul>
+<p>下面考察TCP拥塞控制算法（TCP congestion control algorithm）的细节。该算法包括：慢启动、拥塞避免和快速恢复三个部分。其中慢启动和拥塞避免对TCP是必需的，快速恢复则是TCP中推荐使用的。</p>
+<p><strong>1.慢启动</strong></p>
+<p>慢启动的本质在于，cwnd的值通常设置为MSS的较小值，此时初始发送速率大约为MSS/RTT（如 500B/200ms = 20kbps），初始速率较慢。在慢启动（slow-start）状态，cwnd的值以1个MSS开始并且每当传输的报文段首次被确认就增加一个MSS。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.7%E6%85%A2%E5%90%AF%E5%8A%A8.png" alt="图50 慢启动"></p>
+<p>每经过一个RTT，cwnd就加倍，发送速率呈指数增长。何时结束这种指数增长呢？有三种结束慢启动的处理方式，此处略。下图为慢启动中的TCP行为总结（书中还补充介绍了谷歌云服务中广泛使用的TCP分岔技术）：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.7TCP%E6%85%A2%E5%90%AF%E5%8A%A8.png" alt="图51 TCP慢启动"></p>
+<p><strong>2.拥塞避免</strong></p>
+<p>进入拥塞避免状态后，cwnd的值线性增长。出现超时/接收到冗余ACK时，拥塞避免状态采取的行为不同，此处略。</p>
+<p><strong>3.快速恢复</strong></p>
+<p>快速恢复状态下，cwnd的值同样线性增长。出现超时/接收到冗余ACK时，快速恢复状态采取的行为不同，此时略。</p>
+<p>在纳入快速恢复机制之后，TCP的拥塞控制窗口的情况如下：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.7TCP%E7%AA%97%E5%8F%A3.png" alt="图52 TCP窗口"></p>
+<p><strong>4.TCP拥塞控制：回顾</strong></p>
+<p>假设丢包由3个冗余的ACK而不是超时指示（实际上往往如此），则TCP的拥塞控制是：每个RTT内cwnd线性（加性）增加到1MSS，出现3个冗余ACK事件时cwnd减半（乘性减）。故TCP拥塞控制常被称为加性增、乘性减（Additive-Increase，Multiplicative-Decrease，AIMD）。AIMD拥塞控制引发了拥塞窗口的锯齿行为：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.7AIMD.png" alt="图53 AIMD"></p>
+<p>到2015年底，TCP的Ubuntu Linux实现默认提供了慢启动、拥塞避免、快速恢复、快速重传和SACK，也提供了诸如TCP Vegas（Reno算法的变种）和BIC等其它拥塞控制算法。</p>
+<p><strong>5.对TCP吞吐量的宏观描述</strong></p>
+<p>忽略慢启动阶段（该阶段很短），假设在连接持续期间拥塞窗口最大长度W和RTT不变，则TCP的传输速率在W/(2 * RTT)和W/RTT之间变化。故：</p>
+<script type="math/tex; mode=display">
+一条连接的平均吞吐量 = \frac{0.75 * W}{RTT}</script><p><strong>6.经高带宽路径的TCP</strong></p>
+<p>TCP拥塞控制已经演化了多年并仍在继续演化，这种演化的需求源自网格和云计算应用所需的高速TCP连接。下面是一个包含丢包率L、往返时间RTT和最大报文段长度MSS的函数：</p>
+<script type="math/tex; mode=display">
+一个连接的平均吞吐量 = \frac{1.22 * MSS}{RTT \sqrt{L}}</script><p>当MSS = 1500字节；RTT = 10ms时，要想吞吐量达到10Gbps，L需要小于$2 * 10^{-10}$。</p>
+<h3 id="公平性"><a href="#公平性" class="headerlink" title="公平性"></a>公平性</h3><p>K条TCP连接，瓶颈链路容量为R，当每条连接的传输速率接近R/K时，认为该拥塞控制时公平的。TCP的AIMD算法是公平的，书中作了极佳的直观解释。考虑两条TCP连接共享传输速率为R的链路（二者具有相同的MSS和RTT）的例子。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.7.1%E5%B9%B3%E7%AD%89%E5%B8%A6%E5%AE%BD%E5%85%B1%E4%BA%AB.png" alt="图55 平等带宽共享"></p>
+<p>TCP趋于在竞争的多条TCP连接之间提供对一段链路带宽的平等共享。在实际中，不可能保证每条连接具有相同的RTT，故那些具有较小RTT的连接拥塞窗口增长更快，能抢占更多空闲带宽。</p>
+<p><strong>1.公平性和UDP</strong></p>
+<p>诸如因特网电话和视频会议等应用，其不想传输速率被遏制，故其宁可运行在UDP上。运行在UDP上的应用是不公平的，它不与其它TCP连接合作，可能压制TCP流量。阻止“UDP流量不断压制直至中断因特网吞吐量”是当今计算机网络面临的一大挑战。</p>
+<p><strong>2.公平性和并行TCP连接</strong></p>
+<p>由于基于TCP的应用可以使用多个并行连接，故一个使用并行TCP连接的应用会不公平的占据较多带宽。</p>
+<h3 id="明确拥塞通告：网络辅助拥塞控制"><a href="#明确拥塞通告：网络辅助拥塞控制" class="headerlink" title="明确拥塞通告：网络辅助拥塞控制"></a>明确拥塞通告：网络辅助拥塞控制</h3><p>现在，IP和TCP的扩展方案（RFC 3168）已经实现并部署，该方案允许网络明确想TCP发送方和接收方发出拥塞信号。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter3.7.2%E7%BD%91%E7%BB%9C%E8%BE%85%E5%8A%A9%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6.png" alt="图56 网络辅助拥塞控制"></p>
+<p>书中简单描述了网络辅助拥塞控制的细节，此处略。</p>
+<h2 id="3-8-小结"><a href="#3-8-小结" class="headerlink" title="3.8 小结"></a>3.8 小结</h2><p>本章首先学习了运输层能够为应用程序提供的服务，多路复用/分解是必要服务。除此之外，运输层协议还能提供数据的可靠交付、时延保障和带宽保证等服务，且运输层提供的服务受网络层的限制。</p>
+<p>接下来，学习了可靠数据传输的概念、原理和实现，在链路层、网络层、运输层或应用层协议中均可实现。至此，我们可以更深入探讨TCP协议，一种面向连接并且可靠的运输层协议，其十分复杂，涉及到连接管理、流量控制、往返时间估计以及可靠数据传输等诸多方面，还有许多未提及的补丁和细节。但是，它的复杂性都对应用程序隐藏了起来。</p>
+<p>然后是同为计算机网络中10个基础性问题的拥塞控制，并对TCP中拥塞控制的实现作了深入讨论。</p>
+<p>UDP和TCP是本章讨论的核心，也是运输层协议的主要组成部分。然而，其并不是完美无缺，能够满足所有网络应用的要求。因此，其他的协议如数据报拥塞控制协议（Datagram Congestion Control Protocol，DCCP）、谷歌浏览器中实现的QUIC（Quick UDP Internet Connections，作为应用层协议在UDP上实现）、DCTCP（数据中心TCP，专门未数据中心网络涉及）、流控制传输协议（Stream Control Transmission Protocol，SCTP）、TCP友好速率控制（TCP-Friendly Rate Control，TFRC）协议已经投入了使用。它们能否广泛实施，有待未来去验证。</p>
+<p>至此，我们已经讨论了应用层和运输层的内容，关于网络边缘的讨论宣告结束。下一章将深入网络核心，想想还有些让人兴奋。</p>
 
       
     </div>
@@ -521,55 +843,6 @@
 
 
   
-    <article id="post-chapter5大容量和高速度：开发存储器层次结构" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="article-date">
-  <time datetime="2020-08-01T18:25:51.000Z" itemprop="datePublished">2020-08-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">chapter5大容量和高速度：开发存储器层次结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="5-1-引言"><a href="#5-1-引言" class="headerlink" title="5.1 引言"></a>5.1 引言</h2><p>这一章主要探讨如何帮助程序员构建一个容量无限大的虚拟快速存储器。（在CSAPP中已有专门的一章讲述存储器层次结构，故本章会看得较快）</p>
-<p>一个好的类比是，就像你不会同时以相同的概率查阅图书馆中的每一本书那样，一个程序也不会同时以相同的概率访问它全部的代码或数据。从中可以归纳出局部性原理，分为时间局部性（temporal locality）和空间局部性（spatial locality）。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/08/02/chapter5%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%92%8C%E9%AB%98%E9%80%9F%E5%BA%A6%EF%BC%9A%E5%BC%80%E5%8F%91%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" data-id="ckdhmot220000awwd5s0u71c3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -605,7 +878,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 10px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 10px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 11.67px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 13.33px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18.33px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 11.67px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 11.67px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 11.67px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16.67px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">计算机网络</a>
     </div>
   </div>
 
@@ -627,6 +900,10 @@
       <ul>
         
           <li>
+            <a href="/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/">chapter4网络层：数据平面</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/">chapter3运输层</a>
           </li>
         
@@ -640,10 +917,6 @@
         
           <li>
             <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E5%BE%AE%E7%A7%AF%E5%88%86%E8%80%83%E7%BA%B2/">数学一微积分考纲</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/16/chapter2%E5%BA%94%E7%94%A8%E5%B1%82/">chapter2应用层</a>
           </li>
         
       </ul>

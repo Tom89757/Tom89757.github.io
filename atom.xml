@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-08-18T14:31:15.898Z</updated>
+  <updated>2020-08-21T18:03:18.328Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter4网络层：数据平面</title>
+    <link href="https://tom89757.github.io/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/"/>
+    <id>https://tom89757.github.io/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/</id>
+    <published>2020-08-21T17:39:36.000Z</published>
+    <updated>2020-08-21T18:03:18.328Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="计算机网络" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter3运输层</title>
     <link href="https://tom89757.github.io/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/"/>
     <id>https://tom89757.github.io/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/</id>
     <published>2020-08-18T11:32:26.000Z</published>
-    <updated>2020-08-18T14:31:15.898Z</updated>
+    <updated>2020-08-21T17:38:17.289Z</updated>
     
     <summary type="html">
     
@@ -489,28 +508,6 @@
     
     
       <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter1计算机概要和技术</title>
-    <link href="https://tom89757.github.io/2020/07/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A6%81%E5%92%8C%E6%8A%80%E6%9C%AF/"/>
-    <id>https://tom89757.github.io/2020/07/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A6%81%E5%92%8C%E6%8A%80%E6%9C%AF/</id>
-    <published>2020-07-22T17:02:06.000Z</published>
-    <updated>2020-07-25T15:46:10.757Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-1-引言&quot;&gt;&lt;a href=&quot;#1-1-引言&quot; class=&quot;headerlink&quot; title=&quot;1.1 引言&quot;&gt;&lt;/a&gt;1.1 引言&lt;/h2&gt;&lt;p&gt;随着计算机科学的发展，现在已经出现了科学探索的新方式，即计算机科学家联合理论和实验科学家，共同探索天文学、生物学、化学和物理学的前沿问题。&lt;/p&gt;
-&lt;p&gt;随着计算机革命进行，车载计算机、收集、人类基因项目、万维网、搜索引擎等过去幻想的事物映射到了现实。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
