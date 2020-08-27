@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-08-26T06:13:50.590Z</updated>
+  <updated>2020-08-27T03:29:43.606Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,21 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter6链路层和局域网</title>
+    <link href="https://tom89757.github.io/2020/08/27/chapter6%E9%93%BE%E8%B7%AF%E5%B1%82%E5%92%8C%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
+    <id>https://tom89757.github.io/2020/08/27/chapter6%E9%93%BE%E8%B7%AF%E5%B1%82%E5%92%8C%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
+    <published>2020-08-27T03:28:30.000Z</published>
+    <updated>2020-08-27T03:29:43.606Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="计算机网络" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chapter5网络层：控制平面</title>
     <link href="https://tom89757.github.io/2020/08/23/chapter5%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%8E%A7%E5%88%B6%E5%B9%B3%E9%9D%A2/"/>
     <id>https://tom89757.github.io/2020/08/23/chapter5%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%8E%A7%E5%88%B6%E5%B9%B3%E9%9D%A2/</id>
     <published>2020-08-23T14:24:55.000Z</published>
-    <updated>2020-08-26T06:13:50.590Z</updated>
+    <updated>2020-08-27T03:29:50.026Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;控制平面作为一种网络范围的逻辑，不仅控制沿着从源主机到目的主机的端到端路径间的路由器如何转发数据报，而且控制网络层组件和服务如何配置和管理。如前面所言，在一台分离的控制器服务中实现了控制平面功能，该控制器服务与它所控制的路由器的转发组件完全分开并远离。&lt;/p&gt;
     
     </summary>
     
@@ -483,33 +496,6 @@
     
     
       <category term="数据结构与算法分析(C)" scheme="https://tom89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>408计算机组成原理考纲</title>
-    <link href="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/"/>
-    <id>https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/</id>
-    <published>2020-07-23T15:36:18.000Z</published>
-    <updated>2020-07-26T16:14:04.053Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;计算机组成原理（45分）&lt;/p&gt;
-&lt;p&gt;【考察目标】&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;理解单处理器计算机系统中各部件的内部工作原理、组成结构以及相互连接方式，具有完整的计算机系统的整机概念。&lt;/li&gt;
-&lt;li&gt;理解计算机系统层次化结构概念，熟悉硬件与软件之间的界面，掌握指令集体系结构的基本知识和基本实现方法。&lt;/li&gt;
-&lt;li&gt;能够综合运用计算机组成的基本原理和基本方法，对有关计算机硬件系统中的理论和实际问题进行计算、分析，对一些基本部件进行简单设计；并能对高级程序设计语言（如C语言）中的相关问题进行分析。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   

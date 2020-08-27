@@ -7,12 +7,12 @@
   
   <title>chapter5网络层：控制平面 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="控制平面作为一种网络范围的逻辑，不仅控制沿着从源主机到目的主机的端到端路径间的路由器如何转发数据报，而且控制网络层组件和服务如何配置和管理。如前面所言，在一台分离的控制器服务中实现了控制平面功能，该控制器服务与它所控制的路由器的转发组件完全分开并远离。 5.1 概述转发表和流表是链接网络层的数据平面和控制平面的首要元素，它们定义了一台路由器的本地数据平面转发行为。本章中将学习这些表如何计算、维护和">
+  <meta name="description" content="控制平面作为一种网络范围的逻辑，不仅控制沿着从源主机到目的主机的端到端路径间的路由器如何转发数据报，而且控制网络层组件和服务如何配置和管理。如前面所言，在一台分离的控制器服务中实现了控制平面功能，该控制器服务与它所控制的路由器的转发组件完全分开并远离。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chapter5网络层：控制平面">
 <meta property="og:url" content="https://tom89757.github.io/2020/08/23/chapter5%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%8E%A7%E5%88%B6%E5%B9%B3%E9%9D%A2/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
-<meta property="og:description" content="控制平面作为一种网络范围的逻辑，不仅控制沿着从源主机到目的主机的端到端路径间的路由器如何转发数据报，而且控制网络层组件和服务如何配置和管理。如前面所言，在一台分离的控制器服务中实现了控制平面功能，该控制器服务与它所控制的路由器的转发组件完全分开并远离。 5.1 概述转发表和流表是链接网络层的数据平面和控制平面的首要元素，它们定义了一台路由器的本地数据平面转发行为。本章中将学习这些表如何计算、维护和">
+<meta property="og:description" content="控制平面作为一种网络范围的逻辑，不仅控制沿着从源主机到目的主机的端到端路径间的路由器如何转发数据报，而且控制网络层组件和服务如何配置和管理。如前面所言，在一台分离的控制器服务中实现了控制平面功能，该控制器服务与它所控制的路由器的转发组件完全分开并远离。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.1%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8E%A7%E5%88%B6.png">
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.1%E9%80%BB%E8%BE%91%E9%9B%86%E4%B8%AD%E5%BC%8F%E6%8E%A7%E5%88%B6.png">
@@ -20,8 +20,21 @@
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.1%E8%BD%AC%E5%8F%91%E8%A1%A8.png">
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.1%E6%8C%AF%E8%8D%A1.png">
 <meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.2DV%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E7%BD%91%E7%BB%9C.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E8%BF%9E%E6%8E%A5.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E5%A2%9E%E5%8A%A0%E5%AF%B9%E7%AD%89%E9%93%BE%E8%B7%AF.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.3%E5%A2%9E%E5%8A%A0AS%E5%A4%96%E9%83%A8%E7%9B%AE%E7%9A%84%E5%9C%B0.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.4IP%E4%BB%BB%E6%92%AD.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.5BGP%E7%AD%96%E7%95%A5%E5%9C%BA%E6%99%AF.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5SDN%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5.1SDN%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%84%E4%BB%B6.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5.3%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.6ICMP%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.1%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%BB%84%E4%BB%B6.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.2SNMP%20PDU%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.2SNMP%20PDU%E6%A0%BC%E5%BC%8F.png">
 <meta property="article:published_time" content="2020-08-23T14:24:55.000Z">
-<meta property="article:modified_time" content="2020-08-26T06:13:50.590Z">
+<meta property="article:modified_time" content="2020-08-27T03:29:50.026Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -109,11 +122,12 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-概述"><span class="toc-text">5.1 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-路由选择算法"><span class="toc-text">5.2 路由选择算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#链路状态路由选择算法"><span class="toc-text">链路状态路由选择算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#距离向量路由选择算法"><span class="toc-text">距离向量路由选择算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-因特网中自治系统内部的路由选择：OSPF"><span class="toc-text">5.3 因特网中自治系统内部的路由选择：OSPF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-ISP之间的路由选择：BGP"><span class="toc-text">5.4 ISP之间的路由选择：BGP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP的作用"><span class="toc-text">BGP的作用</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-概述"><span class="toc-text">5.1 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-路由选择算法"><span class="toc-text">5.2 路由选择算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#链路状态路由选择算法"><span class="toc-text">链路状态路由选择算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#距离向量路由选择算法"><span class="toc-text">距离向量路由选择算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-因特网中自治系统内部的路由选择：OSPF"><span class="toc-text">5.3 因特网中自治系统内部的路由选择：OSPF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-ISP之间的路由选择：BGP"><span class="toc-text">5.4 ISP之间的路由选择：BGP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP的作用"><span class="toc-text">BGP的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通告BGP路由信息"><span class="toc-text">通告BGP路由信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#确定最好的路由"><span class="toc-text">确定最好的路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP任播"><span class="toc-text">IP任播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由选择策略"><span class="toc-text">路由选择策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拼装在一起：在因特网中呈现"><span class="toc-text">拼装在一起：在因特网中呈现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-SDN控制平面"><span class="toc-text">5.5 SDN控制平面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SDN控制平面：SDN控制器和SDN网络控制应用程序"><span class="toc-text">SDN控制平面：SDN控制器和SDN网络控制应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenFlow-协议"><span class="toc-text">OpenFlow 协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据平面和控制平面交互的例子"><span class="toc-text">数据平面和控制平面交互的例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDN的过去与未来"><span class="toc-text">SDN的过去与未来</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-ICMP：因特网控制报文协议"><span class="toc-text">5.6 ICMP：因特网控制报文协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-7-网络管理和SIMP"><span class="toc-text">5.7 网络管理和SIMP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络管理框架"><span class="toc-text">网络管理框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单网络管理协议"><span class="toc-text">简单网络管理协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-8-小结"><span class="toc-text">5.8 小结</span></a></li></ol>
 </div>
 
 
         <p>控制平面作为一种网络范围的逻辑，不仅控制沿着从源主机到目的主机的端到端路径间的路由器如何转发数据报，而且控制网络层组件和服务如何配置和管理。如前面所言，在一台分离的控制器服务中实现了控制平面功能，该控制器服务与它所控制的路由器的转发组件完全分开并远离。</p>
+<a id="more"></a>
 <h2 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h2><p>转发表和流表是链接网络层的数据平面和控制平面的首要元素，它们定义了一台路由器的本地数据平面转发行为。本章中将学习这些表如何计算、维护和安装。第4章展示了两种方法：</p>
 <ul>
 <li>由路由器控制：如下图所示，每台路由器中运行一种路由选择算法，路由器中包含一个路由选择组件，用于与其他路由器中的路由选择组件通信。</li>
@@ -178,8 +192,98 @@
 <p>唯一能与BGP竞争最重要因特网协议的宝座的只有IP协议，BGP将因特网中的ISP粘合起来，是一种分布式和异步的协议，与距离向量路由选择协议一脉相承。</p>
 <h3 id="BGP的作用"><a href="#BGP的作用" class="headerlink" title="BGP的作用"></a>BGP的作用</h3><p>在BGP中，分组并不是路由到一个准确的目的地址，而是路由到一个CIDR化的前者，如138.16.68/22。BGP为每台路由器提供了完成以下任务的手段：</p>
 <ol>
-<li>从邻居AS获得前缀的可达性信息。</li>
+<li>从邻居AS获得前缀的可达性信息。BGP允许每个子网向因特网的其余部分通告它的存在，让每个子网不再是一座孤岛。</li>
+<li>确定到该前缀的“最好的”路由。路由器通过本地运行一个BGP路由选择过程确定最好的到达某前缀的路由。</li>
 </ol>
+<h3 id="通告BGP路由信息"><a href="#通告BGP路由信息" class="headerlink" title="通告BGP路由信息"></a>通告BGP路由信息</h3><p>如下图所示，AS3包含一个具有前缀x的子网：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E7%BD%91%E7%BB%9C.png" alt="图8 网络"></p>
+<p>实际上，每对路由器通过使用179端口的半永久TCP连接交换路由选择信息。跨越两个AS的连接称为外部BGP（eBGP）；AS内部的连接则称为内部BGP（iBGP）。下图对三个AS之间的eBGP和iBGP进行了标识（并不与上面的物理链路一一对应）：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E8%BF%9E%E6%8E%A5.png" alt="图9 连接"></p>
+<p>下图则在AS1和AS3之间增加了一条对等链路：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E5%A2%9E%E5%8A%A0%E5%AF%B9%E7%AD%89%E9%93%BE%E8%B7%AF.png" alt="图10 增加对等链路"></p>
+<h3 id="确定最好的路由"><a href="#确定最好的路由" class="headerlink" title="确定最好的路由"></a>确定最好的路由</h3><p>当路由器通过BGP连接通告前缀时，在前缀中还包含一些BGP属性，前缀和其包含的BGP属性称为路由，其中较为重要的属性为AS-PATH和NEXT-HOP。AS-PATH中随着报文的传播不断加入途径的AS，并能检测和防止通告环路；NEXT-HOP则时AS-PATH起始的路由器接口的IP地址。因而每条BGP路由都包含信息：<code>NEXT-PATH; AS-PATH; 目的前缀</code></p>
+<p><strong>1.热土豆路由选择</strong></p>
+<p>热土豆路由选择（hot potato routing）是一个最简单的路由选择算法。如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.3%E5%A2%9E%E5%8A%A0AS%E5%A4%96%E9%83%A8%E7%9B%AE%E7%9A%84%E5%9C%B0.png" alt="图11 增加AS外部目的地"></p>
+<p>热土豆路由选择是自私的算法，它试图减小在它自己AS中的开销，而忽略在其AS之外的端到端开销的其他部分。</p>
+<p><strong>2.路由选择算法</strong></p>
+<p>这是一种比上述算法复杂但结合了其特点的算法。当到达相同的前缀有两条或多条路由时，该算法顺序的调用下列规则筛选直至余下一条路由：</p>
+<ol>
+<li>路由被指派一个本地偏好（local preference）值作为其属性之一（除AS-PATH和NEXT-HOP外）。</li>
+<li>从余下的路由中（都具有相同的最高本地偏好值），选择具有最短AS-PATH的路由（距离由AS跳的跳数而不是路由器的条数来衡量）。</li>
+<li>从余下的路由中（具有相同的最高本地偏好值和相同的AS-PATH长度），使用热土豆路由选择，即选择具有最靠近NEXT-HOP路由器的路由。</li>
+<li>如果仍留下多条路由，使用BGP标识符来选择路由。</li>
+</ol>
+<p>这种算法并不是自私的算法。</p>
+<h3 id="IP任播"><a href="#IP任播" class="headerlink" title="IP任播"></a>IP任播</h3><p>除了作为因特网的AS间路由选择协议外，BGP还常被用于实现IP任播服务，该服务常用于DNS中。其动机在于：</p>
+<ol>
+<li>在许多分散的不同地理位置，替换不同服务器上的相同内容。</li>
+<li>让每个用户从最靠近的服务器访问内容。</li>
+</ol>
+<p>两个典型的例子是CDN和DNS。BGP的路由选择算法为它们提供了一种最为容易和自然的机制，下面以CDN为例描述使用IP任播的方式，此处略。下图展示了使用IP任播将用户印象最近的CDN服务器：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.4IP%E4%BB%BB%E6%92%AD.png" alt="图12 IP任播"></p>
+<h3 id="路由选择策略"><a href="#路由选择策略" class="headerlink" title="路由选择策略"></a>路由选择策略</h3><p>在路由选择算法中，实际上首先根据本地偏好属性选择路由，本地偏好值由本地AS的策略所确定。下图展示了一个简单的BGP策略场景：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.5BGP%E7%AD%96%E7%95%A5%E5%9C%BA%E6%99%AF.png" alt="图13 BGP策略场景"></p>
+<p>关键在于，路由选择策略放置了接入ISP或主干ISP对其他主干ISP的“绕远路”的转发，书中只做了简单介绍，<strong>mark</strong>。</p>
+<p>一个自然的问题是，为什么有不同的AS间和AS内部路由选择协议，下面的答案触及了二者目标之间差别的本质：</p>
+<ul>
+<li>策略：在AS之间，策略问题起主导作用。</li>
+<li>规模：AS间路由选择旨在扩展大量网络或大量网络之间的路由选择的能力，而AS内部算法则不涉及规模问题，或者说，当规模过大时，需要将其拆分为两个或更多的AS。</li>
+<li>性能：AS间路由选择面向策略而不是性能，因此所用路由的质量是次要关心的问题；AS内部算法则更关注性能，而不关心策略。</li>
+</ul>
+<h3 id="拼装在一起：在因特网中呈现"><a href="#拼装在一起：在因特网中呈现" class="headerlink" title="拼装在一起：在因特网中呈现"></a>拼装在一起：在因特网中呈现</h3><p>本小节将诸多协议和概念结合在一起，如IP地址、DNS和BGP。</p>
+<p>本小节P264描述了一个公司建立一个与因特网连接的公司内部网的过程，此处略。</p>
+<h2 id="5-5-SDN控制平面"><a href="#5-5-SDN控制平面" class="headerlink" title="5.5 SDN控制平面"></a>5.5 SDN控制平面</h2><p>本节将深入SDN控制平面，即控制分组在网络的SDN使能设备中转发的网络范围逻辑，以及这些设备和它们的服务的配置与管理。下面，将网络转发设备称为分组交换机或交换机（包括路由器和链路交换机），因为其能根据网络层源/目的地址、链路层源/目的地址以及运输层、网络层和链路层中分组首部字段作出转发决定。</p>
+<p>SDN体系结构具有4个关键特征：</p>
+<ol>
+<li>基于流的转发：分组转发规则被精确规定在交换机的流表中，SDN控制平面的工作是计算、管理和安装所有网络交换机中的流表项。</li>
+<li>数据平面与控制平面的分离：数据平面由网络交换机组成，其设备在它们的流表中执行“匹配加动作”的规则；控制平面由服务器以及决定和管理交换机流表的软件组成。</li>
+<li>网络控制功能：位于数据平面交换机外部。</li>
+</ol>
+<p>如下图所示：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5SDN%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="图14 SDN体系结构"></p>
+<ol>
+<li>可编程的网络：可以通过SDN控制器提供的API定义和控制网络设备中的数据平面。</li>
+</ol>
+<p>SDN控制平面与数据平面的分离意义重大，与从大型计算机到个人计算机的演化过程中硬件、系统软件和应用程序的分离不谋而合。</p>
+<p>下面将补充描述SDN控制平面实现具体功能的细节。</p>
+<h3 id="SDN控制平面：SDN控制器和SDN网络控制应用程序"><a href="#SDN控制平面：SDN控制器和SDN网络控制应用程序" class="headerlink" title="SDN控制平面：SDN控制器和SDN网络控制应用程序"></a>SDN控制平面：SDN控制器和SDN网络控制应用程序</h3><p>SDN控制平面可以答题划分为两个部分——SDN控制器和SDN网络控制应用程序。先讨论控制器，如下图所示，其功能可答题组织为三个层次：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5.1SDN%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%84%E4%BB%B6.png" alt="图15 SDN控制器组件"></p>
+<ol>
+<li>通信层：SDN控制器和受控网络设备之间的通信跨越了控制器的“南向”接口。</li>
+<li>网络范围状态管理层：由SDN控制平面做出的最终控制决定，将要求控制器具有有关网络的主机、链路、交换机和其他SDN控制设备的最新状态信息。</li>
+<li>遂于网络控制应用程序层的接口。控制器通过它的“北向”接口与网络控制应用程序交互。</li>
+</ol>
+<p>现代控制器旨在实现构建一种逻辑上集中、物理上分布的控制器平台。</p>
+<h3 id="OpenFlow-协议"><a href="#OpenFlow-协议" class="headerlink" title="OpenFlow 协议"></a>OpenFlow 协议</h3><p>OpenFlow 协议运行在SDN控制器和SDN控制的交换机或其他实现OpenFlow API 的设备之间，其运行在TCP之上，使用6653的默认端口。从控制器到受控交换机流动的重要报文有：配置、修改状态、读状态、发送分组；从受控交换机到控制器流动的重要报文有：流删除、端口状态、分组入。这不是目前学习的重点，此处略，<strong>mark</strong>。</p>
+<h3 id="数据平面和控制平面交互的例子"><a href="#数据平面和控制平面交互的例子" class="headerlink" title="数据平面和控制平面交互的例子"></a>数据平面和控制平面交互的例子</h3><p>为具体理解SDN控制的交换机与SDN控制器之间的交互，以链路状态更新为例：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5.3%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0.png" alt="图16 链路状态更新"></p>
+<p>上图中实现的是Dijkstra算法，且该算法在分组交换机的外部作为单独的程序来执行。假设s1和s2之间的链路断开，则会发生一系列的事件，此时略，<strong>mark</strong>。</p>
+<p>SDN 控制平面可以容易地将最低开销路径的路由选择转变为更加定制的路由选择方法，只需改变其应用控制软件，这是传统的每路由控制平面所无法做到的。</p>
+<h3 id="SDN的过去与未来"><a href="#SDN的过去与未来" class="headerlink" title="SDN的过去与未来"></a>SDN的过去与未来</h3><p>书中补充说明了SDN的发展和当前重要的研究领域，此处略。同时，也展示了SDN控制器的学习案例：OpenDaylight 和 ONOS 控制器，此处略。</p>
+<h2 id="5-6-ICMP：因特网控制报文协议"><a href="#5-6-ICMP：因特网控制报文协议" class="headerlink" title="5.6 ICMP：因特网控制报文协议"></a>5.6 ICMP：因特网控制报文协议</h2><p>因特网控制报文协议（The Internet Control Message Protocol，ICMP），被主机和路由器用来彼此沟通网络层的信息。ICMP最典型的用途是差错报告。</p>
+<p>ICMP通常被认为是IP的一部分，但从体系结构上来说位于IP之上，ICMP报文作为有效载荷承载在IP分组之中。ICMP报文有一个类型字段和一个编码字段，并且包含引起该ICMP报文首次生成的IP数据报的首部和前8个字节，以便发送方确定引发差错的数据报。ICMP的报文类型如下：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.6ICMP%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.png" alt="图5.6 ICMP报文类型"></p>
+<p>书中描述了ICMP的几个应用：ping程序、源抑制报文和Traceroute程序，此处略。</p>
+<h2 id="5-7-网络管理和SIMP"><a href="#5-7-网络管理和SIMP" class="headerlink" title="5.7 网络管理和SIMP"></a>5.7 网络管理和SIMP</h2><p>在SDN出现之前，网络管理员使用丰富的网络管理工具和方法来监视、管理和控制该网络。下面对网络管理进行定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网络管理包括了硬件、软件和人类元素的设置、综合和协调，以监视、测试、轮询、配置、分析、评价和控制网络及网元资源，用合理的成本满足实时性、运营性能和服务质量的要求。</span><br></pre></td></tr></table></figure>
+<p>本节将涉及网络管理的入门知识，即网络管理员在执行其任务中使用的体系结构、协议和信息库，而不涉及网络管理员的决策过程。</p>
+<h3 id="网络管理框架"><a href="#网络管理框架" class="headerlink" title="网络管理框架"></a>网络管理框架</h3><p>下图展示了网络管理的关键组件：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.1%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%BB%84%E4%BB%B6.png" alt="图20 网络管理组件"></p>
+<ul>
+<li>管理服务器：是一个应用程序，是执行网络管理活动的地方，控制网络管理信息的收集、处理、分析和/或显示。</li>
+<li>被管设备：网络设备的一部分（包括它的软件），位于被管理的网络中。</li>
+<li>管理信息库：用于收集一个被管设备中的每个被管对象的关联信息，其信息可供管理服务器使用。</li>
+<li>网络管理代理：运行在被管设备中的一个进程，与管理服务器通信，在管理服务器的命令和控制下在被管设备中采取本地动作。</li>
+<li>网络管理协议：运行在管理服务器和被管设备之间，允许管理服务器查询被管设备的状态，并经过其代理简洁地在这些设备上采取行动。</li>
+</ul>
+<h3 id="简单网络管理协议"><a href="#简单网络管理协议" class="headerlink" title="简单网络管理协议"></a>简单网络管理协议</h3><p>简单网络管理协议（Simple Network Management Protocol，SNMP）是一个应用层协议，用于在管理服务器和代表管理服务器执行的代理之间传递网络管理控制和信息报文。SNMP常用的是请求响应模式和陷阱报文。下图展示了SNMPv2定义的7种类型的报文（协议单元，Protocol Data Unit，PDU）和报文格式：</p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.2SNMP%20PDU%E7%B1%BB%E5%9E%8B.png" alt="图21 SNMP PDU类型"></p>
+<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.2SNMP%20PDU%E6%A0%BC%E5%BC%8F.png" alt="图22 SNMP PDU格式"></p>
+<p>SNMP PDU通常作为UDP数据报的载荷进行传输。</p>
+<h2 id="5-8-小结"><a href="#5-8-小结" class="headerlink" title="5.8 小结"></a>5.8 小结</h2><p>至此，我们完成了网络层数据平面和控制平面的学习。控制平面是网络范围的逻辑，它不仅控制从源主机到目的主机沿着端到端路径在路由器之间如何转发数据报，而且控制网络层组件和服务器如何配置和管理。</p>
+<p>本章需要掌握的关键概念有：每路由器控制和SDN控制、链路状态算法和距离矢量算法、OSPF和BGP、SDN体系结构、ICMP、SNMP。</p>
+<p>沿协议栈的旅行向下走了一步，到达了链路层。链路层的任务是在相同链路或局域网之间更局域化地移动分组，表面虽不复杂，实现却不简单。</p>
 
       
     </div>
@@ -194,6 +298,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/08/27/chapter6%E9%93%BE%E8%B7%AF%E5%B1%82%E5%92%8C%E5%B1%80%E5%9F%9F%E7%BD%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter6链路层和局域网
+        
+      </div>
+    </a>
   
   
     <a href="/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/" id="article-nav-older" class="article-nav-link-wrap">
@@ -235,7 +348,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 10px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 11.67px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 13.33px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18.33px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 11.67px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 11.67px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 11.67px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16.67px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">计算机网络</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 10px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
     </div>
   </div>
 
@@ -257,6 +370,10 @@
       <ul>
         
           <li>
+            <a href="/2020/08/27/chapter6%E9%93%BE%E8%B7%AF%E5%B1%82%E5%92%8C%E5%B1%80%E5%9F%9F%E7%BD%91/">chapter6链路层和局域网</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/23/chapter5%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%8E%A7%E5%88%B6%E5%B9%B3%E9%9D%A2/">chapter5网络层：控制平面</a>
           </li>
         
@@ -270,10 +387,6 @@
         
           <li>
             <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E8%80%83%E7%BA%B2/">数学一概率论与数理统计考纲</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%80%83%E7%BA%B2/">数学一线性代数考纲</a>
           </li>
         
       </ul>
