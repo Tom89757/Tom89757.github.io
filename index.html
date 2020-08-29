@@ -77,6 +77,10 @@
   <time datetime="2020-08-28T19:26:14.000Z" itemprop="datePublished">2020-08-29</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -93,12 +97,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      	
-<div id="toc">
-  
-</div>
-
-
+        <p>学习本章可以掌握如下内容：</p>
+<ul>
+<li>定义术语进程并解释进程与进程控制块之间的关系</li>
+<li>理解进程状态的概念，理解进程状态转换的过程</li>
+<li>了解操作系统在管理进程过程的过程中使用的数据结构，列出相关的数据结构并解释该数据结构的目的</li>
+<li>评估操作系统对进程控制的需求</li>
+<li>掌握操作系统代码运行时涉及的问题</li>
+<li>评估与操作系统相关的关键安全问题</li>
+<li>了解UNIX SVR4中的进程管理模式</li>
+</ul>
+<p>我们可以先讨论操作系统与进程的联系：操作系统需要能够运行多个进程并使处理器达到最大利用率；操作系统需要为进程分配资源并避免进程出现死锁；操作系统需要能够进行进程间通信并能使用户创建进程。本章的内容将围绕这些展开。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/08/29/chapter3%E8%BF%9B%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%8E%A7%E5%88%B6/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -106,6 +119,8 @@
       <a data-url="https://tom89757.github.io/2020/08/29/chapter3%E8%BF%9B%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%8E%A7%E5%88%B6/" data-id="ckeemppbg00008gwd2e740pvd" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
     </footer>
   </div>
   
@@ -340,11 +355,74 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、随机事件和概率"><span class="toc-text">一、随机事件和概率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、随机变量及其分布"><span class="toc-text">二、随机变量及其分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-1"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-1"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、多维随机变量及其分布"><span class="toc-text">三、多维随机变量及其分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-2"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-2"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、随机变量的数字特征"><span class="toc-text">四、随机变量的数字特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-3"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-3"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、大数定律和中心极限定理"><span class="toc-text">五、大数定律和中心极限定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-4"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-4"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、数理统计的基本概念"><span class="toc-text">六、数理统计的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-5"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-5"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、参数估计"><span class="toc-text">七、参数估计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-6"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-6"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、假设检验"><span class="toc-text">八、假设检验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-7"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-7"><span class="toc-text">考试要求</span></a></li></ol></li></ol>
 </div>
 
 
         <p>概率论与数理统计（约22%）</p>
+<h2 id="一、随机事件和概率"><a href="#一、随机事件和概率" class="headerlink" title="一、随机事件和概率"></a>一、随机事件和概率</h2><h3 id="考试内容"><a href="#考试内容" class="headerlink" title="考试内容"></a>考试内容</h3><p>随机事件与样本空间    事件的关系与运算    完备事件组    概率的概念    概率的基本性质    古典型概率    几何型概率    条件概率    概率的基本公式    事件的独立性    独立重复试验</p>
+<h3 id="考试要求"><a href="#考试要求" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>了解样本空间（基本事件空间）的概念，理解随机事件的概念，掌握事件的关系及运算。</li>
+<li>理解概率、条件概率的概念，掌握概率的基本性质，会计算古典型概率和几何型概率，掌握概率的加法公式、减法公式、乘法公式、全概率公式以及贝叶斯（Bayes）公式。</li>
+<li>理解事件独立性的概念，掌握用事件独立性进行概率计算。理解独立城府试验的概念，掌握计算有关事件概率的方法。</li>
+</ol>
+<h2 id="二、随机变量及其分布"><a href="#二、随机变量及其分布" class="headerlink" title="二、随机变量及其分布"></a>二、随机变量及其分布</h2><h3 id="考试内容-1"><a href="#考试内容-1" class="headerlink" title="考试内容"></a>考试内容</h3><p>随机变量    随机变量分布函数的概念及其性质    离散型随机变量的概率分布    连续性随机变量的概率密度    常见随机变量的分布    随机变量函数的分布</p>
+<h3 id="考试要求-1"><a href="#考试要求-1" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li><p>理解随机变量的概念，理解分布函数$F(x) = P\{X \le x\}(-\infty &lt; x &lt; +\infty)$的概念和性质，会计算与随机变量相联系的事件的概率。</p>
+</li>
+<li><p>理解离散型随机变量及其概率分布的概念，掌握0-1分布、而相分布B(n, p)、几何分布、超几何分布、泊松（Poisson）分布$P(\lambda)$及其应用。</p>
+</li>
+<li><p>了解泊松定理的结论和应用条件，会用泊松分布近似表示二项分布。</p>
+</li>
+<li><p>理解连续型随机变量及其概率密度的概念，掌握均匀分布U(a, b)、正太分布$N(\mu, \sigma^2)$、指数分布及其应用，其中参数为$\lambda(\lambda &gt; 0)$的指数分布$E(\lambda)$的概率密度为：</p>
+<script type="math/tex; mode=display">
+f(n) =
+\begin{cases}
+\lambda e^{-\lambda x}, & \mbox若\lambda\mbox{>0} \\
+0, & \mbox若x\mbox{$\le$0}
+\end{cases}</script></li>
+<li>会求随机变量函数的分布。</li>
+</ol>
+<h2 id="三、多维随机变量及其分布"><a href="#三、多维随机变量及其分布" class="headerlink" title="三、多维随机变量及其分布"></a>三、多维随机变量及其分布</h2><h3 id="考试内容-2"><a href="#考试内容-2" class="headerlink" title="考试内容"></a>考试内容</h3><p>多维随机变量及其分布    二维离散型随机变量的概率分布、边缘分布和条件分布    二维连续性随机变量的概率密度、边缘概率目睹和条件密度    随机变量的独立性和不相关性    常用二维随机变量的分布    两个及两个以上随机变量简单函数的分布</p>
+<h3 id="考试要求-2"><a href="#考试要求-2" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>理解多维随机变量的概念，理解多维随机变量的分布的概念和性质，理解二维离散型随机变量的概率分布、边缘分布和条件分布，理解二维连续性随机变量的概率密度、边缘密度和条件密度，会求与二维随机变量相关事件的概率。</li>
+<li>理解随机变量的独立性及不相关性的概念，掌握随机变量相互独立的条件。</li>
+<li>掌握二维均匀分布，了解二维正太分布$N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;\rho)$的概率密度，理解其中参数的概率意义。</li>
+<li>会求两个随机变量简单函数的分布，会求多个相互独立随机变量简单函数的分布。</li>
+</ol>
+<h2 id="四、随机变量的数字特征"><a href="#四、随机变量的数字特征" class="headerlink" title="四、随机变量的数字特征"></a>四、随机变量的数字特征</h2><h3 id="考试内容-3"><a href="#考试内容-3" class="headerlink" title="考试内容"></a>考试内容</h3><p>随机变量的数学期望（均值）、方差、标准差及其性质    随机变量函数的数学期望    矩、协方差、相关系数及其性质</p>
+<h3 id="考试要求-3"><a href="#考试要求-3" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>理解随机变量数字特征（数学期望、方差、标准差、矩、协方差、相关系数）的概念，会运用数字特征的基本性质，并掌握常用分布的数字特征。</li>
+<li>会求随机变量函数的数学期望。</li>
+</ol>
+<h2 id="五、大数定律和中心极限定理"><a href="#五、大数定律和中心极限定理" class="headerlink" title="五、大数定律和中心极限定理"></a>五、大数定律和中心极限定理</h2><h3 id="考试内容-4"><a href="#考试内容-4" class="headerlink" title="考试内容"></a>考试内容</h3><p>切比雪夫（Chebyshev）不等式    切比雪夫大数定律    伯努利（Bernoulli）大数定律    辛钦（Khinchine）大数定律    棣莫弗-拉普拉斯（DeMoivre-Laplace）定理    列维-林德伯格（Levy-Lindberg）定理</p>
+<h3 id="考试要求-4"><a href="#考试要求-4" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>了解切比雪夫不等式。</li>
+<li>了解切比雪夫大数定律、伯努利大数定律和辛钦大数定律（独立同分布随机变量序列的大数定律）。</li>
+<li>了解棣莫弗-拉普拉斯定理（二项分布以正太分布为极限分布）和列维-林德伯格定理（独立同分布随机变量序列的中心极限定理）。</li>
+</ol>
+<h2 id="六、数理统计的基本概念"><a href="#六、数理统计的基本概念" class="headerlink" title="六、数理统计的基本概念"></a>六、数理统计的基本概念</h2><h3 id="考试内容-5"><a href="#考试内容-5" class="headerlink" title="考试内容"></a>考试内容</h3><p>总体    个体    简单随机样本    统计量    样本均值    样本方差和样本矩    $\chi^2$分布    $t$分布    $F$分布    分位数    正态总体的常用抽样分布</p>
+<h3 id="考试要求-5"><a href="#考试要求-5" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li><p>理解总体、简单随机样本、统计量、样本均值、样本方差及样本矩的概念，其中样本方差定义为：</p>
+<script type="math/tex; mode=display">
+S^2 = \frac{1}{n-1}\sum^n_{i=1}(X_i - \overline{X})^2</script></li>
+<li><p>了解$\chi^2$分布、$t$分布和F分布的概念及性质，了解上侧$\alpha$分位数的概念并会查表计算。</p>
+</li>
+<li><p>了解正态总体的常用抽样分布。</p>
+</li>
+</ol>
+<h2 id="七、参数估计"><a href="#七、参数估计" class="headerlink" title="七、参数估计"></a>七、参数估计</h2><h3 id="考试内容-6"><a href="#考试内容-6" class="headerlink" title="考试内容"></a>考试内容</h3><p>点估计的概念    估计量与估计值    矩估计法    最大似然估计法    估计量的评选标准    区间估计的概念    单个正态总体的均值和方差的区间估计    两个正太总体的均值差和方差比的区间估计</p>
+<h3 id="考试要求-6"><a href="#考试要求-6" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>理解参数的点估计、估计量与估计值的概念。</li>
+<li>掌握矩估计法（一阶矩、二阶矩）和最大似然估计法。</li>
+<li>了解估计量的无偏性、有效性（最小方差性）和一致性（相合性）的概念，并会验证估计量的无偏性。</li>
+<li>理解区间估计的概念，会求单个正态总体的均值和方差的置信区间，会求两个正态总体的均值差和方差比的置信区间。</li>
+</ol>
+<h2 id="八、假设检验"><a href="#八、假设检验" class="headerlink" title="八、假设检验"></a>八、假设检验</h2><h3 id="考试内容-7"><a href="#考试内容-7" class="headerlink" title="考试内容"></a>考试内容</h3><p>显著性检验    假设检验的两类错误    单个及两个正态总体的均值和方差的假设检验</p>
+<h3 id="考试要求-7"><a href="#考试要求-7" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>理解显著性检验的基本思想，掌握假设检验的基本步骤，了解假设检验可能产生的两类错误。</li>
+<li>掌握单个及两个正态总体的均值和方差的假设检验。</li>
+</ol>
 
       
     </div>
@@ -390,11 +468,55 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、行列式"><span class="toc-text">一、行列式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、矩阵"><span class="toc-text">二、矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-1"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-1"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、向量"><span class="toc-text">三、向量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-2"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-2"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、线性方程组"><span class="toc-text">四、线性方程组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-3"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-3"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、矩阵的特征值和特征向量"><span class="toc-text">五、矩阵的特征值和特征向量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-4"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-4"><span class="toc-text">考试要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、二次型"><span class="toc-text">六、二次型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#考试内容-5"><span class="toc-text">考试内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考试要求-5"><span class="toc-text">考试要求</span></a></li></ol></li></ol>
 </div>
 
 
         <p>线性代数（约22%）</p>
+<h2 id="一、行列式"><a href="#一、行列式" class="headerlink" title="一、行列式"></a>一、行列式</h2><h3 id="考试内容"><a href="#考试内容" class="headerlink" title="考试内容"></a>考试内容</h3><p>行列式的概念和基本性质    行列式按行（列）展开定理</p>
+<h3 id="考试要求"><a href="#考试要求" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>了解行列式的概念，掌握行列式的性质。</li>
+<li>会应用行列式的性质和行列式按行（列）展开定理计算行列式。</li>
+</ol>
+<h2 id="二、矩阵"><a href="#二、矩阵" class="headerlink" title="二、矩阵"></a>二、矩阵</h2><h3 id="考试内容-1"><a href="#考试内容-1" class="headerlink" title="考试内容"></a>考试内容</h3><p>矩阵的概念    矩阵的线性运算    矩阵的乘法    方阵的幂    方阵乘积的行列式    矩阵的转置    逆矩阵的概念和性质    矩阵可逆的充分必要条件    伴随矩阵    矩阵的初等变换    初等矩阵    矩阵的秩    矩阵的等价    分块矩阵及其运算</p>
+<h3 id="考试要求-1"><a href="#考试要求-1" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>理解矩阵的概念，了解单位矩阵、数量矩阵、对角矩阵、三角矩阵、堆成矩阵和反对称矩阵以及它们的性质。</li>
+<li>掌握矩阵的线性运算、乘法、转置以及它们的运算规律，了解方阵的幂与方阵乘积的行列式的性质。</li>
+<li>理解逆矩阵的概念，掌握逆矩阵的性质以及矩阵可逆的充分必要条件，理解伴随矩阵的概念，会用伴随矩阵求逆矩阵。</li>
+<li>理解矩阵初等变换的概念，了解初等矩阵的性质和矩阵等价的概念，理解矩阵的秩的概念，掌握用初等变换求矩阵的秩和逆矩阵的方法。</li>
+<li>了解分块矩阵及其运算。</li>
+</ol>
+<h2 id="三、向量"><a href="#三、向量" class="headerlink" title="三、向量"></a>三、向量</h2><h3 id="考试内容-2"><a href="#考试内容-2" class="headerlink" title="考试内容"></a>考试内容</h3><p>向量的概念    向量的线性组合与线性表示    向量组的线性相关与线性无关    向量组的极大线性无关组    等价向量组    向量组的秩    向量组的秩与矩阵的秩之间的关系    向量空间及其相关概念    n维向量空间的基变换和坐标变换    过渡矩阵    向量的内积    线性无关向量组的正交规范化方法    规范正交基    正交矩阵及其性质</p>
+<h3 id="考试要求-2"><a href="#考试要求-2" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>理解n维向量、向量的线性组合与线性表示的概念。</li>
+<li>理解向量组线性相关、线性无关的概念，掌握向量组线性相关、线性无关的有关性质及判别法。</li>
+<li>理解向量组的极大线性无关组和向量组的秩的概念，会求向量组的极大线性无关组及秩。</li>
+<li>理解向量组等价的概念，理解矩阵的秩与其行（列）向量组的秩之间的关系。</li>
+<li>了解n维向量空间、子空间、基底、维数、坐标等概念。</li>
+<li>了解基变换和坐标变换公式，会求过渡矩阵。</li>
+<li>了解内积的概念，掌握线性无关向量组正交规范化的施密特（Schmidt）方法。</li>
+<li>了解规范正交基、正交矩阵的概念以及它们的性质。</li>
+</ol>
+<h2 id="四、线性方程组"><a href="#四、线性方程组" class="headerlink" title="四、线性方程组"></a>四、线性方程组</h2><h3 id="考试内容-3"><a href="#考试内容-3" class="headerlink" title="考试内容"></a>考试内容</h3><p>线性方程组的克拉默（Cramer）法则    齐次线性方程组有非零解的充分必要条件    非齐次线性方程组有解的充分必要条件    线性方程组解的性质和解的结构    齐次线性方程组的基础解系和通解    解空间    非齐次线性方程组的通解</p>
+<h3 id="考试要求-3"><a href="#考试要求-3" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>会用克拉默法则。</li>
+<li>理解齐次线性方程组有非零解的充分必要条件及非齐次线性方程组有解的充分必要条件。</li>
+<li>理解齐次线性方程组的基础解系、通解及解空间的概念，掌握齐次线性方程组的基础解系和通解的方法。</li>
+<li>理解非齐次线性方程组解的结构及通解的概念。</li>
+<li>掌握用初等行变换求解线性方程组的方法。</li>
+</ol>
+<h2 id="五、矩阵的特征值和特征向量"><a href="#五、矩阵的特征值和特征向量" class="headerlink" title="五、矩阵的特征值和特征向量"></a>五、矩阵的特征值和特征向量</h2><h3 id="考试内容-4"><a href="#考试内容-4" class="headerlink" title="考试内容"></a>考试内容</h3><p>矩阵的特征值和特征向量的概念、性质    相似变换、相似矩阵的概念及性质    矩阵可相似对角化的充分必要条件及相似对角矩阵    实对称矩阵的特征值、特征向量及其相似对角矩阵</p>
+<h3 id="考试要求-4"><a href="#考试要求-4" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>理解矩阵的特征值和特征向量的概念及性质，会求矩阵的特征值和特征向量。</li>
+<li>理解相似矩阵的概念、性质及矩阵可相似对角化的充分必要条件，掌握将矩阵化为相似对角矩阵的方法。</li>
+<li>掌握实对称矩阵的特征值和特征向量的性质。</li>
+</ol>
+<h2 id="六、二次型"><a href="#六、二次型" class="headerlink" title="六、二次型"></a>六、二次型</h2><h3 id="考试内容-5"><a href="#考试内容-5" class="headerlink" title="考试内容"></a>考试内容</h3><p>二次型及其矩阵表示    合同变换与合同矩阵    二次型的秩    惯性定理    二次型的标准形和规范形    用正交变换和配方法化二次型维标准形    二次型及其矩阵的正定性</p>
+<h3 id="考试要求-5"><a href="#考试要求-5" class="headerlink" title="考试要求"></a>考试要求</h3><ol>
+<li>掌握二次型及其矩阵表示，了解二次型秩的概念，了解合同变换与合同矩阵的概念，了解二次型的标准形、规范形的概念以及惯性定理。</li>
+<li>掌握用正交变换化二次型为标准形的方法，会用配方法化二次型为标准形。</li>
+<li>理解正交二次型、正定矩阵的概念，并掌握其判别法。</li>
+</ol>
 
       
     </div>
