@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-08-29T16:46:53.765Z</updated>
+  <updated>2020-08-31T17:07:18.368Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chapter4线程</title>
+    <link href="https://tom89757.github.io/2020/09/01/chapter4%E7%BA%BF%E7%A8%8B/"/>
+    <id>https://tom89757.github.io/2020/09/01/chapter4%E7%BA%BF%E7%A8%8B/</id>
+    <published>2020-08-31T17:07:18.000Z</published>
+    <updated>2020-08-31T17:07:18.368Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何摆脱兽性和懒惰</title>
+    <link href="https://tom89757.github.io/2020/08/31/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%85%BD%E6%80%A7%E5%92%8C%E6%87%92%E6%83%B0/"/>
+    <id>https://tom89757.github.io/2020/08/31/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%85%BD%E6%80%A7%E5%92%8C%E6%87%92%E6%83%B0/</id>
+    <published>2020-08-31T14:10:22.000Z</published>
+    <updated>2020-08-31T14:10:22.759Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>chapter3进程描述和控制</title>
     <link href="https://tom89757.github.io/2020/08/29/chapter3%E8%BF%9B%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%8E%A7%E5%88%B6/"/>
     <id>https://tom89757.github.io/2020/08/29/chapter3%E8%BF%9B%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%8E%A7%E5%88%B6/</id>
     <published>2020-08-28T19:26:14.000Z</published>
-    <updated>2020-08-29T16:46:53.765Z</updated>
+    <updated>2020-08-31T17:03:18.235Z</updated>
     
     <summary type="html">
     
@@ -142,17 +172,17 @@
     <link href="https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E8%80%83%E7%BA%B2/"/>
     <id>https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E8%80%83%E7%BA%B2/</id>
     <published>2020-08-16T18:25:49.000Z</published>
-    <updated>2020-08-29T17:56:06.230Z</updated>
+    <updated>2020-08-29T18:00:59.102Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;概率论与数理统计（约22%）&lt;/p&gt;
+&lt;h2 id=&quot;一、随机事件和概率&quot;&gt;&lt;a href=&quot;#一、随机事件和概率&quot; class=&quot;headerlink&quot; title=&quot;一、随机事件和概率&quot;&gt;&lt;/a&gt;一、随机事件和概率&lt;/h2&gt;&lt;h3 id=&quot;考试内容&quot;&gt;&lt;a href=&quot;#考试内容&quot; class=&quot;headerlink&quot; title=&quot;考试内容&quot;&gt;&lt;/a&gt;考试内容&lt;/h3&gt;&lt;p&gt;随机事件与样本空间    事件的关系与运算    完备事件组    概率的概念    概率的基本性质    古典型概率    几何型概率    条件概率    概率的基本公式    事件的独立性    独立重复试验&lt;/p&gt;
+&lt;h3 id=&quot;考试要求&quot;&gt;&lt;a href=&quot;#考试要求&quot; class=&quot;headerlink&quot; title=&quot;考试要求&quot;&gt;&lt;/a&gt;考试要求&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;了解样本空间（基本事件空间）的概念，理解随机事件的概念，掌握事件的关系及运算。&lt;/li&gt;
+&lt;li&gt;理解概率、条件概率的概念，掌握概率的基本性质，会计算古典型概率和几何型概率，掌握概率的加法公式、减法公式、乘法公式、全概率公式以及贝叶斯（Bayes）公式。&lt;/li&gt;
+&lt;li&gt;理解事件独立性的概念，掌握用事件独立性进行概率计算。理解独立城府试验的概念，掌握计算有关事件概率的方法。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -169,17 +199,16 @@
     <link href="https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%80%83%E7%BA%B2/"/>
     <id>https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%80%83%E7%BA%B2/</id>
     <published>2020-08-16T17:07:04.000Z</published>
-    <updated>2020-08-29T17:13:03.948Z</updated>
+    <updated>2020-08-29T18:00:43.645Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;线性代数（约22%）&lt;/p&gt;
+&lt;h2 id=&quot;一、行列式&quot;&gt;&lt;a href=&quot;#一、行列式&quot; class=&quot;headerlink&quot; title=&quot;一、行列式&quot;&gt;&lt;/a&gt;一、行列式&lt;/h2&gt;&lt;h3 id=&quot;考试内容&quot;&gt;&lt;a href=&quot;#考试内容&quot; class=&quot;headerlink&quot; title=&quot;考试内容&quot;&gt;&lt;/a&gt;考试内容&lt;/h3&gt;&lt;p&gt;行列式的概念和基本性质    行列式按行（列）展开定理&lt;/p&gt;
+&lt;h3 id=&quot;考试要求&quot;&gt;&lt;a href=&quot;#考试要求&quot; class=&quot;headerlink&quot; title=&quot;考试要求&quot;&gt;&lt;/a&gt;考试要求&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;了解行列式的概念，掌握行列式的性质。&lt;/li&gt;
+&lt;li&gt;会应用行列式的性质和行列式按行（列）展开定理计算行列式。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -448,60 +477,6 @@
     
     
       <category term="计算机组成与设计" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>408计算机网络考纲</title>
-    <link href="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/"/>
-    <id>https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/</id>
-    <published>2020-07-23T15:37:05.000Z</published>
-    <updated>2020-08-27T09:41:16.024Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;计算机网络（25分）&lt;/p&gt;
-&lt;p&gt;【考察目标】&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;掌握计算机网络的基本概念、基本原理和基本方法。&lt;/li&gt;
-&lt;li&gt;掌握计算机网络的体系结构和典型网络协议，链接典型网络设备的组成和特点，理解典型网络设备的工作原理。&lt;/li&gt;
-&lt;li&gt;能够运用计算机网络的基本概念、基本原理和基本方法进行网络系统的分析、设计和应用。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="计算机网络" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>408操作系统考纲</title>
-    <link href="https://tom89757.github.io/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/"/>
-    <id>https://tom89757.github.io/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/</id>
-    <published>2020-07-23T15:36:50.000Z</published>
-    <updated>2020-07-27T19:02:08.440Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;操作系统（35分）&lt;/p&gt;
-&lt;p&gt;【考察目标】&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。&lt;/li&gt;
-&lt;li&gt;掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。&lt;/li&gt;
-&lt;li&gt;能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用C语言描述相关算法。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="操作系统" scheme="https://tom89757.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   

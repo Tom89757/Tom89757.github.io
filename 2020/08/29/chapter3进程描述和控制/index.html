@@ -14,11 +14,35 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="学习本章可以掌握如下内容：  定义术语进程并解释进程与进程控制块之间的关系 理解进程状态的概念，理解进程状态转换的过程 了解操作系统在管理进程过程的过程中使用的数据结构，列出相关的数据结构并解释该数据结构的目的 评估操作系统对进程控制的需求 掌握操作系统代码运行时涉及的问题 评估与操作系统相关的关键安全问题 了解UNIX SVR4中的进程管理模式  我们可以先讨论操作系统与进程的联系：操作系统需要">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2%E6%89%A7%E8%A1%8C%E5%BF%AB%E7%85%A7.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2%E8%BF%9B%E7%A8%8B%E8%BD%A8%E8%BF%B9.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2%E8%BF%9B%E7%A8%8B%E7%BB%84%E5%90%88%E8%BD%A8%E8%BF%B9.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.1%E4%B8%A4%E7%8A%B6%E6%80%81%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.2%E5%AF%BC%E8%87%B4%E8%BF%9B%E7%A8%8B%E5%88%9B%E5%BB%BA%E7%9A%84%E5%8E%9F%E5%9B%A0.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.2%E5%AF%BC%E8%87%B4%E8%BF%9B%E7%A8%8B%E7%BB%88%E6%AD%A2%E7%9A%84%E5%8E%9F%E5%9B%A0.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.3%E4%BA%94%E7%8A%B6%E6%80%81%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.3%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.3%E6%8E%92%E9%98%9F%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.4%E6%8C%82%E8%B5%B7%E6%80%81.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.4%E5%AF%BC%E8%87%B4%E8%BF%9B%E7%A8%8B%E6%8C%82%E8%B5%B7%E7%9A%84%E5%8E%9F%E5%9B%A0.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3%E8%BF%9B%E7%A8%8B%E5%92%8C%E8%B5%84%E6%BA%90.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3.1%E6%8E%A7%E5%88%B6%E8%A1%A8.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3.2%E8%BF%9B%E7%A8%8B%E6%98%A0%E5%83%8F.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3.2%E7%94%A8%E6%88%B7%E8%BF%9B%E7%A8%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3.2%E8%BF%9B%E7%A8%8B%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.4.1%E5%86%85%E6%A0%B8%E5%85%B8%E5%9E%8B%E5%8A%9F%E8%83%BD.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.4.3%E8%BF%9B%E7%A8%8B%E5%88%87%E6%8D%A2.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.5.2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%94%A8%E6%88%B7%E8%BF%9B%E7%A8%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.5.2%E8%BF%9B%E7%A8%8B%E6%98%A0%E5%83%8F.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.7.1UNIX%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.7.1%E8%BF%9B%E7%A8%8B%E8%BD%AC%E6%8D%A2%E5%9B%BE.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.7.2UNIX%E8%BF%9B%E7%A8%8B%E6%98%A0%E5%83%8F.png">
 <meta property="article:published_time" content="2020-08-28T19:26:14.000Z">
-<meta property="article:modified_time" content="2020-08-29T16:46:53.765Z">
+<meta property="article:modified_time" content="2020-08-31T17:03:18.235Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2%E6%89%A7%E8%A1%8C%E5%BF%AB%E7%85%A7.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -102,7 +126,7 @@
       
       	
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-什么是进程"><span class="toc-text">3.1 什么是进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和进程控制块"><span class="toc-text">进程和进程控制块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-进程状态"><span class="toc-text">3.2 进程状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#两状态进程模型"><span class="toc-text">两状态进程模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的创建和终止"><span class="toc-text">进程的创建和终止</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五状态模型"><span class="toc-text">五状态模型</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-什么是进程"><span class="toc-text">3.1 什么是进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和进程控制块"><span class="toc-text">进程和进程控制块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-进程状态"><span class="toc-text">3.2 进程状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#两状态进程模型"><span class="toc-text">两状态进程模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程的创建和终止"><span class="toc-text">进程的创建和终止</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五状态模型"><span class="toc-text">五状态模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#被挂起的进程"><span class="toc-text">被挂起的进程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-进程描述"><span class="toc-text">3.3 进程描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统的控制结构"><span class="toc-text">操作系统的控制结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程控制结构"><span class="toc-text">进程控制结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-进程控制"><span class="toc-text">3.4 进程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行模式"><span class="toc-text">执行模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程创建"><span class="toc-text">进程创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程切换"><span class="toc-text">进程切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-操作系统的执行"><span class="toc-text">3.5 操作系统的执行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无进程的内核"><span class="toc-text">无进程的内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在用户进程中执行"><span class="toc-text">在用户进程中执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于进程的操作系统"><span class="toc-text">基于进程的操作系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-安全问题"><span class="toc-text">3.6 安全问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统访问威胁"><span class="toc-text">系统访问威胁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对抗措施"><span class="toc-text">对抗措施</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-UNIX-SVR4-进程管理"><span class="toc-text">3.7 UNIX SVR4 进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程状态"><span class="toc-text">进程状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程描述"><span class="toc-text">进程描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程控制"><span class="toc-text">进程控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-小结"><span class="toc-text">3.8 小结</span></a></li></ol>
 </div>
 
 
@@ -122,24 +146,24 @@
 <h3 id="进程和进程控制块"><a href="#进程和进程控制块" class="headerlink" title="进程和进程控制块"></a>进程和进程控制块</h3><p>可以对进程下诸多定义，此处将进程看作一组元素构成的实体，进程的两个基本元素是程序代码和与代码相关联的数据集。我们将程序代码执行的实体称为进程，进程可以表征为这些元素：标识符、状态、优先级、程序计数器、内存指针、上下文数据、I/O状态信息、记账信息，此处不作具体描述。</p>
 <p>上述的列表信息被存放在一个称为进程控制块（process control block）的数据结构中，它是操作系统能够支持多进程和提供多重处理技术的关键工具。</p>
 <h2 id="3-2-进程状态"><a href="#3-2-进程状态" class="headerlink" title="3.2 进程状态"></a>3.2 进程状态</h2><p>单个进程的行为可由进程运行时的指令序列来描述，该序列称为进程轨迹（trace）。一个小的分派器（dispatcher）使处理器从一个进程切换到另一个进程，其表现为各进程轨迹的交替，如下图所示：</p>
-<p><img src="" alt="图2 执行快照"></p>
-<p><img src="" alt="图3 进程轨迹"></p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2%E6%89%A7%E8%A1%8C%E5%BF%AB%E7%85%A7.png" alt="图2 执行快照"></p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2%E8%BF%9B%E7%A8%8B%E8%BD%A8%E8%BF%B9.png" alt="图3 进程轨迹"></p>
 <p>下图则给出了最初的52各指令周期中交替的轨迹：</p>
-<p><img src="" alt="图4 进程组合轨迹"></p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2%E8%BF%9B%E7%A8%8B%E7%BB%84%E5%90%88%E8%BD%A8%E8%BF%B9.png" alt="图4 进程组合轨迹"></p>
 <h3 id="两状态进程模型"><a href="#两状态进程模型" class="headerlink" title="两状态进程模型"></a>两状态进程模型</h3><p>操作系统的基本职责是控制进程的执行（进程切换和分配资源），而设计控制进程的程序的第一步是描述进程表现的状态，最简单的模型中进程可以表现为两种状态：运行态和非运行态。如下图所示：</p>
-<p><img src="" alt="图5 两状态进程模型"></p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.1%E4%B8%A4%E7%8A%B6%E6%80%81%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B.png" alt="图5 两状态进程模型"></p>
 <p>队列中的元素可以是指向各进程的指针，也可以是各进程的进程控制块，分派器在一个进程暂停或退出后从队列中选择一个进程执行。</p>
 <h3 id="进程的创建和终止"><a href="#进程的创建和终止" class="headerlink" title="进程的创建和终止"></a>进程的创建和终止</h3><p>进程的创建和终止决定了进程的生存期。</p>
 <p><strong>进程的创建</strong></p>
 <p>当一个新进程被添加进正在管理的进程集合，操作系统需要建立用于管理它的数据据结构。下图展示了导致进程创建的原因：</p>
-<p><img src="" alt="图6 导致进程创建的原因"></p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.2%E5%AF%BC%E8%87%B4%E8%BF%9B%E7%A8%8B%E5%88%9B%E5%BB%BA%E7%9A%84%E5%8E%9F%E5%9B%A0.png" alt="表1 导致进程创建的原因"></p>
 <p>书中进一步介绍了进程派生（process spawning），由父进程派生子进程。</p>
 <p><strong>进程的终止</strong></p>
 <p>任何一个计算机系统必须为进程提供表示其完成的方法。下图展示了导致进程终止的原因：</p>
-<p><img src="" alt="图7 导致进程终止的原因"></p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.2%E5%AF%BC%E8%87%B4%E8%BF%9B%E7%A8%8B%E7%BB%88%E6%AD%A2%E7%9A%84%E5%8E%9F%E5%9B%A0.png" alt="表2 导致进程终止的原因"></p>
 <p>与进程派生对应，在一些操作系统中，父进程可以终止子进程，或者父进程终止时子进程也终止。</p>
 <h3 id="五状态模型"><a href="#五状态模型" class="headerlink" title="五状态模型"></a>五状态模型</h3><p>考虑到实际情况，非运行状态的进程可以进一步分为两个状态：就绪（ready）和阻塞（blocked）。此外，还应该增加新建态和退出态。如下图所示：</p>
-<p><img src="" alt="图6 五状态进程模型"></p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.3%E4%BA%94%E7%8A%B6%E6%80%81%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B.png" alt="图6 五状态进程模型"></p>
 <p>有必要对这5种状态做更精确的描述：</p>
 <ul>
 <li>运行态：该进程正在执行。单处理器中某一时刻只能有一个进程处于运行态。</li>
@@ -148,6 +172,128 @@
 <li>新建态：刚创建的进程，操作系统还未将其加入可执行进程组。通常是进程控制块已经创建但还没有加载到内存中的新进程。</li>
 <li>退出态：操作系统从可执行进程组中释放出的进程。</li>
 </ul>
+<p>模型中包含新建态和退出态两种状态的意义在于，提供一个缓冲，那些还未进入可执行进程组或者已经退出可执行进程组，但是进程控制块或者进程信息还存在于操作系统之中的进程，需要有一个栖身之所。书中给出了上图中每个状态间转换时发生的过程，此处略。</p>
+<p>下图展示了上图4中每个进程状态间的转换：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.3%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81.png" alt="图7 进程状态"></p>
+<p>下图则给出了实现这种切换可能的排队规则：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.3%E6%8E%92%E9%98%9F%E6%A8%A1%E5%9E%8B.png" alt="图8 排队模型"></p>
+<p>上述模型中包含了两种队列：就绪队列和阻塞队列。阻塞队列又可以根据事件或者优先级分为多个子队列，从而提供调度效率。</p>
+<h3 id="被挂起的进程"><a href="#被挂起的进程" class="headerlink" title="被挂起的进程"></a>被挂起的进程</h3><p>由于I/O操作比处理器慢很多，多道程序设计也可能面临内存中所有进程都在等待I/O的情况。</p>
+<ul>
+<li>一种方法是增加内存容量，以容纳更多进程，但是更大的内存容量往往意味更大的进程，进程数量并没有显著增加；</li>
+<li>另一种方法是增加挂起态，讲被阻塞的进程换出到磁盘中的“挂起队列”，暂时保存从内存中被驱逐出来的进程队列。</li>
+</ul>
+<p>如下图所示：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.4%E6%8C%82%E8%B5%B7%E6%80%81.png" alt="图9 挂起态"></p>
+<p>为了对挂起的阻塞态进程和就绪态进程加以区分，上图引入了两种挂起态：阻塞/挂起态和就绪/挂起态，这种设计方便对挂起某个进程后空出的内存空间的分配。</p>
+<p>后续的虚拟内存的思想看上去可以消除显式交换的需要，但实际上当所有进程都有一部分处于物理内存中时，可能会导致虚拟内存系统崩溃。此时，显式地、完全地换出进程是必要的。</p>
+<p>书中对上图中展示的多个新的状态转换作了进一步描述，此处略。</p>
+<p>目前为止，挂起进程与不在内存中的进程等价，其不论是否等待一个事件，都不能立即执行。下图展示了进程的一些挂起原因：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.2.4%E5%AF%BC%E8%87%B4%E8%BF%9B%E7%A8%8B%E6%8C%82%E8%B5%B7%E7%9A%84%E5%8E%9F%E5%9B%A0.png" alt="表3 导致进程挂起的原因"></p>
+<h2 id="3-3-进程描述"><a href="#3-3-进程描述" class="headerlink" title="3.3 进程描述"></a>3.3 进程描述</h2><p>操作系统控制计算机系统内部的事件，为处理器执行进程而进行调度（schedule）和分派（dispatch），给进程分配资源，并响应用户程序的基本服务请求。操作系统是管理系统资源的实体。如下图所示：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3%E8%BF%9B%E7%A8%8B%E5%92%8C%E8%B5%84%E6%BA%90.png" alt="图10 进程和资源"></p>
+<p>上图中进程1正在执行，进程2被阻塞，进程n被挂起。</p>
+<h3 id="操作系统的控制结构"><a href="#操作系统的控制结构" class="headerlink" title="操作系统的控制结构"></a>操作系统的控制结构</h3><p>操作系统构造并维护它所管理的每个实体的信息表，如下图所示：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3.1%E6%8E%A7%E5%88%B6%E8%A1%A8.png" alt="图11 控制表"></p>
+<ul>
+<li>内存表：用于跟踪内存和外存。</li>
+<li>I/O表：管理计算机系统中的I/O设备和通道。</li>
+<li>文件表：提供关于文件是否存在、文件在外存中的位置、当前状态和其他属性的信息。但是大部分信息可能由文件管理系统维护和使用。</li>
+<li>进程表：内存、I/O和文件是代表进程被管理的，进程表中必须有对这些资源直接或简洁的引用。</li>
+</ul>
+<h3 id="进程控制结构"><a href="#进程控制结构" class="headerlink" title="进程控制结构"></a>进程控制结构</h3><p>操作系统管理和控制进程时，需要知道它的进程位置和进程属性。</p>
+<p><strong>进程位置</strong></p>
+<p>进程属性（标识符、状态、优先级、程序计数器、内存指针、上下文数据、I/O状态信息、记账信息等）的集合称为进程控制块（process control block），进程的程序、数据、栈和属性的集合称为进程映像（process image），如下图所示：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3.2%E8%BF%9B%E7%A8%8B%E6%98%A0%E5%83%8F.png" alt="表4 进程映像"></p>
+<p>进程执行时，整个进程映像必须载入内存或虚拟内存中；其他状态下，至少有进程的部分进程映像位于内存中。因此，操作系统需要知晓进程在内存和磁盘中的位置，对于上图中的主进程表，每一项都至少包含一个指向进程映像的指针。</p>
+<p><strong>进程属性</strong></p>
+<p>如前面所说，进程属性的集合为进程控制块，书上展示了控制进程所需的大量进程属性，此处略。进程控制块信息（即进程属性）可分为三类：</p>
+<ul>
+<li>进程标识信息：包括进程标识符、父进程标识符和用户标识符。进程标识符（即进程ID）与进程、内存、I/O和文件等都建立了映射关系。</li>
+<li>进程状态信息：即处理器状态信息（processor state information），包括处理器寄存器的内容。寄存器信息包括用户可见寄存器、控制和状态寄存器和栈指针。（值得注意的是程序状态字（Program Status Word，PSW）寄存器）</li>
+<li>进程控制信息：这是操作系统控制和协调各种活动进程所需要的额外信息。</li>
+</ul>
+<p>下图展示了虚拟内存中进程映像的结构：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3.2%E7%94%A8%E6%88%B7%E8%BF%9B%E7%A8%8B.png" alt="图13 用户进程"></p>
+<p>上一节中的排队结构可通过进程控制块的链表实现：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.3.2%E8%BF%9B%E7%A8%8B%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9E%84.png" alt="图14 进程链表结构"></p>
+<p>进程控制块包含操作系统所需要的关于进程的所有信息，可以说，进程控制块的集合定义了操作系统的状态。这样一来，进程控制块的保护问题就成了挑战，实际的做法是使用一个处理例程来保护它们，该例程是读/写这些块的唯一仲裁程序。</p>
+<h2 id="3-4-进程控制"><a href="#3-4-进程控制" class="headerlink" title="3.4 进程控制"></a>3.4 进程控制</h2><h3 id="执行模式"><a href="#执行模式" class="headerlink" title="执行模式"></a>执行模式</h3><p>处理器执行模式可分为特权态和非特权态，二者分别与操作系统和用户程序相关联。非特权态又称为用户态；特权态又称为系统态、控制态或内核态，下面都用内核态来称呼。下图展示了操作系统内核的典型功能：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.4.1%E5%86%85%E6%A0%B8%E5%85%B8%E5%9E%8B%E5%8A%9F%E8%83%BD.png" alt="表7 内核典型功能"></p>
+<p>模式的区分是为了保护操作系统和重要的操作系统表（如进程控制块）不受用户程序的干涉。内核态下，软件具有对处理器及所有指令、寄存器和内存的控制能力，这种控制能力用户程序不需要也不能染指。</p>
+<p>程序状态字PSW中的1个比特用来标识执行模式，该比特根据某些事件的要求而改变。</p>
+<h3 id="进程创建"><a href="#进程创建" class="headerlink" title="进程创建"></a>进程创建</h3><p>操作系统基于前面所说的某种原因创建一个新进程时，按以下步骤进行：</p>
+<ol>
+<li>给新进程分配一个唯一的进程标识符。在主进程表中增加一个新表项。</li>
+<li>给进程分配空间。私用用户地址空间（程序和数据）、用户栈等</li>
+<li>初始化进程控制块。</li>
+<li>设置正确的连接。调度队列保存为链表时，新建进程需放置在就绪或就绪/挂起链表中。</li>
+<li>创建或扩充其他数据结构。例如，记账文件。</li>
+</ol>
+<h3 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h3><p><strong>何时切换进程</strong></p>
+<p>进程可以在操作系统从当前正在运行的进程中获取控制权的任何时刻发生，如下图所示：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.4.3%E8%BF%9B%E7%A8%8B%E5%88%87%E6%8D%A2.png" alt="表8 进程切换"></p>
+<p>系统中断可分为普通中断和陷阱，前者如时钟中断、I/O中断和内存失效（缺页）；后者则与当前执行进程产生的错误或异常条件有关。系统调用则是当前执行进程主动要求切换到操作系统的某个例程以调用某个功能。</p>
+<p><strong>模式切换</strong></p>
+<p>中断阶段是指令周期的一部分，当处理器在中断阶段检查发现存在一个未处理的中断时，处理器做以下工作：</p>
+<ol>
+<li>把程序计数器置成中断处理程序的开始地址。</li>
+<li>从用户态切换到内核态，使得中断处理代码可以包含有特权的指令。</li>
+</ol>
+<p><strong>进程状态的变化</strong></p>
+<p>模式切换和进程切换（大部分文件将其作为上下文切换）不同。前者可以不改变正处于运行态的进程状态，保存上下文环境和恢复上下文环境只需很少的开销；后者则会导致正在运行的进程切换到就绪、阻塞或者挂起态，书中描述了完整的进程切换步骤，此处略。</p>
+<h2 id="3-5-操作系统的执行"><a href="#3-5-操作系统的执行" class="headerlink" title="3.5 操作系统的执行"></a>3.5 操作系统的执行</h2><p>一个基本事实是，操作系统也是一组由处理器执行的程序。</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.5.2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%94%A8%E6%88%B7%E8%BF%9B%E7%A8%8B.png" alt="图15 操作系统和用户进程关系"></p>
+<h3 id="无进程的内核"><a href="#无进程的内核" class="headerlink" title="无进程的内核"></a>无进程的内核</h3><p>按照一种传统的观点，进程的概念仅适用于用户程序，操作系统代码作为一个在特权模式下工作的独立实体被执行。操作系统（内核）有自己的内存区域和系统栈，用于控制过程调用和返回。如上图a所示。</p>
+<h3 id="在用户进程中执行"><a href="#在用户进程中执行" class="headerlink" title="在用户进程中执行"></a>在用户进程中执行</h3><p>另一种观点是，在PC或工作站等小的机器中，在用户进程的上下文中执行几乎所有操作系统软件，操作系统根本上是用户调用的一组例程。如上图b所示。下图则给出了这种观点下一个典型的进程映像结构：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.5.2%E8%BF%9B%E7%A8%8B%E6%98%A0%E5%83%8F.png" alt="图16 进程映像"></p>
+<p>当进程在内核模式下，独立的内核栈用于管理调用和返回；操作系统代码和数据位于共享地址空间中，被所有用户进程共享。发生中断、陷阱或系统调用时，仅进行模式切换，而仍在当前用户进程中继续执行，无需进行进程切换。</p>
+<h3 id="基于进程的操作系统"><a href="#基于进程的操作系统" class="headerlink" title="基于进程的操作系统"></a>基于进程的操作系统</h3><p>最后一种选择是，讲操作系统作为一组系统进程来实现，如上图c所示。其有如下优点：</p>
+<ol>
+<li>促使模块化操作系统，模块间具有最小的、简明的接口。</li>
+<li>一些非关键的操作系统函数可简单地用独立的进程实现，如监控程序。</li>
+<li>在多处理器或多机环境中，可将一些操作系统服务传送到专用处理器中执行，提高性能。</li>
+</ol>
+<h2 id="3-6-安全问题"><a href="#3-6-安全问题" class="headerlink" title="3.6 安全问题"></a>3.6 安全问题</h2><p>操作系统对每个进程都关联了一套权限，它规定了进程可以获取哪些资源，包括内存区域、文件和特权系统指令等。根用户具有最高级别的权限，能够对操作系统所有的功能和服务进行访问。</p>
+<p>设计任何操作系统的一个关键问题是，组织或者至少探测一个用户或一种恶意软件获得系统授权的企图，尤其是从根用户获取。</p>
+<h3 id="系统访问威胁"><a href="#系统访问威胁" class="headerlink" title="系统访问威胁"></a>系统访问威胁</h3><p>系统访问威胁分为两大类：入侵者和恶意软件。</p>
+<ul>
+<li>入侵者分为：冒充者、滥用职权者和秘密用户。入侵者的目的是获取一个系统的访问权限，或者增加一个系统的权限获取的范围。</li>
+<li>恶意软件可分为寄生（如病毒、逻辑炸弹和后门）和独立（如蠕虫和僵尸程序）两种；也可分为不可复制（逻辑炸弹、后门和僵尸程序）和可复制（蠕虫和病毒）。</li>
+</ul>
+<h3 id="对抗措施"><a href="#对抗措施" class="headerlink" title="对抗措施"></a>对抗措施</h3><p><strong>入侵检测</strong></p>
+<p>入侵检测是一种安全服务，通过监控和分析系统时间发现试图通过未经授权的方法访问系统资源的操作。入侵检测系统（IDS）可分为基于宿主和基于网络两种，IDS由感应器、分析器和用户界面组成。</p>
+<p><strong>认证</strong></p>
+<p>用户认证是计算机安全内容中一个主要的构建模块和最初防线，是许多种访问控制和用户责任的主要部分。认证过程分为确认步骤和验证步骤两步。有四种认证用户身份方法：个人知道的一些事物（密码等）、个人拥有的一些事物（电子通行卡等）、个人自身的事物（静态生物识别技术，指纹、虹膜等）、个人要做的事物（动态生物识别技术，如语音、笔迹等）。</p>
+<p><strong>访问控制</strong></p>
+<p>指定谁或何物（如进程）可能有权使用特定的系统资源和在每种场景下被允许的访问类型。可以将认证和访问控制结合使用。</p>
+<p><strong>防火墙</strong></p>
+<p>防火墙用户保护本地系统或系统网络免受基于网络的安全威胁。</p>
+<h2 id="3-7-UNIX-SVR4-进程管理"><a href="#3-7-UNIX-SVR4-进程管理" class="headerlink" title="3.7 UNIX SVR4 进程管理"></a>3.7 UNIX SVR4 进程管理</h2><p>UNIX 系统 V 使用图15 b 模型，大部分操作系统在用户进程环境中执行。使用两种进程，系统进程和用户进程，前者在内核态下运行，执行操作系统代码以实现管理功能和内部处理，如内存空间的分配和进程交换；后者在用户态下执行用户程序，在内核态下执行术语内核的指令。当发生异常或中断或系统调用时，用户进程可进入内核态。</p>
+<h3 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h3><p>UNIX操作系统有9种进程状态，如下表和下图所示：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.7.1UNIX%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81.png" alt="表9 UNIX进程状态"></p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.7.1%E8%BF%9B%E7%A8%8B%E8%BD%AC%E6%8D%A2%E5%9B%BE.png" alt="图17 进程转换图"></p>
+<p>UNIX中有两个独特的进程，进程0和进程1，前者在系统启动时创建；后者由进程0产生，称为初始进程，为新登录的用户创建一个用户进程。</p>
+<h3 id="进程描述"><a href="#进程描述" class="headerlink" title="进程描述"></a>进程描述</h3><p>下图概括了UNIX 进程映像中的元素：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter3.7.2UNIX%E8%BF%9B%E7%A8%8B%E6%98%A0%E5%83%8F.png" alt="表10 UNIX进程映像"></p>
+<p>书中对进程表项和U区进行了展开说明，此处略。</p>
+<h3 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h3><p>UNIX中的进程创建通过内核系统调用fork()实现。当一个进程产生一个fork请求时，操作系统执行以下功能：</p>
+<ol>
+<li>为新进程在进程表中分配一个空项。</li>
+<li>为子进程赋一个唯一的进程标识符。</li>
+<li>生成一个父进程上下文的逻辑副本，不包括共享内存区。</li>
+<li>增加父进程拥有的所有文件的计数器，以表示有一个另外的进程现在也拥有这些文件。</li>
+<li>把子进程置为就绪态。</li>
+<li>向父进程返回子进程的进程号；对子进程返回零。</li>
+</ol>
+<p>这些操作在父进程的内核态完成，在内核完成这些功能后可以继续下面三种操作之一：</p>
+<ul>
+<li>在父进程中继续执行。控制返回用户态下父进程进行fork调用处。</li>
+<li>处理器控制权交给子进程。子进程开始执行代码，执行点与父进程相同，即在fork调用的返回处。</li>
+<li>控制转交给另一个进程。父进程和子进程都处于就绪态。</li>
+</ul>
+<h2 id="3-8-小结"><a href="#3-8-小结" class="headerlink" title="3.8 小结"></a>3.8 小结</h2><p>进程是现代操作系统中最基本的构件，操作系统的基本功能是创建、管理和终止进程。</p>
+<p>需要把握的概念有进程映像和进程控制块、进程状态图、进程切换等。</p>
 
       
     </div>
@@ -162,6 +308,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/08/31/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%85%BD%E6%80%A7%E5%92%8C%E6%87%92%E6%83%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          如何摆脱兽性和懒惰
+        
+      </div>
+    </a>
   
   
     <a href="/2020/08/27/chapter6%E9%93%BE%E8%B7%AF%E5%B1%82%E5%92%8C%E5%B1%80%E5%9F%9F%E7%BD%91/" id="article-nav-older" class="article-nav-link-wrap">
@@ -212,7 +367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
     </div>
   </div>
 
@@ -225,6 +380,14 @@
       <ul>
         
           <li>
+            <a href="/2020/09/01/chapter4%E7%BA%BF%E7%A8%8B/">chapter4线程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/31/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%85%BD%E6%80%A7%E5%92%8C%E6%87%92%E6%83%B0/">如何摆脱兽性和懒惰</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/29/chapter3%E8%BF%9B%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%8E%A7%E5%88%B6/">chapter3进程描述和控制</a>
           </li>
         
@@ -234,14 +397,6 @@
         
           <li>
             <a href="/2020/08/23/chapter5%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%8E%A7%E5%88%B6%E5%B9%B3%E9%9D%A2/">chapter5网络层：控制平面</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/">chapter4网络层：数据平面</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/18/chapter3%E8%BF%90%E8%BE%93%E5%B1%82/">chapter3运输层</a>
           </li>
         
       </ul>
