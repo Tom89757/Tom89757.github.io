@@ -9,23 +9,24 @@
   
   <title>chapter4线程 | Tom89757&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="学习目标  理解进程与线程的区别 描述线程的基本设计问题 掌握用户级线程和内核级线程的差异 掌握Windows7中的线程管理功能 掌握Solaris 中的线程管理功能 掌握Linux中的线程管理功能">
+<meta property="og:type" content="article">
 <meta property="og:title" content="chapter4线程">
 <meta property="og:url" content="https://tom89757.github.io/2020/09/01/chapter4%E7%BA%BF%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Tom89757&#39;s blog">
+<meta property="og:description" content="学习目标  理解进程与线程的区别 描述线程的基本设计问题 掌握用户级线程和内核级线程的差异 掌握Windows7中的线程管理功能 掌握Solaris 中的线程管理功能 掌握Linux中的线程管理功能">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?400x">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?400x400">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?x400">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?40">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?80">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.2%E5%8D%95%E5%A4%84%E7%90%86%E5%99%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.2.1%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.2.2%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png">
+<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.3.1%E5%A4%9A%E6%A0%B8%E7%9A%84%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8D.png">
 <meta property="article:published_time" content="2020-08-31T17:07:18.000Z">
-<meta property="article:modified_time" content="2020-09-01T04:03:35.523Z">
+<meta property="article:modified_time" content="2020-09-01T17:12:47.697Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png">
+<meta name="twitter:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -110,16 +111,70 @@
       
       	
 <div id="toc">
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程与线程"><span class="toc-text">进程与线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多线程"><span class="toc-text">多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程功能特性"><span class="toc-text">线程功能特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-线程分类"><span class="toc-text">4.2 线程分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用户级和内核级线程"><span class="toc-text">用户级和内核级线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他方案"><span class="toc-text">其他方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-多核和多线程"><span class="toc-text">4.3 多核和多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多核系统上的软件性能"><span class="toc-text">多核系统上的软件性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用示例：Valve游戏软件"><span class="toc-text">应用示例：Valve游戏软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-Windows-7线程和SMP管理"><span class="toc-text">4.4 Windows 7线程和SMP管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-Solaris-的线程和-SMP-管理"><span class="toc-text">4.5 Solaris 的线程和 SMP 管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-Linux的进程和线程管理"><span class="toc-text">4.6 Linux的进程和线程管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-Mac-OS-X-的GCD技术"><span class="toc-text">4.7 Mac OS X 的GCD技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-小结"><span class="toc-text">4.8 小结</span></a></li></ol>
 </div>
 
 
-        <p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png" alt="图1 线程与进程"></p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?400x" alt="图1 线程与进程"></p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?400x400" alt="图1 线程与进程"></p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?x400" alt="图1 线程与进程"></p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?40" alt="图1 线程与进程"></p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png?80" alt="图1 线程与进程"></p>
+        <p><strong>学习目标</strong></p>
+<ul>
+<li>理解进程与线程的区别</li>
+<li>描述线程的基本设计问题</li>
+<li>掌握用户级线程和内核级线程的差异</li>
+<li>掌握Windows7中的线程管理功能</li>
+<li>掌握Solaris 中的线程管理功能</li>
+<li>掌握Linux中的线程管理功能</li>
+</ul>
+<a id="more"></a>
+<h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><p>目前为止进程的概念包含两个特点：资源所有权和调度/执行。前者对应进程映像，后者对应一个进程包含的多个执行路径。为对二者进行区分，拥有资源所有权的单位通常称为进程或任务（tast）；调度/执行的单位通常称为线程或轻量级进程。</p>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><p>多线程是指操作系统在单个进程内支持多个并发执行路径的能力。目前，操作系统使用的大都是多进程多线程。</p>
+<p>在多线程环境中，进程被定义为资源分配的单位和一个被保护的单位。与进程相关联的有：</p>
+<ul>
+<li>存放进程映像的虚拟地址空间。</li>
+<li>受保护地对处理器、其他进程（用于进程间通信）、文件和I/O资源（设备和通道）的访问。</li>
+</ul>
+<p>在进程中的每个线程有：</p>
+<ul>
+<li>线程执行状态（运行、就绪等）</li>
+<li>在未运行时保存的线程上下文；从某种意义上看，线程可被视为进程内的一个独立操作的程序计数器。</li>
+<li>一个执行栈。</li>
+<li>用于每个线程局部变量的静态存储空间。</li>
+<li>与进程内的其他线程共享的对进程的内存和资源的访问。</li>
+</ul>
+<p>下图展示了单线程和多线程的进程模型：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="图2 单线程和多线程"></p>
+<p>在多线程模型中，每个线程有一个独立的栈，还有独立的控制块用于包含寄存器值、优先级和其他与进程相关的状态信息。多线程较多进程的优点在于，线程的创建、终止和切换都比进程快，且由于共享进程控制块和用户地址空间通信效率也较高。</p>
+<p>在单处理器中，多线程也有适用的场景，如：前台和后台工作、异步处理、执行速度、模块化程序结构。</p>
+<h3 id="线程功能特性"><a href="#线程功能特性" class="headerlink" title="线程功能特性"></a>线程功能特性</h3><p><strong>线程状态</strong></p>
+<p>线程的关键状态有运行态、就绪态和阻塞态，改变线程状态的操作有派生、阻塞、解除阻塞和结束。下图展示了单处理器多线程的例子：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.2%E5%8D%95%E5%A4%84%E7%90%86%E5%99%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="图4 单处理器多线程"></p>
+<p><strong>线程同步</strong></p>
+<p>线程对进程资源的共享必然带来同步问题，这会在后续章节中讨论。</p>
+<h2 id="4-2-线程分类"><a href="#4-2-线程分类" class="headerlink" title="4.2 线程分类"></a>4.2 线程分类</h2><h3 id="用户级和内核级线程"><a href="#用户级和内核级线程" class="headerlink" title="用户级和内核级线程"></a>用户级和内核级线程</h3><p>线程分为：用户级线程（User-Level Thread，ULT）和内核级线程（Kernel-Level Thread，KLT）。</p>
+<p><strong>用户级线程</strong></p>
+<p>纯粹的用户级线程软件的线程管理工作都由应用程序完成，内核意识不到它的存在，多线程的应用程序通过线程库被设计，线程库包含的例程的功能有：创建和销毁线程、进行线程间通信、调度线程、保存和恢复线程上下文。下图展示了内核级线程和用户级线程：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.2.1%E7%BA%BF%E7%A8%8B.png" alt="图5 线程"></p>
+<p>使用用户级线程的优缺点在于：</p>
+<ul>
+<li>优点：节省了切换开销、可以为应用程序定制调度算法、可以在任何操作系统中进行。</li>
+<li>缺点：许多系统调用会引起进程阻塞、纯粹的用户级线程策略中不能利用多处理技术。</li>
+</ul>
+<p>解决上述缺点的两个方法是：将多线程写成多进程（又会导致切换开销过大）和jacketing技术。后者将一个产生阻塞的系统调用转化为一个非阻塞的系统调用，即不会直接进行一个会导致阻塞的系统调用，而是增加了检查的步骤：若系统调用会导致进程阻塞，不进行系统调用，并将执行该系统调用的线程转为阻塞态，将控制传送给另一个线程。</p>
+<p><strong>内核级线程</strong></p>
+<p>纯粹的内核级线程软件的线程管理工作都由内核完成。内核为进程及其内部的每个线程维护上下文信息，调度都是内核基于线程完成的。其解决了上述用户级进程的两个缺点，但是更多的到内核的状态切换会增加执行时间。</p>
+<p><strong>混合方法</strong></p>
+<p>设计正确的话，混合方法可以综合上述二者的优点同时克服它们的缺点。如Solaris系统中，用户级线程/内核级线程的关系为1：1。</p>
+<h3 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h3><p>下图展示了线程与进程之间的关系：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.2.2%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png" alt="表2 线程和进程"></p>
+<p>其中1：M、N：M的关系并不为人熟知，此处仅作了解，其关键在于将线程当作可以在地址空间中（进程间）移动的实体。</p>
+<h2 id="4-3-多核和多线程"><a href="#4-3-多核和多线程" class="headerlink" title="4.3 多核和多线程"></a>4.3 多核和多线程</h2><h3 id="多核系统上的软件性能"><a href="#多核系统上的软件性能" class="headerlink" title="多核系统上的软件性能"></a>多核系统上的软件性能</h3><p>考虑在多核系统上的单个应用程序，其加速比满足Amdahl定律：</p>
+<script type="math/tex; mode=display">
+加速比 = \frac{单处理器上程序的运行时间}{在N个并行处理器上程序运行的时间} = \frac{1}{(1-f) + \frac{f}{N}}</script><p>其中(1-f)的部分为串行执行的，下图a展示了不同比例的串行代码所对应的加速比：</p>
+<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.3.1%E5%A4%9A%E6%A0%B8%E7%9A%84%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8D.png" alt="图7 多核的性能影响"></p>
+<p>上图b展示了多处理器任务调度、通信以及高速缓存一致性维护带来的额外开销对性能的影响。</p>
+<blockquote>
+<p>后续的小节都是讲述具体实例，此处略。</p>
+</blockquote>
+<h3 id="应用示例：Valve游戏软件"><a href="#应用示例：Valve游戏软件" class="headerlink" title="应用示例：Valve游戏软件"></a>应用示例：Valve游戏软件</h3><h2 id="4-4-Windows-7线程和SMP管理"><a href="#4-4-Windows-7线程和SMP管理" class="headerlink" title="4.4 Windows 7线程和SMP管理"></a>4.4 Windows 7线程和SMP管理</h2><h2 id="4-5-Solaris-的线程和-SMP-管理"><a href="#4-5-Solaris-的线程和-SMP-管理" class="headerlink" title="4.5 Solaris 的线程和 SMP 管理"></a>4.5 Solaris 的线程和 SMP 管理</h2><h2 id="4-6-Linux的进程和线程管理"><a href="#4-6-Linux的进程和线程管理" class="headerlink" title="4.6 Linux的进程和线程管理"></a>4.6 Linux的进程和线程管理</h2><h2 id="4-7-Mac-OS-X-的GCD技术"><a href="#4-7-Mac-OS-X-的GCD技术" class="headerlink" title="4.7 Mac OS X 的GCD技术"></a>4.7 Mac OS X 的GCD技术</h2><h2 id="4-8-小结"><a href="#4-8-小结" class="headerlink" title="4.8 小结"></a>4.8 小结</h2><p>本章描述了线程的有关概念和实现。</p>
 
       
     </div>
@@ -134,6 +189,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chapter5并发性：互斥与同步
+        
+      </div>
+    </a>
   
   
     <a href="/2020/08/31/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%85%BD%E6%80%A7%E5%92%8C%E6%87%92%E6%83%B0/" id="article-nav-older" class="article-nav-link-wrap">
@@ -175,7 +239,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 10px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
     </div>
   </div>
 
@@ -197,23 +261,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/01/chapter4%E7%BA%BF%E7%A8%8B/">chapter4线程</a>
+            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
           </li>
         
           <li>
-            <a href="/2020/08/31/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%85%BD%E6%80%A7%E5%92%8C%E6%87%92%E6%83%B0/">如何摆脱兽性和懒惰</a>
+            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/08/29/chapter3%E8%BF%9B%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%8E%A7%E5%88%B6/">chapter3进程描述和控制</a>
+            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
           </li>
         
           <li>
-            <a href="/2020/08/27/chapter6%E9%93%BE%E8%B7%AF%E5%B1%82%E5%92%8C%E5%B1%80%E5%9F%9F%E7%BD%91/">chapter6链路层和局域网</a>
+            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
           </li>
         
           <li>
-            <a href="/2020/08/23/chapter5%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%8E%A7%E5%88%B6%E5%B9%B3%E9%9D%A2/">chapter5网络层：控制平面</a>
+            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
           </li>
         
       </ul>
@@ -261,5 +325,22 @@
 
 
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
 </body>
 </html>
