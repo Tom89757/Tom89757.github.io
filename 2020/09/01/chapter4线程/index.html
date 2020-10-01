@@ -16,17 +16,17 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="学习目标  理解进程与线程的区别 描述线程的基本设计问题 掌握用户级线程和内核级线程的差异 掌握Windows7中的线程管理功能 掌握Solaris 中的线程管理功能 掌握Linux中的线程管理功能">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.2%E5%8D%95%E5%A4%84%E7%90%86%E5%99%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.2.1%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.2.2%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png">
-<meta property="og:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.3.1%E5%A4%9A%E6%A0%B8%E7%9A%84%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8D.png">
+<meta property="og:image" content="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.2%E5%8D%95%E5%A4%84%E7%90%86%E5%99%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2.1%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2.2%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3.1%E5%A4%9A%E6%A0%B8%E7%9A%84%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8D.png">
 <meta property="article:published_time" content="2020-08-31T17:07:18.000Z">
-<meta property="article:modified_time" content="2020-09-01T17:12:47.697Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.377Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta name="twitter:image" content="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -141,18 +141,18 @@
 <li>与进程内的其他线程共享的对进程的内存和资源的访问。</li>
 </ul>
 <p>下图展示了单线程和多线程的进程模型：</p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="图2 单线程和多线程"></p>
+<p><img src="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.1%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="图2 单线程和多线程"></p>
 <p>在多线程模型中，每个线程有一个独立的栈，还有独立的控制块用于包含寄存器值、优先级和其他与进程相关的状态信息。多线程较多进程的优点在于，线程的创建、终止和切换都比进程快，且由于共享进程控制块和用户地址空间通信效率也较高。</p>
 <p>在单处理器中，多线程也有适用的场景，如：前台和后台工作、异步处理、执行速度、模块化程序结构。</p>
 <h3 id="线程功能特性"><a href="#线程功能特性" class="headerlink" title="线程功能特性"></a>线程功能特性</h3><p><strong>线程状态</strong></p>
 <p>线程的关键状态有运行态、就绪态和阻塞态，改变线程状态的操作有派生、阻塞、解除阻塞和结束。下图展示了单处理器多线程的例子：</p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.1.2%E5%8D%95%E5%A4%84%E7%90%86%E5%99%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="图4 单处理器多线程"></p>
+<p><img src="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.2%E5%8D%95%E5%A4%84%E7%90%86%E5%99%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="图4 单处理器多线程"></p>
 <p><strong>线程同步</strong></p>
 <p>线程对进程资源的共享必然带来同步问题，这会在后续章节中讨论。</p>
 <h2 id="4-2-线程分类"><a href="#4-2-线程分类" class="headerlink" title="4.2 线程分类"></a>4.2 线程分类</h2><h3 id="用户级和内核级线程"><a href="#用户级和内核级线程" class="headerlink" title="用户级和内核级线程"></a>用户级和内核级线程</h3><p>线程分为：用户级线程（User-Level Thread，ULT）和内核级线程（Kernel-Level Thread，KLT）。</p>
 <p><strong>用户级线程</strong></p>
 <p>纯粹的用户级线程软件的线程管理工作都由应用程序完成，内核意识不到它的存在，多线程的应用程序通过线程库被设计，线程库包含的例程的功能有：创建和销毁线程、进行线程间通信、调度线程、保存和恢复线程上下文。下图展示了内核级线程和用户级线程：</p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.2.1%E7%BA%BF%E7%A8%8B.png" alt="图5 线程"></p>
+<p><img src="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2.1%E7%BA%BF%E7%A8%8B.png" alt="图5 线程"></p>
 <p>使用用户级线程的优缺点在于：</p>
 <ul>
 <li>优点：节省了切换开销、可以为应用程序定制调度算法、可以在任何操作系统中进行。</li>
@@ -164,12 +164,12 @@
 <p><strong>混合方法</strong></p>
 <p>设计正确的话，混合方法可以综合上述二者的优点同时克服它们的缺点。如Solaris系统中，用户级线程/内核级线程的关系为1：1。</p>
 <h3 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h3><p>下图展示了线程与进程之间的关系：</p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.2.2%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png" alt="表2 线程和进程"></p>
+<p><img src="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2.2%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B.png" alt="表2 线程和进程"></p>
 <p>其中1：M、N：M的关系并不为人熟知，此处仅作了解，其关键在于将线程当作可以在地址空间中（进程间）移动的实体。</p>
 <h2 id="4-3-多核和多线程"><a href="#4-3-多核和多线程" class="headerlink" title="4.3 多核和多线程"></a>4.3 多核和多线程</h2><h3 id="多核系统上的软件性能"><a href="#多核系统上的软件性能" class="headerlink" title="多核系统上的软件性能"></a>多核系统上的软件性能</h3><p>考虑在多核系统上的单个应用程序，其加速比满足Amdahl定律：</p>
 <script type="math/tex; mode=display">
 加速比 = \frac{单处理器上程序的运行时间}{在N个并行处理器上程序运行的时间} = \frac{1}{(1-f) + \frac{f}{N}}</script><p>其中(1-f)的部分为串行执行的，下图a展示了不同比例的串行代码所对应的加速比：</p>
-<p><img src="http://qfwwa993z.hn-bkt.clouddn.com/chapter4.3.1%E5%A4%9A%E6%A0%B8%E7%9A%84%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8D.png" alt="图7 多核的性能影响"></p>
+<p><img src="https://cs-osiadp7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3.1%E5%A4%9A%E6%A0%B8%E7%9A%84%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8D.png" alt="图7 多核的性能影响"></p>
 <p>上图b展示了多处理器任务调度、通信以及高速缓存一致性维护带来的额外开销对性能的影响。</p>
 <blockquote>
 <p>后续的小节都是讲述具体实例，此处略。</p>
@@ -229,7 +229,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -239,7 +239,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -261,23 +261,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

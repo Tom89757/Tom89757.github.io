@@ -16,31 +16,31 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="进程是操作系统中最核心的抽象，操作系统中其他所有内容都围绕进程展开，因为进程的抽象对象是正在运行的程序。线程则是进程的第一个亲戚，同样值得深究。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.1.1%E5%A4%9A%E9%81%93%E7%A8%8B%E5%BA%8F.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.1.5%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.1.5%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.1.6%E8%BF%9B%E7%A8%8B%E8%A1%A8%E9%A1%B9%E5%AD%97%E6%AE%B5.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.1.6%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.1.7CPU%E5%88%A9%E7%94%A8%E7%8E%87.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.1%E5%AD%97%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.1Web%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.1%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.1%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.2%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.2%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%A0%86%E6%A0%88.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.3pthread%E5%87%BD%E6%95%B0.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.4%E5%AE%9E%E7%8E%B0%E5%8C%BA%E5%88%AB.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.6%E6%B7%B7%E5%90%88%E5%AE%9E%E7%8E%B0.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.8%E5%BC%B9%E5%87%BA%E5%BC%8F%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.9%E7%BA%BF%E7%A8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png">
-<meta property="og:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.2.9%E7%A7%81%E6%9C%89%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.1%E5%A4%9A%E9%81%93%E7%A8%8B%E5%BA%8F.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.5%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.5%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.6%E8%BF%9B%E7%A8%8B%E8%A1%A8%E9%A1%B9%E5%AD%97%E6%AE%B5.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.6%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.7CPU%E5%88%A9%E7%94%A8%E7%8E%87.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.1%E5%AD%97%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.1Web%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.1%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.1%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.2%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.2%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%A0%86%E6%A0%88.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.3pthread%E5%87%BD%E6%95%B0.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.4%E5%AE%9E%E7%8E%B0%E5%8C%BA%E5%88%AB.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.6%E6%B7%B7%E5%90%88%E5%AE%9E%E7%8E%B0.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.8%E5%BC%B9%E5%87%BA%E5%BC%8F%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.9%E7%BA%BF%E7%A8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png">
+<meta property="og:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.9%E7%A7%81%E6%9C%89%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png">
 <meta property="article:published_time" content="2020-08-09T18:00:53.000Z">
-<meta property="article:modified_time" content="2020-08-28T19:35:22.767Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.221Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qeohngkoy.bkt.clouddn.com/chapter2.1.1%E5%A4%9A%E9%81%93%E7%A8%8B%E5%BA%8F.png">
+<meta name="twitter:image" content="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.1%E5%A4%9A%E9%81%93%E7%A8%8B%E5%BA%8F.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -135,7 +135,7 @@
 <p>上述并发的实现需要多道程序系统，而用于描述并行的概念模型——顺序进程，使得并行更容易理解。本章的内容都将围绕该模型的内容、使用和影响展开。</p>
 <h3 id="进程模型"><a href="#进程模型" class="headerlink" title="进程模型"></a>进程模型</h3><p>一个进程就是一个正在执行程序的实例。进程间的切换即为多道程序设计。</p>
 <p>下图展示了4道程序并发执行。4道程序被抽象为4个各自拥有自己控制流程（即每个程序自己的逻辑程序计数器）的进程：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.1.1%E5%A4%9A%E9%81%93%E7%A8%8B%E5%BA%8F.png" alt="图1 多道程序"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.1%E5%A4%9A%E9%81%93%E7%A8%8B%E5%BA%8F.png" alt="图1 多道程序"></p>
 <p>本章假设只有一个CPU。关于进程的关键思想是，一个进程是某种类型的一个活动，它有程序、输入、输出以及状态。单个处理器被多个进程共享时，通过调度算法在进程间切换。</p>
 <p>值得注意的是，两个进程可以运行同一个程序，此处并没有展示相关细节，<strong>mark</strong>。</p>
 <h3 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h3><p>操作系统需要一种方式来创建进程，4种主要事件会导致进程的创建：</p>
@@ -167,24 +167,24 @@
 </ul>
 <h3 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h3><p>每个进程独立，有自己的程序计数器和内部状态，但进程之间的相互作用使我们需要考虑更复杂的情况。</p>
 <p>书中以命令<code>cat chapter1 chapter2 chapter3 | grep tree</code>为例，说明了两个进程间的相互作用。下图展示了进程的三种状态及四种转换关系：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.1.5%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png" alt="图2 进程状态图"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.5%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png" alt="图2 进程状态图"></p>
 <ol>
 <li>运行态：该时刻进程实际占用CPU。</li>
 <li>就绪态：可运行，但因为其他进程正在运行而暂时停止。</li>
 <li>阻塞态：除非某种外部事件发生，否则进程不能运行。</li>
 </ol>
 <p>上图的2、3由进程调度程序控制，它是操作系统的一部分，用来调度计算机资源。根据上述状态图可以引出下图中的模型：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.1.5%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B.png" alt="图3 进程模型"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.5%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B.png" alt="图3 进程模型"></p>
 <p>所有关于中断处理、启动进程和停止进程的具体细节都隐藏在调度程序中。实际上，调度程序是一段非常短小的程序，操作系统的其他部分被简单组织成进程的形式。但很少有真实系统以这样的理想模型构造。</p>
 <h3 id="进程的实现"><a href="#进程的实现" class="headerlink" title="进程的实现"></a>进程的实现</h3><p>操作系统维护着一张进程表，每个进程表项包含了进程状态的信息，包括：程序计数器、堆栈指针、内存分配情况、所打开文件的状态、账号和调度信息，以及其他在进程由运行状态切换到就绪态或阻塞态时必须保存的信息。下图展示了进程表项中的一些字段：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.1.6%E8%BF%9B%E7%A8%8B%E8%A1%A8%E9%A1%B9%E5%AD%97%E6%AE%B5.png" alt="图4 进程表项字段"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.6%E8%BF%9B%E7%A8%8B%E8%A1%A8%E9%A1%B9%E5%AD%97%E6%AE%B5.png" alt="图4 进程表项字段"></p>
 <p>书中进一步介绍了中断向量（interrupt vector）的概念，其包含了中断服务程序的入口地址。下图展示了中断发生后操作系统最底层的工作步骤：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.1.6%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86.png" alt="图5 中断处理"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.6%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86.png" alt="图5 中断处理"></p>
 <p>需要了解的是，一些诸如保存寄存器值和设置堆栈指针等操作，无法用C语言等高级语言来完成，这些操作通过一个短小的汇编语言例程来完成。</p>
 <h3 id="多道程序设计模型"><a href="#多道程序设计模型" class="headerlink" title="多道程序设计模型"></a>多道程序设计模型</h3><p>本小节使用公式描述内存中同时有n个进程，每个进程等待I/O操作的事件和停留在内存中的时间比为p时CPU的利用率：</p>
 <script type="math/tex; mode=display">
 CPU利用率 = 1 - p^n</script><p>下图展示了该函数的曲线：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.1.7CPU%E5%88%A9%E7%94%A8%E7%8E%87.png" alt="图6 CPU利用率"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.1.7CPU%E5%88%A9%E7%94%A8%E7%8E%87.png" alt="图6 CPU利用率"></p>
 <p>上述模型假设所有n个进程独立，即假设n个进程中有m个运行是可能的，但显然在单CPU中这不可能，故更精确的模型应该纳入排队论进行构建。</p>
 <h2 id="2-2-线程"><a href="#2-2-线程" class="headerlink" title="2.2 线程"></a>2.2 线程</h2><h3 id="线程的使用"><a href="#线程的使用" class="headerlink" title="线程的使用"></a>线程的使用</h3><p>为什么需要多线程？有以下几个原因：</p>
 <ol>
@@ -194,45 +194,45 @@ CPU利用率 = 1 - p^n</script><p>下图展示了该函数的曲线：</p>
 <li>在多CPU系统中，多线程是有益的，可以实现真正的并行。详见第8章。</li>
 </ol>
 <p>1）书中将字处理软件作为第一个例子进行考察。下图展示了有三个线程的字处理软件，一个与用户交互，一个在后台重新进行格式处理，一个对文件进行间歇性自动保存：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.1%E5%AD%97%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6.png" alt="图7 字处理软件"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.1%E5%AD%97%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6.png" alt="图7 字处理软件"></p>
 <p>由于多个线程共享公共内存，故可以访问同一个正在编辑的文件。</p>
 <p>2）另一个经典的例子是万维网服务器。下图展示了一种组织Web服务器的方式：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.1Web%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="图8 Web服务器"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.1Web%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="图8 Web服务器"></p>
 <p>需要掌握的是高速缓存、分派线程（dispatcher）和工作线程（worker thread）的概念。上述模型允许将服务器编写为顺序线程的集合，下图展示了分派线程和工作线程的大致框架（buf和page分别是保存工作请求和Web页面的相应结构）：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.1%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6.png" alt="图9 代码框架"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.1%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6.png" alt="图9 代码框架"></p>
 <p>多线程或单线程设计都保留了顺序进程的思想，而有限状态机的设计则使得“顺序进程”的思想消失。下图是关于三种设计模式的总结：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.1%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png" alt="图10 设计模式"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.1%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.png" alt="图10 设计模式"></p>
 <p>3）第三个例子是那些必须处理极大量数据的应用。多线程提供了一个提高CPU利用率的解决方案，相应进程可以使用输入线程、处理线程和输出线程构造。</p>
 <h3 id="经典的线程模型"><a href="#经典的线程模型" class="headerlink" title="经典的线程模型"></a>经典的线程模型</h3><p>进程模型基于两个独立的概念：资源分组处理和执行。线程则进一步将这两种概念分开，多个线程可以共享资源。进程把资源集中在一起，线程则是在CPU上被调度执行的实体，进程中彼此间有较大独立性的多个线程可进行区分。</p>
 <p>进一步说，在一个进程中并行运行多个线程是对在同一台计算机上并行运行多个进程的模拟，后者多个进程共享物理内存、磁盘、打印机和其他资源，前者则共享同一个地址空间和其他资源。</p>
 <p>下图展示了单线程和多线程：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.2%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="图11 单线程和多线程"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.2%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="图11 单线程和多线程"></p>
 <p>线程间共享地址空间和全局变量，它们之间是没有保护的，因为这既不可能也没必要。下图展示了进程中所有线程共享的内容和每个线程自己的内容：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png" alt="图12 进程与线程"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.2%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.png" alt="图12 进程与线程"></p>
 <p>线程的概念试图实现的是，共享一组资源的多个线程并行执行，以便这些线程可以为完成某一任务共同工作。线程同进程一样，同样有四种状态——运行、阻塞、就绪和终止。如下图所示，每个线程都有其自己的堆栈：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.2%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%A0%86%E6%A0%88.png" alt="图13 线程的堆栈"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.2%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%A0%86%E6%A0%88.png" alt="图13 线程的堆栈"></p>
 <p>在多线程的情况下，进程通常从当前的某个线程开始，线程可以调用库函数thread_create创建新的线程，创建线程通常返回一个线程标识符作为新线程的名称，线程完成工作后可通过thread_exit退出。其他常见的线程调用有thread_join和thread_yield，此处略去细节<strong>mark</strong>。</p>
 <p>线程的引入也使得程序设计模式更为复杂，关于父进程和子进程的关系、线程之间数据结构的共享等方面都会引入更多需要考虑的问题。</p>
 <h3 id="POSIX线程"><a href="#POSIX线程" class="headerlink" title="POSIX线程"></a>POSIX线程</h3><p>为实现可移植的线程程序，IEEE标准1003.1c中定义了线程的标准，其定义的线程包叫做pthread，该标准定义了60多个函数调用，大部分UNIX系统支持该标准。下图列举了其中一些主要函数：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.3pthread%E5%87%BD%E6%95%B0.png" alt="图14 pthread函数"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.3pthread%E5%87%BD%E6%95%B0.png" alt="图14 pthread函数"></p>
 <p>对这些函数调用功能的描述暂略，<strong>mark</strong>。</p>
 <h3 id="在用户空间中实现线程"><a href="#在用户空间中实现线程" class="headerlink" title="在用户空间中实现线程"></a>在用户空间中实现线程</h3><p>线程包可以在内核或者用户空间中实现（混合实现也可行），下面介绍在用户空间中的实现：</p>
 <p>将整个线程包放在用户空间中，内核对线程包一无所知，其优点在于用户级线程包可以在不支持线程的操作系统上实现。需要掌握的是线程表的概念，其与进程表类似，每一项包含了对应线程的程序计数器、堆栈指针、寄存器和状态等信息，线程表由运行时系统管理。下图展示了内核实现和用户空间实现的区别：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.4%E5%AE%9E%E7%8E%B0%E5%8C%BA%E5%88%AB.png" alt="图15 实现区别"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.4%E5%AE%9E%E7%8E%B0%E5%8C%BA%E5%88%AB.png" alt="图15 实现区别"></p>
 <p>如果机器有一条保存所有寄存器的指令和另一条装入全部寄存器的指令，那么整个线程的切换可以在几条指令内完成，比进程的切换要快得多。</p>
 <p>用户级线程的问题在于阻塞系统调用的问题和缺页中断问题。书中对用户级线程的问题进行了简单的讨论，但是描述并不清晰，此处暂略<strong>mark</strong>。</p>
 <h3 id="在内核中实现线程"><a href="#在内核中实现线程" class="headerlink" title="在内核中实现线程"></a>在内核中实现线程</h3><p>此时不需要运行时系统，每个进程不需要单独维护线程表，而是在内核中有用来记录所有线程的线程表。某个线程通过系统调用对线程表进行更新从而创建或撤销线程。</p>
 <h3 id="混合实现"><a href="#混合实现" class="headerlink" title="混合实现"></a>混合实现</h3><p>下图展示了用户级线程与内核线程的多路复用：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.6%E6%B7%B7%E5%90%88%E5%AE%9E%E7%8E%B0.png" alt="图16 混合实现"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.6%E6%B7%B7%E5%90%88%E5%AE%9E%E7%8E%B0.png" alt="图16 混合实现"></p>
 <p>上述三小节关于线程实现方式的讨论有太多含糊不清的地方，而在《操作系统：精髓与设计原理》4.1.4节中有更为条理分明的讨论。</p>
 <h3 id="调度程序激活机制"><a href="#调度程序激活机制" class="headerlink" title="调度程序激活机制"></a>调度程序激活机制</h3><p>内核级线程虽然在一些关键点上由于用户级线程，但是其速度慢了1个数量级，故Anderson等人设计了调度程序激活机制（scheduler activation）来改善其性能。其目标是模拟内核线程的功能，但为线程包提供在用户空间中才能实现的更好的性能和更大的灵活性。</p>
 <p>当使用该机制时，内核为每个进程安排一定数量的虚拟处理器，并且让用户空间运行时系统将线程分配到处理器上。书中进一步介绍了上行调用（upcall）的概念，但大段的文字描述让人一头雾水，着实让人苦恼，<strong>mark</strong>。</p>
 <h3 id="弹出式线程"><a href="#弹出式线程" class="headerlink" title="弹出式线程"></a>弹出式线程</h3><p>一个消息的到达导致系统创建一个处理该消息的线程，称之为弹出式线程，从而使得消息到达和处理开始之间的时间非常短。如下图所示：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.8%E5%BC%B9%E5%87%BA%E5%BC%8F%E7%BA%BF%E7%A8%8B.png" alt="图17 弹出式线程"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.8%E5%BC%B9%E5%87%BA%E5%BC%8F%E7%BA%BF%E7%A8%8B.png" alt="图17 弹出式线程"></p>
 <h3 id="使单线程代码多线程化"><a href="#使单线程代码多线程化" class="headerlink" title="使单线程代码多线程化"></a>使单线程代码多线程化</h3><p>书中以UNIX维护的errno变量为例，展示了线程使用全局变量所引起的错误，如下图所示：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.9%E7%BA%BF%E7%A8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png" alt="图18 线程全局变量"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.9%E7%BA%BF%E7%A8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png" alt="图18 线程全局变量"></p>
 <p>一种可行的解决方案是为每个线程赋予私有的全局变量，如下图所示，每个线程有自己的errno以及其他全局变量的副本：</p>
-<p><img src="http://qeohngkoy.bkt.clouddn.com/chapter2.2.9%E7%A7%81%E6%9C%89%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png" alt="图19 私有全局变量"></p>
+<p><img src="https://cs-mos5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter2.2.9%E7%A7%81%E6%9C%89%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.png" alt="图19 私有全局变量"></p>
 <p>书中用大段的文字描述了单线程转换为多线程存在的问题和解决方案，却没有辅以图片，实在是不友好，<strong>mark</strong>。</p>
 <h2 id="2-3-进程间通信"><a href="#2-3-进程间通信" class="headerlink" title="2.3 进程间通信"></a>2.3 进程间通信</h2><p>最直观的进程间通信（Inter Process Communication，IPC）便是Linux shell中的管道命令。进程间通信需要解决三个问题：</p>
 <ol>
@@ -296,7 +296,7 @@ CPU利用率 = 1 - p^n</script><p>下图展示了该函数的曲线：</p>
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -306,7 +306,7 @@ CPU利用率 = 1 - p^n</script><p>下图展示了该函数的曲线：</p>
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -328,23 +328,23 @@ CPU利用率 = 1 - p^n</script><p>下图展示了该函数的曲线：</p>
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

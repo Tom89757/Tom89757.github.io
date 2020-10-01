@@ -74,6 +74,381 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-chapter3计算机的算术运算" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/" class="article-date">
+  <time datetime="2020-07-27T16:41:29.000Z" itemprop="datePublished">2020-07-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/">chapter3计算机的算术运算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="3-1-引言"><a href="#3-1-引言" class="headerlink" title="3.1 引言"></a>3.1 引言</h2><p>本章回答的问题有：</p>
+<ul>
+<li>小数和其他实数如何表示？</li>
+<li>当一个操作生成了一个无法表示的大数时如何处理？</li>
+<li>上述问题隐含着一个秘密：怎样用硬件真正地做乘法和除法？</li>
+</ul>
+<p>本章的目的就是讲述实数的表示方法、算术的算法、实现这些算法的硬件，以及如何在指令集中表示有关的内容。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/28/chapter3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/" data-id="ckd4vlyn10000uowdadgqcwf1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-chapter2指令：计算机的语言" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/" class="article-date">
+  <time datetime="2020-07-25T15:44:04.000Z" itemprop="datePublished">2020-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/">chapter2指令：计算机的语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2-1-引言"><a href="#2-1-引言" class="headerlink" title="2.1 引言"></a>2.1 引言</h2><p>计算机语言中的基本单词称为指令，一台计算机的全部指令称为该计算机的指令集。指令集分为两种形式，人们编程书写的形式和计算机识别的形式。本章将自顶向下，从助记符表示的汇编语言过渡到计算机的真实语言；下一章继续向下探究，解释算术运算的硬件以及浮点数的表示方法。</p>
+<p>本书选择MIPS指令集，其与ARMv7、Intel x86和ARMv8等指令集具有相似之处，这是因为所有的计算机必须实现一些类似的基本操作。此外，计算机设计者有一个共同目标：找到一种语言，可方便硬件和编译器的设计，且使性能最佳，同时使成本和功耗最低。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/25/chapter2%E6%8C%87%E4%BB%A4%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%AF%AD%E8%A8%80/" data-id="ckd1x4h1j000vscwdb86r7x0r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-408计算机网络考纲" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/" class="article-date">
+  <time datetime="2020-07-23T15:37:05.000Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/">408计算机网络考纲</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>计算机网络（25分）</p>
+<p>【考察目标】</p>
+<ol>
+<li>掌握计算机网络的基本概念、基本原理和基本方法。</li>
+<li>掌握计算机网络的体系结构和典型网络协议，链接典型网络设备的组成和特点，理解典型网络设备的工作原理。</li>
+<li>能够运用计算机网络的基本概念、基本原理和基本方法进行网络系统的分析、设计和应用。</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%BA%B2/" data-id="ckd1x4h0p000ascwddqc68e8f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-408操作系统考纲" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/" class="article-date">
+  <time datetime="2020-07-23T15:36:50.000Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/">408操作系统考纲</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>操作系统（35分）</p>
+<p>【考察目标】</p>
+<ol>
+<li>掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。</li>
+<li>掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。</li>
+<li>能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用C语言描述相关算法。</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/23/408%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%BA%B2/" data-id="ckd1x4h0c0001scwd4po08hmi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-408数据结构考纲" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/" class="article-date">
+  <time datetime="2020-07-23T15:36:32.000Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/">408数据结构考纲</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据结构（45分）</p>
+<p>【考察目标】</p>
+<ol>
+<li>掌握数据结构的基本概念、基本原理和基本方法。</li>
+<li>掌握数据的逻辑结构、存储结构及基本操作的实现，能够对算法进行基本的时间复杂度与空间复杂度分析。</li>
+<li>能够运用数据结构就基本原理和方法进行问题的分析与求解，具备采用C或C++语言设计与实现算法的能力。</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/23/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%BA%B2/" data-id="ckd1x4h0j0005scwd7nfi4ywf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-408计算机组成原理考纲" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/" class="article-date">
+  <time datetime="2020-07-23T15:36:18.000Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/">408计算机组成原理考纲</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>计算机组成原理（45分）</p>
+<p>【考察目标】</p>
+<ol>
+<li>理解单处理器计算机系统中各部件的内部工作原理、组成结构以及相互连接方式，具有完整的计算机系统的整机概念。</li>
+<li>理解计算机系统层次化结构概念，熟悉硬件与软件之间的界面，掌握指令集体系结构的基本知识和基本实现方法。</li>
+<li>能够综合运用计算机组成的基本原理和基本方法，对有关计算机硬件系统中的理论和实际问题进行计算、分析，对一些基本部件进行简单设计；并能对高级程序设计语言（如C语言）中的相关问题进行分析。</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/23/408%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%BA%B2/" data-id="ckd1x4h0g0003scwd8dg07yfj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-chapter10算法设计技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/chapter10%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7/" class="article-date">
+  <time datetime="2020-07-22T18:20:05.000Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/chapter10%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7/">chapter10算法设计技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      	
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-贪婪算法"><span class="toc-text">10.1 贪婪算法</span></a></li></ol>
+</div>
+
+
+        <p>迄今，我们已经涉及一些算法的有效实现。当一个算法给定时，实际的数据结构无须指定，需要编程人员选择适当的数据结构。</p>
+<p>本章将视角从算法的实现转向算法的设计。目前为止，我们看到的算法大多简单直接，第9章中一些算法较为深奥。本章我们将几种讨论用于求解问题的五种常用类型的算法，面对许多问题时它们中的一种可能有效。我们将：</p>
+<ol>
+<li>看到一般的处理方法。</li>
+<li>考察几个例子。</li>
+<li>在适当的地方概括地讨论时间和空间复杂性。</li>
+</ol>
+<h2 id="10-1-贪婪算法"><a href="#10-1-贪婪算法" class="headerlink" title="10.1 贪婪算法"></a>10.1 贪婪算法</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tom89757.github.io/2020/07/23/chapter10%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7/" data-id="ckd1x4h1m0011scwdajx55dxz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-chapter1计算机概要和技术" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/23/chapter1%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A6%81%E5%92%8C%E6%8A%80%E6%9C%AF/" class="article-date">
@@ -181,20 +556,20 @@
 <p>现实中顶点的名字不是数字，故需要建立从名字到数字的映射，最容易的方法是散列表。在该散列表中我们对每个顶点存储一个名字以及一个范围在1到$|V|$之间的内部编号，编号在读入图的时候指定，输入每条边时，检查是否两个顶点均在散列表中，若没有，则分配下一个可用的编号给该顶点并将名字和对应编号插入散列表。</p>
 <p>变换后我们使用顶点编号进行算法操作，但输出时需要输出顶点名，故还需要对每个内部编号记录相应的顶点名，这意味着顶点名需要被记录两次，当顶点名过大时，需要花费大量的空间。书中给出了两种方式：使用字符串数组（顶点名过大时消耗大量空间）和使用指向散列表内的指针数组（使得散列表的元素不是通过基本的散列表操作访问）。本章尽可能使用ADT的伪代码，使算法更清晰。</p>
 <h2 id="9-2-拓扑排序"><a href="#9-2-拓扑排序" class="headerlink" title="9.2 拓扑排序"></a>9.2 拓扑排序</h2><p>对有向无圈图的一种排序，使得如果存在一条从$v_i$到$v_j$的路径，在排序中$v_j$出现在$v_i$的后面。下图为表示课程街斗的无圈图：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E8%AF%BE%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E6%97%A0%E5%9C%88%E5%9B%BE.png" alt="图1 课程结构"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.2%E8%AF%BE%E7%A8%8B%E7%BB%93%E6%9E%84%E4%B8%8E%E6%97%A0%E5%9C%88%E5%9B%BE.png" alt="图1 课程结构"></p>
 <p>显然图含有圈时，拓扑排序是不可能的；此外，排序并不唯一。</p>
 <p>一个简单的求拓扑排序的算法的描述时：先找出任意一个没有进入边的顶点，然后打印出该顶点，并将它和它的边一起从图中删除，对其它的边作相同处理。为方便描述，引入入度（和出度）的概念，以下是拓扑排序伪代码（初始图读入邻接表中）：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E7%AE%80%E5%8D%95%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png" alt="图2 简单的拓扑排序伪代码"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.2%E7%AE%80%E5%8D%95%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png" alt="图2 简单的拓扑排序伪代码"></p>
 <p>找入度为0的顶点的操作为顺序扫描，该算法的运行时间为$O(|V|^2)$，运行时间里包含了很多重复劳动；我们可以通过将所有（未分配拓扑编号）的入度为0的顶点放在一个特殊的盒子中来消除无效劳动。</p>
 <p>我们使用一个初始为空的队列来存放所有入度为0的顶点，然后通过删除顶点让新的顶点入队，拓扑排序就是顶点出队的顺序。</p>
 <p>下面展示了一个对上述无圈图（初始图读入邻接表中）应用拓扑排序的结果以及拓扑排序的伪代码：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C.png" alt="图3 拓扑排序结果"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.2%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png" alt="图4 拓扑排序伪代码"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.2%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C.png" alt="图3 拓扑排序结果"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.2%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.png" alt="图4 拓扑排序伪代码"></p>
 <p>显然for循环体对每条边最多执行一次，队列操作对每个顶点最多执行一次，初始化各步花费的时间也与图的大小成正比，故执行该算法所用时间为$O(|E| + |V|)$。</p>
 <h2 id="9-3-最短路径算法"><a href="#9-3-最短路径算法" class="headerlink" title="9.3 最短路径算法"></a>9.3 最短路径算法</h2><p>输入是一个赋权图：与每条边$(v<em>i, v_j)$相关联的是穿越该弧的代价（权值）$c</em>{i,j}$。一条路径$v<em>1v_2…v_n$的赋权路径长为$\sum</em>{i=1}^{N-1}c_{i,j}$，无权路径长为n-1。</p>
 <p><strong>单源最短路径问题</strong></p>
 <p>给定一个赋权图G=(V, E)和一个特定顶点s作为输入，找出从s到G中每一个其它顶点的最短赋权路径。下图展示了两个带权值的有向图：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3%E5%B8%A6%E6%9D%83%E6%9C%89%E5%90%91%E5%9B%BE.png" alt="图5 带权有向图"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3%E5%B8%A6%E6%9D%83%E6%9C%89%E5%90%91%E5%9B%BE.png" alt="图5 带权有向图"></p>
 <p>当一条路径中出现负值圈时，该路径的最短路径是不确定的，因为可以进行多次负值圈循环。为方便起见，无负值圈时，从s到s的最短路径为0。</p>
 <p>最短路径应用广泛，在计算机的通信、运输路线的规划等方面有重要应用。虽然我们期望找出从一个顶点s到另一个顶点t的最短路径，但是目前所开发的算法，找出从s到所有顶点的路径比找出从s到特定顶点的路径所需的时间反而更短。下面将考察求解该问题的4种形态的算法：</p>
 <ul>
@@ -204,33 +579,33 @@
 <li>线性时间解决特殊情形的赋权无圈图的最短路径问题。</li>
 </ul>
 <h3 id="无权最短路径"><a href="#无权最短路径" class="headerlink" title="无权最短路径"></a>无权最短路径</h3><p>我们求解下面无权图的最短路径问题。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%97%A0%E6%9D%83%E5%9B%BEG.png" alt="图6 无权图G"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.1%E6%97%A0%E6%9D%83%E5%9B%BEG.png" alt="图6 无权图G"></p>
 <p>暂时我们只考虑最短路径的长而不是具体路径，依次寻找从特定顶点s（假设为$v_3$）出发距离为0、1、2、3的顶点，此时所有顶点均被计算，算法结束。下图展示了算法的最终结果：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84.png" alt="图7 最短路径最终结果"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.1%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84.png" alt="图7 最短路径最终结果"></p>
 <p>上述算法称为广度优先搜索（breadth-first search）：其按层处理顶点，距开始顶点最近的顶点首先被赋值，最远的顶点则最后被赋值，类似于树的层序遍历。下图展示了用于记录该过程的表的初始配置，其中Known中的项在顶点被处理后置为1；$d_v$表示开始顶点到该顶点的距离；$p_v$中表示引起$d_v$变化的最后的顶点。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE.png" alt="图8 表的初始配置"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.1%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE.png" alt="图8 表的初始配置"></p>
 <p>下图展示了无权最短路径算法的伪代码</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图9 伪代码"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.1%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图9 伪代码"></p>
 <p>通过追溯$p_v$变量，可以打印实际路径，后续会描述具体实现。双层循环使得该算法为$O(|V|^2)$，其低效在于当所有顶点变为Known状态时，外层循环仍然继续。虽然可通过附加测试避免其发生，但是最坏情形的出现仍无法避免。如将从顶点$v_9$开始的下图作为输入时：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E5%9D%8F%E6%83%85%E5%BD%A2.png" alt="图10 坏情形"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.1%E5%9D%8F%E6%83%85%E5%BD%A2.png" alt="图10 坏情形"></p>
 <p>上述算法的低效同样在于大量的重复劳动，这可以通过类似于拓扑排序的优化方法来排除其低效性。在任意时刻，只存在两种类型的位置顶点，它们的$d_v$分别为$CurrDist$和$CurrDist + 1$，可以将两种顶点分别装在两个盒子中。该想法可以使用队列进行具体实现，以下为对应伪代码：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E4%BC%98%E5%8C%96%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图11 优化后伪代码"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.1%E4%BC%98%E5%8C%96%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图11 优化后伪代码"></p>
 <p>我们看到，使用邻接表的情况下，运行时间为$O(|E|+|V|)$：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.1%E6%95%B0%E6%8D%AE%E5%8F%98%E5%8C%96.png" alt="图12 算法运行时数据变化"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.1%E6%95%B0%E6%8D%AE%E5%8F%98%E5%8C%96.png" alt="图12 算法运行时数据变化"></p>
 <h3 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h3><p>图是赋权图时，问题显著变得困难，但仍然延续无权图的思路，保留所有与前面相同的信息，Known/$d_v$/$p_v$。我们使用的算法为Dijkstra算法，这个30年的算法时贪婪算法最好的例子。贪婪算法的核心在于：分阶段求解问题，在每个阶段都把出现的当作最好的去处理；其问题在于：该算法不总成功。</p>
 <p>Dijkstra算法按阶段进行，在每个阶段，Dijkstra算法选择一个顶点v，它在所有未知顶点中具有最小的$d<em>v$，同时算法声明从s到v的最短路径时已知的，阶段的其余部分由$d_v$值的更新工作组成，当$d_v$的新值$d_v+c</em>{v,w}$是一个改进的值时我们就置$d<em>w=d_v+c</em>{v,w}$。下图展示了有向图G、表的初始配置和过程中表的变化：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E5%9B%BE%E5%92%8C%E8%A1%A8.png" alt="图13 图和表"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E8%A1%A8%E5%8F%98%E5%8C%96%E8%BF%87%E7%A8%8B.png" alt="图14 表变化过程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.2%E5%9B%BE%E5%92%8C%E8%A1%A8.png" alt="图13 图和表"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.2%E8%A1%A8%E5%8F%98%E5%8C%96%E8%BF%87%E7%A8%8B.png" alt="图14 表变化过程"></p>
 <p>下图展示了Dijkstra算法的各个阶段（图示显示了$d_v$和Known）：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5.png" alt="图15 各个阶段"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.2%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5.png" alt="图15 各个阶段"></p>
 <p>下面则展示了该算法的声明、表初始化例程和主要算法例程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E7%AE%97%E6%B3%95%E5%A3%B0%E6%98%8E.png" alt="图16 算法声明"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.2%E4%BE%8B%E7%A8%8B.png" alt="图17 例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.2%E7%AE%97%E6%B3%95%E5%A3%B0%E6%98%8E.png" alt="图16 算法声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.2%E4%BE%8B%E7%A8%8B.png" alt="图17 例程"></p>
 <p>反证法可以证明，只要边没有负值，该算法总能顺利完成，有边出现负值时算法可能得出错误答案。书中对图是稠密和稀疏两种情况作了具体讨论，使用扫描表找出最小值$d_v$时：当图是稠密的，算法总的运行时间$O(|E|+|V|^2)=O(|V|^2)$，基本上最优，其与边数呈线性关系；当图是稀疏的，算法运行时间是边数的2次幂，这难以让人接收。</p>
 <p>对图是稀疏的情况，需要将距离存储在优先队列中，其思路类似于无权图算法的改进，但更复杂一些。（书中给出了两种方法，<strong>看不太懂，mark</strong>）</p>
 <h3 id="具有负值边的图"><a href="#具有负值边的图" class="headerlink" title="具有负值边的图"></a>具有负值边的图</h3><p>图具有负值的边时，Dijkstra算法行不通，当一个顶点u被声明为已知的，如果存在从某个另外的未知顶点v回到u的负的路径，从s到u的路径却不会更新。一个诱人的方案是将一个常数$\Delta$加到每条边的值上，但其直接实现行不通，因为当一条路径的边数较多时，总路径长度增加也更多。</p>
 <p>将赋权的和无权的算法结合起来将会解决这个问题，但是要付出运行时间激烈增长的代价，其精髓在于：不使用关于未知和已知的顶点的概念，即不记录顶点的Known状态。下图为对应伪代码：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter9.3.3%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图18 伪代码"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter9.3.3%E4%BC%AA%E4%BB%A3%E7%A0%81.png" alt="图18 伪代码"></p>
 <p>当没有负值圈时，该算法能够正常运行，但是第6~10行的代码可能不只执行一次，每个顶点最多可以出队|V|次，使用邻接表时运行时间为$O(|E|·|V|)$，比Dijkstra算法慢很多，幸好现实中绝大多数无负值边；当有负值圈时，算法将无限循环，可以通过在任意顶点出队$|V|+1$次后中值算法运行，保证其终止。</p>
 <h3 id="无圈图"><a href="#无圈图" class="headerlink" title="无圈图"></a>无圈图</h3><p>如果知道图是无圈的，可以通过改变声明顶点为已知顺序（顶点选取法则），来改进Dijkstra算法。新法则以拓扑顺序选择顶点，由于选择和更新可以在拓扑排序执行的时候进行，因此算法可以一趟完成。使用该法则不需要使用优先队列，算法运行时间为$O(|E|+|V|)$。</p>
 <p>无圈图可以模拟某种下坡滑雪问题，因为只能走下坡，所以不可能有圈；另一种应用是不可逆化学反应模型，用顶点代表物质状态，用边代表状态转变，边的权代表释放能量，如果只能从高能状态转变到低能状态，则图是无圈的。</p>
@@ -312,392 +687,11 @@
 
 
   
-    <article id="post-chapter7排序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time datetime="2020-07-17T15:54:32.000Z" itemprop="datePublished">2020-07-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/">chapter7排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本章讨论数组的排序问题，为了简化问题，数组中的元素均为整数。本章主要讨论在主存中完成的内部排序，这意味着排序元素较少（$\leq 10^6$），在本章末尾将讨论在磁盘上完成的外部排序。</p>
-<p>对内部排序的讨论将包含：</p>
-<ol>
-<li>存在一种容易的算法以$O(N^2)$排序，如插入排序。</li>
-<li>一种在实践中有效的算法——希尔排序，以$o(N^2)$运行。</li>
-<li>稍微复杂的以$O(N \log N)$运行的算法。</li>
-<li>任何通用的排序算法均需要$\Omega(N \log N)$次比较。</li>
-</ol>
-<p>排序算法收到青睐的原因在于，它们中可能包含一些有趣的、重要的代码优化和设计思想，且对排序算法可以作精确的分析。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/17/chapter7%E6%8E%92%E5%BA%8F/" data-id="ckd1x4h34003sscwdbnwue7b2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter6优先队列-堆" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/" class="article-date">
-  <time datetime="2020-07-16T17:18:29.000Z" itemprop="datePublished">2020-07-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/">chapter6优先队列(堆)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于对队列中元素的输出顺序有所要求，所以需要一种新的可以满足该要求的数据结构。这种要求并不少见：当有多个文件要打印时，先打印短的文件；操作系统调度程序时，必须决定在若干进程中首先运行哪个进程。为此本章描述了一类特殊的队列——优先队列（priority queue），接下来我们将讨论：</p>
-<ol>
-<li>优先队列ADT的有效实现。</li>
-<li>优先队列的使用。</li>
-<li>优先队列的高级实现。</li>
-</ol>
-<p>书上说这类数据结构是计算机科学中最讲究的一种，让我们拭目以待。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/17/chapter6%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E5%A0%86/" data-id="ckd1x4h23001pscwd42uchfmz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter5散列" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/" class="article-date">
-  <time datetime="2020-07-15T18:02:44.000Z" itemprop="datePublished">2020-07-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/">chapter5散列</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第4章讨论了查找树ADT，它支持对一组元素进行各种操作。而本章讨论的散列表ADT只支持二叉查找树允许的部分操作。</p>
-<p>散列表的实现叫做散列，散列是一种以常数平均时间执行插入、删除和查找的技术，但是不支持需要元素间排序信息的操作。具体说，第４章中的FindMin、FindMax以及以线性时间将排过序的整个表进行打印的操作都是散列表所不支持的。</p>
-<p>本章我们将：</p>
-<ol>
-<li>描述实现散列表的几种方法。</li>
-<li>分析比较这些方法。</li>
-<li>介绍散列表的多种应用。</li>
-<li>将散列表和二叉查找树进行比较。</li>
-</ol>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/16/chapter5%E6%95%A3%E5%88%97/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/16/chapter5%E6%95%A3%E5%88%97/" data-id="ckd1x4h1z001iscwdhoerg08f" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter4树" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/14/chapter4%E6%A0%91/" class="article-date">
-  <time datetime="2020-07-14T14:17:00.000Z" itemprop="datePublished">2020-07-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/14/chapter4%E6%A0%91/">chapter4树</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于大量的输入数据，链表的线性访问时间太慢，不宜使用。本章描述的树其大部分操作的运行时间平均为$O(\log N)$。在本章，我们将：</p>
-<ul>
-<li>了解树时如何用于实现几个流行的操作系统的文件系统的。</li>
-<li>看到树如何能够用来计算算术表达式的值。</li>
-<li>指出如何利用树支持以$O(\log N)$平均时间进行的各种搜索操作，以及如何细化以得到最坏时间界$O(\log N)$。还将讨论当数据存储在磁盘上时如何实现这些操作。</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/14/chapter4%E6%A0%91/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/14/chapter4%E6%A0%91/" data-id="ckd1x4h1r001bscwddzzs9crx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter3表、栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" class="article-date">
-  <time datetime="2020-07-13T10:51:45.000Z" itemprop="datePublished">2020-07-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">chapter3表、栈和队列</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本章将讨论最简单的三种数据结构——表、栈和队列，每个程序中都将至少明确一种这样的数据结构，栈更是无处不在。本章中，我们将：</p>
-<ul>
-<li>介绍抽象数据类型（ADT）的概念。</li>
-<li>阐述如何对表进行有效操作。</li>
-<li>介绍栈ADT及其在实现递归方面的应用。</li>
-<li>介绍队列ADT及其在操作系统和算法设计中的应用。</li>
-</ul>
-<p>在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/13/chapter3%E8%A1%A8%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" data-id="ckd1x4h1n0014scwd3b19etdg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter2算法分析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" class="article-date">
-  <time datetime="2020-07-11T15:37:36.000Z" itemprop="datePublished">2020-07-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">chapter2算法分析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>算法是求解一个问题需要遵循的、被清楚指定的简单指令的集合。除了算法原理外，我们还需要关注它所花费的时间和占用的空间。在本章中，将讨论：</p>
-<ul>
-<li>如何估计一个程序所花费的时间。</li>
-<li>如何将一个程序的运行时间从年/天降低到秒。</li>
-<li>粗心使用递归将招致什么后果。</li>
-<li>两个实例：将一个数自乘得到其幂以及计算两个数的最大公因数的有效算法</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/11/chapter2%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" data-id="ckd1x4h1k000xscwdg7324do8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chapter1引论" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/" class="article-date">
-  <time datetime="2020-07-11T06:07:31.000Z" itemprop="datePublished">2020-07-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/">chapter1引论</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本章将阐述学习本书的目的，简要回顾离散数学和程序设计的概念，具体为：</p>
-<ul>
-<li>程序在较大输入时的运行性能和适当输入时的运行性能同等重要。</li>
-<li>总结学习本书所需要的数学基础。</li>
-<li>简要复习递归。</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tom89757.github.io/2020/07/11/chapter1%E5%BC%95%E8%AE%BA/" data-id="ckd1x4h19000gscwd71algy94" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">下一页 &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">下一页 &amp;raquo;</a>
   </nav>
 
 </section>
@@ -718,7 +712,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -728,7 +722,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -750,23 +744,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

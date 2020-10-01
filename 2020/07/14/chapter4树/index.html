@@ -16,27 +16,27 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="对于大量的输入数据，链表的线性访问时间太慢，不宜使用。本章描述的树其大部分操作的运行时间平均为$O(\log N)$。在本章，我们将：  了解树时如何用于实现几个流行的操作系统的文件系统的。 看到树如何能够用来计算算术表达式的值。 指出如何利用树支持以$O(\log N)$平均时间进行的各种搜索操作，以及如何细化以得到最坏时间界$O(\log N)$。还将讨论当数据存储在磁盘上时如何实现这些操作。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.3%E6%96%87%E4%BB%B6%E5%90%8E%E7%BB%AD%E5%A4%A7%E5%B0%8F.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.2.2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.2.2%E6%9E%84%E5%BB%BA%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.2%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84Find%E6%93%8D%E4%BD%9C.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.3FindMin%E7%9A%84%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.3FindMax%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC1.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC2.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC1.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC2.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2AVL%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%89%8D.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%90%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.3%E6%96%87%E4%BB%B6%E5%90%8E%E7%BB%AD%E5%A4%A7%E5%B0%8F.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2.2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2.2%E6%9E%84%E5%BB%BA%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3.2%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84Find%E6%93%8D%E4%BD%9C.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3.3FindMin%E7%9A%84%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3.3FindMax%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC1.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC2.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC1.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC2.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.2AVL%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%89%8D.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%90%8E.png">
 <meta property="article:published_time" content="2020-07-14T14:17:00.000Z">
-<meta property="article:modified_time" content="2020-07-18T16:36:54.196Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.361Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png">
+<meta name="twitter:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -140,26 +140,26 @@
 <p>书中描述了列出目录中所有文件名字的算法：输出格式是，深度为$d_i$的文件的名字将在$d_i$次tab缩进后打印出来。该算法的核心为递归程序ListDir。这是一种<strong>先序遍历</strong>，遍历节点，再遍历其儿子节点。</p>
 <p>另一种遍历树的方式为<strong>后序遍历</strong>：在遍历节点的儿子节点后，再遍历该节点。书中描述了计算某个目录包含的所有文件（包括目录）或某个文件所占块多少的算法。</p>
 <p>下图分别展示了通过先序遍历输出的文件名和通过后序遍历输出的文件大小：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png" alt="图1 目录先序列表"> <img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.1.3%E6%96%87%E4%BB%B6%E5%90%8E%E7%BB%AD%E5%A4%A7%E5%B0%8F.png" alt="图2 文件后序大小"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.2%E7%9B%AE%E5%BD%95%E5%85%88%E5%BA%8F%E5%88%97%E8%A1%A8.png" alt="图1 目录先序列表"> <img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.1.3%E6%96%87%E4%BB%B6%E5%90%8E%E7%BB%AD%E5%A4%A7%E5%B0%8F.png" alt="图2 文件后序大小"></p>
 <h2 id="4-2-二叉树"><a href="#4-2-二叉树" class="headerlink" title="4.2 二叉树"></a>4.2 二叉树</h2><p>二叉树的每个节点的儿子节点不超过两个。对二叉树来说，其深度大小尤为重要，涉及到诸多关于树的算法。</p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>在树的声明中，一个节点就是由关键字信息加上两个指向儿子节点的指针组成的结构，该声明与双链表类似。二叉树的主要用处之一是在编译器的设计领域：</p>
 <h3 id="表达式树"><a href="#表达式树" class="headerlink" title="表达式树"></a>表达式树</h3><p>其树叶是操作数，而其它节点为操作符。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.2.2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png" alt="图3 表达式树"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2.2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png" alt="图3 表达式树"></p>
 <p>通过递归产生带括号的左表达式，然后打印根处运算符，在递归产生带括号的右表达式，可以得到中缀表达式，这种遍历方式称为种虚遍历，即（左，节点，右），它是二叉树特有的方式；另一种方式为后序遍历，即（左，右，节点），得到后缀表达式（逆波兰表达式），4.1节在一般的树中已经展示了这种遍历方式；第三种遍历方式为先序遍历，即（节点，左，右），得到前缀表达式，这种表达式不常见，因为它既不符合直观，也不符合运算顺序。</p>
 <blockquote>
 <p>下面构造一棵表达式树</p>
 </blockquote>
 <p>书中给出了一种将后缀表达式转变为表达式树的算法，使用了栈这种数据结构。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.2.2%E6%9E%84%E5%BB%BA%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png" alt="图4 构建表达式树"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2.2%E6%9E%84%E5%BB%BA%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91.png" alt="图4 构建表达式树"></p>
 <h2 id="4-3-查找树ADT——二叉查找树"><a href="#4-3-查找树ADT——二叉查找树" class="headerlink" title="4.3 查找树ADT——二叉查找树"></a>4.3 查找树ADT——二叉查找树</h2><p>为简化问题，我们假设树的每个节点对应的关键字为整数且互异。二叉查找树的性质是，对每个节点X，该节点的左子树中所有关键字小于X的关键字，右子树中所有关键字大于X的关键字。</p>
 <p>下图是对二叉查找树进行的操作的声明，这些例程的实现通常使用递归：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%A3%B0%E6%98%8E.png" alt="图5 二叉查找树声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%A3%B0%E6%98%8E.png" alt="图5 二叉查找树声明"></p>
 <h3 id="MakeEmpty"><a href="#MakeEmpty" class="headerlink" title="MakeEmpty"></a>MakeEmpty</h3><p>对树进行初始化：<code>SearchTree MakeEmpty(SearchTree T)</code>。使用递归实现。</p>
 <h3 id="Find"><a href="#Find" class="headerlink" title="Find"></a>Find</h3><p>该操作需要返回指向树T中具有关键字X的节点的指针，若节点不存在返回NULL。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.2%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84Find%E6%93%8D%E4%BD%9C.png" alt="图6 二叉查找树的Find操作"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3.2%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84Find%E6%93%8D%E4%BD%9C.png" alt="图6 二叉查找树的Find操作"></p>
 <p>该例程中使用了尾递归，由于所使用的栈空间为$O(\log N)$，所以是合理的。</p>
 <h3 id="FindMin和FindMax"><a href="#FindMin和FindMax" class="headerlink" title="FindMin和FindMax"></a>FindMin和FindMax</h3><p>这两个例程分别返回树中最大元和最小元。书中分别使用了递归和非递归对例程进行了实现。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.3FindMin%E7%9A%84%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png" alt="图7 FindMin操作的递归实现"> <img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.3.3FindMax%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png" alt="图8 FindMax操作的非递归实现"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3.3FindMin%E7%9A%84%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png" alt="图7 FindMin操作的递归实现"> <img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3.3FindMax%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0.png" alt="图8 FindMax操作的非递归实现"></p>
 <h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><p>在插入某个元素时，其过程与Find操作类似，重复元的插入则要复杂一些，一般通过添加附加域或辅助数据结构来存储。</p>
 <p>书中将Insert函数的返回值设为一个返回指向新树根的指针的函数，该树根的关键字即为插入元素。</p>
 <h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><p>和诸多数据结构相似，最困难的操作是删除，发现待删除节点后需要考虑几种可能的情况：</p>
@@ -183,11 +183,11 @@
 </li>
 </ol>
 <h3 id="单旋转"><a href="#单旋转" class="headerlink" title="单旋转"></a>单旋转</h3><p>对应上述的第一种情况。下图呈现了单旋转的效果：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC1.png" alt="图9 调整情形1的单旋转"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC2.png" alt="图10 调整情形4的单旋转"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC1.png" alt="图9 调整情形1的单旋转"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.1%E5%8D%95%E6%97%8B%E8%BD%AC2.png" alt="图10 调整情形4的单旋转"></p>
 <h3 id="双旋转"><a href="#双旋转" class="headerlink" title="双旋转"></a>双旋转</h3><p>上述单旋转对情形2和情形3无用，故需使用双旋转，如下图所示：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC1.png" alt="图11 调整情形2的双旋转"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC2.png" alt="图12 调整情形3的双旋转"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC1.png" alt="图11 调整情形2的双旋转"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.2%E5%8F%8C%E6%97%8B%E8%BD%AC2.png" alt="图12 调整情形3的双旋转"></p>
 <p>事实上，上述图并没有体现出双旋转的精髓，其精髓在于通过两次单旋转恢复平衡。更进一步看，单旋转和双旋转的本质都是：将平衡破坏的节点对应的树扩展为3个节点和4个子树构成的树，该树在水平线上的投影的顺序便是各节点和字数关键字的大小顺序，投影中必然有一个节点位于最中间，旋转的目的便是将该节点调整至该树根节点的位置。</p>
 <p>下面是编写AVL树时考虑的两个因素：</p>
 <ol>
@@ -195,7 +195,7 @@
 <li>关于高度信息的存储有两种策略，一种是使用两个二进制位（+1、0、-1）来表示高度差；另一种是在每个节点存储高度。当使用递归编写程序时，显然速度不是主要考虑的问题，因此选择后一种策略。</li>
 </ol>
 <p>下图是AVL树的节点声明：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.4.2AVL%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E5%A3%B0%E6%98%8E.png" alt="图13 "></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.4.2AVL%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E5%A3%B0%E6%98%8E.png" alt="图13 "></p>
 <p>关于AVL的各种例程较为复杂，暂时不作具体描述（<strong>mark</strong>）。值得补充的是，AVL树的删除多少比插入复杂，如果删除操作相对较少，懒惰删除是一种好的策略。</p>
 <h2 id="4-5-伸展树"><a href="#4-5-伸展树" class="headerlink" title="4.5 伸展树"></a>4.5 伸展树</h2><p>伸展树是与AVL树类型不同一种相对简单的数据结构，AVL树需要时刻保持树的平衡，伸展树则对深度没有要求，但需要保证从空树开始任意连续M次对树的操作最多花费$O(M \log N)$时间。这里引出摊还的概念，一颗伸展树每次操作的摊还代价为$O(\log N)$，与AVL树相当，尽管每次操作所花费的时间在$O(1)$到$O(N)$间变化。它是从把一个操作序列作为整体来看的，伸展树保证不存在坏的操作序列。</p>
 <p>伸展树的基本想法是，当一个节点被访问后，它会经过一系列的AVL旋转操作被转移到根上。这一想法的精髓在于，当被访问节点的深度较大时，往往意味着从它到根的路径上的节点深度也较大，故经过一系列AVL旋转操作后这条路径上的节点的深度都有所下降，对这些节点的访问所花费的时间也会减少。</p>
@@ -208,8 +208,8 @@
 <li>一字形：zig-zig或zag-zag，此时执行两次AVL中的单旋转，P与G旋转然后X与P旋转，两次旋转方向相同，注意两种情形旋转顺序的区别。</li>
 </ol>
 <p>以下是一颗伸展树在访问节点$k_1$前后的结构图对比：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%89%8D.png" alt="图14 访问前"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%90%8E.png" alt="图15 访问后"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%89%8D.png" alt="图14 访问前"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.5.1%E8%AE%BF%E9%97%AE%E5%90%8E.png" alt="图15 访问后"></p>
 <p>展开操作不仅将访问的节点移动到根处，而且把访问路径上的大部分节点深度大致减少一半。书中显示在32个节点的书中访问关键字1到9的结果，一定程度上呈现了展开操作的特性（在清华大学邓俊辉老师的数据结构课程视频中有更直观的呈现）。</p>
 <p>当访问路径太长导致超出正常查找时间时，将访问节点转移至根节点所做的诸多旋转操作对之后的访问操作有益；当访问耗时很少时，所执行的旋转操作则并不那么有益甚至有害。第11章将对每个操作不会超过$O(\log N)$作出证明(<strong>mark</strong>)。</p>
 <p>伸展树中删除节点的操作也因为其特性变得简单，我们只需访问待删除节点将其转移至根处，删除该节点，然后将左子树$T_L$的最大元素转移至根处，再将右子树$T_R$作为该元素的右儿子，从而结束整个删除操作。</p>
@@ -287,7 +287,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -297,7 +297,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -319,23 +319,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

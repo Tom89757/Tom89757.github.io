@@ -16,16 +16,16 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="本章将讨论最简单的三种数据结构——表、栈和队列，每个程序中都将至少明确一种这样的数据结构，栈更是无处不在。本章中，我们将：  介绍抽象数据类型（ADT）的概念。 阐述如何对表进行有效操作。 介绍栈ADT及其在实现递归方面的应用。 介绍队列ADT及其在操作系统和算法设计中的应用。  在做足够的训练后，便可以写出一般只有几行大小的好的通用例程。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.7%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E7%9A%84%E5%A4%9A%E8%A1%A8%E5%AE%9E%E7%8E%B0.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.3.2%E6%A0%88ADT%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.4.2%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.2.7%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E7%9A%84%E5%A4%9A%E8%A1%A8%E5%AE%9E%E7%8E%B0.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.2%E6%A0%88ADT%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.2%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png">
 <meta property="article:published_time" content="2020-07-13T10:51:45.000Z">
-<meta property="article:modified_time" content="2020-07-18T16:36:54.136Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.299Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
+<meta name="twitter:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -136,7 +136,7 @@
 <li>删除元素要求我们记住被删除元素前面的表元<strong>mark</strong>。</li>
 </ul>
 <p>以上问题可以通过增加表头（哑节点）解决，即增加一个指向起始端元素的节点。为使得删除操作更为直观，我们实现了FindPrevious例程，用以返回要删除表元的前驱元的位置。下图是链表的类型声明：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图1 链表的类型声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.2.3%E9%93%BE%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图1 链表的类型声明"></p>
 <p>这里依次罗列书中编写链表相关例程的顺序，以把握从头实现一种数据结构的逻辑和细节：</p>
 <ol>
 <li><code>int IsEmpty(LIst L)</code>：测试空表。</li>
@@ -159,7 +159,7 @@
 <li>基数排序：也称卡式排序，是桶式排序的推广，即使用多趟桶式排序。当按照最低位到最高位的顺序排序时，即可得到从小到大的顺序序列，运行时间为$O(P(N+B))$，其中P为排序趟数，N为要被排序的元素个数，B为桶数。</li>
 <li>多重表：下图展示了注册问题的多表实现，其本质上是将每个班注册学生的表和每个学生注册班级的表合二为一，是一个二维循环表。这样的存储形式节省空间而花费时间，这是考虑到每个学生注册班级数较少所作出的选择；当学生注册班级数较多时，可以考虑给每个非表头增加指向学生和班级的表头的指针，通过花费空间来节省时间。</li>
 </ol>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.2.7%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E7%9A%84%E5%A4%9A%E8%A1%A8%E5%AE%9E%E7%8E%B0.png" alt="图2 注册问题的多表实现"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.2.7%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E7%9A%84%E5%A4%9A%E8%A1%A8%E5%AE%9E%E7%8E%B0.png" alt="图2 注册问题的多表实现"></p>
 <h3 id="链表的游标实现"><a href="#链表的游标实现" class="headerlink" title="链表的游标实现"></a>链表的游标实现</h3><p>诸如BASIC和FORTRAN等语言不支持指针，实现链表时采用游标实现法。链表的指针实现中包含两个重要条件：</p>
 <ol>
 <li><p>数据存储在一组结构体中，每个结构体包含数据和指向下一个结构体的指针。</p>
@@ -175,7 +175,7 @@
 <h2 id="3-3-栈ADT"><a href="#3-3-栈ADT" class="headerlink" title="3.3 栈ADT"></a>3.3 栈ADT</h2><h3 id="栈的模型"><a href="#栈的模型" class="headerlink" title="栈的模型"></a>栈的模型</h3><p>栈是限制插入和删除只能在一个位置上进行的表（LIFO表），该位置是表的末端，叫做栈顶（top）。基本操作是进栈（push）和出栈（pop）。对空栈进行Pop或Top是ADT错误，而运行Push时空间用尽则为实现错误。</p>
 <p>对栈而言，栈顶元素是唯一可见的元素，也是唯一可操作的元素。</p>
 <h3 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h3><p>由于栈是一个表，任何实现表的方法都能实现栈，此处给出指针和数组两种实现方法。值得补充的是，从好的编程原则上看，调用例程不需要知道实现的是哪种方法。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.3.2%E6%A0%88ADT%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png" alt="图3 栈数组实现的类型声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.2%E6%A0%88ADT%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png" alt="图3 栈数组实现的类型声明"></p>
 <ol>
 <li><p>栈的链表实现：使用单链表，通过在表前端插入实现Push，通过删除表前端元素实现Pop，Top操作则是检查前端元素并返回它的值。这种实现方法使得对malloc和free操作的调用开销昂贵，这种开销可以通过使用第二个栈在一定程度上避免。</p>
 </li>
@@ -199,7 +199,7 @@
 <h2 id="3-4-队列ADT"><a href="#3-4-队列ADT" class="headerlink" title="3.4 队列ADT"></a>3.4 队列ADT</h2><p>队列（queue）也是表（FIFO），其在一端插入而在另一端删除。</p>
 <h3 id="队列模型"><a href="#队列模型" class="headerlink" title="队列模型"></a>队列模型</h3><p>其基本操作是入队（Enqueue）和出队（Dequeue），入队是在队尾（rear）插入一个元素，出队是删除在队头（front）的元素。</p>
 <h3 id="队列的数组实现"><a href="#队列的数组实现" class="headerlink" title="队列的数组实现"></a>队列的数组实现</h3><p>同栈一样，任何实现表的方法同样适用于队列的实现。链表实现简单明了，书上作为练习；下面着重讨论队列的数组实现：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter3.4.2%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png" alt="图4 队列数组实现的类型声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.2%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E.png" alt="图4 队列数组实现的类型声明"></p>
 <p>为避免队列未满但队尾已经到达队列末端，将实现改进为循环数组（circular array）实现。循环队列中有两件事需要警惕：</p>
 <ul>
 <li>检测队列是否为空很重要，因为队列为空时，Dequeue操作将返回不确定值。</li>
@@ -267,7 +267,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -277,7 +277,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -299,23 +299,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

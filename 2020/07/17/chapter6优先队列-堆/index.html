@@ -16,34 +16,34 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="由于对队列中元素的输出顺序有所要求，所以需要一种新的可以满足该要求的数据结构。这种要求并不少见：当有多个文件要打印时，先打印短的文件；操作系统调度程序时，必须决定在若干进程中首先运行哪个进程。为此本章描述了一类特殊的队列——优先队列（priority queue），接下来我们将讨论：  优先队列ADT的有效实现。 优先队列的使用。 优先队列的高级实现。  书上说这类数据结构是计算机科学中最讲究的一">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%A0%86.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E4%B8%8A%E6%BB%A4.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E6%8F%92%E5%85%A5.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E4%B8%8B%E6%BB%A4.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E5%88%A0%E9%99%A4.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.4%E6%97%A0%E5%BA%8F%E6%A0%91%E5%88%B0%E6%9C%89%E5%BA%8F%E5%A0%86.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E4%B8%A4%E4%B8%AA%E5%B7%A6%E5%BC%8F%E5%A0%86.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%90%88%E5%B9%B61.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%90%88%E5%B9%B62.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%90%88%E5%B9%B63.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.4%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%90%88%E5%B9%B6%E9%A9%B1%E5%8A%A8%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%90%88%E5%B9%B6%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%AE%9E%E9%99%85%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E6%8F%92%E5%85%A5%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.3%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%88%A0%E9%99%A4%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.7%E4%B8%A4%E4%B8%AA%E6%96%9C%E5%A0%86.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.7%E5%90%88%E5%B9%B61.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.7%E5%90%88%E5%B9%B62.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.8.1%E4%BA%8C%E9%A1%B9%E6%A0%91%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.8.2%E4%BA%8C%E9%A1%B9%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.8.3%E4%BA%8C%E9%A1%B9%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.2%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%A0%86.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.3%E4%B8%8A%E6%BB%A4.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.3%E6%8F%92%E5%85%A5.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.3%E4%B8%8B%E6%BB%A4.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.3%E5%88%A0%E9%99%A4.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.4%E6%97%A0%E5%BA%8F%E6%A0%91%E5%88%B0%E6%9C%89%E5%BA%8F%E5%A0%86.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E4%B8%A4%E4%B8%AA%E5%B7%A6%E5%BC%8F%E5%A0%86.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%90%88%E5%B9%B61.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%90%88%E5%B9%B62.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%90%88%E5%B9%B63.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.4%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%90%88%E5%B9%B6%E9%A9%B1%E5%8A%A8%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%90%88%E5%B9%B6%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%AE%9E%E9%99%85%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E6%8F%92%E5%85%A5%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.3%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%88%A0%E9%99%A4%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.7%E4%B8%A4%E4%B8%AA%E6%96%9C%E5%A0%86.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.7%E5%90%88%E5%B9%B61.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.7%E5%90%88%E5%B9%B62.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.8.1%E4%BA%8C%E9%A1%B9%E6%A0%91%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.8.2%E4%BA%8C%E9%A1%B9%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.8.3%E4%BA%8C%E9%A1%B9%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png">
 <meta property="article:published_time" content="2020-07-16T17:18:29.000Z">
-<meta property="article:modified_time" content="2020-07-18T16:36:54.264Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.440Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png">
+<meta name="twitter:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -154,21 +154,21 @@
 <p>在此对表示完全二叉树的数组的性质作数学化的描述：对于数组中的每个位置$i$上的元素来说，其左儿子在位置$2i$，其右儿子在位置$2i+1$，它的父亲在位置$\left\lfloor i/2 \right\rfloor$。正因为此，不需要指针即可快速遍历整个数组，需要补充的是在建立数组前最大的堆大小需要事先估计且数组需要保留一个位置0。</p>
 <p>故一个堆数据结构将由一个数组（不用管关键字类型）、一个代表最大值的整数以及当前的堆大小组成。后续将始终把堆画成树。</p>
 <h3 id="堆序性质"><a href="#堆序性质" class="headerlink" title="堆序性质"></a>堆序性质</h3><p>堆序（heap order）性是使操作得以快速进行的性质。要事先快速进行DeleteMin的操作，意味着最小元处于根上，由递归性质可知每颗子树的根节点都小于它的所在后裔。故对堆中的每个节点$X$，$X$的父亲中的关键字小于（或等于）$X$中的关键字，根节点除外。下面是优先队列的声明（具体细节暂略<strong>mark</strong>）：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png" alt="图1 优先队列的声明"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.2%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%A0%86.png" alt="图2 创建空堆"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.2%E5%A0%86%E5%A3%B0%E6%98%8E.png" alt="图1 优先队列的声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.2%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%A0%86.png" alt="图2 创建空堆"></p>
 <h3 id="基础的堆操作"><a href="#基础的堆操作" class="headerlink" title="基础的堆操作"></a>基础的堆操作</h3><ul>
 <li>Insert：将元素$X$插入到堆，需要在下一个空闲位置创建一个空穴。如果$X$插入空穴中而不破环堆序性，则插入完成，否则将空穴的父节点移入空穴中，同时空穴向根上行一步，重复此过程直到$X$可以放入空穴中，这一过程称为上滤。以下为其图示和代码实现：</li>
 </ul>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E4%B8%8A%E6%BB%A4.png" alt="图3 上滤"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E6%8F%92%E5%85%A5.png" alt="图4 二叉堆插入例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.3%E4%B8%8A%E6%BB%A4.png" alt="图3 上滤"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.3%E6%8F%92%E5%85%A5.png" alt="图4 二叉堆插入例程"></p>
 <p>该实现的细节在于先确定空穴的正确位置，再将$X$插入其中，这样避免了插入到空穴再上滤所需频繁的交换操作。</p>
 <p>此外，正如前面提到的，在表示堆的数组中保留了位置0，此处是用以存放一个标记，该标记的值必须小于（或等于）堆中的任意值，其类似于链表中的头节点，从而避免每次循环都要执行一次的与局部变量$i$与0的比较。</p>
 <p>已证明一次插入平均需要2.607次比较，Insert将元素上移1.607层。</p>
 <ul>
 <li>DeleteMin：最小元处于根节点处，故该操作的难点在于删除它。删除最小元后，需要将堆的最后一个元素$X$移动到新的位置。此处采取与上滤相反的操作，删除最小元后，根节点处成为空穴，将根节点的左右儿子中较小者移入空穴，空穴下移一层，直至$X$能够移入空穴，这个步骤称之为下滤。以下为图示和代码实现：</li>
 </ul>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E4%B8%8B%E6%BB%A4.png" alt="图5 下滤"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.3%E5%88%A0%E9%99%A4.png" alt="图6 二叉堆删除例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.3%E4%B8%8B%E6%BB%A4.png" alt="图5 下滤"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.3%E5%88%A0%E9%99%A4.png" alt="图6 二叉堆删除例程"></p>
 <p>值得补充的是，如果堆的节点总数为偶数时，将遇到一个节点只有一个儿子的情况，故每次循环都要进行一次测试。一种解决方式是，当堆节点数为偶数时，在堆的终端后面的位置加上一个大于任何元素的标记。即使如此，每次循环仍然需要测试何时到达底层。</p>
 <p>最坏情形的运行时间为$O(\log N)$，并且由于堆终端元素总是堆中接近最大的元素，故平均运行时间也为$O(\log N)$。</p>
 <h3 id="其它的堆操作"><a href="#其它的堆操作" class="headerlink" title="其它的堆操作"></a>其它的堆操作</h3><p>根据堆的堆序性可知，堆所包含的关于序的信息很少，对最小元处于根节点的堆来说，只能得知最大元在树叶上，而树叶占据了半数的节点。（若想直到每个元素的位置，需要引入诸如散列表等数据结构）</p>
@@ -182,7 +182,7 @@
 </li>
 <li><p>BuildHeap（构建堆）：$BuildHeap(H)$将N个关键字作为输入放入空堆中，其期望运行时间为$O(N)$。书中通过数学描述严格证明了以下定理：</p>
 <p>包含$2^{h+1}-1$个节点、高为$h$的理想二叉树的节点的高度的和为$2^{h+1}-1-(h+1)$。（具体过程暂略<strong>mark</strong>）书中通过下图说明了构建堆所需的操作数（虚线条数之和）的上界为堆中所有节点的高度之和：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.3.4%E6%97%A0%E5%BA%8F%E6%A0%91%E5%88%B0%E6%9C%89%E5%BA%8F%E5%A0%86.png" alt="图7 无序树到有序堆"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.3.4%E6%97%A0%E5%BA%8F%E6%A0%91%E5%88%B0%E6%9C%89%E5%BA%8F%E5%A0%86.png" alt="图7 无序树到有序堆"></p>
 </li>
 </ul>
 <h2 id="6-4-优先队列的应用"><a href="#6-4-优先队列的应用" class="headerlink" title="6.4 优先队列的应用"></a>6.4 优先队列的应用</h2><p>堆不仅可用于操作系统对进程的调度，在后面第9章中图论算法中也有应用。下面，我们将介绍应用堆来求解两个问题。</p>
@@ -203,34 +203,34 @@
 <p>在右路径上有$r$个节点的左式树必然至少有$2^{r}-1$个节点。</p>
 <p>由定理可知，N个节点的左式树有一条右路径最多含有$\left\lfloor \log(N+1) \right\rfloor$个节点，对左式堆操作的一般思路是将所有工作放在右路径上进行。</p>
 <h3 id="左式堆的操作"><a href="#左式堆的操作" class="headerlink" title="左式堆的操作"></a>左式堆的操作</h3><p>对左式堆的基本操作是合并，插入可以看作合并的特殊情形。对每个节点，还有一个存储器零路径长的项。下图展示了两个左式堆$H_1$和$H_2$的合并过程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E4%B8%A4%E4%B8%AA%E5%B7%A6%E5%BC%8F%E5%A0%86.png" alt="图8 H1和H2"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E4%B8%A4%E4%B8%AA%E5%B7%A6%E5%BC%8F%E5%A0%86.png" alt="图8 H1和H2"></p>
 <ol>
 <li>将具有大的根值的堆H2与具有小的根值的堆H1的右子堆合并，并未描述实现细节，但是过程是递归的：</li>
 </ol>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%90%88%E5%B9%B61.png" alt="图9 将H2与H1的右子堆合并"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%90%88%E5%B9%B61.png" alt="图9 将H2与H1的右子堆合并"></p>
 <ol>
 <li>将上述的合并堆作为H1的右儿子合并：</li>
 </ol>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%90%88%E5%B9%B62.png" alt="图10 H1接上图中的左式堆作为右儿子"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%90%88%E5%B9%B62.png" alt="图10 H1接上图中的左式堆作为右儿子"></p>
 <ol>
 <li>将根的左右儿子交换并更新零路径长：</li>
 </ol>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%90%88%E5%B9%B63.png" alt="图11 交换H1的根的儿子"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%90%88%E5%B9%B63.png" alt="图11 交换H1的根的儿子"></p>
 <p>书中考虑了左式堆与二叉堆的Insert操作的兼容问题，后者并不返回新树指针。书中提供了一种解决思路，将返回新树的左式堆插入例程记为Insert1；宏Insert将完成依次与二叉堆兼容的插入操作（不太懂，<strong>mark</strong>）。以下为左式堆的类型声明和合并例程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.4%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图12 左式堆的类型声明"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%90%88%E5%B9%B6%E9%A9%B1%E5%8A%A8%E4%BE%8B%E7%A8%8B.png" alt="图13 合并左式堆的驱动例程"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%90%88%E5%B9%B6%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%AE%9E%E9%99%85%E4%BE%8B%E7%A8%8B.png" alt="图14 合并左式堆的实际例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.4%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图12 左式堆的类型声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%90%88%E5%B9%B6%E9%A9%B1%E5%8A%A8%E4%BE%8B%E7%A8%8B.png" alt="图13 合并左式堆的驱动例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%90%88%E5%B9%B6%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%AE%9E%E9%99%85%E4%BE%8B%E7%A8%8B.png" alt="图14 合并左式堆的实际例程"></p>
 <p>执行合并的时间与右路径的长的和成正比，因为在递归调用期间堆每个被访问的节点执行的是常数工作量，因此合并两个左式堆的时间界为$O(\log N)$。</p>
 <p>书上还简要描述了通过分两趟非递归实施合并操作的方法：第一趟将两个堆的右路径上的节点一起排序，保持它们各自的左儿子不变；第二趟将左式堆性质被破环的节点的左右儿子金环。这种方式更容易理解，但编程困难。（暂略<strong>mark</strong>）</p>
 <p>下面是Insert和DeleteMin的例程，前者可以看作将插入项看成单节点堆并执行依次Merge操作；后者可以看出删除根节点，然后将左右子树执行一次Merge操作。由于堆的删除返回最小元，而左式堆的删除返回树根指针，所以同样需要将DeleteMin写成宏。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.2%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E6%8F%92%E5%85%A5%E4%BE%8B%E7%A8%8B.png" alt="图15 左式堆的插入例程"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.6.3%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%88%A0%E9%99%A4%E4%BE%8B%E7%A8%8B.png" alt="图16 左式堆的DeleteMin例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.2%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E6%8F%92%E5%85%A5%E4%BE%8B%E7%A8%8B.png" alt="图15 左式堆的插入例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.6.3%E5%B7%A6%E5%BC%8F%E5%A0%86%E7%9A%84%E5%88%A0%E9%99%A4%E4%BE%8B%E7%A8%8B.png" alt="图16 左式堆的DeleteMin例程"></p>
 <p>书中简单描述了建立左式堆的策略，但并不清晰。<strong>mark</strong></p>
 <h2 id="6-7-斜堆"><a href="#6-7-斜堆" class="headerlink" title="6.7 斜堆"></a>6.7 斜堆</h2><p>斜堆是左式堆的自调节形式，实现也较为简单。斜堆之于左式堆类似于伸展树之于AVL树。斜堆是具有堆序的二叉树，但是不存在对树的结构限制，它不保留节点的零路径长信息，且右路径可以在任意时刻任意长。它的精髓在于，任意连续M次操作，总的最坏情形运行时间为$O(M \log N)$，故其每次操作的摊还时间为$O(\log N)$。</p>
 <p>斜堆的基本操作同样是合并，与左式堆不同的是，斜堆左右儿子的操作是无条件执行的（除了右路径上最大的节点）。下图为两个堆的合并过程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.7%E4%B8%A4%E4%B8%AA%E6%96%9C%E5%A0%86.png" alt="图17 两个斜堆"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.7%E5%90%88%E5%B9%B61.png" alt="图18 将H2与H1的右子堆合并的结果"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.7%E5%90%88%E5%B9%B62.png" alt="图19 合并斜堆H1和H2"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.7%E4%B8%A4%E4%B8%AA%E6%96%9C%E5%A0%86.png" alt="图17 两个斜堆"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.7%E5%90%88%E5%B9%B61.png" alt="图18 将H2与H1的右子堆合并的结果"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.7%E5%90%88%E5%B9%B62.png" alt="图19 合并斜堆H1和H2"></p>
 <p>上述过程同样有递归和非递归两种实现方式。书上将斜堆的实现作为练习（暂略<strong>mark</strong>）。</p>
 <p>需要把握的重点是，斜堆不需要像左式堆一样保留每个节点的零路径长，也不需要测试何时交换儿子，这与伸展树有异曲同工之妙。</p>
 <h2 id="6-8-二项队列"><a href="#6-8-二项队列" class="headerlink" title="6.8 二项队列"></a>6.8 二项队列</h2><p>左式堆和斜堆的每次操作均花费$O(\log N)$时间，但与二叉堆只花费平均常数时间执行插入相比，在插入操作上还有改进余地，而二项队列正是能够在插入操作上有所改进的一种数据结构，即其插入操作只需常数时间。</p>
@@ -241,7 +241,7 @@
 <li>高度为k的二项树$B<em>k$通过将一颗二项树$B</em>{k-1}$附接到另一颗二项树$B_{k-1}$的根上而形成。</li>
 </ul>
 <p>如图：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.8.1%E4%BA%8C%E9%A1%B9%E6%A0%91%E7%BB%93%E6%9E%84.png" alt="图20 二项树结构"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.8.1%E4%BA%8C%E9%A1%B9%E6%A0%91%E7%BB%93%E6%9E%84.png" alt="图20 二项树结构"></p>
 <p>形式上看，二项树$B<em>k$由带有儿子$B_0, B_1, …, B</em>{k-1}$的根组成。从而可以推出如下性质：</p>
 <ul>
 <li>高度为k的二项树恰好有$2^k$个节点。</li>
@@ -252,7 +252,7 @@
 <li>最小元可以通过搜索所有二项树的树根找出，故最小元可以在$O(\log N)$时间内找到。</li>
 <li>合并操作非常直观，此处省略文字描述，合并操作最坏情形下花费$O(\log N)$，以下为两个二项队列合并的结果：</li>
 </ul>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.8.2%E4%BA%8C%E9%A1%B9%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6.png" alt="图21 二项队列合并"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.8.2%E4%BA%8C%E9%A1%B9%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6.png" alt="图21 二项队列合并"></p>
 <ul>
 <li>插入操作是合并操作的特例，相当于在二项队列中添加一颗二项树$B_0$，其最坏情形下花费$O(\log N)$，但平均只需常数时间。</li>
 <li>创建二项队列的操作最坏情形下同样为$O(\log N)$。以下为一个包含7个元素的二项队列的创建过程：</li>
@@ -262,7 +262,7 @@
 <li>DeleteMin操作通过首先找出一颗具有最小根的二项树来完成。过程分为四步：先找到具有最小根的二项树$B_k$；从队列H中除去$B_k$得到队列H1；删除$B_k$的根得到队列H2；将H1和H2合并得到结果队列H’。花费时间同样为$O(\log N)$。</li>
 </ul>
 <h3 id="二项队列的实现"><a href="#二项队列的实现" class="headerlink" title="二项队列的实现"></a>二项队列的实现</h3><p>实现采用了一般树的标准表示方法，即将每个节点的儿子都存在一个链表中，且每个节点都有一个指向它的第一个儿子的指针；同时，要求诸儿子按照它们子树的大小排序。二项队列则是二项树的数组，下图展示了二项队列对应的数组表示：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter6.8.3%E4%BA%8C%E9%A1%B9%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png" alt="图22 二项队列的数组表示"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter6.8.3%E4%BA%8C%E9%A1%B9%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png" alt="图22 二项队列的数组表示"></p>
 <p>书上展示了二项树的类型声明、合并和DeleteMin操作的例程，具体细节<strong>mark</strong>。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本章中，我们看到了优先队列ADT各种实现方法和用途。标准的实现使用二叉堆这一数据结构，它速度块且精致，不需要指针，但是不能有效支持两个优先队列的合并。因此，我们描述了三种能够进行合并操作的方式：</p>
 <ul>
@@ -325,7 +325,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -335,7 +335,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -357,23 +357,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

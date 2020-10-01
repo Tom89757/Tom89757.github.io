@@ -16,22 +16,22 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="本章描述解决等价问题的一种有效数据结构。它实现简单，可以使用一个简单数组；运行快，每种操作只需常数运行时间；但是分析困难，最坏情况的函数形式不同于之前见过的任何形式。 对于这种不相交集ADT，我们将：  讨论如何能够以最小的编程代价实现。  通过两个简单的观察极大地增加它的速度。  分析一种快速实现方法的运行时间。  介绍一个简单的应用。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3%E5%85%83%E7%B4%A0%E9%9B%86%E5%90%88.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3union1.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3union2.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3Union.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3Find.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.4%E6%9C%80%E5%9D%8F%E6%83%85%E5%BD%A2%E7%9A%84%E6%A0%91.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.5%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9%E5%AE%9E%E4%BE%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.5%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9Find%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3%E5%85%83%E7%B4%A0%E9%9B%86%E5%90%88.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3union1.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3union2.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3Union.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3Find.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.4%E6%9C%80%E5%9D%8F%E6%83%85%E5%BD%A2%E7%9A%84%E6%A0%91.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.5%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9%E5%AE%9E%E4%BE%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.5%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9Find%E4%BE%8B%E7%A8%8B.png">
 <meta property="article:published_time" content="2020-07-21T12:38:12.000Z">
-<meta property="article:modified_time" content="2020-07-21T17:12:21.342Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.533Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3%E5%85%83%E7%B4%A0%E9%9B%86%E5%90%88.png">
+<meta name="twitter:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3%E5%85%83%E7%B4%A0%E9%9B%86%E5%90%88.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -145,26 +145,26 @@
 <p>该算法是动态的，因为在算法执行的过程中，集合可以通过Union运算发生改变。该算法的核心在于：Find(a)=Find(b)当且仅当a和b在一个集合中。</p>
 <p>解决动态问题有两种方案：一种保证Find指令能够以常数最坏情形执行；一种保证Union能够以常数最坏情形执行。书中简要讨论了第一种方案：为使得Find运算快，可以在一个数组中保存每个元素的等价类的名字。书中对Find和Union操作的运行时间作了比较费解的描述<strong>mark</strong>，但是指出了我们的目标是：任意顺序的最多M次Find和最多N-1次Union的运行时间将只比$O(M+N)$多一点。</p>
 <h2 id="8-3-基本数据结构"><a href="#8-3-基本数据结构" class="headerlink" title="8.3 基本数据结构"></a>8.3 基本数据结构</h2><p>我们的问题在于，当两个元素处于相同的集合时，作用在这两个元素上的Find返回相同的名字，而不要求它们返回特定的名字。很自然的想法是使用树来表示每个集合，因为每个元素只有一个相同的根。下图展示了进行连续Union操作的过程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3%E5%85%83%E7%B4%A0%E9%9B%86%E5%90%88.png" alt="图1 元素集合"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3union1.png" alt="图2 Union1"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3union2.png" alt="图3 Union2"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3%E5%85%83%E7%B4%A0%E9%9B%86%E5%90%88.png" alt="图1 元素集合"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3union1.png" alt="图2 Union1"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3union2.png" alt="图3 Union2"></p>
 <p>对元素X的一次Find(X)操作通过返回包含X的树的根完成，其花费时间与X深度成正比。对N个元素来说，树的深度最高为N-1，故连续M次Find操作的最坏情形为$O(MN)$。下图为不相交集合的类型声明和初始化例程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图4 类型声明"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BE%8B%E7%A8%8B.png" alt="图5 初始化例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图4 类型声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BE%8B%E7%A8%8B.png" alt="图5 初始化例程"></p>
 <p>对不相交集合的Union操作来说，平均时间分析是十分困难的。从树的数量k上看，下次每两棵树进行Union操作的概率均为$k(k-1)$；从元素数量N上看，如果每两个元素合并的概率相等，大树参与Union操作的可能性更大。下图为Union和Find的实现：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3Union.png" alt="图6 Union"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.3Find.png" alt="图7 Find"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3Union.png" alt="图6 Union"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.3Find.png" alt="图7 Find"></p>
 <h2 id="8-4-灵巧求并算法"><a href="#8-4-灵巧求并算法" class="headerlink" title="8.4 灵巧求并算法"></a>8.4 灵巧求并算法</h2><p><strong>第一种求并方法——按大小求并</strong></p>
 <p>上面的Union的执行是任意的，通过使第二颗树称为第一棵树的子树完成合并，可以改进为总让较小的树称为较大的树的子树，即按大小求并。可以证明，这种合并方式可以使得树的最大深度不会超过$\log N$。</p>
 <p>为了实现这种方法，我们需要记住每一棵树的大小，可以使每个根的数组元素包含它的树的大小的负值，故初始时根值均为-1。每执行一次Union，检查树的大小，合并后树的大小是两个树大小的和。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.4%E6%9C%80%E5%9D%8F%E6%83%85%E5%BD%A2%E7%9A%84%E6%A0%91.png" alt="图8 N=16时最坏情形的树"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.4%E6%9C%80%E5%9D%8F%E6%83%85%E5%BD%A2%E7%9A%84%E6%A0%91.png" alt="图8 N=16时最坏情形的树"></p>
 <p><strong>第二种求并方法——按高度求并</strong></p>
 <p>同样保证所有树的深度最多为$O(\log N)$，其核心在于使得浅的树称为深的树的子树。这种策略使得，只有当两颗相等深度的树进行合并时数的高度才增加1。它是对按大小合并的简单修改。</p>
 <h2 id="8-5-路径压缩"><a href="#8-5-路径压缩" class="headerlink" title="8.5 路径压缩"></a>8.5 路径压缩</h2><p>迄今描述的Union/Find算法都非常简单，且对连续M个指令平均是线性的。但是，$O(M \log N)$的最坏情形仍然很有可能发生。需要明确的是，执行Union操作的任何算法都将产生相同的最坏情形的数，因为树之间的合并是随机的。因此，在不对整个数据结构进行重构时，使算法加速的唯一方法是优化Find操作。</p>
 <p>这种操作称为路径压缩（path compression）。路径压缩在Find操作期间执行，其效果为，将从X到根的路径上的每个节点的父节点都变为根。下图为实例（对最坏情形执行Find(15)后压缩路径的效果）：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.5%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9%E5%AE%9E%E4%BE%8B.png" alt="图9 路径压缩实例"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.5%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9%E5%AE%9E%E4%BE%8B.png" alt="图9 路径压缩实例"></p>
 <p>这种操作使得一些节点离根更近，其代价为使用额外的两次指针移动，从而使得未来对这些节点可以进行更快速的存取。下图为实现路径压缩的Find例程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter8.5%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9Find%E4%BE%8B%E7%A8%8B.png" alt="图10 Find例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter8.5%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9Find%E4%BE%8B%E7%A8%8B.png" alt="图10 Find例程"></p>
 <p>路径压缩与按大小求并完全兼容，故两个例程可以同时实现。虽然不清楚路径压缩中额外的一趟工作在考虑平均性能时是否值得，但是路径压缩与灵巧求并法则的结合在所有情况下都将产生非常有效的算法。此外，按高度合并与路径压缩并不兼容，但不需要对其花太多心思，因为高度和大小求并的效率理论上一样。</p>
 <h2 id="8-6-按秩求并和路径压缩的最坏情形"><a href="#8-6-按秩求并和路径压缩的最坏情形" class="headerlink" title="8.6 按秩求并和路径压缩的最坏情形"></a>8.6 按秩求并和路径压缩的最坏情形</h2><p>本节书上对算法性能作了较为复杂的分析，暂略<strong>mark</strong></p>
 <h2 id="8-7-一个应用"><a href="#8-7-一个应用" class="headerlink" title="8.7 一个应用"></a>8.7 一个应用</h2><p>考虑一个问题：我们有一个计算机网络和一个双向连接表：每一个连接可将文件从一台计算机传送到另一台计算机。那么，能否将一个文件从网络上的任意一台计算机发送到任意的另一台计算机上去呢？（该问题必须联机解决，故连接表要一次只给出一个连接，算法能在任意时刻给出答案）</p>
@@ -225,7 +225,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -235,7 +235,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -257,23 +257,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

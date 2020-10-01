@@ -16,30 +16,30 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="3.1 引言本章回答的问题有：  小数和其他实数如何表示？ 当一个操作生成了一个无法表示的大数时如何处理？ 上述问题隐含着一个秘密：怎样用硬件真正地做乘法和除法？  本章的目的就是讲述实数的表示方法、算术的算法、实现这些算法的硬件，以及如何在指令集中表示有关的内容。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E5%99%A8.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.1%E4%B9%98%E6%B3%95%E5%99%A8%E6%94%B9%E8%BF%9B%E7%89%88.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.3%E5%BF%AB%E9%80%9F%E4%B9%98%E6%B3%95%E5%99%A8.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.1%E7%AC%AC%E4%B8%80%E7%A7%8D%E9%99%A4%E6%B3%95%E5%99%A8.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.1%E7%AC%AC%E4%B8%80%E7%A7%8D%E9%99%A4%E6%B3%95%E7%AE%97%E6%B3%95.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.1%E9%99%A4%E6%B3%95%E5%99%A8%E6%94%B9%E8%BF%9B%E7%89%88.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.5MIPS%E6%A0%B8%E5%BF%83%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.5MIPS%E6%A0%B8%E5%BF%83%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%28%E7%BB%AD%29.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.1IEEE754%E6%B5%AE%E7%82%B9%E6%95%B0.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.2%E6%B5%AE%E7%82%B9%E5%8A%A0.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.2%E6%B5%AE%E7%82%B9%E5%8A%A0%E7%AE%97%E6%9C%AF%E5%8D%95%E5%85%83.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.3%E6%B5%AE%E7%82%B9%E4%B9%98%E6%B3%95.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.4MIPS%E6%B5%AE%E7%82%B9%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.4MIPS%E6%B5%AE%E7%82%B9%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%28%E7%BB%AD%29.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.6%E4%B8%A4%E7%A7%8D%E8%AF%AD%E8%A8%80.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.10%E6%8C%87%E4%BB%A4%E6%AF%94%E9%87%8D.png">
-<meta property="og:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.10%E6%8C%87%E4%BB%A4%E9%A2%91%E7%8E%87.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E5%99%A8.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.1%E4%B9%98%E6%B3%95%E5%99%A8%E6%94%B9%E8%BF%9B%E7%89%88.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.3%E5%BF%AB%E9%80%9F%E4%B9%98%E6%B3%95%E5%99%A8.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.1%E7%AC%AC%E4%B8%80%E7%A7%8D%E9%99%A4%E6%B3%95%E5%99%A8.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.1%E7%AC%AC%E4%B8%80%E7%A7%8D%E9%99%A4%E6%B3%95%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.1%E9%99%A4%E6%B3%95%E5%99%A8%E6%94%B9%E8%BF%9B%E7%89%88.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.5MIPS%E6%A0%B8%E5%BF%83%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.5MIPS%E6%A0%B8%E5%BF%83%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%28%E7%BB%AD%29.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.1IEEE754%E6%B5%AE%E7%82%B9%E6%95%B0.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.2%E6%B5%AE%E7%82%B9%E5%8A%A0.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.2%E6%B5%AE%E7%82%B9%E5%8A%A0%E7%AE%97%E6%9C%AF%E5%8D%95%E5%85%83.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.3%E6%B5%AE%E7%82%B9%E4%B9%98%E6%B3%95.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.4MIPS%E6%B5%AE%E7%82%B9%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.4MIPS%E6%B5%AE%E7%82%B9%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%28%E7%BB%AD%29.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.6%E4%B8%A4%E7%A7%8D%E8%AF%AD%E8%A8%80.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.10%E6%8C%87%E4%BB%A4%E6%AF%94%E9%87%8D.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.10%E6%8C%87%E4%BB%A4%E9%A2%91%E7%8E%87.png">
 <meta property="article:published_time" content="2020-07-27T16:41:29.000Z">
-<meta property="article:modified_time" content="2020-07-29T18:02:38.277Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.315Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="计算机组成与设计">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E5%99%A8.png">
+<meta name="twitter:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E5%99%A8.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -145,9 +145,9 @@
 <p>关于溢出的处理，还有一种称之为饱和（saturating）操作的方式，它是微处理器中一个不常出现的特性，即：当计算机结果溢出时，结果被设置为最大的正数或最小的负数，如在调节音量时。</p>
 <h2 id="3-3-乘法"><a href="#3-3-乘法" class="headerlink" title="3.3 乘法"></a>3.3 乘法</h2><p>容易观察到，积的位数大于乘数和被乘数的位数，而我们经常需要两个32位长的数相乘得到一个32位长的积，故乘法同样需要处理溢出。下面介绍乘法硬件及其优化（首先只使用正数）。</p>
 <h3 id="顺序的乘法算法和硬件"><a href="#顺序的乘法算法和硬件" class="headerlink" title="顺序的乘法算法和硬件"></a>顺序的乘法算法和硬件</h3><p>下图展示了第一版乘法器硬件结构：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E5%99%A8.png" alt="图1 第一版乘法器硬件结构"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E5%99%A8.png" alt="图1 第一版乘法器硬件结构"></p>
 <p>下图则展示了第一种乘法算法：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95.png" alt="图2 第一种乘法算法"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.1%E7%AC%AC%E4%B8%80%E7%89%88%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95.png" alt="图2 第一种乘法算法"></p>
 <p>由于乘数有32位，故乘法操作需要进行32次移位操作（乘数和被乘数都需要）。对每一位的操作，分为三个步骤：</p>
 <ol>
 <li>乘数的最低位（0或1）决定被乘数是否加到积寄存器上。</li>
@@ -155,28 +155,28 @@
 <li>将乘数右移。</li>
 </ol>
 <p>如果每一步需要一个时钟周期，则该算法需要大概100个时钟周期完成两个32位数的乘法。该算法可以通过并行化加速：当乘数位为1时，将被乘数与积相加，同时将乘数与被乘数移位。其核心在于所测试的乘数位为移位前的最低位，所加的被乘数为移位前的被乘数。下图为乘法器硬件的改进版（其关键在于将之前乘数和被乘数的移位转换称乘数和乘积的移位，节省了空间）：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.1%E4%B9%98%E6%B3%95%E5%99%A8%E6%94%B9%E8%BF%9B%E7%89%88.png" alt="图3 乘法器改进版"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.1%E4%B9%98%E6%B3%95%E5%99%A8%E6%94%B9%E8%BF%9B%E7%89%88.png" alt="图3 乘法器改进版"></p>
 <p>如CSAPP中所描述的，当乘数为常数时，乘法可以通过移位来替代，此处不再赘述。</p>
 <h3 id="有符号乘法"><a href="#有符号乘法" class="headerlink" title="有符号乘法"></a>有符号乘法</h3><p>前面描述的为非符号乘法，对于有符号乘法，最简单的方法是先将被乘数和乘数转化为正数，并记住原来的符号位。</p>
 <h3 id="更快速的乘法"><a href="#更快速的乘法" class="headerlink" title="更快速的乘法"></a>更快速的乘法</h3><p>摩尔定律背后的本质是硬件资源的扩大，这意味着可以设计更快速的乘法器，即通过为乘数的每一位提供一个32位的加法器。如下图所示（书上并未详细描述，<strong>mark</strong>）：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.3.3%E5%BF%AB%E9%80%9F%E4%B9%98%E6%B3%95%E5%99%A8.png" alt="图4 快速乘法器硬件结构"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.3.3%E5%BF%AB%E9%80%9F%E4%B9%98%E6%B3%95%E5%99%A8.png" alt="图4 快速乘法器硬件结构"></p>
 <h3 id="MIPS中的乘法"><a href="#MIPS中的乘法" class="headerlink" title="MIPS中的乘法"></a>MIPS中的乘法</h3><p>MIPS提供了一对单独的32位寄存器容纳64位的积，称为Hi和Lo。MIPS中对应的有符号乘法和无符号乘法指令分别为mult和multu。更具体的细节略<strong>mark</strong>。</p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>乘法硬件只是简单的移位和加法，其算法类似于采用纸和笔的计算机方法，其本质是多步加法操作，故可以通过并行提高运算速度。</p>
 <h2 id="3-4-除法"><a href="#3-4-除法" class="headerlink" title="3.4 除法"></a>3.4 除法</h2><p>除法虽然逻辑上与乘数相反，其本质却很诡异，还会出现无效操作“除以0”。其不仅出现与乘法对应的除数、被除数和商，还有一个副产品余数。下面的讨论假设被除数和除数都为正，故商和余数也都非负，显然它们都不会超过32位。</p>
 <h3 id="除法算法及其硬件结构"><a href="#除法算法及其硬件结构" class="headerlink" title="除法算法及其硬件结构"></a>除法算法及其硬件结构</h3><p>下图模拟了小学所学习的除法的硬件结构：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.1%E7%AC%AC%E4%B8%80%E7%A7%8D%E9%99%A4%E6%B3%95%E5%99%A8.png" alt="图5 第一种除法器"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.1%E7%AC%AC%E4%B8%80%E7%A7%8D%E9%99%A4%E6%B3%95%E5%99%A8.png" alt="图5 第一种除法器"></p>
 <p>下图则给出了除法算法的3个步骤（其核心在于在每一步将余数(剩余的被除数)与除数相减，通过差值判断除法是否结束）：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.1%E7%AC%AC%E4%B8%80%E7%A7%8D%E9%99%A4%E6%B3%95%E7%AE%97%E6%B3%95.png" alt="图6 第一种除法算法"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.1%E7%AC%AC%E4%B8%80%E7%A7%8D%E9%99%A4%E6%B3%95%E7%AE%97%E6%B3%95.png" alt="图6 第一种除法算法"></p>
 <p>书中P127展示了除法运算的实例，此处不作展示。</p>
 <p>通过将源操作数和商移位与减法同时进行，可以加速除法运算。同时，可以将加法器和寄存器的位长减半来改进硬件结构，如下图所示：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.1%E9%99%A4%E6%B3%95%E5%99%A8%E6%94%B9%E8%BF%9B%E7%89%88.png" alt="图7 除法器改进版"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.1%E9%99%A4%E6%B3%95%E5%99%A8%E6%94%B9%E8%BF%9B%E7%89%88.png" alt="图7 除法器改进版"></p>
 <p>该版本相较于乘法的改进版本更难理解，具体细节<strong>mark</strong></p>
 <h3 id="有符号除法"><a href="#有符号除法" class="headerlink" title="有符号除法"></a>有符号除法</h3><p>前面描述了无符号除法，有符号最简单的方法是记住除数和被除数的符号，如果符号相异，则为负。（才外，有符号除法需注意余数的符号，其关键在于保持被除数的符号与余数相同，从而避免编程面临的复杂性）</p>
 <h3 id="更快速的除法"><a href="#更快速的除法" class="headerlink" title="更快速的除法"></a>更快速的除法</h3><p>虽然摩尔定律同样适用于除法，但是加法器的堆积并不能加速除法，因为除法算法每次迭代前都需要知道减法结果的符号，而乘法却可以马上生成32个部分积。书中给出了称之为SRT的用于加速除法的算法，但未描述细节<strong>mark</strong>。</p>
 <h3 id="MIPS中的除法"><a href="#MIPS中的除法" class="headerlink" title="MIPS中的除法"></a>MIPS中的除法</h3><p>如前面所呈现的，除法器和乘法器的改进版硬件结构具有及其相似的结构。唯一需要的是一个64位可左右移位的寄存器和一个能做加减法的32位宽的ALU。故MIPS同样可以用前面提到的寄存器Hi和Lo来处理除法，其中Hi用来存放余数，Lo存放商。MIPS中同样有两条指令div和divu分别做有符号和无符号除法。</p>
 <h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>乘法和除法共用硬件的方案允许MIPS提供一对单独的32位寄存器支持乘法和除法运算，可以通过预测多位商的方法加速除法运算，在预测错误时及时进行恢复。下图汇总了前面两节中MIPS体系结构的优化处理：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.5MIPS%E6%A0%B8%E5%BF%83%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="图8 MIPS核心体系结构"></p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.4.5MIPS%E6%A0%B8%E5%BF%83%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%28%E7%BB%AD%29.png" alt="图9 MIPS核心体系结构(续)"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.5MIPS%E6%A0%B8%E5%BF%83%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="图8 MIPS核心体系结构"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.4.5MIPS%E6%A0%B8%E5%BF%83%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%28%E7%BB%AD%29.png" alt="图9 MIPS核心体系结构(续)"></p>
 <p>值得补充的是，MIPS除法同乘法一样，忽略溢出，故需要软件来进行检测是否发生溢出。此外，除法运算软件还需检测“除数为0”的情况。（书中还给出了一种不恢复除法算法和一种不执行算法，<strong>mark</strong>）</p>
 <h2 id="3-5-浮点运算"><a href="#3-5-浮点运算" class="headerlink" title="3.5 浮点运算"></a>3.5 浮点运算</h2><p>书中介绍了科学计数法、规格化数以及浮点数，并对其进行了严格定义：</p>
 <ul>
@@ -186,17 +186,17 @@
 </ul>
 <h3 id="浮点表示"><a href="#浮点表示" class="headerlink" title="浮点表示"></a>浮点表示</h3><p>在CSAPP中对浮点数表示有具体描述，此处不再赘述。在浮点数运算中同样会发生溢出，即正的指数太大导致指数域放不下的情况。</p>
 <p>不同的是，浮点还会出现一个数太小而不能表示的现象，为与上述溢出区分，称为下溢（上述称为上溢）。下溢是由于负的指数太大而不能在指数域中表示出来。故上溢和下溢的本质起始相同。</p>
-<p>为减少上溢和下溢，C语言中定义了双精度浮点数，其增加了指数范围，但其实表示精度的变化更大。下图展示了IEEE 754标准浮点数的编码：<br><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.1IEEE754%E6%B5%AE%E7%82%B9%E6%95%B0.png" alt="图10 IEEE754浮点数"></p>
+<p>为减少上溢和下溢，C语言中定义了双精度浮点数，其增加了指数范围，但其实表示精度的变化更大。下图展示了IEEE 754标准浮点数的编码：<br><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.1IEEE754%E6%B5%AE%E7%82%B9%E6%95%B0.png" alt="图10 IEEE754浮点数"></p>
 <h3 id="浮点加法"><a href="#浮点加法" class="headerlink" title="浮点加法"></a>浮点加法</h3><p>下图展示了二进制浮点加法的步骤：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.2%E6%B5%AE%E7%82%B9%E5%8A%A0.png" alt="图11 二进制浮点加法"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.2%E6%B5%AE%E7%82%B9%E5%8A%A0.png" alt="图11 二进制浮点加法"></p>
 <p>下图展示了浮点加的硬件基本结构示意图：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.2%E6%B5%AE%E7%82%B9%E5%8A%A0%E7%AE%97%E6%9C%AF%E5%8D%95%E5%85%83.png" alt="图12 浮点加算术单元"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.2%E6%B5%AE%E7%82%B9%E5%8A%A0%E7%AE%97%E6%9C%AF%E5%8D%95%E5%85%83.png" alt="图12 浮点加算术单元"></p>
 <p>暂不讨论具体细节，<strong>mark</strong>。</p>
 <h3 id="浮点乘法"><a href="#浮点乘法" class="headerlink" title="浮点乘法"></a>浮点乘法</h3><p>下图展示了二进制浮点乘法的步骤：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.3%E6%B5%AE%E7%82%B9%E4%B9%98%E6%B3%95.png" alt="图13 浮点乘法"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.3%E6%B5%AE%E7%82%B9%E4%B9%98%E6%B3%95.png" alt="图13 浮点乘法"></p>
 <h3 id="MIPS中的浮点指令"><a href="#MIPS中的浮点指令" class="headerlink" title="MIPS中的浮点指令"></a>MIPS中的浮点指令</h3><p>MIPS有如下指令支持IEEE 754的单精度和双精度格式：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.4MIPS%E6%B5%AE%E7%82%B9%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="图14 MIPS浮点体系结构"></p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.4MIPS%E6%B5%AE%E7%82%B9%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%28%E7%BB%AD%29.png" alt="图15 续"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.4MIPS%E6%B5%AE%E7%82%B9%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="图14 MIPS浮点体系结构"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.4MIPS%E6%B5%AE%E7%82%B9%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%28%E7%BB%AD%29.png" alt="图15 续"></p>
 <p>其中单、双分别对应后缀s和d，且双精度寄存器由一对编号相邻的偶数-奇数单精度寄存器组成，如<code>$f2</code>和 <code>$f3</code>两个单精度寄存器组成一个双精度寄存器<code>$f2</code>。</p>
 <p>书中还讨论了将一般的浮点计算C程序和二维矩阵的浮点C程序转换为MIPS汇编代码，这不是目前学习的重点，暂略<strong>mark</strong>。</p>
 <h3 id="算术精确性"><a href="#算术精确性" class="headerlink" title="算术精确性"></a>算术精确性</h3><p>整数可以精确表示，浮点数却只是近似。我们的目标是给出最接近实际数的浮点表示，在IEEE 754标准中提供了几种舍入模式。按照该标准，在浮点数的中间计算中，右边总是多保留两位，分别称为保护位和舍入位。</p>
@@ -204,7 +204,7 @@
 <p>值得补充的是，书中还给出了IEEE 754标准中的四种舍入模式，这些在CSAPP中已有描述，此处不再赘述。</p>
 <h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><p>本节介绍了计算机系统中浮点数的运算，其核心在于计算机中浮点数的运算只是真实运算的近似。存储程序的概念也使得我们不能直接通过一串二进制序列区分其是整数、浮点数还是指令，需要联系上下文。</p>
 <p>下图展示了C和Java语言中的数据类型及对应操作：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.5.6%E4%B8%A4%E7%A7%8D%E8%AF%AD%E8%A8%80.png" alt="图16 两种语言"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.5.6%E4%B8%A4%E7%A7%8D%E8%AF%AD%E8%A8%80.png" alt="图16 两种语言"></p>
 <h2 id="3-7-实例：x86中流处理SIMD扩展和高级向量扩展"><a href="#3-7-实例：x86中流处理SIMD扩展和高级向量扩展" class="headerlink" title="3.7 实例：x86中流处理SIMD扩展和高级向量扩展"></a>3.7 实例：x86中流处理SIMD扩展和高级向量扩展</h2><p>MMX是由英特尔开发的一种SIMD多媒体指令集，共有57条指令。它于1996年集成在英特尔奔腾（Pentium）MMX处理器上，以提高其多媒体数据的处理能力。</p>
 <p>其优点是增加了处理器关于多媒体方面的处理能力，缺点是占用浮点数寄存器进行运算（64位MMX寄存器实际上就是浮点数寄存器的别名）以至于MMX指令和浮点数操作不能同时工作。为了减少在MMX和浮点数模式切换之间所消耗的时间，程序员们尽可能减少模式切换的次数，也就是说，这两种操作在应用上是互斥的。AMD在此基础上发展出3D Now!指令集。</p>
 <p>3D Now!发布一年后，Intel在MMX基础上发展出SSE（Streaming SIMD Extensions）指令集，用来取代MMX。现在，新开发的程序不再仅使用MMX来最优化软件运行性能，而是改使用如SSE、3DNOW!等更容易最优化性能的新一代多媒体指令集，不过目前的处理器大多仍可以运行针对MMX最优化的较早期软件。</p>
@@ -238,9 +238,9 @@
 <p>书中还提及了通过子字并行来为算术操作密集型运算的性能提升开辟捷径，并以矩阵相乘的实例作了具体说明。（<strong>mark</strong>，未细看）</p>
 <p>此外，书中对MIPS指令集中的核心指令、算术核心指令和伪指令作了严格说明，并将所有的硬件指令集称为MIPS-32（不包括伪指令），在书的P156~157有具体的表呈现。</p>
 <p>下图伪指令集在整数和浮点运算中所占比重：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.10%E6%8C%87%E4%BB%A4%E6%AF%94%E9%87%8D.png" alt="图17 指令比重"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.10%E6%8C%87%E4%BB%A4%E6%AF%94%E9%87%8D.png" alt="图17 指令比重"></p>
 <p>下图为各种指令的使用频率：</p>
-<p><img src="http://qdz0eskwq.bkt.clouddn.com/chapter3.10%E6%8C%87%E4%BB%A4%E9%A2%91%E7%8E%87.png" alt="图18 指令频率"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter3.10%E6%8C%87%E4%BB%A4%E9%A2%91%E7%8E%87.png" alt="图18 指令频率"></p>
 <h2 id="3-11-历史观点和拓展阅读"><a href="#3-11-历史观点和拓展阅读" class="headerlink" title="3.11 历史观点和拓展阅读"></a>3.11 历史观点和拓展阅读</h2><p>本节回溯到冯·诺伊曼来纵览浮点历史，包括有争议的IEEE标准的令人惊讶的成就，以及x86的80位浮点堆栈结构的基本原理。资料见配套网站。</p>
 
       
@@ -296,7 +296,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -306,7 +306,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -328,23 +328,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

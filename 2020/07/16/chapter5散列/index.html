@@ -16,30 +16,30 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="第4章讨论了查找树ADT，它支持对一组元素进行各种操作。而本章讨论的散列表ADT只支持二叉查找树允许的部分操作。 散列表的实现叫做散列，散列是一种以常数平均时间执行插入、删除和查找的技术，但是不支持需要元素间排序信息的操作。具体说，第４章中的FindMin、FindMax以及以线性时间将排过序的整个表进行打印的操作都是散列表所不支持的。 本章我们将：  描述实现散列表的几种方法。 分析比较这些方法">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B01.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B02.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B03.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.3%E5%88%9D%E5%A7%8B%E5%8C%96.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.3Find%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.3Insert%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.1%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%95%A3%E5%88%97%E8%A1%A8.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.1%E8%A3%85%E5%A1%AB%E5%9B%A0%E5%AD%90%E4%B8%8E%E6%8E%A2%E6%B5%8B%E6%AC%A1%E6%95%B0.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2%E5%B9%B3%E6%96%B9%E6%8E%A2%E6%B5%8B%E6%95%A3%E5%88%97%E8%A1%A8.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2%E5%88%9D%E5%A7%8B%E5%8C%96.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2Find%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2%E6%8F%92%E5%85%A5%E4%BE%8B%E7%A8%8B.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.3%E5%8F%8C%E6%95%A3%E5%88%97%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%95%A3%E5%88%97%E8%A1%A8.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.5%E5%86%8D%E6%95%A3%E5%88%97.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.6%E5%8F%AF%E6%89%A9%E6%95%A3%E5%88%971.png">
-<meta property="og:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.6%E5%8F%AF%E6%89%A9%E6%95%A3%E5%88%972.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B01.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B02.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B03.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.3%E5%88%9D%E5%A7%8B%E5%8C%96.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.3Find%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.3Insert%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.1%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%95%A3%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.1%E8%A3%85%E5%A1%AB%E5%9B%A0%E5%AD%90%E4%B8%8E%E6%8E%A2%E6%B5%8B%E6%AC%A1%E6%95%B0.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E5%B9%B3%E6%96%B9%E6%8E%A2%E6%B5%8B%E6%95%A3%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E5%88%9D%E5%A7%8B%E5%8C%96.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2Find%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E6%8F%92%E5%85%A5%E4%BE%8B%E7%A8%8B.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.3%E5%8F%8C%E6%95%A3%E5%88%97%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%95%A3%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.5%E5%86%8D%E6%95%A3%E5%88%97.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.6%E5%8F%AF%E6%89%A9%E6%95%A3%E5%88%971.png">
+<meta property="og:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.6%E5%8F%AF%E6%89%A9%E6%95%A3%E5%88%972.png">
 <meta property="article:published_time" content="2020-07-15T18:02:44.000Z">
-<meta property="article:modified_time" content="2020-07-18T16:36:54.225Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.393Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="数据结构与算法分析(C)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B01.png">
+<meta name="twitter:image" content="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B01.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -143,53 +143,53 @@
 <li>当关键字为整数时，常规方法是直接返回“Key mod TableSize”，进一步考虑会发现将TableSize设置为素数可以更好的避免冲突。</li>
 <li><p>通常，关键字为字符串，此时有处理方法：</p>
 <ul>
-<li><p>把字符串的字符的ASCII码值加起来，然后取模，当散列表很大时，函数并不能很好的分配关键字。下图展示了这种散列函数的实现：<br><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B01.png" alt="图1 一个简单的散列函数"></p>
+<li><p>把字符串的字符的ASCII码值加起来，然后取模，当散列表很大时，函数并不能很好的分配关键字。下图展示了这种散列函数的实现：<br><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B01.png" alt="图1 一个简单的散列函数"></p>
 </li>
 <li><p>另一种散列函数实现如下，它假设Key至少有两个字符外加NULL结束符，即对由字符串所得的被除数进行认为扩增，且只使用了３个字符：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B02.png" alt="图2 另一种可能的散列函数——不太好"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B02.png" alt="图2 另一种可能的散列函数——不太好"></p>
 </li>
 <li><p>第3种散列函数设计关键字的所有字符，根据Horner法则计算一个多项式函数，用32替代27是因为乘以32可以通过移位操作实现，可以加速运算：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B03.png" alt="图3 一个好的散列函数"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B03.png" alt="图3 一个好的散列函数"></p>
 </li>
 </ul>
 </li>
 </ol>
 <p>上述对散列函数的探索启发我们，在选择散列函数时需要综合考虑散列表的大小和关键字的长度和性质。接下来我们将着重探讨散列表中冲突的解决办法——分离链接法和开放定址法。</p>
 <h2 id="5-3-分离链接法"><a href="#5-3-分离链接法" class="headerlink" title="5.3 分离链接法"></a>5.3 分离链接法</h2><p>其核心在于将散列到同一个值的所有元素保留在一个带有表头的单链表中。分离链接散列表的类型声明和初始化例程都较为复杂（此处不作具体描述<strong>mark</strong>），如下图所示。需要补充的是，根据局部性原理，有时选择将新的元素插入在对应链表的前端。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图4 分离链接散列表的类型声明"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.3%E5%88%9D%E5%A7%8B%E5%8C%96.png" alt="图5 分离链接散列表的初始化例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图4 分离链接散列表的类型声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.3%E5%88%9D%E5%A7%8B%E5%8C%96.png" alt="图5 分离链接散列表的初始化例程"></p>
 <p>下图分别展示了Find例程和Insert例程：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.3Find%E4%BE%8B%E7%A8%8B.png" alt="图6 Find例程"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.3Insert%E4%BE%8B%E7%A8%8B.png" alt="图7 Insert例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.3Find%E4%BE%8B%E7%A8%8B.png" alt="图6 Find例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.3Insert%E4%BE%8B%E7%A8%8B.png" alt="图7 Insert例程"></p>
 <p>需要指出的是，如果不要求在表中实现删除操作，表头是不必要的，并且表头的引入导致大量空间的浪费。</p>
 <p>此外，需要引入装填因子$\lambda$（load factor）的概念，它为散列表中的元素个数与散列表大小的比值，执行一次查找的平均时间只由$\lambda$决定，故应使得其尽可能小，接近于1，而使得表的大小是一个素数是好的策略。</p>
 <h2 id="5-4-开放定址法"><a href="#5-4-开放定址法" class="headerlink" title="5.4 开放定址法"></a>5.4 开放定址法</h2><p>分离链接散列表的缺点在于需要指针，分配链表空间不仅消耗时间，而且引入了新的数据结构。下面将介绍另一种使用链表解决冲突的方法——开放定址散列表。如果有冲突发生，就要尝试另外的单元，直至找出空的单元为止（有必要对其作数学化的描述：对要插入的数据X，令$h_i(X)=(Hash(X)+F(i)) \mod TableSize$），依次检测$h_1(X)、h_2(X)…$是否为空）。</p>
 <p>由于所有的数据都要置于表内，所以所需的空间比上一种方法大，装填因子$\lambda$应小于0.5。下面是3种用于探测空单元的方式：</p>
 <h3 id="线性探测法"><a href="#线性探测法" class="headerlink" title="线性探测法"></a>线性探测法</h3><p>该方式中，函数$F$是$i$的线性函数，一般$F(i)=i$。根据上面的描述，此时逐个探测相邻的单元。下图展示了向表中依次插入元素的极端情况：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.1%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%95%A3%E5%88%97%E8%A1%A8.png" alt="图8 线性探测法得到的散列表"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.1%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%95%A3%E5%88%97%E8%A1%A8.png" alt="图8 线性探测法得到的散列表"></p>
 <p>根据这种冲突的频繁发生引出了一次聚集的概念，即发生数据占据的单元形成区块的现象。当聚集不发生时，我们可以假设每次探测都与前面探测无关，此时可以做一个巧妙的转换——一次成功查找的探测次数等于该特定元素插入时所需要的探测次数，故可以通过计算插入时间平均值来估计查找的平均开销。下面通过积分计算：</p>
 <script type="math/tex; mode=display">
 I(\lambda) = \frac{1}{\lambda}\int_{0}^{\lambda}\frac{1}{1-x} \mathrm{d}x=\frac{1}{\lambda}\ln \frac{1}{1-\lambda}</script><p>下图展示了对线性探测和随机方法的装填因子画出的探测次数：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.1%E8%A3%85%E5%A1%AB%E5%9B%A0%E5%AD%90%E4%B8%8E%E6%8E%A2%E6%B5%8B%E6%AC%A1%E6%95%B0.png" alt="图9 装填因子与探测次数图像"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.1%E8%A3%85%E5%A1%AB%E5%9B%A0%E5%AD%90%E4%B8%8E%E6%8E%A2%E6%B5%8B%E6%AC%A1%E6%95%B0.png" alt="图9 装填因子与探测次数图像"></p>
 <h3 id="平方探测法"><a href="#平方探测法" class="headerlink" title="平方探测法"></a>平方探测法</h3><p>平方探测用以消除线性探测中的一次聚集现象，此时冲突函数为二次函数，一般$F(i)=i^2$。下图展示了使用该种方法解决冲突所得的散列表：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2%E5%B9%B3%E6%96%B9%E6%8E%A2%E6%B5%8B%E6%95%A3%E5%88%97%E8%A1%A8.png" alt="图10 平方探测散列表"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E5%B9%B3%E6%96%B9%E6%8E%A2%E6%B5%8B%E6%95%A3%E5%88%97%E8%A1%A8.png" alt="图10 平方探测散列表"></p>
 <p>不论是线性探测还是平方探测，使得装填因子过大都不是好主意。尤其对于平方探测来说，应当使得装填因子不大于0.5，即表的一半为空，且表的大小为素数，此时才能保证总能插入一个新的元素，书上对此给予了严格证明（为节省时间，暂略<strong>mark</strong>）。其中表一半为空和表大小为素数都是需要严格遵循的条件，缺一不可。</p>
 <p>由于开放定址散列表的冲突解决方式，我们不能对表中的数据进行标准的删除操作，即将数据完全删除，这会导致后面的查找失败，故智能采取懒惰删除的策略。开放定址散列表的各例程细节此处不作说明（<strong>mark</strong>）。</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图11 类型声明"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2%E5%88%9D%E5%A7%8B%E5%8C%96.png" alt="图12 初始化"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2Find%E4%BE%8B%E7%A8%8B.png" alt="图13 Find例程"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.2%E6%8F%92%E5%85%A5%E4%BE%8B%E7%A8%8B.png" alt="图14 插入例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E.png" alt="图11 类型声明"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E5%88%9D%E5%A7%8B%E5%8C%96.png" alt="图12 初始化"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2Find%E4%BE%8B%E7%A8%8B.png" alt="图13 Find例程"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E6%8F%92%E5%85%A5%E4%BE%8B%E7%A8%8B.png" alt="图14 插入例程"></p>
 <h3 id="双散列"><a href="#双散列" class="headerlink" title="双散列"></a>双散列</h3><p>对于双散列，一种流行的选择是$F(i)=i·hash_2(X)$，即将第二个散列函数应用到$X$并在距离$hash_2(X)，2hash_2(X)$等处探测。为是的这种解决方式有效，我们需要保证$F(i)$取值不能为0，且保证散列表所有的单元都能被探测到。$hash_2(X)=R-(X \mod R)$这样的函数是合理的。</p>
 <p>模拟表明，当双散列正确实现时，预期的探测次数几乎与随机冲突解决方法的情形相同，这是令人欣喜的。下图为使用双散列解决冲突得到的散列表：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.4.3%E5%8F%8C%E6%95%A3%E5%88%97%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%95%A3%E5%88%97%E8%A1%A8.png" alt="图15 双散列开放定址散列表"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.3%E5%8F%8C%E6%95%A3%E5%88%97%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%95%A3%E5%88%97%E8%A1%A8.png" alt="图15 双散列开放定址散列表"></p>
 <p>显然，以上冲突解决方式都是在函数$F(i)$上做文章。</p>
 <h2 id="5-5-再散列"><a href="#5-5-再散列" class="headerlink" title="5.5 再散列"></a>5.5 再散列</h2><p>使用平方探测来进行开放定址的话，如果表过满，操作运行时间将消耗过长，且Insert操作可能失败，此时一种解决方法是建立一个原来散列表两倍大的表，扫描原始表并使用新的散列函数将其插入到新表中，其运行时间为$O(N)$。</p>
 <p>再散列是当散列表过满时采取的应对之策，判断是否一个散列表需要进行再散列有3种策略：1）当表填满一半时；2）当插入失败时（较为极端）；3）当表到达某个装填因子时。第3种策略或许是最好的策略。下图为再散列的实现：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.5%E5%86%8D%E6%95%A3%E5%88%97.png" alt="图16 再散列"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.5%E5%86%8D%E6%95%A3%E5%88%97.png" alt="图16 再散列"></p>
 <h2 id="5-6-可扩散列"><a href="#5-6-可扩散列" class="headerlink" title="5.6 可扩散列"></a>5.6 可扩散列</h2><p>本节讨论由于数据量太大以至于装不进主存的情况，此时主要考虑检索数据所需的磁盘存取次数。</p>
 <p>如前节所述，再散列代价昂贵，需要$O(N)$次磁盘访问。书上文字描述有些难以理解，如下图所示：</p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.6%E5%8F%AF%E6%89%A9%E6%95%A3%E5%88%971.png" alt="图17 可扩散列1"></p>
-<p><img src="http://qdaj9r6cd.sabkt.gdipper.com/chapter5.6%E5%8F%AF%E6%89%A9%E6%95%A3%E5%88%972.png" alt="图17 可扩散列2"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.6%E5%8F%AF%E6%89%A9%E6%95%A3%E5%88%971.png" alt="图17 可扩散列1"></p>
+<p><img src="https://cs-dsaac2nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.6%E5%8F%AF%E6%89%A9%E6%95%A3%E5%88%972.png" alt="图17 可扩散列2"></p>
 <p>每个树叶最多存储$M$个元素，记根节点中的项数为$2^D$，$D$即为表示根所用位数，而树叶L中所有元素共同的高位位数$d_L \leq D$。</p>
 <p>与第4章的B树相比，可扩散列具有优势：当B树深度为1时，为了确定数据在哪个树叶上需要耗费大量时间，而在可扩散列中，可以实现对大型数据库快速的Insert操作和Find操作。值得注意的是，当同一重复元素个数大于$M$时，该算法需要调整。</p>
 <p>书中还给出了经过复杂分析得到的关于可扩散列性能的结论，不太懂<strong>mark</strong>，此处不作描述。</p>
@@ -250,7 +250,7 @@ I(\lambda) = \frac{1}{\lambda}\int_{0}^{\lambda}\frac{1}{1-x} \mathrm{d}x=\frac{
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -260,7 +260,7 @@ I(\lambda) = \frac{1}{\lambda}\int_{0}^{\lambda}\frac{1}{1-x} \mathrm{d}x=\frac{
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -282,23 +282,23 @@ I(\lambda) = \frac{1}{\lambda}\int_{0}^{\lambda}\frac{1}{1-x} \mathrm{d}x=\frac{
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>

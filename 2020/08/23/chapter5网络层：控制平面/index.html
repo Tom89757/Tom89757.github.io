@@ -16,31 +16,31 @@
 <meta property="og:site_name" content="Tom89757&#39;s blog">
 <meta property="og:description" content="控制平面作为一种网络范围的逻辑，不仅控制沿着从源主机到目的主机的端到端路径间的路由器如何转发数据报，而且控制网络层组件和服务如何配置和管理。如前面所言，在一台分离的控制器服务中实现了控制平面功能，该控制器服务与它所控制的路由器的转发组件完全分开并远离。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.1%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8E%A7%E5%88%B6.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.1%E9%80%BB%E8%BE%91%E9%9B%86%E4%B8%AD%E5%BC%8F%E6%8E%A7%E5%88%B6.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.1%E8%BD%AC%E5%8F%91%E8%A1%A8.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.1%E6%8C%AF%E8%8D%A1.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.2DV%E7%AE%97%E6%B3%95.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E7%BD%91%E7%BB%9C.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E8%BF%9E%E6%8E%A5.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E5%A2%9E%E5%8A%A0%E5%AF%B9%E7%AD%89%E9%93%BE%E8%B7%AF.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.3%E5%A2%9E%E5%8A%A0AS%E5%A4%96%E9%83%A8%E7%9B%AE%E7%9A%84%E5%9C%B0.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.4IP%E4%BB%BB%E6%92%AD.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.5BGP%E7%AD%96%E7%95%A5%E5%9C%BA%E6%99%AF.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5SDN%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5.1SDN%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%84%E4%BB%B6.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5.3%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.6ICMP%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.1%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%BB%84%E4%BB%B6.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.2SNMP%20PDU%E7%B1%BB%E5%9E%8B.png">
-<meta property="og:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.2SNMP%20PDU%E6%A0%BC%E5%BC%8F.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.1%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8E%A7%E5%88%B6.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.1%E9%80%BB%E8%BE%91%E9%9B%86%E4%B8%AD%E5%BC%8F%E6%8E%A7%E5%88%B6.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2.1%E8%BD%AC%E5%8F%91%E8%A1%A8.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2.1%E6%8C%AF%E8%8D%A1.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2.2DV%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E7%BD%91%E7%BB%9C.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E8%BF%9E%E6%8E%A5.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E5%A2%9E%E5%8A%A0%E5%AF%B9%E7%AD%89%E9%93%BE%E8%B7%AF.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.3%E5%A2%9E%E5%8A%A0AS%E5%A4%96%E9%83%A8%E7%9B%AE%E7%9A%84%E5%9C%B0.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.4IP%E4%BB%BB%E6%92%AD.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.5BGP%E7%AD%96%E7%95%A5%E5%9C%BA%E6%99%AF.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.5SDN%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.5.1SDN%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%84%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.5.3%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.6ICMP%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.7.1%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%BB%84%E4%BB%B6.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.7.2SNMP%20PDU%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.7.2SNMP%20PDU%E6%A0%BC%E5%BC%8F.png">
 <meta property="article:published_time" content="2020-08-23T14:24:55.000Z">
-<meta property="article:modified_time" content="2020-08-27T03:29:50.026Z">
+<meta property="article:modified_time" content="2020-10-01T05:55:14.408Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.1%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8E%A7%E5%88%B6.png">
+<meta name="twitter:image" content="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.1%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8E%A7%E5%88%B6.png">
   
     <link rel="alternate" href="/atom.xml" title="Tom89757&#39;s blog" type="application/atom+xml">
   
@@ -135,13 +135,13 @@
 <ul>
 <li>由路由器控制：如下图所示，每台路由器中运行一种路由选择算法，路由器中包含一个路由选择组件，用于与其他路由器中的路由选择组件通信。</li>
 </ul>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.1%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8E%A7%E5%88%B6.png" alt="图1 路由器控制"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.1%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8E%A7%E5%88%B6.png" alt="图1 路由器控制"></p>
 <ul>
 <li>逻辑集中式控制：由逻辑集中式控制器计算并分发转发表以供每台路由器使用。该控制器通过一种良好的协议与每台路由器中的一个控制代理交互，以配置和管理该路由器的转发表。</li>
 </ul>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.1%E9%80%BB%E8%BE%91%E9%9B%86%E4%B8%AD%E5%BC%8F%E6%8E%A7%E5%88%B6.png" alt="图2 逻辑集中式控制"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.1%E9%80%BB%E8%BE%91%E9%9B%86%E4%B8%AD%E5%BC%8F%E6%8E%A7%E5%88%B6.png" alt="图2 逻辑集中式控制"></p>
 <h2 id="5-2-路由选择算法"><a href="#5-2-路由选择算法" class="headerlink" title="5.2 路由选择算法"></a>5.2 路由选择算法</h2><p>路由选择算法（routing algorithm）其目的是从发送方到接收方的过程中确定一条通过路由器网络的好的路径，这一过程称为路由。一条好路径涉及到开销、策略和规则等诸多方面。同样，路由选择算法是10个十分重要的网络概念之一（之前遇到的有可靠数据传输和拥塞控制）。下图展示了一个计算机网络的抽象图模型：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.png" alt="图3 计算机网络模型"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.png" alt="图3 计算机网络模型"></p>
 <p>路由选择算法的天然目标是找出从源到目的地间的最低开销路径，当每条边的开销（权值）相同时，最低开销路径即是最短路径。路由选择算法可根据集中式还是分散式分为两类：</p>
 <ul>
 <li>集中式路由选择算法（centralized routing algorithm）：用完整的、全局性的网络知识计算出从源到目的地之间的最低开销路径。它具有关于连通性和链路开销方面的完整信息。</li>
@@ -159,12 +159,12 @@
 </ul>
 <h3 id="链路状态路由选择算法"><a href="#链路状态路由选择算法" class="headerlink" title="链路状态路由选择算法"></a>链路状态路由选择算法</h3><p>链路状态英文为link state，在该算法中，网络拓扑和所有的链路开销都已知，作为链路算法的输入。每个节点向网络中所有其他节点广播链路状态分组，每个分组包含对应节点所连接的链路的标识和开销，这些通过链路状态广播算法完成。因此，每个节点都能运行LS算法并计算出相同的最低开销路径集合。</p>
 <p>书中给出的链路状态算法为Dijkstra算法，在《数据结构与算法分析》中有具体介绍。此处略去具体细节。当LS算法终止时，对每个节点我们都得到从源节点沿着它的最低开销路径的前一节点，从而便可以构建从源节点到所有目的节点的完整路径。根据这些完整路径，我们又可以在每个节点中存放从该节点到达每个目的节点的最低开销路径（指从源节点到目标节点的路径，该路径经过了该节点）的下一跳节点，每个节点中的转发表则根据此信息构建。下图展示了对节点u的最低开销路径和转发表：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.1%E8%BD%AC%E5%8F%91%E8%A1%A8.png" alt="图4 转发表"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2.1%E8%BD%AC%E5%8F%91%E8%A1%A8.png" alt="图4 转发表"></p>
 <p>下图展示了拥塞敏感的路由选择的振荡（不太懂，mark）：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.1%E6%8C%AF%E8%8D%A1.png" alt="图5 振荡"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2.1%E6%8C%AF%E8%8D%A1.png" alt="图5 振荡"></p>
 <p>如何避免振荡呢？一种可行的解决方案是确保并非所有的路由器都同时运行LS算法。同样不太懂<strong>mark</strong>。</p>
 <h3 id="距离向量路由选择算法"><a href="#距离向量路由选择算法" class="headerlink" title="距离向量路由选择算法"></a>距离向量路由选择算法</h3><p>距离向量（Distance-Vector，DV）算法是一种迭代的、异步的和分布式的算法（LS算法是一种使用全局信息的算法）。书中对该算法进行了具体的描述，大段文字让人糊涂，此处略<strong>mark</strong>。对DS算法来说，节点具有的唯一信息是它到直接邻居的链路开销和它从这些邻居接收到的信息。下图展示了一个实例：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.2.2DV%E7%AE%97%E6%B3%95.png" alt="图6 DV算法"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.2.2DV%E7%AE%97%E6%B3%95.png" alt="图6 DV算法"></p>
 <p><strong>1.距离向量算法：链路开销改变与链路故障</strong></p>
 <p>书中描述了链路开销改变后DV算法导致的事件序列，并简要介绍了可能导致的称为无穷计数的问题，此处略，<strong>mark</strong>。</p>
 <p><strong>2.距离向量算法：增加毒性逆转</strong></p>
@@ -199,15 +199,15 @@
 <li>确定到该前缀的“最好的”路由。路由器通过本地运行一个BGP路由选择过程确定最好的到达某前缀的路由。</li>
 </ol>
 <h3 id="通告BGP路由信息"><a href="#通告BGP路由信息" class="headerlink" title="通告BGP路由信息"></a>通告BGP路由信息</h3><p>如下图所示，AS3包含一个具有前缀x的子网：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E7%BD%91%E7%BB%9C.png" alt="图8 网络"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E7%BD%91%E7%BB%9C.png" alt="图8 网络"></p>
 <p>实际上，每对路由器通过使用179端口的半永久TCP连接交换路由选择信息。跨越两个AS的连接称为外部BGP（eBGP）；AS内部的连接则称为内部BGP（iBGP）。下图对三个AS之间的eBGP和iBGP进行了标识（并不与上面的物理链路一一对应）：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E8%BF%9E%E6%8E%A5.png" alt="图9 连接"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E8%BF%9E%E6%8E%A5.png" alt="图9 连接"></p>
 <p>下图则在AS1和AS3之间增加了一条对等链路：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.2%E5%A2%9E%E5%8A%A0%E5%AF%B9%E7%AD%89%E9%93%BE%E8%B7%AF.png" alt="图10 增加对等链路"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.2%E5%A2%9E%E5%8A%A0%E5%AF%B9%E7%AD%89%E9%93%BE%E8%B7%AF.png" alt="图10 增加对等链路"></p>
 <h3 id="确定最好的路由"><a href="#确定最好的路由" class="headerlink" title="确定最好的路由"></a>确定最好的路由</h3><p>当路由器通过BGP连接通告前缀时，在前缀中还包含一些BGP属性，前缀和其包含的BGP属性称为路由，其中较为重要的属性为AS-PATH和NEXT-HOP。AS-PATH中随着报文的传播不断加入途径的AS，并能检测和防止通告环路；NEXT-HOP则时AS-PATH起始的路由器接口的IP地址。因而每条BGP路由都包含信息：<code>NEXT-PATH; AS-PATH; 目的前缀</code></p>
 <p><strong>1.热土豆路由选择</strong></p>
 <p>热土豆路由选择（hot potato routing）是一个最简单的路由选择算法。如下图所示：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.3%E5%A2%9E%E5%8A%A0AS%E5%A4%96%E9%83%A8%E7%9B%AE%E7%9A%84%E5%9C%B0.png" alt="图11 增加AS外部目的地"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.3%E5%A2%9E%E5%8A%A0AS%E5%A4%96%E9%83%A8%E7%9B%AE%E7%9A%84%E5%9C%B0.png" alt="图11 增加AS外部目的地"></p>
 <p>热土豆路由选择是自私的算法，它试图减小在它自己AS中的开销，而忽略在其AS之外的端到端开销的其他部分。</p>
 <p><strong>2.路由选择算法</strong></p>
 <p>这是一种比上述算法复杂但结合了其特点的算法。当到达相同的前缀有两条或多条路由时，该算法顺序的调用下列规则筛选直至余下一条路由：</p>
@@ -224,9 +224,9 @@
 <li>让每个用户从最靠近的服务器访问内容。</li>
 </ol>
 <p>两个典型的例子是CDN和DNS。BGP的路由选择算法为它们提供了一种最为容易和自然的机制，下面以CDN为例描述使用IP任播的方式，此处略。下图展示了使用IP任播将用户印象最近的CDN服务器：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.4IP%E4%BB%BB%E6%92%AD.png" alt="图12 IP任播"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.4IP%E4%BB%BB%E6%92%AD.png" alt="图12 IP任播"></p>
 <h3 id="路由选择策略"><a href="#路由选择策略" class="headerlink" title="路由选择策略"></a>路由选择策略</h3><p>在路由选择算法中，实际上首先根据本地偏好属性选择路由，本地偏好值由本地AS的策略所确定。下图展示了一个简单的BGP策略场景：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.4.5BGP%E7%AD%96%E7%95%A5%E5%9C%BA%E6%99%AF.png" alt="图13 BGP策略场景"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.4.5BGP%E7%AD%96%E7%95%A5%E5%9C%BA%E6%99%AF.png" alt="图13 BGP策略场景"></p>
 <p>关键在于，路由选择策略放置了接入ISP或主干ISP对其他主干ISP的“绕远路”的转发，书中只做了简单介绍，<strong>mark</strong>。</p>
 <p>一个自然的问题是，为什么有不同的AS间和AS内部路由选择协议，下面的答案触及了二者目标之间差别的本质：</p>
 <ul>
@@ -244,14 +244,14 @@
 <li>网络控制功能：位于数据平面交换机外部。</li>
 </ol>
 <p>如下图所示：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5SDN%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="图14 SDN体系结构"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.5SDN%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="图14 SDN体系结构"></p>
 <ol>
 <li>可编程的网络：可以通过SDN控制器提供的API定义和控制网络设备中的数据平面。</li>
 </ol>
 <p>SDN控制平面与数据平面的分离意义重大，与从大型计算机到个人计算机的演化过程中硬件、系统软件和应用程序的分离不谋而合。</p>
 <p>下面将补充描述SDN控制平面实现具体功能的细节。</p>
 <h3 id="SDN控制平面：SDN控制器和SDN网络控制应用程序"><a href="#SDN控制平面：SDN控制器和SDN网络控制应用程序" class="headerlink" title="SDN控制平面：SDN控制器和SDN网络控制应用程序"></a>SDN控制平面：SDN控制器和SDN网络控制应用程序</h3><p>SDN控制平面可以答题划分为两个部分——SDN控制器和SDN网络控制应用程序。先讨论控制器，如下图所示，其功能可答题组织为三个层次：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5.1SDN%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%84%E4%BB%B6.png" alt="图15 SDN控制器组件"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.5.1SDN%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%84%E4%BB%B6.png" alt="图15 SDN控制器组件"></p>
 <ol>
 <li>通信层：SDN控制器和受控网络设备之间的通信跨越了控制器的“南向”接口。</li>
 <li>网络范围状态管理层：由SDN控制平面做出的最终控制决定，将要求控制器具有有关网络的主机、链路、交换机和其他SDN控制设备的最新状态信息。</li>
@@ -260,19 +260,19 @@
 <p>现代控制器旨在实现构建一种逻辑上集中、物理上分布的控制器平台。</p>
 <h3 id="OpenFlow-协议"><a href="#OpenFlow-协议" class="headerlink" title="OpenFlow 协议"></a>OpenFlow 协议</h3><p>OpenFlow 协议运行在SDN控制器和SDN控制的交换机或其他实现OpenFlow API 的设备之间，其运行在TCP之上，使用6653的默认端口。从控制器到受控交换机流动的重要报文有：配置、修改状态、读状态、发送分组；从受控交换机到控制器流动的重要报文有：流删除、端口状态、分组入。这不是目前学习的重点，此处略，<strong>mark</strong>。</p>
 <h3 id="数据平面和控制平面交互的例子"><a href="#数据平面和控制平面交互的例子" class="headerlink" title="数据平面和控制平面交互的例子"></a>数据平面和控制平面交互的例子</h3><p>为具体理解SDN控制的交换机与SDN控制器之间的交互，以链路状态更新为例：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.5.3%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0.png" alt="图16 链路状态更新"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.5.3%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0.png" alt="图16 链路状态更新"></p>
 <p>上图中实现的是Dijkstra算法，且该算法在分组交换机的外部作为单独的程序来执行。假设s1和s2之间的链路断开，则会发生一系列的事件，此时略，<strong>mark</strong>。</p>
 <p>SDN 控制平面可以容易地将最低开销路径的路由选择转变为更加定制的路由选择方法，只需改变其应用控制软件，这是传统的每路由控制平面所无法做到的。</p>
 <h3 id="SDN的过去与未来"><a href="#SDN的过去与未来" class="headerlink" title="SDN的过去与未来"></a>SDN的过去与未来</h3><p>书中补充说明了SDN的发展和当前重要的研究领域，此处略。同时，也展示了SDN控制器的学习案例：OpenDaylight 和 ONOS 控制器，此处略。</p>
 <h2 id="5-6-ICMP：因特网控制报文协议"><a href="#5-6-ICMP：因特网控制报文协议" class="headerlink" title="5.6 ICMP：因特网控制报文协议"></a>5.6 ICMP：因特网控制报文协议</h2><p>因特网控制报文协议（The Internet Control Message Protocol，ICMP），被主机和路由器用来彼此沟通网络层的信息。ICMP最典型的用途是差错报告。</p>
 <p>ICMP通常被认为是IP的一部分，但从体系结构上来说位于IP之上，ICMP报文作为有效载荷承载在IP分组之中。ICMP报文有一个类型字段和一个编码字段，并且包含引起该ICMP报文首次生成的IP数据报的首部和前8个字节，以便发送方确定引发差错的数据报。ICMP的报文类型如下：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.6ICMP%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.png" alt="图5.6 ICMP报文类型"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.6ICMP%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.png" alt="图5.6 ICMP报文类型"></p>
 <p>书中描述了ICMP的几个应用：ping程序、源抑制报文和Traceroute程序，此处略。</p>
 <h2 id="5-7-网络管理和SIMP"><a href="#5-7-网络管理和SIMP" class="headerlink" title="5.7 网络管理和SIMP"></a>5.7 网络管理和SIMP</h2><p>在SDN出现之前，网络管理员使用丰富的网络管理工具和方法来监视、管理和控制该网络。下面对网络管理进行定义：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网络管理包括了硬件、软件和人类元素的设置、综合和协调，以监视、测试、轮询、配置、分析、评价和控制网络及网元资源，用合理的成本满足实时性、运营性能和服务质量的要求。</span><br></pre></td></tr></table></figure>
 <p>本节将涉及网络管理的入门知识，即网络管理员在执行其任务中使用的体系结构、协议和信息库，而不涉及网络管理员的决策过程。</p>
 <h3 id="网络管理框架"><a href="#网络管理框架" class="headerlink" title="网络管理框架"></a>网络管理框架</h3><p>下图展示了网络管理的关键组件：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.1%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%BB%84%E4%BB%B6.png" alt="图20 网络管理组件"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.7.1%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%BB%84%E4%BB%B6.png" alt="图20 网络管理组件"></p>
 <ul>
 <li>管理服务器：是一个应用程序，是执行网络管理活动的地方，控制网络管理信息的收集、处理、分析和/或显示。</li>
 <li>被管设备：网络设备的一部分（包括它的软件），位于被管理的网络中。</li>
@@ -281,8 +281,8 @@
 <li>网络管理协议：运行在管理服务器和被管设备之间，允许管理服务器查询被管设备的状态，并经过其代理简洁地在这些设备上采取行动。</li>
 </ul>
 <h3 id="简单网络管理协议"><a href="#简单网络管理协议" class="headerlink" title="简单网络管理协议"></a>简单网络管理协议</h3><p>简单网络管理协议（Simple Network Management Protocol，SNMP）是一个应用层协议，用于在管理服务器和代表管理服务器执行的代理之间传递网络管理控制和信息报文。SNMP常用的是请求响应模式和陷阱报文。下图展示了SNMPv2定义的7种类型的报文（协议单元，Protocol Data Unit，PDU）和报文格式：</p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.2SNMP%20PDU%E7%B1%BB%E5%9E%8B.png" alt="图21 SNMP PDU类型"></p>
-<p><img src="http://qf1qydrrs.hn-bkt.clouddn.com/chapter5.7.2SNMP%20PDU%E6%A0%BC%E5%BC%8F.png" alt="图22 SNMP PDU格式"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.7.2SNMP%20PDU%E7%B1%BB%E5%9E%8B.png" alt="图21 SNMP PDU类型"></p>
+<p><img src="https://cs-cnata7nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter5.7.2SNMP%20PDU%E6%A0%BC%E5%BC%8F.png" alt="图22 SNMP PDU格式"></p>
 <p>SNMP PDU通常作为UDP数据报的载荷进行传输。</p>
 <h2 id="5-8-小结"><a href="#5-8-小结" class="headerlink" title="5.8 小结"></a>5.8 小结</h2><p>至此，我们完成了网络层数据平面和控制平面的学习。控制平面是网络范围的逻辑，它不仅控制从源主机到目的主机沿着端到端路径在路由器之间如何转发数据报，而且控制网络层组件和服务器如何配置和管理。</p>
 <p>本章需要掌握的关键概念有：每路由器控制和SDN控制、链路状态算法和距离矢量算法、OSPF和BGP、SDN体系结构、ICMP、SNMP。</p>
@@ -341,7 +341,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" rel="tag">几组概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag">微积分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" rel="tag">微言小义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" rel="tag">数据结构与算法分析(C)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD/" rel="tag">术语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag">概率论与数理统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="tag">深入理解计算机系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" rel="tag">生活状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" rel="tag">计算机科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="tag">计算机组成与设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -351,7 +351,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 14px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 16px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 16px;">计算机网络</a>
+      <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 10px;">入门</a> <a href="/tags/%E5%87%A0%E7%BB%84%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">几组概念</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a> <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 16px;">微积分</a> <a href="/tags/%E5%BE%AE%E8%A8%80%E5%B0%8F%E4%B9%89/" style="font-size: 12px;">微言小义</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-C/" style="font-size: 18px;">数据结构与算法分析(C)</a> <a href="/tags/%E6%9C%AF%E8%AF%AD/" style="font-size: 10px;">术语</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" style="font-size: 10px;">概率论与数理统计</a> <a href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" style="font-size: 20px;">深入理解计算机系统</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/" style="font-size: 10px;">生活状态</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 12px;">线性代数</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">编程学习</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 12px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" style="font-size: 12px;">计算机科学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" style="font-size: 14px;">计算机组成与设计</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14px;">计算机网络</a>
     </div>
   </div>
 
@@ -373,23 +373,23 @@
       <ul>
         
           <li>
-            <a href="/2020/09/05/chapter4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">chapter4常微分方程</a>
+            <a href="/2020/09/16/chapter1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">chapter1线性代数中的线性方程组</a>
           </li>
         
           <li>
-            <a href="/2020/09/05/chapter3%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter3微积分的一些应用</a>
+            <a href="/2020/09/13/chapter10%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%97%A0%E7%A9%B7%E7%A7%AF%E5%88%86/">chapter10无穷级数与无穷积分</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter2%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%AE%97/">chapter2微积分的运算</a>
+            <a href="/2020/09/12/chapter9%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E7%B2%BE%E7%A1%AE%E8%AF%AD%E8%A8%80%E6%8F%8F%E8%BF%B0/">chapter9数列极限的精确语言描述</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter1%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5/">chapter1微积分的概念</a>
+            <a href="/2020/09/11/chapter8%E5%A4%9A%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/">chapter8多变量微积分的一些应用</a>
           </li>
         
           <li>
-            <a href="/2020/09/02/chapter5%E5%B9%B6%E5%8F%91%E6%80%A7%EF%BC%9A%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">chapter5并发性：互斥与同步</a>
+            <a href="/2020/09/09/chapter7%E7%BA%BF%E3%80%81%E9%9D%A2%E7%A7%AF%E5%88%86%E4%B8%8E%E5%A4%96%E5%BE%AE%E5%88%86/">chapter7线、面积分与外微分</a>
           </li>
         
       </ul>
