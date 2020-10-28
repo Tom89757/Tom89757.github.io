@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-10-01T05:55:14.205Z</updated>
+  <updated>2020-10-28T19:24:00.210Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>考研英语词汇表</title>
+    <link href="https://tom89757.github.io/2020/10/29/%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E8%A1%A8/"/>
+    <id>https://tom89757.github.io/2020/10/29/%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E8%A1%A8/</id>
+    <published>2020-10-28T17:48:47.000Z</published>
+    <updated>2020-10-28T19:24:00.210Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以下为第一眼不明白意思的单词：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://tom89757.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="英语" scheme="https://tom89757.github.io/tags/%E8%8B%B1%E8%AF%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>chapter1线性代数中的线性方程组</title>
@@ -492,33 +513,6 @@
     
     
       <category term="计算机网络" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数学一概率论与数理统计考纲</title>
-    <link href="https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E8%80%83%E7%BA%B2/"/>
-    <id>https://tom89757.github.io/2020/08/17/%E6%95%B0%E5%AD%A6%E4%B8%80%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E8%80%83%E7%BA%B2/</id>
-    <published>2020-08-16T18:25:49.000Z</published>
-    <updated>2020-08-29T18:00:59.102Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;概率论与数理统计（约22%）&lt;/p&gt;
-&lt;h2 id=&quot;一、随机事件和概率&quot;&gt;&lt;a href=&quot;#一、随机事件和概率&quot; class=&quot;headerlink&quot; title=&quot;一、随机事件和概率&quot;&gt;&lt;/a&gt;一、随机事件和概率&lt;/h2&gt;&lt;h3 id=&quot;考试内容&quot;&gt;&lt;a href=&quot;#考试内容&quot; class=&quot;headerlink&quot; title=&quot;考试内容&quot;&gt;&lt;/a&gt;考试内容&lt;/h3&gt;&lt;p&gt;随机事件与样本空间    事件的关系与运算    完备事件组    概率的概念    概率的基本性质    古典型概率    几何型概率    条件概率    概率的基本公式    事件的独立性    独立重复试验&lt;/p&gt;
-&lt;h3 id=&quot;考试要求&quot;&gt;&lt;a href=&quot;#考试要求&quot; class=&quot;headerlink&quot; title=&quot;考试要求&quot;&gt;&lt;/a&gt;考试要求&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;了解样本空间（基本事件空间）的概念，理解随机事件的概念，掌握事件的关系及运算。&lt;/li&gt;
-&lt;li&gt;理解概率、条件概率的概念，掌握概率的基本性质，会计算古典型概率和几何型概率，掌握概率的加法公式、减法公式、乘法公式、全概率公式以及贝叶斯（Bayes）公式。&lt;/li&gt;
-&lt;li&gt;理解事件独立性的概念，掌握用事件独立性进行概率计算。理解独立城府试验的概念，掌握计算有关事件概率的方法。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="概率论与数理统计" scheme="https://tom89757.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
     
   </entry>
   
