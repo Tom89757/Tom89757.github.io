@@ -58,8 +58,9 @@
 <meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.10.2%E9%9D%99%E6%80%81%E5%8F%8C%E5%8F%91%E5%B0%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF.png">
 <meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.10.3%E5%8A%A8%E6%80%81%E8%B0%83%E5%BA%A6%E6%B5%81%E6%B0%B4%E7%BA%BF.png">
 <meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.10.4Intel%E5%A4%84%E7%90%86%E5%99%A8.png">
+<meta property="og:image" content="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.11%E4%B8%A4%E7%A7%8D%E5%A4%84%E7%90%86%E5%99%A8.png">
 <meta property="article:published_time" content="2020-07-29T17:50:13.000Z">
-<meta property="article:modified_time" content="2020-10-01T05:55:14.346Z">
+<meta property="article:modified_time" content="2020-11-19T17:55:44.765Z">
 <meta property="article:author" content="Tom89757">
 <meta property="article:tag" content="计算机组成与设计">
 <meta name="twitter:card" content="summary">
@@ -188,7 +189,7 @@
 <p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2%E5%85%B3%E7%B3%BB.png" alt="图3 关系"></p>
 <p>书中给出了控制信号和数据信号、有效和无效等概念，其中有效表示信号为逻辑高，无效表示信号为逻辑低。下图展示了一种边沿触发方法：</p>
 <p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.2%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91.png" alt="图4 一种边沿触发方法"></p>
-<p>在接下来的图示中，粗线表示总线（宽度为1位以上），多根总线合起来构成更宽的总线，虚线和实线分别表示跨之信号和数据信号。</p>
+<p>在接下来的图示中，粗线表示总线（宽度为1位以上），多根总线合起来构成更宽的总线，虚线和实线分别表示控制信号和数据信号。</p>
 <h2 id="4-3-建立数据通路"><a href="#4-3-建立数据通路" class="headerlink" title="4.3 建立数据通路"></a>4.3 建立数据通路</h2><p>首先分析每条指令需要哪些数据通路部件（及对应的控制信号）。下图分别展示了指令存储器、程序计数器和加法器：</p>
 <p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.3%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E9%83%A8%E4%BB%B6.png" alt="图5 数据通路部件"></p>
 <p>先讨论R型指令，这类指令读两个寄存器，对它们的内容进行ALU操作，再返回结果，其包括add、sub、AND、OR和slt指令。R型指令有3个寄存器操作数，一共需要4个输入（3个寄存器号和1个数据）和两个输出（2个数据）。下图分别展示了寄存器堆和ALU：</p>
@@ -388,7 +389,7 @@
 <p>简单的处理器与复杂处理器相比，能耗更低。故当设计被能耗限制时，简单处理器在单芯片上性能更好。下图展示了Intel处理器的发展情况：</p>
 <p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.10.4Intel%E5%A4%84%E7%90%86%E5%99%A8.png" alt="图44 Intel处理器发展情况"></p>
 <h2 id="4-11-实例：ARM-Cortex-A8-和-Intel-Core-i7-流水线"><a href="#4-11-实例：ARM-Cortex-A8-和-Intel-Core-i7-流水线" class="headerlink" title="4.11 实例：ARM Cortex-A8 和 Intel Core i7 流水线"></a>4.11 实例：ARM Cortex-A8 和 Intel Core i7 流水线</h2><p>下图展示了本节要考察的两个处理器，它们是后PC时代的标志性产品。</p>
-<p><img src="" alt="图45 两种处理器"></p>
+<p><img src="https://cs-coad5nd-1302648630.cos.ap-nanjing.myqcloud.com/chapter4.11%E4%B8%A4%E7%A7%8D%E5%A4%84%E7%90%86%E5%99%A8.png" alt="图45 两种处理器"></p>
 <p>由于时间关系，暂不探索其细节<strong>mark</strong>。</p>
 <h3 id="ARM-Cortex-A8"><a href="#ARM-Cortex-A8" class="headerlink" title="ARM Cortex-A8"></a>ARM Cortex-A8</h3><h3 id="Intel-Core-i7-920"><a href="#Intel-Core-i7-920" class="headerlink" title="Intel Core i7 920"></a>Intel Core i7 920</h3><h3 id="Intel-Core-i7-920的性能"><a href="#Intel-Core-i7-920的性能" class="headerlink" title="Intel Core i7 920的性能"></a>Intel Core i7 920的性能</h3><h2 id="4-12-运行更快：指令级并行和矩阵乘法"><a href="#4-12-运行更快：指令级并行和矩阵乘法" class="headerlink" title="4.12 运行更快：指令级并行和矩阵乘法"></a>4.12 运行更快：指令级并行和矩阵乘法</h2><p>本节进一步讨论了第3章中矩阵乘法的例子，暂略，<strong>mark</strong></p>
 <h2 id="4-13-高级主题：通过硬件设计语言描述和建模流水线来介绍数字设计以及更多流水线实例"><a href="#4-13-高级主题：通过硬件设计语言描述和建模流水线来介绍数字设计以及更多流水线实例" class="headerlink" title="4.13 高级主题：通过硬件设计语言描述和建模流水线来介绍数字设计以及更多流水线实例"></a>4.13 高级主题：通过硬件设计语言描述和建模流水线来介绍数字设计以及更多流水线实例</h2><p>现代数字设计是用硬件描述语言和现代的计算机辅助综合工具完成的，其中综合工具能使用库和逻辑综合奖描述转化为具体的设计。具体见配套网站。</p>
