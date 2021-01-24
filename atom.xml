@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2020-12-31T10:13:55.733Z</updated>
+  <updated>2021-01-02T14:50:07.823Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pro Git学习笔记</title>
+    <link href="https://tom89757.github.io/2021/01/01/Pro-Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://tom89757.github.io/2021/01/01/Pro-Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-01-01T03:27:54.000Z</published>
+    <updated>2021-01-02T14:50:07.823Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://tom89757.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="https://tom89757.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>408真题算法代码</title>
@@ -478,33 +505,6 @@
     <summary type="html">
     
       &lt;p&gt;控制平面作为一种网络范围的逻辑，不仅控制沿着从源主机到目的主机的端到端路径间的路由器如何转发数据报，而且控制网络层组件和服务如何配置和管理。如前面所言，在一台分离的控制器服务中实现了控制平面功能，该控制器服务与它所控制的路由器的转发组件完全分开并远离。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="计算机网络" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chapter4网络层：数据平面</title>
-    <link href="https://tom89757.github.io/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/"/>
-    <id>https://tom89757.github.io/2020/08/22/chapter4%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2/</id>
-    <published>2020-08-21T17:39:36.000Z</published>
-    <updated>2020-10-01T05:55:14.377Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;运输层工作时不具备任何有关网络层实际实现的“为运输层提供主机与主机之间通信服务”的知识。本章和下一章将讨论主机与主机之间通信的本质，即“在网络中的每一台主机和路由器中都有的网络层部分”。&lt;/p&gt;
-&lt;p&gt;网络层是协议栈中最为复杂的部分，可分解为两个相互作用的部分：数据平面和控制平面：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;数据平面：其功能即是每台路由器的功能，它决定到达路由器输入链路之一的数据报如何转发到该路由器的输出链路之一。&lt;/li&gt;
-&lt;li&gt;控制平面：其功能即是网络范围的逻辑，它控制数据报沿着从源主机到目的主机的端到端路径中路由器之间的路由方式。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;软件定义网络（Software-Defined Networking，SDN）通过将控制平面功能作为一种单独服务，明确地分离数据平面和控制平面。&lt;/p&gt;
     
     </summary>
     
