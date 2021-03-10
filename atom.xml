@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2021-03-10T15:10:00.713Z</updated>
+  <updated>2021-03-10T15:33:23.918Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chapter2关系模型介绍</title>
+    <link href="https://tom89757.github.io/2021/03/10/chapter2%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://tom89757.github.io/2021/03/10/chapter2%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D/</id>
+    <published>2021-03-10T15:33:23.000Z</published>
+    <updated>2021-03-10T15:33:23.918Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>chapter1引言</title>
@@ -489,37 +504,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>chapter3进程描述和控制</title>
-    <link href="https://tom89757.github.io/2020/08/29/chapter3%E8%BF%9B%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%8E%A7%E5%88%B6/"/>
-    <id>https://tom89757.github.io/2020/08/29/chapter3%E8%BF%9B%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%8E%A7%E5%88%B6/</id>
-    <published>2020-08-28T19:26:14.000Z</published>
-    <updated>2020-10-01T05:55:14.330Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;学习本章可以掌握如下内容：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;定义术语进程并解释进程与进程控制块之间的关系&lt;/li&gt;
-&lt;li&gt;理解进程状态的概念，理解进程状态转换的过程&lt;/li&gt;
-&lt;li&gt;了解操作系统在管理进程过程的过程中使用的数据结构，列出相关的数据结构并解释该数据结构的目的&lt;/li&gt;
-&lt;li&gt;评估操作系统对进程控制的需求&lt;/li&gt;
-&lt;li&gt;掌握操作系统代码运行时涉及的问题&lt;/li&gt;
-&lt;li&gt;评估与操作系统相关的关键安全问题&lt;/li&gt;
-&lt;li&gt;了解UNIX SVR4中的进程管理模式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;我们可以先讨论操作系统与进程的联系：操作系统需要能够运行多个进程并使处理器达到最大利用率；操作系统需要为进程分配资源并避免进程出现死锁；操作系统需要能够进行进程间通信并能使用户创建进程。本章的内容将围绕这些展开。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="操作系统" scheme="https://tom89757.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
