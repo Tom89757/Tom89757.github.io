@@ -105,3 +105,27 @@ deploy:
   type: git
   repo: https://github.com/Tom89757/Tom89757.github.io.git
   branch: main
+
+symbols_count_time:
+  symbols: true
+  time: true
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
