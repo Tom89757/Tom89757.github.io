@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>世界在我面前展开</title>
+  <icon>https://tom89757.github.io/icon.png</icon>
+  <subtitle>死亡扑面而来 腐朽接踵而至</subtitle>
+  <link href="https://tom89757.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://tom89757.github.io/"/>
+  <updated>2022-05-11T02:51:05.373Z</updated>
+  <id>https://tom89757.github.io/</id>
+  
+  <author>
+    <name>幻光</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo配置指南</title>
+    <link href="https://tom89757.github.io/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</id>
+    <published>2022-05-10T17:20:23.000Z</published>
+    <updated>2022-05-11T02:51:05.373Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="hexo博客" scheme="https://tom89757.github.io/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://tom89757.github.io/2022/05/11/hello-world/"/>
+    <id>https://tom89757.github.io/2022/05/11/hello-world/</id>
+    <published>2022-05-10T16:00:00.000Z</published>
+    <updated>2022-05-11T02:00:20.424Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="hexo博客" scheme="https://tom89757.github.io/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对开发人员有用的定律、理论、原则和模式</title>
+    <link href="https://tom89757.github.io/2022/05/09/%E5%AF%B9%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E6%9C%89%E7%94%A8%E7%9A%84%E5%AE%9A%E5%BE%8B%E3%80%81%E7%90%86%E8%AE%BA%E3%80%81%E5%8E%9F%E5%88%99%E5%92%8C%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://tom89757.github.io/2022/05/09/%E5%AF%B9%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E6%9C%89%E7%94%A8%E7%9A%84%E5%AE%9A%E5%BE%8B%E3%80%81%E7%90%86%E8%AE%BA%E3%80%81%E5%8E%9F%E5%88%99%E5%92%8C%E6%A8%A1%E5%BC%8F/</id>
+    <published>2022-05-09T15:26:08.000Z</published>
+    <updated>2022-05-11T02:00:20.429Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自 github 项目 &lt;a href=&quot;https://github.com/nusr/hacker-laws-zh&quot;&gt;hacker-laws的中文翻译&lt;/a&gt;，放在博客上便于查看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="转载" scheme="https://tom89757.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/tags/%E8%B5%84%E6%96%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>别人的收藏-01</title>
+    <link href="https://tom89757.github.io/2022/05/09/%E5%88%AB%E4%BA%BA%E7%9A%84%E6%94%B6%E8%97%8F-01/"/>
+    <id>https://tom89757.github.io/2022/05/09/%E5%88%AB%E4%BA%BA%E7%9A%84%E6%94%B6%E8%97%8F-01/</id>
+    <published>2022-05-09T15:21:33.000Z</published>
+    <updated>2022-05-11T02:00:20.429Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自别人收藏的好的文章和资料（QAQ，找不到原始出处），放在博客上便于查看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="转载" scheme="https://tom89757.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/tags/%E8%B5%84%E6%96%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>免费书籍、文档和教程</title>
+    <link href="https://tom89757.github.io/2022/05/09/%E5%85%8D%E8%B4%B9%E4%B9%A6%E7%B1%8D%E3%80%81%E6%96%87%E6%A1%A3%E5%92%8C%E6%95%99%E7%A8%8B/"/>
+    <id>https://tom89757.github.io/2022/05/09/%E5%85%8D%E8%B4%B9%E4%B9%A6%E7%B1%8D%E3%80%81%E6%96%87%E6%A1%A3%E5%92%8C%E6%95%99%E7%A8%8B/</id>
+    <published>2022-05-09T15:09:48.000Z</published>
+    <updated>2022-05-11T02:00:20.424Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自 github 项目 &lt;a href=&quot;https://github.com/EbookFoundation/free-programming-books&quot;&gt;free-programming-books&lt;/a&gt;，放于博客上便于查看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="转载" scheme="https://tom89757.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/tags/%E8%B5%84%E6%96%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序员延寿指南</title>
+    <link href="https://tom89757.github.io/2022/05/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BB%B6%E5%AF%BF%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2022/05/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BB%B6%E5%AF%BF%E6%8C%87%E5%8D%97/</id>
+    <published>2022-05-09T15:05:01.000Z</published>
+    <updated>2022-05-11T02:00:20.429Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自 github 上的 &lt;a href=&quot;https://github.com/geekan/HowToLiveLonger&quot;&gt;程序员健康项目&lt;/a&gt;，放在博客上便于查看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="转载" scheme="https://tom89757.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="健康" scheme="https://tom89757.github.io/tags/%E5%81%A5%E5%BA%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客图床配置</title>
+    <link href="https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/"/>
+    <id>https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</id>
+    <published>2022-05-08T12:24:35.000Z</published>
+    <updated>2022-05-11T02:00:20.424Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下如何通过python脚本实现将本地&lt;code&gt;.md&lt;/code&gt;文件中图片自动上传至腾讯云对象存储，并在本地&lt;code&gt;.md&lt;/code&gt;文件中将图片地址替换为对应的腾讯云存储链接。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="hexo博客" scheme="https://tom89757.github.io/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022深度学习框架</title>
+    <link href="https://tom89757.github.io/2022/05/08/2022%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/"/>
+    <id>https://tom89757.github.io/2022/05/08/2022%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</id>
+    <published>2022-05-08T10:54:36.000Z</published>
+    <updated>2022-05-11T02:00:20.424Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录以下2022年深度学习框架考试答案：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="考试" scheme="https://tom89757.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="深度学习框架" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图像处理试题</title>
+    <link href="https://tom89757.github.io/2022/04/25/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E8%AF%95%E9%A2%98/"/>
+    <id>https://tom89757.github.io/2022/04/25/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E8%AF%95%E9%A2%98/</id>
+    <published>2022-04-25T05:43:38.000Z</published>
+    <updated>2022-05-11T02:00:20.429Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文主要记录一下历年图像处理的考试题目及其答案。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="考试" scheme="https://tom89757.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="计算机图形图像处理" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>模式识别考试题目</title>
+    <link href="https://tom89757.github.io/2021/12/14/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E8%80%83%E8%AF%95%E9%A2%98%E7%9B%AE/"/>
+    <id>https://tom89757.github.io/2021/12/14/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E8%80%83%E8%AF%95%E9%A2%98%E7%9B%AE/</id>
+    <published>2021-12-14T15:30:46.000Z</published>
+    <updated>2022-05-11T02:00:20.429Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文主要记录一下模式识别的考试题目及其答案，并且熟悉在markdown文档中数学公式的语法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="考试" scheme="https://tom89757.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="模式识别" scheme="https://tom89757.github.io/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机上CentOS7系统网络配置</title>
+    <link href="https://tom89757.github.io/2021/12/11/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8ACentOS7%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"/>
+    <id>https://tom89757.github.io/2021/12/11/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8ACentOS7%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</id>
+    <published>2021-12-11T11:28:15.000Z</published>
+    <updated>2022-05-11T02:00:20.429Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在Virtual Box上安装的CentOS7系统上配置网络的过程，以便后续查阅。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="虚拟机" scheme="https://tom89757.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    <category term="CentOS7" scheme="https://tom89757.github.io/tags/CentOS7/"/>
+    
+    <category term="网络" scheme="https://tom89757.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to Develop a Compiler</title>
+    <link href="https://tom89757.github.io/2021/07/15/How-To-Develop-a-Compiler/"/>
+    <id>https://tom89757.github.io/2021/07/15/How-To-Develop-a-Compiler/</id>
+    <published>2021-07-15T04:18:39.000Z</published>
+    <updated>2022-05-11T02:00:20.424Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文主要记录一下在阅读《自制编译器》并实现一个简化版的C语言编译器过程中所踩过的坑。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="读书笔记" scheme="https://tom89757.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="编译器" scheme="https://tom89757.github.io/tags/%E7%BC%96%E8%AF%91%E5%99%A8/"/>
+    
+  </entry>
+  
+</feed>
