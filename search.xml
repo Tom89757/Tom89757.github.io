@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>How to Develop a Compiler</title>
-    <url>/2021/07/15/How-To-Develop-a-Compiler/</url>
-    <content><![CDATA[<p>本文主要记录一下在阅读《自制编译器》并实现一个简化版的C语言编译器过程中所踩过的坑。</p>
-<span id="more"></span>
-<h2 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置"></a> 环境配置</h2>
-<h3 id="运行系统"><a class="markdownIt-Anchor" href="#运行系统"></a> 运行系统</h3>
-<p>由于本人只有一台配置落后的笔记本，书中要求的运行系统又是Linux，故采取了windows安装WSL的方案，具体见 <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">在windows上安装WSL</a> 。</p>
-<ul>
-<li>windows版本：windows10 19043.1110</li>
-<li>WSL版本：Ubuntu 20.04.2 LTS</li>
-</ul>
-<h3 id="安装软件和依赖"><a class="markdownIt-Anchor" href="#安装软件和依赖"></a> 安装软件和依赖</h3>
-<p>书中并未要求安装gcc，由于后续可能需要进行所实现的编译器Cb和gcc的比对，决定安装gcc。安装流程为（见 <a href="https://stackoverflow.com/questions/62215963/how-to-install-gcc-and-gdb-for-wslwindows-subsytem-for-linux">安装gcc</a>）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</span><br><span class="line">sudo apt autoremove -y</span><br><span class="line">sudo apt-get install gcc -y</span><br></pre></td></tr></table></figure>
-<ul>
-<li>gcc版本：gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0</li>
-</ul>
-<p>书中要求安装JRE 1.5以上版本和Java编程器。安装流程为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-11-jdk</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Java版本：openjdk 11.0.11</li>
-</ul>
-<h3 id="安装书中实现的编译器cb"><a class="markdownIt-Anchor" href="#安装书中实现的编译器cb"></a> 安装书中实现的编译器Cb</h3>
-]]></content>
-      <categories>
-        <category>读书笔记</category>
-      </categories>
-      <tags>
-        <tag>编译器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022深度学习框架</title>
     <url>/2022/05/08/2022%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</url>
     <content><![CDATA[<p>本文记录以下2022年深度学习框架考试答案：</p>
@@ -162,43 +130,35 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/05/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>How to Develop a Compiler</title>
+    <url>/2021/07/15/How-To-Develop-a-Compiler/</url>
+    <content><![CDATA[<p>本文主要记录一下在阅读《自制编译器》并实现一个简化版的C语言编译器过程中所踩过的坑。</p>
 <span id="more"></span>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置"></a> 环境配置</h2>
+<h3 id="运行系统"><a class="markdownIt-Anchor" href="#运行系统"></a> 运行系统</h3>
+<p>由于本人只有一台配置落后的笔记本，书中要求的运行系统又是Linux，故采取了windows安装WSL的方案，具体见 <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">在windows上安装WSL</a> 。</p>
+<ul>
+<li>windows版本：windows10 19043.1110</li>
+<li>WSL版本：Ubuntu 20.04.2 LTS</li>
+</ul>
+<h3 id="安装软件和依赖"><a class="markdownIt-Anchor" href="#安装软件和依赖"></a> 安装软件和依赖</h3>
+<p>书中并未要求安装gcc，由于后续可能需要进行所实现的编译器Cb和gcc的比对，决定安装gcc。安装流程为（见 <a href="https://stackoverflow.com/questions/62215963/how-to-install-gcc-and-gdb-for-wslwindows-subsytem-for-linux">安装gcc</a>）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</span><br><span class="line">sudo apt autoremove -y</span><br><span class="line">sudo apt-get install gcc -y</span><br></pre></td></tr></table></figure>
+<ul>
+<li>gcc版本：gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0</li>
+</ul>
+<p>书中要求安装JRE 1.5以上版本和Java编程器。安装流程为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-11-jdk</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Java版本：openjdk 11.0.11</li>
+</ul>
+<h3 id="安装书中实现的编译器cb"><a class="markdownIt-Anchor" href="#安装书中实现的编译器cb"></a> 安装书中实现的编译器Cb</h3>
 ]]></content>
       <categories>
-        <category>环境配置</category>
+        <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>hexo博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo配置指南</title>
-    <url>/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。</p>
-<span id="more"></span>
-<h3 id="post-settings"><a class="markdownIt-Anchor" href="#post-settings"></a> Post Settings</h3>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>hexo博客</tag>
+        <tag>编译器</tag>
       </tags>
   </entry>
   <entry>
@@ -960,6 +920,46 @@
     <url>/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>本文记录一下如何通过python脚本实现将本地<code>.md</code>文件中图片自动上传至腾讯云对象存储，并在本地<code>.md</code>文件中将图片地址替换为对应的腾讯云存储链接。</p>
 <span id="more"></span>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/05/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo配置指南</title>
+    <url>/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。</p>
+<span id="more"></span>
+<h3 id="post-settings"><a class="markdownIt-Anchor" href="#post-settings"></a> Post Settings</h3>
 ]]></content>
       <categories>
         <category>环境配置</category>
