@@ -1354,7 +1354,7 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 <ol>
 <li>通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
 </ol>
-<p><img src="C:%5CUsers%5CA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220513014334969.png" alt="image-20220513014334969" /></p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
 <ol start="2">
 <li>
 <p>在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
