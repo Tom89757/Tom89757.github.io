@@ -14,7 +14,7 @@ tags:
 
 1. 通过 [IPAddress.com](https://www.ipaddress.com/) 查询域名 `raw.githubusercontent.com`所在网址：
 
-![image-20220513014334969](C:\Users\A\AppData\Roaming\Typora\typora-user-images\image-20220513014334969.png)
+![image-20220513014334969](https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png)
 
 2. 在路径 `C:\Windows\System32\drivers\etc`下的`hosts`文件最后一行添加如下信息：
 
