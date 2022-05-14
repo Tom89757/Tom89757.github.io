@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-05-14T16:51:32.233Z</updated>
+  <updated>2022-05-14T16:58:32.761Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -21,17 +21,10 @@
     <link href="https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"/>
     <id>https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</id>
     <published>2022-05-14T16:22:55.000Z</published>
-    <updated>2022-05-14T16:51:32.233Z</updated>
+    <updated>2022-05-14T16:58:32.761Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;
-&lt;p&gt;1.&lt;code&gt;echo $PATH | tr &amp;quot;:&amp;quot;</summary>
-        
-      
+    <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;</summary>
     
     
     
