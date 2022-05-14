@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-05-14T09:55:21.694Z</updated>
+  <updated>2022-05-14T16:51:32.233Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,17 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Ubuntu常见操作</title>
+    <link href="https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"/>
+    <id>https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</id>
+    <published>2022-05-14T16:22:55.000Z</published>
+    <updated>2022-05-14T16:51:32.233Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;
+&lt;p&gt;1.&lt;code&gt;echo $PATH | tr &amp;quot;:&amp;quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://tom89757.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs使用指南</title>
+    <link href="https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2022-05-14T15:32:40.000Z</published>
+    <updated>2022-05-14T16:55:36.195Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下使用nodejs时的常见操作：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="nodejs" scheme="https://tom89757.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常见概念和术语记录</title>
     <link href="https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/"/>
     <id>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/</id>
     <published>2022-05-13T15:20:31.000Z</published>
-    <updated>2022-05-14T09:55:21.694Z</updated>
+    <updated>2022-05-14T16:53:13.598Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录在编程学习中常见的概念和术语及其对应的操作。&lt;/p&gt;</summary>
     
     
     
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="概念" scheme="https://tom89757.github.io/tags/%E6%A6%82%E5%BF%B5/"/>
+    
+    <category term="术语" scheme="https://tom89757.github.io/tags/%E6%9C%AF%E8%AF%AD/"/>
     
   </entry>
   
@@ -36,13 +87,17 @@
     <link href="https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/"/>
     <id>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</id>
     <published>2022-05-12T17:37:45.000Z</published>
-    <updated>2022-05-14T04:23:42.047Z</updated>
+    <updated>2022-05-14T16:55:54.877Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录在操作系统、浏览器中常见的bug及其解决方案。&lt;/p&gt;</summary>
     
     
     
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="bug" scheme="https://tom89757.github.io/tags/bug/"/>
     
   </entry>
   
@@ -51,13 +106,17 @@
     <link href="https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-12T09:54:26.000Z</published>
-    <updated>2022-05-14T04:33:15.678Z</updated>
+    <updated>2022-05-14T16:56:52.442Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用git时的常见操作：&lt;/p&gt;</summary>
     
     
     
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="git" scheme="https://tom89757.github.io/tags/git/"/>
     
   </entry>
   
@@ -66,7 +125,7 @@
     <link href="https://tom89757.github.io/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-10T17:20:23.000Z</published>
-    <updated>2022-05-12T14:29:01.300Z</updated>
+    <updated>2022-05-14T16:45:57.520Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。&lt;/p&gt;</summary>
