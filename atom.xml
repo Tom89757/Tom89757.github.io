@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-05-15T04:16:43.814Z</updated>
+  <updated>2022-05-15T12:29:19.812Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Windows10右键菜单添加功能</title>
+    <link href="https://tom89757.github.io/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/"/>
+    <id>https://tom89757.github.io/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</id>
+    <published>2022-05-15T08:44:03.000Z</published>
+    <updated>2022-05-15T12:29:19.812Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在Windows10右键菜单中添加各项功能的流程：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="Windows" scheme="https://tom89757.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过python脚本实现向kindle邮箱发送书籍</title>
+    <link href="https://tom89757.github.io/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/"/>
+    <id>https://tom89757.github.io/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/</id>
+    <published>2022-05-15T08:36:56.000Z</published>
+    <updated>2022-05-15T08:36:56.385Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>成组概念厘清</title>
@@ -99,7 +131,7 @@
     <link href="https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/"/>
     <id>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</id>
     <published>2022-05-12T17:37:45.000Z</published>
-    <updated>2022-05-14T16:55:54.877Z</updated>
+    <updated>2022-05-15T08:32:35.338Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录在操作系统、浏览器中常见的bug及其解决方案。&lt;/p&gt;</summary>
