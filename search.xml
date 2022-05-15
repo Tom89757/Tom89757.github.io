@@ -1806,6 +1806,41 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 <p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
 <p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
 <p>解决方案：关闭 ssr 代理</p>
+<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
+<p><img src="C:%5CUsers%5CA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220516004330258.png" alt="image-20220516004330258" /></p>
+<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
+<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
+<p>步骤：</p>
+<ul>
+<li>
+<p>关闭代理（在打开代理的情况下安装策略不同）</p>
+</li>
+<li>
+<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
+</li>
+<li>
+<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
+<p><img src="C:%5CUsers%5CA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220516004936734.png" alt="image-20220516004936734" /></p>
+</li>
+<li>
+<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
+</li>
+<li>
+<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
+<p><img src="C:%5CUsers%5CA%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220516005208707.png" alt="image-20220516005208707" /></p>
+</li>
+</ul>
+<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
+<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
+<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>环境配置</category>
