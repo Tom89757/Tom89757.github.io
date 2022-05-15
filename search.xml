@@ -188,6 +188,16 @@
 <blockquote>
 <p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
 </blockquote>
+<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
+<ul>
+<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
+<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
+</ul>
+<p>运行结果如下：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
+<blockquote>
+<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
+</blockquote>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -3345,6 +3355,27 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </categories>
       <tags>
         <tag>健康</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>成组概念厘清</title>
+    <url>/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</url>
+    <content><![CDATA[<p>本文记录一下成组的易混淆或者应该加以区分的概念。</p>
+<span id="more"></span>
+<p>1.Error vs Exception：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/5813614/what-is-difference-between-errors-and-exceptions">What is difference between Errors and Exceptions?</a></li>
+<li><a href="https://stackoverflow.com/questions/912334/differences-between-exception-and-error">Differences between Exception and Error</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>概念</tag>
       </tags>
   </entry>
 </search>

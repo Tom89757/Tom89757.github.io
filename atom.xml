@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-05-14T16:58:32.761Z</updated>
+  <updated>2022-05-15T04:16:43.814Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>成组概念厘清</title>
+    <link href="https://tom89757.github.io/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/"/>
+    <id>https://tom89757.github.io/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</id>
+    <published>2022-05-15T04:12:50.000Z</published>
+    <updated>2022-05-15T04:16:43.814Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下成组的易混淆或者应该加以区分的概念。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="概念" scheme="https://tom89757.github.io/tags/%E6%A6%82%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu常见操作</title>
     <link href="https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"/>
     <id>https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</id>
     <published>2022-05-14T16:22:55.000Z</published>
-    <updated>2022-05-14T16:58:32.761Z</updated>
+    <updated>2022-05-15T03:16:39.507Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;</summary>
@@ -59,7 +78,7 @@
     <link href="https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/"/>
     <id>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/</id>
     <published>2022-05-13T15:20:31.000Z</published>
-    <updated>2022-05-14T16:53:13.598Z</updated>
+    <updated>2022-05-15T04:10:49.374Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录在编程学习中常见的概念和术语及其对应的操作。&lt;/p&gt;</summary>
