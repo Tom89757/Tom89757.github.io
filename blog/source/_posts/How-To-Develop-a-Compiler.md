@@ -2,7 +2,7 @@
 title: How to Develop a Compiler
 date: 2021-07-15 12:18:39
 categories:
-- 读书笔记
+- 笔记
 tags: 
 - 编译器
 ---
