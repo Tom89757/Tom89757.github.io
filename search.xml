@@ -130,6 +130,204 @@
       </tags>
   </entry>
   <entry>
+    <title>How to Develop a Compiler</title>
+    <url>/2021/07/15/How-To-Develop-a-Compiler/</url>
+    <content><![CDATA[<p>本文主要记录一下在阅读《自制编译器》并实现一个简化版的C语言编译器过程中所踩过的坑。</p>
+<span id="more"></span>
+<h2 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置"></a> 环境配置</h2>
+<h3 id="运行系统"><a class="markdownIt-Anchor" href="#运行系统"></a> 运行系统</h3>
+<p>由于本人只有一台配置落后的笔记本，书中要求的运行系统又是Linux，故采取了windows安装WSL的方案，具体见 <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">在windows上安装WSL</a> 。</p>
+<ul>
+<li>windows版本：windows10 19043.1110</li>
+<li>WSL版本：Ubuntu 20.04.2 LTS</li>
+</ul>
+<h3 id="安装软件和依赖"><a class="markdownIt-Anchor" href="#安装软件和依赖"></a> 安装软件和依赖</h3>
+<p>书中并未要求安装gcc，由于后续可能需要进行所实现的编译器Cb和gcc的比对，决定安装gcc。安装流程为（见 <a href="https://stackoverflow.com/questions/62215963/how-to-install-gcc-and-gdb-for-wslwindows-subsytem-for-linux">安装gcc</a>）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</span><br><span class="line">sudo apt autoremove -y</span><br><span class="line">sudo apt-get install gcc -y</span><br></pre></td></tr></table></figure>
+<ul>
+<li>gcc版本：gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0</li>
+</ul>
+<p>书中要求安装JRE 1.5以上版本和Java编程器。安装流程为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-11-jdk</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Java版本：openjdk 11.0.11</li>
+</ul>
+<h3 id="安装书中实现的编译器cb"><a class="markdownIt-Anchor" href="#安装书中实现的编译器cb"></a> 安装书中实现的编译器Cb</h3>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>编译器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch中知识点01</title>
+    <url>/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文记录一下在调试 <a href="https://github.com/yuhuan-wu/MobileSal">MobileSal</a> 过程中记录的一些 Pytorch 框架和 python 相关知识点。</p>
+<span id="more"></span>
+<p>1.当出现<code>import cv2</code>，需要安装 <code>opencv</code>包：<code>pip install opencv-python</code>。</p>
+<p>2.<code>import torch.utils.data</code> 。该 package 的核心类为 <code>torch.utils.data.DataLoader</code>，表示在一个数据集上的迭代，其支持：</p>
+<ul>
+<li>map-style 和 iterable-style 的数据集</li>
+<li>定制化数据加载顺序</li>
+<li>自动 batching</li>
+<li>单线程和多线程的数据加载</li>
+<li>自动内存 pinning (固定)</li>
+</ul>
+<p>其通过以下的 <code>DataLoader</code> 对象的构造器配置：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DataLoader(dataset, batch_size=<span class="number">1</span>, shuffle=<span class="literal">False</span>, sampler=<span class="literal">None</span>,</span><br><span class="line">           batch_sampler=<span class="literal">None</span>, num_workers=<span class="number">0</span>, collate_fn=<span class="literal">None</span>,</span><br><span class="line">           pin_memory=<span class="literal">False</span>, drop_last=<span class="literal">False</span>, timeout=<span class="number">0</span>,</span><br><span class="line">           worker_init_fn=<span class="literal">None</span>, *, prefetch_factor=<span class="number">2</span>,</span><br><span class="line">           persistent_workers=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, key</span>):</span><br><span class="line">    <span class="keyword">return</span> self.<span class="built_in">list</span>[key]</span><br></pre></td></tr></table></figure>
+<p>当在对象中实现以上方法时，使得可以通过索引访问对象中的元素，如 <code>list[key]</code></p>
+<p>4.<code>img = cv.imread(filename[, flags])</code>根据一个文件名中加载图像然后返回它。如果图像文件不能读取，返回一个空矩阵。可以通过 <code>img.shape[0]</code> 和 <code>img.shape[1]</code>访问图像的高和宽。</p>
+<p>5.<code>import torch.nn.functional as F</code>。该代码导入 <code>torch.nn.functional</code>，其包含许多对神经网络层进行操作的函数</p>
+<p>6.<code>utils</code>在编程语言中通常为 Utility Class 的缩写，也被称为 Helper class，是一个只包含静态方法的类，无状态且不能被实例化。</p>
+<p>7.<code>img = cv2.resize(img, (self.weight, self.height))</code>调用 OpenCV 中的<code>resize()</code>方法将源文件 <code>img</code> 尺寸转换为所需尺寸 <code>(self.weight, self.height)</code>。其详细声明如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]])</span><br></pre></td></tr></table></figure>
+<p><code>image interpolation</code>  发生在对图像进行 resize 时，上述的<code>interpolation</code>用于指定不同的插值策略，从而在进行 resize 时按指定策略用已知像素点的值评估未知点的值。</p>
+<ol start="8">
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#/usr/bin/env python</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,a</span>):</span><br><span class="line">        self.a = a</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self,b</span>):</span><br><span class="line">        c = self.a+b</span><br><span class="line">        <span class="built_in">print</span> c</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">display</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span> self.a</span><br><span class="line"></span><br><span class="line">test = Test(<span class="string">&quot;This is test!&quot;</span>)</span><br><span class="line">test.display()</span><br><span class="line">Test(<span class="string">&quot;##Append something&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>__call__</code> 用于将一个类重载，使得类也能像函数一样调用。</p>
+<p>9.<code>isinstance()</code>函数用于判断一个对象是否是一个已知类型，类似 <code>type()</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;a = <span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,<span class="built_in">int</span>)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,<span class="built_in">str</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,(<span class="built_in">str</span>,<span class="built_in">int</span>,<span class="built_in">list</span>))    <span class="comment"># 是元组中的一个返回 True</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p><code>type()</code> 和 <code>isinstance()</code>的区别：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>(<span class="title class_ inherited__">A</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">isinstance</span>(A(), A)    <span class="comment"># returns True</span></span><br><span class="line"><span class="built_in">type</span>(A()) == A        <span class="comment"># returns True</span></span><br><span class="line"><span class="built_in">isinstance</span>(B(), A)    <span class="comment"># returns True</span></span><br><span class="line"><span class="built_in">type</span>(B()) == A        <span class="comment"># returns False</span></span><br></pre></td></tr></table></figure>
+<p>10.<code>img = cv2.flip(img, 0)</code> 表示将图像做水平翻转；<code>img = cv2.flip(img, 1)</code>表示将图像做垂直翻转。<code>img = cv2.flip(img, -1)</code> 表示将图像同时做水平和垂直翻转。</p>
+<p>11.<code>random.random()</code>方法返回随机生成的一个实数，范围为 [0,1)；<code>random.randint(a,b)</code>方法返回随机生成的一个整数，其值&gt;=a，&lt;=b。</p>
+<ol start="12">
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label_tensor =  torch.LongTensor(np.array(label, dtype=np.<span class="built_in">int</span>)).unsqueeze(dim=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>Torch 定义了10种 tensor 类型，其中 <code>torch.LongTensor</code> 为64-bit integer (signed) 对应CPU的类型，在GPU中对应的类型为 <code>torch.cuda.LongTensor</code>。<code>torch.Tensor</code>是默认的张量类型 <code>torch.FloatTensor</code>。</p>
+<p>13.<code>torch.unsqueeze(input, dim)</code>返回一个新张量，一个维度被插入指定的位置。例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.tensor([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.unsqueeze(x, <span class="number">0</span>)</span><br><span class="line">tensor([[ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.unsqueeze(x, <span class="number">1</span>)</span><br><span class="line">tensor([[ <span class="number">1</span>],</span><br><span class="line">        [ <span class="number">2</span>],</span><br><span class="line">        [ <span class="number">3</span>],</span><br><span class="line">        [ <span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
+<p>14.<code>torch.tensor</code> vs <code>torch.Tensor</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.Tensor([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]).dtype</span><br><span class="line">torch.float32</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]).dtype</span><br><span class="line">Out[<span class="number">32</span>]: torch.int64</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.Tensor([<span class="literal">True</span>, <span class="literal">False</span>]).dtype</span><br><span class="line">torch.float32</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor([<span class="literal">True</span>, <span class="literal">False</span>]).dtype</span><br><span class="line">torch.uint8</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.Tensor(<span class="number">10</span>)</span><br><span class="line">tensor([<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">10</span>)</span><br><span class="line">tensor(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p>15.补充关于 <code>torch.tensor</code> 的说明，以下为对其调用的语法，其返回一个张量：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.tensor(data, *, dtype=<span class="literal">None</span>, device=<span class="literal">None</span>, requires_grad=<span class="literal">False</span>, pin_memory=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>以下为其使用的例子：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.tensor([[<span class="number">0.1</span>, <span class="number">1.2</span>], [<span class="number">2.2</span>, <span class="number">3.1</span>], [<span class="number">4.9</span>, <span class="number">5.2</span>]])</span><br><span class="line"></span><br><span class="line">torch.tensor([<span class="number">0</span>, <span class="number">1</span>])  <span class="comment"># Type inference on data</span></span><br><span class="line"></span><br><span class="line">torch.tensor([[<span class="number">0.11111</span>, <span class="number">0.222222</span>, <span class="number">0.3333333</span>]],</span><br><span class="line">             dtype=torch.float64,</span><br><span class="line">             device=torch.device(<span class="string">&#x27;cuda:0&#x27;</span>))  <span class="comment"># creates a double tensor on a CUDA device</span></span><br><span class="line"></span><br><span class="line">torch.tensor(<span class="number">3.14159</span>)  <span class="comment"># Create a zero-dimensional (scalar) tensor</span></span><br><span class="line"></span><br><span class="line">torch.tensor([])  <span class="comment"># Create an empty tensor (of size (0,))</span></span><br></pre></td></tr></table></figure>
+<p>PS：当操作tensors推荐使用 <code>torch.Tensor.clone()</code>和<code>torch.Tensor.detach()</code>以及<code>torch.Tensor.requires_grad_()</code>。当t为一个tensor时，下述操作等价：</p>
+<ul>
+<li><code>t.clone().detach()</code> 和 <code>torch.tensor(t)</code></li>
+<li><code>t.clone().detach().requires_grad_(True)</code>和<code>torch.tensor(t, requires_grad=True)</code></li>
+</ul>
+<p>16.<code>torch.rand</code>返回一个张量，用符合N(0,1)正态分布的随机数字填充，张量形状由<code>size</code>决定：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.rand(size, *, out=<span class="literal">None</span>, dtype=<span class="literal">None</span>, layout=torch.strided, device=<span class="literal">None</span>, requires_grad=<span class="literal">False</span>) → Tensor</span><br></pre></td></tr></table></figure>
+<p>17.<code>torch.from_numpy(ndarray)</code>从<code>numpy.ndarray</code>创建一个张量。如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = numpy.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = torch.from_numpy(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t</span><br><span class="line">tensor([ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t[<span class="number">0</span>] = -<span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">array([-<span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<ol start="18">
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&#x27;.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>上述命令将当前目录添加到python运行时的查找路径的最开始，使得当python运行时首先在当前目录文件中查找函数或类。</p>
+<p>19.Pytorch Hub 是一个预训练模型仓库，用来设计便于研究重现。Pytorch Hub支持发布预训练模型（模型定义和预训练权重）到一个github仓库，只需通过添加一个 <code>hubconf.py</code>文件。预训练权重可以被存储在github仓库，也可以通过 <code>torch.hub.load_state_dict_from_url()</code>加载。</p>
+<ol start="20">
+<li></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InvertedResidual</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, inp, oup, stride, expand_ratio, dilation=<span class="number">1</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(InvertedResidual, self).__init__()</span><br></pre></td></tr></table></figure>
+<p>其中 <code>super(InvertedResidual, self).__init__()</code> 等价于 <code>super().__init__()</code>。</p>
+<p>21.<code>self.modules()</code>返回定义在模型类中对多层模块的迭代器：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># weight initialization</span></span><br><span class="line">        <span class="keyword">for</span> m <span class="keyword">in</span> self.modules():</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">isinstance</span>(m, nn.Conv2d):</span><br><span class="line">                nn.init.kaiming_normal_(m.weight, mode=<span class="string">&#x27;fan_out&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> m.bias <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    nn.init.zeros_(m.bias)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">isinstance</span>(m, nn.BatchNorm2d):</span><br><span class="line">                nn.init.ones_(m.weight)</span><br><span class="line">                nn.init.zeros_(m.bias)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">isinstance</span>(m, nn.Linear):</span><br><span class="line">                nn.init.normal_(m.weight, <span class="number">0</span>, <span class="number">0.01</span>)</span><br><span class="line">                nn.init.zeros_(m.bias)</span><br></pre></td></tr></table></figure>
+<p>上述代码对模型权重进行初始化。</p>
+<p>22.<code>enumerate()</code>用于将一个可遍历的数据对象（如对象、元组或字符串）组合为一个索引序列，同时列出数据和数据下标，一般用在for循环中：<code>enumerate(sequence, [start=0])</code>，其返回一个enumerate(枚举)对象：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>seasons = [<span class="string">&#x27;Spring&#x27;</span>, <span class="string">&#x27;Summer&#x27;</span>, <span class="string">&#x27;Fall&#x27;</span>, <span class="string">&#x27;Winter&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">enumerate</span>(seasons))</span><br><span class="line">[(<span class="number">0</span>, <span class="string">&#x27;Spring&#x27;</span>), (<span class="number">1</span>, <span class="string">&#x27;Summer&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;Fall&#x27;</span>), (<span class="number">3</span>, <span class="string">&#x27;Winter&#x27;</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">enumerate</span>(seasons, start=<span class="number">1</span>))       <span class="comment"># 下标从 1 开始</span></span><br><span class="line">[(<span class="number">1</span>, <span class="string">&#x27;Spring&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;Summer&#x27;</span>), (<span class="number">3</span>, <span class="string">&#x27;Fall&#x27;</span>), (<span class="number">4</span>, <span class="string">&#x27;Winter&#x27;</span>)]</span><br></pre></td></tr></table></figure>
+<p>23.<code>*args</code>用于传入多个无名参数，这些参数以tuple的形式导入，一般放在参数列表的最后。若不放在最后，需要指明其他传入参数名称：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_func</span>(<span class="params">x, y, *args</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(x))</span><br><span class="line">    <span class="built_in">print</span>(x)</span><br><span class="line">    <span class="built_in">print</span>(y)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(args))</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line"></span><br><span class="line">print_func(<span class="number">1</span>, <span class="number">2</span>, <span class="string">&#x27;呵呵哒&#x27;</span>, [], x=<span class="string">&#x27;x&#x27;</span>, y=<span class="string">&#x27;y&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>24.<code>**kwargs</code>将参数以字典的形式导入：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>(<span class="params">a, b=<span class="number">10</span>, *args, **kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span> (a)</span><br><span class="line">    <span class="built_in">print</span> (b)</span><br><span class="line">    <span class="built_in">print</span> (args)</span><br><span class="line">    <span class="built_in">print</span> (kwargs)</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, e=<span class="number">5</span>, f=<span class="number">6</span>, g=<span class="number">7</span>)</span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">&#123;<span class="string">&#x27;e&#x27;</span>: <span class="number">5</span>, <span class="string">&#x27;f&#x27;</span>: <span class="number">6</span>, <span class="string">&#x27;g&#x27;</span>: <span class="number">7</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>25.Pytorch中的<code>state_dict</code>简单来说是一个Python 字典对象，将模型每一层映射到模型参数张量。只有具有可学习参数（卷积层，线性层等）和 registered buffers (batchnorm’s running_mean) 在 <code>state_dict</code>中有入口。同理，可以使用<code>load_state_dict</code>加载这些参数。</p>
+<p>PS：优化器对象<code>torch.optim</code>也有<code>state_dict</code>，包含关于优化器状态的信息以及所有的超参数。</p>
+<p>26.<code>self.register_buffer</code> 和<code>self.register_parameter</code>。前者用于register模型参数为buffers，buffers不能调用<code>model.parameters()</code>返回参数，优化器也无法更新它们。</p>
+<p>27.<code>__repr__</code>用于返回传入对象相关信息，可以重写。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__repr__</span>(<span class="params">self</span>):</span><br><span class="line">        s = self.__class__.__name__ + <span class="string">&quot;(&quot;</span></span><br><span class="line">        s += <span class="string">&quot;&#123;&#125;)&quot;</span>.<span class="built_in">format</span>(self.weight.shape[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
+<p>28.<code>torch.no_grad</code>用来关闭梯度计算，当你确定你不会调用 <code>Tensor.backward()</code>。这一操作可以减少用于计算的内存消耗，此时<code>requires_grad=True</code>。</p>
+<p>29.装饰器（Decorators）是用于修改其他函数的功能的函数。python装饰器封装一个函数，并且用这样或那样的方式修改它的行为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">a_new_decorator</span>(<span class="params">a_func</span>):</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapTheFunction</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I am doing some boring work before executing a_func()&quot;</span>)</span><br><span class="line"> </span><br><span class="line">        a_func()</span><br><span class="line"> </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I am doing some boring work after executing a_func()&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> wrapTheFunction</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">a_function_requiring_decoration</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am the function which needs some decoration to remove my foul smell&quot;</span>)</span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration()</span><br><span class="line"><span class="comment">#outputs: &quot;I am the function which needs some decoration to remove my foul smell&quot;</span></span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)</span><br><span class="line"><span class="comment">#now a_function_requiring_decoration is wrapped by wrapTheFunction()</span></span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration()</span><br><span class="line"><span class="comment">#outputs:I am doing some boring work before executing a_func()</span></span><br><span class="line"><span class="comment">#        I am the function which needs some decoration to remove my foul smell</span></span><br><span class="line"><span class="comment">#        I am doing some boring work after executing a_func()</span></span><br></pre></td></tr></table></figure>
+<p>上述代码中 <code>a_new_decorator</code> 即为一个装饰器，可以通过<code>@a_new_decorator</code>来精简上述代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@a_new_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">a_function_requiring_decoration</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Hey you! Decorate me!&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am the function which needs some decoration to &quot;</span></span><br><span class="line">          <span class="string">&quot;remove my foul smell&quot;</span>)</span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration()</span><br><span class="line"><span class="comment">#outputs: I am doing some boring work before executing a_func()</span></span><br><span class="line"><span class="comment">#         I am the function which needs some decoration to remove my foul smell</span></span><br><span class="line"><span class="comment">#         I am doing some boring work after executing a_func()</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#the @a_new_decorator is just a short way of saying:</span></span><br><span class="line">a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)</span><br></pre></td></tr></table></figure>
+<p>此时会有一个问题，对用装饰器修饰的函数调用<code>__name__</code>会有以下输出：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(a_function_requiring_decoration.__name__)</span><br><span class="line"><span class="comment"># Output: wrapTheFunction</span></span><br></pre></td></tr></table></figure>
+<p>此时，可以通过Python提供的<code>functools.wraps</code>来解决上述问题：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">a_new_decorator</span>(<span class="params">a_func</span>):</span><br><span class="line"><span class="meta">    @wraps(<span class="params">a_func</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapTheFunction</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I am doing some boring work before executing a_func()&quot;</span>)</span><br><span class="line">        a_func()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I am doing some boring work after executing a_func()&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapTheFunction</span><br><span class="line"> </span><br><span class="line"><span class="meta">@a_new_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">a_function_requiring_decoration</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Hey yo! Decorate me!&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am the function which needs some decoration to &quot;</span></span><br><span class="line">          <span class="string">&quot;remove my foul smell&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(a_function_requiring_decoration.__name__)</span><br><span class="line"><span class="comment"># Output: a_function_requiring_decoration</span></span><br></pre></td></tr></table></figure>
+<p>30.当需要线上加载模型时，不同版本的Pytorch有不同的加载方法，具体如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">from</span> torchvision.models.utils <span class="keyword">import</span> load_state_dict_from_url <span class="comment"># torchvision 0.4+</span></span><br><span class="line"><span class="keyword">except</span> ModuleNotFoundError:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">from</span> torch.hub <span class="keyword">import</span> load_state_dict_from_url <span class="comment"># torch 1.x</span></span><br><span class="line">    <span class="keyword">except</span> ImportError:</span><br><span class="line">        <span class="keyword">from</span> torch.utils.model_zoo <span class="keyword">import</span> load_url <span class="keyword">as</span> load_state_dict_from_url <span class="comment"># torch 0.4.1</span></span><br></pre></td></tr></table></figure>
+<p>PS：当版本不同时有不同的异常，如上述的<code>ModuleNotFoundError</code>和<code>ImportError</code>。</p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL使用指南</title>
+    <url>/2022/05/15/Mysql%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>本文记录一下使用 MySQL 时的常见配置和操作。</p>
+<span id="more"></span>
+<p>1.启动 MySQL 服务。启动 MySQL 有两种方式：</p>
+<ul>
+<li>
+<p>以管理员 (administrator) 方式运行 <code>cmd</code>，在<code>cmd</code>终端中运行<code>net start mysql</code>。显示如下界面表示启动成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220235630.png" alt="image-20220515220235630" /></p>
+<p>PS：关闭该终端 MySQL 仍然保持运行</p>
+<p>此时可能出现以下界面：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515215652080.png" alt="image-20220515215652080" /></p>
+<p>原因：Windows 系统中 MySQL 服务被禁用</p>
+<p>解决方案：<code>Win + R</code>打开<code>run</code>窗口，输入<code>services.msc</code>打开<code>Services</code>窗口，查看其中的 MySQL服务并将其 status 由 <code>Disabled</code> 改为<code>Manual</code>。如下图所示：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515215940920.png" alt="image-20220515215940920" /></p>
+</li>
+<li>
+<p>定位到 MySQL 安装目录的 <code>bin</code>文件夹，如<code>D:\Develop\MySQL\bin</code>。在此处打开 <code>cmd</code> 终端，并运行 <code>mysqld --console</code>，显示如下界面表示启动成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220421568.png" alt="image-20220515220421568" /></p>
+<p>PS：关闭该终端或者<code>Ctrl + C</code>都会使得 MySQL 服务关闭</p>
+</li>
+</ul>
+</br>
+<p>2.关闭 MySQL 服务。与启动对应，同样有两种方式：</p>
+<ul>
+<li>
+<p>以管理员 (administrator) 方式运行 <code>cmd</code>，在<code>cmd</code>终端中运行<code>net stop mysql</code>。显示如下界面表示关闭成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220939116.png" alt="image-20220515220939116" /></p>
+</li>
+<li>
+<p>定位到 MySQL 安装目录的 <code>bin</code>文件夹，如<code>D:\Develop\MySQL\bin</code>。在此处打开 <code>cmd</code> 终端（在上面的启动终端之外另开一个终端），并运行<code>mysqladmin -uroot -p shutdown</code>并输入对应密码：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221417975.png" alt="image-20220515221417975" /></p>
+<p>在启动终端中显示如下界面表示关闭成功（也可在启动终端中通过<code>Ctrl+C</code>快捷键关闭，不推荐）：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221316977.png" alt="image-20220515221316977" /></p>
+</li>
+</ul>
+<p>PS：MySQL 服务的启动方式和关闭方式相对应</p>
+</br>
+<p>3.登录MySQL 用户：在启动 MySQL 后，在终端运行 <code>mysql -u root -p</code>后输入对应密码登录 root 用户（可更改用户名登录其他用户）。出现如下界面表示登录成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221935109.png" alt="image-20220515221935109" /></p>
+</br>
+<p>4.退出 MySQL 用户：在登录成功后，可通过<code>quit</code>或者<code>Ctrl + C</code>退出当前用户登录。出现如下界面表示退出成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515222217664.png" alt="image-20220515222217664" /></p>
+<blockquote>
+<p>以上操作参考资料为：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/12972434/restart-mysql-server-on-windows-7">restart mysql server on windows7</a></li>
+<li><a href="https://www.runoob.com/mysql/mysql-tutorial.html">MySQL 教程 - 菜鸟教程</a></li>
+</ol>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>go语言笔记</title>
     <url>/2022/05/15/go%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>本文记录一下在学习 go 语言过程中遇到的问题。</p>
@@ -204,48 +402,32 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo博客图床配置</title>
-    <url>/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>本文记录一下如何通过python脚本实现将本地<code>.md</code>文件中图片自动上传至腾讯云对象存储，并在本地<code>.md</code>文件中将图片地址替换为对应的腾讯云存储链接。</p>
+    <title>Ubuntu常见操作</title>
+    <url>/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
 <span id="more"></span>
+<p>1.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>bash</code>终端中分行展示环境变量。</p>
+<blockquote>
+<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
+</blockquote>
+</br>
+<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
+<ul>
+<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
+<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
+</ul>
+<p>运行结果如下：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
+<blockquote>
+<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
+</blockquote>
+</br>
 ]]></content>
       <categories>
-        <category>环境配置</category>
+        <category>开发工具</category>
       </categories>
       <tags>
-        <tag>hexo博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to Develop a Compiler</title>
-    <url>/2021/07/15/How-To-Develop-a-Compiler/</url>
-    <content><![CDATA[<p>本文主要记录一下在阅读《自制编译器》并实现一个简化版的C语言编译器过程中所踩过的坑。</p>
-<span id="more"></span>
-<h2 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置"></a> 环境配置</h2>
-<h3 id="运行系统"><a class="markdownIt-Anchor" href="#运行系统"></a> 运行系统</h3>
-<p>由于本人只有一台配置落后的笔记本，书中要求的运行系统又是Linux，故采取了windows安装WSL的方案，具体见 <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">在windows上安装WSL</a> 。</p>
-<ul>
-<li>windows版本：windows10 19043.1110</li>
-<li>WSL版本：Ubuntu 20.04.2 LTS</li>
-</ul>
-<h3 id="安装软件和依赖"><a class="markdownIt-Anchor" href="#安装软件和依赖"></a> 安装软件和依赖</h3>
-<p>书中并未要求安装gcc，由于后续可能需要进行所实现的编译器Cb和gcc的比对，决定安装gcc。安装流程为（见 <a href="https://stackoverflow.com/questions/62215963/how-to-install-gcc-and-gdb-for-wslwindows-subsytem-for-linux">安装gcc</a>）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</span><br><span class="line">sudo apt autoremove -y</span><br><span class="line">sudo apt-get install gcc -y</span><br></pre></td></tr></table></figure>
-<ul>
-<li>gcc版本：gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0</li>
-</ul>
-<p>书中要求安装JRE 1.5以上版本和Java编程器。安装流程为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-11-jdk</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Java版本：openjdk 11.0.11</li>
-</ul>
-<h3 id="安装书中实现的编译器cb"><a class="markdownIt-Anchor" href="#安装书中实现的编译器cb"></a> 安装书中实现的编译器Cb</h3>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>编译器</tag>
+        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -286,6 +468,93 @@
       </categories>
       <tags>
         <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客图床配置</title>
+    <url>/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录一下如何将本地<code>.md</code>文件中图片上传到 github 仓库或腾讯云对象存储中，并在本地<code>.md</code>文件中将图片地址替换为对应的 github 或腾讯云存储链接。</p>
+<span id="more"></span>
+<h3 id="上传至-github-仓库"><a class="markdownIt-Anchor" href="#上传至-github-仓库"></a> 上传至 github 仓库</h3>
+<p>该方法的思路是在 github 中新建一个仓库作为图床，并通过 PicGo 软件将本地图片上传至对应的 github 仓库。具体步骤如下：</p>
+<h4 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h4>
+<ul>
+<li>Typora 0.11.18 (beta)：<a href="https://typora.en.uptodown.com/windows/versions">下载地址</a></li>
+<li>PicGo 2.3.0：<a href="https://github.com/Molunerfinn/PicGo/releases">下载地址</a></li>
+<li>nodejs v16.13.0</li>
+</ul>
+<h4 id="软件配置"><a class="markdownIt-Anchor" href="#软件配置"></a> 软件配置</h4>
+<ul>
+<li>
+<p>打开 PicGo 在图床配置里选择 GitHub 图床进行配置，并设为默认图床</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516220239293.png?token=AKWAGW46DCB4MTDZJIFCFR3CQJMZU" alt="image-20220516220239293" /></p>
+</li>
+<li>
+<p>打开 Typora 偏好设置并进行图像设置：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516220428369.png?token=AKWAGW6CJAWAMQRBNJQZ4RLCQJNAO" alt="image-20220516220428369" /></p>
+</li>
+<li>
+<p>编辑 markdown 文档会发现插入文档的图片会自动上传至 github 仓库并将图片地址更新为对应 github 仓库地址。也可右键图像手动上传：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516220638096.png?token=AKWAGW6R34UTLRBW7F5KINLCQJNIS" alt="image-20220516220638096" /></p>
+</li>
+</ul>
+<h3 id="上传至腾讯云对象存储"><a class="markdownIt-Anchor" href="#上传至腾讯云对象存储"></a> 上传至腾讯云对象存储</h3>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>nodejs使用指南</title>
+    <url>/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>本文记录一下使用nodejs时的常见操作：</p>
+<span id="more"></span>
+<p>1.<code>npm root -g</code>：查看<code>npm</code>安装全局packages时的安装地址。例如在Windows10系统中运行其结果如下：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220514233532921.png" alt="image-20220514233532921" /></p>
+<blockquote>
+<p>参考资料：<a href="https://stackoverflow.com/questions/5926672/where-does-npm-install-packages">Where does npm install packages?</a></p>
+</blockquote>
+</br>
+<p>2.<code>npm install package_name</code>：局部安装package。安装的package在当前目录的node_modules文件夹中。简写形式为<code>npm i package_name</code>。</p>
+</br>
+<p>3.<code>npm install -g package_name</code>：全局安装package。安装的package运行<code>npm root -g</code>后的展示路径中。简写形式为<code>npm i -g package_name</code>。</p>
+</br>
+<p>4.<code>npm uninstall package_name</code>：局部卸载package。要卸载的package在当前目录的node_modules文件夹中。简写形式为<code>npm un package_name</code> 。</p>
+</br>
+<p>5.<code>npm uninstall -g package_name</code>：全局卸载package。要卸载的package在运行<code>npm root -g</code>后的展示路径中中。简写形式为<code>npm un -g package_name</code> 。</p>
+</br>
+<p>6.<code>npm i package_name</code> vs <code>npm i package_name --save</code> vs <code>npm i package_name --save-dev</code>：</p>
+<p>PS：本问题在为hexo博客安装<code>hexo</code>和<code>hexo-cli</code>包时出现，解决方案为使用<code>--save-dev</code>选项安装。</p>
+<ul>
+<li>
+<p><code>npm i package_name --save</code>：当需要为自己的<code>app/modules</code>安装依赖时，使用该命令可以在安装相应package之后将其添加到当前路径中<code>package.json</code>文件的<code>&quot;dependencies&quot;</code>子对象中。如下图所示：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515003241850.png" alt="image-20220515003241850" /></p>
+</li>
+<li>
+<p><code>npm i package_name</code>：当前版本中，该命令与<code>npm i package_name --save</code>等价，同样会将安装的package添加到当前路径中<code>package.json</code>文件的<code>&quot;dependencies&quot;</code>子对象中。即<code>--save</code>为<code>npm i</code>命令的默认选项。</p>
+</li>
+<li>
+<p><code>npm i package_name --save-dev</code>：当为开发安装依赖包时，需要使用此命令。该命令会将 the third-party package添加到当前路径中<code>package.json</code>文件的<code>&quot;devDependencies&quot;</code>子对象中。如下图所示：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515004019352.png" alt="image-20220515004019352" /></p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev">What is the difference between --save and --save-dev</a></li>
+<li><a href="https://docs.npmjs.com/cli/v8/commands/npm-install">npm-install</a></li>
+</ol>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>nodejs</tag>
       </tags>
   </entry>
   <entry>
@@ -1391,84 +1660,6 @@
       </tags>
   </entry>
   <entry>
-    <title>常见bug记录</title>
-    <url>/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>本文记录在操作系统、浏览器中常见的bug及其解决方案。</p>
-<span id="more"></span>
-<p>1.<code>github</code>中网址前缀为<code>raw.githubusercontent.com</code>的资源（图片、文档等）无法访问。</p>
-<p>解决方案：</p>
-<p>根据 <a href="https://learnku.com/articles/43426">解决 raw.githubusercontent.com 无法访问的问题</a>，可能是由于某些原因导致 DNS 被污染，Windows系统上可以通过修改 <code>hosts</code> 文件解决该问题，步骤如下：</p>
-<ul>
-<li>1）通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
-</ul>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
-<ul>
-<li>
-<p>2）在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
-<p><code>185.199.108.133 raw.githubusercontent.com</code></p>
-<p>PS：可能<code>hosts</code>文件为只读文件，此时需要右键单击<code>hosts</code>文件修改其访问权限。</p>
-</li>
-</ul>
-</br>
-<p>2.在 Windows10 系统中，当默认浏览器设置为谷歌浏览器时，偶尔会出现点击其他应用（如飞书，TIM等）的链接无法跳转到谷歌浏览器打开此链接的情况。</p>
-<p>解决方案：重启电脑</p>
-</br>
-<p>3.在Windows 10系统中，当使用<code>git bash</code>终端进行package的安装和初始化时，无法在选项之间切换，如下图所示，无法在 No/Yes 的两个选项之间切换：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515153036885.png" alt="image-20220515153036885" /></p>
-<p>查询资料可知，<code>git bash</code>终端并不提供交互功能，因此无法进行选项切换。</p>
-<p>解决方案：使用<code>cmd</code>或者其他的终端</p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows">Can’t use arrow keys in Git Bash (Windows)</a></p>
-</br>
-<p>4.在 <a href="https://convertio.co/zh/document-converter/">Convertio</a> 进行文件转换时，转换完成后在点击文件下载按钮后会跳转到 403 Forbidden 页面，如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
-<p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
-<p>解决方案：关闭 ssr 代理</p>
-</br>
-<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004330258.png" alt="image-20220516004330258" /></p>
-<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
-<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
-<p>步骤：</p>
-<ul>
-<li>
-<p>关闭代理（在打开代理的情况下安装策略不同）</p>
-</li>
-<li>
-<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
-</li>
-<li>
-<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004936734.png" alt="image-20220516004936734" /></p>
-</li>
-<li>
-<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
-</li>
-<li>
-<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png" alt="image-20220516005208707" /></p>
-</li>
-</ul>
-<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
-<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
-<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
-</ol>
-</br>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像处理试题</title>
     <url>/2022/04/25/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<p>本文主要记录一下历年图像处理的考试题目及其答案。</p>
@@ -1837,6 +2028,52 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </categories>
       <tags>
         <tag>计算机图形图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Windows10右键菜单添加功能</title>
+    <url>/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<p>本文记录一下在Windows10右键菜单中添加各项功能的流程：</p>
+<span id="more"></span>
+<p>1.Windows10 右键新建菜单中添加<code>.md</code>文件。</p>
+<p>步骤如下：</p>
+<ul>
+<li>安装 Typora，一个<code>md</code>文件编辑器</li>
+<li>键盘 <code>Win + R</code>快捷键打开窗口，输入<code>regedit</code>打开注册表编辑器 (registry editor)</li>
+<li>定位到 <code>HKEY_CLASSES_ROOT\.md</code></li>
+<li>点击 <code>.md</code> 文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Typora.md</code></li>
+<li>右键 <code>.md</code> 文件夹，新建项 (key) ，将新建项命名为 <code>ShellNew</code></li>
+<li>右键 <code>ShellNew</code> ，新建字符串项 (string value) ，把新建的字符串项改为 <code>NullFile</code></li>
+</ul>
+<p>结果如图：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202646881.png" alt="image-20220515202646881" /></p>
+<blockquote>
+<p>参考资料：<a href="https://www.zhihu.com/question/267616299">Win10下如何在右键新建菜单中添加.md文件</a></p>
+<p>PS：答案有误，应该将答案中的 <code>Typora.exe</code> 改为 <code>Typora.md</code></p>
+</blockquote>
+</br>
+<p>2.Windows10 右键菜单中添加在此处打开WSL (Windows Subsystem for Linux)。</p>
+<p>步骤如下：</p>
+<ul>
+<li>键盘 <code>Win + R</code>快捷键打开窗口，输入<code>regedit</code>打开注册表编辑器 (registry editor)</li>
+<li>定位到 <code>HKEY_CLASSES_ROOT\Directory\Background\shell</code></li>
+<li>点击<code>shell</code>文件夹，新建项 (key) ,将新建项命名为<code>Ubuntu</code></li>
+<li>点击<code>Ubuntu</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Open Ubuntu here :-)</code></li>
+<li>右键<code>Ubuntu</code>文件夹，新建项 (key) ，并将其命名为<code>command</code>，点击<code>command</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>C:\Windows\System32\wsl.exe</code> (即wsl.exe文件所在位置)</li>
+<li>右键<code>Ubuntu</code>文件夹，新建字符串项 (string value) ，把新建的字符串项改为<code>C:\Windows\System32\wsl.exe</code>。此操作用于给右键WSL添加图标</li>
+</ul>
+<p>结果如图：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202553533.png" alt="image-20220515202553533" /></p>
+<blockquote>
+<p>参考资料：<a href="https://www.i4k.xyz/article/gulang03/79177500">将 Windows10 中的 WSL 添加至右键菜单</a></p>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -2742,25 +2979,81 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </tags>
   </entry>
   <entry>
-    <title>成组概念厘清</title>
-    <url>/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</url>
-    <content><![CDATA[<p>本文记录一下成组的易混淆或者应该加以区分的概念。</p>
+    <title>常见bug记录</title>
+    <url>/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>本文记录在操作系统、浏览器中常见的bug及其解决方案。</p>
 <span id="more"></span>
-<p>1.Error vs Exception：</p>
-<blockquote>
+<p>1.<code>github</code>中网址前缀为<code>raw.githubusercontent.com</code>的资源（图片、文档等）无法访问。</p>
+<p>解决方案：</p>
+<p>根据 <a href="https://learnku.com/articles/43426">解决 raw.githubusercontent.com 无法访问的问题</a>，可能是由于某些原因导致 DNS 被污染，Windows系统上可以通过修改 <code>hosts</code> 文件解决该问题，步骤如下：</p>
+<ul>
+<li>1）通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
+</ul>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
+<ul>
+<li>
+<p>2）在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
+<p><code>185.199.108.133 raw.githubusercontent.com</code></p>
+<p>PS：可能<code>hosts</code>文件为只读文件，此时需要右键单击<code>hosts</code>文件修改其访问权限。</p>
+</li>
+</ul>
+</br>
+<p>2.在 Windows10 系统中，当默认浏览器设置为谷歌浏览器时，偶尔会出现点击其他应用（如飞书，TIM等）的链接无法跳转到谷歌浏览器打开此链接的情况。</p>
+<p>解决方案：重启电脑</p>
+</br>
+<p>3.在Windows 10系统中，当使用<code>git bash</code>终端进行package的安装和初始化时，无法在选项之间切换，如下图所示，无法在 No/Yes 的两个选项之间切换：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515153036885.png" alt="image-20220515153036885" /></p>
+<p>查询资料可知，<code>git bash</code>终端并不提供交互功能，因此无法进行选项切换。</p>
+<p>解决方案：使用<code>cmd</code>或者其他的终端</p>
+<p>参考资料：<a href="https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows">Can’t use arrow keys in Git Bash (Windows)</a></p>
+</br>
+<p>4.在 <a href="https://convertio.co/zh/document-converter/">Convertio</a> 进行文件转换时，转换完成后在点击文件下载按钮后会跳转到 403 Forbidden 页面，如下图所示：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
+<p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
+<p>解决方案：关闭 ssr 代理</p>
+</br>
+<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004330258.png" alt="image-20220516004330258" /></p>
+<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
+<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
+<p>步骤：</p>
+<ul>
+<li>
+<p>关闭代理（在打开代理的情况下安装策略不同）</p>
+</li>
+<li>
+<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
+</li>
+<li>
+<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004936734.png" alt="image-20220516004936734" /></p>
+</li>
+<li>
+<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
+</li>
+<li>
+<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png" alt="image-20220516005208707" /></p>
+</li>
+</ul>
+<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
 <p>参考资料：</p>
 <ol>
-<li><a href="https://stackoverflow.com/questions/5813614/what-is-difference-between-errors-and-exceptions">What is difference between Errors and Exceptions?</a></li>
-<li><a href="https://stackoverflow.com/questions/912334/differences-between-exception-and-error">Differences between Exception and Error</a></li>
+<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
+<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
+<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
 </ol>
-</blockquote>
 </br>
 ]]></content>
       <categories>
-        <category>资料</category>
+        <category>环境配置</category>
       </categories>
       <tags>
-        <tag>概念</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -2780,6 +3073,28 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       <tags>
         <tag>概念</tag>
         <tag>术语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>成组概念厘清</title>
+    <url>/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</url>
+    <content><![CDATA[<p>本文记录一下成组的易混淆或者应该加以区分的概念。</p>
+<span id="more"></span>
+<p>1.Error vs Exception：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/5813614/what-is-difference-between-errors-and-exceptions">What is difference between Errors and Exceptions?</a></li>
+<li><a href="https://stackoverflow.com/questions/912334/differences-between-exception-and-error">Differences between Exception and Error</a></li>
+</ol>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>概念</tag>
       </tags>
   </entry>
   <entry>
@@ -3418,296 +3733,5 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
     <title>通过python脚本实现向kindle邮箱发送书籍</title>
     <url>/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Ubuntu常见操作</title>
-    <url>/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
-<span id="more"></span>
-<p>1.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>bash</code>终端中分行展示环境变量。</p>
-<blockquote>
-<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
-</blockquote>
-</br>
-<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
-<ul>
-<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
-<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
-</ul>
-<p>运行结果如下：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
-<blockquote>
-<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>nodejs使用指南</title>
-    <url>/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>本文记录一下使用nodejs时的常见操作：</p>
-<span id="more"></span>
-<p>1.<code>npm root -g</code>：查看<code>npm</code>安装全局packages时的安装地址。例如在Windows10系统中运行其结果如下：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220514233532921.png" alt="image-20220514233532921" /></p>
-<blockquote>
-<p>参考资料：<a href="https://stackoverflow.com/questions/5926672/where-does-npm-install-packages">Where does npm install packages?</a></p>
-</blockquote>
-</br>
-<p>2.<code>npm install package_name</code>：局部安装package。安装的package在当前目录的node_modules文件夹中。简写形式为<code>npm i package_name</code>。</p>
-</br>
-<p>3.<code>npm install -g package_name</code>：全局安装package。安装的package运行<code>npm root -g</code>后的展示路径中。简写形式为<code>npm i -g package_name</code>。</p>
-</br>
-<p>4.<code>npm uninstall package_name</code>：局部卸载package。要卸载的package在当前目录的node_modules文件夹中。简写形式为<code>npm un package_name</code> 。</p>
-</br>
-<p>5.<code>npm uninstall -g package_name</code>：全局卸载package。要卸载的package在运行<code>npm root -g</code>后的展示路径中中。简写形式为<code>npm un -g package_name</code> 。</p>
-</br>
-<p>6.<code>npm i package_name</code> vs <code>npm i package_name --save</code> vs <code>npm i package_name --save-dev</code>：</p>
-<p>PS：本问题在为hexo博客安装<code>hexo</code>和<code>hexo-cli</code>包时出现，解决方案为使用<code>--save-dev</code>选项安装。</p>
-<ul>
-<li>
-<p><code>npm i package_name --save</code>：当需要为自己的<code>app/modules</code>安装依赖时，使用该命令可以在安装相应package之后将其添加到当前路径中<code>package.json</code>文件的<code>&quot;dependencies&quot;</code>子对象中。如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515003241850.png" alt="image-20220515003241850" /></p>
-</li>
-<li>
-<p><code>npm i package_name</code>：当前版本中，该命令与<code>npm i package_name --save</code>等价，同样会将安装的package添加到当前路径中<code>package.json</code>文件的<code>&quot;dependencies&quot;</code>子对象中。即<code>--save</code>为<code>npm i</code>命令的默认选项。</p>
-</li>
-<li>
-<p><code>npm i package_name --save-dev</code>：当为开发安装依赖包时，需要使用此命令。该命令会将 the third-party package添加到当前路径中<code>package.json</code>文件的<code>&quot;devDependencies&quot;</code>子对象中。如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515004019352.png" alt="image-20220515004019352" /></p>
-</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev">What is the difference between --save and --save-dev</a></li>
-<li><a href="https://docs.npmjs.com/cli/v8/commands/npm-install">npm-install</a></li>
-</ol>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-      <tags>
-        <tag>nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在Windows10右键菜单添加功能</title>
-    <url>/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<p>本文记录一下在Windows10右键菜单中添加各项功能的流程：</p>
-<span id="more"></span>
-<p>1.Windows10 右键新建菜单中添加<code>.md</code>文件。</p>
-<p>步骤如下：</p>
-<ul>
-<li>安装 Typora，一个<code>md</code>文件编辑器</li>
-<li>键盘 <code>Win + R</code>快捷键打开窗口，输入<code>regedit</code>打开注册表编辑器 (registry editor)</li>
-<li>定位到 <code>HKEY_CLASSES_ROOT\.md</code></li>
-<li>点击 <code>.md</code> 文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Typora.md</code></li>
-<li>右键 <code>.md</code> 文件夹，新建项 (key) ，将新建项命名为 <code>ShellNew</code></li>
-<li>右键 <code>ShellNew</code> ，新建字符串项 (string value) ，把新建的字符串项改为 <code>NullFile</code></li>
-</ul>
-<p>结果如图：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202646881.png" alt="image-20220515202646881" /></p>
-<blockquote>
-<p>参考资料：<a href="https://www.zhihu.com/question/267616299">Win10下如何在右键新建菜单中添加.md文件</a></p>
-<p>PS：答案有误，应该将答案中的 <code>Typora.exe</code> 改为 <code>Typora.md</code></p>
-</blockquote>
-</br>
-<p>2.Windows10 右键菜单中添加在此处打开WSL (Windows Subsystem for Linux)。</p>
-<p>步骤如下：</p>
-<ul>
-<li>键盘 <code>Win + R</code>快捷键打开窗口，输入<code>regedit</code>打开注册表编辑器 (registry editor)</li>
-<li>定位到 <code>HKEY_CLASSES_ROOT\Directory\Background\shell</code></li>
-<li>点击<code>shell</code>文件夹，新建项 (key) ,将新建项命名为<code>Ubuntu</code></li>
-<li>点击<code>Ubuntu</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Open Ubuntu here :-)</code></li>
-<li>右键<code>Ubuntu</code>文件夹，新建项 (key) ，并将其命名为<code>command</code>，点击<code>command</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>C:\Windows\System32\wsl.exe</code> (即wsl.exe文件所在位置)</li>
-<li>右键<code>Ubuntu</code>文件夹，新建字符串项 (string value) ，把新建的字符串项改为<code>C:\Windows\System32\wsl.exe</code>。此操作用于给右键WSL添加图标</li>
-</ul>
-<p>结果如图：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202553533.png" alt="image-20220515202553533" /></p>
-<blockquote>
-<p>参考资料：<a href="https://www.i4k.xyz/article/gulang03/79177500">将 Windows10 中的 WSL 添加至右键菜单</a></p>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL使用指南</title>
-    <url>/2022/05/15/Mysql%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>本文记录一下使用 MySQL 时的常见配置和操作。</p>
-<span id="more"></span>
-<p>1.启动 MySQL 服务。启动 MySQL 有两种方式：</p>
-<ul>
-<li>
-<p>以管理员 (administrator) 方式运行 <code>cmd</code>，在<code>cmd</code>终端中运行<code>net start mysql</code>。显示如下界面表示启动成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220235630.png" alt="image-20220515220235630" /></p>
-<p>PS：关闭该终端 MySQL 仍然保持运行</p>
-<p>此时可能出现以下界面：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515215652080.png" alt="image-20220515215652080" /></p>
-<p>原因：Windows 系统中 MySQL 服务被禁用</p>
-<p>解决方案：<code>Win + R</code>打开<code>run</code>窗口，输入<code>services.msc</code>打开<code>Services</code>窗口，查看其中的 MySQL服务并将其 status 由 <code>Disabled</code> 改为<code>Manual</code>。如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515215940920.png" alt="image-20220515215940920" /></p>
-</li>
-<li>
-<p>定位到 MySQL 安装目录的 <code>bin</code>文件夹，如<code>D:\Develop\MySQL\bin</code>。在此处打开 <code>cmd</code> 终端，并运行 <code>mysqld --console</code>，显示如下界面表示启动成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220421568.png" alt="image-20220515220421568" /></p>
-<p>PS：关闭该终端或者<code>Ctrl + C</code>都会使得 MySQL 服务关闭</p>
-</li>
-</ul>
-</br>
-<p>2.关闭 MySQL 服务。与启动对应，同样有两种方式：</p>
-<ul>
-<li>
-<p>以管理员 (administrator) 方式运行 <code>cmd</code>，在<code>cmd</code>终端中运行<code>net stop mysql</code>。显示如下界面表示关闭成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220939116.png" alt="image-20220515220939116" /></p>
-</li>
-<li>
-<p>定位到 MySQL 安装目录的 <code>bin</code>文件夹，如<code>D:\Develop\MySQL\bin</code>。在此处打开 <code>cmd</code> 终端（在上面的启动终端之外另开一个终端），并运行<code>mysqladmin -uroot -p shutdown</code>并输入对应密码：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221417975.png" alt="image-20220515221417975" /></p>
-<p>在启动终端中显示如下界面表示关闭成功（也可在启动终端中通过<code>Ctrl+C</code>快捷键关闭，不推荐）：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221316977.png" alt="image-20220515221316977" /></p>
-</li>
-</ul>
-<p>PS：MySQL 服务的启动方式和关闭方式相对应</p>
-</br>
-<p>3.登录MySQL 用户：在启动 MySQL 后，在终端运行 <code>mysql -u root -p</code>后输入对应密码登录 root 用户（可更改用户名登录其他用户）。出现如下界面表示登录成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221935109.png" alt="image-20220515221935109" /></p>
-</br>
-<p>4.退出 MySQL 用户：在登录成功后，可通过<code>quit</code>或者<code>Ctrl + C</code>退出当前用户登录。出现如下界面表示退出成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515222217664.png" alt="image-20220515222217664" /></p>
-<blockquote>
-<p>以上操作参考资料为：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/12972434/restart-mysql-server-on-windows-7">restart mysql server on windows7</a></li>
-<li><a href="https://www.runoob.com/mysql/mysql-tutorial.html">MySQL 教程 - 菜鸟教程</a></li>
-</ol>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pytorch中知识点01</title>
-    <url>/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
-    <content><![CDATA[<p>本文记录一下在调试 <a href="https://github.com/yuhuan-wu/MobileSal">MobileSal</a> 过程中记录的一些 Pytorch 框架和 python 相关知识点。</p>
-<span id="more"></span>
-<p>1.当出现<code>import cv2</code>，需要安装 <code>opencv</code>包：<code>pip install opencv-python</code>。</p>
-<p>2.<code>import torch.utils.data</code> 。该 package 的核心类为 <code>torch.utils.data.DataLoader</code>，表示在一个数据集上的迭代，其支持：</p>
-<ul>
-<li>map-style 和 iterable-style 的数据集</li>
-<li>定制化数据加载顺序</li>
-<li>自动 batching</li>
-<li>单线程和多线程的数据加载</li>
-<li>自动内存 pinning (固定)</li>
-</ul>
-<p>其通过以下的 <code>DataLoader</code> 对象的构造器配置：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DataLoader(dataset, batch_size=<span class="number">1</span>, shuffle=<span class="literal">False</span>, sampler=<span class="literal">None</span>,</span><br><span class="line">           batch_sampler=<span class="literal">None</span>, num_workers=<span class="number">0</span>, collate_fn=<span class="literal">None</span>,</span><br><span class="line">           pin_memory=<span class="literal">False</span>, drop_last=<span class="literal">False</span>, timeout=<span class="number">0</span>,</span><br><span class="line">           worker_init_fn=<span class="literal">None</span>, *, prefetch_factor=<span class="number">2</span>,</span><br><span class="line">           persistent_workers=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, key</span>):</span><br><span class="line">    <span class="keyword">return</span> self.<span class="built_in">list</span>[key]</span><br></pre></td></tr></table></figure>
-<p>当在对象中实现以上方法时，使得可以通过索引访问对象中的元素，如 <code>list[key]</code></p>
-<p>4.<code>img = cv.imread(filename[, flags])</code>根据一个文件名中加载图像然后返回它。如果图像文件不能读取，返回一个空矩阵。可以通过 <code>img.shape[0]</code> 和 <code>img.shape[1]</code>访问图像的高和宽。</p>
-<p>5.<code>import torch.nn.functional as F</code>。该代码导入 <code>torch.nn.functional</code>，其包含许多对神经网络层进行操作的函数</p>
-<p>6.<code>utils</code>在编程语言中通常为 Utility Class 的缩写，也被称为 Helper class，是一个只包含静态方法的类，无状态且不能被实例化。</p>
-<p>7.<code>img = cv2.resize(img, (self.weight, self.height))</code>调用 OpenCV 中的<code>resize()</code>方法将源文件 <code>img</code> 尺寸转换为所需尺寸 <code>(self.weight, self.height)</code>。其详细声明如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]])</span><br></pre></td></tr></table></figure>
-<p><code>image interpolation</code>  发生在对图像进行 resize 时，上述的<code>interpolation</code>用于指定不同的插值策略，从而在进行 resize 时按指定策略用已知像素点的值评估未知点的值。</p>
-<ol start="8">
-<li></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#/usr/bin/env python</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,a</span>):</span><br><span class="line">        self.a = a</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self,b</span>):</span><br><span class="line">        c = self.a+b</span><br><span class="line">        <span class="built_in">print</span> c</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">display</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span> self.a</span><br><span class="line"></span><br><span class="line">test = Test(<span class="string">&quot;This is test!&quot;</span>)</span><br><span class="line">test.display()</span><br><span class="line">Test(<span class="string">&quot;##Append something&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><code>__call__</code> 用于将一个类重载，使得类也能像函数一样调用。</p>
-<p>9.<code>isinstance()</code>函数用于判断一个对象是否是一个已知类型，类似 <code>type()</code>。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;a = <span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,<span class="built_in">int</span>)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,<span class="built_in">str</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,(<span class="built_in">str</span>,<span class="built_in">int</span>,<span class="built_in">list</span>))    <span class="comment"># 是元组中的一个返回 True</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p><code>type()</code> 和 <code>isinstance()</code>的区别：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>(<span class="title class_ inherited__">A</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">isinstance</span>(A(), A)    <span class="comment"># returns True</span></span><br><span class="line"><span class="built_in">type</span>(A()) == A        <span class="comment"># returns True</span></span><br><span class="line"><span class="built_in">isinstance</span>(B(), A)    <span class="comment"># returns True</span></span><br><span class="line"><span class="built_in">type</span>(B()) == A        <span class="comment"># returns False</span></span><br></pre></td></tr></table></figure>
-<p>10.<code>img = cv2.flip(img, 0)</code> 表示将图像做水平翻转；<code>img = cv2.flip(img, 1)</code>表示将图像做垂直翻转。<code>img = cv2.flip(img, -1)</code> 表示将图像同时做水平和垂直翻转。</p>
-<p>11.<code>random.random()</code>方法返回随机生成的一个实数，范围为 [0,1)；<code>random.randint(a,b)</code>方法返回随机生成的一个整数，其值&gt;=a，&lt;=b。</p>
-<ol start="12">
-<li></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">label_tensor =  torch.LongTensor(np.array(label, dtype=np.<span class="built_in">int</span>)).unsqueeze(dim=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>Torch 定义了10种 tensor 类型，其中 <code>torch.LongTensor</code> 为64-bit integer (signed) 对应CPU的类型，在GPU中对应的类型为 <code>torch.cuda.LongTensor</code>。<code>torch.Tensor</code>是默认的张量类型 <code>torch.FloatTensor</code>。</p>
-<p>13.<code>torch.unsqueeze(input, dim)</code>返回一个新张量，一个维度被插入指定的位置。例如：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.tensor([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.unsqueeze(x, <span class="number">0</span>)</span><br><span class="line">tensor([[ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.unsqueeze(x, <span class="number">1</span>)</span><br><span class="line">tensor([[ <span class="number">1</span>],</span><br><span class="line">        [ <span class="number">2</span>],</span><br><span class="line">        [ <span class="number">3</span>],</span><br><span class="line">        [ <span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
-<p>14.<code>torch.tensor</code> vs <code>torch.Tensor</code>：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.Tensor([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]).dtype</span><br><span class="line">torch.float32</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]).dtype</span><br><span class="line">Out[<span class="number">32</span>]: torch.int64</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.Tensor([<span class="literal">True</span>, <span class="literal">False</span>]).dtype</span><br><span class="line">torch.float32</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor([<span class="literal">True</span>, <span class="literal">False</span>]).dtype</span><br><span class="line">torch.uint8</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.Tensor(<span class="number">10</span>)</span><br><span class="line">tensor([<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">10</span>)</span><br><span class="line">tensor(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-<p>15.补充关于 <code>torch.tensor</code> 的说明，以下为对其调用的语法，其返回一个张量：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.tensor(data, *, dtype=<span class="literal">None</span>, device=<span class="literal">None</span>, requires_grad=<span class="literal">False</span>, pin_memory=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-<p>以下为其使用的例子：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.tensor([[<span class="number">0.1</span>, <span class="number">1.2</span>], [<span class="number">2.2</span>, <span class="number">3.1</span>], [<span class="number">4.9</span>, <span class="number">5.2</span>]])</span><br><span class="line"></span><br><span class="line">torch.tensor([<span class="number">0</span>, <span class="number">1</span>])  <span class="comment"># Type inference on data</span></span><br><span class="line"></span><br><span class="line">torch.tensor([[<span class="number">0.11111</span>, <span class="number">0.222222</span>, <span class="number">0.3333333</span>]],</span><br><span class="line">             dtype=torch.float64,</span><br><span class="line">             device=torch.device(<span class="string">&#x27;cuda:0&#x27;</span>))  <span class="comment"># creates a double tensor on a CUDA device</span></span><br><span class="line"></span><br><span class="line">torch.tensor(<span class="number">3.14159</span>)  <span class="comment"># Create a zero-dimensional (scalar) tensor</span></span><br><span class="line"></span><br><span class="line">torch.tensor([])  <span class="comment"># Create an empty tensor (of size (0,))</span></span><br></pre></td></tr></table></figure>
-<p>PS：当操作tensors推荐使用 <code>torch.Tensor.clone()</code>和<code>torch.Tensor.detach()</code>以及<code>torch.Tensor.requires_grad_()</code>。当t为一个tensor时，下述操作等价：</p>
-<ul>
-<li><code>t.clone().detach()</code> 和 <code>torch.tensor(t)</code></li>
-<li><code>t.clone().detach().requires_grad_(True)</code>和<code>torch.tensor(t, requires_grad=True)</code></li>
-</ul>
-<p>16.<code>torch.rand</code>返回一个张量，用符合N(0,1)正态分布的随机数字填充，张量形状由<code>size</code>决定：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.rand(size, *, out=<span class="literal">None</span>, dtype=<span class="literal">None</span>, layout=torch.strided, device=<span class="literal">None</span>, requires_grad=<span class="literal">False</span>) → Tensor</span><br></pre></td></tr></table></figure>
-<p>17.<code>torch.from_numpy(ndarray)</code>从<code>numpy.ndarray</code>创建一个张量。如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = numpy.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = torch.from_numpy(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t</span><br><span class="line">tensor([ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t[<span class="number">0</span>] = -<span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">array([-<span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-<ol start="18">
-<li></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&#x27;.&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>上述命令将当前目录添加到python运行时的查找路径的最开始，使得当python运行时首先在当前目录文件中查找函数或类。</p>
-<p>19.Pytorch Hub 是一个预训练模型仓库，用来设计便于研究重现。Pytorch Hub支持发布预训练模型（模型定义和预训练权重）到一个github仓库，只需通过添加一个 <code>hubconf.py</code>文件。预训练权重可以被存储在github仓库，也可以通过 <code>torch.hub.load_state_dict_from_url()</code>加载。</p>
-<ol start="20">
-<li></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InvertedResidual</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, inp, oup, stride, expand_ratio, dilation=<span class="number">1</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(InvertedResidual, self).__init__()</span><br></pre></td></tr></table></figure>
-<p>其中 <code>super(InvertedResidual, self).__init__()</code> 等价于 <code>super().__init__()</code>。</p>
-<p>21.<code>self.modules()</code>返回定义在模型类中对多层模块的迭代器：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># weight initialization</span></span><br><span class="line">        <span class="keyword">for</span> m <span class="keyword">in</span> self.modules():</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">isinstance</span>(m, nn.Conv2d):</span><br><span class="line">                nn.init.kaiming_normal_(m.weight, mode=<span class="string">&#x27;fan_out&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> m.bias <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    nn.init.zeros_(m.bias)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">isinstance</span>(m, nn.BatchNorm2d):</span><br><span class="line">                nn.init.ones_(m.weight)</span><br><span class="line">                nn.init.zeros_(m.bias)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">isinstance</span>(m, nn.Linear):</span><br><span class="line">                nn.init.normal_(m.weight, <span class="number">0</span>, <span class="number">0.01</span>)</span><br><span class="line">                nn.init.zeros_(m.bias)</span><br></pre></td></tr></table></figure>
-<p>上述代码对模型权重进行初始化。</p>
-<p>22.<code>enumerate()</code>用于将一个可遍历的数据对象（如对象、元组或字符串）组合为一个索引序列，同时列出数据和数据下标，一般用在for循环中：<code>enumerate(sequence, [start=0])</code>，其返回一个enumerate(枚举)对象：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>seasons = [<span class="string">&#x27;Spring&#x27;</span>, <span class="string">&#x27;Summer&#x27;</span>, <span class="string">&#x27;Fall&#x27;</span>, <span class="string">&#x27;Winter&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">enumerate</span>(seasons))</span><br><span class="line">[(<span class="number">0</span>, <span class="string">&#x27;Spring&#x27;</span>), (<span class="number">1</span>, <span class="string">&#x27;Summer&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;Fall&#x27;</span>), (<span class="number">3</span>, <span class="string">&#x27;Winter&#x27;</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="built_in">enumerate</span>(seasons, start=<span class="number">1</span>))       <span class="comment"># 下标从 1 开始</span></span><br><span class="line">[(<span class="number">1</span>, <span class="string">&#x27;Spring&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;Summer&#x27;</span>), (<span class="number">3</span>, <span class="string">&#x27;Fall&#x27;</span>), (<span class="number">4</span>, <span class="string">&#x27;Winter&#x27;</span>)]</span><br></pre></td></tr></table></figure>
-<p>23.<code>*args</code>用于传入多个无名参数，这些参数以tuple的形式导入，一般放在参数列表的最后。若不放在最后，需要指明其他传入参数名称：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_func</span>(<span class="params">x, y, *args</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(x))</span><br><span class="line">    <span class="built_in">print</span>(x)</span><br><span class="line">    <span class="built_in">print</span>(y)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">type</span>(args))</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line"></span><br><span class="line">print_func(<span class="number">1</span>, <span class="number">2</span>, <span class="string">&#x27;呵呵哒&#x27;</span>, [], x=<span class="string">&#x27;x&#x27;</span>, y=<span class="string">&#x27;y&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>24.<code>**kwargs</code>将参数以字典的形式导入：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>(<span class="params">a, b=<span class="number">10</span>, *args, **kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span> (a)</span><br><span class="line">    <span class="built_in">print</span> (b)</span><br><span class="line">    <span class="built_in">print</span> (args)</span><br><span class="line">    <span class="built_in">print</span> (kwargs)</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, e=<span class="number">5</span>, f=<span class="number">6</span>, g=<span class="number">7</span>)</span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">&#123;<span class="string">&#x27;e&#x27;</span>: <span class="number">5</span>, <span class="string">&#x27;f&#x27;</span>: <span class="number">6</span>, <span class="string">&#x27;g&#x27;</span>: <span class="number">7</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>25.Pytorch中的<code>state_dict</code>简单来说是一个Python 字典对象，将模型每一层映射到模型参数张量。只有具有可学习参数（卷积层，线性层等）和 registered buffers (batchnorm’s running_mean) 在 <code>state_dict</code>中有入口。同理，可以使用<code>load_state_dict</code>加载这些参数。</p>
-<p>PS：优化器对象<code>torch.optim</code>也有<code>state_dict</code>，包含关于优化器状态的信息以及所有的超参数。</p>
-<p>26.<code>self.register_buffer</code> 和<code>self.register_parameter</code>。前者用于register模型参数为buffers，buffers不能调用<code>model.parameters()</code>返回参数，优化器也无法更新它们。</p>
-<p>27.<code>__repr__</code>用于返回传入对象相关信息，可以重写。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__repr__</span>(<span class="params">self</span>):</span><br><span class="line">        s = self.__class__.__name__ + <span class="string">&quot;(&quot;</span></span><br><span class="line">        s += <span class="string">&quot;&#123;&#125;)&quot;</span>.<span class="built_in">format</span>(self.weight.shape[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
-<p>28.<code>torch.no_grad</code>用来关闭梯度计算，当你确定你不会调用 <code>Tensor.backward()</code>。这一操作可以减少用于计算的内存消耗，此时<code>requires_grad=True</code>。</p>
-<p>29.装饰器（Decorators）是用于修改其他函数的功能的函数。python装饰器封装一个函数，并且用这样或那样的方式修改它的行为：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">a_new_decorator</span>(<span class="params">a_func</span>):</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapTheFunction</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I am doing some boring work before executing a_func()&quot;</span>)</span><br><span class="line"> </span><br><span class="line">        a_func()</span><br><span class="line"> </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I am doing some boring work after executing a_func()&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> wrapTheFunction</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">a_function_requiring_decoration</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am the function which needs some decoration to remove my foul smell&quot;</span>)</span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration()</span><br><span class="line"><span class="comment">#outputs: &quot;I am the function which needs some decoration to remove my foul smell&quot;</span></span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)</span><br><span class="line"><span class="comment">#now a_function_requiring_decoration is wrapped by wrapTheFunction()</span></span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration()</span><br><span class="line"><span class="comment">#outputs:I am doing some boring work before executing a_func()</span></span><br><span class="line"><span class="comment">#        I am the function which needs some decoration to remove my foul smell</span></span><br><span class="line"><span class="comment">#        I am doing some boring work after executing a_func()</span></span><br></pre></td></tr></table></figure>
-<p>上述代码中 <code>a_new_decorator</code> 即为一个装饰器，可以通过<code>@a_new_decorator</code>来精简上述代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@a_new_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">a_function_requiring_decoration</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Hey you! Decorate me!&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am the function which needs some decoration to &quot;</span></span><br><span class="line">          <span class="string">&quot;remove my foul smell&quot;</span>)</span><br><span class="line"> </span><br><span class="line">a_function_requiring_decoration()</span><br><span class="line"><span class="comment">#outputs: I am doing some boring work before executing a_func()</span></span><br><span class="line"><span class="comment">#         I am the function which needs some decoration to remove my foul smell</span></span><br><span class="line"><span class="comment">#         I am doing some boring work after executing a_func()</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#the @a_new_decorator is just a short way of saying:</span></span><br><span class="line">a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)</span><br></pre></td></tr></table></figure>
-<p>此时会有一个问题，对用装饰器修饰的函数调用<code>__name__</code>会有以下输出：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(a_function_requiring_decoration.__name__)</span><br><span class="line"><span class="comment"># Output: wrapTheFunction</span></span><br></pre></td></tr></table></figure>
-<p>此时，可以通过Python提供的<code>functools.wraps</code>来解决上述问题：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">a_new_decorator</span>(<span class="params">a_func</span>):</span><br><span class="line"><span class="meta">    @wraps(<span class="params">a_func</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapTheFunction</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I am doing some boring work before executing a_func()&quot;</span>)</span><br><span class="line">        a_func()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I am doing some boring work after executing a_func()&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapTheFunction</span><br><span class="line"> </span><br><span class="line"><span class="meta">@a_new_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">a_function_requiring_decoration</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Hey yo! Decorate me!&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;I am the function which needs some decoration to &quot;</span></span><br><span class="line">          <span class="string">&quot;remove my foul smell&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(a_function_requiring_decoration.__name__)</span><br><span class="line"><span class="comment"># Output: a_function_requiring_decoration</span></span><br></pre></td></tr></table></figure>
-<p>30.当需要线上加载模型时，不同版本的Pytorch有不同的加载方法，具体如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">from</span> torchvision.models.utils <span class="keyword">import</span> load_state_dict_from_url <span class="comment"># torchvision 0.4+</span></span><br><span class="line"><span class="keyword">except</span> ModuleNotFoundError:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">from</span> torch.hub <span class="keyword">import</span> load_state_dict_from_url <span class="comment"># torch 1.x</span></span><br><span class="line">    <span class="keyword">except</span> ImportError:</span><br><span class="line">        <span class="keyword">from</span> torch.utils.model_zoo <span class="keyword">import</span> load_url <span class="keyword">as</span> load_state_dict_from_url <span class="comment"># torch 0.4.1</span></span><br></pre></td></tr></table></figure>
-<p>PS：当版本不同时有不同的异常，如上述的<code>ModuleNotFoundError</code>和<code>ImportError</code>。</p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>Pytorch</tag>
-        <tag>python</tag>
-      </tags>
   </entry>
 </search>

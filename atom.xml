@@ -350,10 +350,10 @@
     <link href="https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</id>
     <published>2022-05-08T12:24:35.000Z</published>
-    <updated>2022-05-11T04:57:00.373Z</updated>
+    <updated>2022-05-16T14:07:01.896Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文记录一下如何通过python脚本实现将本地&lt;code&gt;.md&lt;/code&gt;文件中图片自动上传至腾讯云对象存储，并在本地&lt;code&gt;.md&lt;/code&gt;文件中将图片地址替换为对应的腾讯云存储链接。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下如何将本地&lt;code&gt;.md&lt;/code&gt;文件中图片上传到 github 仓库或腾讯云对象存储中，并在本地&lt;code&gt;.md&lt;/code&gt;文件中将图片地址替换为对应的 github 或腾讯云存储链接。&lt;/p&gt;</summary>
     
     
     
