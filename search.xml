@@ -273,58 +273,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git使用指南</title>
-    <url>/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>本文记录一下使用git时的常见操作。</p>
-<span id="more"></span>
-<p>1.<code>git remote -v</code>：查看当前项目远程地址。</p>
-</br>
-<p>2.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>git bash</code>终端中分行展示环境变量。</p>
-<blockquote>
-<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
-</blockquote>
-</br>
-<p>3.在未将修改的本地文件推送到远程仓库的状态下，通过 <code>git pull</code> 拉取远程仓库的内容时会出现<code>conflicts</code>，如下图所示：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516212248506.png?token=AKWAGW4TWAIV3UZMNZVZDRLCQJLUY" alt="image-20220516212248506" /></p>
-<p>此时可以通过如下步骤解决<code>conflicts</code>：</p>
-<ul>
-<li>
-<p><code>git fetch origin</code>：下载远程分支的所有变动，但不与本地分支合并</p>
-</li>
-<li>
-<p><code>git pull origin hexo</code>：下载远程<code>hexo</code>分支的所有变动并与本地分支合并。此时会出现如下情形</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516212734022.png?token=AKWAGWYZ35VBES4T4KXFT5LCQJLUG" alt="image-20220516212734022" /></p>
-</li>
-<li>
-<p><code>git status</code>：查看当前分支状态。</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516212832926.png?token=AKWAGWYTCJTJYHQH53NVMFDCQJLUS" alt="image-20220516212832926" /></p>
-</li>
-<li>
-<p><code>git add ./</code>：添加指定目录到暂存区，包括子目录</p>
-</li>
-<li>
-<p><code>git commit -m &quot;update&quot;</code>：提交暂存区到仓库区</p>
-</li>
-<li>
-<p><code>git pull origin hexo</code>：发现<code>Already up to date.</code></p>
-</li>
-<li>
-<p><code>git status</code>：发现<code>nothing to commit, working tree clean</code></p>
-</li>
-</ul>
-<blockquote>
-<p>参考资料：<a href="https://stackoverflow.com/questions/161813/how-do-i-resolve-merge-conflicts-in-a-git-repository">How do I resolve merge conflicts in a Git repository?</a></p>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pytorch中知识点01</title>
     <url>/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
     <content><![CDATA[<p>本文记录一下在调试 <a href="https://github.com/yuhuan-wu/MobileSal">MobileSal</a> 过程中记录的一些 Pytorch 框架和 python 相关知识点。</p>
@@ -431,29 +379,55 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/05/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>git使用指南</title>
+    <url>/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>本文记录一下使用git时的常见操作。</p>
 <span id="more"></span>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>1.<code>git remote -v</code>：查看当前项目远程地址。</p>
+</br>
+<p>2.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>git bash</code>终端中分行展示环境变量。</p>
+<blockquote>
+<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
+</blockquote>
+</br>
+<p>3.在未将修改的本地文件推送到远程仓库的状态下，通过 <code>git pull</code> 拉取远程仓库的内容时会出现<code>conflicts</code>，如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516212248506.png?token=AKWAGW4TWAIV3UZMNZVZDRLCQJLUY" alt="image-20220516212248506" /></p>
+<p>此时可以通过如下步骤解决<code>conflicts</code>：</p>
+<ul>
+<li>
+<p><code>git fetch origin</code>：下载远程分支的所有变动，但不与本地分支合并</p>
+</li>
+<li>
+<p><code>git pull origin hexo</code>：下载远程<code>hexo</code>分支的所有变动并与本地分支合并。此时会出现如下情形</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516212734022.png?token=AKWAGWYZ35VBES4T4KXFT5LCQJLUG" alt="image-20220516212734022" /></p>
+</li>
+<li>
+<p><code>git status</code>：查看当前分支状态。</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516212832926.png?token=AKWAGWYTCJTJYHQH53NVMFDCQJLUS" alt="image-20220516212832926" /></p>
+</li>
+<li>
+<p><code>git add ./</code>：添加指定目录到暂存区，包括子目录</p>
+</li>
+<li>
+<p><code>git commit -m &quot;update&quot;</code>：提交暂存区到仓库区</p>
+</li>
+<li>
+<p><code>git pull origin hexo</code>：发现<code>Already up to date.</code></p>
+</li>
+<li>
+<p><code>git status</code>：发现<code>nothing to commit, working tree clean</code></p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：<a href="https://stackoverflow.com/questions/161813/how-do-i-resolve-merge-conflicts-in-a-git-repository">How do I resolve merge conflicts in a Git repository?</a></p>
+</blockquote>
+</br>
 ]]></content>
       <categories>
-        <category>环境配置</category>
+        <category>开发工具</category>
       </categories>
       <tags>
-        <tag>hexo博客</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -502,6 +476,32 @@
     <content><![CDATA[<p>本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。</p>
 <span id="more"></span>
 <h3 id="bug记录"><a class="markdownIt-Anchor" href="#bug记录"></a> bug记录</h3>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/05/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -1315,52 +1315,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在Windows10右键菜单添加功能</title>
-    <url>/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<p>本文记录一下在Windows10右键菜单中添加各项功能的流程：</p>
-<span id="more"></span>
-<p>1.Windows10 右键新建菜单中添加<code>.md</code>文件。</p>
-<p>步骤如下：</p>
-<ul>
-<li>安装 Typora，一个<code>md</code>文件编辑器</li>
-<li>键盘 <code>Win + R</code>快捷键打开窗口，输入<code>regedit</code>打开注册表编辑器 (registry editor)</li>
-<li>定位到 <code>HKEY_CLASSES_ROOT\.md</code></li>
-<li>点击 <code>.md</code> 文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Typora.md</code></li>
-<li>右键 <code>.md</code> 文件夹，新建项 (key) ，将新建项命名为 <code>ShellNew</code></li>
-<li>右键 <code>ShellNew</code> ，新建字符串项 (string value) ，把新建的字符串项改为 <code>NullFile</code></li>
-</ul>
-<p>结果如图：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202646881.png" alt="image-20220515202646881" /></p>
-<blockquote>
-<p>参考资料：<a href="https://www.zhihu.com/question/267616299">Win10下如何在右键新建菜单中添加.md文件</a></p>
-<p>PS：答案有误，应该将答案中的 <code>Typora.exe</code> 改为 <code>Typora.md</code></p>
-</blockquote>
-</br>
-<p>2.Windows10 右键菜单中添加在此处打开WSL (Windows Subsystem for Linux)。</p>
-<p>步骤如下：</p>
-<ul>
-<li>键盘 <code>Win + R</code>快捷键打开窗口，输入<code>regedit</code>打开注册表编辑器 (registry editor)</li>
-<li>定位到 <code>HKEY_CLASSES_ROOT\Directory\Background\shell</code></li>
-<li>点击<code>shell</code>文件夹，新建项 (key) ,将新建项命名为<code>Ubuntu</code></li>
-<li>点击<code>Ubuntu</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Open Ubuntu here :-)</code></li>
-<li>右键<code>Ubuntu</code>文件夹，新建项 (key) ，并将其命名为<code>command</code>，点击<code>command</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>C:\Windows\System32\wsl.exe</code> (即wsl.exe文件所在位置)</li>
-<li>右键<code>Ubuntu</code>文件夹，新建字符串项 (string value) ，把新建的字符串项改为<code>C:\Windows\System32\wsl.exe</code>。此操作用于给右键WSL添加图标</li>
-</ul>
-<p>结果如图：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202553533.png" alt="image-20220515202553533" /></p>
-<blockquote>
-<p>参考资料：<a href="https://www.i4k.xyz/article/gulang03/79177500">将 Windows10 中的 WSL 添加至右键菜单</a></p>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>别人的收藏-01</title>
     <url>/2022/05/09/%E5%88%AB%E4%BA%BA%E7%9A%84%E6%94%B6%E8%97%8F-01/</url>
     <content><![CDATA[<p>本文转载自别人收藏的好的文章和资料（QAQ，找不到原始出处），放在博客上便于查看。</p>
@@ -2080,100 +2034,49 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </tags>
   </entry>
   <entry>
-    <title>常见bug记录</title>
-    <url>/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>本文记录在操作系统、浏览器中常见的bug及其解决方案。</p>
+    <title>在Windows10右键菜单添加功能</title>
+    <url>/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<p>本文记录一下在Windows10右键菜单中添加各项功能的流程：</p>
 <span id="more"></span>
-<p>1.<code>github</code>中网址前缀为<code>raw.githubusercontent.com</code>的资源（图片、文档等）无法访问。</p>
-<p>解决方案：</p>
-<p>根据 <a href="https://learnku.com/articles/43426">解决 raw.githubusercontent.com 无法访问的问题</a>，可能是由于某些原因导致 DNS 被污染，Windows系统上可以通过修改 <code>hosts</code> 文件解决该问题，步骤如下：</p>
+<p>1.Windows10 右键新建菜单中添加<code>.md</code>文件。</p>
+<p>步骤如下：</p>
 <ul>
-<li>1）通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
+<li>安装 Typora，一个<code>md</code>文件编辑器</li>
+<li>键盘 <code>Win + R</code>快捷键打开窗口，输入<code>regedit</code>打开注册表编辑器 (registry editor)</li>
+<li>定位到 <code>HKEY_CLASSES_ROOT\.md</code></li>
+<li>点击 <code>.md</code> 文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Typora.md</code></li>
+<li>右键 <code>.md</code> 文件夹，新建项 (key) ，将新建项命名为 <code>ShellNew</code></li>
+<li>右键 <code>ShellNew</code> ，新建字符串项 (string value) ，把新建的字符串项改为 <code>NullFile</code></li>
 </ul>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
+<p>结果如图：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202646881.png" alt="image-20220515202646881" /></p>
+<blockquote>
+<p>参考资料：<a href="https://www.zhihu.com/question/267616299">Win10下如何在右键新建菜单中添加.md文件</a></p>
+<p>PS：答案有误，应该将答案中的 <code>Typora.exe</code> 改为 <code>Typora.md</code></p>
+</blockquote>
+</br>
+<p>2.Windows10 右键菜单中添加在此处打开WSL (Windows Subsystem for Linux)。</p>
+<p>步骤如下：</p>
 <ul>
-<li>
-<p>2）在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
-<p><code>185.199.108.133 raw.githubusercontent.com</code></p>
-<p>PS：可能<code>hosts</code>文件为只读文件，此时需要右键单击<code>hosts</code>文件修改其访问权限。</p>
-</li>
+<li>键盘 <code>Win + R</code>快捷键打开窗口，输入<code>regedit</code>打开注册表编辑器 (registry editor)</li>
+<li>定位到 <code>HKEY_CLASSES_ROOT\Directory\Background\shell</code></li>
+<li>点击<code>shell</code>文件夹，新建项 (key) ,将新建项命名为<code>Ubuntu</code></li>
+<li>点击<code>Ubuntu</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Open Ubuntu here :-)</code></li>
+<li>右键<code>Ubuntu</code>文件夹，新建项 (key) ，并将其命名为<code>command</code>，点击<code>command</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>C:\Windows\System32\wsl.exe</code> (即wsl.exe文件所在位置)</li>
+<li>右键<code>Ubuntu</code>文件夹，新建字符串项 (string value) ，把新建的字符串项改为<code>C:\Windows\System32\wsl.exe</code>。此操作用于给右键WSL添加图标</li>
 </ul>
-</br>
-<p>2.在 Windows10 系统中，当默认浏览器设置为谷歌浏览器时，偶尔会出现点击其他应用（如飞书，TIM等）的链接无法跳转到谷歌浏览器打开此链接的情况。</p>
-<p>解决方案：重启电脑</p>
-</br>
-<p>3.在Windows 10系统中，当使用<code>git bash</code>终端进行package的安装和初始化时，无法在选项之间切换，如下图所示，无法在 No/Yes 的两个选项之间切换：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515153036885.png" alt="image-20220515153036885" /></p>
-<p>查询资料可知，<code>git bash</code>终端并不提供交互功能，因此无法进行选项切换。</p>
-<p>解决方案：使用<code>cmd</code>或者其他的终端</p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows">Can’t use arrow keys in Git Bash (Windows)</a></p>
-</br>
-<p>4.在 <a href="https://convertio.co/zh/document-converter/">Convertio</a> 进行文件转换时，转换完成后在点击文件下载按钮后会跳转到 403 Forbidden 页面，如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
-<p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
-<p>解决方案：关闭 ssr 代理</p>
-</br>
-<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004330258.png" alt="image-20220516004330258" /></p>
-<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
-<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
-<p>步骤：</p>
-<ul>
-<li>
-<p>关闭代理（在打开代理的情况下安装策略不同）</p>
-</li>
-<li>
-<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
-</li>
-<li>
-<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004936734.png" alt="image-20220516004936734" /></p>
-</li>
-<li>
-<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
-</li>
-<li>
-<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png" alt="image-20220516005208707" /></p>
-</li>
-</ul>
-<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
-<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
-<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
-</ol>
+<p>结果如图：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202553533.png" alt="image-20220515202553533" /></p>
+<blockquote>
+<p>参考资料：<a href="https://www.i4k.xyz/article/gulang03/79177500">将 Windows10 中的 WSL 添加至右键菜单</a></p>
+</blockquote>
 </br>
 ]]></content>
       <categories>
         <category>环境配置</category>
       </categories>
       <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常见概念和术语记录</title>
-    <url>/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>本文记录在编程学习中常见的概念和术语及其对应的操作。</p>
-<span id="more"></span>
-<p>1.容器：</p>
-<ul>
-<li><a href="https://linux.cn/article-14584-1.html?utm_source=qqmail&amp;utm_medium=qqmail">当下运行容器的 3 个步骤</a></li>
-</ul>
-</br>
-]]></content>
-      <categories>
-        <category>资料</category>
-      </categories>
-      <tags>
-        <tag>概念</tag>
-        <tag>术语</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -3076,6 +2979,103 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </categories>
       <tags>
         <tag>资料</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见概念和术语记录</title>
+    <url>/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>本文记录在编程学习中常见的概念和术语及其对应的操作。</p>
+<span id="more"></span>
+<p>1.容器：</p>
+<ul>
+<li><a href="https://linux.cn/article-14584-1.html?utm_source=qqmail&amp;utm_medium=qqmail">当下运行容器的 3 个步骤</a></li>
+</ul>
+</br>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>概念</tag>
+        <tag>术语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见bug记录</title>
+    <url>/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>本文记录在操作系统、浏览器中常见的bug及其解决方案。</p>
+<span id="more"></span>
+<p>1.<code>github</code>中网址前缀为<code>raw.githubusercontent.com</code>的资源（图片、文档等）无法访问。</p>
+<p>解决方案：</p>
+<p>根据 <a href="https://learnku.com/articles/43426">解决 raw.githubusercontent.com 无法访问的问题</a>，可能是由于某些原因导致 DNS 被污染，Windows系统上可以通过修改 <code>hosts</code> 文件解决该问题，步骤如下：</p>
+<ul>
+<li>1）通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
+</ul>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
+<ul>
+<li>
+<p>2）在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
+<p><code>185.199.108.133 raw.githubusercontent.com</code></p>
+<p>PS：可能<code>hosts</code>文件为只读文件，此时需要右键单击<code>hosts</code>文件修改其访问权限。</p>
+</li>
+</ul>
+</br>
+<p>2.在 Windows10 系统中，当默认浏览器设置为谷歌浏览器时，偶尔会出现点击其他应用（如飞书，TIM等）的链接无法跳转到谷歌浏览器打开此链接的情况。</p>
+<p>解决方案：重启电脑</p>
+</br>
+<p>3.在Windows 10系统中，当使用<code>git bash</code>终端进行package的安装和初始化时，无法在选项之间切换，如下图所示，无法在 No/Yes 的两个选项之间切换：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515153036885.png" alt="image-20220515153036885" /></p>
+<p>查询资料可知，<code>git bash</code>终端并不提供交互功能，因此无法进行选项切换。</p>
+<p>解决方案：使用<code>cmd</code>或者其他的终端</p>
+<p>参考资料：<a href="https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows">Can’t use arrow keys in Git Bash (Windows)</a></p>
+</br>
+<p>4.在 <a href="https://convertio.co/zh/document-converter/">Convertio</a> 进行文件转换时，转换完成后在点击文件下载按钮后会跳转到 403 Forbidden 页面，如下图所示：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
+<p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
+<p>解决方案：关闭 ssr 代理</p>
+</br>
+<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004330258.png" alt="image-20220516004330258" /></p>
+<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
+<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
+<p>步骤：</p>
+<ul>
+<li>
+<p>关闭代理（在打开代理的情况下安装策略不同）</p>
+</li>
+<li>
+<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
+</li>
+<li>
+<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004936734.png" alt="image-20220516004936734" /></p>
+</li>
+<li>
+<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
+</li>
+<li>
+<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png" alt="image-20220516005208707" /></p>
+</li>
+</ul>
+<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
+<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
+<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
+</ol>
+</br>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
