@@ -1,67 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>How to Develop a Compiler</title>
-    <url>/2021/07/15/How-To-Develop-a-Compiler/</url>
-    <content><![CDATA[<p>本文主要记录一下在阅读《自制编译器》并实现一个简化版的C语言编译器过程中所踩过的坑。</p>
-<span id="more"></span>
-<h2 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置"></a> 环境配置</h2>
-<h3 id="运行系统"><a class="markdownIt-Anchor" href="#运行系统"></a> 运行系统</h3>
-<p>由于本人只有一台配置落后的笔记本，书中要求的运行系统又是Linux，故采取了windows安装WSL的方案，具体见 <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">在windows上安装WSL</a> 。</p>
-<ul>
-<li>windows版本：windows10 19043.1110</li>
-<li>WSL版本：Ubuntu 20.04.2 LTS</li>
-</ul>
-<h3 id="安装软件和依赖"><a class="markdownIt-Anchor" href="#安装软件和依赖"></a> 安装软件和依赖</h3>
-<p>书中并未要求安装gcc，由于后续可能需要进行所实现的编译器Cb和gcc的比对，决定安装gcc。安装流程为（见 <a href="https://stackoverflow.com/questions/62215963/how-to-install-gcc-and-gdb-for-wslwindows-subsytem-for-linux">安装gcc</a>）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</span><br><span class="line">sudo apt autoremove -y</span><br><span class="line">sudo apt-get install gcc -y</span><br></pre></td></tr></table></figure>
-<ul>
-<li>gcc版本：gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0</li>
-</ul>
-<p>书中要求安装JRE 1.5以上版本和Java编程器。安装流程为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-11-jdk</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Java版本：openjdk 11.0.11</li>
-</ul>
-<h3 id="安装书中实现的编译器cb"><a class="markdownIt-Anchor" href="#安装书中实现的编译器cb"></a> 安装书中实现的编译器Cb</h3>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>编译器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu常见操作</title>
-    <url>/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
-<span id="more"></span>
-<p>1.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>bash</code>终端中分行展示环境变量。</p>
-<blockquote>
-<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
-</blockquote>
-</br>
-<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
-<ul>
-<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
-<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
-</ul>
-<p>运行结果如下：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
-<blockquote>
-<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022深度学习框架</title>
     <url>/2022/05/08/2022%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</url>
     <content><![CDATA[<p>本文记录以下2022年深度学习框架考试答案：</p>
@@ -191,6 +130,149 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL使用指南</title>
+    <url>/2022/05/15/Mysql%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>本文记录一下使用 MySQL 时的常见配置和操作。</p>
+<span id="more"></span>
+<p>1.启动 MySQL 服务。启动 MySQL 有两种方式：</p>
+<ul>
+<li>
+<p>以管理员 (administrator) 方式运行 <code>cmd</code>，在<code>cmd</code>终端中运行<code>net start mysql</code>。显示如下界面表示启动成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220235630.png" alt="image-20220515220235630" /></p>
+<p>PS：关闭该终端 MySQL 仍然保持运行</p>
+<p>此时可能出现以下界面：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515215652080.png" alt="image-20220515215652080" /></p>
+<p>原因：Windows 系统中 MySQL 服务被禁用</p>
+<p>解决方案：<code>Win + R</code>打开<code>run</code>窗口，输入<code>services.msc</code>打开<code>Services</code>窗口，查看其中的 MySQL服务并将其 status 由 <code>Disabled</code> 改为<code>Manual</code>。如下图所示：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515215940920.png" alt="image-20220515215940920" /></p>
+</li>
+<li>
+<p>定位到 MySQL 安装目录的 <code>bin</code>文件夹，如<code>D:\Develop\MySQL\bin</code>。在此处打开 <code>cmd</code> 终端，并运行 <code>mysqld --console</code>，显示如下界面表示启动成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220421568.png" alt="image-20220515220421568" /></p>
+<p>PS：关闭该终端或者<code>Ctrl + C</code>都会使得 MySQL 服务关闭</p>
+</li>
+</ul>
+</br>
+<p>2.关闭 MySQL 服务。与启动对应，同样有两种方式：</p>
+<ul>
+<li>
+<p>以管理员 (administrator) 方式运行 <code>cmd</code>，在<code>cmd</code>终端中运行<code>net stop mysql</code>。显示如下界面表示关闭成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220939116.png" alt="image-20220515220939116" /></p>
+</li>
+<li>
+<p>定位到 MySQL 安装目录的 <code>bin</code>文件夹，如<code>D:\Develop\MySQL\bin</code>。在此处打开 <code>cmd</code> 终端（在上面的启动终端之外另开一个终端），并运行<code>mysqladmin -uroot -p shutdown</code>并输入对应密码：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221417975.png" alt="image-20220515221417975" /></p>
+<p>在启动终端中显示如下界面表示关闭成功（也可在启动终端中通过<code>Ctrl+C</code>快捷键关闭，不推荐）：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221316977.png" alt="image-20220515221316977" /></p>
+</li>
+</ul>
+<p>PS：MySQL 服务的启动方式和关闭方式相对应</p>
+</br>
+<p>3.登录MySQL 用户：在启动 MySQL 后，在终端运行 <code>mysql -u root -p</code>后输入对应密码登录 root 用户（可更改用户名登录其他用户）。出现如下界面表示登录成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221935109.png" alt="image-20220515221935109" /></p>
+</br>
+<p>4.退出 MySQL 用户：在登录成功后，可通过<code>quit</code>或者<code>Ctrl + C</code>退出当前用户登录。出现如下界面表示退出成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515222217664.png" alt="image-20220515222217664" /></p>
+<blockquote>
+<p>以上操作参考资料为：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/12972434/restart-mysql-server-on-windows-7">restart mysql server on windows7</a></li>
+<li><a href="https://www.runoob.com/mysql/mysql-tutorial.html">MySQL 教程 - 菜鸟教程</a></li>
+</ol>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Develop a Compiler</title>
+    <url>/2021/07/15/How-To-Develop-a-Compiler/</url>
+    <content><![CDATA[<p>本文主要记录一下在阅读《自制编译器》并实现一个简化版的C语言编译器过程中所踩过的坑。</p>
+<span id="more"></span>
+<h2 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置"></a> 环境配置</h2>
+<h3 id="运行系统"><a class="markdownIt-Anchor" href="#运行系统"></a> 运行系统</h3>
+<p>由于本人只有一台配置落后的笔记本，书中要求的运行系统又是Linux，故采取了windows安装WSL的方案，具体见 <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">在windows上安装WSL</a> 。</p>
+<ul>
+<li>windows版本：windows10 19043.1110</li>
+<li>WSL版本：Ubuntu 20.04.2 LTS</li>
+</ul>
+<h3 id="安装软件和依赖"><a class="markdownIt-Anchor" href="#安装软件和依赖"></a> 安装软件和依赖</h3>
+<p>书中并未要求安装gcc，由于后续可能需要进行所实现的编译器Cb和gcc的比对，决定安装gcc。安装流程为（见 <a href="https://stackoverflow.com/questions/62215963/how-to-install-gcc-and-gdb-for-wslwindows-subsytem-for-linux">安装gcc</a>）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</span><br><span class="line">sudo apt autoremove -y</span><br><span class="line">sudo apt-get install gcc -y</span><br></pre></td></tr></table></figure>
+<ul>
+<li>gcc版本：gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0</li>
+</ul>
+<p>书中要求安装JRE 1.5以上版本和Java编程器。安装流程为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-11-jdk</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Java版本：openjdk 11.0.11</li>
+</ul>
+<h3 id="安装书中实现的编译器cb"><a class="markdownIt-Anchor" href="#安装书中实现的编译器cb"></a> 安装书中实现的编译器Cb</h3>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>编译器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu常见操作</title>
+    <url>/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
+<span id="more"></span>
+<p>1.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>bash</code>终端中分行展示环境变量。</p>
+<blockquote>
+<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
+</blockquote>
+</br>
+<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
+<ul>
+<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
+<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
+</ul>
+<p>运行结果如下：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
+<blockquote>
+<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>go语言笔记</title>
+    <url>/2022/05/15/go%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>本文记录一下在学习 go 语言过程中遇到的问题。</p>
+<span id="more"></span>
+<p>1.下述代码中<code>_ &quot;github.com/go-sql-driver/mysql&quot;</code>中的<code>_</code>的作用。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;database/sql&quot;</span></span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line">	_ <span class="string">&quot;github.com/go-sql-driver/mysql&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/21220077/what-does-an-underscore-in-front-of-an-import-statement-mean">What does an underscore in front of an import statement mean?</a></li>
+<li><a href="https://go.dev/ref/spec#Import_declarations">Import declarations</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pytorch中知识点01</title>
     <url>/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
     <content><![CDATA[<p>本文记录一下在调试 <a href="https://github.com/yuhuan-wu/MobileSal">MobileSal</a> 过程中记录的一些 Pytorch 框架和 python 相关知识点。</p>
@@ -297,66 +379,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL使用指南</title>
-    <url>/2022/05/15/Mysql%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>本文记录一下使用 MySQL 时的常见配置和操作。</p>
-<span id="more"></span>
-<p>1.启动 MySQL 服务。启动 MySQL 有两种方式：</p>
-<ul>
-<li>
-<p>以管理员 (administrator) 方式运行 <code>cmd</code>，在<code>cmd</code>终端中运行<code>net start mysql</code>。显示如下界面表示启动成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220235630.png" alt="image-20220515220235630" /></p>
-<p>PS：关闭该终端 MySQL 仍然保持运行</p>
-<p>此时可能出现以下界面：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515215652080.png" alt="image-20220515215652080" /></p>
-<p>原因：Windows 系统中 MySQL 服务被禁用</p>
-<p>解决方案：<code>Win + R</code>打开<code>run</code>窗口，输入<code>services.msc</code>打开<code>Services</code>窗口，查看其中的 MySQL服务并将其 status 由 <code>Disabled</code> 改为<code>Manual</code>。如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515215940920.png" alt="image-20220515215940920" /></p>
-</li>
-<li>
-<p>定位到 MySQL 安装目录的 <code>bin</code>文件夹，如<code>D:\Develop\MySQL\bin</code>。在此处打开 <code>cmd</code> 终端，并运行 <code>mysqld --console</code>，显示如下界面表示启动成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220421568.png" alt="image-20220515220421568" /></p>
-<p>PS：关闭该终端或者<code>Ctrl + C</code>都会使得 MySQL 服务关闭</p>
-</li>
-</ul>
-</br>
-<p>2.关闭 MySQL 服务。与启动对应，同样有两种方式：</p>
-<ul>
-<li>
-<p>以管理员 (administrator) 方式运行 <code>cmd</code>，在<code>cmd</code>终端中运行<code>net stop mysql</code>。显示如下界面表示关闭成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515220939116.png" alt="image-20220515220939116" /></p>
-</li>
-<li>
-<p>定位到 MySQL 安装目录的 <code>bin</code>文件夹，如<code>D:\Develop\MySQL\bin</code>。在此处打开 <code>cmd</code> 终端（在上面的启动终端之外另开一个终端），并运行<code>mysqladmin -uroot -p shutdown</code>并输入对应密码：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221417975.png" alt="image-20220515221417975" /></p>
-<p>在启动终端中显示如下界面表示关闭成功（也可在启动终端中通过<code>Ctrl+C</code>快捷键关闭，不推荐）：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221316977.png" alt="image-20220515221316977" /></p>
-</li>
-</ul>
-<p>PS：MySQL 服务的启动方式和关闭方式相对应</p>
-</br>
-<p>3.登录MySQL 用户：在启动 MySQL 后，在终端运行 <code>mysql -u root -p</code>后输入对应密码登录 root 用户（可更改用户名登录其他用户）。出现如下界面表示登录成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515221935109.png" alt="image-20220515221935109" /></p>
-</br>
-<p>4.退出 MySQL 用户：在登录成功后，可通过<code>quit</code>或者<code>Ctrl + C</code>退出当前用户登录。出现如下界面表示退出成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220515222217664.png" alt="image-20220515222217664" /></p>
-<blockquote>
-<p>以上操作参考资料为：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/12972434/restart-mysql-server-on-windows-7">restart mysql server on windows7</a></li>
-<li><a href="https://www.runoob.com/mysql/mysql-tutorial.html">MySQL 教程 - 菜鸟教程</a></li>
-</ol>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git使用指南</title>
     <url>/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>本文记录一下使用git时的常见操作。</p>
@@ -409,68 +431,6 @@
       </tags>
   </entry>
   <entry>
-    <title>go语言笔记</title>
-    <url>/2022/05/15/go%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>本文记录一下在学习 go 语言过程中遇到的问题。</p>
-<span id="more"></span>
-<p>1.下述代码中<code>_ &quot;github.com/go-sql-driver/mysql&quot;</code>中的<code>_</code>的作用。</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;database/sql&quot;</span></span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line">	_ <span class="string">&quot;github.com/go-sql-driver/mysql&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/21220077/what-does-an-underscore-in-front-of-an-import-statement-mean">What does an underscore in front of an import statement mean?</a></li>
-<li><a href="https://go.dev/ref/spec#Import_declarations">Import declarations</a></li>
-</ol>
-</blockquote>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/05/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>hexo博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo配置指南</title>
-    <url>/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。</p>
-<span id="more"></span>
-<h3 id="bug记录"><a class="markdownIt-Anchor" href="#bug记录"></a> bug记录</h3>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>hexo博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客图床配置</title>
     <url>/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>本文记录一下如何将本地<code>.md</code>文件中图片上传到 github 仓库或腾讯云对象存储中，并在本地<code>.md</code>文件中将图片地址替换为对应的 github 或腾讯云存储链接。</p>
@@ -502,6 +462,46 @@
 <p>参考资料：<a href="https://www.jianshu.com/p/4740993c5843">为Typora配置图床,实现图片自动上传</a></p>
 </blockquote>
 <h3 id="上传至腾讯云对象存储"><a class="markdownIt-Anchor" href="#上传至腾讯云对象存储"></a> 上传至腾讯云对象存储</h3>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo配置指南</title>
+    <url>/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。</p>
+<span id="more"></span>
+<h3 id="bug记录"><a class="markdownIt-Anchor" href="#bug记录"></a> bug记录</h3>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/05/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -2080,125 +2080,6 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </tags>
   </entry>
   <entry>
-    <title>常见bug记录</title>
-    <url>/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>本文记录在操作系统、浏览器中常见的bug及其解决方案。</p>
-<span id="more"></span>
-<p>1.<code>github</code>中网址前缀为<code>raw.githubusercontent.com</code>的资源（图片、文档等）无法访问。</p>
-<p>解决方案：</p>
-<p>根据 <a href="https://learnku.com/articles/43426">解决 raw.githubusercontent.com 无法访问的问题</a>，可能是由于某些原因导致 DNS 被污染，Windows系统上可以通过修改 <code>hosts</code> 文件解决该问题，步骤如下：</p>
-<ul>
-<li>1）通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
-</ul>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
-<ul>
-<li>
-<p>2）在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
-<p><code>185.199.108.133 raw.githubusercontent.com</code></p>
-<p>PS：可能<code>hosts</code>文件为只读文件，此时需要右键单击<code>hosts</code>文件修改其访问权限。</p>
-</li>
-</ul>
-</br>
-<p>2.在 Windows10 系统中，当默认浏览器设置为谷歌浏览器时，偶尔会出现点击其他应用（如飞书，TIM等）的链接无法跳转到谷歌浏览器打开此链接的情况。</p>
-<p>解决方案：重启电脑</p>
-</br>
-<p>3.在Windows 10系统中，当使用<code>git bash</code>终端进行package的安装和初始化时，无法在选项之间切换，如下图所示，无法在 No/Yes 的两个选项之间切换：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515153036885.png" alt="image-20220515153036885" /></p>
-<p>查询资料可知，<code>git bash</code>终端并不提供交互功能，因此无法进行选项切换。</p>
-<p>解决方案：使用<code>cmd</code>或者其他的终端</p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows">Can’t use arrow keys in Git Bash (Windows)</a></p>
-</br>
-<p>4.在 <a href="https://convertio.co/zh/document-converter/">Convertio</a> 进行文件转换时，转换完成后在点击文件下载按钮后会跳转到 403 Forbidden 页面，如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
-<p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
-<p>解决方案：关闭 ssr 代理</p>
-</br>
-<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004330258.png" alt="image-20220516004330258" /></p>
-<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
-<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
-<p>步骤：</p>
-<ul>
-<li>
-<p>关闭代理（在打开代理的情况下安装策略不同）</p>
-</li>
-<li>
-<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
-</li>
-<li>
-<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004936734.png" alt="image-20220516004936734" /></p>
-</li>
-<li>
-<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
-</li>
-<li>
-<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png" alt="image-20220516005208707" /></p>
-</li>
-</ul>
-<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
-<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
-<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
-</ol>
-</br>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常见概念和术语记录</title>
-    <url>/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>本文记录在编程学习中常见的概念和术语及其对应的操作。</p>
-<span id="more"></span>
-<p>1.容器：</p>
-<ul>
-<li><a href="https://linux.cn/article-14584-1.html?utm_source=qqmail&amp;utm_medium=qqmail">当下运行容器的 3 个步骤</a></li>
-</ul>
-</br>
-]]></content>
-      <categories>
-        <category>资料</category>
-      </categories>
-      <tags>
-        <tag>概念</tag>
-        <tag>术语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>成组概念厘清</title>
-    <url>/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</url>
-    <content><![CDATA[<p>本文记录一下成组的易混淆或者应该加以区分的概念。</p>
-<span id="more"></span>
-<p>1.Error vs Exception：</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/5813614/what-is-difference-between-errors-and-exceptions">What is difference between Errors and Exceptions?</a></li>
-<li><a href="https://stackoverflow.com/questions/912334/differences-between-exception-and-error">Differences between Exception and Error</a></li>
-</ol>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>资料</category>
-      </categories>
-      <tags>
-        <tag>概念</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>对开发人员有用的定律、理论、原则和模式</title>
     <url>/2022/05/09/%E5%AF%B9%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E6%9C%89%E7%94%A8%E7%9A%84%E5%AE%9A%E5%BE%8B%E3%80%81%E7%90%86%E8%AE%BA%E3%80%81%E5%8E%9F%E5%88%99%E5%92%8C%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>本文转载自 github 项目 <a href="https://github.com/nusr/hacker-laws-zh">hacker-laws的中文翻译</a>，放在博客上便于查看。</p>
@@ -3098,6 +2979,125 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </categories>
       <tags>
         <tag>资料</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见概念和术语记录</title>
+    <url>/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>本文记录在编程学习中常见的概念和术语及其对应的操作。</p>
+<span id="more"></span>
+<p>1.容器：</p>
+<ul>
+<li><a href="https://linux.cn/article-14584-1.html?utm_source=qqmail&amp;utm_medium=qqmail">当下运行容器的 3 个步骤</a></li>
+</ul>
+</br>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>概念</tag>
+        <tag>术语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见bug记录</title>
+    <url>/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>本文记录在操作系统、浏览器中常见的bug及其解决方案。</p>
+<span id="more"></span>
+<p>1.<code>github</code>中网址前缀为<code>raw.githubusercontent.com</code>的资源（图片、文档等）无法访问。</p>
+<p>解决方案：</p>
+<p>根据 <a href="https://learnku.com/articles/43426">解决 raw.githubusercontent.com 无法访问的问题</a>，可能是由于某些原因导致 DNS 被污染，Windows系统上可以通过修改 <code>hosts</code> 文件解决该问题，步骤如下：</p>
+<ul>
+<li>1）通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
+</ul>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
+<ul>
+<li>
+<p>2）在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
+<p><code>185.199.108.133 raw.githubusercontent.com</code></p>
+<p>PS：可能<code>hosts</code>文件为只读文件，此时需要右键单击<code>hosts</code>文件修改其访问权限。</p>
+</li>
+</ul>
+</br>
+<p>2.在 Windows10 系统中，当默认浏览器设置为谷歌浏览器时，偶尔会出现点击其他应用（如飞书，TIM等）的链接无法跳转到谷歌浏览器打开此链接的情况。</p>
+<p>解决方案：重启电脑</p>
+</br>
+<p>3.在Windows 10系统中，当使用<code>git bash</code>终端进行package的安装和初始化时，无法在选项之间切换，如下图所示，无法在 No/Yes 的两个选项之间切换：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515153036885.png" alt="image-20220515153036885" /></p>
+<p>查询资料可知，<code>git bash</code>终端并不提供交互功能，因此无法进行选项切换。</p>
+<p>解决方案：使用<code>cmd</code>或者其他的终端</p>
+<p>参考资料：<a href="https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows">Can’t use arrow keys in Git Bash (Windows)</a></p>
+</br>
+<p>4.在 <a href="https://convertio.co/zh/document-converter/">Convertio</a> 进行文件转换时，转换完成后在点击文件下载按钮后会跳转到 403 Forbidden 页面，如下图所示：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
+<p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
+<p>解决方案：关闭 ssr 代理</p>
+</br>
+<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004330258.png" alt="image-20220516004330258" /></p>
+<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
+<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
+<p>步骤：</p>
+<ul>
+<li>
+<p>关闭代理（在打开代理的情况下安装策略不同）</p>
+</li>
+<li>
+<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
+</li>
+<li>
+<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004936734.png" alt="image-20220516004936734" /></p>
+</li>
+<li>
+<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
+</li>
+<li>
+<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png" alt="image-20220516005208707" /></p>
+</li>
+</ul>
+<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
+<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
+<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
+</ol>
+</br>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>成组概念厘清</title>
+    <url>/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</url>
+    <content><![CDATA[<p>本文记录一下成组的易混淆或者应该加以区分的概念。</p>
+<span id="more"></span>
+<p>1.Error vs Exception：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/5813614/what-is-difference-between-errors-and-exceptions">What is difference between Errors and Exceptions?</a></li>
+<li><a href="https://stackoverflow.com/questions/912334/differences-between-exception-and-error">Differences between Exception and Error</a></li>
+</ol>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>概念</tag>
       </tags>
   </entry>
   <entry>
