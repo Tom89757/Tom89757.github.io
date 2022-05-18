@@ -6,11 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-<<<<<<< HEAD
-  <updated>2022-05-18T16:21:21.867Z</updated>
-=======
-  <updated>2022-05-18T13:58:31.089Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
+  <updated>2022-05-18T16:28:36.608Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -25,7 +21,7 @@
     <link href="https://tom89757.github.io/2022/05/18/%E5%BD%93%E9%94%AE%E5%85%A5google.com%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/"/>
     <id>https://tom89757.github.io/2022/05/18/%E5%BD%93%E9%94%AE%E5%85%A5google.com%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/</id>
     <published>2022-05-18T13:51:01.000Z</published>
-    <updated>2022-05-18T13:58:31.089Z</updated>
+    <updated>2022-05-18T16:28:36.608Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文转载自 github 项目 &lt;a href=&quot;https://github.com/skyline75489/what-happens-when-zh_CN&quot;&gt;当···时发生了什么&lt;/a&gt;，放在博客上便于查看。&lt;/p&gt;</summary>
@@ -46,11 +42,7 @@
     <link href="https://tom89757.github.io/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
     <id>https://tom89757.github.io/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
     <published>2022-05-16T07:48:09.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.867Z</updated>
-=======
-    <updated>2022-05-16T07:51:48.360Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下在调试 &lt;a href=&quot;https://github.com/yuhuan-wu/MobileSal&quot;&gt;MobileSal&lt;/a&gt; 过程中记录的一些 Pytorch 框架和 python 相关知识点。&lt;/p&gt;</summary>
@@ -71,11 +63,7 @@
     <link href="https://tom89757.github.io/2022/05/15/go%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/"/>
     <id>https://tom89757.github.io/2022/05/15/go%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/</id>
     <published>2022-05-15T15:15:43.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.867Z</updated>
-=======
-    <updated>2022-05-15T15:20:58.774Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下在学习 go 语言过程中遇到的问题。&lt;/p&gt;</summary>
@@ -94,11 +82,7 @@
     <link href="https://tom89757.github.io/2022/05/15/Mysql%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/15/Mysql%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-15T13:51:14.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.866Z</updated>
-=======
-    <updated>2022-05-18T03:33:31.608Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用 MySQL 时的常见配置和操作。&lt;/p&gt;</summary>
@@ -117,11 +101,7 @@
     <link href="https://tom89757.github.io/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/"/>
     <id>https://tom89757.github.io/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</id>
     <published>2022-05-15T08:44:03.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.872Z</updated>
-=======
-    <updated>2022-05-18T03:33:31.613Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下在Windows10右键菜单中添加各项功能的流程：&lt;/p&gt;</summary>
@@ -140,11 +120,7 @@
     <link href="https://tom89757.github.io/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/"/>
     <id>https://tom89757.github.io/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/</id>
     <published>2022-05-15T08:36:56.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.874Z</updated>
-=======
-    <updated>2022-05-15T08:36:56.385Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     
@@ -157,11 +133,7 @@
     <link href="https://tom89757.github.io/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/"/>
     <id>https://tom89757.github.io/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</id>
     <published>2022-05-15T04:12:50.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.873Z</updated>
-=======
-    <updated>2022-05-15T17:00:13.932Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下成组的易混淆或者应该加以区分的概念。&lt;/p&gt;</summary>
@@ -180,11 +152,7 @@
     <link href="https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"/>
     <id>https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</id>
     <published>2022-05-14T16:22:55.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.867Z</updated>
-=======
-    <updated>2022-05-18T03:33:31.608Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;</summary>
@@ -203,11 +171,7 @@
     <link href="https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-14T15:32:40.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.869Z</updated>
-=======
-    <updated>2022-05-18T03:33:31.611Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用nodejs时的常见操作：&lt;/p&gt;</summary>
@@ -226,11 +190,7 @@
     <link href="https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/"/>
     <id>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/</id>
     <published>2022-05-13T15:20:31.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.873Z</updated>
-=======
-    <updated>2022-05-15T17:02:36.327Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录在编程学习中常见的概念和术语及其对应的操作。&lt;/p&gt;</summary>
@@ -251,11 +211,7 @@
     <link href="https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/"/>
     <id>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</id>
     <published>2022-05-12T17:37:45.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.872Z</updated>
-=======
-    <updated>2022-05-15T17:02:14.675Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录在操作系统、浏览器中常见的bug及其解决方案。&lt;/p&gt;</summary>
@@ -274,11 +230,7 @@
     <link href="https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-12T09:54:26.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.867Z</updated>
-=======
-    <updated>2022-05-18T03:33:31.609Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用git时的常见操作。&lt;/p&gt;</summary>
@@ -297,11 +249,7 @@
     <link href="https://tom89757.github.io/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-10T17:20:23.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.869Z</updated>
-=======
-    <updated>2022-05-18T03:33:31.610Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。&lt;/p&gt;</summary>
@@ -320,11 +268,7 @@
     <link href="https://tom89757.github.io/2022/05/11/hello-world/"/>
     <id>https://tom89757.github.io/2022/05/11/hello-world/</id>
     <published>2022-05-10T16:00:00.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.868Z</updated>
-=======
-    <updated>2022-05-11T04:57:00.373Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
@@ -343,11 +287,7 @@
     <link href="https://tom89757.github.io/2022/05/09/%E5%AF%B9%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E6%9C%89%E7%94%A8%E7%9A%84%E5%AE%9A%E5%BE%8B%E3%80%81%E7%90%86%E8%AE%BA%E3%80%81%E5%8E%9F%E5%88%99%E5%92%8C%E6%A8%A1%E5%BC%8F/"/>
     <id>https://tom89757.github.io/2022/05/09/%E5%AF%B9%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E6%9C%89%E7%94%A8%E7%9A%84%E5%AE%9A%E5%BE%8B%E3%80%81%E7%90%86%E8%AE%BA%E3%80%81%E5%8E%9F%E5%88%99%E5%92%8C%E6%A8%A1%E5%BC%8F/</id>
     <published>2022-05-09T15:26:08.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.872Z</updated>
-=======
-    <updated>2022-05-11T04:57:00.382Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文转载自 github 项目 &lt;a href=&quot;https://github.com/nusr/hacker-laws-zh&quot;&gt;hacker-laws的中文翻译&lt;/a&gt;，放在博客上便于查看。&lt;/p&gt;</summary>
@@ -368,11 +308,7 @@
     <link href="https://tom89757.github.io/2022/05/09/%E5%88%AB%E4%BA%BA%E7%9A%84%E6%94%B6%E8%97%8F-01/"/>
     <id>https://tom89757.github.io/2022/05/09/%E5%88%AB%E4%BA%BA%E7%9A%84%E6%94%B6%E8%97%8F-01/</id>
     <published>2022-05-09T15:21:33.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.871Z</updated>
-=======
-    <updated>2022-05-11T04:57:00.373Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文转载自别人收藏的好的文章和资料（QAQ，找不到原始出处），放在博客上便于查看。&lt;/p&gt;</summary>
@@ -393,11 +329,7 @@
     <link href="https://tom89757.github.io/2022/05/09/%E5%85%8D%E8%B4%B9%E4%B9%A6%E7%B1%8D%E3%80%81%E6%96%87%E6%A1%A3%E5%92%8C%E6%95%99%E7%A8%8B/"/>
     <id>https://tom89757.github.io/2022/05/09/%E5%85%8D%E8%B4%B9%E4%B9%A6%E7%B1%8D%E3%80%81%E6%96%87%E6%A1%A3%E5%92%8C%E6%95%99%E7%A8%8B/</id>
     <published>2022-05-09T15:09:48.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.870Z</updated>
-=======
-    <updated>2022-05-11T04:57:00.373Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文转载自 github 项目 &lt;a href=&quot;https://github.com/EbookFoundation/free-programming-books&quot;&gt;free-programming-books&lt;/a&gt;，放于博客上便于查看。&lt;/p&gt;</summary>
@@ -418,11 +350,7 @@
     <link href="https://tom89757.github.io/2022/05/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BB%B6%E5%AF%BF%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BB%B6%E5%AF%BF%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-09T15:05:01.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.874Z</updated>
-=======
-    <updated>2022-05-11T04:57:00.382Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文转载自 github 上的 &lt;a href=&quot;https://github.com/geekan/HowToLiveLonger&quot;&gt;程序员健康项目&lt;/a&gt;，放在博客上便于查看。&lt;/p&gt;</summary>
@@ -443,11 +371,7 @@
     <link href="https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</id>
     <published>2022-05-08T12:24:35.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.868Z</updated>
-=======
-    <updated>2022-05-18T03:33:31.609Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录一下如何将本地&lt;code&gt;.md&lt;/code&gt;文件中图片上传到 github 仓库或腾讯云对象存储中，并在本地&lt;code&gt;.md&lt;/code&gt;文件中将图片地址替换为对应的 github 或腾讯云存储链接。&lt;/p&gt;</summary>
@@ -466,11 +390,7 @@
     <link href="https://tom89757.github.io/2022/05/08/2022%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/"/>
     <id>https://tom89757.github.io/2022/05/08/2022%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</id>
     <published>2022-05-08T10:54:36.000Z</published>
-<<<<<<< HEAD
     <updated>2022-05-18T16:21:21.865Z</updated>
-=======
-    <updated>2022-05-11T04:57:00.373Z</updated>
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
     
     
     <summary type="html">&lt;p&gt;本文记录以下2022年深度学习框架考试答案：&lt;/p&gt;</summary>
@@ -484,26 +404,4 @@
     
   </entry>
   
-<<<<<<< HEAD
-  <entry>
-    <title>图像处理试题</title>
-    <link href="https://tom89757.github.io/2022/04/25/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E8%AF%95%E9%A2%98/"/>
-    <id>https://tom89757.github.io/2022/04/25/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E8%AF%95%E9%A2%98/</id>
-    <published>2022-04-25T05:43:38.000Z</published>
-    <updated>2022-05-18T16:21:21.871Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文主要记录一下历年图像处理的考试题目及其答案。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="考试" scheme="https://tom89757.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="计算机图形图像处理" scheme="https://tom89757.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-=======
->>>>>>> d69f1943acabc34e284f0350c9c2285fd06d539a
 </feed>
