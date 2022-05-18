@@ -1,5 +1,5 @@
 ---
-title: 当键入google发生了什么
+title: 当键入google.com发生了什么
 date: 2022-05-18 21:51:01
 categories:
 - [转载]
@@ -8,26 +8,17 @@ tags:
 - 资料
 ---
 
-本文转载自 [当···时发生了什么](https://github.com/skyline75489/what-happens-when-zh_CN)，放在博客上便于查看。
+本文转载自 github 项目 [当···时发生了什么](https://github.com/skyline75489/what-happens-when-zh_CN)，放在博客上便于查看。
 
 <!--more-->
 
-这个仓库试图回答一个古老的面试问题：当你在浏览器中输入 google.com
-并且按下回车之后发生了什么？
+这个仓库试图回答一个古老的面试问题：当你在浏览器中输入 google.com 并且按下回车之后发生了什么？
 
 不过我们不再局限于平常的回答，而是想办法回答地尽可能具体，不遗漏任何细节。
 
-这将是一个协作的过程，所以深入挖掘吧，并且帮助我们一起完善它。仍然有大量的细节等待着你来添加，欢迎向我们发送
-Pull Requset！
+这将是一个协作的过程，所以深入挖掘吧，并且帮助我们一起完善它。仍然有大量的细节等待着你来添加，欢迎向我们发送Pull Requset！
 
-这些内容使用 [Creative Commons
-Zero](https://creativecommons.org/publicdomain/zero/1.0/) 协议发布。
-
-目录
-====
-
-::: {.contents backlinks="none" local=""}
-:::
+这些内容使用 [Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/) 协议发布
 
 按下\"g\"键
 -----------
