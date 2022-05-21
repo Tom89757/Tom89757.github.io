@@ -222,6 +222,35 @@
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu常见操作</title>
+    <url>/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
+<span id="more"></span>
+<p>1.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>bash</code>终端中分行展示环境变量。</p>
+<blockquote>
+<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
+</blockquote>
+</br>
+<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
+<ul>
+<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
+<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
+</ul>
+<p>运行结果如下：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
+<blockquote>
+<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pytorch中知识点01</title>
     <url>/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
     <content><![CDATA[<p>本文记录一下在调试 <a href="https://github.com/yuhuan-wu/MobileSal">MobileSal</a> 过程中记录的一些 Pytorch 框架和 python 相关知识点。</p>
@@ -325,35 +354,6 @@
       <tags>
         <tag>Pytorch</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu常见操作</title>
-    <url>/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
-<span id="more"></span>
-<p>1.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>bash</code>终端中分行展示环境变量。</p>
-<blockquote>
-<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
-</blockquote>
-</br>
-<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
-<ul>
-<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
-<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
-</ul>
-<p>运行结果如下：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
-<blockquote>
-<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
-</blockquote>
-</br>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -2085,84 +2085,6 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </tags>
   </entry>
   <entry>
-    <title>常见bug记录</title>
-    <url>/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>本文记录在操作系统、浏览器中常见的bug及其解决方案。</p>
-<span id="more"></span>
-<p>1.<code>github</code>中网址前缀为<code>raw.githubusercontent.com</code>的资源（图片、文档等）无法访问。</p>
-<p>解决方案：</p>
-<p>根据 <a href="https://learnku.com/articles/43426">解决 raw.githubusercontent.com 无法访问的问题</a>，可能是由于某些原因导致 DNS 被污染，Windows系统上可以通过修改 <code>hosts</code> 文件解决该问题，步骤如下：</p>
-<ul>
-<li>1）通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
-</ul>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
-<ul>
-<li>
-<p>2）在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
-<p><code>185.199.108.133 raw.githubusercontent.com</code></p>
-<p>PS：可能<code>hosts</code>文件为只读文件，此时需要右键单击<code>hosts</code>文件修改其访问权限。</p>
-</li>
-</ul>
-</br>
-<p>2.在 Windows10 系统中，当默认浏览器设置为谷歌浏览器时，偶尔会出现点击其他应用（如飞书，TIM等）的链接无法跳转到谷歌浏览器打开此链接的情况。</p>
-<p>解决方案：重启电脑</p>
-</br>
-<p>3.在Windows 10系统中，当使用<code>git bash</code>终端进行package的安装和初始化时，无法在选项之间切换，如下图所示，无法在 No/Yes 的两个选项之间切换：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515153036885.png" alt="image-20220515153036885" /></p>
-<p>查询资料可知，<code>git bash</code>终端并不提供交互功能，因此无法进行选项切换。</p>
-<p>解决方案：使用<code>cmd</code>或者其他的终端</p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows">Can’t use arrow keys in Git Bash (Windows)</a></p>
-</br>
-<p>4.在 <a href="https://convertio.co/zh/document-converter/">Convertio</a> 进行文件转换时，转换完成后在点击文件下载按钮后会跳转到 403 Forbidden 页面，如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
-<p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
-<p>解决方案：关闭 ssr 代理</p>
-</br>
-<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004330258.png" alt="image-20220516004330258" /></p>
-<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
-<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
-<p>步骤：</p>
-<ul>
-<li>
-<p>关闭代理（在打开代理的情况下安装策略不同）</p>
-</li>
-<li>
-<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
-</li>
-<li>
-<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004936734.png" alt="image-20220516004936734" /></p>
-</li>
-<li>
-<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
-</li>
-<li>
-<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png" alt="image-20220516005208707" /></p>
-</li>
-</ul>
-<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
-<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
-<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
-</ol>
-</br>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>对开发人员有用的定律、理论、原则和模式</title>
     <url>/2022/05/09/%E5%AF%B9%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E6%9C%89%E7%94%A8%E7%9A%84%E5%AE%9A%E5%BE%8B%E3%80%81%E7%90%86%E8%AE%BA%E3%80%81%E5%8E%9F%E5%88%99%E5%92%8C%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>本文转载自 github 项目 <a href="https://github.com/nusr/hacker-laws-zh">hacker-laws的中文翻译</a>，放在博客上便于查看。</p>
@@ -3062,6 +2984,84 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </categories>
       <tags>
         <tag>资料</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见bug记录</title>
+    <url>/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>本文记录在操作系统、浏览器中常见的bug及其解决方案。</p>
+<span id="more"></span>
+<p>1.<code>github</code>中网址前缀为<code>raw.githubusercontent.com</code>的资源（图片、文档等）无法访问。</p>
+<p>解决方案：</p>
+<p>根据 <a href="https://learnku.com/articles/43426">解决 raw.githubusercontent.com 无法访问的问题</a>，可能是由于某些原因导致 DNS 被污染，Windows系统上可以通过修改 <code>hosts</code> 文件解决该问题，步骤如下：</p>
+<ul>
+<li>1）通过 <a href="https://www.ipaddress.com/">IPAddress.com</a> 查询域名 <code>raw.githubusercontent.com</code>所在网址：</li>
+</ul>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-14/image-20220513014334969.png" alt="image-20220513014334969" /></p>
+<ul>
+<li>
+<p>2）在路径 <code>C:\Windows\System32\drivers\etc</code>下的<code>hosts</code>文件最后一行添加如下信息：</p>
+<p><code>185.199.108.133 raw.githubusercontent.com</code></p>
+<p>PS：可能<code>hosts</code>文件为只读文件，此时需要右键单击<code>hosts</code>文件修改其访问权限。</p>
+</li>
+</ul>
+</br>
+<p>2.在 Windows10 系统中，当默认浏览器设置为谷歌浏览器时，偶尔会出现点击其他应用（如飞书，TIM等）的链接无法跳转到谷歌浏览器打开此链接的情况。</p>
+<p>解决方案：重启电脑</p>
+</br>
+<p>3.在Windows 10系统中，当使用<code>git bash</code>终端进行package的安装和初始化时，无法在选项之间切换，如下图所示，无法在 No/Yes 的两个选项之间切换：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515153036885.png" alt="image-20220515153036885" /></p>
+<p>查询资料可知，<code>git bash</code>终端并不提供交互功能，因此无法进行选项切换。</p>
+<p>解决方案：使用<code>cmd</code>或者其他的终端</p>
+<p>参考资料：<a href="https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows">Can’t use arrow keys in Git Bash (Windows)</a></p>
+</br>
+<p>4.在 <a href="https://convertio.co/zh/document-converter/">Convertio</a> 进行文件转换时，转换完成后在点击文件下载按钮后会跳转到 403 Forbidden 页面，如下图所示：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515162921157.png" alt="image-20220515162921157" /></p>
+<p>推测原因：在通过 ssr 挂代理后，Convertio 不允许代理 ip 进行文件下载</p>
+<p>解决方案：关闭 ssr 代理</p>
+</br>
+<p>5.在使用 VSCode 编辑器进行开发时，常常会遇到编辑环境变量并保存后在 VSCode 终端中环境变量并未同步更新的情况，即使关闭 VSCode 后重新打开也是如此，如下图所示，在将<code>gcc.exe</code>所在<code>bin</code>添加到环境变量后在 VSCode 终端中并没有更新：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004330258.png" alt="image-20220516004330258" /></p>
+<p>猜测：VSCode 将之前的环境变量缓存起来，在重新启动 VSCode 后环境变量并未及时更新</p>
+<p>解决方案：安装 <code>Chocolatey</code> 并运行<code>refreshenv</code> 命令更新环境变量</p>
+<p>步骤：</p>
+<ul>
+<li>
+<p>关闭代理（在打开代理的情况下安装策略不同）</p>
+</li>
+<li>
+<p>以管理员身份运行<code>cmd</code>并运行如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>关闭<code>cmd</code>终端后重新打开以更新<code>Chocolatey</code>配置</p>
+</li>
+<li>
+<p>在打开的<code>cmd</code>终端中运行<code>refreshenv</code>更新环境变量：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516004936734.png" alt="image-20220516004936734" /></p>
+</li>
+<li>
+<p>在<code>cmd</code>终端中运行<code>code</code>启动 VSCode</p>
+</li>
+<li>
+<p>在打开的 VSCode 的<code>cmd</code>终端中运行<code>gcc</code>发现环境变量更新成功：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png" alt="image-20220516005208707" /></p>
+</li>
+</ul>
+<p>PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新</p>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout">VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout</a></li>
+<li><a href="https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey">Installing Chocolatey</a></li>
+<li><a href="https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w">Is there a command to refresh environment variables from the command prompt in Windows?</a></li>
+</ol>
+</br>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
