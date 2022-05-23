@@ -6,11 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-<<<<<<< HEAD
-  <updated>2022-05-21T09:49:03.476Z</updated>
-=======
-  <updated>2022-05-22T12:35:20.884Z</updated>
->>>>>>> fb3a588d4adf824c82a1156c0141966cc2e54aa1
+  <updated>2022-05-23T02:06:52.541Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -21,13 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-<<<<<<< HEAD
-=======
     <title>Windows10常见操作</title>
     <link href="https://tom89757.github.io/2022/05/22/Windows10%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"/>
     <id>https://tom89757.github.io/2022/05/22/Windows10%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</id>
     <published>2022-05-22T12:30:33.000Z</published>
-    <updated>2022-05-22T12:35:20.884Z</updated>
+    <updated>2022-05-23T02:06:52.541Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用 Windows10 过程中的常见操作：&lt;/p&gt;</summary>
@@ -42,16 +36,11 @@
   </entry>
   
   <entry>
->>>>>>> fb3a588d4adf824c82a1156c0141966cc2e54aa1
     <title>Windows10系统配置</title>
     <link href="https://tom89757.github.io/2022/05/21/Windows10%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/05/21/Windows10%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</id>
     <published>2022-05-21T09:10:48.000Z</published>
-<<<<<<< HEAD
-    <updated>2022-05-21T09:49:03.476Z</updated>
-=======
-    <updated>2022-05-22T13:05:30.057Z</updated>
->>>>>>> fb3a588d4adf824c82a1156c0141966cc2e54aa1
+    <updated>2022-05-23T02:06:52.578Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在使用 Windows10 系统过程中的一些常见配置：&lt;/p&gt;</summary>
@@ -70,11 +59,7 @@
     <link href="https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/</id>
     <published>2022-05-21T09:09:43.000Z</published>
-<<<<<<< HEAD
-    <updated>2022-05-21T09:20:10.506Z</updated>
-=======
-    <updated>2022-05-21T15:04:07.052Z</updated>
->>>>>>> fb3a588d4adf824c82a1156c0141966cc2e54aa1
+    <updated>2022-05-23T02:17:14.541Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在 VSCode 编辑器中一些常用的配置方法。&lt;/p&gt;</summary>
@@ -302,7 +287,7 @@
     <link href="https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-12T09:54:26.000Z</published>
-    <updated>2022-05-19T05:05:03.265Z</updated>
+    <updated>2022-05-18T03:33:31.609Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用git时的常见操作。&lt;/p&gt;</summary>
@@ -321,7 +306,7 @@
     <link href="https://tom89757.github.io/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/05/11/hexo%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</id>
     <published>2022-05-10T17:20:23.000Z</published>
-    <updated>2022-05-19T05:05:03.266Z</updated>
+    <updated>2022-05-18T03:33:31.610Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下通过官方文档从头搭建hexo博客的流程，也包括一些第三方服务的配置。&lt;/p&gt;</summary>
@@ -417,28 +402,4 @@
     
   </entry>
   
-<<<<<<< HEAD
-  <entry>
-    <title>程序员延寿指南</title>
-    <link href="https://tom89757.github.io/2022/05/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BB%B6%E5%AF%BF%E6%8C%87%E5%8D%97/"/>
-    <id>https://tom89757.github.io/2022/05/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BB%B6%E5%AF%BF%E6%8C%87%E5%8D%97/</id>
-    <published>2022-05-09T15:05:01.000Z</published>
-    <updated>2022-05-11T04:57:00.382Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文转载自 github 上的 &lt;a href=&quot;https://github.com/geekan/HowToLiveLonger&quot;&gt;程序员健康项目&lt;/a&gt;，放在博客上便于查看。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="转载" scheme="https://tom89757.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="健康" scheme="https://tom89757.github.io/tags/%E5%81%A5%E5%BA%B7/"/>
-    
-  </entry>
-  
-=======
->>>>>>> fb3a588d4adf824c82a1156c0141966cc2e54aa1
 </feed>
