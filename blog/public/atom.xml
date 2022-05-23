@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-05-18T13:58:31.089Z</updated>
+  <updated>2022-05-21T09:49:03.476Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows10系统配置</title>
+    <link href="https://tom89757.github.io/2022/05/21/Windows10%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/"/>
+    <id>https://tom89757.github.io/2022/05/21/Windows10%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</id>
+    <published>2022-05-21T09:10:48.000Z</published>
+    <updated>2022-05-21T09:49:03.476Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在使用 Windows10 系统过程中的一些常见配置：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="Windows10" scheme="https://tom89757.github.io/tags/Windows10/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode配置</title>
+    <link href="https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/"/>
+    <id>https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/</id>
+    <published>2022-05-21T09:09:43.000Z</published>
+    <updated>2022-05-21T09:20:10.506Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在 VSCode 编辑器中一些常用的配置方法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="VSCode" scheme="https://tom89757.github.io/tags/VSCode/"/>
+    
+  </entry>
   
   <entry>
     <title>当键入google.com发生了什么</title>
@@ -363,44 +401,6 @@
     
     
     <category term="健康" scheme="https://tom89757.github.io/tags/%E5%81%A5%E5%BA%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客图床配置</title>
-    <link href="https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/"/>
-    <id>https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</id>
-    <published>2022-05-08T12:24:35.000Z</published>
-    <updated>2022-05-18T03:33:31.609Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下如何将本地&lt;code&gt;.md&lt;/code&gt;文件中图片上传到 github 仓库或腾讯云对象存储中，并在本地&lt;code&gt;.md&lt;/code&gt;文件中将图片地址替换为对应的 github 或腾讯云存储链接。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="hexo博客" scheme="https://tom89757.github.io/tags/hexo%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022深度学习框架</title>
-    <link href="https://tom89757.github.io/2022/05/08/2022%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/"/>
-    <id>https://tom89757.github.io/2022/05/08/2022%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</id>
-    <published>2022-05-08T10:54:36.000Z</published>
-    <updated>2022-05-11T04:57:00.373Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录以下2022年深度学习框架考试答案：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="考试" scheme="https://tom89757.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="深度学习框架" scheme="https://tom89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   

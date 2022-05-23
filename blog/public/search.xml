@@ -4220,4 +4220,60 @@ Doodle动画)或与用户交互(在搜索栏输入关键字获得搜索建议)�
     <url>/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/</url>
     <content><![CDATA[]]></content>
   </entry>
+  <entry>
+    <title>VSCode配置</title>
+    <url>/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录一下在 VSCode 编辑器中一些常用的配置方法。</p>
+<span id="more"></span>
+<h3 id="vscode-重新启用错误波形提示"><a class="markdownIt-Anchor" href="#vscode-重新启用错误波形提示"></a> VSCode 重新启用“错误波形提示”</h3>
+<p>有两种方式：</p>
+<ul>
+<li>
+<p>手动：</p>
+<ol>
+<li>文件——首选项——设置（files-&gt;preferences-&gt;settings），搜索 <code>error Squiggles</code>。</li>
+<li>在用户 (user) 和工作区 (workspace) 都选择<code>enable</code>。</li>
+</ol>
+</li>
+<li>
+<p>快捷键：在命令面板通过快捷键 (Ctrl + Shift + P) 打开搜索栏，搜索 <code>Error Squiggles</code>，选择<code>enable</code>。</p>
+<p>PS：只对某些 extensions 有用，如 C/C++ 插件</p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：<a href="https://blog.csdn.net/HermitSun/article/details/103627053">VSCode重新启用“错误波形提示”</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows10系统配置</title>
+    <url>/2022/05/21/Windows10%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录一下在使用 Windows10 系统过程中的一些常见配置：</p>
+<span id="more"></span>
+<h2 id="powershell"><a class="markdownIt-Anchor" href="#powershell"></a> PowerShell</h2>
+<h3 id="环境变量"><a class="markdownIt-Anchor" href="#环境变量"></a> 环境变量</h3>
+<p><code>ls env:</code>：查看所有环境变量</p>
+<p><code>ls env:NODE*</code>：搜索环境变量</p>
+<p><code>$env:Path</code>：查看单个环境变量</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/liuyt/p/5677781.html">Powershell下设置环境变量</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.2">关于环境变量 - PowerShell</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Windows10</tag>
+      </tags>
+  </entry>
 </search>
