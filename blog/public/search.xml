@@ -4268,6 +4268,64 @@ Doodle动画)或与用户交互(在搜索栏输入关键字获得搜索建议)�
 <li><a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.2">关于环境变量 - PowerShell</a></li>
 </ol>
 </blockquote>
+<<<<<<< HEAD
+=======
+<h2 id="wsl"><a class="markdownIt-Anchor" href="#wsl"></a> WSL</h2>
+<h3 id="安装流程"><a class="markdownIt-Anchor" href="#安装流程"></a> 安装流程</h3>
+<h4 id="前置条件"><a class="markdownIt-Anchor" href="#前置条件"></a> 前置条件</h4>
+<p>Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11</p>
+<blockquote>
+<p>可以 <a href="https://tom89757.github.io/2022/05/22/Windows10%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/#%E6%9F%A5%E7%9C%8B-windows%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF">查看 WIndows 版本信息</a></p>
+</blockquote>
+<h4 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h4>
+<ul>
+<li>
+<p>以管理员身份运行 powershell 或 cmd</p>
+</li>
+<li>
+<p>在打开的终端窗口中运行 <code>wsl --install</code>。</p>
+<ul>
+<li>当第一次使用wsl时运行该命令会默认安装 Ubuntu 系统。</li>
+<li>已经安装过wsl时运行该命令会列出帮助信息</li>
+</ul>
+<blockquote>
+<p>第一次打开新安装的 Linux distribution (即wsl系统)时会打开一个控制窗口，并需要等待文件解压和存储在本机上，等待即可</p>
+</blockquote>
+</li>
+<li>
+<p>可以通过<code>wsl --list --online</code>列出可以在线安装的wsl发行版本：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220522210152668.png" alt="image-20220522210152668" /></p>
+</li>
+<li>
+<p>可以通过<code>wsl --install -d kali-linux</code>指定安装的wsl为kali发行版：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220522210402831.png" alt="image-20220522210402831" /></p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install">Install Linux on Windows with WSL</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Windows10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows10常见操作</title>
+    <url>/2022/05/22/Windows10%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>本文记录一下使用 Windows10 过程中的常见操作：</p>
+<span id="more"></span>
+<h3 id="查看-windows版本信息"><a class="markdownIt-Anchor" href="#查看-windows版本信息"></a> 查看 Windows版本信息</h3>
+<ul>
+<li><code>Win + R</code>打开窗口</li>
+<li>窗口中输入 <code>winver</code> 回车，即可查看 Windows10 版本信息</li>
+</ul>
+>>>>>>> fb3a588d4adf824c82a1156c0141966cc2e54aa1
 ]]></content>
       <categories>
         <category>环境配置</category>
