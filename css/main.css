@@ -1061,7 +1061,7 @@ pre code {
     display: none;
   }
 }
-header.header {
+.header {
   background: transparent;
 }
 .header-inner {
@@ -1083,7 +1083,7 @@ header.header {
   flex-shrink: 0;
   padding: 0 10px;
 }
-.use-motion header.header,
+.use-motion .header,
 .use-motion .site-brand-container .toggle {
   opacity: 0;
 }
@@ -2647,7 +2647,7 @@ mark.search-keyword {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffff8f;
+  background: #cc9fff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
