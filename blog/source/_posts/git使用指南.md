@@ -45,3 +45,12 @@ tags:
 > 参考资料：[How do I resolve merge conflicts in a Git repository?](https://stackoverflow.com/questions/161813/how-do-i-resolve-merge-conflicts-in-a-git-repository)
 
 </br>
+
+4.在文件或者文件夹已经存在在仓库中时，将这些文件或者文件夹加入`.gitignore`文件后，git 并不会将这些文件或者文件夹删除。此时可以通过以下步骤使`.gitignore`中的改动生效：
+
+- `git rm -rf --cached`：将所有文件从仓库缓存中删除
+- `git add ./`
+- `git commimt -m "add a commit"`
+- `git push origin main`
+
+> 参考资料：[Gitignore not working](https://stackoverflow.com/questions/25436312/gitignore-not-working)
