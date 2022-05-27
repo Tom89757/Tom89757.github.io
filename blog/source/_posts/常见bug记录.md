@@ -43,7 +43,9 @@ tags:
 
 解决方案：使用`cmd`或者其他的终端
 
-参考资料：[Can't use arrow keys in Git Bash (Windows)](https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows)
+>  参考资料：
+>
+> 1. [Can't use arrow keys in Git Bash (Windows)](https://stackoverflow.com/questions/55753151/cant-use-arrow-keys-in-git-bash-windows)
 
 </br>
 
@@ -89,10 +91,24 @@ tags:
 
 PS：遗憾的是，通过右键文件夹打开 VSCode 环境变量仍然未更新
 
-参考资料：
-
-1. [VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout](https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout)
-2. [Installing Chocolatey](https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey)
-3. [Is there a command to refresh environment variables from the command prompt in Windows?](https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w)
+>  参考资料：
+>
+> 1. [VS Code Refresh Integrated Terminal Environment Variables without Restart/Logout](https://stackoverflow.com/questions/54653343/vs-code-refresh-integrated-terminal-environment-variables-without-restart-logout)
+> 2. [Installing Chocolatey](https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey)
+> 3. [Is there a command to refresh environment variables from the command prompt in Windows?](https://stackoverflow.com/questions/171588/is-there-a-command-to-refresh-environment-variables-from-the-command-prompt-in-w)
 
 </br>
+
+6.powershell启动时出现以下报错信息：
+
+```po
+File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because running scripts is disabled on this system
+```
+
+- 以管理员身份打开powershell
+- 运行`set-executionpolicy remotesigned`
+- 键入`A` (Yes to All) 并回车
+
+> 参考资料：
+>
+> 1. [What's Wrong With My Windows PowerShell](https://answers.microsoft.com/en-us/windows/forum/all/whats-wrong-with-my-windows-powershell/f05e72f2-a429-4ee0-81fb-910c8c8a1306)
