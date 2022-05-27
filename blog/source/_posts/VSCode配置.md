@@ -26,3 +26,23 @@ tags:
   PS：只对某些 extensions 有用，如 C/C++ 插件
 
 > 参考资料：[VSCode重新启用“错误波形提示”](https://blog.csdn.net/HermitSun/article/details/103627053)
+
+### VSCode 配置快捷键（shortcuts）
+
+有两种方式：
+
+- 手动：`File -> Preferences -> Keyboard Shortcuts`，即可打开窗口手动编辑。
+
+- `json`文件：在上述打开的窗口中点击右上角的如图按钮编辑`json`文件：
+
+  ![image-20220523101335662](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220523101335662.png)
+
+### VSCode 在多个窗口中打开同一项目
+
+- `File -> Add Folder to Workspace`，添加目标项目到 workspace：
+
+  ![image-20220523101543021](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220523101543021.png)
+
+- `File -> Dulplicate Workspace`，重复该工作区：
+
+  ![image-20220523101705028](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220523101705028.png)
