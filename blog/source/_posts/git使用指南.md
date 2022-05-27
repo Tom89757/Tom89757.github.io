@@ -48,9 +48,16 @@ tags:
 
 4.在文件或者文件夹已经存在在仓库中时，将这些文件或者文件夹加入`.gitignore`文件后，git 并不会将这些文件或者文件夹删除。此时可以通过以下步骤使`.gitignore`中的改动生效：
 
-- `git rm -rf --cached`：将所有文件从仓库缓存中删除
+- `git rm -rf --cached path_to_file`：将对应路径的文件从仓库缓存中删除；
 - `git add ./`
 - `git commimt -m "add a commit"`
 - `git push origin main`
 
-> 参考资料：[Gitignore not working](https://stackoverflow.com/questions/25436312/gitignore-not-working)
+> 参考资料：
+>
+> 1. [Gitignore not working](https://stackoverflow.com/questions/25436312/gitignore-not-working)
+> 2. [Can you have multiple Gitignore files?](https://www.quora.com/Can-you-have-multiple-Gitignore-files)
+>
+> PS：可以为仓库中的每个文件夹创建一个`.gitignore`，但是并不建议，因为不方便查询和管理。
+
+</br>
