@@ -8,7 +8,7 @@ tags:
 - python
 ---
 
-本文记录一下在调试 [MobileSal](https://github.com/yuhuan-wu/MobileSal) 过程中记录的一些 Pytorch 框架和 python 相关知识点。
+本文记录一下在调试 [MobileSal](https://github.com/yuhuan-wu/MobileSal) 过程中的一些 Pytorch 框架和 python 相关知识点。
 
 <!--more-->
 
