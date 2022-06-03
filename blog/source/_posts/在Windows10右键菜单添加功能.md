@@ -41,7 +41,7 @@ tags:
 - 点击`shell`文件夹，新建项 (key) ,将新建项命名为`Ubuntu`
 - 点击`Ubuntu`文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 `Open Ubuntu here :-)`
 - 右键`Ubuntu`文件夹，新建项 (key) ，并将其命名为`command`，点击`command`文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 `C:\Windows\System32\wsl.exe` (即wsl.exe文件所在位置)
-- 右键`Ubuntu`文件夹，新建字符串项 (string value) ，把新建的字符串项改为`C:\Windows\System32\wsl.exe`。此操作用于给右键WSL添加图标
+- 右键`Ubuntu`文件夹，新建字符串项 (string value) ，名称设为 Icon，值改为`C:\Windows\System32\wsl.exe`。此操作用于给右键WSL添加图标
 
 结果如图：
 
