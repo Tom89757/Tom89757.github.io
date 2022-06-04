@@ -372,3 +372,14 @@ depth_img = cv2.GaussianBlur(depth_img, (31, 31), sigmaX=0)
 > 1. [GaussianBlur()](https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1)
 > 2. [BorderTypes](https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5)
 
+</br>
+
+16.`cv2.threshold()`：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。
+
+该函数的完整调用形式为：
+
+`cv.threshold(src, thresh, maxval, type[, dst]) ->retval, dst`
+
+> 参考资料：
+>
+> 1. [threshold()](https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57)

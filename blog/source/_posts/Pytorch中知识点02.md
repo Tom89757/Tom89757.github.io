@@ -12,8 +12,6 @@ tags:
 
 <!--more-->
 
-### torch.utils.data
-
 1.`torch.utils.data.Dataset`：一个表示数据集的抽象类。
 
 其完整形式为：`CLASS torch.utils.data.Dataset(*args, **kwds)`。
@@ -80,6 +78,8 @@ ankleboot999.jpg, 9
 3.`argparse`：Parser for command-line options, arguments and sub-command.
 
 其源码位于[`Lib/argparse.py`](https://github.com/python/cpython/tree/3.10/Lib/argparse.py)。下面是该 API 的参考信息，`argparse`模块使得写用户友好的命令行界面变得很容易，该程序定义了它要求的 arguments，`argparse`将推算出如何从`sys.argv`中解析出这些 arguments。当用户给出对程序来说无效的 arguments 时`argparse`模块也就自动生成帮助信息和错误信息。下面通过例子来说明：
+
+> 在编程中，arguments 是指在程序、子线程或函数之间传递的值，是包含数据或者代码的独立的 items (表示一个数据单元) 或者 variables。当一个 argument 被用来为一个用户定制化一个程序时，它通常也被称为参数。在 C 语言中，当程序运行时，argc (ARGumentC) 为默认变量，表示被加入到命令行的参数的数量（argument count）。
 
 下面的代码是一个将一系列整数作为输入的程序，并得到它们的和或者最大值：
 
@@ -172,7 +172,32 @@ prog.py: error: argument N: invalid int value: 'a'
 
 </br>
 
+4.Reading and Writing Files：读取和写入文件
 
+`open()`返回一个文件对象（file object），该函数通常通过两个 positional arguments 和 一个 keyword argument 进行调用：`open(filename, mode, encoding=None)`。如下图所示：
+
+```python
+f = open('workfile', 'w', encoding='utf-8')
+```
+
+- 第一个参数表示文件名；
+- 第二个参数表示打开文件的模式，`r`表示文件只读，`w`表示文件只写（已存在的同名文件中数据将被擦除），`a`表示在文件内容之后`appending`，写入文件中的数据将被添加到文件最后，`r+`表示文件可同时读和写，模式参数是可选的，默认为`r`
+- 第三个参数表示文件的编码格式，正常情况下文件以`text`模式打开，从该文件中读取和写入字符串。当编码格式没有被指定时，默认编码格式是 `platform dependent`，由于 UTF-8 是现行的标准，建议使用该格式。在`text`模式，在读取文件时会将 `platform-specific line endings` 转换为`\n`，在写入文件时则反之。
+
+当处理文件对象时建议使用`with`关键字，其优点在于在操作完成后文件能被合适地关闭，即使异常发生。其也比等价的`try-finally`块更短：
+
+```python
+>>> with open('workfile', encoding="utf-8") as f:
+...     read_data = f.read()
+
+>>> # We can check that the file has been automatically closed.
+>>> f.closed
+True
+```
+
+> 参考资料：
+>
+> 1. [Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 
 
 
