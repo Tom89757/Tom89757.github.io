@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文记录一下在实现 DDRQM 过程中的一些 OpenCV 框架和 python 相关知识点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCV中知识点01">
+<meta property="og:url" content="https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录一下在实现 DDRQM 过程中的一些 OpenCV 框架和 python 相关知识点。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-02T09:09:03.000Z">
+<meta property="article:modified_time" content="2022-06-04T14:01:23.218Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="OpenCV">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/","path":"2022/06/02/OpenCV中知识点01/","title":"OpenCV中知识点01"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>OpenCV中知识点01 | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="OpenCV中知识点01 | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OpenCV中知识点01
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-06-02 17:09:03" itemprop="dateCreated datePublished" datetime="2022-06-02T17:09:03+08:00">2022-06-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-06-04 22:01:23" itemprop="dateModified" datetime="2022-06-04T22:01:23+08:00">2022-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文记录一下在实现 <a target="_blank" rel="noopener" href="https://link.springer.com/article/10.1007/s11042-016-3392-4">DDRQM</a> 过程中的一些 OpenCV 框架和 python 相关知识点。</p>
+<span id="more"></span>
+<p>1.<code>cv2.filter2D()</code>：该函数表示在一张图像上应用相应的卷积核，完整的函数调用形式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.filter2D(src, ddepth, kernel[, dst[, anchor[, delta[, borderType]]]]) -&gt; dst</span><br></pre></td></tr></table></figure>
+<p>该函数将任意的 linear filter 应用到一张图像上。当 filter 的部分孔径落在图像之外时，函数会根据 border 类型进行插值。该函数实际上计算的是相关（correlation），而不是卷积（convolution）。</p>
+<p>例如，下面代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">retval = cv2.getGaborKernel(ksize=(<span class="number">111</span>,<span class="number">111</span>), sigma=<span class="number">10</span>, theta=<span class="number">60</span>, lambd=<span class="number">10</span>, gamma=<span class="number">1.2</span>)</span><br><span class="line">image1 = cv2.imread(<span class="string">&#x27;src.jpg&#x27;</span>)</span><br><span class="line">result = cv2.filter2D(image1,-<span class="number">1</span>,retval)</span><br></pre></td></tr></table></figure>
+<p>表示将对应的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 滤波器应用在图像<code>src.jpg</code>上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=cv2.getGaborKernel((40,40), 1.69, 0, 3, 0.5)</span><br><span class="line">b=Gabor_filter((40,40), 1.69, 0, 3, 0.5)</span><br></pre></td></tr></table></figure>
+</br>
+<p>2.<code>cv2.getGaborKernel()</code>：该函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 滤波器函数，其返回值为一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi><mi>f</mi><mi>i</mi><mi>l</mi><mi>t</mi><mi>e</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor filter</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>，具体形式为一个二维数组，完整的函数调用形式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.getGaborKernel(ksize, sigma, theta, lambd, gamma[, psi[, ktype]]) -&gt; retval</span><br></pre></td></tr></table></figure>
+</br>
+<p>3.代码为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result[x][y] = <span class="built_in">abs</span>(depth_img[x][y] - <span class="number">0.5</span>*(depth_img[x1][y1]+depth_img[x2][y2]))</span><br></pre></td></tr></table></figure>
+<p>报错信息：<code>RuntimeWarning: overflow encountered in ubyte_scalars</code>。</p>
+<p>分析：可能是将两个<code>unit8</code>类型的值相加并将其存入一个<code>unit8</code>，导致数值溢出</p>
+<p>解决方案：将<code>unit8</code>类型数值转换为<code>int</code>类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result[x][y] = <span class="built_in">abs</span>(<span class="built_in">int</span>(depth_img[x][y]) - <span class="number">0.5</span>*(<span class="built_in">int</span>(depth_img[x1][y1])+<span class="built_in">int</span>(depth_img[x2][y2])))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/9384435/runtimewarning-overflow-encountered-in-ubyte-scalars">RuntimeWarning: overflow encountered in ubyte_scalars</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/59531334/why-i-am-getting-runtimewarning-overflow-encountered-in-ubyte-scalars-error-i">Why I am getting “RuntimeWarning: overflow encountered in ubyte_scalars error” in python?</a></p>
+</li>
+</ol>
+</blockquote>
+</br>
+<p>4.以下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(path)</span><br><span class="line">height, width, channels = img.shape</span><br></pre></td></tr></table></figure>
+<p>表示从路径<code>path</code>中读取图像文件并存入<code>img</code>对象中，通过<code>type(img)</code>可知该对象类型为<code>&lt;class 'numpy.ndarray'&gt;</code>。<code>img.shape</code>返回的是一个三元元组，其值分别对应图像的<code>height</code>、<code>width</code>和<code>channels</code>，即图像形状并不是我们熟悉的<code>width * height * channels</code>的形式</p>
+<p>可以通过以下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.transpose(img)</span><br></pre></td></tr></table></figure>
+<p>将<code>img</code>转置为<code>width * height * channels</code>形状，通过我们熟悉的方式访问。</p>
+<p>PS：<code>img</code>中<code>channels</code>顺序为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>G</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">B G R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/55636318/opencv-showing-wrong-width-and-height-of-image">Opencv showing wrong width and height of image</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.juzicode.com/opencv-python-resize-transpose-flip/">OpenCV-Python教程：几何空间变换~缩放、转置、翻转(resize,transpose,flip)</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">Image file reading and writing</a></li>
+</ol>
+</blockquote>
+</br>
+<p>5.<code>PILLOW</code> vs <code>OpenCV</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取和加载图片</span></span><br><span class="line"><span class="comment"># PILLOW</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开图片</span></span><br><span class="line">img.size <span class="comment"># 获取图片尺寸 width * height</span></span><br><span class="line">img_rgb = img.load() <span class="comment"># 分配内存，并将图像像素值添加到img_rgb对象</span></span><br><span class="line">img_rgb[width, height] <span class="comment"># 通过width/height访问像素值，返回值为RGB模式</span></span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开并将图像像素值添加到img对象</span></span><br><span class="line">img.shape <span class="comment"># 获取图片尺寸 height * width * channels</span></span><br><span class="line">img[height][width] <span class="comment">#通过height/width访问像素值，返回值为BGR模式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取和转换为灰度图</span></span><br><span class="line"><span class="comment"># PILLOW</span></span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开图片</span></span><br><span class="line">img_gray = img.convert(<span class="string">&#x27;L&#x27;</span>) <span class="comment"># 转换为灰度图</span></span><br><span class="line">pixels_gray = img_gray.load() <span class="comment"># 分配内存，并将图像灰度值添加到img_gray对象</span></span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="comment"># 直接读取灰度图</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>, <span class="number">0</span>) <span class="comment"># 将图像转换为灰度图后读取</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># 先读取彩色图，再转化为灰度图</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <span class="comment"># 将BGR模式的彩色图像转换为灰度图</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pillow.readthedocs.io/en/stable/reference/Image.html?highlight=load#PIL.Image.Image.load">Image.load()</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_29957455/article/details/84845016">python opencv将图片转为灰度图</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">imread()</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d8/d6a/group__imgcodecs__flags.html#ga61d9b0126a3e57d9277ac48327799c80">ImreadModes</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab">cvtColor</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0">ColorConversionCodes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>6.<code>cv2.imread()</code>详解：用于读取图像</p>
+<p>该函数的完整调用形式为：<code>cv.imread(filename[, flags]) -&gt;retval</code>，<code>retval</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>filename</code>：要读取的图像路径，可以为绝对路径或相对路径</p>
+</li>
+<li>
+<p><code>flags</code>：可以对图像采取的<code>ImreadModes</code>，常见的有<code>cv2.IMREAD_GRAYSCALE</code>、<code>cv.IMREAD_COLOR</code>。</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开并将图像像素值添加到img对象</span></span><br></pre></td></tr></table></figure>
+<p>PS：该函数对RGB图的默认读取顺序为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>G</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">BGR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">imread()</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d8/d6a/group__imgcodecs__flags.html#ga61d9b0126a3e57d9277ac48327799c80">ImreadModes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>7.<code>cv2.cvtColor</code>详解：用于转换图像</p>
+<p>该函数的完整调用形式为：<code>cv.cvtColor(src, code[, dst[, dstCn]]) -&gt;dst</code>，<code>dst</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>src</code>：输入图像</p>
+</li>
+<li>
+<p><code>dst</code>：输出图像，和<code>src</code>有相同的<code>size</code>和<code>depth</code>，即相同的<code>height</code>、<code>width</code>和<code>channles</code></p>
+</li>
+<li>
+<p><code>code</code>：颜色空间转换模式<code>ColorConversionCodes</code>，常见的有<code>cv2.BGR2GRAY</code>、<code>cv2.BGR2RGB</code>。</p>
+</li>
+<li>
+<p><code>dstCn</code>：输出图像的<code>channels</code>数，该参数为0时，根据<code>src</code>和<code>dst</code>自动生成</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <span class="comment"># 将BGR模式的彩色图像转换为灰度图</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab">cvtColor</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0">ColorConversionCodes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>8.<code>cv2.resize()</code>详解：用于放缩图像</p>
+<p>该函数的完整调用形式为：<code>cv.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]]) -&gt;dst</code>，<code>dst</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>src</code>：输入图像</p>
+</li>
+<li>
+<p><code>dst</code>：输出图像，当<code>dsize</code>不为0（Python中为<code>None</code>）时，其size与<code>dsize</code>相同；<code>dsize</code>为零时，则与<code>src.size()</code>即<code>fx</code>和<code>fy</code>相同。其类型与<code>src</code>相同。</p>
+</li>
+<li>
+<p><code>dsize</code>：输出图像尺寸，当<code>dsize</code>为0或<code>None</code>时，计算方式为：</p>
+<p><code>dsize = Size(round(fx*sr.cols), round(fy*src.rows))</code></p>
+<p>要么<code>dsize</code>非零，要么<code>fx</code>和<code>fy</code>非零</p>
+</li>
+<li>
+<p><code>fx</code>：沿着水平轴的放缩因子，当为0时，可以通过<code>(double)dsize.width/src.cols</code>计算</p>
+</li>
+<li>
+<p><code>fy</code>：沿着垂直轴的放缩因子，当为0时，可以通过<code>(double)dsize.height/src.rows</code>计算</p>
+</li>
+<li>
+<p><code>interpolation</code>：插值方法，常见的插值方法有<code>cv2.INTER_NEAREST</code>、<code>cv2.INTER_LINEAR</code>，默认为<code>cv2.INTER_LINEAR</code>。</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>)</span><br><span class="line">img_resize = cv2.resize(img, (<span class="number">100</span>, <span class="number">100</span>)) <span class="comment"># 通过dsize 放缩</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">img_resize = cv2.resize(img, <span class="literal">None</span>, fx=<span class="number">0.5</span>, fy=<span class="number">0.3</span>) <span class="comment"># 通过 fx, fy 放缩</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html#ga47a974309e9102f5f08231edc7e7529d">resize()</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html#ga5bb5a1fea74ea38e1a5445ca803ff121">InterpolationFlags</a></li>
+</ol>
+</blockquote>
+</br>
+<p>9.<code>cv2.transpose()</code>详解：用于转置矩阵（数组）</p>
+<p>该函数的完整调用形式为：<code>cv.transpose(src[, dst]) -&gt;dst</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入数组</li>
+<li><code>dst</code>：和<code>src</code>相同类型的输出数组</li>
+</ul>
+<p>其效果为：<code>dst(i, j) = src(j, i)</code>。调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.transpose(img)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga46630ed6c0ea6254a35f447289bd7404">transpose()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>10.<code>cv2.flip()</code>详解：用于翻转图像（数组）</p>
+<p>该函数的完整调用形式为：<code>cv.flip(src, flipCode[, dst]) -&gt;dst</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入数组</li>
+<li><code>dst</code>：输出数组，和<code>src</code>具有相同类型和尺寸</li>
+<li><code>flitCode</code>：用来指定怎样翻转数组，0表示沿x轴翻转，正值如1表示沿y轴翻转，-1表示同时沿x轴和y轴翻转，即绕(0,0)翻转</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.flip(img, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#gaca7be533e3dac7feb70fc60635adf441">flip()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>11.<code>cv2.imshow()</code>详解：用于显示图像</p>
+<p>该函数的完整调用形式为：<code>cv.imshow(winname, mat) -&gt;None</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>winname</code>：窗口名，显示在窗口顶栏</li>
+<li><code>mat</code>：要显示的矩阵</li>
+</ul>
+<p>调用示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga453d42fe4cb60e5723281a89973ee563">imshow()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>12.<code>cv2.waitKey()</code>详解：用于指定窗口打开时间</p>
+<p>该函数的完整调用形式为：<code>cv.waitKey([, delay]) -&gt;retval</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>delay</code>：表示窗口的持续时间，为0时表示保持窗口打开，为其他正值时表示窗口持续的毫秒数</li>
+</ul>
+<p>调用示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga5628525ad33f52eab17feebcfba38bd7">waitKey()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>13.<code>cv2.destroyAllWindows()</code>详解：用于关闭所有 HightGUI 窗口</p>
+<p>该函数的完整调用形式为：<code>cv.destroyAllWindows() -&gt;None</code>。</p>
+<p>调用实例：似乎不会关闭窗口</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">1000</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p>PS：<code>cv2.destroyWindows(winname)</code>用于关闭指定窗口</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga6b7fc1c1a8960438156912027b38f481">destroyWindow()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>14.python中获取当前目录路径和上级路径：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;***获取当前目录***&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(__file__))) <span class="comment"># __file__表示文件名</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;***获取上级目录***&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(os.getcwd())))</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.join(os.getcwd(), <span class="string">&quot;..&quot;</span>)))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;***获取上上级目录***&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.join(os.getcwd(), <span class="string">&quot;../..&quot;</span>)))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/leorx01/article/details/71141643">python获取当前目录路径和上级路径</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/bfa29141437e">Python获取当前文件路径</a></li>
+</ol>
+</blockquote>
+</br>
+<p>15.<code>cv2.GaussianBlur()</code>详解：用于给图片添加高斯模糊</p>
+<p>该函数的完整调用形式为：</p>
+<p><code>cv.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]) -&gt;dst</code></p>
+<p>下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入图像，图像有不同的通道，会被分别处理</li>
+<li><code>dst</code>：输出图像，类型和尺寸与<code>src</code>相同</li>
+<li><code>ksize</code>：高斯核尺寸。<code>ksize.width</code>和<code>ksize.height</code>必须为正奇数；否则为0，此时通过<code>sigmaX</code>和<code>sigmaY</code>计算</li>
+<li><code>sigmaX</code>：在X方向上的 Gaussian kernel standard deviation</li>
+<li><code>sigmaY</code>：在Y方向上的 Gaussian kernel standard deviation。为0时设为与<code>sigmaX</code>相等。</li>
+<li><code>borderType</code>：像素外插值方法，常见的有<code>cv.BORDER_CONSTANT</code>、<code>cv.BORDER_REPLICATE</code>，不支持<code>cv.BORDER_WRAP</code>。</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">depth_img = cv2.imread(<span class="string">&#x27;NLPR2_depth.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 给深度图添加高斯模糊</span></span><br><span class="line">depth_img = cv2.GaussianBlur(depth_img, (<span class="number">31</span>, <span class="number">31</span>), sigmaX=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1">GaussianBlur()</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5">BorderTypes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>16.<code>cv2.threshold()</code>：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。</p>
+<p>该函数的完整调用形式为：</p>
+<p><code>cv.threshold(src, thresh, maxval, type[, dst]) -&gt;retval, dst</code></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57">threshold()</a></li>
+</ol>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/" title="OpenCV中知识点01">https://tom89757.github.io/2022/06/02/OpenCV中知识点01/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/OpenCV/" rel="tag"># OpenCV</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/22/Windows10%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/" rel="prev" title="Windows10常见操作">
+                  <i class="fa fa-chevron-left"></i> Windows10常见操作
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/" rel="next" title="matplotlib中知识点01">
+                  matplotlib中知识点01 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">118k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

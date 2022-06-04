@@ -224,7 +224,7 @@
   <entry>
     <title>Pytorch中知识点01</title>
     <url>/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
-    <content><![CDATA[<p>本文记录一下在调试 <a href="https://github.com/yuhuan-wu/MobileSal">MobileSal</a> 过程中记录的一些 Pytorch 框架和 python 相关知识点。</p>
+    <content><![CDATA[<p>本文记录一下在调试 <a href="https://github.com/yuhuan-wu/MobileSal">MobileSal</a> 过程中的一些 Pytorch 框架和 python 相关知识点。</p>
 <span id="more"></span>
 <p>1.当出现<code>import cv2</code>，需要安装 <code>opencv</code>包：<code>pip install opencv-python</code>。</p>
 <p>2.<code>import torch.utils.data</code> 。该 package 的核心类为 <code>torch.utils.data.DataLoader</code>，表示在一个数据集上的迭代，其支持：</p>
@@ -419,6 +419,10 @@
 <p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
 </blockquote>
 </br>
+<p>3.<code>ls</code></p>
+</br>
+<p>4.<code>wc</code></p>
+</br>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -509,6 +513,50 @@
 <p>PS：可以为仓库中的每个文件夹创建一个<code>.gitignore</code>，但是并不建议，因为不方便查询和管理。</p>
 </blockquote>
 </br>
+<p>5.给 git 配置代理：</p>
+<ul>
+<li>
+<p>配置 socks 协议代理：</p>
+<ol>
+<li>
+<p>设置代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:1080&#x27; </span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:1080&#x27;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>查看代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>取消代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li>
+<p>配置 http 协议代理：</p>
+<ol>
+<li>
+<p>设置代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy &#x27;http://127.0.0.1:1080&#x27; </span><br><span class="line">git config --global https.proxy &#x27;https://127.0.0.1:1080&#x27;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>查看代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>取消代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>PS：1080 为在 ShadowSocksR 或者 V2rayN 客户端中设置的代理的端口；Windows V2rayN 客户端似乎不支持 http 协议代理（注意在 git 更新 personal access token 时不支持 socks 协议）</p>
+<blockquote>
+<p>参考文献：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/yongy1030/p/11699086.html">git设置、查看、取消代理</a></li>
+</ol>
+</blockquote>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -2217,7 +2265,7 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 <li>点击<code>shell</code>文件夹，新建项 (key) ,将新建项命名为<code>Ubuntu</code></li>
 <li>点击<code>Ubuntu</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>Open Ubuntu here :-)</code></li>
 <li>右键<code>Ubuntu</code>文件夹，新建项 (key) ，并将其命名为<code>command</code>，点击<code>command</code>文件夹，双击右侧 (默认，Default) 项编辑字符串，将数值数据 (value data) 改为 <code>C:\Windows\System32\wsl.exe</code> (即wsl.exe文件所在位置)</li>
-<li>右键<code>Ubuntu</code>文件夹，新建字符串项 (string value) ，把新建的字符串项改为<code>C:\Windows\System32\wsl.exe</code>。此操作用于给右键WSL添加图标</li>
+<li>右键<code>Ubuntu</code>文件夹，新建字符串项 (string value) ，名称设为 Icon，值改为<code>C:\Windows\System32\wsl.exe</code>。此操作用于给右键WSL添加图标</li>
 </ul>
 <p>结果如图：</p>
 <p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515202553533.png" alt="image-20220515202553533" /></p>
@@ -4258,5 +4306,374 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
       <tags>
         <tag>健康</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>OpenCV中知识点01</title>
+    <url>/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文记录一下在实现 <a href="https://link.springer.com/article/10.1007/s11042-016-3392-4">DDRQM</a> 过程中的一些 OpenCV 框架和 python 相关知识点。</p>
+<span id="more"></span>
+<p>1.<code>cv2.filter2D()</code>：该函数表示在一张图像上应用相应的卷积核，完整的函数调用形式如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.filter2D(src, ddepth, kernel[, dst[, anchor[, delta[, borderType]]]]) -&gt; dst</span><br></pre></td></tr></table></figure>
+<p>该函数将任意的 linear filter 应用到一张图像上。当 filter 的部分孔径落在图像之外时，函数会根据 border 类型进行插值。该函数实际上计算的是相关（correlation），而不是卷积（convolution）。</p>
+<p>例如，下面代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">retval = cv2.getGaborKernel(ksize=(<span class="number">111</span>,<span class="number">111</span>), sigma=<span class="number">10</span>, theta=<span class="number">60</span>, lambd=<span class="number">10</span>, gamma=<span class="number">1.2</span>)</span><br><span class="line">image1 = cv2.imread(<span class="string">&#x27;src.jpg&#x27;</span>)</span><br><span class="line">result = cv2.filter2D(image1,-<span class="number">1</span>,retval)</span><br></pre></td></tr></table></figure>
+<p>表示将对应的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 滤波器应用在图像<code>src.jpg</code>上。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a=cv2.getGaborKernel((40,40), 1.69, 0, 3, 0.5)</span><br><span class="line">b=Gabor_filter((40,40), 1.69, 0, 3, 0.5)</span><br></pre></td></tr></table></figure>
+</br>
+<p>2.<code>cv2.getGaborKernel()</code>：该函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 滤波器函数，其返回值为一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi><mi>f</mi><mi>i</mi><mi>l</mi><mi>t</mi><mi>e</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor filter</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>，具体形式为一个二维数组，完整的函数调用形式如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv.getGaborKernel(ksize, sigma, theta, lambd, gamma[, psi[, ktype]]) -&gt; retval</span><br></pre></td></tr></table></figure>
+</br>
+<p>3.代码为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result[x][y] = <span class="built_in">abs</span>(depth_img[x][y] - <span class="number">0.5</span>*(depth_img[x1][y1]+depth_img[x2][y2]))</span><br></pre></td></tr></table></figure>
+<p>报错信息：<code>RuntimeWarning: overflow encountered in ubyte_scalars</code>。</p>
+<p>分析：可能是将两个<code>unit8</code>类型的值相加并将其存入一个<code>unit8</code>，导致数值溢出</p>
+<p>解决方案：将<code>unit8</code>类型数值转换为<code>int</code>类型。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result[x][y] = <span class="built_in">abs</span>(<span class="built_in">int</span>(depth_img[x][y]) - <span class="number">0.5</span>*(<span class="built_in">int</span>(depth_img[x1][y1])+<span class="built_in">int</span>(depth_img[x2][y2])))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>
+<p><a href="https://stackoverflow.com/questions/9384435/runtimewarning-overflow-encountered-in-ubyte-scalars">RuntimeWarning: overflow encountered in ubyte_scalars</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/59531334/why-i-am-getting-runtimewarning-overflow-encountered-in-ubyte-scalars-error-i">Why I am getting “RuntimeWarning: overflow encountered in ubyte_scalars error” in python?</a></p>
+</li>
+</ol>
+</blockquote>
+</br>
+<p>4.以下代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(path)</span><br><span class="line">height, width, channels = img.shape</span><br></pre></td></tr></table></figure>
+<p>表示从路径<code>path</code>中读取图像文件并存入<code>img</code>对象中，通过<code>type(img)</code>可知该对象类型为<code>&lt;class 'numpy.ndarray'&gt;</code>。<code>img.shape</code>返回的是一个三元元组，其值分别对应图像的<code>height</code>、<code>width</code>和<code>channels</code>，即图像形状并不是我们熟悉的<code>width * height * channels</code>的形式</p>
+<p>可以通过以下代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.transpose(img)</span><br></pre></td></tr></table></figure>
+<p>将<code>img</code>转置为<code>width * height * channels</code>形状，通过我们熟悉的方式访问。</p>
+<p>PS：<code>img</code>中<code>channels</code>顺序为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>G</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">B G R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/55636318/opencv-showing-wrong-width-and-height-of-image">Opencv showing wrong width and height of image</a></li>
+<li><a href="http://www.juzicode.com/opencv-python-resize-transpose-flip/">OpenCV-Python教程：几何空间变换~缩放、转置、翻转(resize,transpose,flip)</a></li>
+<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">Image file reading and writing</a></li>
+</ol>
+</blockquote>
+</br>
+<p>5.<code>PILLOW</code> vs <code>OpenCV</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取和加载图片</span></span><br><span class="line"><span class="comment"># PILLOW</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开图片</span></span><br><span class="line">img.size <span class="comment"># 获取图片尺寸 width * height</span></span><br><span class="line">img_rgb = img.load() <span class="comment"># 分配内存，并将图像像素值添加到img_rgb对象</span></span><br><span class="line">img_rgb[width, height] <span class="comment"># 通过width/height访问像素值，返回值为RGB模式</span></span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开并将图像像素值添加到img对象</span></span><br><span class="line">img.shape <span class="comment"># 获取图片尺寸 height * width * channels</span></span><br><span class="line">img[height][width] <span class="comment">#通过height/width访问像素值，返回值为BGR模式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取和转换为灰度图</span></span><br><span class="line"><span class="comment"># PILLOW</span></span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开图片</span></span><br><span class="line">img_gray = img.convert(<span class="string">&#x27;L&#x27;</span>) <span class="comment"># 转换为灰度图</span></span><br><span class="line">pixels_gray = img_gray.load() <span class="comment"># 分配内存，并将图像灰度值添加到img_gray对象</span></span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="comment"># 直接读取灰度图</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>, <span class="number">0</span>) <span class="comment"># 将图像转换为灰度图后读取</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># 先读取彩色图，再转化为灰度图</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <span class="comment"># 将BGR模式的彩色图像转换为灰度图</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pillow.readthedocs.io/en/stable/reference/Image.html?highlight=load#PIL.Image.Image.load">Image.load()</a></li>
+<li><a href="https://blog.csdn.net/sinat_29957455/article/details/84845016">python opencv将图片转为灰度图</a></li>
+<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">imread()</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d6a/group__imgcodecs__flags.html#ga61d9b0126a3e57d9277ac48327799c80">ImreadModes</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab">cvtColor</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0">ColorConversionCodes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>6.<code>cv2.imread()</code>详解：用于读取图像</p>
+<p>该函数的完整调用形式为：<code>cv.imread(filename[, flags]) -&gt;retval</code>，<code>retval</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>filename</code>：要读取的图像路径，可以为绝对路径或相对路径</p>
+</li>
+<li>
+<p><code>flags</code>：可以对图像采取的<code>ImreadModes</code>，常见的有<code>cv2.IMREAD_GRAYSCALE</code>、<code>cv.IMREAD_COLOR</code>。</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开并将图像像素值添加到img对象</span></span><br></pre></td></tr></table></figure>
+<p>PS：该函数对RGB图的默认读取顺序为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>G</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">BGR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">imread()</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d6a/group__imgcodecs__flags.html#ga61d9b0126a3e57d9277ac48327799c80">ImreadModes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>7.<code>cv2.cvtColor</code>详解：用于转换图像</p>
+<p>该函数的完整调用形式为：<code>cv.cvtColor(src, code[, dst[, dstCn]]) -&gt;dst</code>，<code>dst</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>src</code>：输入图像</p>
+</li>
+<li>
+<p><code>dst</code>：输出图像，和<code>src</code>有相同的<code>size</code>和<code>depth</code>，即相同的<code>height</code>、<code>width</code>和<code>channles</code></p>
+</li>
+<li>
+<p><code>code</code>：颜色空间转换模式<code>ColorConversionCodes</code>，常见的有<code>cv2.BGR2GRAY</code>、<code>cv2.BGR2RGB</code>。</p>
+</li>
+<li>
+<p><code>dstCn</code>：输出图像的<code>channels</code>数，该参数为0时，根据<code>src</code>和<code>dst</code>自动生成</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <span class="comment"># 将BGR模式的彩色图像转换为灰度图</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab">cvtColor</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0">ColorConversionCodes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>8.<code>cv2.resize()</code>详解：用于放缩图像</p>
+<p>该函数的完整调用形式为：<code>cv.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]]) -&gt;dst</code>，<code>dst</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>src</code>：输入图像</p>
+</li>
+<li>
+<p><code>dst</code>：输出图像，当<code>dsize</code>不为0（Python中为<code>None</code>）时，其size与<code>dsize</code>相同；<code>dsize</code>为零时，则与<code>src.size()</code>即<code>fx</code>和<code>fy</code>相同。其类型与<code>src</code>相同。</p>
+</li>
+<li>
+<p><code>dsize</code>：输出图像尺寸，当<code>dsize</code>为0或<code>None</code>时，计算方式为：</p>
+<p><code>dsize = Size(round(fx*sr.cols), round(fy*src.rows))</code></p>
+<p>要么<code>dsize</code>非零，要么<code>fx</code>和<code>fy</code>非零</p>
+</li>
+<li>
+<p><code>fx</code>：沿着水平轴的放缩因子，当为0时，可以通过<code>(double)dsize.width/src.cols</code>计算</p>
+</li>
+<li>
+<p><code>fy</code>：沿着垂直轴的放缩因子，当为0时，可以通过<code>(double)dsize.height/src.rows</code>计算</p>
+</li>
+<li>
+<p><code>interpolation</code>：插值方法，常见的插值方法有<code>cv2.INTER_NEAREST</code>、<code>cv2.INTER_LINEAR</code>，默认为<code>cv2.INTER_LINEAR</code>。</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>)</span><br><span class="line">img_resize = cv2.resize(img, (<span class="number">100</span>, <span class="number">100</span>)) <span class="comment"># 通过dsize 放缩</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">img_resize = cv2.resize(img, <span class="literal">None</span>, fx=<span class="number">0.5</span>, fy=<span class="number">0.3</span>) <span class="comment"># 通过 fx, fy 放缩</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html#ga47a974309e9102f5f08231edc7e7529d">resize()</a></li>
+<li><a href="https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html#ga5bb5a1fea74ea38e1a5445ca803ff121">InterpolationFlags</a></li>
+</ol>
+</blockquote>
+</br>
+<p>9.<code>cv2.transpose()</code>详解：用于转置矩阵（数组）</p>
+<p>该函数的完整调用形式为：<code>cv.transpose(src[, dst]) -&gt;dst</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入数组</li>
+<li><code>dst</code>：和<code>src</code>相同类型的输出数组</li>
+</ul>
+<p>其效果为：<code>dst(i, j) = src(j, i)</code>。调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.transpose(img)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga46630ed6c0ea6254a35f447289bd7404">transpose()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>10.<code>cv2.flip()</code>详解：用于翻转图像（数组）</p>
+<p>该函数的完整调用形式为：<code>cv.flip(src, flipCode[, dst]) -&gt;dst</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入数组</li>
+<li><code>dst</code>：输出数组，和<code>src</code>具有相同类型和尺寸</li>
+<li><code>flitCode</code>：用来指定怎样翻转数组，0表示沿x轴翻转，正值如1表示沿y轴翻转，-1表示同时沿x轴和y轴翻转，即绕(0,0)翻转</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.flip(img, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#gaca7be533e3dac7feb70fc60635adf441">flip()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>11.<code>cv2.imshow()</code>详解：用于显示图像</p>
+<p>该函数的完整调用形式为：<code>cv.imshow(winname, mat) -&gt;None</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>winname</code>：窗口名，显示在窗口顶栏</li>
+<li><code>mat</code>：要显示的矩阵</li>
+</ul>
+<p>调用示例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga453d42fe4cb60e5723281a89973ee563">imshow()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>12.<code>cv2.waitKey()</code>详解：用于指定窗口打开时间</p>
+<p>该函数的完整调用形式为：<code>cv.waitKey([, delay]) -&gt;retval</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>delay</code>：表示窗口的持续时间，为0时表示保持窗口打开，为其他正值时表示窗口持续的毫秒数</li>
+</ul>
+<p>调用示例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga5628525ad33f52eab17feebcfba38bd7">waitKey()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>13.<code>cv2.destroyAllWindows()</code>详解：用于关闭所有 HightGUI 窗口</p>
+<p>该函数的完整调用形式为：<code>cv.destroyAllWindows() -&gt;None</code>。</p>
+<p>调用实例：似乎不会关闭窗口</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">1000</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p>PS：<code>cv2.destroyWindows(winname)</code>用于关闭指定窗口</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga6b7fc1c1a8960438156912027b38f481">destroyWindow()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>14.python中获取当前目录路径和上级路径：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;***获取当前目录***&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(__file__))) <span class="comment"># __file__表示文件名</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;***获取上级目录***&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(os.getcwd())))</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.join(os.getcwd(), <span class="string">&quot;..&quot;</span>)))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;***获取上上级目录***&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.join(os.getcwd(), <span class="string">&quot;../..&quot;</span>)))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/leorx01/article/details/71141643">python获取当前目录路径和上级路径</a></li>
+<li><a href="https://www.jianshu.com/p/bfa29141437e">Python获取当前文件路径</a></li>
+</ol>
+</blockquote>
+</br>
+<p>15.<code>cv2.GaussianBlur()</code>详解：用于给图片添加高斯模糊</p>
+<p>该函数的完整调用形式为：</p>
+<p><code>cv.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]) -&gt;dst</code></p>
+<p>下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入图像，图像有不同的通道，会被分别处理</li>
+<li><code>dst</code>：输出图像，类型和尺寸与<code>src</code>相同</li>
+<li><code>ksize</code>：高斯核尺寸。<code>ksize.width</code>和<code>ksize.height</code>必须为正奇数；否则为0，此时通过<code>sigmaX</code>和<code>sigmaY</code>计算</li>
+<li><code>sigmaX</code>：在X方向上的 Gaussian kernel standard deviation</li>
+<li><code>sigmaY</code>：在Y方向上的 Gaussian kernel standard deviation。为0时设为与<code>sigmaX</code>相等。</li>
+<li><code>borderType</code>：像素外插值方法，常见的有<code>cv.BORDER_CONSTANT</code>、<code>cv.BORDER_REPLICATE</code>，不支持<code>cv.BORDER_WRAP</code>。</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">depth_img = cv2.imread(<span class="string">&#x27;NLPR2_depth.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 给深度图添加高斯模糊</span></span><br><span class="line">depth_img = cv2.GaussianBlur(depth_img, (<span class="number">31</span>, <span class="number">31</span>), sigmaX=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1">GaussianBlur()</a></li>
+<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5">BorderTypes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>16.<code>cv2.threshold()</code>：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。</p>
+<p>该函数的完整调用形式为：</p>
+<p><code>cv.threshold(src, thresh, maxval, type[, dst]) -&gt;retval, dst</code></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57">threshold()</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch中知识点02</title>
+    <url>/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/</url>
+    <content><![CDATA[<p>本文记录一下在实现 <a href="https://link.springer.com/article/10.1007/s11042-016-3392-4">DDRQM</a> 过程中的一些 Pytorch 框架和 python 相关知识点。</p>
+<span id="more"></span>
+<p>1.<code>torch.utils.data.Dataset</code>：一个表示数据集的抽象类。</p>
+<p>其完整形式为：<code>CLASS torch.utils.data.Dataset(*args, **kwds)</code>。</p>
+<p>所有表示从<code>keys</code>到<code>data samples</code>的映射的数据集都应该是该抽象类的子集。它的所有子类都应该重写<code>__getitem__()</code>方法，从而支持通过<code>key</code>获取<code>data sample</code>；其子类可以选择重写<code>__len__()</code>方法，该方法返回许多通过<code>Sampler</code>实现或<code>Dataloader</code>默认实现的数据集尺寸。</p>
+<p>PS：<code>Dataloader</code>默认构造一个生成整数索引的<code>index sampler</code>，要想其对一个具有非整数的<code>indices/keys</code>的 map-style 的数据集生效，需要提供定制化的<code>sampler</code>。</p>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/docs/stable/data.html">torch.utils.data</a></li>
+<li><a href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/data/">torch.utils.data 中文文档</a></li>
+</ol>
+</br>
+<p>2.Creating a Custom Dataset for your files：给自己的文件创建一个定制化的数据集。</p>
+<p>一个定制化的数据集必须实现三种函数：<code>__init__</code>、<code>__len__</code>和<code>__getitem__</code>。看一下经典的 FashionMNIST 数据集的实现，我们可以发现图像存储在<code>img_dir</code>目录中，labels 存储在一个 CSV 文件<code>annotation_file</code>中。下面我们看一下在每个函数中发生了什么：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> torchvision.io <span class="keyword">import</span> read_image</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CustomImageDataset</span>(<span class="title class_ inherited__">Dataset</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, annotations_file, img_dir, transform=<span class="literal">None</span>, target_transform=<span class="literal">None</span></span>):</span><br><span class="line">        self.img_labels = pd.read_csv(annotations_file)</span><br><span class="line">        self.img_dir = img_dir</span><br><span class="line">        self.transform = transform</span><br><span class="line">        self.target_transform = target_transform</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.img_labels)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, idx</span>):</span><br><span class="line">        img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, <span class="number">0</span>])</span><br><span class="line">        image = read_image(img_path)</span><br><span class="line">        label = self.img_labels.iloc[idx, <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> self.transform:</span><br><span class="line">            image = self.transform(image)</span><br><span class="line">        <span class="keyword">if</span> self.target_transform:</span><br><span class="line">            label = self.target_transform(label)</span><br><span class="line">        <span class="keyword">return</span> image, label</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>__init__</code>：该函数在实例化数据集对象的时候运行一次，该函数初始化包含图像数据的目录，注释文件和 transforms。<code>labels.csv</code>文件格式如下图所示：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">tshirt1<span class="selector-class">.jpg</span>, <span class="number">0</span></span><br><span class="line">tshirt2<span class="selector-class">.jpg</span>, <span class="number">0</span></span><br><span class="line">......</span><br><span class="line">ankleboot999<span class="selector-class">.jpg</span>, <span class="number">9</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>__len__</code>：该函数返回数据集中的样本数目- <code>__getitem__</code>：该函数加载和返回在给定索引<code>idx</code>处的一个样本。基于索引，该函数定位在磁盘中图像的位置，通过<code>read_image</code>将其转换为一个<code>tensor</code>，从<code>self.img_labels</code>的 csv 数据中取到对应的 label，如果需要的话在它们身上应用 transform 函数，最后以元组的形式返回 tensor 图像和对应的 label。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/tutorials/beginner/basics/data_tutorial.html">Datasets &amp; Dataloaders</a></li>
+<li><a href="https://stackoverflow.com/questions/43627405/understanding-getitem-method">Understanding <code>__getitem__</code> method</a></li>
+</ol>
+</blockquote>
+</br>
+<p>3.<code>argparse</code>：Parser for command-line options, arguments and sub-command.</p>
+<p>其源码位于<a href="https://github.com/python/cpython/tree/3.10/Lib/argparse.py"><code>Lib/argparse.py</code></a>。下面是该 API 的参考信息，<code>argparse</code>模块使得写用户友好的命令行界面变得很容易，该程序定义了它要求的 arguments，<code>argparse</code>将推算出如何从<code>sys.argv</code>中解析出这些 arguments。当用户给出对程序来说无效的 arguments 时<code>argparse</code>模块也就自动生成帮助信息和错误信息。下面通过例子来说明：</p>
+<blockquote>
+<p>在编程中，arguments 是指在程序、子线程或函数之间传递的值，是包含数据或者代码的独立的 items (表示一个数据单元) 或者 variables。当一个 argument 被用来为一个用户定制化一个程序时，它通常也被称为参数。在 C 语言中，当程序运行时，argc (ARGumentC) 为默认变量，表示被加入到命令行的参数的数量（argument count）。</p>
+</blockquote>
+<p>下面的代码是一个将一系列整数作为输入的程序，并得到它们的和或者最大值：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&#x27;Process some integers.&#x27;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;integers&#x27;</span>, metavar=<span class="string">&#x27;N&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, nargs=<span class="string">&#x27;+&#x27;</span>,</span><br><span class="line">                    <span class="built_in">help</span>=<span class="string">&#x27;an integer for the accumulator&#x27;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--sum&#x27;</span>, dest=<span class="string">&#x27;accumulate&#x27;</span>, action=<span class="string">&#x27;store_const&#x27;</span>,</span><br><span class="line">                    const=<span class="built_in">sum</span>, default=<span class="built_in">max</span>,</span><br><span class="line">                    <span class="built_in">help</span>=<span class="string">&#x27;sum the integers (default: find the max)&#x27;</span>)</span><br><span class="line"></span><br><span class="line">args = parser.parse_args()</span><br><span class="line"><span class="built_in">print</span>(args.accumulate(args.integers))</span><br></pre></td></tr></table></figure>
+<p>假设上述代码存入<code>prog.py</code>文件。它能够在命令行运行并提供有用的帮助信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python prog.py -h</span><br><span class="line">usage: prog.py [-h] [--<span class="built_in">sum</span>] N [N ...]</span><br><span class="line"></span><br><span class="line">Process some integers.</span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line"> N           an <span class="built_in">integer</span> <span class="keyword">for</span> the accumulator</span><br><span class="line"></span><br><span class="line">options:</span><br><span class="line"> -h, --<span class="built_in">help</span>  show this <span class="built_in">help</span> message and <span class="built_in">exit</span></span><br><span class="line"> --<span class="built_in">sum</span>       <span class="built_in">sum</span> the integers (default: find the max)</span><br></pre></td></tr></table></figure>
+<p>当从命令行给出有效的 arguments 时，会打印出这些整数的和或者最大值：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python prog.py 1 2 3 4</span><br><span class="line">4</span><br><span class="line"></span><br><span class="line">$ python prog.py 1 2 3 4 --<span class="built_in">sum</span></span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+<p>当传入无效的 arguments 时，会生成一个 error：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python prog.py a b c</span><br><span class="line">usage: prog.py [-h] [--<span class="built_in">sum</span>] N [N ...]</span><br><span class="line">prog.py: error: argument N: invalid int value: <span class="string">&#x27;a&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>下面对这个例子做详细说明：</p>
+<ol>
+<li>
+<p>Creating a parser：第一步使用<code>argparse</code>模块创建一个<code>ArgumentParser</code>对象</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&#x27;Process some integers.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>该<code>ArgumentParser</code>对象包含将命令行解析为 Python data types 的所有必要的信息。</p>
+</li>
+<li>
+<p>Adding arguments：通过调用<code>add_argument()</code>方法向<code>ArgumentParser</code>对象填入和程序 arguments 有关的信息。通常来说，这些调用告诉<code>ArgumentParser</code>如何取得命令行中的字符串并将其转化为对象。这些信息被存储起来并可以通过调用<code>parse_args()</code>来使用，例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&#x27;Process some integers.&#x27;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;integers&#x27;</span>, metavar=<span class="string">&#x27;N&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, nargs=<span class="string">&#x27;+&#x27;</span>,</span><br><span class="line">                    <span class="built_in">help</span>=<span class="string">&#x27;an integer for the accumulator&#x27;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--sum&#x27;</span>, dest=<span class="string">&#x27;accumulate&#x27;</span>, action=<span class="string">&#x27;store_const&#x27;</span>,</span><br><span class="line">                    const=<span class="built_in">sum</span>, default=<span class="built_in">max</span>,</span><br><span class="line">                    <span class="built_in">help</span>=<span class="string">&#x27;sum the integers (default: find the max)&#x27;</span>)</span><br><span class="line"></span><br><span class="line">args = parser.parse_args()</span><br></pre></td></tr></table></figure>
+<p>调用<code>parse_args()</code>将会返回一个具有两个 attributes ——<code>integers</code>和<code>accumulate</code>的对象，<code>integers</code>属性是一个或多个整数值的列表；<code>accumulate</code>是<code>sum()</code>或<code>max()</code>函数。</p>
+</li>
+<li>
+<p>Parsing arguments：<code>ArgumentParser</code>通过<code>parse_args()</code>解析 arguments。其过程中会监测命令行，并将每个 argument 转换为合适的 type，然后采取合适的 action。在大多数情况下，这意味着将从命令行解析的 attributes 中创建一个简单的 <code>Namespace</code> 对象。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>parser.parse_args([<span class="string">&#x27;--sum&#x27;</span>, <span class="string">&#x27;7&#x27;</span>, <span class="string">&#x27;-1&#x27;</span>, <span class="string">&#x27;42&#x27;</span>])</span><br><span class="line">Namespace(accumulate=&lt;built-<span class="keyword">in</span> function <span class="built_in">sum</span>&gt;, integers=[<span class="number">7</span>, -<span class="number">1</span>, <span class="number">42</span>])</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>更详细的内容可见：<a href="https://docs.python.org/3/howto/argparse.html">Argparse Tutorial</a></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.python.org/3/library/argparse.html">argparse</a></li>
+<li><a href="https://docs.python.org/3/howto/argparse.html">Argparse Tutorial</a></li>
+</ol>
+</blockquote>
+</br>
+<p>4.Reading and Writing Files：读取和写入文件</p>
+<p><code>open()</code>返回一个文件对象（file object），该函数通常通过两个 positional arguments 和 一个 keyword argument 进行调用：<code>open(filename, mode, encoding=None)</code>。如下图所示：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;workfile&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一个参数表示文件名；</li>
+<li>第二个参数表示打开文件的模式，<code>r</code>表示文件只读，<code>w</code>表示文件只写（已存在的同名文件中数据将被擦除），<code>a</code>表示在文件内容之后<code>appending</code>，写入文件中的数据将被添加到文件最后，<code>r+</code>表示文件可同时读和写，模式参数是可选的，默认为<code>r</code></li>
+<li>第三个参数表示文件的编码格式，正常情况下文件以<code>text</code>模式打开，从该文件中读取和写入字符串。当编码格式没有被指定时，默认编码格式是 <code>platform dependent</code>，由于 UTF-8 是现行的标准，建议使用该格式。在<code>text</code>模式，在读取文件时会将 <code>platform-specific line endings</code> 转换为<code>\n</code>，在写入文件时则反之。</li>
+</ul>
+<p>当处理文件对象时建议使用<code>with</code>关键字，其优点在于在操作完成后文件能被合适地关闭，即使异常发生。其也比等价的<code>try-finally</code>块更短：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;workfile&#x27;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="meta">... </span>    read_data = f.read()</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># We can check that the file has been automatically closed.</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.closed</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">Reading and Writing Files</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>matplotlib中知识点01</title>
+    <url>/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
