@@ -61,3 +61,57 @@ tags:
 > PS：可以为仓库中的每个文件夹创建一个`.gitignore`，但是并不建议，因为不方便查询和管理。
 
 </br>
+
+5.给 git 配置代理：
+
+- 配置 socks 协议代理：
+
+  1. 设置代理：
+
+     ```
+     git config --global http.proxy 'socks5://127.0.0.1:1080' 
+     git config --global https.proxy 'socks5://127.0.0.1:1080'
+     ```
+
+  2. 查看代理：
+
+     ```
+     git config --global --get http.proxy
+     git config --global --get https.proxy
+     ```
+
+  3. 取消代理：
+
+     ```
+     git config --global --unset http.proxy
+     git config --global --unset https.proxy
+     ```
+
+- 配置 http 协议代理：
+
+  1. 设置代理：
+
+     ```
+     git config --global http.proxy 'http://127.0.0.1:1080' 
+     git config --global https.proxy 'https://127.0.0.1:1080'
+     ```
+
+  2. 查看代理：
+
+     ```
+     git config --global --get http.proxy
+     git config --global --get https.proxy
+     ```
+
+  3. 取消代理：
+
+     ```
+     git config --global --unset http.proxy
+     git config --global --unset https.proxy
+     ```
+
+  PS：1080 为在 ShadowSocksR 或者 V2rayN 客户端中设置的代理的端口；Windows V2rayN 客户端似乎不支持 http 协议代理（注意在 git 更新 personal access token 时不支持 socks 协议）
+  
+  > 参考文献：
+  >
+  > 1. [git设置、查看、取消代理](https://www.cnblogs.com/yongy1030/p/11699086.html)
