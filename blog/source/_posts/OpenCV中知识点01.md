@@ -374,12 +374,25 @@ depth_img = cv2.GaussianBlur(depth_img, (31, 31), sigmaX=0)
 
 </br>
 
-16.`cv2.threshold()`：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。
+16.`cv2.threshold()`：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。该函数支持集中阈值，通过类型参数来设置。
+
+与此同时，`THRESH_OTSU`和`THRESH_TRIANGLE`可以联合上述的值来使用。这种情况下，函数通过 Otsu 或者 Triangle 算法来计算最优的阈值。
+
+PS：目前，Otsu 算法和 Triangle 算法只在 8-bit 的单通道图像上实现
 
 该函数的完整调用形式为：
 
 `cv.threshold(src, thresh, maxval, type[, dst]) ->retval, dst`
 
+- `src`：输入数组（多通道，8-bit 或者 32-bit 浮点数）
+- `dst`：和`src`同尺寸、类型和通道的输出数组
+- `thresh`：阈值
+- `maxval`：在使用`THRESH_BINARY`和`THRESH_BINARY_INV`参数时的最大值
+- `type`：阈值类型，常见的有`THRESH_BINARY`和`THRESH_BINARY_INV`。
+
 > 参考资料：
 >
 > 1. [threshold()](https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57)
+> 2. [ThresholdTypes](https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gaa9e58d2860d4afa658ef70a9b1115576)
+> 3. [OpenCV-Python入门教程6-Otsu阈值法](https://www.cnblogs.com/gezhuangzhuang/p/10295181.html)
+> 4. [OTSU算法（大津法）原理解析](https://zhuanlan.zhihu.com/p/395708037)
