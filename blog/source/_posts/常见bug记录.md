@@ -112,3 +112,43 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 参考资料：
 >
 > 1. [What's Wrong With My Windows PowerShell](https://answers.microsoft.com/en-us/windows/forum/all/whats-wrong-with-my-windows-powershell/f05e72f2-a429-4ee0-81fb-910c8c8a1306)
+
+7.IDM 总是在浏览器中下载`f.txt`文件。
+
+原因：
+
+在五年之前，在全世界的许多网站上都会显示Google 的广告，但由于谷歌广告系统的一个小 error，广告可能不会显示，而是将 code 下载到一个 txt 文件中，Google 已经采取措施解决了这个问题；五年前在 Firefox 浏览器上也出现了这个问题，但过几天就被解决了。对使用各种浏览器的用户来说，当浏览各种类型的网站时这个问题偶尔会发生，但是没有什么风险。
+
+解决方案：
+
+- 清楚浏览器缓存
+- 更新浏览器到最新版本
+- 进行全面的病毒扫描
+
+> 参考资料：
+>
+> 1. [F.txt Help! Computer keeps downloading “f.txt” file…](https://howtofix.guide/f-txt-not-virus/)
+> 2. [Google Chrome forcing download of "f.txt" file](https://stackoverflow.com/questions/28535603/google-chrome-forcing-download-of-f-txt-file)
+
+</br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
