@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2022-06-07</lastmod>
+  </url>
+  <url>
+    <loc>https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</loc>
+    <lastmod>2022-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tom89757.github.io/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</loc>
+    <lastmod>2022-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tom89757.github.io/2022/06/05/kindle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2022-06-05</lastmod>
+  </url>
+  <url>
     <loc>https://tom89757.github.io/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2022-06-04</lastmod>
   </url>
   <url>
     <loc>https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2022-06-04</lastmod>
-  </url>
-  <url>
-    <loc>https://tom89757.github.io/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</loc>
     <lastmod>2022-06-04</lastmod>
   </url>
   <url>
@@ -22,10 +34,6 @@
   </url>
   <url>
     <loc>https://tom89757.github.io/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</loc>
-    <lastmod>2022-06-04</lastmod>
-  </url>
-  <url>
-    <loc>https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</loc>
     <lastmod>2022-06-04</lastmod>
   </url>
   <url>
@@ -50,10 +58,6 @@
   </url>
   <url>
     <loc>https://tom89757.github.io/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</loc>
-    <lastmod>2022-05-27</lastmod>
-  </url>
-  <url>
-    <loc>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2022-05-27</lastmod>
   </url>
   <url>

@@ -21,14 +21,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="本文记录一下在实现 DDRQM 过程中的一些 matplotlib 包和 python 相关知识点。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="matplotlib中知识点01">
 <meta property="og:url" content="https://tom89757.github.io/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/index.html">
 <meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录一下在实现 DDRQM 过程中的一些 matplotlib 包和 python 相关知识点。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-03T06:37:10.000Z">
-<meta property="article:modified_time" content="2022-06-04T14:01:23.220Z">
+<meta property="article:modified_time" content="2022-06-06T06:10:33.779Z">
 <meta property="article:author" content="幻光">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="OpenCV">
 <meta name="twitter:card" content="summary">
 
 
@@ -157,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -254,7 +258,16 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-04 22:01:23" itemprop="dateModified" datetime="2022-06-04T22:01:23+08:00">2022-06-04</time>
+      <time title="修改时间：2022-06-06 14:10:33" itemprop="dateModified" datetime="2022-06-06T14:10:33+08:00">2022-06-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+        </span>
     </span>
 
   
@@ -264,7 +277,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>0</span>
+      <span>77</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -282,7 +295,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        
+        <p>本文记录一下在实现 <a target="_blank" rel="noopener" href="https://link.springer.com/article/10.1007/s11042-016-3392-4">DDRQM</a> 过程中的一些 matplotlib 包和 python 相关知识点。</p>
+<span id="more"></span>
+<p>1.<code>matplotlib.pyplot.hist</code>：用于绘制直方图。</p>
+
     </div>
 
     
@@ -307,6 +323,10 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/OpenCV/" rel="tag"># OpenCV</a>
+          </div>
 
         
 
@@ -351,13 +371,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">118k</span>
+    <span title="站点总字数">119k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:47</span>
+    <span title="站点阅读时长">1:48</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
