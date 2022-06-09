@@ -423,6 +423,35 @@
 </br>
 <p>4.<code>wc</code></p>
 </br>
+<p>5.在 Ubuntu 终端中隐藏当前工作目录：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103802742.png" alt="image-20220609103802742" /></p>
+<ul>
+<li>
+<p>当前终端中生效：在当前终端中运行<code>export PS1='\u@\h$ '</code></p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103954302.png" alt="image-20220609103954302" /></p>
+</li>
+<li>
+<p>永久生效：在<code>~/.bashrc</code>文件末尾添加<code>export PS1='\u@\h$ '</code>，并运行<code>source ~/.bashrc</code>使之生效</p>
+</li>
+<li>
+<p>设置颜色：<code>export PS1='\e[34m\u\e[0m@\e[35m\h\e[0m$ '</code>。</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609113641179.png" alt="image-20220609113641179" /></p>
+</li>
+</ul>
+<p>PS：<code>\e</code>表示<code>Esc</code>即转义，<code>\e[34m</code>和<code>\e[35m</code>表示颜色，<code>\e[0m</code>表示清除前面的格式，故<code>@</code>和<code>$</code>符号无格式。</p>
+<p>参考资料：</p>
+<ol>
+<li>
+<p><a href="https://askubuntu.com/questions/16728/hide-current-working-directory-in-terminal">Hide current working directory in terminal</a></p>
+</li>
+<li>
+<p><a href="https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html">How to Change / Set up bash custom prompt (PS1) in Linux</a></p>
+</li>
+<li>
+<p><a href="https://misc.flogisoft.com/bash/tip_colors_and_formatting">Bash tips: Colors and formatting (ANSI/VT100 Control sequences)</a></p>
+</li>
+</ol>
+</br>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -2388,6 +2417,14 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 </ol>
 </blockquote>
 </br>
+<p>8.打开 Microsoft Store 时出现 0x800704cf 错误，如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220608231526381.png" alt="image-20220608231526381" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://answers.microsoft.com/zh-hans/windows/forum/all/0x800704cf/0949346c-ed7c-40d6-a72d-3dd2fd3d0306">0x800704cf</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
