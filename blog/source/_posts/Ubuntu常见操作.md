@@ -38,5 +38,28 @@ tags:
 
 </br>
 
+5.在 Ubuntu 终端中隐藏当前工作目录：
 
+![image-20220609103802742](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103802742.png)
+
+- 当前终端中生效：在当前终端中运行`export PS1='\u@\h$ '`
+
+  ![image-20220609103954302](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103954302.png)
+
+- 永久生效：在`~/.bashrc`文件末尾添加`export PS1='\u@\h$ '`，并运行`source ~/.bashrc`使之生效
+
+- 设置颜色：`export PS1='\e[34m\u\e[0m@\e[35m\h\e[0m$ ' `。
+
+  ![image-20220609113641179](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609113641179.png)
+
+PS：`\e`表示`Esc`即转义，`\e[34m`和`\e[35m`表示颜色，`\e[0m`表示清除前面的格式，故`@`和`$`符号无格式。
+
+参考资料：
+
+1. [Hide current working directory in terminal](https://askubuntu.com/questions/16728/hide-current-working-directory-in-terminal)
+
+2. [How to Change / Set up bash custom prompt (PS1) in Linux](https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html)
+3. [Bash tips: Colors and formatting (ANSI/VT100 Control sequences)](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
+
+</br>
 

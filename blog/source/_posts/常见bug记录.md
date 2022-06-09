@@ -132,6 +132,14 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 
 </br>
 
+8.打开 Microsoft Store 时出现 0x800704cf 错误，如下图所示：
+
+![image-20220608231526381](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220608231526381.png)
+
+> 参考资料：
+>
+> 1. [0x800704cf](https://answers.microsoft.com/zh-hans/windows/forum/all/0x800704cf/0949346c-ed7c-40d6-a72d-3dd2fd3d0306)
+
 
 
 
