@@ -396,3 +396,5 @@ PS：目前，Otsu 算法和 Triangle 算法只在 8-bit 的单通道图像上�
 > 2. [ThresholdTypes](https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gaa9e58d2860d4afa658ef70a9b1115576)
 > 3. [OpenCV-Python入门教程6-Otsu阈值法](https://www.cnblogs.com/gezhuangzhuang/p/10295181.html)
 > 4. [OTSU算法（大津法）原理解析](https://zhuanlan.zhihu.com/p/395708037)
+
+17.`cv2.imwrite()`：

@@ -38,7 +38,33 @@ tags:
 
 </br>
 
-5.在 Ubuntu 终端中隐藏当前工作目录：
+5.`zip`和`unzip`：用于压缩解压缩 zip 文件。
+
+`zip -r filename.zip /path/to/folder1`：把`folder1`压缩到`filename.zip`。
+
+`unzip /path/to/file.zip -d foldername`：把`file.zip`解压缩到`foldername`。
+
+> 参考资料：
+>
+> 1. [Linux unzip 命令](https://www.runoob.com/linux/linux-comm-unzip.html)
+> 2. [Zip all files in directory?](https://unix.stackexchange.com/questions/57013/zip-all-files-in-directory)
+> 3. [How to extract a zip file to a specific folder?](https://askubuntu.com/questions/520546/how-to-extract-a-zip-file-to-a-specific-folder)
+
+</br>
+
+6.`rename`：用于重命名文件。
+
+- `000001_left.png -> 000001_left_depth.png `：`rename -v 's/.png/_depth.png/' *.png `。
+- `000001_left.png -> 000001_left_gt.png`：`rename -v 's/.png/_gt.png/' *.png`。
+- `000001_left_GT.png -> 000001_left_gt.png`：`rename -v 's/GT.png/gt.png/' *.png`。
+
+> 参考资料：
+>
+> 1. [Batch renaming files](https://unix.stackexchange.com/questions/1136/batch-renaming-files)
+
+</br>
+
+7.在 Ubuntu 终端中隐藏当前工作目录：
 
 ![image-20220609103802742](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103802742.png)
 
@@ -62,4 +88,3 @@ PS：`\e`表示`Esc`即转义，`\e[34m`和`\e[35m`表示颜色，`\e[0m`表示�
 3. [Bash tips: Colors and formatting (ANSI/VT100 Control sequences)](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
 
 </br>
-

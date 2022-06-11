@@ -199,9 +199,21 @@ True
 >
 > 1. [Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 
+</br>
 
+5.`threading.Thread`：多线程。
 
+> 参考资料：
+>
+> 1. [Python 多线程](https://www.runoob.com/python/python-multithreading.html)
 
+</br>
+
+6.`multiprocessing.Process`：多进程。
+
+> 参考资料：
+>
+> 1. [想要利用CPU多核资源一Python中多进程（一）](https://developer.51cto.com/article/632081.html)
 
 
 
