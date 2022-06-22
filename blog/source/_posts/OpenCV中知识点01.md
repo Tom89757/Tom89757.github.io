@@ -455,3 +455,73 @@ plt.show()
 2. [Canny Edge Detection in OpenCV](https://docs.opencv.org/3.1.0/da/d22/tutorial_py_canny.html)
 3. [Canny算子](https://zh.m.wikipedia.org/zh-hans/Canny%E7%AE%97%E5%AD%90)
 4. [Canny edge detector](https://en.wikipedia.org/wiki/Canny_edge_detector)
+5. [Canny边缘检测](https://zj-image-processing.readthedocs.io/zh_CN/latest/opencv/code/[Canny]%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/)
+
+</br>
+
+19.`cv2.Sobel()`：使用Sobel$算子计算图像导数。其完整声明形式如下：
+
+```c++
+void cv::Sobel(InputArray src,
+	OutputArray dst,
+	int ddepth,
+	int dx,
+	int dy,
+	int ksize = 3,
+	double scale = 1,
+	double delta = 0,
+	int borderType = BORDER_DEFAULT 
+	)	
+```
+
+该函数通过用合适的核与函数做卷积来计算图像导数。通常，该函数通过`xorder=1, yorder=0, ksize=3`和`xorder=0, yorder=1, ksize=3`来计算图像的一阶$x$和$y$导数，分别对应：
+$$
+\begin{bmatrix}
+-1 & 0 & 1 \\
+-2 & 0 & 2 \\
+-1 & 0 & 1
+\end{bmatrix} 和
+\begin{bmatrix}
+-1 & -2 & 1 \\
+0 & 0 & 0 \\
+1 & 2 & 1
+\end{bmatrix}
+$$
+这两个核。
+
+- `src`：输入图片
+- `dst`：相同尺寸和通道数的输出图片
+- `ddepth`：输出图片depth，见 [combinations](https://docs.opencv.org/3.1.0/d4/d86/group__imgproc__filter.html#filter_depths)。（depth指图片的数据类型，例如对应图像梯度你想要16bit而不是8bit。当输入图片为8-bit类型时，将导致梯度裁剪（精度不够）
+- `dx`：梯度$x$的order
+- `dy`：梯度$y$的order
+- `ksize`：$Sobel$核尺寸，必须是1/3/5/7。
+- `scale`：计算梯度值时的可选因子，默认不提供
+- `delta`：在`dst`中存储结果之前默认加到结果上的可选delta值。
+- `borderType`：像素插值类型。
+
+参考资料：
+
+1. [Soble()](https://docs.opencv.org/3.1.0/d4/d86/group__imgproc__filter.html#gacea54f142e81b6758cb6f375ce782c8d)
+2. [Sobel算子](https://zh.wikipedia.org/wiki/%E7%B4%A2%E8%B2%9D%E7%88%BE%E7%AE%97%E5%AD%90)
+3. [边缘检测](https://www.cnblogs.com/zhuifeng-mayi/p/9563947.html)
+
+</br>
+
+20.`numpy.ndarray.flatten()`：返回一个坍缩成一维的数组的副本。
+
+调用实例：
+
+```python
+>>> a = np.array([[1,2], [3,4]])
+>>> a.flatten()
+array([1, 2, 3, 4])
+>>> a.flatten('F')
+array([1, 3, 2, 4])
+```
+
+参考资料：
+
+1. [numpy.ndarray.flatten](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html)
+
+</br>
+
