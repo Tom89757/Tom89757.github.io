@@ -354,10 +354,12 @@ print(os.path.abspath(os.path.join(os.getcwd(), "../..")))
 
 - `src`：输入图像，图像有不同的通道，会被分别处理
 - `dst`：输出图像，类型和尺寸与`src`相同
-- `ksize`：高斯核尺寸。`ksize.width`和`ksize.height`必须为正奇数；否则为0，此时通过`sigmaX`和`sigmaY`计算
+- `ksize`：高斯核尺寸。`ksize.width`和`ksize.height`必须为正奇数；否则`ksize`为0，此时其值通过`sigmaX`和`sigmaY`计算
 - `sigmaX`：在X方向上的 Gaussian kernel standard deviation
 - `sigmaY`：在Y方向上的 Gaussian kernel standard deviation。为0时设为与`sigmaX`相等。
 - `borderType`：像素外插值方法，常见的有`cv.BORDER_CONSTANT`、`cv.BORDER_REPLICATE`，不支持`cv.BORDER_WRAP`。
+
+为了完全控制对图片的操作而不需要管OpenCV后续对语义的修改，建议对`ksize`/`sigmaX`/`sigmaY`都进行指定。
 
 调用实例：
 
@@ -371,10 +373,12 @@ depth_img = cv2.GaussianBlur(depth_img, (31, 31), sigmaX=0)
 >
 > 1. [GaussianBlur()](https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1)
 > 2. [BorderTypes](https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5)
+> 2. [高斯模糊](https://zh.m.wikipedia.org/zh/%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A)
+> 2. [高斯模糊的原理是什么，怎样在界面中实现](https://www.zhihu.com/question/54918332)
 
 </br>
 
-16.`cv2.threshold()`：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。该函数支持集中阈值，通过类型参数来设置。
+16.`cv2.threshold()`：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。该函数支持几种阈值，通过类型参数来设置。
 
 与此同时，`THRESH_OTSU`和`THRESH_TRIANGLE`可以联合上述的值来使用。这种情况下，函数通过 Otsu 或者 Triangle 算法来计算最优的阈值。
 
@@ -397,4 +401,57 @@ PS：目前，Otsu 算法和 Triangle 算法只在 8-bit 的单通道图像上�
 > 3. [OpenCV-Python入门教程6-Otsu阈值法](https://www.cnblogs.com/gezhuangzhuang/p/10295181.html)
 > 4. [OTSU算法（大津法）原理解析](https://zhuanlan.zhihu.com/p/395708037)
 
+</br>
+
 17.`cv2.imwrite()`：
+
+</br>
+
+18.`cv2.Canny()`：用于通过$Canny$算法查找图像边缘。其完整声明形式如下：
+
+```c++
+
+void cv::Canny	(InputArray image,
+	OutputArray edges,
+	double threshold1,
+	double threshold2,
+	int apertureSize = 3,
+	bool L2gradient = false 
+	)
+```
+
+该函数在输入的图像中查找边缘并通过$Canny$算法在输出中标记出它们。在threshold1和threshold2中最小的值将用于edge linking，最大值将用于查找初始的更为强烈/显著的边缘。具体见 [Canny edge detector](https://en.wikipedia.org/wiki/Canny_edge_detector)
+
+- `image`：8-bit的输入图片
+- `edges`：输出的 edge map，8-bit单通道，和`image`尺寸相同
+- `threshold1`：滞后过程（hysteresis procedure）的第一个阈值
+- `threshold2`：滞后过程的第二个阈值
+- `apertureSize`：$Sobel$操作子的孔径尺寸
+- `L2gradient`：a flag。表明是否使用更准确的$L2$范数$\sqrt{(dI/dx)^2+(dI/dy)^2}$计算图像梯度大小（`L2gradient=true`），还是使用默认的$L1$范数$\sqrt{|dI/dx|+|dI/dy|}$（`L2gradient=false`）。
+
+调用实例：
+
+```python
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+img = cv2.imread('messi5.jpg',0)
+edges = cv2.Canny(img,100,200)
+
+plt.subplot(121),plt.imshow(img,cmap = 'gray')
+plt.title('Original Image'), plt.xticks([]), plt.yticks([])
+plt.subplot(122),plt.imshow(edges,cmap = 'gray')
+plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
+
+plt.show()
+```
+
+
+
+参考资料：
+
+1. [Canny()](https://docs.opencv.org/3.1.0/dd/d1a/group__imgproc__feature.html#ga04723e007ed888ddf11d9ba04e2232de)
+2. [Canny Edge Detection in OpenCV](https://docs.opencv.org/3.1.0/da/d22/tutorial_py_canny.html)
+3. [Canny算子](https://zh.m.wikipedia.org/zh-hans/Canny%E7%AE%97%E5%AD%90)
+4. [Canny edge detector](https://en.wikipedia.org/wiki/Canny_edge_detector)
