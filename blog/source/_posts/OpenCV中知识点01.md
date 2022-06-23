@@ -456,6 +456,7 @@ plt.show()
 3. [Canny算子](https://zh.m.wikipedia.org/zh-hans/Canny%E7%AE%97%E5%AD%90)
 4. [Canny edge detector](https://en.wikipedia.org/wiki/Canny_edge_detector)
 5. [Canny边缘检测](https://zj-image-processing.readthedocs.io/zh_CN/latest/opencv/code/[Canny]%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/)
+6. [Python实现Canny算子边缘检测](https://yueyue200830.github.io/2020/04/04/Python%E5%AE%9E%E7%8E%B0Canny%E7%AE%97%E5%AD%90%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/)
 
 </br>
 
