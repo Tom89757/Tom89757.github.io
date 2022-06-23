@@ -460,7 +460,7 @@ plt.show()
 
 </br>
 
-19.`cv2.Sobel()`：使用Sobel$算子计算图像导数。其完整声明形式如下：
+19.`cv2.Sobel()`：使用$Sobel$算子计算图像导数。其完整声明形式如下：
 
 ```c++
 void cv::Sobel(InputArray src,
