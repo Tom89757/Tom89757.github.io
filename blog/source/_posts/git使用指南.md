@@ -50,7 +50,7 @@ tags:
 
 - `git rm -rf --cached path_to_file`：将对应路径的文件从仓库缓存中删除；
 - `git add ./`
-- `git commimt -m "add a commit"`
+- `git commim -m "add a commit"`
 - `git push origin main`
 
 > 参考资料：

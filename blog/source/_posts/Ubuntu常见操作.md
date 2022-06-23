@@ -58,6 +58,11 @@ tags:
 - `000001_left.png -> 000001_left_gt.png`：`rename -v 's/.png/_gt.png/' *.png`。
 - `000001_left_GT.png -> 000001_left_gt.png`：`rename -v 's/GT.png/gt.png/' *.png`。
 
+也可用于批量给文件名添加前缀或后缀，例如给多个文件批量添加`.cpp`后缀或`1`前缀：
+
+- `helloworld -> helloworld.cpp`：`rename -v 's/$/.cpp/' *`。
+- `helloworld.cpp -> 1helloworld.cpp`：`rename -v 's/^/1/' *`。
+
 > 参考资料：
 >
 > 1. [Batch renaming files](https://unix.stackexchange.com/questions/1136/batch-renaming-files)
