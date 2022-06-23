@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103954302.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609113641179.png">
 <meta property="article:published_time" content="2022-05-14T16:22:55.000Z">
-<meta property="article:modified_time" content="2022-06-09T16:59:41.072Z">
+<meta property="article:modified_time" content="2022-06-23T15:54:13.968Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
@@ -262,7 +262,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-10 00:59:41" itemprop="dateModified" datetime="2022-06-10T00:59:41+08:00">2022-06-10</time>
+      <time title="修改时间：2022-06-23 23:54:13" itemprop="dateModified" datetime="2022-06-23T23:54:13+08:00">2022-06-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>835</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -321,7 +321,37 @@
 </br>
 <p>4.<code>wc</code></p>
 </br>
-<p>5.在 Ubuntu 终端中隐藏当前工作目录：</p>
+<p>5.<code>zip</code>和<code>unzip</code>：用于压缩解压缩 zip 文件。</p>
+<p><code>zip -r filename.zip /path/to/folder1</code>：把<code>folder1</code>压缩到<code>filename.zip</code>。</p>
+<p><code>unzip /path/to/file.zip -d foldername</code>：把<code>file.zip</code>解压缩到<code>foldername</code>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-unzip.html">Linux unzip 命令</a></li>
+<li><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/57013/zip-all-files-in-directory">Zip all files in directory?</a></li>
+<li><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/520546/how-to-extract-a-zip-file-to-a-specific-folder">How to extract a zip file to a specific folder?</a></li>
+</ol>
+</blockquote>
+</br>
+<p>6.<code>rename</code>：用于重命名文件。</p>
+<ul>
+<li><code>000001_left.png -&gt; 000001_left_depth.png</code>：<code>rename -v 's/.png/_depth.png/' *.png</code>。</li>
+<li><code>000001_left.png -&gt; 000001_left_gt.png</code>：<code>rename -v 's/.png/_gt.png/' *.png</code>。</li>
+<li><code>000001_left_GT.png -&gt; 000001_left_gt.png</code>：<code>rename -v 's/GT.png/gt.png/' *.png</code>。</li>
+</ul>
+<p>也可用于批量给文件名添加前缀或后缀，例如给多个文件批量添加<code>.cpp</code>后缀或<code>1</code>前缀：</p>
+<ul>
+<li><code>helloworld -&gt; helloworld.cpp</code>：<code>rename -v 's/$/.cpp/' *</code>。</li>
+<li><code>helloworld.cpp -&gt; 1helloworld.cpp</code>：<code>rename -v 's/^/1/' *</code>。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/1136/batch-renaming-files">Batch renaming files</a></li>
+</ol>
+</blockquote>
+</br>
+<p>7.在 Ubuntu 终端中隐藏当前工作目录：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103802742.png" alt="image-20220609103802742" /></p>
 <ul>
 <li>
@@ -422,13 +452,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">119k</span>
+    <span title="站点总字数">122k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:48</span>
+    <span title="站点阅读时长">1:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
