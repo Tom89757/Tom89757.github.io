@@ -526,3 +526,13 @@ array([1, 3, 2, 4])
 
 </br>
 
+21.`math.atan(x)`vs`math.atan2(y, x)`：
+
+`atan`返回`x`对应的arc tangent，其结果所属区间为$(-\pi/2, \pi/2)$；
+
+`atan2(y, x)`则返回`atan(y/x)`，其结果所属区间为$(-\pi, \pi)$。
+
+举例来说，`atan(1)=atan2(1,1)`$=\pi/4$；`atan2(-1,-1)`$=-3\pi/4$。
+
+</br>
+
