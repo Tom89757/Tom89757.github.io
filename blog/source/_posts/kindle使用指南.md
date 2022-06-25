@@ -1,10 +1,17 @@
 ---
 title: kindle使用指南
 date: 2022-06-05 22:02:59
-tags: 
+categories:
+- 生活
+tags:  
+- kindle
 ---
 
 
+
+本文记录以下在使用kindle平台过程中积累的经验和工具：
+
+<!--more-->
 
 参考资料：
 

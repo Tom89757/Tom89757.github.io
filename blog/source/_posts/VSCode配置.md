@@ -56,3 +56,7 @@ tags:
 - 打开`settings.json`，编辑`editor.rulers`的值为85：
 
   ![image-20220625185247521](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220625185247521.png)
+
+> 参考资料：
+>
+> 1. [vs code设置每行代码的垂直标尺](https://blog.csdn.net/qq_43406338/article/details/109397831)
