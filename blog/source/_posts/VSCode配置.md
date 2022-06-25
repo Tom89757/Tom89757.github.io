@@ -46,3 +46,13 @@ tags:
 - `File -> Dulplicate Workspace`，重复该工作区：
 
   ![image-20220523101705028](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220523101705028.png)
+
+### VSCode显示85字符宽度提示线
+
+- `File->Preferences->Settings`，搜索`editor.rulers`：
+
+  ![image-20220625185036578](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220625185036578.png)
+
+- 打开`settings.json`，编辑`editor.rulers`的值为85：
+
+  ![image-20220625185247521](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220625185247521.png)
