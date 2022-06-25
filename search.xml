@@ -401,6 +401,12 @@
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220625185247521.png" alt="image-20220625185247521" /></p>
 </li>
 </ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/qq_43406338/article/details/109397831">vs code设置每行代码的垂直标尺</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -4899,12 +4905,20 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
   <entry>
     <title>kindle使用指南</title>
     <url>/2022/06/05/kindle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>参考资料：</p>
+    <content><![CDATA[<p>本文记录以下在使用kindle平台过程中积累的经验和工具：</p>
+<span id="more"></span>
+<p>参考资料：</p>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/80604597">如何用Calibre将电子书转换成MOBI格式？</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/65832237">进阶能力 | 将合集拆分为多本电子书</a></li>
 <li><a href="">使用 Kindle 推送时为何会收到“验证请求”邮件？</a></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>kindle</tag>
+      </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-06-05T14:26:44.769Z</updated>
+  <updated>2022-06-25T11:01:04.913Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -21,22 +21,17 @@
     <link href="https://tom89757.github.io/2022/06/05/kindle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/06/05/kindle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2022-06-05T14:02:59.000Z</published>
-    <updated>2022-06-05T14:26:44.769Z</updated>
+    <updated>2022-06-25T11:01:04.913Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/80604597&quot;&gt;如何用Calibre将电子书转换成MOBI格式？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
+    <summary type="html">&lt;p&gt;本文记录以下在使用kindle平台过程中积累的经验和工具：&lt;/p&gt;</summary>
     
     
     
+    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="kindle" scheme="https://tom89757.github.io/tags/kindle/"/>
     
   </entry>
   
@@ -146,7 +141,7 @@
     <link href="https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/</id>
     <published>2022-05-21T09:09:43.000Z</published>
-    <updated>2022-06-25T10:53:09.637Z</updated>
+    <updated>2022-06-25T10:57:35.592Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在 VSCode 编辑器中一些常用的配置方法。&lt;/p&gt;</summary>
