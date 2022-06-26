@@ -272,6 +272,8 @@ img = cv2.flip(img, 0)
 ```python
 img = cv2.imread('NLPR.jpg')
 cv2.imshow('img', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
 
 > 参考资料：
@@ -403,7 +405,19 @@ PS：目前，Otsu 算法和 Triangle 算法只在 8-bit 的单通道图像上�
 
 </br>
 
-17.`cv2.imwrite()`：
+17.`cv2.imwrite()`：用于存储图片到指定文件，图片类型取决于文件后缀名。其完整声明形式如下：
+
+```python
+cv.imwrite(filename, img[, params]) -> retval
+```
+
+- `filename`：存储文件名
+- `img`：图片数据对应的矩阵
+- `params`：成对的指定存储格式的参数。
+
+> 参考资料：
+>
+> 1. [imwrite()](https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#gabbc7ef1aa2edfaa87772f1202d67e0ce)
 
 </br>
 
@@ -446,8 +460,6 @@ plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
 
 plt.show()
 ```
-
-
 
 参考资料：
 
@@ -534,5 +546,78 @@ array([1, 3, 2, 4])
 
 举例来说，`atan(1)=atan2(1,1)`$=\pi/4$；`atan2(-1,-1)`$=-3\pi/4$。
 
+> 参考文献：
+>
+> 1. [math.atan(x)](https://docs.python.org/3.8/library/math.html?highlight=atan#math.atan)
+
 </br>
+
+22.`numpy.zeros`：用于返回给定`shape`和`type`的用零填充的新的数组。其完整调用形式为：
+
+```python
+numpy.zeros(shape, dtype=float, order='C', *, like=None)
+```
+
+- `shape`：指定数组形状，如`(2, )`或`(2,3)`。
+- `dtype`：指定填充的数据类型，如`dtype=int`，默认为`numpy.float64`。
+- `order`：指定行优先还是列优先，默认为`order='C'`，行优先，`order='F'`表示列优先。
+- `like`：引用对象，用于创建非Numpy arrays类型的数组，可以兼容其他类型的数组。
+
+调用实例：
+
+```python
+>>> np.zeros(5)
+array([ 0.,  0.,  0.,  0.,  0.])
+>>> np.zeros((5,), dtype=int)
+array([0, 0, 0, 0, 0])
+```
+
+PS：`numpy.ones`与之类似
+
+> 参考资料：
+>
+> 1. [numpy.zeros](https://numpy.org/doc/stable/reference/generated/numpy.zeros.html)
+> 2. [numpy.ones](https://numpy.org/doc/stable/reference/generated/numpy.ones.html#numpy.ones)
+
+</br>
+
+23.在进行灰度图转为BGR图`img = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)`之前，需要确保灰度图`gray`中数值的类型满足转换要求，否则会出现如下错误：
+
+![image-20220626163339376](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220626163339376.png)
+
+可以通过`gray = np.uint8(gray)`将灰度图转换为满足条件的格式：
+
+> 参考资料：
+>
+> 1. [Opencv error -Unsupported depth of input image:](https://stackoverflow.com/questions/55179724/opencv-error-unsupported-depth-of-input-image)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
