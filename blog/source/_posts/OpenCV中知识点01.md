@@ -591,11 +591,37 @@ PS：`numpy.ones`与之类似
 >
 > 1. [Opencv error -Unsupported depth of input image:](https://stackoverflow.com/questions/55179724/opencv-error-unsupported-depth-of-input-image)
 
+</br>
 
+24.`numpy.sum`：计算给定`axis`上数组的元素之和。其完整调用形式为：
 
+```python
+numpy.sum(a, axis=None, dtype=None, out=None, keepdims=<no value>, initial=<no value>, where=<no value>)[source]
+```
 
+- `a`：数组类型的对象
+- `axis`：None、整数或整数类型的元组，可选。默认为None，将对所有元素求和。
+- `dtype`：数据类型，可选。
+- `out`：用于存放求和结果的输出数组，可选。
+- 略
 
+调用实例：
 
+```python
+>>> a = np.ones((10,2), dtype=int)
+>>> a.sum()
+20
+>>> a.sum(axis=0)
+array([10, 10])
+>>> a.sum(axis=0)/6
+array([1.66666667, 1.66666667])
+```
+
+> 参考资料：
+>
+> 1. [numpy.sum](https://numpy.org/doc/stable/reference/generated/numpy.sum.html)
+
+</br>
 
 
 
