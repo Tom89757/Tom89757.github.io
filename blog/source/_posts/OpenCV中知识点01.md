@@ -623,9 +623,60 @@ array([1.66666667, 1.66666667])
 
 </br>
 
+25.在算法实现中使用$DFS$时出现以下报错：
 
+```python
+RecursionError: maximum recursion depth exceeded in comparison
+```
 
+其出现原因为递归序列太长超过了系统设置，可以通过以下方式查看系统设置的最大递归深度：
 
+```python
+>>> import sys
+>>> print(sys.getrecursionlimit())
+1000
+```
+
+此时可以通过两种方式解决该问题：
+
+- 设置更大的系统递归深度：`sys.setrecursionlimit(1000*1000+10)`
+- 优化算法，采用更高效的方式实现。（推荐）
+
+> 参考资料：
+>
+> 1. [Maximum recursion depth exceeded in comparison](https://github.com/pltrdy/rouge/issues/19)
+> 2. [Python infinite recursion with formula](https://stackoverflow.com/questions/46659192/python-infinite-recursion-with-formula)
+
+</br>
+
+26.当判断python字典中是否存在某个key时，`has_key()`方法在python中无法使用：
+
+![image-20220629171740572](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220629171740572.png)
+
+其原因在于`has_key()`方法在Python3中被去除。
+
+通过`for i, j in img_depth_pair.keys:`遍历字典键时，会出现如下报错：
+
+![image-20220629172819981](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220629172819981.png)
+
+其原因在于`dict.keys`为不可迭代对象，此时应该通过以下方式遍历key和value：
+
+```python
+for key in img_depth_pair:
+	print(key)
+    print(img_depth_pair[key])
+```
+
+此外，值得补充的是，列表不能作为python字典的键，而元组可以，这一特性源自python语言的设计。
+
+> 参考资料：
+>
+> 1. [使用 for 循环遍历 Python 字典的 3 种方法 !](https://cloud.tencent.com/developer/article/1893987)
+> 2. ['dict' object has no attribute 'has_key'](https://stackoverflow.com/questions/33727149/dict-object-has-no-attribute-has-key)
+> 2. [Why can't I use a list as a dict key in python?](https://stackoverflow.com/questions/7257588/why-cant-i-use-a-list-as-a-dict-key-in-python)
+> 2. [Why Lists Can't Be Dictionary Keys](https://wiki.python.org/moin/DictionaryKeys)
+
+</br>
 
 
 
