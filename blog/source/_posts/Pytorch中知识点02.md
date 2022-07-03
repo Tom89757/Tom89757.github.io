@@ -230,6 +230,29 @@ ImportError: cannot import name 'PILLOW_VERSION' from 'PIL' (/storage/FT/anacond
 
 </br>
 
+8.Python中的Logging包，在SCWSSOD中的用法示例为：
+
+```python
+import logging as logger
+logger.basicConfig(level=logger.INFO, format='%(levelname)s %(asctime)s %(filename)s: %(lineno)d] %(message)s', datefmt='%Y-%m-%d %H:%M:%S', \
+                           filename="train_%s.log"%(TAG), filemode="w")
+...
+logger.info(msg)
+```
+
+该模块定义了一系列的函数和类，为applications和libraries实现了一个灵活的event logging system。由一个标准的库模块提供logging API的关键好处在于，所有的Python模块都能加入logging，所以application log可以包含自己的信息以及整合来自第三方模块的信息。简单示例为：
+
+```python
+>>> import logging
+>>> logging.warning('Watch Out!')
+WARNING:root:Watch Out!
+```
+
+> 参考资料：
+>
+> 1. [Logging facility for Python](https://docs.python.org/3/library/logging.html)
+> 2. [Logging HOWTo](https://docs.python.org/3/howto/logging.html#logging-basic-tutorial)
+
 
 
 
