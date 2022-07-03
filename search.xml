@@ -4591,7 +4591,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><code>mat</code>：要显示的矩阵</li>
 </ul>
 <p>调用示例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -4682,7 +4682,19 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 </ol>
 </blockquote>
 </br>
-<p>17.<code>cv2.imwrite()</code>：</p>
+<p>17.<code>cv2.imwrite()</code>：用于存储图片到指定文件，图片类型取决于文件后缀名。其完整声明形式如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv.imwrite(filename, img[, params]) -&gt; retval</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>filename</code>：存储文件名</li>
+<li><code>img</code>：图片数据对应的矩阵</li>
+<li><code>params</code>：成对的指定存储格式的参数。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#gabbc7ef1aa2edfaa87772f1202d67e0ce">imwrite()</a></li>
+</ol>
+</blockquote>
 </br>
 <p>18.<code>cv2.Canny()</code>：用于通过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Canny</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>算法查找图像边缘。其完整声明形式如下：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cv::Canny</span>	<span class="params">(InputArray image,</span></span></span><br><span class="line"><span class="params"><span class="function">	OutputArray edges,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> threshold1,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> threshold2,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> apertureSize = <span class="number">3</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">bool</span> L2gradient = <span class="literal">false</span> </span></span></span><br><span class="line"><span class="params"><span class="function">	)</span></span></span><br></pre></td></tr></table></figure>
@@ -4764,6 +4776,120 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <p><code>atan</code>返回<code>x</code>对应的arc tangent，其结果所属区间为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-\pi/2, \pi/2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">)</span></span></span></span>；</p>
 <p><code>atan2(y, x)</code>则返回<code>atan(y/x)</code>，其结果所属区间为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mi>π</mi><mo separator="true">,</mo><mi>π</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-\pi, \pi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mclose">)</span></span></span></span>。</p>
 <p>举例来说，<code>atan(1)=atan2(1,1)</code><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">=\pi/4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">4</span></span></span></span>；<code>atan2(-1,-1)</code><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mo>−</mo><mn>3</mn><mi>π</mi><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">=-3\pi/4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">4</span></span></span></span>。</p>
+<blockquote>
+<p>参考文献：</p>
+<ol>
+<li><a href="https://docs.python.org/3.8/library/math.html?highlight=atan#math.atan">math.atan(x)</a></li>
+</ol>
+</blockquote>
+</br>
+<p>22.<code>numpy.zeros</code>：用于返回给定<code>shape</code>和<code>type</code>的用零填充的新的数组。其完整调用形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numpy.zeros(shape, dtype=<span class="built_in">float</span>, order=<span class="string">&#x27;C&#x27;</span>, *, like=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>shape</code>：指定数组形状，如<code>(2, )</code>或<code>(2,3)</code>。</li>
+<li><code>dtype</code>：指定填充的数据类型，如<code>dtype=int</code>，默认为<code>numpy.float64</code>。</li>
+<li><code>order</code>：指定行优先还是列优先，默认为<code>order='C'</code>，行优先，<code>order='F'</code>表示列优先。</li>
+<li><code>like</code>：引用对象，用于创建非Numpy arrays类型的数组，可以兼容其他类型的数组。</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.zeros(<span class="number">5</span>)</span><br><span class="line">array([ <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.zeros((<span class="number">5</span>,), dtype=<span class="built_in">int</span>)</span><br><span class="line">array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>PS：<code>numpy.ones</code>与之类似</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html">numpy.zeros</a></li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html#numpy.ones">numpy.ones</a></li>
+</ol>
+</blockquote>
+</br>
+<p>23.在进行灰度图转为BGR图<code>img = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)</code>之前，需要确保灰度图<code>gray</code>中数值的类型满足转换要求，否则会出现如下错误：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220626163339376.png" alt="image-20220626163339376" /></p>
+<p>可以通过<code>gray = np.uint8(gray)</code>将灰度图转换为满足条件的格式：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/55179724/opencv-error-unsupported-depth-of-input-image">Opencv error -Unsupported depth of input image:</a></li>
+</ol>
+</blockquote>
+</br>
+<p>24.<code>numpy.sum</code>：计算给定<code>axis</code>上数组的元素之和。其完整调用形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numpy.<span class="built_in">sum</span>(a, axis=<span class="literal">None</span>, dtype=<span class="literal">None</span>, out=<span class="literal">None</span>, keepdims=&lt;no value&gt;, initial=&lt;no value&gt;, where=&lt;no value&gt;)[source]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>a</code>：数组类型的对象</li>
+<li><code>axis</code>：None、整数或整数类型的元组，可选。默认为None，将对所有元素求和。</li>
+<li><code>dtype</code>：数据类型，可选。</li>
+<li><code>out</code>：用于存放求和结果的输出数组，可选。</li>
+<li>略</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.ones((<span class="number">10</span>,<span class="number">2</span>), dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>()</span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>(axis=<span class="number">0</span>)</span><br><span class="line">array([<span class="number">10</span>, <span class="number">10</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>(axis=<span class="number">0</span>)/<span class="number">6</span></span><br><span class="line">array([<span class="number">1.66666667</span>, <span class="number">1.66666667</span>])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html">numpy.sum</a></li>
+</ol>
+</blockquote>
+</br>
+<p>25.在算法实现中使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>F</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">DFS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>时出现以下报错：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">RecursionError: maximum recursion depth exceeded <span class="keyword">in</span> comparison</span><br></pre></td></tr></table></figure>
+<p>其出现原因为递归序列太长超过了系统设置，可以通过以下方式查看系统设置的最大递归深度：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(sys.getrecursionlimit())</span><br><span class="line"><span class="number">1000</span></span><br></pre></td></tr></table></figure>
+<p>此时可以通过两种方式解决该问题：</p>
+<ul>
+<li>设置更大的系统递归深度：<code>sys.setrecursionlimit(1000*1000+10)</code></li>
+<li>优化算法，采用更高效的方式实现。（推荐）</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/pltrdy/rouge/issues/19">Maximum recursion depth exceeded in comparison</a></li>
+<li><a href="https://stackoverflow.com/questions/46659192/python-infinite-recursion-with-formula">Python infinite recursion with formula</a></li>
+</ol>
+</blockquote>
+</br>
+<p>26.当判断python字典中是否存在某个key时，<code>has_key()</code>方法在python中无法使用：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220629171740572.png" alt="image-20220629171740572" /></p>
+<p>其原因在于<code>has_key()</code>方法在Python3中被去除。</p>
+<p>通过<code>for i, j in img_depth_pair.keys:</code>遍历字典键时，会出现如下报错：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220629172819981.png" alt="image-20220629172819981" /></p>
+<p>其原因在于<code>dict.keys</code>为不可迭代对象，此时应该通过以下方式遍历key和value：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> img_depth_pair:</span><br><span class="line">	<span class="built_in">print</span>(key)</span><br><span class="line">    <span class="built_in">print</span>(img_depth_pair[key])</span><br></pre></td></tr></table></figure>
+<p>此外，值得补充的是，列表不能作为python字典的键，而元组可以，这一特性源自python语言的设计。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://cloud.tencent.com/developer/article/1893987">使用 for 循环遍历 Python 字典的 3 种方法 !</a></li>
+<li><a href="https://stackoverflow.com/questions/33727149/dict-object-has-no-attribute-has-key">‘dict’ object has no attribute ‘has_key’</a></li>
+<li><a href="https://stackoverflow.com/questions/7257588/why-cant-i-use-a-list-as-a-dict-key-in-python">Why can’t I use a list as a dict key in python?</a></li>
+<li><a href="https://wiki.python.org/moin/DictionaryKeys">Why Lists Can’t Be Dictionary Keys</a></li>
+</ol>
+</blockquote>
+</br>
+<p>27.在OpenCV中进行图像处理时，经常会出现类似于下列的数据类型的问题：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103210112.png" alt="image-20220630103210112" /></p>
+<p>下面是OpenCV中各种数据类型的参考列表：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103342159.png" alt="image-20220630103342159" /></p>
+<p>其中C1/C2/C3/C4表示通道数。0~30表示编号。</p>
+<p>下面是一个更为详细的列表：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103853172.png" alt="image-20220630103853172" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://ninghang.blogspot.com/2012/11/list-of-mat-type-in-opencv.html">LIST OF MAT TYPE IN OPENCV</a></li>
+<li><a href="https://udayawijenayake.com/2021/06/07/opencv-data-types/">OpenCV “cv::Mat” Data Types</a></li>
+</ol>
+</blockquote>
+</br>
+<p>28.在使用numpy中的<code>dtype</code>（data type）参数时，常疑惑于参数类型的选择，此处对常用的<code>dtype</code>类型做一个梳理：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630104939506.png" alt="image-20220630104939506" /></p>
+<p>PS：上述列表并未展示所有的<code>dtype</code>类型，详见参考资料：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://numpy.org/doc/stable/user/basics.types.html">Array types and conversions between types</a></li>
+<li><a href="https://numpy.org/doc/stable/reference/arrays.dtypes.html">Data type objects <code>dtype</code></a></li>
+</ol>
+</blockquote>
 </br>
 ]]></content>
       <categories>
@@ -4892,14 +5018,52 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
     <url>/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
     <content><![CDATA[<p>本文记录一下在实现 <a href="https://link.springer.com/article/10.1007/s11042-016-3392-4">DDRQM</a> 过程中的一些 matplotlib 包和 python 相关知识点。</p>
 <span id="more"></span>
-<p>1.<code>matplotlib.pyplot.hist</code>：用于绘制直方图。</p>
+<p>1.<code>matplotlib.pyplot.hist</code>或<code>plt.hist</code>：用于绘制直方图。</p>
+</br>
+<p>2.<code>matplotlib.pyplot.show</code>或<code>plt.show</code>：用于展示所有打开的图片。完整调用形式如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">matplotlib.pyplot.show(*, block=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>block</code>：布尔类型，可选。表示在返回之前是否等待所有figures关闭。默认为True，通常在非交互模式使用；交互模式通常设为False。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html">matplotlib.pyplot.show</a></li>
+</ol>
+</blockquote>
+</br>
+<p>3.<code>matplotlib.pyplot.imshow</code>或<code>plt.imshow</code>：用于将数据作为图像展示，例如以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>∗</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2*2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>的形式展示4张图片。输入要么是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>G</mi><mi>B</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">RGB(A)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mclose">)</span></span></span></span>数据，要么是二维的标量数据，后者将被渲染成一张具有伪颜色的图像。显示灰度图时可以设置参数<code>cmap='gray'</code>。完整调用形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">matplotlib.pyplot.imshow(X, cmap=<span class="literal">None</span>, norm=<span class="literal">None</span>, *, aspect=<span class="literal">None</span>, interpolation=<span class="literal">None</span>, alpha=<span class="literal">None</span>, vmin=<span class="literal">None</span>, vmax=<span class="literal">None</span>, origin=<span class="literal">None</span>, extent=<span class="literal">None</span>, interpolation_stage=<span class="literal">None</span>, filternorm=<span class="literal">True</span>, filterrad=<span class="number">4.0</span>, resample=<span class="literal">None</span>, url=<span class="literal">None</span>, data=<span class="literal">None</span>, **kwargs)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><code>X</code>：数组形式或者PIL图像。支持的数组类型有：</p>
+<ul>
+<li>(M, N)，具有标量数据的图像</li>
+<li>(M, N, 3)，具有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>G</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">RGB</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>值的图像</li>
+<li>(M, N, 4)，具有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>G</mi><mi>B</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">RGBA</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">A</span></span></span></span>值的图像，包括透明度</li>
+</ul>
+</li>
+<li>
+<p><code>cmap</code>：用于将标量数据映射为colors，对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>G</mi><mi>B</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">RGB(A)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mclose">)</span></span></span></span>数据该参数无效</p>
+</li>
+<li>
+<p>略</p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html">matplotlib.pyplot.imshow</a></li>
+</ol>
+</blockquote>
+</br>
 ]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>OpenCV</tag>
+        <tag>matplotlib</tag>
       </tags>
   </entry>
   <entry>
@@ -4911,7 +5075,7 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/80604597">如何用Calibre将电子书转换成MOBI格式？</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/65832237">进阶能力 | 将合集拆分为多本电子书</a></li>
-<li><a href="">使用 Kindle 推送时为何会收到“验证请求”邮件？</a></li>
+<li><a href="https://bookfere.com/post/793.html">使用 Kindle 推送时为何会收到“验证请求”邮件？</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -4919,6 +5083,71 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
       </categories>
       <tags>
         <tag>kindle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么Python中列表不能用作字典的key</title>
+    <url>/2022/06/30/%E4%B8%BA%E4%BB%80%E4%B9%88Python%E4%B8%AD%E5%88%97%E8%A1%A8%E4%B8%8D%E8%83%BD%E7%94%A8%E4%BD%9C%E5%AD%97%E5%85%B8%E7%9A%84key/</url>
+    <content><![CDATA[<p>本文是对 <a href="https://wiki.python.org/moin/DictionaryKeys">Why Lists Can’t Be Dictionary Keys</a> 一文的翻译。</p>
+<span id="more"></span>
+<p><strong>Valid Python dictionary keys</strong></p>
+<p>对python字典的键(key)的唯一要求是key是hashable。可变类型像列表，字典和集合不能满足要求，将会导致错误<code>TypeError: unhashable type: 'list'</code>。</p>
+<p><strong>Why Lists Can’t Be Dictionary Keys</strong></p>
+<p>在python中字典也称为mappings，因为字典将key对象映射或关联到value对象。正因为此，python mappings必须满足，对给定的一个key对象，能够决定哪个value对象与之关联。</p>
+<p>一种简单的实现方法是存储一个(key, value) pairs的列表，然后每次根据key请求值时对列表进行线性搜索。但是，这种实现方法在有大量(key, value) pairs时非常低效——从复杂性上看，算法复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>为元素个数。</p>
+<p>python字典的实现通过要求key对象提供一个&quot;hash&quot; function将查找元素的复杂度降到了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。这样一个hash function读取key对象的信息并通过它生成一个整数，称为hash值。hash值被用来确定对应的(key, value) pair应该放入哪个&quot;bucket&quot;。这个查找函数的伪代码看起来像下面这样：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lookup</span>(<span class="params">d, key</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;dictionary lookup is done in three steps:</span></span><br><span class="line"><span class="string">       1. A hash value of the key is computed using a hash function.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       2. The hash value addresses a location in d.data which is</span></span><br><span class="line"><span class="string">          supposed to be an array of &quot;buckets&quot; or &quot;collision lists&quot;</span></span><br><span class="line"><span class="string">          which contain the (key,value) pairs.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       3. The collision list addressed by the hash value is searched</span></span><br><span class="line"><span class="string">          sequentially until a pair is found with pair[0] == key. The</span></span><br><span class="line"><span class="string">          return value of the lookup is then pair[1].</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    h = <span class="built_in">hash</span>(key)                  <span class="comment"># step 1</span></span><br><span class="line">    cl = d.data[h]                 <span class="comment"># step 2</span></span><br><span class="line">    <span class="keyword">for</span> pair <span class="keyword">in</span> cl:                <span class="comment"># step 3</span></span><br><span class="line">        <span class="keyword">if</span> key == pair[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> pair[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> KeyError, <span class="string">&quot;Key %s not found.&quot;</span> % key</span><br></pre></td></tr></table></figure>
+<p>这样的一个查找算法要想正确工作，hash function必须提供保证：当两个key生成不同的hash值时，这两个key不等价。即：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">all</span> i1, i2, <span class="keyword">if</span> <span class="built_in">hash</span>(i1) != <span class="built_in">hash</span>(i2), then i1 != i2</span><br></pre></td></tr></table></figure>
+<p>否则，一个key对象的hash值可能使我们在错误的bucket中查找，因此永远找不到关联的value。</p>
+<p>这样的一个查找算法要想高效工作，大多数的bucket应该只有少量的元素（最好是一个）。考虑使用下面的hash function会发生什么：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hash</span>(<span class="params">obj</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>注意该函数满足一个hash function的需求——每当两个key有不同的hash值时，它们代表不同的对象。但是这是一个很糟糕的hash function，因为它意味着所有的(key, value) pairs将被放入一个列表中，所以每次查找都会查找整个列表。因此一个最理想的hash function具有的属性是，如果两个key生成相同的hash value，那么两个key对象是等价的，即：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">all</span> i1, i2, <span class="keyword">if</span> <span class="built_in">hash</span>(i1) == <span class="built_in">hash</span>(i2), then i1 == i2</span><br></pre></td></tr></table></figure>
+<p>能够近似具有该属性的hash function会将(key, value) pairs平均的分配在各个bucket中，使查找时间减少。</p>
+<p><strong>Types Usable as Dictionary Keys</strong></p>
+<p>以上的讨论应该可以解释为什么Python要求：</p>
+<p><em>要能被用作字典的key，一个车对象必须支持hash function(如通过__hash__)，相等比较(如通过__eq__或__cmp__)，并且必须满足上述的正确性条件</em></p>
+<p><strong>Lists as Dictionary Keys</strong></p>
+<p>简单来说，列表不能作为字典key是因为列表不能提供一个有效的__hash__方法，当然，一个很显然的问题是，为什么列表不提供。</p>
+<p>考虑能够为列表提供哪些hash function。</p>
+<p>如果列表通过id实现hash，根据hash function的定义这当然是有效的——有不同hash值的列表将有不同的id。但是列表是容器，并且大多数在列表上的操作也把它们当作容器处理。所以通过列表id实现hash可能会产生以下不期望的行为：</p>
+<ul>
+<li>查找具有相同内容的不同列表可能会得到不同的结果，尽管比较具有相同内容的列表时会认为它们等价。</li>
+<li>照字面意义在字典查找中使用列表将是pointless——这会导致<code>KeyError</code>。</li>
+</ul>
+<p>如果列表通过内容实现hash(和元组一样)，也将是一个有效的hash function——具有不同hash值的列表有不同的内容。会再一次出现问题，但问题不在hash function的定义上。考虑当一个列表被用作一个字典的key，当这个列表被更改时会发生什么？如果这个更改改变了列表的hash值（因为它改变了列表内容），那么列表将在字典错误的&quot;bucket&quot;中。这会导致以下不期望的错误：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[l] = <span class="number">42</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l.append(<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[l]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;interactive input&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> ?</span><br><span class="line">KeyError: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[[<span class="number">1</span>, <span class="number">2</span>]]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;interactive input&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> ?</span><br><span class="line">KeyError: [<span class="number">1</span>, <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<p>因为字典不知道key对象被修改，这样的errors只会在进行key查找时出现，而不是在key对象被更改时发现，这会导致这样的错误非常难以调试。</p>
+<p>已经发现这两种hash列表的方法是都会有不期望的副作用，Python采取以下的特性也就很明显：</p>
+<p><strong>内置的列表类型不应该作为字典key来使用</strong></p>
+<p>注意到因为元组是不可变的，它们不会遭遇和列表相同的问题——它们可以通过内容进行hash而不需要担心内容修改。因此，在Python中，它们提供了一个有效的__hash__方法，因此也能作为字典key。</p>
+<p><strong>User Defined Types as Dictionary Keys</strong></p>
+<p>那有没有关于用户自定义的key类型的例子呢？</p>
+<p>默认，所有用户自定义的类型当具有<code>hash(object)</code>方法（默认为<code>id(hash)</code>）和<code>cmp(object1, object2)</code>（默认为<code>cmp(id(object1), id(object2)</code>）时，可以作为字典key。以上对列表的讨论考虑了相同的要求，发现列表并不满足。为什么用户自定义类型不一样呢？</p>
+<ol>
+<li>在那些对象必须被放入一个mapping的情况中，object identity通常比object content更为重要。</li>
+<li>在那些对象内容真的很重要的情况下，默认设置可以通过重写__hash__和__cmp__或者__eq__来重定义。</li>
+</ol>
+<p>注意当对象和一个值关联时，简单地将值作为对象的属性之一是更好的实践方式。</p>
+<p><strong>Tutorials on Python’s dictionaries</strong></p>
+<p>下面是一些解释字典的常见用法和细节的教程：</p>
+<ol>
+<li><a href="https://docs.python.org/3/tutorial/datastructures.html">The official manual on data structures</a></li>
+<li><a href="https://wiki.python.org/moin/DictionaryKeys">Python Dictionary : How To Create And Use them, With Examples</a></li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://wiki.python.org/moin/DictionaryKeys">Why Lists Can’t Be Dictionary Keys</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
 </search>
