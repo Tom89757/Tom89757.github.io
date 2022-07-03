@@ -215,9 +215,20 @@ True
 >
 > 1. [想要利用CPU多核资源一Python中多进程（一）](https://developer.51cto.com/article/632081.html)
 
+7.在python文件中包含`from PIL import PILLOW_VERSION`代码时，可能会出现如下报错：
 
+```python
+ImportError: cannot import name 'PILLOW_VERSION' from 'PIL' (/storage/FT/anaconda3/envs/open-mmlab/lib/python3.7/site-packages/PIL/__init__.py)
+```
 
+其原因在于在较新的pillow版本中`PILLOW_VERSION`已被去除，可以代替使用`__version__`或者安装较老的pillow版本`pip install Pillow==6.1`。
 
+> 参考资料：
+>
+> 1. [ImportError: cannot import name 'PILLOW_VERSION' from 'PIL'](https://github.com/python-pillow/Pillow/issues/4130)
+> 2. [PILLOW_VERSION constant](https://pillow.readthedocs.io/en/stable/releasenotes/7.0.0.html#pillow-version-constant)
+
+</br>
 
 
 
