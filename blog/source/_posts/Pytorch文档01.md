@@ -235,6 +235,36 @@ PS：在赋值给子模块之前必须调用父类的`__init__()`。
   - `prefix(str)`：添加到所有参数名之前的前缀
   - `recurse(bool)`：如果为True，生成该模块和所有此模块的参数。
 
+可以通过以下方式获取`named_parameters`的参数名和参数值：
+
+```python
+base_name, base_value = [], []
+for name, param in net.named_parameters():
+        if 'bkbone' in name:
+        	base_name.append(name)
+            base_value.append(param)
+```
+
+得到的部分参数名示例如下：
+
+```python
+bkbone.conv1.weight
+bkbone.bn1.weight
+bkbone.bn1.bias
+bkbone.layer1.0.conv1.weight
+bkbone.layer1.0.bn1.weight
+bkbone.layer1.0.bn1.bias
+bkbone.layer1.0.conv2.weight
+bkbone.layer1.0.bn2.weight
+bkbone.layer1.0.bn2.bias
+bkbone.layer1.0.conv3.weight
+bkbone.layer1.0.bn3.weight
+bkbone.layer1.0.bn3.bias
+bkbone.layer1.0.downsample.0.weight
+bkbone.layer1.0.downsample.1.weight
+bkbone.layer1.0.downsample.1.bias
+```
+
 `parameters(recurse=True)`：返回模块参数的迭代器，通常传给一个优化器。
 
 - 参数：`recurse(bool)`，如果为True，迭代所有的模块和子模块。否则，只迭代该模块的直接成员参数。
@@ -398,9 +428,58 @@ Nesterov momentum是基于来自[On the importance of initialization and momentu
 >>> optimizer.step()
 ```
 
+可以通过以下方式将从模型net中获得的参数传入优化器：
+
+```python
+base, head = [], []
+    for name, param in net.named_parameters():
+        if 'bkbone' in name:
+            base.append(param)
+        else:
+            head.append(param)
+    optimizer = torch.optim.SGD([{'params':base}, {'params':head}], lr=cfg.lr, momentum=cfg.momen, weight_decay=cfg.decay, nesterov=True)
+```
+
+并可通过下述代码访问优化器中的对象和值：
+
+```python
+>>> for key in optimizer.param_groups[1]:
+...     print(key)
+... 
+params
+lr
+momentum
+dampening
+weight_decay
+nesterov
+>>> type(optimizer.param_groups[1]['params'])
+<class 'list'>
+>>> len(optimizer.param_groups[0]['params'])
+159
+>>> optimizer.param_groups[1]['lr']
+0.001
+>>> type(optimizer.param_groups[0]['params'][0])
+<class 'torch.nn.parameter.Parameter'>
+```
+
+PS：上述结果中的154正好与前面`base`数组中元素个数相等。
+
+此外，可以通过以下代码直接给优化器添加新的属性：
+
+```python
+optimizer.momentum = momentum # 此前optimizer没有momentum属性
+optimzer.a = 1 # 此前optimizer没有a属性
+```
+
+待补充。
+
 > 参考资料：
 >
 > 1. [SGD](https://pytorch.org/docs/stable/generated/torch.optim.SGD.html)
+
+### torch.nn.parameter.Parameter
+
+### torch.nn.functional
 
 
 
