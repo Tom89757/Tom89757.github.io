@@ -93,3 +93,39 @@ PS：`\e`表示`Esc`即转义，`\e[34m`和`\e[35m`表示颜色，`\e[0m`表示�
 3. [Bash tips: Colors and formatting (ANSI/VT100 Control sequences)](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
 
 </br>
+
+8.`ls | sed 's/.jpg//'   `：用于对`ls`的输出做处理。
+
+- 处理之前：
+
+  ```python
+  FT@node2$ ls | head
+  ILSVRC2012_test_00000004.jpg
+  ILSVRC2012_test_00000018.jpg
+  ILSVRC2012_test_00000019.jpg
+  ILSVRC2012_test_00000022.jpg
+  ILSVRC2012_test_00000030.jpg
+  ILSVRC2012_test_00000072.jpg
+  ILSVRC2012_test_00000082.jpg
+  ILSVRC2012_test_00000108.jpg
+  ILSVRC2012_test_00000130.jpg
+  ILSVRC2012_test_00000172.jpg
+  ```
+
+- 处理之后：
+
+  ```python
+  FT@node2$ ls | head | sed 's/.jpg//'
+  ILSVRC2012_test_00000004
+  ILSVRC2012_test_00000018
+  ILSVRC2012_test_00000019
+  ILSVRC2012_test_00000022
+  ILSVRC2012_test_00000030
+  ILSVRC2012_test_00000072
+  ILSVRC2012_test_00000082
+  ILSVRC2012_test_00000108
+  ILSVRC2012_test_00000130
+  ILSVRC2012_test_00000172
+  ```
+
+</br>
