@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-06-30T15:27:58.144Z</updated>
+  <updated>2022-07-04T17:45:39.106Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python中知识点01</title>
+    <link href="https://tom89757.github.io/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
+    <id>https://tom89757.github.io/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
+    <published>2022-07-04T17:25:06.000Z</published>
+    <updated>2022-07-04T17:45:39.106Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下python中常用的知识点：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://tom89757.github.io/tags/python/"/>
+    
+    <category term="笔记" scheme="https://tom89757.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pytorch文档01</title>
+    <link href="https://tom89757.github.io/2022/07/04/Pytorch%E6%96%87%E6%A1%A301/"/>
+    <id>https://tom89757.github.io/2022/07/04/Pytorch%E6%96%87%E6%A1%A301/</id>
+    <published>2022-07-04T07:29:47.000Z</published>
+    <updated>2022-07-04T17:24:13.042Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录Pytorch中一些关键类和函数的文档（主要由&lt;a href=&quot;https://pytorch.org/docs/stable/index.html&quot;&gt;官方文档&lt;/a&gt;翻译而来）和对它们的理解。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>为什么Python中列表不能用作字典的key</title>
@@ -59,7 +101,7 @@
     <link href="https://tom89757.github.io/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/"/>
     <id>https://tom89757.github.io/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/</id>
     <published>2022-06-03T07:15:43.000Z</published>
-    <updated>2022-07-04T04:29:20.615Z</updated>
+    <updated>2022-07-04T15:39:44.929Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在实现 &lt;a href=&quot;https://link.springer.com/article/10.1007/s11042-016-3392-4&quot;&gt;DDRQM&lt;/a&gt; 过程中的一些 Pytorch 框架和 python 相关知识点。&lt;/p&gt;</summary>
@@ -310,7 +352,7 @@
     <link href="https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"/>
     <id>https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</id>
     <published>2022-05-14T16:22:55.000Z</published>
-    <updated>2022-06-23T15:54:13.968Z</updated>
+    <updated>2022-07-04T17:26:58.649Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;</summary>
@@ -361,44 +403,6 @@
     <category term="概念" scheme="https://tom89757.github.io/tags/%E6%A6%82%E5%BF%B5/"/>
     
     <category term="术语" scheme="https://tom89757.github.io/tags/%E6%9C%AF%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常见bug记录</title>
-    <link href="https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/"/>
-    <id>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/</id>
-    <published>2022-05-12T17:37:45.000Z</published>
-    <updated>2022-06-08T15:35:36.094Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录在操作系统、浏览器中常见的bug及其解决方案。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="bug" scheme="https://tom89757.github.io/tags/bug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git使用指南</title>
-    <link href="https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
-    <published>2022-05-12T09:54:26.000Z</published>
-    <updated>2022-06-23T15:54:13.969Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下使用git时的常见操作。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="git" scheme="https://tom89757.github.io/tags/git/"/>
     
   </entry>
   

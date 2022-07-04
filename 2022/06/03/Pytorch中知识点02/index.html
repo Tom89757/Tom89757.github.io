@@ -28,17 +28,12 @@
 <meta property="og:site_name" content="世界在我面前展开">
 <meta property="og:description" content="本文记录一下在实现 DDRQM 过程中的一些 Pytorch 框架和 python 相关知识点。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704094749082.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095008493.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095317040.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095420471.png">
 <meta property="article:published_time" content="2022-06-03T07:15:43.000Z">
-<meta property="article:modified_time" content="2022-07-04T04:29:20.615Z">
+<meta property="article:modified_time" content="2022-07-04T15:39:44.929Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Pytorch">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704094749082.png">
 
 
 <link rel="canonical" href="https://tom89757.github.io/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/">
@@ -166,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -177,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -263,7 +258,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-04 12:29:20" itemprop="dateModified" datetime="2022-07-04T12:29:20+08:00">2022-07-04</time>
+      <time title="修改时间：2022-07-04 23:39:44" itemprop="dateModified" datetime="2022-07-04T23:39:44+08:00">2022-07-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,14 +277,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>14k</span>
+      <span>6.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>13 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -424,236 +419,9 @@
 </ol>
 </blockquote>
 </br>
-<p>9.<code>torch.nn.CrossEntropyLoss</code>：用来计算input和target之间交叉熵损失的criterion。其完整调用形式为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.nn.CrossEntropyLoss(weight=<span class="literal">None</span>, size_average=<span class="literal">None</span>, ignore_index=- <span class="number">100</span>, reduce=<span class="literal">None</span>, reduction=<span class="string">&#x27;mean&#x27;</span>, label_smoothing=<span class="number">0.0</span>)</span><br></pre></td></tr></table></figure>
-<p>当计算C类元素的分类问题时很有用。如果提供<code>weights</code>参数，该参数应该是一个1D Tensor，用来为每类元素分配权重，当训练集unbalance时尤其有用。</p>
-<p>input应当包含原始的，未归一化的每一类的分数，input应当是一个Tensor，尺寸为unbatched input的尺寸，例如<code>(minibatch, C)</code>或者<code>(minibatch, C, d1, d2, ...., dk)</code>，k表示k维数据。后者对高维input很有用，例如计算2D图像的每个pixel的交叉熵损失。</p>
-<p>该criterion期望的target应该包含以下两种中的一种：</p>
-<ul>
-<li>
-<p>范围为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[0, C)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">)</span></span></span></span>的类索引，C表示类数目；如果指定<code>ignore_index</code>参数，该损失也接受不在前述范围内的类索引。<code>reduction='none'</code>时，unreduced loss可以被描述为：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704094749082.png" alt="image-20220704094749082" /></p>
-<p>x，y表示input和target。如果reduction is not ‘none’（默认为’mean’），则有</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095008493.png" alt="image-20220704095008493" /></p>
-</li>
-<li>
-<p>每一类的概率；当labels超出每个minibatch项要求的单类之外时有用，例如blended labels，label smoothing。unreduced loss（<code>reduction='none'</code>）可以描述为：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095317040.png" alt="image-20220704095317040" /></p>
-<p>如果reduction is not ‘none’（默认为’mean’），则有：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095420471.png" alt="image-20220704095420471" /></p>
-</li>
-</ul>
-<p>PS：该criterion的性能在target包含类索引时通常更好，因为此时可以进行优化计算。只在对minibatch想来说单类label太受限的情况下，才考虑将target作为类的概率。</p>
-<p>参数：</p>
-<ul>
-<li><code>weights</code>：Tensor类型，可选择。作用于每个类的manual rescaling weight。如果给出，应该是一个具有尺寸C的Tensor</li>
-<li><code>size_average</code>：bool类型，可选择。不建议使用（deprecated），见reduction。</li>
-<li><code>ignore_index</code>：int类型，可选。指定一个被忽略的target value，该值不对input gradident起作用。当<code>size_average=True</code>，损失在non-ignored targets上取平均。注意只有当target包含类索引时<code>ignore_index</code>才有用。</li>
-<li><code>reduce</code>：bool类型，可选。deprecated，见reduction。</li>
-<li><code>reduction</code>：string类型，可选。指定应用到output上的reduction：<code>none</code>|<code>mean</code>|<code>sum</code>。</li>
-<li><code>label_smoothing</code>：floate类型，可选。范围为[0.0, 1.0]的float值，指定计算损失时的平滑程度，0.0表示不进行平滑，默认为0.0。通过平滑targets变成了一个原始真值和高斯分布的混合物，见 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1512.00567">Rethinking the Inception Architecture for Computer Vision</a></li>
-</ul>
-<p>Shape：C表示类数目，N表示batchsize</p>
-<ul>
-<li>Input：©，(N,C)，或者(N, C, d1, d2, …, dk)</li>
-<li>Target：如果包含类索引，形状为()，(N)或者(N, d1, d2, …, dk)，每个值的范围为[0, C)。如果包含类概率，形状和Input相同，每个值的范围为[0, 1]</li>
-<li>Output：如果reduction=‘none’，形状和target相同，否则为标量。</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Example of target with class indices</span></span><br><span class="line">loss = nn.CrossEntropyLoss()</span><br><span class="line"><span class="built_in">input</span> = torch.randn(<span class="number">3</span>, <span class="number">5</span>, requires_grad=<span class="literal">True</span>)</span><br><span class="line">target = torch.empty(<span class="number">3</span>, dtype=torch.long).random_(<span class="number">5</span>)</span><br><span class="line">output = loss(<span class="built_in">input</span>, target)</span><br><span class="line">output.backward()</span><br><span class="line"><span class="comment"># Example of target with class probabilities</span></span><br><span class="line"><span class="built_in">input</span> = torch.randn(<span class="number">3</span>, <span class="number">5</span>, requires_grad=<span class="literal">True</span>)</span><br><span class="line">target = torch.randn(<span class="number">3</span>, <span class="number">5</span>).softmax(dim=<span class="number">1</span>)</span><br><span class="line">output = loss(<span class="built_in">input</span>, target)</span><br><span class="line">output.backward()</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">CROSSENTROPYLOSS</a></li>
-<li><a target="_blank" rel="noopener" href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions">Loss Functions</a></li>
+<ol start="9">
+<li></li>
 </ol>
-</blockquote>
-</br>
-<p>10.<code>torch.nn.Module</code>：所有神经网络modules的基本类，所有的模型（包括自定义模型）都应该是该类的子类。Modules也可以包含其它的Module，即允许以树的结构嵌套。能够将子模块赋值给模块属性：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Model</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">1</span>, <span class="number">20</span>, <span class="number">5</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(<span class="number">20</span>, <span class="number">20</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.relu(self.conv1(x))</span><br><span class="line">        <span class="keyword">return</span> F.relu(self.conv2(x))</span><br></pre></td></tr></table></figure>
-<p>通过上述方式赋值的子模块将被注册，调用<code>to(device)</code>时，子模块的参数也会转换为<code>cuda Tensor</code>。</p>
-<p>PS：在赋值给子模块之前必须调用父类的<code>__init__()</code>。</p>
-<p><code>training</code>：bool类型，表示模块处于training还是evaluation模式</p>
-<p><code>add_module(name, module)</code>：给当前模块添加一个子模块，该子模块可以通过给出的<code>name</code>作为属性被获取。</p>
-<p><code>apply(fn)</code>：递归地将<code>fn</code>应用到每个子模块（通过<code>.children()</code>返回）以及自身。典型的使用方式包括初始化模型的参数（see also <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/nn.init.html#nn-init-doc">torch.nn.init</a>）</p>
-<ul>
-<li>
-<p>参数：<code>fn(Module-&gt;None)</code>，应用到每个子模块的函数</p>
-</li>
-<li>
-<p>返回：self</p>
-</li>
-<li>
-<p>返回类型：Module</p>
-</li>
-<li>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@torch.no_grad()</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">init_weights</span>(<span class="params">m</span>):</span><br><span class="line">    <span class="built_in">print</span>(m)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        m.weight.fill_(<span class="number">1.0</span>)</span><br><span class="line">        <span class="built_in">print</span>(m.weight)</span><br><span class="line">net = nn.Sequential(nn.Linear(<span class="number">2</span>, <span class="number">2</span>), nn.Linear(<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line">net.apply(init_weights)</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">1.</span>,  <span class="number">1.</span>],</span><br><span class="line">        [ <span class="number">1.</span>,  <span class="number">1.</span>]])</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">1.</span>,  <span class="number">1.</span>],</span><br><span class="line">        [ <span class="number">1.</span>,  <span class="number">1.</span>]])</span><br><span class="line">Sequential(</span><br><span class="line">  (<span class="number">0</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">  (<span class="number">1</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">)</span><br><span class="line">Sequential(</span><br><span class="line">  (<span class="number">0</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">  (<span class="number">1</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>buffers(recurse=True)</code>：返回module buffers的迭代器。</p>
-<ul>
-<li>
-<p>参数：<code>recurse(bool)</code>，如果为True，返回该模块和所有子模块的buffers迭代器；如果为False，只返回该模块直接成员的buffers迭代器</p>
-</li>
-<li>
-<p>Yields：torch.Tensor，一个模型的buffer</p>
-</li>
-<li>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> buf <span class="keyword">in</span> model.buffers():</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    <span class="built_in">print</span>(<span class="built_in">type</span>(buf), buf.size())</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.Tensor&#x27;</span>&gt; (<span class="number">20L</span>,)</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.Tensor&#x27;</span>&gt; (<span class="number">20L</span>, <span class="number">1L</span>, <span class="number">5L</span>, <span class="number">5L</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>children()</code>：返回直接的子模块的迭代器。</p>
-<ul>
-<li>Yields：Module类型，一个子模块</li>
-</ul>
-<p><code>cpu()</code>：将所有的模型参数和buffers转移到CPU。该方法modify the module in-place。</p>
-<ul>
-<li>Returns：self</li>
-<li>Return type：Module</li>
-</ul>
-<p><code>cuda(device=None)</code>：将所有的模型参数和buffers转移到GPU。这也使得相关联的参数和buffers为不同的对象。所以如果模块在优化期间保留在GPU上时，该函数应在在构造优化器之前被调用。该方法modify the module in-place。</p>
-<ul>
-<li>参数：<code>device(int, optional)</code>，如果指定的话，所有的参数将被复制到该device。</li>
-<li>Returns：self</li>
-<li>Return type：Module</li>
-</ul>
-<p><code>eval()</code>：设置module到evaluation模式。它和<code>self.train(False)</code>等价，可以在 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/autograd.html#locally-disable-grad-doc">Localling disabling gradient computation</a> 看到其和一些相似机制的比较</p>
-<ul>
-<li>Returns：self</li>
-<li>Return type：Module</li>
-</ul>
-<p><code>forward(*input)</code>：定义在每次调用它时进行的计算，应该被所有的子类覆盖。</p>
-<ul>
-<li>PS：不太懂，尽管forward操作定义在该函数内部，但是应该调用Module instance而不是该函数，因为前者会考虑registered hooks而后者不会</li>
-</ul>
-<p><code>get_parameter(target)</code>：返回由target给出的参数，如果存在的话，否则抛出error。</p>
-<ul>
-<li>参数：<code>target</code>，fully-qualified的对应参数的字符串名</li>
-<li>Returns：target引用的参数</li>
-<li>Return type：torch.nn.Parameter</li>
-<li>Raises：AttributeError</li>
-</ul>
-<p><code>load_state_dict(state_dict, strict=True)</code>：将来自<code>state_dict</code>的参数和buffers复制到该模块和它的子模块。如果<code>strict=True</code>，那么<code>state_dict</code>的keys必须和该模块<code>state_dict()</code>函数返回的keys完全匹配。</p>
-<ul>
-<li>
-<p>参数：</p>
-<ul>
-<li><code>state_dict(dict)</code>：一个包含参数和永久buffers的dict</li>
-<li><code>strict(bool, optional)</code>：使用严格限制keys的匹配，默认为True。</li>
-</ul>
-</li>
-<li>
-<p>Returns：missing_keys，一个包含missing keys的字符串列表；unexpected_keys，一个包含unexpected_keys的字符串列表</p>
-</li>
-<li>
-<p>Return type：具有<code>missing_keys</code>和<code>unexpected_keys</code>名的元组</p>
-</li>
-<li>
-<p>PS：如果一个参数或buffer registered as None并且它对应的key存在在<code>state_dict</code>中，调用<code>load_state_dict()</code>会raise <code>RuntimeError</code>。</p>
-</li>
-</ul>
-<p><code>modules()</code>：返回在网络中的所有模块的迭代器</p>
-<ul>
-<li>
-<p>Yields：Module，网络中的模块</p>
-</li>
-<li>
-<p>PS：重复的模块只返回一次。在下面的例子中，<code>l</code>只返回一次</p>
-</li>
-<li>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = nn.Linear(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>net = nn.Sequential(l, l)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> idx, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(net.modules()):</span><br><span class="line">        <span class="built_in">print</span>(idx, <span class="string">&#x27;-&gt;&#x27;</span>, m)</span><br><span class="line"></span><br><span class="line"><span class="number">0</span> -&gt; Sequential(</span><br><span class="line">  (<span class="number">0</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">  (<span class="number">1</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">)</span><br><span class="line"><span class="number">1</span> -&gt; Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>parameters(recurse=True)</code>：返回模块参数的迭代器，通常传给一个优化器。</p>
-<ul>
-<li>
-<p>参数：<code>recurse(bool)</code>，如果为True，迭代所有的模块和子模块。否则，只迭代该模块的直接成员参数。</p>
-</li>
-<li>
-<p>Yields：Parameter，模块参数</p>
-</li>
-<li>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> param <span class="keyword">in</span> model.parameters():</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    <span class="built_in">print</span>(<span class="built_in">type</span>(param), param.size())</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.Tensor&#x27;</span>&gt; (<span class="number">20L</span>,)</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.Tensor&#x27;</span>&gt; (<span class="number">20L</span>, <span class="number">1L</span>, <span class="number">5L</span>, <span class="number">5L</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>state_dict(**args*, *destination=None*, *prefix=''*, *keep_vars=False*)</code>：返回包含模块整个状态的字典。参数和永久性buffers(例如running averages)被包含，Keys是相应的参数和buffer名。如果不包含参数和buffers设置为None。</p>
-<ul>
-<li>
-<p>Warning：目前<code>state_dict()</code>也按顺序接受位置参数<code>destination</code>，<code>prefix</code>和<code>keep_vars</code>，它们是deprecated；此外，避免参数<code>destination</code>的使用，它不是为用户设计的。</p>
-</li>
-<li>
-<p>参数：</p>
-<ul>
-<li><code>destination(dict, optional)</code>：略。</li>
-<li><code>prefix(str, optional)</code>：略</li>
-<li><code>key_vars(bool, optional)</code>：略</li>
-</ul>
-</li>
-<li>
-<p>Returns：一个包含模块整个状态的字典</p>
-</li>
-<li>
-<p>Return type：dict</p>
-</li>
-<li>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>module.state_dict().keys()</span><br><span class="line">[<span class="string">&#x27;bias&#x27;</span>, <span class="string">&#x27;weight&#x27;</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>to(*args, **kwargs)</code>：移动参数和buffers或者cast它们到指定类型。能够以以下的形式调用：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">to(device=<span class="literal">None</span>, dtype=<span class="literal">None</span>, non_blocking=<span class="literal">False</span>)</span><br><span class="line">to(dtype, non_blocking=<span class="literal">False</span>)</span><br><span class="line">to(tensor, non_blocking=<span class="literal">False</span>)</span><br><span class="line">to(memory_format=torch.channels_last)</span><br></pre></td></tr></table></figure>
-<p>其特性和<code>torch.Tensor.to()</code>类似，但是只接受浮点或符合类型的<code>dtype</code>。</p>
-<ul>
-<li>
-<p>PS：该方法 modify the modules in-place</p>
-</li>
-<li>
-<p>参数：</p>
-<ul>
-<li><code>device（torch.device)</code>：在模块中参数和buffers所需的device</li>
-<li><code>dtype(torch.dtype)</code>：在模块中参数和buffers所需的浮点或复合 dtype</li>
-<li><code>tensor(torch.Tensor)</code>：对在模块中的所有参数和buffers来说该tensor的dtype和device是它们所需的。</li>
-<li><code>memory_format(torch.memory_format)</code>：略</li>
-</ul>
-</li>
-<li>
-<p>Returns：self</p>
-</li>
-<li>
-<p>Return type：Module</p>
-</li>
-<li>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear = nn.Linear(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.1913</span>, -<span class="number">0.3420</span>],</span><br><span class="line">        [-<span class="number">0.5113</span>, -<span class="number">0.2325</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.to(torch.double)</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.1913</span>, -<span class="number">0.3420</span>],</span><br><span class="line">        [-<span class="number">0.5113</span>, -<span class="number">0.2325</span>]], dtype=torch.float64)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gpu1 = torch.device(<span class="string">&quot;cuda:1&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.to(gpu1, dtype=torch.half, non_blocking=<span class="literal">True</span>)</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.1914</span>, -<span class="number">0.3420</span>],</span><br><span class="line">        [-<span class="number">0.5112</span>, -<span class="number">0.2324</span>]], dtype=torch.float16, device=<span class="string">&#x27;cuda:1&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cpu = torch.device(<span class="string">&quot;cpu&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.to(cpu)</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.1914</span>, -<span class="number">0.3420</span>],</span><br><span class="line">        [-<span class="number">0.5112</span>, -<span class="number">0.2324</span>]], dtype=torch.float16)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear = nn.Linear(<span class="number">2</span>, <span class="number">2</span>, bias=<span class="literal">None</span>).to(torch.cdouble)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.3741</span>+<span class="number">0.j</span>,  <span class="number">0.2382</span>+<span class="number">0.j</span>],</span><br><span class="line">        [ <span class="number">0.5593</span>+<span class="number">0.j</span>, -<span class="number">0.4443</span>+<span class="number">0.j</span>]], dtype=torch.complex128)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear(torch.ones(<span class="number">3</span>, <span class="number">2</span>, dtype=torch.cdouble))</span><br><span class="line">tensor([[<span class="number">0.6122</span>+<span class="number">0.j</span>, <span class="number">0.1150</span>+<span class="number">0.j</span>],</span><br><span class="line">        [<span class="number">0.6122</span>+<span class="number">0.j</span>, <span class="number">0.1150</span>+<span class="number">0.j</span>],</span><br><span class="line">        [<span class="number">0.6122</span>+<span class="number">0.j</span>, <span class="number">0.1150</span>+<span class="number">0.j</span>]], dtype=torch.complex128)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>train(mode=True)</code>：设置模块为training mode。</p>
-<ul>
-<li>参数：<code>mode(bool)</code>，是否设置training mode还是evaluation mode，默认为True</li>
-<li>Returns：self</li>
-<li>Return type：Module</li>
-</ul>
-<p><code>type(dst_type)</code>：将所有参数和buffers转换为<code>dst_type</code>。该方法modify the module in-place。</p>
-<ul>
-<li>参数：<code>dst_type(type or string)</code>，目标类型</li>
-<li>Returns：self</li>
-<li>Return type：Module</li>
-</ul>
-<p><code>zero_grad(set_to_none=False)</code>：设置所有模型参数的梯度为0。可以看 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/optim.html#torch.optim.Optimizer">torch.optim.Optimizer</a> 下相似的函数获得更多信息。</p>
-<ul>
-<li>参数：<code>set_to_none(bool)</code>：设置为None而不是0，可以看 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.optim.Optimizer.zero_grad.html#torch.optim.Optimizer.zero_grad">torch.optim.Optimizer.zero_grad</a> 了解更多细节</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html">MODULE</a></li>
-<li><a target="_blank" rel="noopener" href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#containers">class torch.nn.Module</a></li>
-</ol>
-</blockquote>
 
     </div>
 
@@ -727,13 +495,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">138k</span>
+    <span title="站点总字数">144k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:06</span>
+    <span title="站点阅读时长">2:10</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
