@@ -378,9 +378,29 @@ class object:
 
 Nesterov momentum是基于来自[On the importance of initialization and momentum in deep learning](http://www.cs.toronto.edu/~hinton/absps/momentum.pdf)的公式。
 
+参数：
 
+- `params(iterable)`：用来优化参数的迭代器，或者定义参数组的dicts
+- `lr(float)`：学习率
+- `momentum(float, optional)`：momentum因子，默认为0
+- `weight_decay(float, optional)`：权重衰减（L2惩罚），默认为0
+- `dampening(float, optional)`：用来抑制momentum，默认为0
+- `nesterov(bool, optional)`：启用Nesterov momentum，默认为False
+- `maximize(bool, optional)`：最大化基于the objective的参数，而不是最小化，默认为False
+- `foreach(bool, optional)`：whether foreach implementation of optimizer is used，默认为None
 
+调用实例：
 
+```python
+>>> optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9)
+>>> optimizer.zero_grad()
+>>> loss_fn(model(input), target).backward()
+>>> optimizer.step()
+```
+
+> 参考资料：
+>
+> 1. [SGD](https://pytorch.org/docs/stable/generated/torch.optim.SGD.html)
 
 
 
