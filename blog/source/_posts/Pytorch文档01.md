@@ -505,6 +505,10 @@ class type:
 - `data(Tensor)`：参数张量。
 - `requires_grad(bool, optional)`：如果参数要求梯度，看 [Locally disabling gradient computation](https://pytorch.org/docs/stable/notes/autograd.html#locally-disable-grad-doc) 了解更多的细节，默认为True。
 
+> 参考资料：
+>
+> 1. [PARAMETER](https://pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html)
+
 ### torch.nn.functional
 
 
