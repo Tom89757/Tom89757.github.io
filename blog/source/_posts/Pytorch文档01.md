@@ -464,7 +464,7 @@ nesterov
 
 PS：上述结果中的154正好与前面`base`数组中元素个数相等。
 
-此外，可以通过以下代码直接给优化器添加新的属性：
+此外，可以通过以下代码直接给优化器添加新的属性（所有的类都可以通过该方式添加属性，也可以通过`setattr`设置属性）：
 
 ```python
 optimizer.momentum = momentum # 此前optimizer没有momentum属性
@@ -476,8 +476,34 @@ optimzer.a = 1 # 此前optimizer没有a属性
 > 参考资料：
 >
 > 1. [SGD](https://pytorch.org/docs/stable/generated/torch.optim.SGD.html)
+> 1. [Python - Dynamic Class Attributes](https://medium.com/@nschairer/python-dynamic-class-attributes-24a89df8da7d)
 
 ### torch.nn.parameter.Parameter
+
+其完整声明形式为：
+
+```python
+CLASStorch.nn.parameter.Parameter(data=None, requires_grad=True)
+```
+
+`torch.nn.parameter.Parameter`有如下的继承关系：
+
+```python
+class Parameter(torch.Tensor):
+class Tensor(torch._C._TensorBase):
+class _TensorBase(metaclass=_TensorMeta)
+class _TensorMeta(type):
+class type:
+```
+
+一种Tensor，可以被认为是一个模型参数。
+
+`Parameter`是`Tensor`的子类，当和`Module`一起使用时有一种专门的特性——当被赋值作为模型属性时它们会自动地添加到模型的参数列表中，并且将会出现在`parameter()`迭代器中。给模型属性赋值一个张量时则没有这种作用。这是因为用户可能想存储一些临时状态，像在模型中RNN的最后的隐藏状态。如果没有类似`Parametr`这样的类，这些临时的值也会被注册。
+
+参数：
+
+- `data(Tensor)`：参数张量。
+- `requires_grad(bool, optional)`：如果参数要求梯度，看 [Locally disabling gradient computation](https://pytorch.org/docs/stable/notes/autograd.html#locally-disable-grad-doc) 了解更多的细节，默认为True。
 
 ### torch.nn.functional
 
