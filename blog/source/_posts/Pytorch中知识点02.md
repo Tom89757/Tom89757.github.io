@@ -255,4 +255,49 @@ WARNING:root:Watch Out!
 
 </br>
 
-9.
+9.在Pytorch中register意味着什么？
+
+在pytorch文档和方法名中register意味着“在一个官方的列表中记录一个名字或者信息的行为”。
+
+例如，`register_backward_hook(hook)`将函数`hook`添加到一个其他函数的列表中，`nn.Module`会在`forward`过程中执行这些函数。
+
+与之相似，`register_parameter(name, param)`添加一个`nn.Parameter`类型的名为`name`的参数`param`到`nn.Module`的可训练参数的列表之中。register可训练参数很关键，这样pytorch才会知道那些tensors传送给优化器，那些tensors作为`nn.Module`的state_dict存储。
+
+> 参考资料：
+>
+> 1. [What do we mean by 'register' in PyTorch?](https://stackoverflow.com/questions/68463009/what-do-we-mean-by-register-in-pytorch)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

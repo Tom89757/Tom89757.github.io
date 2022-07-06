@@ -251,6 +251,39 @@ True
 True
 ```
 
+当然，你也可以从`Foo`继承它，所以：
+
+```python
+>>>   class FooChild(Foo):
+...         pass
+```
+
+将会是：
+
+```python
+>>> FooChild = type('FooChild', (Foo,), {})
+>>> print(FooChild)
+<class '__main__.FooChild'>
+>>> print(FooChild.bar) # bar is inherited from Foo
+True
+```
+
+最后，你想向你的类中添加方法。只需定义一个具有合适标识的函数并且将其作为一个属性给它赋值。
+
+```python
+>>> def echo_bar(self):
+...       print(self.bar)
+...
+>>> FooChild = type('FooChild', (Foo,), {'echo_bar': echo_bar})
+>>> hasattr(Foo, 'echo_bar')
+False
+>>> hasattr(FooChild, 'echo_bar')
+True
+>>> my_foo = FooChild()
+>>> my_foo.echo_bar()
+True
+```
+
 
 
 > 参考资料：
