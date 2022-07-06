@@ -511,7 +511,11 @@ class type:
 
 ### torch.nn.functional
 
+### saving and loading models
 
+> 参考资料：
+>
+> 1. [saving and loading models](https://pytorch.org/tutorials/beginner/saving_loading_models.html)
 
 
 
