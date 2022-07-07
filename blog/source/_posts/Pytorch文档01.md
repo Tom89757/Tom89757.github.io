@@ -229,6 +229,18 @@ PS：在赋值给子模块之前必须调用父类的`__init__()`。
   1 -> Linear(in_features=2, out_features=2, bias=True)
   ```
 
+`named_children()`：返回之间子模块的迭代器，生成模块名和模块自身。
+
+- Yields：(string, Module)，包含一个模块名和子模块的元组
+
+- 调用实例：
+
+  ```python
+  for name, module in model.named_children():
+      if name in ['conv4', 'conv5']:
+          print(module)
+  ```
+
 `named_parameters(prefix='', recurse=True)`：返回模块参数的迭代器，生成参数名和参数。
 
 - 参数：
@@ -511,13 +523,100 @@ class type:
 
 ### torch.nn.functional
 
+静态函数库。其包含的函数可分为以下几种类型：
+
+- Convolution function
+- Pooling function
+- Non-linear activation functions
+- Linear functions
+- Sparse functions
+- Distance functions
+- Loss functions
+- Vision functions
+- DataParallel functions (multi-GPU, distributed)：`torch.nn.parallel.data_parallel`
+
+#### torch.nn.functional.interpolate
+
+> 参考资料：
+>
+> 1. 
+
 ### saving and loading models
 
 > 参考资料：
 >
 > 1. [saving and loading models](https://pytorch.org/tutorials/beginner/saving_loading_models.html)
 
+### torch.nn.init
 
+静态函数库，用于权重等的初始化
+
+#### torch.nn.init.kaiming_normal_
+
+其完整声明形式为：
+
+```python
+torch.nn.init.kaiming_normal_(tensor, a=0, mode='fan_in', nonlinearity='leaky_relu')
+```
+
+根据 *Delving deep into rectifiers: Surpassing human-level performance on ImageNet classification - He, K. et al. (2015)* 中描述的方法使用正态分布给输入Tensor填充值。结果Tensor的值取样于$N(0, std^2)$。其中：
+
+![image-20220707105811403](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707105811403.png)
+
+也被称之为何氏初始化（He initialization）
+
+参数：
+
+- `tensor`：一个n维`torch.Tensor`
+- `a`：the negative slope of the rectifier used after this layer (only used with `'leaky_relu'`)
+- `mode`：`'fan_in'`(默认)或者`'fan_out'`。选择`'fan_in'`在前向传播过程中保存权重方差大小；选择`'fan_out'`在反向传播过程中保存方差大小。
+- `nonlinearity`：非线性函数（如`nn.functional`名），建议只使用`'relu'`或`'leaky_relu'`（默认）。
+
+调用实例：
+
+```python
+w = torch.empty(3, 5)
+nn.init.kaiming_normal_(w, mode='fan_out', nonlinearity='relu')
+```
+
+#### torch.nn.init.zeros_
+
+其完整声明形式为：
+
+```python
+torch.nn.init.zeros_(tensor)
+```
+
+使用标量0来填充输入Tensor.
+
+调用实例：
+
+```python
+>>> w = torch.empty(3, 5)
+>>> nn.init.zeros_(w)
+```
+
+`torch.nn.init.ones_`与之类似，使用标量1填充输入Tensor。
+
+> 参考资料：
+>
+> 1. [TORCH.NN.INIT](https://pytorch.org/docs/stable/nn.init.html)
+
+### torch.nn.Conv2d
+
+### torch.nn.BatchNorm2d
+
+### torch.nn.GroupNorm
+
+### torch.nn.functional vs torch.nn
+
+前者使用静态的函数，后者则定义了一个`nn.Module`类。对`nn.Module`类来说，如`nn.Conv2d`，其拥有一些内置的属性如`self.weight`，并不需要传递`weights`和`bias`等参数（模块通常会在其`forward`方法中调用对应的函数）；而对`functional.Conv2d`来说，其只是定义了操作，需要给其传递所有的参数。
+
+> 参考资料：
+>
+> 1. [What is the difference between torch.nn and torch.nn.functional?](https://discuss.pytorch.org/t/what-is-the-difference-between-torch-nn-and-torch-nn-functional/33597)
+> 2. [Conv2D](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)
+> 3. [functional.conv2d](https://pytorch.org/docs/stable/generated/torch.nn.functional.conv2d.html#torch.nn.functional.conv2d)
 
 
 

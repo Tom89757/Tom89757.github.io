@@ -52,7 +52,9 @@ else:
 
 </br>
 
-2.设置在Python shell启动时自动执行某个脚本。下面记录在Ubuntu系统中的设置，Windows系统同理：
+2.设置在Python shell启动时自动执行某个脚本。
+
+下面记录在Ubuntu系统中的设置：
 
 - 创建脚本并写入想要执行的命令，例如创建`startup.py`并写入：
 
@@ -76,9 +78,21 @@ else:
 
 - 此时在bash中打开python shell（包括Anaconda中的python shell），可直接通过`clear()`实现清屏。
 
+下面记录在Windows系统中的设置：
+
+- 创建脚本并写入想要执行的命令，例如上述的`startup.py`。
+
+- 添加用户环境变量`PYTHONSTARTUP`：
+
+  ![image-20220707103000076](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707103000076.png)
+
+- 打开cmd，运行`refreshenv`（需安装Chocolatey）更新环境变量。
+- 运行`python`，会发现`startup.py`中的命令已生效。
+
 > 参考资料：
 >
 > 1. [PYTHONSTARTUP](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP)
+> 1. [win10 python3.5 自动补全设置](https://www.cnblogs.com/zkwarrior/p/9374302.html)
 
 </br>
 
