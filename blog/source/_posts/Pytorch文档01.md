@@ -483,8 +483,6 @@ optimizer.momentum = momentum # 此前optimizer没有momentum属性
 optimzer.a = 1 # 此前optimizer没有a属性
 ```
 
-待补充。
-
 > 参考资料：
 >
 > 1. [SGD](https://pytorch.org/docs/stable/generated/torch.optim.SGD.html)
@@ -495,7 +493,7 @@ optimzer.a = 1 # 此前optimizer没有a属性
 其完整声明形式为：
 
 ```python
-CLASStorch.nn.parameter.Parameter(data=None, requires_grad=True)
+CLASS torch.nn.parameter.Parameter(data=None, requires_grad=True)
 ```
 
 `torch.nn.parameter.Parameter`有如下的继承关系：
@@ -537,11 +535,39 @@ class type:
 
 #### torch.nn.functional.interpolate
 
+其完整声明形式为：
+
+```python
+torch.nn.functional.interpolate(input, size=None, scale_factor=None, mode='nearest', align_corners=None, recompute_scale_factor=None, antialias=False)
+```
+
+下/上采样输入到给定的尺寸或者缩放因子。
+
+用于插值的算法由`mode`参数定义。
+
+目前temporal、spatial和volumetric的采样是支持的，例如，期望的输入在shape上是3-D，4-D或者5-D。
+
+输入维度以该方式呈现：mni-batch x channels x [optional depth] x [optional height] x width
+
+可以用来resize的mode有：nearest, linear(3D-only), bilinear, bicubic(4D-only), trilinear(5D-only), area, nearest-exact。
+
+参数：
+
+- `input(Tensor)`：输入tensor
+- `size(int or Tuple[int] or Tuple[int, int] or Tuple[int, int, int])`：输入空间尺寸
+- `scale_factor (float or Tuple[float])`：对空间尺寸的缩放操作，如果`scale_factor`为一个元组，其长度必须与`input.dim()`匹配
+- `mode(str)`：用来上采样的算法：`'nearest'` | `'linear'` | `'bilinear'` | `'bicubic'` | `'trilinear'` | `'area'` | `'nearest-exact'`，默认为`'nearest'`。
+- `align_corners(bool, optional)`：略
+- `recompute_scale_factor(bool, optional)`：重新计算`scale_factor`以在插值计算中使用。
+- `antialias(bool, optional)`：略
+
 > 参考资料：
 >
-> 1. 
+> 1. [TORCH.NN.FUNCTIONAL.INTERPOLATE](https://pytorch.org/docs/stable/generated/torch.nn.functional.interpolate.html#torch.nn.functional.interpolate)
 
 ### saving and loading models
+
+
 
 > 参考资料：
 >
@@ -612,11 +638,52 @@ torch.nn.init.zeros_(tensor)
 
 前者使用静态的函数，后者则定义了一个`nn.Module`类。对`nn.Module`类来说，如`nn.Conv2d`，其拥有一些内置的属性如`self.weight`，并不需要传递`weights`和`bias`等参数（模块通常会在其`forward`方法中调用对应的函数）；而对`functional.Conv2d`来说，其只是定义了操作，需要给其传递所有的参数。
 
+所以下述两种关于Conv2D的实现是等价的：
+
+```python
+class MyModel(nn.Module):
+    def __init__(self):
+        super(MyModel, self).__init__()
+        self.conv = nn.Conv2d(1, 6, 3)
+    
+    def forward(self, x):
+    	x = self.conv(x)
+    	return x
+```
+
+```python
+class MyModel(nn.Module):
+    def __init__(self):
+        super(MyModel, self).__init__()
+        conv = nn.Conv2d(1, 6, 3)
+        self.weight = conv.weight
+        self.bias = conv.bias
+        
+    def forward(self, x):
+        x = F.conv2d(x, self.weight, self.bias)
+        return x
+```
+
+但下面的操作将`weights`、`bias`值和`conv2d`操作进行了解耦。
+
+经验上看，由于`relu`等操作不需要像`Conv2d`操作一样需要对参数进行更新，通常在`forward`中直接通过`F.relu`进行调用，而不需要在`__init__`中初始化`nn.ReLU`模块。
+
+这里补充下面第5和第6个参考资料中提到的有关`backward()`的知识：
+
+Pytorch使用计算图来计算backward gradients，计算图会追踪在forward pass中做了哪些操作。任何在一个`Variable`上做的惭怍隐式地被registered。然后就只需要从variable被调用的地方反向穿过计算图根据导数的链式法则来计算梯度。下面是Pytorch中计算图的一个可视化图片：
+
+![image-20220707160538483](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707160538483.png)
+
 > 参考资料：
 >
 > 1. [What is the difference between torch.nn and torch.nn.functional?](https://discuss.pytorch.org/t/what-is-the-difference-between-torch-nn-and-torch-nn-functional/33597)
 > 2. [Conv2D](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)
 > 3. [functional.conv2d](https://pytorch.org/docs/stable/generated/torch.nn.functional.conv2d.html#torch.nn.functional.conv2d)
+> 4. **[Beginner: Should ReLU/sigmoid be called in the __init__ method?](https://discuss.pytorch.org/t/beginner-should-relu-sigmoid-be-called-in-the-init-method/18689)**
+> 5. [How does PyTorch module do the back prop](https://stackoverflow.com/questions/49594858/how-does-pytorch-module-do-the-back-prop)
+> 6. [How Computational Graphs are Constructed in PyTorch](https://pytorch.org/blog/computational-graphs-constructed-in-pytorch/)
+
+### torch.nn.Sequential
 
 
 
