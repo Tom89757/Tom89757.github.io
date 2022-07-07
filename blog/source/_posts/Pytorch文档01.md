@@ -630,9 +630,15 @@ torch.nn.init.zeros_(tensor)
 
 ### torch.nn.Conv2d
 
+
+
 ### torch.nn.BatchNorm2d
 
+
+
 ### torch.nn.GroupNorm
+
+
 
 ### torch.nn.functional vs torch.nn
 
@@ -685,7 +691,16 @@ Pytorch使用计算图来计算backward gradients，计算图会追踪在forward
 
 ### torch.nn.Sequential
 
+### Pytorch Internals
 
+PS：Linux系统中site-packages路径为`../anaconda3/envs/mobilesal/lib/python3.6/site-packages/`
+
+> 参考资料：
+>
+> 1. [A Tour of PyTorch Internals (Part I)](https://pytorch.org/blog/a-tour-of-pytorch-internals-1/)
+> 2. [A Tour of PyTorch Internals (Part II) - The Build System](https://pytorch.org/blog/a-tour-of-pytorch-internals-2/)
+> 3. [PyTorch – Internal Architecture Tour](https://blog.christianperone.com/2018/03/pytorch-internal-architecture-tour/)
+> 4. [Where is site-packages located in a Conda environment?](https://stackoverflow.com/questions/31003994/where-is-site-packages-located-in-a-conda-environment)
 
 
 
