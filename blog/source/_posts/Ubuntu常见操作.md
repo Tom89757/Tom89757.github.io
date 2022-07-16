@@ -180,17 +180,113 @@ $ cat train1.txt
 
 </br>
 
+11.可以通过以下脚本批量移动文件：
 
+```bash
+for dir in DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K
+do
+    echo "processing $dir data"
+    if [ -d $dir ]; then
+        echo
+    else
+        mkdir $dir
+    fi
 
+    image=$dir/image
+    echo "image is $image"
+    if [ -d $image ]; then
+        echo
+    else
+        mkdir $image
+    fi
+    
+    mask=$dir/mask
+    echo "mask is $mask"
+    if [ -d $mask ]; then
+        echo
+    else
+        mkdir $mask
+    fi
+    
+    mv ./img/$dir/* $image
+    mv ./gt/$dir/* $mask
+done
+```
 
+先通过`[-d $dir]`确定是否存在`$dir`文件夹，如果没有则创建，然后将`img`和`gt`文件夹下的图片移动到对应的文件夹。
 
+> 参考资料：
+>
+> 1. 《Linux命令行和shell脚本编程》第12章
 
+</br>
 
+12.在Linux系统中可以很方便地对两个文本文件求取交集、并集和差集
 
+- 交集：`sort a.txt b.txt | uniq -d`
+- 并集：`sort a.txt b.txt | uniq`
+- 差集：
+  - a.txt - b.txt：`sort a.txt b.txt b.txt | uniq -u`
+  - b.txt - a.txt：`sort b.txt a.txt a.txt | uniq -u`
 
+> 参考资料：
+>
+> 1. [Linux两个文件求交集、并集、差集](https://www.cnblogs.com/molong1208/p/5358509.html)
 
+</br>
 
+13.结合[11]和[12]可以方便地求取image和mask文件夹中图片的交集并输出到对应的txt文件：
 
+```bash
+for dir in DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K
+do
+    echo "processing $dir data"
+    image=$dir/image
+    mask=$dir/mask
+    ls $image | sed 's/.jpg//' | sed 's/.png//' >$dir/image.txt
+    ls $mask | sed 's/.png//' | sed 's/.bmp//' >$dir/mask.txt
+
+    sort $dir/image.txt $dir/mask.txt | uniq -d >$dir/test.txt
+    cat $dir/test.txt | wc
+done
+```
+
+</br>
+
+14.`sh` vs `bash`：注意，二者并不等价。
+
+- 通过`sh test7.sh`运行脚本，会出现如下报错：
+
+  ![image-20220716172241725](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172241725.png)
+
+- 通过`bash test7.sh`运行脚本，可以正常运行：
+
+  ![image-20220716172342306](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172342306.png)
+
+> 参考资料：
+>
+> 1. [Difference between sh and bash](https://www.geeksforgeeks.org/difference-between-sh-and-bash/)
+> 2. [Shell script fails: Syntax error: "(" unexpected](https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected)
+
+</br>
+
+15.在bash脚本中将命令行的输出复制给一个变量：
+
+```bash
+#!/bin/bash
+output=$(cat batchDir.sh | wc)
+echo "${output}"
+```
+
+其输出如下：
+
+![image-20220716172942136](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172942136.png)
+
+> 参考资料：
+>
+> 1. [How do I set a variable to the output of a command in Bash?](https://stackoverflow.com/questions/4651437/how-do-i-set-a-variable-to-the-output-of-a-command-in-bash)
+
+</br>
 
 
 
