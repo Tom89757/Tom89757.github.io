@@ -253,7 +253,7 @@ done
 
 </br>
 
-14.`sh` vs `bash`：注意，二者并不等价。
+14.`sh` vs `bash`：注意，二者并不等价。bash是sh的超集。
 
 - 通过`sh test7.sh`运行脚本，会出现如下报错：
 
@@ -288,9 +288,21 @@ echo "${output}"
 
 </br>
 
+16.在Anaconda中创建环境时`-n/--name`不能和`-p/--prefix`同时使用：
 
+- `-n, --name`：环境名，如`conda create --name py35 python=3.5`。
+- `-p, --prefix`：环境位置的完整路径。如`conda create --prefix /users/.../yourenvname python=2.7`。
 
+> 参考资料：
+>
+> 1. [conda create](https://docs.conda.io/projects/conda/en/latest/commands/create.html#conda-create)
+> 2. [how to specify new environment location for conda create](https://stackoverflow.com/questions/37926940/how-to-specify-new-environment-location-for-conda-create)
 
+</br>
+
+17.删除conda环境：`conda env remove -n ENV_NAME`。
+
+</br>
 
 
 

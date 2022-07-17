@@ -267,15 +267,30 @@ WARNING:root:Watch Out!
 >
 > 1. [What do we mean by 'register' in PyTorch?](https://stackoverflow.com/questions/68463009/what-do-we-mean-by-register-in-pytorch)
 
+10.Pytorch、CUDA版本与显卡驱动版本对应关系：
 
+- CUDA驱动和CUDAToolkit对应版本
 
+  ![image-20220717110226488](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220717110226488.png)
 
+- Pytorch和cudatoolkit版本
 
+  | cuda和pytorch版本        | 安装命令                                                     |
+  | ------------------------ | ------------------------------------------------------------ |
+  | cuda==10.1 pytorch=1.7.1 | `conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch` |
+  | cuda==10.1 pytorch=1.7.0 | `conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.1 -c pytorch` |
+  | cuda==10.1 pytorch=1.6.0 | `conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch` |
+  | cuda==10.1 pytorch=1.5.1 | `conda install pytorch==1.5.1 torchvision==0.6.1 cudatoolkit=10.1 -c pytorch` |
+  | cuda==10.1 pytorch=1.5.0 | `conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.1 -c pytorch` |
+  | cuda==10.1 pytorch=1.4.0 | `conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch` |
 
+> 参考资料：
+>
+> 1. [pytorch版本，cuda版本，系统cuda版本查询和对应关系](https://www.cnblogs.com/Wanggcong/p/12625540.html)
+> 2. [INSTALLING PREVIOUS VERSIONS OF PYTORCH](https://pytorch.org/get-started/previous-versions/)
+> 3. [CUDA Compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
 
-
-
-
+</br>
 
 
 

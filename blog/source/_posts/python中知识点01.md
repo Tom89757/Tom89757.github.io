@@ -302,13 +302,33 @@ True
 >
 > 1. [What are metaclasses in Python?](https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python)
 
+</br>
 
+4.目前`pip`已经不提供`pip search <package name>`的服务，运行后会出现以下报错：
 
+![image-20220717103944297](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220717103944297.png)
 
+此时，可以通过在 [duckduckgo](https://duckduckgo.com/) 搜索 `!pip <package name>`来获得相关的package信息。
 
+> 参考资料：
+>
+> 1. [How do I search for an available Python package using pip?](https://stackoverflow.com/questions/17373473/how-do-i-search-for-an-available-python-package-using-pip)
+> 2. [PyPI XMLRPC search API has been disabled due to flood of requests. `pip search` may be deprecated.](https://www.reddit.com/r/Python/comments/kfxibk/pypi_xmlrpc_search_api_has_been_disabled_due_to/)
+> 3. [Remove the pip search command #5216](https://github.com/pypa/pip/issues/5216)
 
+</br>
 
+5.`pip`安装指定版本package：`pip install Package_name==version`。例如：
 
+```python
+pip install mmdet==2.12.0
+```
+
+> 参考资料：
+>
+> 1. [pip install specific version](https://www.google.com/search?q=pip+install+specific+version&oq=pip+install+specivi&aqs=chrome.1.69i57j0i512l9.4361j0j7&sourceid=chrome&ie=UTF-8)
+
+</br>
 
 
 
