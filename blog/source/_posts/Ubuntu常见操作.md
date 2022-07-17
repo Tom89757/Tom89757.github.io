@@ -276,6 +276,8 @@ done
 #!/bin/bash
 output=$(cat batchDir.sh | wc)
 echo "${output}"
+# 或者
+echo $output
 ```
 
 其输出如下：
@@ -301,6 +303,31 @@ echo "${output}"
 </br>
 
 17.删除conda环境：`conda env remove -n ENV_NAME`。
+
+</br>
+
+18.在编写bash脚本时，指定`IFS`变量为多个分隔符：`IFS=', | \\'`。如下图所示：
+
+```python
+#!/bin/bash
+echo "reading values from a file"
+file="list"
+# change seperator
+# save IFS before changing it
+IFS_OLD=$IFS
+# set multiple seperators?
+IFS='; | :'
+for state in $(cat $file)
+do
+    echo "Visit $state"
+done
+IFS=${IFS_OLD}
+
+```
+
+> 参考资料：
+>
+> 1. [Split string using 2 different delimiters in Bash](https://stackoverflow.com/questions/25163486/split-string-using-2-different-delimiters-in-bash)
 
 </br>
 
