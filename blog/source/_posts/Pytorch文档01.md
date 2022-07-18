@@ -748,7 +748,21 @@ torch.nn.init.zeros_(tensor)
 
 ### torch.nn.Conv2d
 
+对由多个input planes组成的input signal进行二维卷积。其完整声明形式为：
 
+```python
+CLASS torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True, padding_mode='zeros', device=None, dtype=None)
+```
+
+在最简单的样例中，input size为$(N, Cin, H, W)$的层的输出值和输出$(N, Cout, Hout, Wout)$可以精确地描述为：
+
+![image-20220718203916534](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220718203916534.png)
+
+其中*表示有效的2D cross-correlation 操作，N表示batch size，C表示通道数，H和W分别表示像素高宽。
+
+> 参考资料：
+>
+> 1. [CONV2D](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)
 
 ### torch.nn.BatchNorm2d
 
@@ -809,6 +823,8 @@ Pytorch使用计算图来计算backward gradients，计算图会追踪在forward
 
 ### torch.nn.Sequential
 
+
+
 ### Pytorch Internals
 
 PS：Linux系统中site-packages路径为`../anaconda3/envs/mobilesal/lib/python3.6/site-packages/`
@@ -820,11 +836,39 @@ PS：Linux系统中site-packages路径为`../anaconda3/envs/mobilesal/lib/python
 > 3. [PyTorch – Internal Architecture Tour](https://blog.christianperone.com/2018/03/pytorch-internal-architecture-tour/)
 > 4. [Where is site-packages located in a Conda environment?](https://stackoverflow.com/questions/31003994/where-is-site-packages-located-in-a-conda-environment)
 
+### nn.Module.forward
 
+为什么在下述代码中通过`model(input)`获取`output`，而不是`model.forward(input)`。
 
+```python
+class MyModel(nn.Module):
+    def __init__(self):
+        super(MyModel, self).__init__()
+        conv = nn.Conv2d(1, 6, 3)
+        self.weight = conv.weight
+        self.bias = conv.bias
+        
+    def forward(self, x):
+        x = F.conv2d(x, self.weight, self.bias)
+        return x
 
+if __name__ == '__main__':
+	model = MyModel()
+	print(model)
+	input=torch.randn(1, 1, 32, 32)
+	output = model(input)
+```
 
+当直接调用model时，会调用内置的`__call__`函数。在代码 [the code](https://github.com/pytorch/pytorch/blob/master/torch/nn/modules/module.py#L471) 中可以看到，该函数会管理所有的registered hooks并且在之后调用`forward`。这也是应该直接调用model的原因，因为可能hooks可能不会work。
 
+> 参考资料：
+>
+> 1. [About the ‘nn.Module.forward’](https://discuss.pytorch.org/t/about-the-nn-module-forward/20858)
+> 2. [NEURAL NETWORKS](https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html#define-the-network)
+
+### nn.Upsample
+
+对一个给定的多通道 1D (temporal), 2D (spatial) 或 3D (volumetric) 数据进行shang'cai'y
 
 
 

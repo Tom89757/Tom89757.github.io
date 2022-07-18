@@ -115,3 +115,21 @@ tags:
   > 参考文献：
   >
   > 1. [git设置、查看、取消代理](https://www.cnblogs.com/yongy1030/p/11699086.html)
+
+5.有时需要在`.gitignore`文件中添加仓库中所有的名为`folder_name`文件夹或文件，此时可以通过在`.gitignore`中添加如下内容实现：
+
+```bash
+*folder_name*
+```
+
+例如，要忽略所有名为`datafile`和`pth`的文件夹或文件，可以在`.gitignore`中添加：
+
+```python
+*datafile*
+*pth*
+```
+
+PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹名或文件名中包含`datafile`或`pth`的连续字符串都将被忽略。
+
+</br>
+
