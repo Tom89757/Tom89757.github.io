@@ -374,7 +374,11 @@ def _initialize_weights(self, pre_train):
 >
 > 1. [Why is PIL used so often with Pytorch?](https://stackoverflow.com/questions/61346009/why-is-pil-used-so-often-with-pytorch)
 > 2. [OpenCV transforms with tests #34](https://github.com/pytorch/vision/pull/34)
-> 3. 
+> 3. [I wonder why Pytorch uses PIL not the cv2](https://discuss.pytorch.org/t/i-wonder-why-pytorch-uses-pil-not-the-cv2/19482)
+
+</br>
+
+15.
 
 
 
