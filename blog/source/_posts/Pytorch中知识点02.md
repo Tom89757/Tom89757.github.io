@@ -292,21 +292,89 @@ WARNING:root:Watch Out!
 
 </br>
 
-11.
+11.以如下目录组织文件：
+
+```python
+/model
+|_ vgg.py
+|_ vgg_models.py
+test.py
+```
+
+如果`test.py`文件中包含对`vgg_models.py`的依赖：`from model.vgg_models import Back_VGG`
+
+同时，`vgg_models.py`又包含对`vgg.py`的依赖：`from vgg import B2_VGG`。
+
+运行`python test.py`可能会出现如下报错：
+
+![image-20220719095058661](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719095058661.png)
+
+这是由于运行`test.py`时将当前目录`./`作为导入包时的本地查找路径，`vgg_models.py`在导入包时只会在`./`中查找，而不会在`./model/`中查找，导致找不到包。此时可以通过在`test.py`开头添加如下代码把`./model/`添加为查找路径来解决该问题：
+
+```python
+import sys
+sys.path.insert(0, './model')
+```
+
+> 参考资料：
+>
+> 1. [import error: 'No module named' *does* exist](https://stackoverflow.com/questions/23417941/import-error-no-module-named-does-exist)
+
+</br>
+
+12.使用`cv2.imwrite`写入文件时，可能会出现如下问题：
+
+![image-20220719095819493](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719095819493.png)
+
+这是由于存入路径`save_path+name`无文件扩展名，可以通过在`name`后添加`.png`扩展名解决。
+
+> 参考资料：
+>
+> 1. [cv::imwrite could not find a writer for the specified extension](https://stackoverflow.com/questions/9868963/cvimwrite-could-not-find-a-writer-for-the-specified-extension)
+
+</br>
+
+13.当使用如下代码进行权重初始化时：
+
+```python
+def _initialize_weights(self, pre_train):
+        keys = pre_train.keys()
+        self.conv1.conv1_1.weight.data.copy_(pre_train[keys[0]])
+```
+
+可能会出现以下报错：
+
+![image-20220719100227462](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719100227462.png)
+
+这是由于在Python2中`Class collections.OrderedDict`的`keys()`属性返回的是一个`list`，而在Python3中其返回一个`odict_keys`，此时可以通过将`odict_keys`转换为`list`解决该问题：
+
+```python
+def _initialize_weights(self, pre_train):
+        keys = list(pre_train.keys())
+        self.conv1.conv1_1.weight.data.copy_(pre_train[keys[0]])
+```
+
+> 参考资料：
+>
+> 1. []'odict_keys' object does not support indexing #1](https://github.com/taehoonlee/tensornets/issues/1)
+
+</br>
+
+14.为什么在Pytorch中通常使用`PIL` (即PILLOW) 包，而不是`cv2` (即opencv)。有以下几个原因：
+
+- OpenCV2以BGR的形式加载图片，可能需要包装类在内部将其转换为RGB
+- 会导致在`torchvision`中的用于transforms的`functional`的代码重复，因为许多`functional`使用PIL的操作实现
+- OpenCV加载图片为`np.array`，在arrays上做transformations并没有那么容易
+- PIL和OpenCV对图像不同的表示可能会导致用户很难捕捉到bugs
+- Pytorch的modelzoo也依赖于RGB格式，它们想要很容易地支持RGB格式
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+> 参考资料：
+>
+> 1. [Why is PIL used so often with Pytorch?](https://stackoverflow.com/questions/61346009/why-is-pil-used-so-often-with-pytorch)
+> 2. [OpenCV transforms with tests #34](https://github.com/pytorch/vision/pull/34)
+> 3. 
 
 
 

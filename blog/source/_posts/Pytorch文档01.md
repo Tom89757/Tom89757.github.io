@@ -868,9 +868,11 @@ if __name__ == '__main__':
 
 ### nn.Upsample
 
-对一个给定的多通道 1D (temporal), 2D (spatial) 或 3D (volumetric) 数据进行shang'cai'y
+对一个给定的多通道 1D (temporal), 2D (spatial) 或 3D (volumetric) 数据进行上采样。
 
-
+> 参考资料：
+>
+> 1. [UPSAMPLE](https://pytorch.org/docs/stable/generated/torch.nn.Upsample.html)
 
 
 
