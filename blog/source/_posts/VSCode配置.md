@@ -60,3 +60,9 @@ tags:
 > 参考资料：
 >
 > 1. [vs code设置每行代码的垂直标尺](https://blog.csdn.net/qq_43406338/article/details/109397831)
+
+### VSCode设置默认Python Interpreter
+
+> 参考资料：
+>
+> 1. [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#:~:text=your%20User%20Settings.-,To%20do%20so%2C%20open%20the%20Command%20Palette%20(Ctrl%2BShift,Settings%2C%20with%20the%20appropriate%20interpreter.)
