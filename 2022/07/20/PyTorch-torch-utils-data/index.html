@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文记录一下PyTorch中最核心的组成部分之一——torch.utils.data。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyTorch torch.utils.data">
+<meta property="og:url" content="https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录一下PyTorch中最核心的组成部分之一——torch.utils.data。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-20T13:55:35.000Z">
+<meta property="article:modified_time" content="2022-07-20T13:58:07.023Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="Pytorch">
+<meta property="article:tag" content="文档">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/","path":"2022/07/20/PyTorch-torch-utils-data/","title":"PyTorch torch.utils.data"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>PyTorch torch.utils.data | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#torchutilsdata"><span class="nav-number">1.</span> <span class="nav-text"> torch.utils.data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dataset-types"><span class="nav-number">1.1.</span> <span class="nav-text"> Dataset Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map-style-datasets"><span class="nav-number">1.2.</span> <span class="nav-text"> Map-Style datasets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iterable-style-datasets"><span class="nav-number">1.3.</span> <span class="nav-text"> Iterable-style datasets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-loading-order-and-sampler"><span class="nav-number">1.4.</span> <span class="nav-text"> Data Loading Order and Sampler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loading-batched-and-non-batched-data"><span class="nav-number">1.5.</span> <span class="nav-text"> Loading Batched and Non-Batched Data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#disable-automatic-batching"><span class="nav-number">1.6.</span> <span class="nav-text"> Disable automatic batching</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#working-with-collate_fn"><span class="nav-number">1.7.</span> <span class="nav-text"> Working with collate_fn</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#single-and-multi-process-data-loading"><span class="nav-number">1.8.</span> <span class="nav-text"> Single- and Multi-process Data Loading</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#memory-pinning"><span class="nav-number">1.9.</span> <span class="nav-text"> Memory Pinning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#torchutilsdatadataset"><span class="nav-number">1.10.</span> <span class="nav-text"> torch.utils.data.Dataset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#torchutilsdatadefault_collatebatch"><span class="nav-number">1.11.</span> <span class="nav-text"> torch.utils.data.default_collate(batch)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#torchutilsdatasamplerdata_source"><span class="nav-number">1.12.</span> <span class="nav-text"> torch.utils.data.Sampler(data_source)</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="PyTorch torch.utils.data | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PyTorch torch.utils.data
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-20 21:55:35 / 修改时间：21:58:07" itemprop="dateCreated datePublished" datetime="2022-07-20T21:55:35+08:00">2022-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>11k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>10 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文记录一下PyTorch中最核心的组成部分之一——<code>torch.utils.data</code>。</p>
+<span id="more"></span>
+<h3 id="torchutilsdata"><a class="markdownIt-Anchor" href="#torchutilsdata"></a> torch.utils.data</h3>
+<p>该 package 的核心类为 <code>torch.utils.data.DataLoader</code>，表示在一个数据集上的迭代，其支持：</p>
+<ul>
+<li>map-style 和 iterable-style 的数据集</li>
+<li>定制化数据加载顺序</li>
+<li>自动 batching</li>
+<li>单线程和多线程的数据加载</li>
+<li>自动内存 pinning (固定)</li>
+</ul>
+<p>这些选项通过以下的 <code>DataLoader</code> 对象的构造器配置，其有signature：</p>
+<pre><code>DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
+           batch_sampler=None, num_workers=0, collate_fn=None,
+           pin_memory=False, drop_last=False, timeout=0,
+           worker_init_fn=None, *, prefetch_factor=2,
+           persistent_workers=False)
+</code></pre>
+<h4 id="dataset-types"><a class="markdownIt-Anchor" href="#dataset-types"></a> Dataset Types</h4>
+<p><code>DataLoader</code>构造器最重要的参数为<code>dataset</code>，它指定了从中加载数据的数据集对象。PyTorch支持两种不同类型的数据集：</p>
+<ul>
+<li>map-style datasets</li>
+<li>iterable-style datasets</li>
+</ul>
+<h4 id="map-style-datasets"><a class="markdownIt-Anchor" href="#map-style-datasets"></a> Map-Style datasets</h4>
+<p>一个map-style的数据集需要实现<code>__getitem__()</code>和<code>__len__()</code>这两个protocols，表示从indices/keys (可能非整型) 到 data samples的映射。</p>
+<blockquote>
+<p>protocols: 管理数据传输和接收的形式和步骤，如HTTP protocol。</p>
+</blockquote>
+<p>例如，一个数据集，当能够通过<code>dataset[idx]</code>访问时，可以从磁盘上的文件夹中读取第<code>idx</code>张image和它对应的label。详见 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset"><code>Dataset</code></a></p>
+<h4 id="iterable-style-datasets"><a class="markdownIt-Anchor" href="#iterable-style-datasets"></a> Iterable-style datasets</h4>
+<p>一个iterable-style的数据集是<code>IterableDataset</code>子类的一个实例，该子类需要实现<code>__iter__()</code> protocol，并且表示在data samples上的一个迭代。这种类型的数据集尤其适合这种情况，当随机读取代价很大甚至不可能，或者batch size依赖于所获取的数据。</p>
+<p>例如，一个数据集，当调用<code>iter(dataset)</code>时，可以返回来自数据库、远程服务器甚至实时生成的logs的数据读取流。详见 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.IterableDataset"><code>IterableDataset</code></a></p>
+<p>PS：当使用<code>IterableDataset</code>进行multi-process data loading时，相同的数据对象在每个worker process上重复，因此必须对副本进行不同的配置以避免重复数据，可以看 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.IterableDataset"><code>IterableDataset</code></a>文档了解如何实现。</p>
+<h4 id="data-loading-order-and-sampler"><a class="markdownIt-Anchor" href="#data-loading-order-and-sampler"></a> Data Loading Order and <code>Sampler</code></h4>
+<p>对于 iterable-style 数据集，数据加载顺序完全由用户定义的迭代器控制。这允许更容易的chunk-reading和动态的batch size的实现（如，通过每次生成一个 batched sample）</p>
+<p>本节的剩余部分关心map-style数据集的情况。<code>torch.utils.data.Sampler</code>类被用来指定在数据加载中使用的indices/keys的序列。它们代表在数据集indices上的迭代器对象，例如，在SGD (stochastic gradient decent) 的公共实例中，一个Sampler可以任意排列indices的列表并且每次生成一个indice，或者对于mini-batch SGD生成少量indices。</p>
+<p>一个sequential或者shuffled的sampler将会自动根据传递给<code>Dataloader</code>的<code>shuffle</code>参数构造。可选地，用户可能使用<code>sampler</code>参数来指定一个custom Sampler object，每次生成要取的下一个index/key。</p>
+<p>一个可以一次生成一个batch indices列表的custom Sampler可以作为<code>batch_sampler</code>参数传递。automatic batching可以通过<code>batch_size</code>和<code>drop_last</code>参数来开启。详见下节获取细节。</p>
+<p>PS：<code>sampler</code>和<code>batch_sampler</code>都不兼容iterable-style数据集，因为它们没有key/index的概念。</p>
+<h4 id="loading-batched-and-non-batched-data"><a class="markdownIt-Anchor" href="#loading-batched-and-non-batched-data"></a> Loading Batched and Non-Batched Data</h4>
+<p><code>DataLoader</code>支持自动地将通过<code>batch_size</code>、<code>drop_last</code>、<code>batch_sampler</code>和<code>collate_fn</code>(有默认函数)参数的每个取到的data samples整理到batches中。</p>
+<p><strong>Automatic batching(default)</strong></p>
+<p>最通用的情况，对应取得 a minibatch of data并将它们整理进batched samplers，例如整理一维Tensors为batch的维度。</p>
+<p>当<code>batch_size</code>(默认为1)不为None时，data loader生成batched samples而不是individual samples，<code>batch_size</code>和<code>drop_last</code>被用来指定data loader如何获取batches of dataset keys。对于map-style数据集，用户可以选择指定<code>batch_sampler</code>，其将一次生成一个list of keys。</p>
+<p>PS：<code>batch_size</code>和<code>drop_last</code>是用来从<code>sampler</code>中构建一个<code>batch_sampler</code>的关键。对于map-style数据集，<code>sampler</code>要么由用户提供，要么基于<code>shuffle</code>参数构建。对于iterable-style数据集，没有<code>sampler</code>或<code>batch_sampler</code>的概念</p>
+<p>在通过sampler的indices取得 a list of samples后，作为<code>collate_fn</code>参数传递的函数被用来将list of samples整理为batches。在这种情况下，从map-style数据集中的加载数据可以大致等价于：</p>
+<pre><code>for indices in batch_sampler:
+    yield collate_fn([dataset[i] for i in indices])
+</code></pre>
+<p>从iterable-style数据集中加载数据可以大致等价于：</p>
+<pre><code>dataset_iter = iter(dataset)
+for indices in batch_sampler:
+    yield collate_fn([next(dataset_iter) for _ in indices])
+</code></pre>
+<p>一个custom <code>collate_fn</code> 可以被用来 customize collation，例如，填充序列数据到batch的最大长度。</p>
+<h4 id="disable-automatic-batching"><a class="markdownIt-Anchor" href="#disable-automatic-batching"></a> Disable automatic batching</h4>
+<p>在某些情况下，用户可能想在数据集中手动管理batching，或者只是简单地加载individual samples。例如，可能直接加载batched data代价更小（例如从数据库中进行块访问，或者读取连续的内存块），或者batch size是数据依赖的，或者程序被设计在individual sample上运行。在这些情况下，不使用automatic batching（使用<code>collate_fn</code>整理samples）可能更好，此时可以让数据加载器直接返回dataset对象的每个成员。</p>
+<p>当<code>batch_size</code>和<code>batch_sampler</code>都为None时（默认<code>batch_sampler</code>为None，就禁止了automatic batching。每个从dataset中获取的sampler被作为<code>collate_fn</code>参数传递的函数处理。</p>
+<p>当禁止automatic batching，默认的<code>collate_fn</code>简单的转换Numpy arrays为Pytorch Tensors，并且保持everything else untouched。</p>
+<p>在这种情况下，从一个map-style数据集中加载数据可以大致等价于：</p>
+<pre><code>for index in sampler:
+    yield collate_fn(dataset[index])
+</code></pre>
+<p>从一个iterable-style数据集中加载数据可以大致等价于：</p>
+<pre><code>for data in iter(dataset):
+    yield collate_fn(data)
+</code></pre>
+<h4 id="working-with-collate_fn"><a class="markdownIt-Anchor" href="#working-with-collate_fn"></a> Working with <code>collate_fn</code></h4>
+<p>当启用或禁用automatic batching时，<code>collate_fn</code>的使用略有不同。</p>
+<p>当禁用batching时，<code>collate_fn</code>被单个的data sample调用，输出从data loader iterator中生成。这种情况下，默认的<code>default_fn</code>简单地转换Numpy arrays为Pytorch tensors。</p>
+<p>当启用batching时，<code>collate_fn</code>每次被a list of data samples调用，需要将生成的input samples整理为a batch。本节的剩余部分描述默认的<code>collate_fn</code> (<a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.default_collate"><code>default_collate()</code></a>) 的行为。</p>
+<p>例如，如果每个sample包含一个3-channel的数据和一个整型的class label，也就是说，dataset的每个元素返回一个tuple (<code>image, class_index</code>)，默认的<code>collate_fn</code>会整理这样的list of tuples到a single tuple of a batched image tensor和a batched class label Tensor。尤其是，默认的<code>collate_fn</code>有如下的属性：</p>
+<ul>
+<li>
+<p>总是将batch dimension作为新的dimension</p>
+</li>
+<li>
+<p>自动地转换NumPy arrays和Python numerical values为PyTorch Tensors</p>
+</li>
+<li>
+<p>保留数据结构，例如如果每个sample为一个dictionary，它输出一个有相同set of keys的dict，但是将batched Tensors作为值（或者lists，如果值不能转换为Tensors）。对list、tuple、namedtuple都是如此。</p>
+<p>用户可能使用定制化的<code>collate_fn</code>来实现custom batching，例如，沿着一个维度整理而不是第一个，填充变长的序列，或者对custom data types添加support。</p>
+</li>
+</ul>
+<p>如果你遇到DataLoader的输出的维度或类型和期望的不同，你应该检查你的<code>collate_fn</code>。</p>
+<h4 id="single-and-multi-process-data-loading"><a class="markdownIt-Anchor" href="#single-and-multi-process-data-loading"></a> Single- and Multi-process Data Loading</h4>
+<p>DataLoader默认使用single-process数据加载。</p>
+<p>在一个Python process内部，<a target="_blank" rel="noopener" href="https://wiki.python.org/moin/GlobalInterpreterLock">Global Interpreter Lock (GIL)</a> 避免在threads的完全并行的Python代码。为了避免block数据加载时的computation code，Pytorch通过将<code>num_workers</code>设置为正值来进行multi-process的数据处理。</p>
+<p><strong>Single-process data loading (default)</strong></p>
+<p>在这个模式，data fetching和DataLoader初始化在相同的process中进行。因此，数据加载可能会block computing。但是，这个模式可能在资源在processes (如，shared memory, file descriptors) 之间共享数据被限制时使用会更好，或者整个数据集很小可以完全在内存中整个加载。此外，single-process加载通过在进行error trace时更具有可读性，因此对调试很有用。</p>
+<p><strong>Multi-process data loading</strong></p>
+<p>设置参数<code>num_workers</code>为正数可以用指定数量的loader worker processes来multi-process地加载数据。</p>
+<blockquote>
+<p>Warning：在数次迭代之后，loader worker processes将消耗和parent process相同量的CPU memory。略</p>
+</blockquote>
+<p>在这个模式，每次DataLoader的一个迭代器被创建时（如当你调用enumerate(dataloader)），<code>num_workers</code>数量的worker processes也被创建。此时，<code>dataset</code>、<code>collate_fn</code>和<code>worker_init_fn</code>被传递给每个worker，worker利用这些参数进行初始化并且获取数据。这意味着数据集的访问连同它的内部IO，transforms (包括<code>collate_fn</code>) 在worker process中运行。</p>
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.get_worker_info" title="torch.utils.data.get_worker_info"><code>torch.utils.data.get_worker_info()</code></a> 返回在一个worker process中的多种有用的信息（包括worker id，dataset副本，初始化seed等），并且在main process中返回None。用户可能在dataset中使用这个函数和<code>worker_init_fn</code>来单独配置每个dataset副本，并且判断代码是否运行在一个worker process中。例如，这可能在sharding the dataset时尤其有用</p>
+<blockquote>
+<p>sharding: 将数据集存储在不同的服务器上</p>
+</blockquote>
+<p>对map-style的数据集，main process使用<code>sampler</code>生成indices然后将indices发送给workers。所以任何shuffle随机化在main process中进行，然后再通过indices进行引导数据加载。</p>
+<p>对于iterable-style数据集，因为每个worker process得到一个数据集对象的副本，直接进行multi-process加载经常会导致数据重复。使用<code>torch.utils.data.get_worker_info()</code>和<code>worker_init_fn</code>，用户可以独立配置每个副本。</p>
+<p>一旦迭代终止或者迭代器被进行垃圾回收，workers就会终止。</p>
+<p>PS：通常不建议在multi-process加载中返回CUDA tensors，因为许多微妙的原因，详见<a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/multiprocessing.html#multiprocessing-cuda-note">CUDA in multiprocessing</a>。作为替代，建议使用 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#memory-pinning">automatic memory pinning</a>(也就是设置<code>pin_memory=True</code>)，这可以在CUDA-enabled GPUs上进行很快的数据传输。</p>
+<p><strong>Platform-specific behaviors</strong></p>
+<p>因为workers依赖于Python <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing" title="(in Python v3.10)"><code>multiprocessing</code></a>，worker的启动行为在Windows和Unix平台上有所不同。略</p>
+<p>PS：建议将主要的script代码放在<code>if __name__=='__main__'</code>中；建议确保<code>collate_fn</code>、<code>worker_init_fn</code>和<code>dataset</code>代码在最外层被定义，也就是<code>__main__</code>的外面。</p>
+<p><strong>Randomness in multi-process data loading</strong></p>
+<p>默认，每个worker将它的PyTorch seed设置为<code>base_seed</code>+<code>worker_id</code>，<code>base_seed</code>是main process通过它的RNG或者一个指定的<code>generator</code>生成。但是，来自其他libraries的seeds可能在初始化workers时重复，导致每个worker返回相同的随机数字。</p>
+<p>在<code>worker_init_fn</code>中，你可以通过<a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.get_worker_info" title="torch.utils.data.get_worker_info"><code>torch.utils.data.get_worker_info().seed</code></a> 和 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.initial_seed.html#torch.initial_seed" title="torch.initial_seed"><code>torch.initial_seed()</code></a>访问每个worker的PyTorch seed set，并且使用它来在数据加载之前seed其他的libraries。</p>
+<h4 id="memory-pinning"><a class="markdownIt-Anchor" href="#memory-pinning"></a> Memory Pinning</h4>
+<p>从主机到GPU的数据的copies会快得多，当它们从 pinned (page-locked) memory 中创建时。详见 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/cuda.html#cuda-memory-pinning">Use pinned memory buffers</a> 如何更通用地使用 pinned memory。</p>
+<p>对于数据加载来说，传递<code>pin_memory=True</code>给<code>Dataloader</code>将自动的把获取到的数据放在pinned memory，因此会使得对CUDA-enabled GPUs有更快的数据传输。</p>
+<p>默认的memory pinning logic 只会识别Tensors和包含Tensors的maps/iterables。默认，如何pinning logic看到一个custom type (如果你有一个<code>collate_fn</code>返回一个custom batch type)，或者你的batch的每个元素为一个custom type，pinning logic不会认出它们，并将返回batch（或元素）而不pin the memory。为了对custom batch或者custom data type进行memory pinning，需要在custom type中定义一个<code>pin_memory()</code>方法。如下所示：</p>
+<pre><code>class SimpleCustomBatch:
+    def __init__(self, data):
+        transposed_data = list(zip(*data))
+        self.inp = torch.stack(transposed_data[0], 0)
+        self.tgt = torch.stack(transposed_data[1], 0)
+
+    # custom memory pinning method on custom type
+    def pin_memory(self):
+        self.inp = self.inp.pin_memory()
+        self.tgt = self.tgt.pin_memory()
+        return self
+
+def collate_wrapper(batch):
+    return SimpleCustomBatch(batch)
+
+inps = torch.arange(10 * 5, dtype=torch.float32).view(10, 5)
+tgts = torch.arange(10 * 5, dtype=torch.float32).view(10, 5)
+dataset = TensorDataset(inps, tgts)
+
+loader = DataLoader(dataset, batch_size=2, collate_fn=collate_wrapper,
+                    pin_memory=True)
+
+for batch_ndx, sample in enumerate(loader):
+    print(sample.inp.is_pinned())
+    print(sample.tgt.is_pinned())
+</code></pre>
+<p>完整声明形式为：</p>
+<pre><code>CLASS torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=None, sampler=None, batch_sampler=None, num_workers=0, collate_fn=None, pin_memory=False, drop_last=False, timeout=0, worker_init_fn=None, multiprocessing_context=None, generator=None, *, prefetch_factor=2, persistent_workers=False, pin_memory_device='')
+</code></pre>
+<p>DataLoader，联合一个dataset和一个sampler，提供在给定数据集上的一个迭代。</p>
+<p>DataLoader支持map-style和iterable-style的数据集的sing-或multi-process加载，定制化的加载顺序和可选的automatci batching (collation) 和memory pinning。</p>
+<p>参数：</p>
+<ul>
+<li>
+<p><code>dataset(Dataset)</code>：数据集，从中加载数据</p>
+</li>
+<li>
+<p><code>batch_size(int, optional)</code>：对每个batch有多少个样本被加载（默认为1）</p>
+</li>
+<li>
+<p><code>shuffle(bool, optional)</code>：设置为<code>True</code>时在每个epoch数据都会reshuffle（默认为False）</p>
+</li>
+<li>
+<p><code>sampler(Sampler or Iterable, optional)</code>：定义从dataset中获取samples的策略。可以是任何有<code>__len__</code>实现的Iterable。如果指定sampler，<code>shuffle</code> must not be specified。</p>
+</li>
+<li>
+<p><code>batch_sampler(Sampler or Iterable, optional)</code>：类似sampler，但是一次返回a batch of indices。和<code>batch_size</code>、<code>shuffle</code>、<code>sampler</code>和<code>drop_last</code>相互排斥。？</p>
+</li>
+<li>
+<p><code>num_worker(int, optional)</code>：用于data loading的subprocesses的数量。0表示数据将会在main process中加载（默认为0）</p>
+</li>
+<li>
+<p><code>collate_fn(callable, optional)</code>：合并a list of samples以形成 a mini-batch of Tensor(s)。当从一个map-style数据集中进行batched loading时会用到。</p>
+</li>
+<li>
+<p><code>pin_memory(bool, optional)</code>：如果为<code>True</code>，data loader在返回Tensor之前会复制Tensors到device/CUDA的pinned memory。如果你的数据元素为custom type，或者你的<code>collate_fn</code>返回的batch为custom type，看下面的示例。</p>
+</li>
+<li>
+<p><code>drop_last(bool, optional)</code>：设置为<code>True</code>时会drop最后的不完整的batch，如果dataset size不能被batch size整除的话。如果为<code>False</code>，数据集的尺寸不能被batch size整除，那么最后的batch将会更小（默认为False）</p>
+</li>
+<li>
+<p><code>timeout(numeric, optional)</code>：如果为正，表示从workers收集a batch的timeout值。应该总是非负（默认为0）</p>
+</li>
+<li>
+<p><code>worker_init_fn(callable, optional)</code>：如果不为<code>None</code>，将使用worker id ([0, num_workers-1]范围内的整数) 作为输入在每个worker subprocess中被调用，在seeding之后，data loading之前（默认为None）</p>
+</li>
+<li>
+<p><code>generator(torch.Generator, optional)</code>：如果不为<code>None</code>，RandomSampler将使用RNG生成随机indexes，并且为workers生成<code>base_seed</code>（默认为None）</p>
+</li>
+<li>
+<p><code>prefetch_factor(int, optional, keyword-only arg)</code>：被每个worker提前加载的batches的数量。<code>2</code>表示在所有wrokers上将有总共2*num_workers的batches被提前获得（默认为2）</p>
+</li>
+<li>
+<p><code>persistent_workers(bool, optional)</code>：如果为<code>True</code>，data loader在一个dataset被处理完一次后不会关闭worker processes，这允许保持workers Dataset instances存活（默认为False）</p>
+</li>
+<li>
+<p><code>pin_memory_device(str, optional)</code>：如果pin_memory设置为True，data loader在返回Tensors之前会将他们复制到device pinned memory。</p>
+</li>
+</ul>
+<h4 id="torchutilsdatadataset"><a class="markdownIt-Anchor" href="#torchutilsdatadataset"></a> torch.utils.data.Dataset</h4>
+<p>一个表示Dataset的抽象类。</p>
+<p>所有表示从keys到data samples的映射的数据集都应该是它的子类。所有的子类应该重写<code>__getitme__()</code>，该方法支持对一个给定的key获取对应的data sample。子类也能选择性地重写<code>__len__()</code>，该方法返回数据集的尺寸，该尺寸与Sampler的实现和DataLoader的默认选项有关。</p>
+<p>PS：DataLoader默认构建一个生成integral indices的index sampler。为了使它可以作用于具有non-integral indices/keys的map-style数据集，必须提供一个custom sampler。</p>
+<h4 id="torchutilsdatadefault_collatebatch"><a class="markdownIt-Anchor" href="#torchutilsdatadefault_collatebatch"></a> torch.utils.data.default_collate(batch)</h4>
+<p>一个函数，将a batch of data作为输入，将batch内的元素放入一个具有outer dimenstion (batch size)的tensor。其输出类型可能是一个<code>torch.Tensor</code>，一个<code>torch.Tensor</code>的Sequence，一个<code>torch.Tensor</code>的Collection，或者不变，其依赖于输入类型。当在DataLoader中定义batch_size或者batch_sampler时该函数可以作为collation的默认函数。下面是通常的input type (基于batch内部的元素类型) 和它映射为的output type：</p>
+<p>参数：</p>
+<ul>
+<li><code>batch</code>：等待整理的single batch</li>
+</ul>
+<p>调用实例：</p>
+<pre><code># Example with a batch of `int`s:
+default_collate([0, 1, 2, 3])
+# Example with a batch of `str`s:
+default_collate(['a', 'b', 'c'])
+# Example with `Map` inside the batch:
+default_collate([&#123;'A': 0, 'B': 1&#125;, &#123;'A': 100, 'B': 100&#125;])
+# Example with `NamedTuple` inside the batch:
+Point = namedtuple('Point', ['x', 'y'])
+default_collate([Point(0, 0), Point(1, 1)])
+# Example with `Tuple` inside the batch:
+default_collate([(0, 1), (2, 3)])
+# Example with `List` inside the batch:
+default_collate([[0, 1], [2, 3]])
+</code></pre>
+<h4 id="torchutilsdatasamplerdata_source"><a class="markdownIt-Anchor" href="#torchutilsdatasamplerdata_source"></a> torch.utils.data.Sampler(data_source)</h4>
+<p>所有Samplers的基类。</p>
+<p>每个Sampler子类必须提供<code>__iter__()</code>方法，以此提供在dataset元素的indices上的迭代，和一个<code>__len__()</code>返回迭代器的长度。</p>
+<p>PS：<code>__len__()</code>并不是DataLoader严格要求的，但是在有任何涉及到DataLoader的长度计算时最好提供。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html">TORCH.UTILS.DATA</a></li>
+</ol>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/" title="PyTorch torch.utils.data">https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
+              <a href="/tags/%E6%96%87%E6%A1%A3/" rel="tag"># 文档</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/20/PyTorch-saving-and-loading-models/" rel="prev" title="PyTorch saving and loading models">
+                  <i class="fa fa-chevron-left"></i> PyTorch saving and loading models
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/20/PyTorch-%E4%BC%98%E5%8C%96%E5%99%A8/" rel="next" title="PyTorch 优化器">
+                  PyTorch 优化器 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">173k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:37</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

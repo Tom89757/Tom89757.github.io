@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文记录PyTorch中的核心操作之一——saving and loading models。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyTorch saving and loading models">
+<meta property="og:url" content="https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录PyTorch中的核心操作之一——saving and loading models。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-20T13:52:59.000Z">
+<meta property="article:modified_time" content="2022-07-20T14:15:36.865Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="Pytorch">
+<meta property="article:tag" content="文档">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/","path":"2022/07/20/PyTorch-saving-and-loading-models/","title":"PyTorch saving and loading models"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>PyTorch saving and loading models | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#saving-and-loading-models"><span class="nav-number">1.</span> <span class="nav-text"> saving and loading models</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="PyTorch saving and loading models | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PyTorch saving and loading models
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-20 21:52:59 / 修改时间：22:15:36" itemprop="dateCreated datePublished" datetime="2022-07-20T21:52:59+08:00">2022-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文记录PyTorch中的核心操作之一——saving and loading models。</p>
+<span id="more"></span>
+<h3 id="saving-and-loading-models"><a class="markdownIt-Anchor" href="#saving-and-loading-models"></a> saving and loading models</h3>
+<p>本文档提供了对Pytorch models进行存储和加载的不同使用场景的解决方案。当谈到存储和加载模型，有三个核心函数很相似：</p>
+<ul>
+<li><code>torch.save</code>：存储一个serialized object到磁盘，该函数使用Python的<code>pickle</code> utility来序列化（serialization）。Models/tensors和各种类型对象的字典都可以使用该函数存储</li>
+<li><code>torch.load</code>：使用<code>pickle</code>的unpickling能力来反序列化pickled对象文件到内存中。该函数也可以设置用来加载数据的设备（如gpu），见 <a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-across-devices">Saving &amp; Loading Model Across Devices</a>。</li>
+<li><code>torch.nn.Module.load_state_dict</code>：使用反序列话的state_dict加载模型的参数字典，详细信息见 <a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict">What is a state_dict?</a>。</li>
+</ul>
+<p><strong>什么是<code>state_dict</code>?</strong></p>
+<p>在Pytorch中， 一个<code>torch.nn.Module</code>模型的可学习的参数（如权重和偏差）被包含在模型的参数中（可以通过<code>model.parameters()</code>获取。一个state_dict就是一个简单的Python字典对象，其将每个layer映射到它的参数tensor。注意只有具有可学习参数的layers（如卷积层，线性层等）和具有registered buffers（batchnorm’s running_mean）的layers在模型的state_dict中有入口。Optimizer对象（<code>torch.optim</code>）也有一个state_dict，它包含关于优化器的状态信息和使用的超参数。</p>
+<p>因为state_dict是Python字典，所以它们可以很容易地存储、更新、更变和恢复，这使得Pytorch的模型和优化器得以模块化。</p>
+<p><strong>Example</strong></p>
+<p>下面看一下 <a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py">Training a classifier</a> 教程中一个简单的分类器的state_dict：</p>
+<pre><code># Define model
+class TheModelClass(nn.Module):
+    def __init__(self):
+        super(TheModelClass, self).__init__()
+        self.conv1 = nn.Conv2d(3, 6, 5)
+        self.pool = nn.MaxPool2d(2, 2)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        self.fc1 = nn.Linear(16 * 5 * 5, 120)
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, 10)
+
+    def forward(self, x):
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = x.view(-1, 16 * 5 * 5)
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+# Initialize model
+model = TheModelClass()
+
+# Initialize optimizer
+optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+
+# Print model's state_dict
+print(&quot;Model's state_dict:&quot;)
+for param_tensor in model.state_dict():
+    print(param_tensor, &quot;\t&quot;, model.state_dict()[param_tensor].size())
+
+# Print optimizer's state_dict
+print(&quot;Optimizer's state_dict:&quot;)
+for var_name in optimizer.state_dict():
+    print(var_name, &quot;\t&quot;, optimizer.state_dict()[var_name])
+</code></pre>
+<p>其输出为：</p>
+<pre><code>Model's state_dict:
+conv1.weight     torch.Size([6, 3, 5, 5])
+conv1.bias   torch.Size([6])
+conv2.weight     torch.Size([16, 6, 5, 5])
+conv2.bias   torch.Size([16])
+fc1.weight   torch.Size([120, 400])
+fc1.bias     torch.Size([120])
+fc2.weight   torch.Size([84, 120])
+fc2.bias     torch.Size([84])
+fc3.weight   torch.Size([10, 84])
+fc3.bias     torch.Size([10])
+
+Optimizer's state_dict:
+state    &#123;&#125;
+param_groups     [&#123;'lr': 0.001, 'momentum': 0.9, 'dampening': 0, 'weight_decay': 0, 'nesterov': False, 'params': [4675713712, 4675713784, 4675714000, 4675714072, 4675714216, 4675714288, 4675714432, 4675714504, 4675714648, 4675714720]&#125;]
+</code></pre>
+<p><strong>存储和加载模型用于推断</strong></p>
+<p>存储/加载<code>state_dict</code>（建议）</p>
+<p>Save：<code>torch.save(model.state_dict(), PATH)</code></p>
+<p>Load：</p>
+<pre><code>model = TheModelClass(*args, **kwargs)
+model.load_state_dict(torch.load(PATH))
+model.eval()
+</code></pre>
+<p>PS：PyTorch1.6版本将<code>torch.save</code>的存储格式转换为了一个新的基于zipfile的文件格式。<code>torch.load</code>仍然保持加载老的pth/pt格式文件的能力。如果想要使用<code>torch.save</code>存储老的文件格式pth/pt，可以使用参数 <code>_use_new_zipfile_serialization=False</code>。</p>
+<p>当加载一个模型用于推断时，只有必要存储训练模型的可学习的参数。使用<code>torch.save()</code>存储模型的state_dict将对以后恢复模型给出最大的灵活性，这也是推荐它存储模型的原因。</p>
+<p>一个PyTorch的惯例是使用pt/pth扩展名来存储模型。</p>
+<p>记住在进行推断之前你必须调用<code>model.eval()</code>来设置dropout和batch normalization层来评估模型，不做这一步将导致生成不一致的推断结果。</p>
+<p>PS：注意<code>load_state_dict()</code>函数将一个字典对象而不是一个存储对象的路径作为参数，这意味着在将state_dict传给该函数之前必须对其反序列化，例如，不能加载模型通过<code>model.load_state_dict(PATH)</code>。</p>
+<p>PS：如果逆想要保存性能最好的模型（根据获得的验证损失），不要忘记<code>best_model_state=model.state_dict()</code>返回的是对state的引用而不是它的copy。你必须序列化<code>best_model_state</code>或者使用 <code>best_model_state = deepcopy(model.state_dict())</code> 否则你的<code>best_model_state</code>将会随着后续的训练迭代继续更新。结果，最终的模型state可能是一个过拟合模型的state。</p>
+<p><strong>存储和加载模型</strong></p>
+<p>Save：<code>torch.save(model, PATH)</code></p>
+<p>Load：</p>
+<pre><code># Model class must be defined somewhere
+model = torch.load(PATH)
+model.eval()
+</code></pre>
+<p>上述的存储/加载过程使用最直观的语法，涉及最少的代码。以这种方式存储模型将使用Python的pickle模块存储整个模型。该方法的缺点在于序列化的数据和特定的类以及当模型存储时的目录结构绑定。其原因在于pickle不存储模型类本身，而是存储一个包含该类的文件的路径，这个类会在加载时用到。因为这个原因，你的代码在其他的项目或者在重构后中使用可能会以多种形式中断。</p>
+<p>一个PyTorch的惯例是使用pt/pth扩展名来存储模型。</p>
+<p>记住在进行推断之前你必须调用<code>model.eval()</code>来设置dropout和batch normalization层来评估模型，不做这一步将导致生成不一致的推断结果。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/saving_loading_models.html">saving and loading models</a></li>
+</ol>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/" title="PyTorch saving and loading models">https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
+              <a href="/tags/%E6%96%87%E6%A1%A3/" rel="tag"># 文档</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/20/PyTorch-nn-Module/" rel="prev" title="PyTorch nn.Module">
+                  <i class="fa fa-chevron-left"></i> PyTorch nn.Module
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/20/PyTorch-torch-utils-data/" rel="next" title="PyTorch torch.utils.data">
+                  PyTorch torch.utils.data <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">173k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:37</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

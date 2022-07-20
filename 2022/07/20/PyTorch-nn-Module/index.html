@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文记录一下PyTorch中最核心的类之一——torch.nn.Module。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyTorch nn.Module">
+<meta property="og:url" content="https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录一下PyTorch中最核心的类之一——torch.nn.Module。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-20T13:49:56.000Z">
+<meta property="article:modified_time" content="2022-07-20T14:28:07.196Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="Pytorch">
+<meta property="article:tag" content="文档">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/","path":"2022/07/20/PyTorch-nn-Module/","title":"PyTorch nn.Module"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>PyTorch nn.Module | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnnmodule"><span class="nav-number">1.</span> <span class="nav-text"> torch.nn.Module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#nnmoduleforward"><span class="nav-number">1.1.</span> <span class="nav-text"> nn.Module.forward</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="PyTorch nn.Module | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PyTorch nn.Module
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-20 21:49:56 / 修改时间：22:28:07" itemprop="dateCreated datePublished" datetime="2022-07-20T21:49:56+08:00">2022-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文记录一下PyTorch中最核心的类之一——<code>torch.nn.Module</code>。</p>
+<span id="more"></span>
+<h3 id="torchnnmodule"><a class="markdownIt-Anchor" href="#torchnnmodule"></a> torch.nn.Module</h3>
+<p>所有神经网络modules的基本类，所有的模型（包括自定义模型）都应该是该类的子类。Modules也可以包含其它的Module，即允许以树的结构嵌套。能够将子模块赋值给模块属性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Model</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">1</span>, <span class="number">20</span>, <span class="number">5</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(<span class="number">20</span>, <span class="number">20</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.relu(self.conv1(x))</span><br><span class="line">        <span class="keyword">return</span> F.relu(self.conv2(x))</span><br></pre></td></tr></table></figure>
+<p>通过上述方式赋值的子模块将被注册，调用<code>to(device)</code>时，子模块的参数也会转换为<code>cuda Tensor</code>。</p>
+<p>PS：在赋值给子模块之前必须调用父类的<code>__init__()</code>。</p>
+<p><code>training</code>：bool类型，表示模块处于training还是evaluation模式</p>
+<p><code>add_module(name, module)</code>：给当前模块添加一个子模块，该子模块可以通过给出的<code>name</code>作为属性被获取。</p>
+<p><code>apply(fn)</code>：递归地将<code>fn</code>应用到每个子模块（通过<code>.children()</code>返回）以及自身。典型的使用方式包括初始化模型的参数（see also <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/nn.init.html#nn-init-doc">torch.nn.init</a>）</p>
+<ul>
+<li>
+<p>参数：<code>fn(Module-&gt;None)</code>，应用到每个子模块的函数</p>
+</li>
+<li>
+<p>返回：self</p>
+</li>
+<li>
+<p>返回类型：Module</p>
+</li>
+<li>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@torch.no_grad()</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">init_weights</span>(<span class="params">m</span>):</span><br><span class="line">    <span class="built_in">print</span>(m)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span>(m) == nn.Linear:</span><br><span class="line">        m.weight.fill_(<span class="number">1.0</span>)</span><br><span class="line">        <span class="built_in">print</span>(m.weight)</span><br><span class="line">net = nn.Sequential(nn.Linear(<span class="number">2</span>, <span class="number">2</span>), nn.Linear(<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line">net.apply(init_weights)</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">1.</span>,  <span class="number">1.</span>],</span><br><span class="line">        [ <span class="number">1.</span>,  <span class="number">1.</span>]])</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">1.</span>,  <span class="number">1.</span>],</span><br><span class="line">        [ <span class="number">1.</span>,  <span class="number">1.</span>]])</span><br><span class="line">Sequential(</span><br><span class="line">  (<span class="number">0</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">  (<span class="number">1</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">)</span><br><span class="line">Sequential(</span><br><span class="line">  (<span class="number">0</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">  (<span class="number">1</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>buffers(recurse=True)</code>：返回module buffers的迭代器。</p>
+<ul>
+<li>
+<p>参数：<code>recurse(bool)</code>，如果为True，返回该模块和所有子模块的buffers迭代器；如果为False，只返回该模块直接成员的buffers迭代器</p>
+</li>
+<li>
+<p>Yields：torch.Tensor，一个模型的buffer</p>
+</li>
+<li>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> buf <span class="keyword">in</span> model.buffers():</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    <span class="built_in">print</span>(<span class="built_in">type</span>(buf), buf.size())</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.Tensor&#x27;</span>&gt; (<span class="number">20L</span>,)</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.Tensor&#x27;</span>&gt; (<span class="number">20L</span>, <span class="number">1L</span>, <span class="number">5L</span>, <span class="number">5L</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>children()</code>：返回直接的子模块的迭代器。</p>
+<ul>
+<li>Yields：Module类型，一个子模块</li>
+</ul>
+<p><code>cpu()</code>：将所有的模型参数和buffers转移到CPU。该方法modify the module in-place。</p>
+<ul>
+<li>Returns：self</li>
+<li>Return type：Module</li>
+</ul>
+<p><code>cuda(device=None)</code>：将所有的模型参数和buffers转移到GPU。这也使得相关联的参数和buffers为不同的对象。所以如果模块在优化期间保留在GPU上时，该函数应在在构造优化器之前被调用。该方法modify the module in-place。</p>
+<ul>
+<li>参数：<code>device(int, optional)</code>，如果指定的话，所有的参数将被复制到该device。</li>
+<li>Returns：self</li>
+<li>Return type：Module</li>
+</ul>
+<p><code>eval()</code>：设置module到evaluation模式。它和<code>self.train(False)</code>等价，可以在 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/autograd.html#locally-disable-grad-doc">Localling disabling gradient computation</a> 看到其和一些相似机制的比较</p>
+<ul>
+<li>Returns：self</li>
+<li>Return type：Module</li>
+</ul>
+<p><code>forward(*input)</code>：定义在每次调用它时进行的计算，应该被所有的子类覆盖。</p>
+<ul>
+<li>PS：不太懂，尽管forward操作定义在该函数内部，但是应该调用Module instance而不是该函数，因为前者会考虑registered hooks而后者不会</li>
+</ul>
+<p><code>get_parameter(target)</code>：返回由target给出的参数，如果存在的话，否则抛出error。</p>
+<ul>
+<li>参数：<code>target</code>，fully-qualified的对应参数的字符串名</li>
+<li>Returns：target引用的参数</li>
+<li>Return type：torch.nn.Parameter</li>
+<li>Raises：AttributeError</li>
+</ul>
+<p><code>load_state_dict(state_dict, strict=True)</code>：将来自<code>state_dict</code>的参数和buffers复制到该模块和它的子模块。如果<code>strict=True</code>，那么<code>state_dict</code>的keys必须和该模块<code>state_dict()</code>函数返回的keys完全匹配。</p>
+<ul>
+<li>
+<p>参数：</p>
+<ul>
+<li><code>state_dict(dict)</code>：一个包含参数和永久buffers的dict</li>
+<li><code>strict(bool, optional)</code>：使用严格限制keys的匹配，默认为True。</li>
+</ul>
+</li>
+<li>
+<p>Returns：missing_keys，一个包含missing keys的字符串列表；unexpected_keys，一个包含unexpected_keys的字符串列表</p>
+</li>
+<li>
+<p>Return type：具有<code>missing_keys</code>和<code>unexpected_keys</code>名的元组</p>
+</li>
+<li>
+<p>PS：如果一个参数或buffer registered as None并且它对应的key存在在<code>state_dict</code>中，调用<code>load_state_dict()</code>会raise <code>RuntimeError</code>。</p>
+</li>
+</ul>
+<p><code>modules()</code>：返回在网络中的所有模块的迭代器</p>
+<ul>
+<li>
+<p>Yields：Module，网络中的模块</p>
+</li>
+<li>
+<p>PS：重复的模块只返回一次。在下面的例子中，<code>l</code>只返回一次</p>
+</li>
+<li>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = nn.Linear(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>net = nn.Sequential(l, l)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> idx, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(net.modules()):</span><br><span class="line">        <span class="built_in">print</span>(idx, <span class="string">&#x27;-&gt;&#x27;</span>, m)</span><br><span class="line"></span><br><span class="line"><span class="number">0</span> -&gt; Sequential(</span><br><span class="line">  (<span class="number">0</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">  (<span class="number">1</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">)</span><br><span class="line"><span class="number">1</span> -&gt; Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>named_children()</code>：返回之间子模块的迭代器，生成模块名和模块自身。</p>
+<ul>
+<li>
+<p>Yields：(string, Module)，包含一个模块名和子模块的元组</p>
+</li>
+<li>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> name, module <span class="keyword">in</span> model.named_children():</span><br><span class="line">    <span class="keyword">if</span> name <span class="keyword">in</span> [<span class="string">&#x27;conv4&#x27;</span>, <span class="string">&#x27;conv5&#x27;</span>]:</span><br><span class="line">        <span class="built_in">print</span>(module)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>named_parameters(prefix='', recurse=True)</code>：返回模块参数的迭代器，生成参数名和参数。</p>
+<ul>
+<li>参数：
+<ul>
+<li><code>prefix(str)</code>：添加到所有参数名之前的前缀</li>
+<li><code>recurse(bool)</code>：如果为True，生成该模块和所有此模块的参数。</li>
+</ul>
+</li>
+</ul>
+<p>可以通过以下方式获取<code>named_parameters</code>的参数名和参数值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">base_name, base_value = [], []</span><br><span class="line"><span class="keyword">for</span> name, param <span class="keyword">in</span> net.named_parameters():</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;bkbone&#x27;</span> <span class="keyword">in</span> name:</span><br><span class="line">        	base_name.append(name)</span><br><span class="line">            base_value.append(param)</span><br></pre></td></tr></table></figure>
+<p>得到的部分参数名示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">bkbone.conv1.weight</span><br><span class="line">bkbone.bn1.weight</span><br><span class="line">bkbone.bn1.bias</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.conv1.weight</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.bn1.weight</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.bn1.bias</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.conv2.weight</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.bn2.weight</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.bn2.bias</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.conv3.weight</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.bn3.weight</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.bn3.bias</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.downsample<span class="number">.0</span>.weight</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.downsample<span class="number">.1</span>.weight</span><br><span class="line">bkbone.layer1<span class="number">.0</span>.downsample<span class="number">.1</span>.bias</span><br></pre></td></tr></table></figure>
+<p><code>parameters(recurse=True)</code>：返回模块参数的迭代器，通常传给一个优化器。</p>
+<ul>
+<li>
+<p>参数：<code>recurse(bool)</code>，如果为True，迭代所有的模块和子模块。否则，只迭代该模块的直接成员参数。</p>
+</li>
+<li>
+<p>Yields：Parameter，模块参数</p>
+</li>
+<li>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> param <span class="keyword">in</span> model.parameters():</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>    <span class="built_in">print</span>(<span class="built_in">type</span>(param), param.size())</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.Tensor&#x27;</span>&gt; (<span class="number">20L</span>,)</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.Tensor&#x27;</span>&gt; (<span class="number">20L</span>, <span class="number">1L</span>, <span class="number">5L</span>, <span class="number">5L</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>state_dict(**args*, *destination=None*, *prefix=''*, *keep_vars=False*)</code>：返回包含模块整个状态的字典。参数和永久性buffers(例如running averages)被包含，Keys是相应的参数和buffer名。如果不包含参数和buffers设置为None。</p>
+<ul>
+<li>
+<p>Warning：目前<code>state_dict()</code>也按顺序接受位置参数<code>destination</code>，<code>prefix</code>和<code>keep_vars</code>，它们是deprecated；此外，避免参数<code>destination</code>的使用，它不是为用户设计的。</p>
+</li>
+<li>
+<p>参数：</p>
+<ul>
+<li><code>destination(dict, optional)</code>：略。</li>
+<li><code>prefix(str, optional)</code>：略</li>
+<li><code>key_vars(bool, optional)</code>：略</li>
+</ul>
+</li>
+<li>
+<p>Returns：一个包含模块整个状态的字典</p>
+</li>
+<li>
+<p>Return type：dict</p>
+</li>
+<li>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>module.state_dict().keys()</span><br><span class="line">[<span class="string">&#x27;bias&#x27;</span>, <span class="string">&#x27;weight&#x27;</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>to(*args, **kwargs)</code>：移动参数和buffers或者cast它们到指定类型。能够以以下的形式调用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">to(device=<span class="literal">None</span>, dtype=<span class="literal">None</span>, non_blocking=<span class="literal">False</span>)</span><br><span class="line">to(dtype, non_blocking=<span class="literal">False</span>)</span><br><span class="line">to(tensor, non_blocking=<span class="literal">False</span>)</span><br><span class="line">to(memory_format=torch.channels_last)</span><br></pre></td></tr></table></figure>
+<p>其特性和<code>torch.Tensor.to()</code>类似，但是只接受浮点或符合类型的<code>dtype</code>。</p>
+<ul>
+<li>
+<p>PS：该方法 modify the modules in-place</p>
+</li>
+<li>
+<p>参数：</p>
+<ul>
+<li><code>device（torch.device)</code>：在模块中参数和buffers所需的device</li>
+<li><code>dtype(torch.dtype)</code>：在模块中参数和buffers所需的浮点或复合 dtype</li>
+<li><code>tensor(torch.Tensor)</code>：对在模块中的所有参数和buffers来说该tensor的dtype和device是它们所需的。</li>
+<li><code>memory_format(torch.memory_format)</code>：略</li>
+</ul>
+</li>
+<li>
+<p>Returns：self</p>
+</li>
+<li>
+<p>Return type：Module</p>
+</li>
+<li>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear = nn.Linear(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.1913</span>, -<span class="number">0.3420</span>],</span><br><span class="line">        [-<span class="number">0.5113</span>, -<span class="number">0.2325</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.to(torch.double)</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.1913</span>, -<span class="number">0.3420</span>],</span><br><span class="line">        [-<span class="number">0.5113</span>, -<span class="number">0.2325</span>]], dtype=torch.float64)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gpu1 = torch.device(<span class="string">&quot;cuda:1&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.to(gpu1, dtype=torch.half, non_blocking=<span class="literal">True</span>)</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.1914</span>, -<span class="number">0.3420</span>],</span><br><span class="line">        [-<span class="number">0.5112</span>, -<span class="number">0.2324</span>]], dtype=torch.float16, device=<span class="string">&#x27;cuda:1&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cpu = torch.device(<span class="string">&quot;cpu&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.to(cpu)</span><br><span class="line">Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.1914</span>, -<span class="number">0.3420</span>],</span><br><span class="line">        [-<span class="number">0.5112</span>, -<span class="number">0.2324</span>]], dtype=torch.float16)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear = nn.Linear(<span class="number">2</span>, <span class="number">2</span>, bias=<span class="literal">None</span>).to(torch.cdouble)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">tensor([[ <span class="number">0.3741</span>+<span class="number">0.j</span>,  <span class="number">0.2382</span>+<span class="number">0.j</span>],</span><br><span class="line">        [ <span class="number">0.5593</span>+<span class="number">0.j</span>, -<span class="number">0.4443</span>+<span class="number">0.j</span>]], dtype=torch.complex128)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>linear(torch.ones(<span class="number">3</span>, <span class="number">2</span>, dtype=torch.cdouble))</span><br><span class="line">tensor([[<span class="number">0.6122</span>+<span class="number">0.j</span>, <span class="number">0.1150</span>+<span class="number">0.j</span>],</span><br><span class="line">        [<span class="number">0.6122</span>+<span class="number">0.j</span>, <span class="number">0.1150</span>+<span class="number">0.j</span>],</span><br><span class="line">        [<span class="number">0.6122</span>+<span class="number">0.j</span>, <span class="number">0.1150</span>+<span class="number">0.j</span>]], dtype=torch.complex128)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>train(mode=True)</code>：设置模块为training mode。</p>
+<ul>
+<li>参数：<code>mode(bool)</code>，是否设置training mode还是evaluation mode，默认为True</li>
+<li>Returns：self</li>
+<li>Return type：Module</li>
+</ul>
+<p><code>type(dst_type)</code>：将所有参数和buffers转换为<code>dst_type</code>。该方法modify the module in-place。</p>
+<ul>
+<li>参数：<code>dst_type(type or string)</code>，目标类型</li>
+<li>Returns：self</li>
+<li>Return type：Module</li>
+</ul>
+<p><code>zero_grad(set_to_none=False)</code>：设置所有模型参数的梯度为0。可以看 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/optim.html#torch.optim.Optimizer">torch.optim.Optimizer</a> 下相似的函数获得更多信息。</p>
+<ul>
+<li>参数：<code>set_to_none(bool)</code>：设置为None而不是0，可以看 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.optim.Optimizer.zero_grad.html#torch.optim.Optimizer.zero_grad">torch.optim.Optimizer.zero_grad</a> 了解更多细节</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html">MODULE</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#containers">class torch.nn.Module</a></li>
+</ol>
+</blockquote>
+<h4 id="nnmoduleforward"><a class="markdownIt-Anchor" href="#nnmoduleforward"></a> nn.Module.forward</h4>
+<p>为什么在下述代码中通过<code>model(input)</code>获取<code>output</code>，而不是<code>model.forward(input)</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyModel</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MyModel, self).__init__()</span><br><span class="line">        conv = nn.Conv2d(<span class="number">1</span>, <span class="number">6</span>, <span class="number">3</span>)</span><br><span class="line">        self.weight = conv.weight</span><br><span class="line">        self.bias = conv.bias</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.conv2d(x, self.weight, self.bias)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    model = MyModel()</span><br><span class="line">    <span class="built_in">print</span>(model)</span><br><span class="line">    <span class="built_in">input</span>=torch.randn(<span class="number">1</span>, <span class="number">1</span>, <span class="number">32</span>, <span class="number">32</span>)</span><br><span class="line">    output = model(<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>
+<p>当直接调用model时，会调用内置的<code>__call__</code>函数。在代码 <a target="_blank" rel="noopener" href="https://github.com/pytorch/pytorch/blob/master/torch/nn/modules/module.py#L471">the code</a> 中可以看到，该函数会管理所有的registered hooks并且在之后调用<code>forward</code>。这也是应该直接调用model的原因，因为可能hooks可能不会work。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://discuss.pytorch.org/t/about-the-nn-module-forward/20858">About the ‘nn.Module.forward’</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html#define-the-network">NEURAL NETWORKS</a></li>
+</ol>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/" title="PyTorch nn.Module">https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
+              <a href="/tags/%E6%96%87%E6%A1%A3/" rel="tag"># 文档</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/" rel="prev" title="python中知识点01">
+                  <i class="fa fa-chevron-left"></i> python中知识点01
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/20/PyTorch-saving-and-loading-models/" rel="next" title="PyTorch saving and loading models">
+                  PyTorch saving and loading models <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">173k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:37</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

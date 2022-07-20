@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-07-04T17:45:39.106Z</updated>
+  <updated>2022-07-20T14:26:00.841Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,158 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>PyTorch数据采样</title>
+    <link href="https://tom89757.github.io/2022/07/20/PyTorch%E6%95%B0%E6%8D%AE%E9%87%87%E6%A0%B7/"/>
+    <id>https://tom89757.github.io/2022/07/20/PyTorch%E6%95%B0%E6%8D%AE%E9%87%87%E6%A0%B7/</id>
+    <published>2022-07-20T14:23:44.000Z</published>
+    <updated>2022-07-20T14:26:00.841Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下PyTorch中的数据采样操作。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyTorch Module subclasses</title>
+    <link href="https://tom89757.github.io/2022/07/20/PyTorch-Module-subclasses/"/>
+    <id>https://tom89757.github.io/2022/07/20/PyTorch-Module-subclasses/</id>
+    <published>2022-07-20T14:17:55.000Z</published>
+    <updated>2022-07-20T14:22:14.524Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下PyTorch &lt;code&gt;nn.Module&lt;/code&gt;基类的常用subclasses。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyTorch 损失</title>
+    <link href="https://tom89757.github.io/2022/07/20/PyTorch-%E6%8D%9F%E5%A4%B1/"/>
+    <id>https://tom89757.github.io/2022/07/20/PyTorch-%E6%8D%9F%E5%A4%B1/</id>
+    <published>2022-07-20T14:00:12.000Z</published>
+    <updated>2022-07-20T14:15:13.727Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下PyTorch中的常用损失。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyTorch 优化器</title>
+    <link href="https://tom89757.github.io/2022/07/20/PyTorch-%E4%BC%98%E5%8C%96%E5%99%A8/"/>
+    <id>https://tom89757.github.io/2022/07/20/PyTorch-%E4%BC%98%E5%8C%96%E5%99%A8/</id>
+    <published>2022-07-20T13:58:23.000Z</published>
+    <updated>2022-07-20T14:15:27.305Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下PyTorch中的常用优化器。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyTorch torch.utils.data</title>
+    <link href="https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/"/>
+    <id>https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/</id>
+    <published>2022-07-20T13:55:35.000Z</published>
+    <updated>2022-07-20T13:58:07.023Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下PyTorch中最核心的组成部分之一——&lt;code&gt;torch.utils.data&lt;/code&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyTorch saving and loading models</title>
+    <link href="https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/"/>
+    <id>https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/</id>
+    <published>2022-07-20T13:52:59.000Z</published>
+    <updated>2022-07-20T14:15:36.865Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录PyTorch中的核心操作之一——saving and loading models。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyTorch nn.Module</title>
+    <link href="https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/"/>
+    <id>https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/</id>
+    <published>2022-07-20T13:49:56.000Z</published>
+    <updated>2022-07-20T14:28:07.196Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下PyTorch中最核心的类之一——&lt;code&gt;torch.nn.Module&lt;/code&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python中知识点01</title>
     <link href="https://tom89757.github.io/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
     <id>https://tom89757.github.io/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
     <published>2022-07-04T17:25:06.000Z</published>
-    <updated>2022-07-04T17:45:39.106Z</updated>
+    <updated>2022-07-18T03:42:16.962Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下python中常用的知识点：&lt;/p&gt;</summary>
@@ -42,10 +189,10 @@
     <link href="https://tom89757.github.io/2022/07/04/Pytorch%E6%96%87%E6%A1%A301/"/>
     <id>https://tom89757.github.io/2022/07/04/Pytorch%E6%96%87%E6%A1%A301/</id>
     <published>2022-07-04T07:29:47.000Z</published>
-    <updated>2022-07-04T17:24:13.042Z</updated>
+    <updated>2022-07-20T14:28:28.191Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文记录Pytorch中一些关键类和函数的文档（主要由&lt;a href=&quot;https://pytorch.org/docs/stable/index.html&quot;&gt;官方文档&lt;/a&gt;翻译而来）和对它们的理解。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录Pytorch中一些常用类、函数和概念的文档（主要由&lt;a href=&quot;https://pytorch.org/docs/stable/index.html&quot;&gt;官方文档&lt;/a&gt;翻译而来）和对它们的理解。&lt;/p&gt;</summary>
     
     
     
@@ -82,7 +229,7 @@
     <link href="https://tom89757.github.io/2022/06/05/kindle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2022/06/05/kindle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2022-06-05T14:02:59.000Z</published>
-    <updated>2022-07-03T10:24:47.819Z</updated>
+    <updated>2022-07-07T16:09:13.673Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录以下在使用kindle平台过程中积累的经验和工具：&lt;/p&gt;</summary>
@@ -101,7 +248,7 @@
     <link href="https://tom89757.github.io/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/"/>
     <id>https://tom89757.github.io/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/</id>
     <published>2022-06-03T07:15:43.000Z</published>
-    <updated>2022-07-04T15:39:44.929Z</updated>
+    <updated>2022-07-20T10:25:28.832Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在实现 &lt;a href=&quot;https://link.springer.com/article/10.1007/s11042-016-3392-4&quot;&gt;DDRQM&lt;/a&gt; 过程中的一些 Pytorch 框架和 python 相关知识点。&lt;/p&gt;</summary>
@@ -202,7 +349,7 @@
     <link href="https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/</id>
     <published>2022-05-21T09:09:43.000Z</published>
-    <updated>2022-06-25T10:57:35.592Z</updated>
+    <updated>2022-07-20T10:25:28.833Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在 VSCode 编辑器中一些常用的配置方法。&lt;/p&gt;</summary>
@@ -274,135 +421,6 @@
     
     
     <category term="golang" scheme="https://tom89757.github.io/tags/golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL使用指南</title>
-    <link href="https://tom89757.github.io/2022/05/15/Mysql%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://tom89757.github.io/2022/05/15/Mysql%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
-    <published>2022-05-15T13:51:14.000Z</published>
-    <updated>2022-05-27T16:22:11.349Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下使用 MySQL 时的常见配置和操作。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="MySQL" scheme="https://tom89757.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在Windows10右键菜单添加功能</title>
-    <link href="https://tom89757.github.io/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/"/>
-    <id>https://tom89757.github.io/2022/05/15/%E5%9C%A8Windows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</id>
-    <published>2022-05-15T08:44:03.000Z</published>
-    <updated>2022-06-04T14:01:23.221Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下在Windows10右键菜单中添加各项功能的流程：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="Windows" scheme="https://tom89757.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通过python脚本实现向kindle邮箱发送书籍</title>
-    <link href="https://tom89757.github.io/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/"/>
-    <id>https://tom89757.github.io/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/</id>
-    <published>2022-05-15T08:36:56.000Z</published>
-    <updated>2022-05-27T16:22:11.362Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>成组概念厘清</title>
-    <link href="https://tom89757.github.io/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/"/>
-    <id>https://tom89757.github.io/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</id>
-    <published>2022-05-15T04:12:50.000Z</published>
-    <updated>2022-05-27T16:22:11.361Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下成组的易混淆或者应该加以区分的概念。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="概念" scheme="https://tom89757.github.io/tags/%E6%A6%82%E5%BF%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu常见操作</title>
-    <link href="https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"/>
-    <id>https://tom89757.github.io/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</id>
-    <published>2022-05-14T16:22:55.000Z</published>
-    <updated>2022-07-04T17:26:58.649Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://tom89757.github.io/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nodejs使用指南</title>
-    <link href="https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
-    <published>2022-05-14T15:32:40.000Z</published>
-    <updated>2022-05-27T16:22:11.353Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下使用nodejs时的常见操作：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="nodejs" scheme="https://tom89757.github.io/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常见概念和术语记录</title>
-    <link href="https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/"/>
-    <id>https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/</id>
-    <published>2022-05-13T15:20:31.000Z</published>
-    <updated>2022-05-27T16:22:11.357Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录在编程学习中常见的概念和术语及其对应的操作。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="概念" scheme="https://tom89757.github.io/tags/%E6%A6%82%E5%BF%B5/"/>
-    
-    <category term="术语" scheme="https://tom89757.github.io/tags/%E6%9C%AF%E8%AF%AD/"/>
     
   </entry>
   

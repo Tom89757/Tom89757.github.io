@@ -455,6 +455,13 @@
 <li><a href="https://blog.csdn.net/qq_43406338/article/details/109397831">vs code设置每行代码的垂直标尺</a></li>
 </ol>
 </blockquote>
+<h3 id="vscode设置默认python-interpreter"><a class="markdownIt-Anchor" href="#vscode设置默认python-interpreter"></a> VSCode设置默认Python Interpreter</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>[Using Python environments in VS Code](<a href="https://code.visualstudio.com/docs/python/environments#:~:text=your%20User%20Settings.-,To%20do%20so%2C%20open%20the%20Command%20Palette%20(Ctrl%2BShift,Settings%2C%20with%20the%20appropriate%20interpreter.)">https://code.visualstudio.com/docs/python/environments#:~:text=your User Settings.-,To do so%2C open the Command Palette (Ctrl%2BShift,Settings%2C with the appropriate interpreter.)</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -579,6 +586,91 @@
 <p>参考资料：</p>
 <ol>
 <li><a href="https://blog.csdn.net/jiao_zhoucy/article/details/20693179">Linux下paste命令，按列合并文件</a></li>
+</ol>
+</blockquote>
+</br>
+<p>11.可以通过以下脚本批量移动文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;processing <span class="variable">$dir</span> data&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$dir</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$dir</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    image=<span class="variable">$dir</span>/image</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;image is <span class="variable">$image</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$image</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$image</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    mask=<span class="variable">$dir</span>/mask</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;mask is <span class="variable">$mask</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$mask</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$mask</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">mv</span> ./img/<span class="variable">$dir</span>/* <span class="variable">$image</span></span><br><span class="line">    <span class="built_in">mv</span> ./gt/<span class="variable">$dir</span>/* <span class="variable">$mask</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>先通过<code>[-d $dir]</code>确定是否存在<code>$dir</code>文件夹，如果没有则创建，然后将<code>img</code>和<code>gt</code>文件夹下的图片移动到对应的文件夹。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>《Linux命令行和shell脚本编程》第12章</li>
+</ol>
+</blockquote>
+</br>
+<p>12.在Linux系统中可以很方便地对两个文本文件求取交集、并集和差集</p>
+<ul>
+<li>交集：<code>sort a.txt b.txt | uniq -d</code></li>
+<li>并集：<code>sort a.txt b.txt | uniq</code></li>
+<li>差集：
+<ul>
+<li>a.txt - b.txt：<code>sort a.txt b.txt b.txt | uniq -u</code></li>
+<li>b.txt - a.txt：<code>sort b.txt a.txt a.txt | uniq -u</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/molong1208/p/5358509.html">Linux两个文件求交集、并集、差集</a></li>
+</ol>
+</blockquote>
+</br>
+<p>13.结合[11]和[12]可以方便地求取image和mask文件夹中图片的交集并输出到对应的txt文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;processing <span class="variable">$dir</span> data&quot;</span></span><br><span class="line">    image=<span class="variable">$dir</span>/image</span><br><span class="line">    mask=<span class="variable">$dir</span>/mask</span><br><span class="line">    <span class="built_in">ls</span> <span class="variable">$image</span> | sed <span class="string">&#x27;s/.jpg//&#x27;</span> | sed <span class="string">&#x27;s/.png//&#x27;</span> &gt;<span class="variable">$dir</span>/image.txt</span><br><span class="line">    <span class="built_in">ls</span> <span class="variable">$mask</span> | sed <span class="string">&#x27;s/.png//&#x27;</span> | sed <span class="string">&#x27;s/.bmp//&#x27;</span> &gt;<span class="variable">$dir</span>/mask.txt</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span> <span class="variable">$dir</span>/image.txt <span class="variable">$dir</span>/mask.txt | <span class="built_in">uniq</span> -d &gt;<span class="variable">$dir</span>/test.txt</span><br><span class="line">    <span class="built_in">cat</span> <span class="variable">$dir</span>/test.txt | <span class="built_in">wc</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+</br>
+<p>14.<code>sh</code> vs <code>bash</code>：注意，二者并不等价。bash是sh的超集。</p>
+<ul>
+<li>
+<p>通过<code>sh test7.sh</code>运行脚本，会出现如下报错：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172241725.png" alt="image-20220716172241725" /></p>
+</li>
+<li>
+<p>通过<code>bash test7.sh</code>运行脚本，可以正常运行：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172342306.png" alt="image-20220716172342306" /></p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.geeksforgeeks.org/difference-between-sh-and-bash/">Difference between sh and bash</a></li>
+<li><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected">Shell script fails: Syntax error: “(” unexpected</a></li>
+</ol>
+</blockquote>
+</br>
+<p>15.在bash脚本中将命令行的输出复制给一个变量：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">output=$(<span class="built_in">cat</span> batchDir.sh | <span class="built_in">wc</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$&#123;output&#125;</span>&quot;</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$output</span></span><br></pre></td></tr></table></figure>
+<p>其输出如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172942136.png" alt="image-20220716172942136" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/4651437/how-do-i-set-a-variable-to-the-output-of-a-command-in-bash">How do I set a variable to the output of a command in Bash?</a></li>
+</ol>
+</blockquote>
+</br>
+<p>16.在Anaconda中创建环境时<code>-n/--name</code>不能和<code>-p/--prefix</code>同时使用：</p>
+<ul>
+<li><code>-n, --name</code>：环境名，如<code>conda create --name py35 python=3.5</code>。</li>
+<li><code>-p, --prefix</code>：环境位置的完整路径。如<code>conda create --prefix /users/.../yourenvname python=2.7</code>。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html#conda-create">conda create</a></li>
+<li><a href="https://stackoverflow.com/questions/37926940/how-to-specify-new-environment-location-for-conda-create">how to specify new environment location for conda create</a></li>
+</ol>
+</blockquote>
+</br>
+<p>17.删除conda环境：<code>conda env remove -n ENV_NAME</code>。</p>
+</br>
+<p>18.在编写bash脚本时，指定<code>IFS</code>变量为多个分隔符：<code>IFS=', | \\'</code>。如下图所示：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">echo <span class="string">&quot;reading values from a file&quot;</span></span><br><span class="line">file=<span class="string">&quot;list&quot;</span></span><br><span class="line"><span class="comment"># change seperator</span></span><br><span class="line"><span class="comment"># save IFS before changing it</span></span><br><span class="line">IFS_OLD=$IFS</span><br><span class="line"><span class="comment"># set multiple seperators?</span></span><br><span class="line">IFS=<span class="string">&#x27;; | :&#x27;</span></span><br><span class="line"><span class="keyword">for</span> state <span class="keyword">in</span> $(cat $file)</span><br><span class="line">do</span><br><span class="line">    echo <span class="string">&quot;Visit $state&quot;</span></span><br><span class="line">done</span><br><span class="line">IFS=$&#123;IFS_OLD&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/25163486/split-string-using-2-different-delimiters-in-bash">Split string using 2 different delimiters in Bash</a></li>
 </ol>
 </blockquote>
 </br>
@@ -716,6 +808,12 @@
 </blockquote>
 </li>
 </ul>
+<p>5.有时需要在<code>.gitignore</code>文件中添加仓库中所有的名为<code>folder_name</code>文件夹或文件，此时可以通过在<code>.gitignore</code>中添加如下内容实现：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">*folder_name*</span><br></pre></td></tr></table></figure>
+<p>例如，要忽略所有名为<code>datafile</code>和<code>pth</code>的文件夹或文件，可以在<code>.gitignore</code>中添加：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">*datafile*</span><br><span class="line">*pth*</span><br></pre></td></tr></table></figure>
+<p>PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹名或文件名中包含<code>datafile</code>或<code>pth</code>的连续字符串都将被忽略。</p>
+</br>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -5110,7 +5208,125 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </ol>
 </blockquote>
 </br>
-<ol start="9">
+<p>9.在Pytorch中register意味着什么？</p>
+<p>在pytorch文档和方法名中register意味着“在一个官方的列表中记录一个名字或者信息的行为”。</p>
+<p>例如，<code>register_backward_hook(hook)</code>将函数<code>hook</code>添加到一个其他函数的列表中，<code>nn.Module</code>会在<code>forward</code>过程中执行这些函数。</p>
+<p>与之相似，<code>register_parameter(name, param)</code>添加一个<code>nn.Parameter</code>类型的名为<code>name</code>的参数<code>param</code>到<code>nn.Module</code>的可训练参数的列表之中。register可训练参数很关键，这样pytorch才会知道那些tensors传送给优化器，那些tensors作为<code>nn.Module</code>的state_dict存储。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/68463009/what-do-we-mean-by-register-in-pytorch">What do we mean by ‘register’ in PyTorch?</a></li>
+</ol>
+</blockquote>
+<p>10.Pytorch、CUDA版本与显卡驱动版本对应关系：</p>
+<ul>
+<li>
+<p>CUDA驱动和CUDAToolkit对应版本</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220717110226488.png" alt="image-20220717110226488" /></p>
+</li>
+<li>
+<p>Pytorch和cudatoolkit版本</p>
+<table>
+<thead>
+<tr>
+<th>cuda和pytorch版本</th>
+<th>安装命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cuda==10.1 pytorch=1.7.1</td>
+<td><code>conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch</code></td>
+</tr>
+<tr>
+<td>cuda==10.1 pytorch=1.7.0</td>
+<td><code>conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.1 -c pytorch</code></td>
+</tr>
+<tr>
+<td>cuda==10.1 pytorch=1.6.0</td>
+<td><code>conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch</code></td>
+</tr>
+<tr>
+<td>cuda==10.1 pytorch=1.5.1</td>
+<td><code>conda install pytorch==1.5.1 torchvision==0.6.1 cudatoolkit=10.1 -c pytorch</code></td>
+</tr>
+<tr>
+<td>cuda==10.1 pytorch=1.5.0</td>
+<td><code>conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.1 -c pytorch</code></td>
+</tr>
+<tr>
+<td>cuda==10.1 pytorch=1.4.0</td>
+<td><code>conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/Wanggcong/p/12625540.html">pytorch版本，cuda版本，系统cuda版本查询和对应关系</a></li>
+<li><a href="https://pytorch.org/get-started/previous-versions/">INSTALLING PREVIOUS VERSIONS OF PYTORCH</a></li>
+<li><a href="https://docs.nvidia.com/deploy/cuda-compatibility/index.html">CUDA Compatibility</a></li>
+</ol>
+</blockquote>
+</br>
+<p>11.以如下目录组织文件：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">/model</span><br><span class="line">|_ vgg.py</span><br><span class="line">|_ vgg_models.py</span><br><span class="line">test.py</span><br></pre></td></tr></table></figure>
+<p>如果<code>test.py</code>文件中包含对<code>vgg_models.py</code>的依赖：<code>from model.vgg_models import Back_VGG</code></p>
+<p>同时，<code>vgg_models.py</code>又包含对<code>vgg.py</code>的依赖：<code>from vgg import B2_VGG</code>。</p>
+<p>运行<code>python test.py</code>可能会出现如下报错：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719095058661.png" alt="image-20220719095058661" /></p>
+<p>这是由于运行<code>test.py</code>时将当前目录<code>./</code>作为导入包时的本地查找路径，<code>vgg_models.py</code>在导入包时只会在<code>./</code>中查找，而不会在<code>./model/</code>中查找，导致找不到包。此时可以通过在<code>test.py</code>开头添加如下代码把<code>./model/</code>添加为查找路径来解决该问题：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&#x27;./model&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/23417941/import-error-no-module-named-does-exist">import error: ‘No module named’ <em>does</em> exist</a></li>
+</ol>
+</blockquote>
+</br>
+<p>12.使用<code>cv2.imwrite</code>写入文件时，可能会出现如下问题：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719095819493.png" alt="image-20220719095819493" /></p>
+<p>这是由于存入路径<code>save_path+name</code>无文件扩展名，可以通过在<code>name</code>后添加<code>.png</code>扩展名解决。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/9868963/cvimwrite-could-not-find-a-writer-for-the-specified-extension">cv::imwrite could not find a writer for the specified extension</a></li>
+</ol>
+</blockquote>
+</br>
+<p>13.当使用如下代码进行权重初始化时：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_initialize_weights</span>(<span class="params">self, pre_train</span>):</span><br><span class="line">        keys = pre_train.keys()</span><br><span class="line">        self.conv1.conv1_1.weight.data.copy_(pre_train[keys[<span class="number">0</span>]])</span><br></pre></td></tr></table></figure>
+<p>可能会出现以下报错：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719100227462.png" alt="image-20220719100227462" /></p>
+<p>这是由于在Python2中<code>Class collections.OrderedDict</code>的<code>keys()</code>属性返回的是一个<code>list</code>，而在Python3中其返回一个<code>odict_keys</code>，此时可以通过将<code>odict_keys</code>转换为<code>list</code>解决该问题：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_initialize_weights</span>(<span class="params">self, pre_train</span>):</span><br><span class="line">        keys = <span class="built_in">list</span>(pre_train.keys())</span><br><span class="line">        self.conv1.conv1_1.weight.data.copy_(pre_train[keys[<span class="number">0</span>]])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>[]‘odict_keys’ object does not support indexing #1](<a href="https://github.com/taehoonlee/tensornets/issues/1">https://github.com/taehoonlee/tensornets/issues/1</a>)</li>
+</ol>
+</blockquote>
+</br>
+<p>14.为什么在Pytorch中通常使用<code>PIL</code> (即PILLOW) 包，而不是<code>cv2</code> (即opencv)。有以下几个原因：</p>
+<ul>
+<li>OpenCV2以BGR的形式加载图片，可能需要包装类在内部将其转换为RGB</li>
+<li>会导致在<code>torchvision</code>中的用于transforms的<code>functional</code>的代码重复，因为许多<code>functional</code>使用PIL的操作实现</li>
+<li>OpenCV加载图片为<code>np.array</code>，在arrays上做transformations并没有那么容易</li>
+<li>PIL和OpenCV对图像不同的表示可能会导致用户很难捕捉到bugs</li>
+<li>Pytorch的modelzoo也依赖于RGB格式，它们想要很容易地支持RGB格式</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/61346009/why-is-pil-used-so-often-with-pytorch">Why is PIL used so often with Pytorch?</a></li>
+<li><a href="https://github.com/pytorch/vision/pull/34">OpenCV transforms with tests #34</a></li>
+<li><a href="https://discuss.pytorch.org/t/i-wonder-why-pytorch-uses-pil-not-the-cv2/19482">I wonder why Pytorch uses PIL not the cv2</a></li>
+</ol>
+</blockquote>
+</br>
+<ol start="15">
 <li></li>
 </ol>
 ]]></content>
@@ -5180,11 +5396,15 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
     <url>/2022/06/05/kindle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>本文记录以下在使用kindle平台过程中积累的经验和工具：</p>
 <span id="more"></span>
+<h3 id="使用calibre推送电子书"><a class="markdownIt-Anchor" href="#使用calibre推送电子书"></a> 使用Calibre推送电子书</h3>
+<p>建议直接留空邮箱服务器：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707235743798.png" alt="image-20220707235743798" /></p>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/80604597">如何用Calibre将电子书转换成MOBI格式？</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/65832237">进阶能力 | 将合集拆分为多本电子书</a></li>
 <li><a href="https://bookfere.com/post/793.html">使用 Kindle 推送时为何会收到“验证请求”邮件？</a></li>
+<li><a href="https://bookfere.com/post/11.html">Calibre 使用教程之邮件一键推送电子书</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -5262,55 +5482,417 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
   <entry>
     <title>Pytorch文档01</title>
     <url>/2022/07/04/Pytorch%E6%96%87%E6%A1%A301/</url>
-    <content><![CDATA[<p>本文记录Pytorch中一些关键类和函数的文档（主要由<a href="https://pytorch.org/docs/stable/index.html">官方文档</a>翻译而来）和对它们的理解。</p>
+    <content><![CDATA[<p>本文记录Pytorch中一些常用类、函数和概念的文档（主要由<a href="https://pytorch.org/docs/stable/index.html">官方文档</a>翻译而来）和对它们的理解。</p>
 <span id="more"></span>
-<h3 id="torchnncrossentropyloss"><a class="markdownIt-Anchor" href="#torchnncrossentropyloss"></a> torch.nn.CrossEntropyLoss</h3>
-<p>用来计算input和target之间交叉熵损失的criterion。其完整调用形式为：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.nn.CrossEntropyLoss(weight=<span class="literal">None</span>, size_average=<span class="literal">None</span>, ignore_index=- <span class="number">100</span>, reduce=<span class="literal">None</span>, reduction=<span class="string">&#x27;mean&#x27;</span>, label_smoothing=<span class="number">0.0</span>)</span><br></pre></td></tr></table></figure>
-<p>当计算C类元素的分类问题时很有用。如果提供<code>weights</code>参数，该参数应该是一个1D Tensor，用来为每类元素分配权重，当训练集unbalance时尤其有用。</p>
-<p>input应当包含原始的，未归一化的每一类的分数，input应当是一个Tensor，尺寸为unbatched input的尺寸，例如<code>(minibatch, C)</code>或者<code>(minibatch, C, d1, d2, ...., dk)</code>，k表示k维数据。后者对高维input很有用，例如计算2D图像的每个pixel的交叉熵损失。</p>
-<p>该criterion期望的target应该包含以下两种中的一种：</p>
-<ul>
-<li>
-<p>范围为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[0, C)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">)</span></span></span></span>的类索引，C表示类数目；如果指定<code>ignore_index</code>参数，该损失也接受不在前述范围内的类索引。<code>reduction='none'</code>时，unreduced loss可以被描述为：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704094749082.png" alt="image-20220704094749082" /></p>
-<p>x，y表示input和target。如果reduction is not ‘none’（默认为’mean’），则有</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095008493.png" alt="image-20220704095008493" /></p>
-</li>
-<li>
-<p>每一类的概率；当labels超出每个minibatch项要求的单类之外时有用，例如blended labels，label smoothing。unreduced loss（<code>reduction='none'</code>）可以描述为：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095317040.png" alt="image-20220704095317040" /></p>
-<p>如果reduction is not ‘none’（默认为’mean’），则有：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095420471.png" alt="image-20220704095420471" /></p>
-</li>
-</ul>
-<p>PS：该criterion的性能在target包含类索引时通常更好，因为此时可以进行优化计算。只在对minibatch想来说单类label太受限的情况下，才考虑将target作为类的概率。</p>
+<h3 id="torchnnparameterparameter"><a class="markdownIt-Anchor" href="#torchnnparameterparameter"></a> torch.nn.parameter.Parameter</h3>
+<p>其完整声明形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CLASS torch.nn.parameter.Parameter(data=<span class="literal">None</span>, requires_grad=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p><code>torch.nn.parameter.Parameter</code>有如下的继承关系：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Parameter</span>(torch.Tensor):</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Tensor</span>(torch._C._TensorBase):</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">_TensorBase</span>(metaclass=_TensorMeta)</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">_TensorMeta</span>(<span class="title class_ inherited__">type</span>):</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">type</span>:</span><br></pre></td></tr></table></figure>
+<p>一种Tensor，可以被认为是一个模型参数。</p>
+<p><code>Parameter</code>是<code>Tensor</code>的子类，当和<code>Module</code>一起使用时有一种专门的特性——当被赋值作为模型属性时它们会自动地添加到模型的参数列表中，并且将会出现在<code>parameter()</code>迭代器中。给模型属性赋值一个张量时则没有这种作用。这是因为用户可能想存储一些临时状态，像在模型中RNN的最后的隐藏状态。如果没有类似<code>Parametr</code>这样的类，这些临时的值也会被注册。</p>
 <p>参数：</p>
 <ul>
-<li><code>weights</code>：Tensor类型，可选择。作用于每个类的manual rescaling weight。如果给出，应该是一个具有尺寸C的Tensor</li>
-<li><code>size_average</code>：bool类型，可选择。不建议使用（deprecated），见reduction。</li>
-<li><code>ignore_index</code>：int类型，可选。指定一个被忽略的target value，该值不对input gradident起作用。当<code>size_average=True</code>，损失在non-ignored targets上取平均。注意只有当target包含类索引时<code>ignore_index</code>才有用。</li>
-<li><code>reduce</code>：bool类型，可选。deprecated，见reduction。</li>
-<li><code>reduction</code>：string类型，可选。指定应用到output上的reduction：<code>none</code>|<code>mean</code>|<code>sum</code>。</li>
-<li><code>label_smoothing</code>：floate类型，可选。范围为[0.0, 1.0]的float值，指定计算损失时的平滑程度，0.0表示不进行平滑，默认为0.0。通过平滑targets变成了一个原始真值和高斯分布的混合物，见 <a href="https://arxiv.org/abs/1512.00567">Rethinking the Inception Architecture for Computer Vision</a></li>
+<li><code>data(Tensor)</code>：参数张量。</li>
+<li><code>requires_grad(bool, optional)</code>：如果参数要求梯度，看 <a href="https://pytorch.org/docs/stable/notes/autograd.html#locally-disable-grad-doc">Locally disabling gradient computation</a> 了解更多的细节，默认为True。</li>
 </ul>
-<p>Shape：C表示类数目，N表示batchsize</p>
-<ul>
-<li>Input：©，(N,C)，或者(N, C, d1, d2, …, dk)</li>
-<li>Target：如果包含类索引，形状为()，(N)或者(N, d1, d2, …, dk)，每个值的范围为[0, C)。如果包含类概率，形状和Input相同，每个值的范围为[0, 1]</li>
-<li>Output：如果reduction=‘none’，形状和target相同，否则为标量。</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Example of target with class indices</span></span><br><span class="line">loss = nn.CrossEntropyLoss()</span><br><span class="line"><span class="built_in">input</span> = torch.randn(<span class="number">3</span>, <span class="number">5</span>, requires_grad=<span class="literal">True</span>)</span><br><span class="line">target = torch.empty(<span class="number">3</span>, dtype=torch.long).random_(<span class="number">5</span>)</span><br><span class="line">output = loss(<span class="built_in">input</span>, target)</span><br><span class="line">output.backward()</span><br><span class="line"><span class="comment"># Example of target with class probabilities</span></span><br><span class="line"><span class="built_in">input</span> = torch.randn(<span class="number">3</span>, <span class="number">5</span>, requires_grad=<span class="literal">True</span>)</span><br><span class="line">target = torch.randn(<span class="number">3</span>, <span class="number">5</span>).softmax(dim=<span class="number">1</span>)</span><br><span class="line">output = loss(<span class="built_in">input</span>, target)</span><br><span class="line">output.backward()</span><br></pre></td></tr></table></figure>
-<p><code>torch.nn.CrossEntropyLoss()</code>有如下的继承关系：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CrossEntropyLoss</span>(<span class="title class_ inherited__">_WeightedLoss</span>):</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">_WeightedLoss</span>(<span class="title class_ inherited__">_Loss</span>):</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">_Loss</span>(<span class="title class_ inherited__">Module</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
 <ol>
-<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">CROSSENTROPYLOSS</a></li>
-<li><a href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions">Loss Functions</a></li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html">PARAMETER</a></li>
 </ol>
 </blockquote>
+<h3 id="torchnnfunctional"><a class="markdownIt-Anchor" href="#torchnnfunctional"></a> torch.nn.functional</h3>
+<p>静态函数库。其包含的函数可分为以下几种类型：</p>
+<ul>
+<li>Convolution function</li>
+<li>Pooling function</li>
+<li>Non-linear activation functions</li>
+<li>Linear functions</li>
+<li>Sparse functions</li>
+<li>Distance functions</li>
+<li>Loss functions</li>
+<li>Vision functions</li>
+<li>DataParallel functions (multi-GPU, distributed)：<code>torch.nn.parallel.data_parallel</code></li>
+</ul>
+<h3 id="torchnninit"><a class="markdownIt-Anchor" href="#torchnninit"></a> torch.nn.init</h3>
+<p>静态函数库，用于权重等的初始化</p>
+<h4 id="torchnninitkaiming_normal_"><a class="markdownIt-Anchor" href="#torchnninitkaiming_normal_"></a> torch.nn.init.kaiming_normal_</h4>
+<p>其完整声明形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.nn.init.kaiming_normal_(tensor, a=<span class="number">0</span>, mode=<span class="string">&#x27;fan_in&#x27;</span>, nonlinearity=<span class="string">&#x27;leaky_relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>根据 <em>Delving deep into rectifiers: Surpassing human-level performance on ImageNet classification - He, K. et al. (2015)</em> 中描述的方法使用正态分布给输入Tensor填充值。结果Tensor的值取样于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi>s</mi><mi>t</mi><msup><mi>d</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N(0, std^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。其中：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707105811403.png" alt="image-20220707105811403" /></p>
+<p>也被称之为何氏初始化（He initialization）</p>
+<p>参数：</p>
+<ul>
+<li><code>tensor</code>：一个n维<code>torch.Tensor</code></li>
+<li><code>a</code>：the negative slope of the rectifier used after this layer (only used with <code>'leaky_relu'</code>)</li>
+<li><code>mode</code>：<code>'fan_in'</code>(默认)或者<code>'fan_out'</code>。选择<code>'fan_in'</code>在前向传播过程中保存权重方差大小；选择<code>'fan_out'</code>在反向传播过程中保存方差大小。</li>
+<li><code>nonlinearity</code>：非线性函数（如<code>nn.functional</code>名），建议只使用<code>'relu'</code>或<code>'leaky_relu'</code>（默认）。</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.kaiming_normal_(w, mode=<span class="string">&#x27;fan_out&#x27;</span>, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="torchnninitzeros_"><a class="markdownIt-Anchor" href="#torchnninitzeros_"></a> torch.nn.init.zeros_</h4>
+<p>其完整声明形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.nn.init.zeros_(tensor)</span><br></pre></td></tr></table></figure>
+<p>使用标量0来填充输入Tensor.</p>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>nn.init.zeros_(w)</span><br></pre></td></tr></table></figure>
+<p><code>torch.nn.init.ones_</code>与之类似，使用标量1填充输入Tensor。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/docs/stable/nn.init.html">TORCH.NN.INIT</a></li>
+</ol>
+</blockquote>
+<h3 id="torchnnfunctional-vs-torchnn"><a class="markdownIt-Anchor" href="#torchnnfunctional-vs-torchnn"></a> torch.nn.functional vs torch.nn</h3>
+<p>前者使用静态的函数，后者则定义了一个<code>nn.Module</code>类。对<code>nn.Module</code>类来说，如<code>nn.Conv2d</code>，其拥有一些内置的属性如<code>self.weight</code>，并不需要传递<code>weights</code>和<code>bias</code>等参数（模块通常会在其<code>forward</code>方法中调用对应的函数）；而对<code>functional.Conv2d</code>来说，其只是定义了操作，需要给其传递所有的参数。</p>
+<p>所以下述两种关于Conv2D的实现是等价的：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyModel</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MyModel, self).__init__()</span><br><span class="line">        self.conv = nn.Conv2d(<span class="number">1</span>, <span class="number">6</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = self.conv(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyModel</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MyModel, self).__init__()</span><br><span class="line">        conv = nn.Conv2d(<span class="number">1</span>, <span class="number">6</span>, <span class="number">3</span>)</span><br><span class="line">        self.weight = conv.weight</span><br><span class="line">        self.bias = conv.bias</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.conv2d(x, self.weight, self.bias)</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<p>但下面的操作将<code>weights</code>、<code>bias</code>值和<code>conv2d</code>操作进行了解耦。</p>
+<p>经验上看，由于<code>relu</code>等操作不需要像<code>Conv2d</code>操作一样需要对参数进行更新，通常在<code>forward</code>中直接通过<code>F.relu</code>进行调用，而不需要在<code>__init__</code>中初始化<code>nn.ReLU</code>模块。</p>
+<p>这里补充下面第5和第6个参考资料中提到的有关<code>backward()</code>的知识：</p>
+<p>Pytorch使用计算图来计算backward gradients，计算图会追踪在forward pass中做了哪些操作。任何在一个<code>Variable</code>上做的惭怍隐式地被registered。然后就只需要从variable被调用的地方反向穿过计算图根据导数的链式法则来计算梯度。下面是Pytorch中计算图的一个可视化图片：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707160538483.png" alt="image-20220707160538483" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://discuss.pytorch.org/t/what-is-the-difference-between-torch-nn-and-torch-nn-functional/33597">What is the difference between torch.nn and torch.nn.functional?</a></li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">Conv2D</a></li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.functional.conv2d.html#torch.nn.functional.conv2d">functional.conv2d</a></li>
+<li><strong><a href="https://discuss.pytorch.org/t/beginner-should-relu-sigmoid-be-called-in-the-init-method/18689">Beginner: Should ReLU/sigmoid be called in the <strong>init</strong> method?</a></strong></li>
+<li><a href="https://stackoverflow.com/questions/49594858/how-does-pytorch-module-do-the-back-prop">How does PyTorch module do the back prop</a></li>
+<li><a href="https://pytorch.org/blog/computational-graphs-constructed-in-pytorch/">How Computational Graphs are Constructed in PyTorch</a></li>
+</ol>
+</blockquote>
+<h3 id="pytorch-internals"><a class="markdownIt-Anchor" href="#pytorch-internals"></a> Pytorch Internals</h3>
+<p>PS：Linux系统中site-packages路径为<code>../anaconda3/envs/mobilesal/lib/python3.6/site-packages/</code></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/blog/a-tour-of-pytorch-internals-1/">A Tour of PyTorch Internals (Part I)</a></li>
+<li><a href="https://pytorch.org/blog/a-tour-of-pytorch-internals-2/">A Tour of PyTorch Internals (Part II) - The Build System</a></li>
+<li><a href="https://blog.christianperone.com/2018/03/pytorch-internal-architecture-tour/">PyTorch – Internal Architecture Tour</a></li>
+<li><a href="https://stackoverflow.com/questions/31003994/where-is-site-packages-located-in-a-conda-environment">Where is site-packages located in a Conda environment?</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python中知识点01</title>
+    <url>/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文记录一下python中常用的知识点：</p>
+<span id="more"></span>
+<p>1.在Python shell中清屏。在Windows和Linux中的实现原理均为调用os.system提供的清屏函数。</p>
+<ul>
+<li>
+<p>Windows：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">clear = <span class="keyword">lambda</span>: os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后调用<code>clear()</code>即可。也可以直接运行<code>os.system('cls')</code>。</p>
+</li>
+<li>
+<p>Linux：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">clear = <span class="keyword">lambda</span>: os.system(<span class="string">&#x27;clear&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后调用<code>clear()</code>即可。也可以直接运行<code>os.system('clear')</code>。</p>
+</li>
+</ul>
+<p>为了避免每次启动Python shell后都需要重新定义<code>clear</code>函数。可以设置如下脚本：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">if</span> os.name == <span class="string">&#x27;nt&#x27;</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">cls</span>():</span><br><span class="line">		_ = os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">clear</span>():</span><br><span class="line">		_ = os.system(<span class="string">&#x27;clear&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>并使得上述脚本在启动Python shell时自动运行。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.tutorialspoint.com/how-to-clear-python-shell#">How to clear Python shell?</a></li>
+</ol>
+</blockquote>
+</br>
+<p>2.设置在Python shell启动时自动执行某个脚本。</p>
+<p>下面记录在Ubuntu系统中的设置：</p>
+<ul>
+<li>
+<p>创建脚本并写入想要执行的命令，例如创建<code>startup.py</code>并写入：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">if</span> os.name == <span class="string">&#x27;nt&#x27;</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">cls</span>():</span><br><span class="line">		_ = os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">clear</span>():</span><br><span class="line">		_ = os.system(<span class="string">&#x27;clear&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>该脚本在打开Python shell中创建了函数<code>clear()</code>，可以通过执行<code>clear()</code>实现清屏。</p>
+</li>
+<li>
+<p>在当前Ubuntu系统中使得环境变量<code>PYTHONSTARTUP</code>指向上述脚本对应的路径，假设上述脚本路径为<code>/home/FT/scripts/startup.py</code>。则可以通过在bash中执行</p>
+<p><code>export PYTHONSTARTUP=/home/FT/scripts/startup.py</code></p>
+<p>创建临时环境变量，也可以在<code>~/.bashrc</code>中添加该命令使其永久化。</p>
+</li>
+<li>
+<p>此时在bash中打开python shell（包括Anaconda中的python shell），可直接通过<code>clear()</code>实现清屏。</p>
+</li>
+</ul>
+<p>下面记录在Windows系统中的设置：</p>
+<ul>
+<li>
+<p>创建脚本并写入想要执行的命令，例如上述的<code>startup.py</code>。</p>
+</li>
+<li>
+<p>添加用户环境变量<code>PYTHONSTARTUP</code>：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707103000076.png" alt="image-20220707103000076" /></p>
+</li>
+<li>
+<p>打开cmd，运行<code>refreshenv</code>（需安装Chocolatey）更新环境变量。</p>
+</li>
+<li>
+<p>运行<code>python</code>，会发现<code>startup.py</code>中的命令已生效。</p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP">PYTHONSTARTUP</a></li>
+<li><a href="https://www.cnblogs.com/zkwarrior/p/9374302.html">win10 python3.5 自动补全设置</a></li>
+</ol>
+</blockquote>
+</br>
+<p>3.Python中的metaclass。</p>
+<p><strong>类也是对象</strong><br />
+Python关于类是什么这个问题有古怪的答案，它借鉴了来自Smalltalk语言的设计。</p>
+<p>在大多数语言中，类只是描述如何生成一个对象的代码段。在Python中差不多也是这样的：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">class</span> <span class="title class_">ObjectCreator</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"><span class="meta">... </span>      <span class="keyword">pass</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_object = ObjectCreator()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(my_object)</span><br><span class="line">&lt;__main__.ObjectCreator <span class="built_in">object</span> at <span class="number">0x8974f2c</span>&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>但是类在Python中意味着更多。类本身也是对象。</p>
+<p>只要你使用关键字<code>class</code>，Python就会执行它并创建一个对象。以下的指令：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">class</span> <span class="title class_">ObjectCreator</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"><span class="meta">... </span>      <span class="keyword">pass</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>在内存中创建了一个名为<code>ObjectCreator</code>的对象。</p>
+<p>这个对象（即这个类）它自身具有可以创建对象（即实例）的能力，这就是为什么它是一个类。</p>
+<p>但是，它仍然是一个对象，因此：</p>
+<ul>
+<li>你可以将它赋值给一个变量</li>
+<li>你可以打印它</li>
+<li>你可以复制它</li>
+<li>你可以给它添加属性</li>
+<li>你可以把它作为函数参数传递</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(ObjectCreator) <span class="comment"># you can print a class because it&#x27;s an object</span></span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.ObjectCreator&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">echo</span>(<span class="params">o</span>):</span><br><span class="line"><span class="meta">... </span>      <span class="built_in">print</span>(o)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>echo(ObjectCreator) <span class="comment"># you can pass a class as a parameter</span></span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.ObjectCreator&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">hasattr</span>(ObjectCreator, <span class="string">&#x27;new_attribute&#x27;</span>))</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ObjectCreator.new_attribute = <span class="string">&#x27;foo&#x27;</span> <span class="comment"># you can add attributes to a class</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">hasattr</span>(ObjectCreator, <span class="string">&#x27;new_attribute&#x27;</span>))</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(ObjectCreator.new_attribute)</span><br><span class="line">foo</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ObjectCreatorMirror = ObjectCreator <span class="comment"># you can assign a class to a variable</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(ObjectCreatorMirror.new_attribute)</span><br><span class="line">foo</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(ObjectCreatorMirror())</span><br><span class="line">&lt;__main__.ObjectCreator <span class="built_in">object</span> at <span class="number">0x8997b4c</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>动态地创建类</strong></p>
+<p>因为类是对象，所以你可以像任何对象那样自由地创建他们。</p>
+<p>首先，你可以在一个函数中使用<code>class</code>创建一个类：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">choose_class</span>(<span class="params">name</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">if</span> name == <span class="string">&#x27;foo&#x27;</span>:</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">class</span> <span class="title class_">Foo</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"><span class="meta">... </span>            <span class="keyword">pass</span></span><br><span class="line"><span class="meta">... </span>        <span class="keyword">return</span> Foo <span class="comment"># return the class, not an instance</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">class</span> <span class="title class_">Bar</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"><span class="meta">... </span>            <span class="keyword">pass</span></span><br><span class="line"><span class="meta">... </span>        <span class="keyword">return</span> Bar</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>MyClass = choose_class(<span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(MyClass) <span class="comment"># the function returns a class, not an instance</span></span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.Foo&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(MyClass()) <span class="comment"># you can create an object from this class</span></span><br><span class="line">&lt;__main__.Foo <span class="built_in">object</span> at <span class="number">0x89c6d4c</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>但是它不够动态，因为你仍然需要自己写整个类。</p>
+<p>因为类是对象，它们必须被某个东西生成。</p>
+<p>当你使用<code>class</code>关键字的时候，Python自动地创建了这个对象。但是和在Python中的大多数东西一样，它给了你手动来做这件事的方法。</p>
+<p>记得函数<code>type</code>吗？这个好的古老的函数让你知道一个对象是什么类型。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">1</span>))</span><br><span class="line">&lt;<span class="built_in">type</span> <span class="string">&#x27;int&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&quot;1&quot;</span>))</span><br><span class="line">&lt;<span class="built_in">type</span> <span class="string">&#x27;str&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">type</span>(ObjectCreator))</span><br><span class="line">&lt;<span class="built_in">type</span> <span class="string">&#x27;type&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">type</span>(ObjectCreator()))</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.ObjectCreator&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>其实，<code>type</code>还有一个完全不同的能力，它也能够自由地创建类。<code>type</code>可以将一个类的描述作为参数，然后返回一个类。</p>
+<p>（注：虽然相同的函数根据传给它参数的不同有两种完全不同的用途看起来很蠢。但是<code>type</code>的这种情况是由于Python向后兼容所导致的问题）</p>
+<p><code>type</code>以下面的方式起作用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span>(name, bases, attrs)</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li><code>name</code>：类名</li>
+<li><code>bases</code>：父类的元组（用于继承，可以为空）</li>
+<li><code>attr</code>：字典，包含属性名和属性值</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">class</span> <span class="title class_">MyShinyClass</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"><span class="meta">... </span>      <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>可以通过以下的方式手动创建：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>MyShinyClass = <span class="built_in">type</span>(<span class="string">&#x27;MyShinyClass&#x27;</span>, (), &#123;&#125;) <span class="comment"># returns a class object</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(MyShinyClass)</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.MyShinyClass&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(MyShinyClass()) <span class="comment"># create an instance with the class</span></span><br><span class="line">&lt;__main__.MyShinyClass <span class="built_in">object</span> at <span class="number">0x8997cec</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>可以注意到我们同时使用<code>MyShinyClass</code>作为类名并且作为变量来做类引用。它们可以不同，但是没有必要使问题复杂化。</p>
+<p><code>type</code>接受一个字典来定义类的属性。所以：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">class</span> <span class="title class_">Foo</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"><span class="meta">... </span>      bar = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>也能被翻译为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Foo = <span class="built_in">type</span>(<span class="string">&#x27;Foo&#x27;</span>, (), &#123;<span class="string">&#x27;bar&#x27;</span>:<span class="literal">True</span>&#125;)</span><br></pre></td></tr></table></figure>
+<p>并且作为一个普通类使用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Foo)</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.Foo&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Foo.bar)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = Foo()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(f)</span><br><span class="line">&lt;__main__.Foo <span class="built_in">object</span> at <span class="number">0x8a9b84c</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(f.bar)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>当然，你也可以从<code>Foo</code>继承它，所以：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>  <span class="keyword">class</span> <span class="title class_">FooChild</span>(<span class="title class_ inherited__">Foo</span>):</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>将会是：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>FooChild = <span class="built_in">type</span>(<span class="string">&#x27;FooChild&#x27;</span>, (Foo,), &#123;&#125;)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(FooChild)</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.FooChild&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(FooChild.bar) <span class="comment"># bar is inherited from Foo</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>最后，你想向你的类中添加方法。只需定义一个具有合适标识的函数并且将其作为一个属性给它赋值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">echo_bar</span>(<span class="params">self</span>):</span><br><span class="line"><span class="meta">... </span>      <span class="built_in">print</span>(self.bar)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>FooChild = <span class="built_in">type</span>(<span class="string">&#x27;FooChild&#x27;</span>, (Foo,), &#123;<span class="string">&#x27;echo_bar&#x27;</span>: echo_bar&#125;)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hasattr</span>(Foo, <span class="string">&#x27;echo_bar&#x27;</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hasattr</span>(FooChild, <span class="string">&#x27;echo_bar&#x27;</span>)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_foo = FooChild()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_foo.echo_bar()</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python">What are metaclasses in Python?</a></li>
+</ol>
+</blockquote>
+</br>
+<p>4.目前<code>pip</code>已经不提供<code>pip search &lt;package name&gt;</code>的服务，运行后会出现以下报错：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220717103944297.png" alt="image-20220717103944297" /></p>
+<p>此时，可以通过在 <a href="https://duckduckgo.com/">duckduckgo</a> 搜索 <code>!pip &lt;package name&gt;</code>来获得相关的package信息。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/17373473/how-do-i-search-for-an-available-python-package-using-pip">How do I search for an available Python package using pip?</a></li>
+<li><a href="https://www.reddit.com/r/Python/comments/kfxibk/pypi_xmlrpc_search_api_has_been_disabled_due_to/">PyPI XMLRPC search API has been disabled due to flood of requests. <code>pip search</code> may be deprecated.</a></li>
+<li><a href="https://github.com/pypa/pip/issues/5216">Remove the pip search command #5216</a></li>
+</ol>
+</blockquote>
+</br>
+<p>5.<code>pip</code>安装指定版本package：<code>pip install Package_name==version</code>。例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install mmdet==<span class="number">2.12</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.google.com/search?q=pip+install+specific+version&amp;oq=pip+install+specivi&amp;aqs=chrome.1.69i57j0i512l9.4361j0j7&amp;sourceid=chrome&amp;ie=UTF-8">pip install specific version</a></li>
+</ol>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch saving and loading models</title>
+    <url>/2022/07/20/PyTorch-saving-and-loading-models/</url>
+    <content><![CDATA[<p>本文记录PyTorch中的核心操作之一——saving and loading models。</p>
+<span id="more"></span>
+<h3 id="saving-and-loading-models"><a class="markdownIt-Anchor" href="#saving-and-loading-models"></a> saving and loading models</h3>
+<p>本文档提供了对Pytorch models进行存储和加载的不同使用场景的解决方案。当谈到存储和加载模型，有三个核心函数很相似：</p>
+<ul>
+<li><code>torch.save</code>：存储一个serialized object到磁盘，该函数使用Python的<code>pickle</code> utility来序列化（serialization）。Models/tensors和各种类型对象的字典都可以使用该函数存储</li>
+<li><code>torch.load</code>：使用<code>pickle</code>的unpickling能力来反序列化pickled对象文件到内存中。该函数也可以设置用来加载数据的设备（如gpu），见 <a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-across-devices">Saving &amp; Loading Model Across Devices</a>。</li>
+<li><code>torch.nn.Module.load_state_dict</code>：使用反序列话的state_dict加载模型的参数字典，详细信息见 <a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict">What is a state_dict?</a>。</li>
+</ul>
+<p><strong>什么是<code>state_dict</code>?</strong></p>
+<p>在Pytorch中， 一个<code>torch.nn.Module</code>模型的可学习的参数（如权重和偏差）被包含在模型的参数中（可以通过<code>model.parameters()</code>获取。一个state_dict就是一个简单的Python字典对象，其将每个layer映射到它的参数tensor。注意只有具有可学习参数的layers（如卷积层，线性层等）和具有registered buffers（batchnorm’s running_mean）的layers在模型的state_dict中有入口。Optimizer对象（<code>torch.optim</code>）也有一个state_dict，它包含关于优化器的状态信息和使用的超参数。</p>
+<p>因为state_dict是Python字典，所以它们可以很容易地存储、更新、更变和恢复，这使得Pytorch的模型和优化器得以模块化。</p>
+<p><strong>Example</strong></p>
+<p>下面看一下 <a href="https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py">Training a classifier</a> 教程中一个简单的分类器的state_dict：</p>
+<pre><code># Define model
+class TheModelClass(nn.Module):
+    def __init__(self):
+        super(TheModelClass, self).__init__()
+        self.conv1 = nn.Conv2d(3, 6, 5)
+        self.pool = nn.MaxPool2d(2, 2)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        self.fc1 = nn.Linear(16 * 5 * 5, 120)
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, 10)
+
+    def forward(self, x):
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = x.view(-1, 16 * 5 * 5)
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+# Initialize model
+model = TheModelClass()
+
+# Initialize optimizer
+optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+
+# Print model's state_dict
+print(&quot;Model's state_dict:&quot;)
+for param_tensor in model.state_dict():
+    print(param_tensor, &quot;\t&quot;, model.state_dict()[param_tensor].size())
+
+# Print optimizer's state_dict
+print(&quot;Optimizer's state_dict:&quot;)
+for var_name in optimizer.state_dict():
+    print(var_name, &quot;\t&quot;, optimizer.state_dict()[var_name])
+</code></pre>
+<p>其输出为：</p>
+<pre><code>Model's state_dict:
+conv1.weight     torch.Size([6, 3, 5, 5])
+conv1.bias   torch.Size([6])
+conv2.weight     torch.Size([16, 6, 5, 5])
+conv2.bias   torch.Size([16])
+fc1.weight   torch.Size([120, 400])
+fc1.bias     torch.Size([120])
+fc2.weight   torch.Size([84, 120])
+fc2.bias     torch.Size([84])
+fc3.weight   torch.Size([10, 84])
+fc3.bias     torch.Size([10])
+
+Optimizer's state_dict:
+state    &#123;&#125;
+param_groups     [&#123;'lr': 0.001, 'momentum': 0.9, 'dampening': 0, 'weight_decay': 0, 'nesterov': False, 'params': [4675713712, 4675713784, 4675714000, 4675714072, 4675714216, 4675714288, 4675714432, 4675714504, 4675714648, 4675714720]&#125;]
+</code></pre>
+<p><strong>存储和加载模型用于推断</strong></p>
+<p>存储/加载<code>state_dict</code>（建议）</p>
+<p>Save：<code>torch.save(model.state_dict(), PATH)</code></p>
+<p>Load：</p>
+<pre><code>model = TheModelClass(*args, **kwargs)
+model.load_state_dict(torch.load(PATH))
+model.eval()
+</code></pre>
+<p>PS：PyTorch1.6版本将<code>torch.save</code>的存储格式转换为了一个新的基于zipfile的文件格式。<code>torch.load</code>仍然保持加载老的pth/pt格式文件的能力。如果想要使用<code>torch.save</code>存储老的文件格式pth/pt，可以使用参数 <code>_use_new_zipfile_serialization=False</code>。</p>
+<p>当加载一个模型用于推断时，只有必要存储训练模型的可学习的参数。使用<code>torch.save()</code>存储模型的state_dict将对以后恢复模型给出最大的灵活性，这也是推荐它存储模型的原因。</p>
+<p>一个PyTorch的惯例是使用pt/pth扩展名来存储模型。</p>
+<p>记住在进行推断之前你必须调用<code>model.eval()</code>来设置dropout和batch normalization层来评估模型，不做这一步将导致生成不一致的推断结果。</p>
+<p>PS：注意<code>load_state_dict()</code>函数将一个字典对象而不是一个存储对象的路径作为参数，这意味着在将state_dict传给该函数之前必须对其反序列化，例如，不能加载模型通过<code>model.load_state_dict(PATH)</code>。</p>
+<p>PS：如果逆想要保存性能最好的模型（根据获得的验证损失），不要忘记<code>best_model_state=model.state_dict()</code>返回的是对state的引用而不是它的copy。你必须序列化<code>best_model_state</code>或者使用 <code>best_model_state = deepcopy(model.state_dict())</code> 否则你的<code>best_model_state</code>将会随着后续的训练迭代继续更新。结果，最终的模型state可能是一个过拟合模型的state。</p>
+<p><strong>存储和加载模型</strong></p>
+<p>Save：<code>torch.save(model, PATH)</code></p>
+<p>Load：</p>
+<pre><code># Model class must be defined somewhere
+model = torch.load(PATH)
+model.eval()
+</code></pre>
+<p>上述的存储/加载过程使用最直观的语法，涉及最少的代码。以这种方式存储模型将使用Python的pickle模块存储整个模型。该方法的缺点在于序列化的数据和特定的类以及当模型存储时的目录结构绑定。其原因在于pickle不存储模型类本身，而是存储一个包含该类的文件的路径，这个类会在加载时用到。因为这个原因，你的代码在其他的项目或者在重构后中使用可能会以多种形式中断。</p>
+<p>一个PyTorch的惯例是使用pt/pth扩展名来存储模型。</p>
+<p>记住在进行推断之前你必须调用<code>model.eval()</code>来设置dropout和batch normalization层来评估模型，不做这一步将导致生成不一致的推断结果。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html">saving and loading models</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch Module subclasses</title>
+    <url>/2022/07/20/PyTorch-Module-subclasses/</url>
+    <content><![CDATA[<p>本文记录一下PyTorch <code>nn.Module</code>基类的常用subclasses。</p>
+<span id="more"></span>
+<h3 id="torchnnconv2d"><a class="markdownIt-Anchor" href="#torchnnconv2d"></a> torch.nn.Conv2d</h3>
+<p>对由多个input planes组成的input signal进行二维卷积。其完整声明形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CLASS torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=<span class="number">1</span>, padding=<span class="number">0</span>, dilation=<span class="number">1</span>, groups=<span class="number">1</span>, bias=<span class="literal">True</span>, padding_mode=<span class="string">&#x27;zeros&#x27;</span>, device=<span class="literal">None</span>, dtype=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p><code>torch.nn.Conv2d</code>有如下的继承关系：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Conv2d</span>(<span class="title class_ inherited__">_ConvNd</span>):</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">_ConvND</span>(<span class="title class_ inherited__">Module</span>):</span><br></pre></td></tr></table></figure>
+<p>在最简单的样例中，input size为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>N</mi><mo separator="true">,</mo><mi>C</mi><mi>i</mi><mi>n</mi><mo separator="true">,</mo><mi>H</mi><mo separator="true">,</mo><mi>W</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(N, Cin, H, W)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mclose">)</span></span></span></span>的层的输出值和输出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>N</mi><mo separator="true">,</mo><mi>C</mi><mi>o</mi><mi>u</mi><mi>t</mi><mo separator="true">,</mo><mi>H</mi><mi>o</mi><mi>u</mi><mi>t</mi><mo separator="true">,</mo><mi>W</mi><mi>o</mi><mi>u</mi><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(N, Cout, Hout, Wout)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mclose">)</span></span></span></span>可以精确地描述为：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220718203916534.png" alt="image20220718203916534" /></p>
+<p>其中*表示有效的2D cross-correlation 操作，N表示batch size，C表示通道数，H和W分别表示像素高宽。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">CONV2D</a></li>
+</ol>
+</blockquote>
+<h3 id="torchnnbatchnorm2d"><a class="markdownIt-Anchor" href="#torchnnbatchnorm2d"></a> torch.nn.BatchNorm2d</h3>
+<h3 id="torchnngroupnorm"><a class="markdownIt-Anchor" href="#torchnngroupnorm"></a> torch.nn.GroupNorm</h3>
+<h3 id="torchnnsequential"><a class="markdownIt-Anchor" href="#torchnnsequential"></a> torch.nn.Sequential</h3>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch nn.Module</title>
+    <url>/2022/07/20/PyTorch-nn-Module/</url>
+    <content><![CDATA[<p>本文记录一下PyTorch中最核心的类之一——<code>torch.nn.Module</code>。</p>
+<span id="more"></span>
 <h3 id="torchnnmodule"><a class="markdownIt-Anchor" href="#torchnnmodule"></a> torch.nn.Module</h3>
 <p>所有神经网络modules的基本类，所有的模型（包括自定义模型）都应该是该类的子类。Modules也可以包含其它的Module，即允许以树的结构嵌套。能够将子模块赋值给模块属性：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Model</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">1</span>, <span class="number">20</span>, <span class="number">5</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(<span class="number">20</span>, <span class="number">20</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.relu(self.conv1(x))</span><br><span class="line">        <span class="keyword">return</span> F.relu(self.conv2(x))</span><br></pre></td></tr></table></figure>
@@ -5408,6 +5990,16 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <li>
 <p>调用实例：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = nn.Linear(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>net = nn.Sequential(l, l)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> idx, m <span class="keyword">in</span> <span class="built_in">enumerate</span>(net.modules()):</span><br><span class="line">        <span class="built_in">print</span>(idx, <span class="string">&#x27;-&gt;&#x27;</span>, m)</span><br><span class="line"></span><br><span class="line"><span class="number">0</span> -&gt; Sequential(</span><br><span class="line">  (<span class="number">0</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">  (<span class="number">1</span>): Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br><span class="line">)</span><br><span class="line"><span class="number">1</span> -&gt; Linear(in_features=<span class="number">2</span>, out_features=<span class="number">2</span>, bias=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>named_children()</code>：返回之间子模块的迭代器，生成模块名和模块自身。</p>
+<ul>
+<li>
+<p>Yields：(string, Module)，包含一个模块名和子模块的元组</p>
+</li>
+<li>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> name, module <span class="keyword">in</span> model.named_children():</span><br><span class="line">    <span class="keyword">if</span> name <span class="keyword">in</span> [<span class="string">&#x27;conv4&#x27;</span>, <span class="string">&#x27;conv5&#x27;</span>]:</span><br><span class="line">        <span class="built_in">print</span>(module)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><code>named_parameters(prefix='', recurse=True)</code>：返回模块参数的迭代器，生成参数名和参数。</p>
@@ -5510,13 +6102,42 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <li><a href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#containers">class torch.nn.Module</a></li>
 </ol>
 </blockquote>
+<h4 id="nnmoduleforward"><a class="markdownIt-Anchor" href="#nnmoduleforward"></a> nn.Module.forward</h4>
+<p>为什么在下述代码中通过<code>model(input)</code>获取<code>output</code>，而不是<code>model.forward(input)</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyModel</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MyModel, self).__init__()</span><br><span class="line">        conv = nn.Conv2d(<span class="number">1</span>, <span class="number">6</span>, <span class="number">3</span>)</span><br><span class="line">        self.weight = conv.weight</span><br><span class="line">        self.bias = conv.bias</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.conv2d(x, self.weight, self.bias)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    model = MyModel()</span><br><span class="line">    <span class="built_in">print</span>(model)</span><br><span class="line">    <span class="built_in">input</span>=torch.randn(<span class="number">1</span>, <span class="number">1</span>, <span class="number">32</span>, <span class="number">32</span>)</span><br><span class="line">    output = model(<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>
+<p>当直接调用model时，会调用内置的<code>__call__</code>函数。在代码 <a href="https://github.com/pytorch/pytorch/blob/master/torch/nn/modules/module.py#L471">the code</a> 中可以看到，该函数会管理所有的registered hooks并且在之后调用<code>forward</code>。这也是应该直接调用model的原因，因为可能hooks可能不会work。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://discuss.pytorch.org/t/about-the-nn-module-forward/20858">About the ‘nn.Module.forward’</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html#define-the-network">NEURAL NETWORKS</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch 优化器</title>
+    <url>/2022/07/20/PyTorch-%E4%BC%98%E5%8C%96%E5%99%A8/</url>
+    <content><![CDATA[<p>本文记录一下PyTorch中的常用优化器。</p>
+<span id="more"></span>
 <h3 id="trochoptimsgd"><a class="markdownIt-Anchor" href="#trochoptimsgd"></a> troch.optim.SGD</h3>
 <p>其完整调用形式为：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.optim.SGD(params, lr=&lt;required parameter&gt;, momentum=<span class="number">0</span>, dampening=<span class="number">0</span>, weight_decay=<span class="number">0</span>, nesterov=<span class="literal">False</span>, *, maximize=<span class="literal">False</span>, foreach=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>torch.optim.SGD(params, lr=&lt;required parameter&gt;, momentum=0, dampening=0, weight_decay=0, nesterov=False, *, maximize=False, foreach=None)
+</code></pre>
 <p><code>torch.optim.SGD</code>有如下的继承关系：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SGD</span>(<span class="title class_ inherited__">Optimizer</span>):</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Optimizer</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">object</span>:</span><br></pre></td></tr></table></figure>
+<pre><code>class SGD(Optimizer):
+class Optimizer(object):
+class object:
+</code></pre>
 <p>该类是对随即梯队下降法的实现（momentum可选）。以下是对随机梯度下降法的简单说明：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704161015625.png" alt="image-20220704161015625" /></p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704161015625.png" alt="image20220704161015625" /></p>
 <p>Nesterov momentum是基于来自<a href="http://www.cs.toronto.edu/~hinton/absps/momentum.pdf">On the importance of initialization and momentum in deep learning</a>的公式。</p>
 <p>参数：</p>
 <ul>
@@ -5530,23 +6151,51 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <li><code>foreach(bool, optional)</code>：whether foreach implementation of optimizer is used，默认为None</li>
 </ul>
 <p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>optimizer = torch.optim.SGD(model.parameters(), lr=<span class="number">0.1</span>, momentum=<span class="number">0.9</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>optimizer.zero_grad()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>loss_fn(model(<span class="built_in">input</span>), target).backward()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>optimizer.step()</span><br></pre></td></tr></table></figure>
+<pre><code>&gt;&gt;&gt; optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9)
+&gt;&gt;&gt; optimizer.zero_grad()
+&gt;&gt;&gt; loss_fn(model(input), target).backward()
+&gt;&gt;&gt; optimizer.step()
+</code></pre>
 <p>可以通过以下方式将从模型net中获得的参数传入优化器：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">base, head = [], []</span><br><span class="line">    <span class="keyword">for</span> name, param <span class="keyword">in</span> net.named_parameters():</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;bkbone&#x27;</span> <span class="keyword">in</span> name:</span><br><span class="line">            base.append(param)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            head.append(param)</span><br><span class="line">    optimizer = torch.optim.SGD([&#123;<span class="string">&#x27;params&#x27;</span>:base&#125;, &#123;<span class="string">&#x27;params&#x27;</span>:head&#125;], lr=cfg.lr, momentum=cfg.momen, weight_decay=cfg.decay, nesterov=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>base, head = [], []
+    for name, param in net.named_parameters():
+        if 'bkbone' in name:
+            base.append(param)
+        else:
+            head.append(param)
+    optimizer = torch.optim.SGD([&#123;'params':base&#125;, &#123;'params':head&#125;], lr=cfg.lr, momentum=cfg.momen, weight_decay=cfg.decay, nesterov=True)
+</code></pre>
 <p>并可通过下述代码访问优化器中的对象和值：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> key <span class="keyword">in</span> optimizer.param_groups[<span class="number">1</span>]:</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(key)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line">params</span><br><span class="line">lr</span><br><span class="line">momentum</span><br><span class="line">dampening</span><br><span class="line">weight_decay</span><br><span class="line">nesterov</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(optimizer.param_groups[<span class="number">1</span>][<span class="string">&#x27;params&#x27;</span>])</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;list&#x27;</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(optimizer.param_groups[<span class="number">0</span>][<span class="string">&#x27;params&#x27;</span>])</span><br><span class="line"><span class="number">159</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>optimizer.param_groups[<span class="number">1</span>][<span class="string">&#x27;lr&#x27;</span>]</span><br><span class="line"><span class="number">0.001</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(optimizer.param_groups[<span class="number">0</span>][<span class="string">&#x27;params&#x27;</span>][<span class="number">0</span>])</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;torch.nn.parameter.Parameter&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&gt;&gt;&gt; for key in optimizer.param_groups[1]:
+...     print(key)
+... 
+params
+lr
+momentum
+dampening
+weight_decay
+nesterov
+&gt;&gt;&gt; type(optimizer.param_groups[1]['params'])
+&lt;class 'list'&gt;
+&gt;&gt;&gt; len(optimizer.param_groups[0]['params'])
+159
+&gt;&gt;&gt; optimizer.param_groups[1]['lr']
+0.001
+&gt;&gt;&gt; type(optimizer.param_groups[0]['params'][0])
+&lt;class 'torch.nn.parameter.Parameter'&gt;
+</code></pre>
 <p>PS：上述结果中的154正好与前面<code>base</code>数组中元素个数相等。</p>
-<p>此外，可以通过以下代码直接给优化器添加新的属性：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">optimizer.momentum = momentum <span class="comment"># 此前optimizer没有momentum属性</span></span><br><span class="line">optimzer.a = <span class="number">1</span> <span class="comment"># 此前optimizer没有a属性</span></span><br></pre></td></tr></table></figure>
-<p>待补充。</p>
+<p>此外，可以通过以下代码直接给优化器添加新的属性（所有的类都可以通过该方式添加属性，也可以通过<code>setattr</code>设置属性）：</p>
+<pre><code>optimizer.momentum = momentum # 此前optimizer没有momentum属性
+optimzer.a = 1 # 此前optimizer没有a属性
+</code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://pytorch.org/docs/stable/generated/torch.optim.SGD.html">SGD</a></li>
+<li><a href="https://medium.com/@nschairer/python-dynamic-class-attributes-24a89df8da7d">Python - Dynamic Class Attributes</a></li>
 </ol>
 </blockquote>
-<h3 id="torchnnparameterparameter"><a class="markdownIt-Anchor" href="#torchnnparameterparameter"></a> torch.nn.parameter.Parameter</h3>
-<h3 id="torchnnfunctional"><a class="markdownIt-Anchor" href="#torchnnfunctional"></a> torch.nn.functional</h3>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -5557,63 +6206,366 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
       </tags>
   </entry>
   <entry>
-    <title>python中知识点01</title>
-    <url>/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
-    <content><![CDATA[<p>本文记录一下python中常用的知识点：</p>
+    <title>PyTorch torch.utils.data</title>
+    <url>/2022/07/20/PyTorch-torch-utils-data/</url>
+    <content><![CDATA[<p>本文记录一下PyTorch中最核心的组成部分之一——<code>torch.utils.data</code>。</p>
 <span id="more"></span>
-<p>1.在Python shell中清屏。在Windows和Linux中的实现原理均为调用os.system提供的清屏函数。</p>
+<h3 id="torchutilsdata"><a class="markdownIt-Anchor" href="#torchutilsdata"></a> torch.utils.data</h3>
+<p>该 package 的核心类为 <code>torch.utils.data.DataLoader</code>，表示在一个数据集上的迭代，其支持：</p>
+<ul>
+<li>map-style 和 iterable-style 的数据集</li>
+<li>定制化数据加载顺序</li>
+<li>自动 batching</li>
+<li>单线程和多线程的数据加载</li>
+<li>自动内存 pinning (固定)</li>
+</ul>
+<p>这些选项通过以下的 <code>DataLoader</code> 对象的构造器配置，其有signature：</p>
+<pre><code>DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
+           batch_sampler=None, num_workers=0, collate_fn=None,
+           pin_memory=False, drop_last=False, timeout=0,
+           worker_init_fn=None, *, prefetch_factor=2,
+           persistent_workers=False)
+</code></pre>
+<h4 id="dataset-types"><a class="markdownIt-Anchor" href="#dataset-types"></a> Dataset Types</h4>
+<p><code>DataLoader</code>构造器最重要的参数为<code>dataset</code>，它指定了从中加载数据的数据集对象。PyTorch支持两种不同类型的数据集：</p>
+<ul>
+<li>map-style datasets</li>
+<li>iterable-style datasets</li>
+</ul>
+<h4 id="map-style-datasets"><a class="markdownIt-Anchor" href="#map-style-datasets"></a> Map-Style datasets</h4>
+<p>一个map-style的数据集需要实现<code>__getitem__()</code>和<code>__len__()</code>这两个protocols，表示从indices/keys (可能非整型) 到 data samples的映射。</p>
+<blockquote>
+<p>protocols: 管理数据传输和接收的形式和步骤，如HTTP protocol。</p>
+</blockquote>
+<p>例如，一个数据集，当能够通过<code>dataset[idx]</code>访问时，可以从磁盘上的文件夹中读取第<code>idx</code>张image和它对应的label。详见 <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset"><code>Dataset</code></a></p>
+<h4 id="iterable-style-datasets"><a class="markdownIt-Anchor" href="#iterable-style-datasets"></a> Iterable-style datasets</h4>
+<p>一个iterable-style的数据集是<code>IterableDataset</code>子类的一个实例，该子类需要实现<code>__iter__()</code> protocol，并且表示在data samples上的一个迭代。这种类型的数据集尤其适合这种情况，当随机读取代价很大甚至不可能，或者batch size依赖于所获取的数据。</p>
+<p>例如，一个数据集，当调用<code>iter(dataset)</code>时，可以返回来自数据库、远程服务器甚至实时生成的logs的数据读取流。详见 <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.IterableDataset"><code>IterableDataset</code></a></p>
+<p>PS：当使用<code>IterableDataset</code>进行multi-process data loading时，相同的数据对象在每个worker process上重复，因此必须对副本进行不同的配置以避免重复数据，可以看 <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.IterableDataset"><code>IterableDataset</code></a>文档了解如何实现。</p>
+<h4 id="data-loading-order-and-sampler"><a class="markdownIt-Anchor" href="#data-loading-order-and-sampler"></a> Data Loading Order and <code>Sampler</code></h4>
+<p>对于 iterable-style 数据集，数据加载顺序完全由用户定义的迭代器控制。这允许更容易的chunk-reading和动态的batch size的实现（如，通过每次生成一个 batched sample）</p>
+<p>本节的剩余部分关心map-style数据集的情况。<code>torch.utils.data.Sampler</code>类被用来指定在数据加载中使用的indices/keys的序列。它们代表在数据集indices上的迭代器对象，例如，在SGD (stochastic gradient decent) 的公共实例中，一个Sampler可以任意排列indices的列表并且每次生成一个indice，或者对于mini-batch SGD生成少量indices。</p>
+<p>一个sequential或者shuffled的sampler将会自动根据传递给<code>Dataloader</code>的<code>shuffle</code>参数构造。可选地，用户可能使用<code>sampler</code>参数来指定一个custom Sampler object，每次生成要取的下一个index/key。</p>
+<p>一个可以一次生成一个batch indices列表的custom Sampler可以作为<code>batch_sampler</code>参数传递。automatic batching可以通过<code>batch_size</code>和<code>drop_last</code>参数来开启。详见下节获取细节。</p>
+<p>PS：<code>sampler</code>和<code>batch_sampler</code>都不兼容iterable-style数据集，因为它们没有key/index的概念。</p>
+<h4 id="loading-batched-and-non-batched-data"><a class="markdownIt-Anchor" href="#loading-batched-and-non-batched-data"></a> Loading Batched and Non-Batched Data</h4>
+<p><code>DataLoader</code>支持自动地将通过<code>batch_size</code>、<code>drop_last</code>、<code>batch_sampler</code>和<code>collate_fn</code>(有默认函数)参数的每个取到的data samples整理到batches中。</p>
+<p><strong>Automatic batching(default)</strong></p>
+<p>最通用的情况，对应取得 a minibatch of data并将它们整理进batched samplers，例如整理一维Tensors为batch的维度。</p>
+<p>当<code>batch_size</code>(默认为1)不为None时，data loader生成batched samples而不是individual samples，<code>batch_size</code>和<code>drop_last</code>被用来指定data loader如何获取batches of dataset keys。对于map-style数据集，用户可以选择指定<code>batch_sampler</code>，其将一次生成一个list of keys。</p>
+<p>PS：<code>batch_size</code>和<code>drop_last</code>是用来从<code>sampler</code>中构建一个<code>batch_sampler</code>的关键。对于map-style数据集，<code>sampler</code>要么由用户提供，要么基于<code>shuffle</code>参数构建。对于iterable-style数据集，没有<code>sampler</code>或<code>batch_sampler</code>的概念</p>
+<p>在通过sampler的indices取得 a list of samples后，作为<code>collate_fn</code>参数传递的函数被用来将list of samples整理为batches。在这种情况下，从map-style数据集中的加载数据可以大致等价于：</p>
+<pre><code>for indices in batch_sampler:
+    yield collate_fn([dataset[i] for i in indices])
+</code></pre>
+<p>从iterable-style数据集中加载数据可以大致等价于：</p>
+<pre><code>dataset_iter = iter(dataset)
+for indices in batch_sampler:
+    yield collate_fn([next(dataset_iter) for _ in indices])
+</code></pre>
+<p>一个custom <code>collate_fn</code> 可以被用来 customize collation，例如，填充序列数据到batch的最大长度。</p>
+<h4 id="disable-automatic-batching"><a class="markdownIt-Anchor" href="#disable-automatic-batching"></a> Disable automatic batching</h4>
+<p>在某些情况下，用户可能想在数据集中手动管理batching，或者只是简单地加载individual samples。例如，可能直接加载batched data代价更小（例如从数据库中进行块访问，或者读取连续的内存块），或者batch size是数据依赖的，或者程序被设计在individual sample上运行。在这些情况下，不使用automatic batching（使用<code>collate_fn</code>整理samples）可能更好，此时可以让数据加载器直接返回dataset对象的每个成员。</p>
+<p>当<code>batch_size</code>和<code>batch_sampler</code>都为None时（默认<code>batch_sampler</code>为None，就禁止了automatic batching。每个从dataset中获取的sampler被作为<code>collate_fn</code>参数传递的函数处理。</p>
+<p>当禁止automatic batching，默认的<code>collate_fn</code>简单的转换Numpy arrays为Pytorch Tensors，并且保持everything else untouched。</p>
+<p>在这种情况下，从一个map-style数据集中加载数据可以大致等价于：</p>
+<pre><code>for index in sampler:
+    yield collate_fn(dataset[index])
+</code></pre>
+<p>从一个iterable-style数据集中加载数据可以大致等价于：</p>
+<pre><code>for data in iter(dataset):
+    yield collate_fn(data)
+</code></pre>
+<h4 id="working-with-collate_fn"><a class="markdownIt-Anchor" href="#working-with-collate_fn"></a> Working with <code>collate_fn</code></h4>
+<p>当启用或禁用automatic batching时，<code>collate_fn</code>的使用略有不同。</p>
+<p>当禁用batching时，<code>collate_fn</code>被单个的data sample调用，输出从data loader iterator中生成。这种情况下，默认的<code>default_fn</code>简单地转换Numpy arrays为Pytorch tensors。</p>
+<p>当启用batching时，<code>collate_fn</code>每次被a list of data samples调用，需要将生成的input samples整理为a batch。本节的剩余部分描述默认的<code>collate_fn</code> (<a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.default_collate"><code>default_collate()</code></a>) 的行为。</p>
+<p>例如，如果每个sample包含一个3-channel的数据和一个整型的class label，也就是说，dataset的每个元素返回一个tuple (<code>image, class_index</code>)，默认的<code>collate_fn</code>会整理这样的list of tuples到a single tuple of a batched image tensor和a batched class label Tensor。尤其是，默认的<code>collate_fn</code>有如下的属性：</p>
 <ul>
 <li>
-<p>Windows：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">clear = <span class="keyword">lambda</span>: os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>然后调用<code>clear()</code>即可。也可以直接运行<code>os.system('cls')</code>。</p>
+<p>总是将batch dimension作为新的dimension</p>
 </li>
 <li>
-<p>Linux：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">clear = <span class="keyword">lambda</span>: os.system(<span class="string">&#x27;clear&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>然后调用<code>clear()</code>即可。也可以直接运行<code>os.system('clear')</code>。</p>
+<p>自动地转换NumPy arrays和Python numerical values为PyTorch Tensors</p>
+</li>
+<li>
+<p>保留数据结构，例如如果每个sample为一个dictionary，它输出一个有相同set of keys的dict，但是将batched Tensors作为值（或者lists，如果值不能转换为Tensors）。对list、tuple、namedtuple都是如此。</p>
+<p>用户可能使用定制化的<code>collate_fn</code>来实现custom batching，例如，沿着一个维度整理而不是第一个，填充变长的序列，或者对custom data types添加support。</p>
 </li>
 </ul>
-<p>为了避免每次启动Python shell后都需要重新定义<code>clear</code>函数。可以设置如下脚本：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">if</span> os.name == <span class="string">&#x27;nt&#x27;</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">cls</span>():</span><br><span class="line">		_ = os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">clear</span>():</span><br><span class="line">		_ = os.system(<span class="string">&#x27;clear&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>并使得上述脚本在启动Python shell时自动运行。</p>
+<p>如果你遇到DataLoader的输出的维度或类型和期望的不同，你应该检查你的<code>collate_fn</code>。</p>
+<h4 id="single-and-multi-process-data-loading"><a class="markdownIt-Anchor" href="#single-and-multi-process-data-loading"></a> Single- and Multi-process Data Loading</h4>
+<p>DataLoader默认使用single-process数据加载。</p>
+<p>在一个Python process内部，<a href="https://wiki.python.org/moin/GlobalInterpreterLock">Global Interpreter Lock (GIL)</a> 避免在threads的完全并行的Python代码。为了避免block数据加载时的computation code，Pytorch通过将<code>num_workers</code>设置为正值来进行multi-process的数据处理。</p>
+<p><strong>Single-process data loading (default)</strong></p>
+<p>在这个模式，data fetching和DataLoader初始化在相同的process中进行。因此，数据加载可能会block computing。但是，这个模式可能在资源在processes (如，shared memory, file descriptors) 之间共享数据被限制时使用会更好，或者整个数据集很小可以完全在内存中整个加载。此外，single-process加载通过在进行error trace时更具有可读性，因此对调试很有用。</p>
+<p><strong>Multi-process data loading</strong></p>
+<p>设置参数<code>num_workers</code>为正数可以用指定数量的loader worker processes来multi-process地加载数据。</p>
+<blockquote>
+<p>Warning：在数次迭代之后，loader worker processes将消耗和parent process相同量的CPU memory。略</p>
+</blockquote>
+<p>在这个模式，每次DataLoader的一个迭代器被创建时（如当你调用enumerate(dataloader)），<code>num_workers</code>数量的worker processes也被创建。此时，<code>dataset</code>、<code>collate_fn</code>和<code>worker_init_fn</code>被传递给每个worker，worker利用这些参数进行初始化并且获取数据。这意味着数据集的访问连同它的内部IO，transforms (包括<code>collate_fn</code>) 在worker process中运行。</p>
+<p><a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.get_worker_info" title="torch.utils.data.get_worker_info"><code>torch.utils.data.get_worker_info()</code></a> 返回在一个worker process中的多种有用的信息（包括worker id，dataset副本，初始化seed等），并且在main process中返回None。用户可能在dataset中使用这个函数和<code>worker_init_fn</code>来单独配置每个dataset副本，并且判断代码是否运行在一个worker process中。例如，这可能在sharding the dataset时尤其有用</p>
+<blockquote>
+<p>sharding: 将数据集存储在不同的服务器上</p>
+</blockquote>
+<p>对map-style的数据集，main process使用<code>sampler</code>生成indices然后将indices发送给workers。所以任何shuffle随机化在main process中进行，然后再通过indices进行引导数据加载。</p>
+<p>对于iterable-style数据集，因为每个worker process得到一个数据集对象的副本，直接进行multi-process加载经常会导致数据重复。使用<code>torch.utils.data.get_worker_info()</code>和<code>worker_init_fn</code>，用户可以独立配置每个副本。</p>
+<p>一旦迭代终止或者迭代器被进行垃圾回收，workers就会终止。</p>
+<p>PS：通常不建议在multi-process加载中返回CUDA tensors，因为许多微妙的原因，详见<a href="https://pytorch.org/docs/stable/notes/multiprocessing.html#multiprocessing-cuda-note">CUDA in multiprocessing</a>。作为替代，建议使用 <a href="https://pytorch.org/docs/stable/data.html#memory-pinning">automatic memory pinning</a>(也就是设置<code>pin_memory=True</code>)，这可以在CUDA-enabled GPUs上进行很快的数据传输。</p>
+<p><strong>Platform-specific behaviors</strong></p>
+<p>因为workers依赖于Python <a href="https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing" title="(in Python v3.10)"><code>multiprocessing</code></a>，worker的启动行为在Windows和Unix平台上有所不同。略</p>
+<p>PS：建议将主要的script代码放在<code>if __name__=='__main__'</code>中；建议确保<code>collate_fn</code>、<code>worker_init_fn</code>和<code>dataset</code>代码在最外层被定义，也就是<code>__main__</code>的外面。</p>
+<p><strong>Randomness in multi-process data loading</strong></p>
+<p>默认，每个worker将它的PyTorch seed设置为<code>base_seed</code>+<code>worker_id</code>，<code>base_seed</code>是main process通过它的RNG或者一个指定的<code>generator</code>生成。但是，来自其他libraries的seeds可能在初始化workers时重复，导致每个worker返回相同的随机数字。</p>
+<p>在<code>worker_init_fn</code>中，你可以通过<a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.get_worker_info" title="torch.utils.data.get_worker_info"><code>torch.utils.data.get_worker_info().seed</code></a> 和 <a href="https://pytorch.org/docs/stable/generated/torch.initial_seed.html#torch.initial_seed" title="torch.initial_seed"><code>torch.initial_seed()</code></a>访问每个worker的PyTorch seed set，并且使用它来在数据加载之前seed其他的libraries。</p>
+<h4 id="memory-pinning"><a class="markdownIt-Anchor" href="#memory-pinning"></a> Memory Pinning</h4>
+<p>从主机到GPU的数据的copies会快得多，当它们从 pinned (page-locked) memory 中创建时。详见 <a href="https://pytorch.org/docs/stable/notes/cuda.html#cuda-memory-pinning">Use pinned memory buffers</a> 如何更通用地使用 pinned memory。</p>
+<p>对于数据加载来说，传递<code>pin_memory=True</code>给<code>Dataloader</code>将自动的把获取到的数据放在pinned memory，因此会使得对CUDA-enabled GPUs有更快的数据传输。</p>
+<p>默认的memory pinning logic 只会识别Tensors和包含Tensors的maps/iterables。默认，如何pinning logic看到一个custom type (如果你有一个<code>collate_fn</code>返回一个custom batch type)，或者你的batch的每个元素为一个custom type，pinning logic不会认出它们，并将返回batch（或元素）而不pin the memory。为了对custom batch或者custom data type进行memory pinning，需要在custom type中定义一个<code>pin_memory()</code>方法。如下所示：</p>
+<pre><code>class SimpleCustomBatch:
+    def __init__(self, data):
+        transposed_data = list(zip(*data))
+        self.inp = torch.stack(transposed_data[0], 0)
+        self.tgt = torch.stack(transposed_data[1], 0)
+
+    # custom memory pinning method on custom type
+    def pin_memory(self):
+        self.inp = self.inp.pin_memory()
+        self.tgt = self.tgt.pin_memory()
+        return self
+
+def collate_wrapper(batch):
+    return SimpleCustomBatch(batch)
+
+inps = torch.arange(10 * 5, dtype=torch.float32).view(10, 5)
+tgts = torch.arange(10 * 5, dtype=torch.float32).view(10, 5)
+dataset = TensorDataset(inps, tgts)
+
+loader = DataLoader(dataset, batch_size=2, collate_fn=collate_wrapper,
+                    pin_memory=True)
+
+for batch_ndx, sample in enumerate(loader):
+    print(sample.inp.is_pinned())
+    print(sample.tgt.is_pinned())
+</code></pre>
+<p>完整声明形式为：</p>
+<pre><code>CLASS torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=None, sampler=None, batch_sampler=None, num_workers=0, collate_fn=None, pin_memory=False, drop_last=False, timeout=0, worker_init_fn=None, multiprocessing_context=None, generator=None, *, prefetch_factor=2, persistent_workers=False, pin_memory_device='')
+</code></pre>
+<p>DataLoader，联合一个dataset和一个sampler，提供在给定数据集上的一个迭代。</p>
+<p>DataLoader支持map-style和iterable-style的数据集的sing-或multi-process加载，定制化的加载顺序和可选的automatci batching (collation) 和memory pinning。</p>
+<p>参数：</p>
+<ul>
+<li>
+<p><code>dataset(Dataset)</code>：数据集，从中加载数据</p>
+</li>
+<li>
+<p><code>batch_size(int, optional)</code>：对每个batch有多少个样本被加载（默认为1）</p>
+</li>
+<li>
+<p><code>shuffle(bool, optional)</code>：设置为<code>True</code>时在每个epoch数据都会reshuffle（默认为False）</p>
+</li>
+<li>
+<p><code>sampler(Sampler or Iterable, optional)</code>：定义从dataset中获取samples的策略。可以是任何有<code>__len__</code>实现的Iterable。如果指定sampler，<code>shuffle</code> must not be specified。</p>
+</li>
+<li>
+<p><code>batch_sampler(Sampler or Iterable, optional)</code>：类似sampler，但是一次返回a batch of indices。和<code>batch_size</code>、<code>shuffle</code>、<code>sampler</code>和<code>drop_last</code>相互排斥。？</p>
+</li>
+<li>
+<p><code>num_worker(int, optional)</code>：用于data loading的subprocesses的数量。0表示数据将会在main process中加载（默认为0）</p>
+</li>
+<li>
+<p><code>collate_fn(callable, optional)</code>：合并a list of samples以形成 a mini-batch of Tensor(s)。当从一个map-style数据集中进行batched loading时会用到。</p>
+</li>
+<li>
+<p><code>pin_memory(bool, optional)</code>：如果为<code>True</code>，data loader在返回Tensor之前会复制Tensors到device/CUDA的pinned memory。如果你的数据元素为custom type，或者你的<code>collate_fn</code>返回的batch为custom type，看下面的示例。</p>
+</li>
+<li>
+<p><code>drop_last(bool, optional)</code>：设置为<code>True</code>时会drop最后的不完整的batch，如果dataset size不能被batch size整除的话。如果为<code>False</code>，数据集的尺寸不能被batch size整除，那么最后的batch将会更小（默认为False）</p>
+</li>
+<li>
+<p><code>timeout(numeric, optional)</code>：如果为正，表示从workers收集a batch的timeout值。应该总是非负（默认为0）</p>
+</li>
+<li>
+<p><code>worker_init_fn(callable, optional)</code>：如果不为<code>None</code>，将使用worker id ([0, num_workers-1]范围内的整数) 作为输入在每个worker subprocess中被调用，在seeding之后，data loading之前（默认为None）</p>
+</li>
+<li>
+<p><code>generator(torch.Generator, optional)</code>：如果不为<code>None</code>，RandomSampler将使用RNG生成随机indexes，并且为workers生成<code>base_seed</code>（默认为None）</p>
+</li>
+<li>
+<p><code>prefetch_factor(int, optional, keyword-only arg)</code>：被每个worker提前加载的batches的数量。<code>2</code>表示在所有wrokers上将有总共2*num_workers的batches被提前获得（默认为2）</p>
+</li>
+<li>
+<p><code>persistent_workers(bool, optional)</code>：如果为<code>True</code>，data loader在一个dataset被处理完一次后不会关闭worker processes，这允许保持workers Dataset instances存活（默认为False）</p>
+</li>
+<li>
+<p><code>pin_memory_device(str, optional)</code>：如果pin_memory设置为True，data loader在返回Tensors之前会将他们复制到device pinned memory。</p>
+</li>
+</ul>
+<h4 id="torchutilsdatadataset"><a class="markdownIt-Anchor" href="#torchutilsdatadataset"></a> torch.utils.data.Dataset</h4>
+<p>一个表示Dataset的抽象类。</p>
+<p>所有表示从keys到data samples的映射的数据集都应该是它的子类。所有的子类应该重写<code>__getitme__()</code>，该方法支持对一个给定的key获取对应的data sample。子类也能选择性地重写<code>__len__()</code>，该方法返回数据集的尺寸，该尺寸与Sampler的实现和DataLoader的默认选项有关。</p>
+<p>PS：DataLoader默认构建一个生成integral indices的index sampler。为了使它可以作用于具有non-integral indices/keys的map-style数据集，必须提供一个custom sampler。</p>
+<h4 id="torchutilsdatadefault_collatebatch"><a class="markdownIt-Anchor" href="#torchutilsdatadefault_collatebatch"></a> torch.utils.data.default_collate(batch)</h4>
+<p>一个函数，将a batch of data作为输入，将batch内的元素放入一个具有outer dimenstion (batch size)的tensor。其输出类型可能是一个<code>torch.Tensor</code>，一个<code>torch.Tensor</code>的Sequence，一个<code>torch.Tensor</code>的Collection，或者不变，其依赖于输入类型。当在DataLoader中定义batch_size或者batch_sampler时该函数可以作为collation的默认函数。下面是通常的input type (基于batch内部的元素类型) 和它映射为的output type：</p>
+<p>参数：</p>
+<ul>
+<li><code>batch</code>：等待整理的single batch</li>
+</ul>
+<p>调用实例：</p>
+<pre><code># Example with a batch of `int`s:
+default_collate([0, 1, 2, 3])
+# Example with a batch of `str`s:
+default_collate(['a', 'b', 'c'])
+# Example with `Map` inside the batch:
+default_collate([&#123;'A': 0, 'B': 1&#125;, &#123;'A': 100, 'B': 100&#125;])
+# Example with `NamedTuple` inside the batch:
+Point = namedtuple('Point', ['x', 'y'])
+default_collate([Point(0, 0), Point(1, 1)])
+# Example with `Tuple` inside the batch:
+default_collate([(0, 1), (2, 3)])
+# Example with `List` inside the batch:
+default_collate([[0, 1], [2, 3]])
+</code></pre>
+<h4 id="torchutilsdatasamplerdata_source"><a class="markdownIt-Anchor" href="#torchutilsdatasamplerdata_source"></a> torch.utils.data.Sampler(data_source)</h4>
+<p>所有Samplers的基类。</p>
+<p>每个Sampler子类必须提供<code>__iter__()</code>方法，以此提供在dataset元素的indices上的迭代，和一个<code>__len__()</code>返回迭代器的长度。</p>
+<p>PS：<code>__len__()</code>并不是DataLoader严格要求的，但是在有任何涉及到DataLoader的长度计算时最好提供。</p>
 <blockquote>
 <p>参考资料：</p>
 <ol>
-<li><a href="https://www.tutorialspoint.com/how-to-clear-python-shell#">How to clear Python shell?</a></li>
+<li><a href="https://pytorch.org/docs/stable/data.html">TORCH.UTILS.DATA</a></li>
 </ol>
 </blockquote>
-</br>
-<p>2.设置在Python shell启动时自动执行某个脚本。下面记录在Ubuntu系统中的设置，Windows系统同理：</p>
-<ul>
-<li>
-<p>创建脚本并写入想要执行的命令，例如创建<code>startup.py</code>并写入：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">if</span> os.name == <span class="string">&#x27;nt&#x27;</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">cls</span>():</span><br><span class="line">		_ = os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">clear</span>():</span><br><span class="line">		_ = os.system(<span class="string">&#x27;clear&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>该脚本在打开Python shell中创建了函数<code>clear()</code>，可以通过执行<code>clear()</code>实现清屏。</p>
-</li>
-<li>
-<p>在当前Ubuntu系统中使得环境变量<code>PYTHONSTARTUP</code>指向上述脚本对应的路径，假设上述脚本路径为<code>/home/FT/scripts/startup.py</code>。则可以通过在bash中执行</p>
-<p><code>export PYTHONSTARTUP=/home/FT/scripts/startup.py</code></p>
-<p>创建临时环境变量，也可以在<code>~/.bashrc</code>中添加该命令使其永久化。</p>
-</li>
-<li>
-<p>此时在bash中打开python shell（包括Anaconda中的python shell），可直接通过<code>clear()</code>实现清屏。</p>
-</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP">PYTHONSTARTUP</a></li>
-</ol>
-</blockquote>
-</br>
 ]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
       <tags>
-        <tag>python</tag>
-        <tag>笔记</tag>
+        <tag>Pytorch</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch 损失</title>
+    <url>/2022/07/20/PyTorch-%E6%8D%9F%E5%A4%B1/</url>
+    <content><![CDATA[<p>本文记录一下PyTorch中的常用损失。</p>
+<span id="more"></span>
+<h3 id="torchnncrossentropyloss"><a class="markdownIt-Anchor" href="#torchnncrossentropyloss"></a> torch.nn.CrossEntropyLoss</h3>
+<p>用来计算input和target之间交叉熵损失的criterion。其完整调用形式为：</p>
+<pre><code>torch.nn.CrossEntropyLoss(weight=None, size_average=None, ignore_index=- 100, reduce=None, reduction='mean', label_smoothing=0.0)
+</code></pre>
+<p>当计算C类元素的分类问题时很有用。如果提供<code>weights</code>参数，该参数应该是一个1D Tensor，用来为每类元素分配权重，当训练集unbalance时尤其有用。</p>
+<p>input应当包含原始的，未归一化的每一类的分数，input应当是一个Tensor，尺寸为unbatched input的尺寸，例如<code>(minibatch, C)</code>或者<code>(minibatch, C, d1, d2, ...., dk)</code>，k表示k维数据。后者对高维input很有用，例如计算2D图像的每个pixel的交叉熵损失。</p>
+<p>该criterion期望的target应该包含以下两种中的一种：</p>
+<ul>
+<li>
+<p>范围为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[0, C)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">)</span></span></span></span>的类索引，C表示类数目；如果指定<code>ignore_index</code>参数，该损失也接受不在前述范围内的类索引。<code>reduction='none'</code>时，unreduced loss可以被描述为：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704094749082.png" alt="image20220704094749082" /></p>
+<p>x，y表示input和target。如果reduction is not ‘none’（默认为’mean’），则有</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095008493.png" alt="image20220704095008493" /></p>
+</li>
+<li>
+<p>每一类的概率；当labels超出每个minibatch项要求的单类之外时有用，例如blended labels，label smoothing。unreduced loss（<code>reduction='none'</code>）可以描述为：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095317040.png" alt="image20220704095317040" /></p>
+<p>如果reduction is not ‘none’（默认为’mean’），则有：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220704095420471.png" alt="image20220704095420471" /></p>
+</li>
+</ul>
+<p>PS：该criterion的性能在target包含类索引时通常更好，因为此时可以进行优化计算。只在对minibatch想来说单类label太受限的情况下，才考虑将target作为类的概率。</p>
+<p>参数：</p>
+<ul>
+<li><code>weights</code>：Tensor类型，可选择。作用于每个类的manual rescaling weight。如果给出，应该是一个具有尺寸C的Tensor</li>
+<li><code>size_average</code>：bool类型，可选择。不建议使用（deprecated），见reduction。</li>
+<li><code>ignore_index</code>：int类型，可选。指定一个被忽略的target value，该值不对input gradident起作用。当<code>size_average=True</code>，损失在non-ignored targets上取平均。注意只有当target包含类索引时<code>ignore_index</code>才有用。</li>
+<li><code>reduce</code>：bool类型，可选。deprecated，见reduction。</li>
+<li><code>reduction</code>：string类型，可选。指定应用到output上的reduction：<code>none</code>|<code>mean</code>|<code>sum</code>。</li>
+<li><code>label_smoothing</code>：floate类型，可选。范围为[0.0, 1.0]的float值，指定计算损失时的平滑程度，0.0表示不进行平滑，默认为0.0。通过平滑targets变成了一个原始真值和高斯分布的混合物，见 <a href="https://arxiv.org/abs/1512.00567">Rethinking the Inception Architecture for Computer Vision</a></li>
+</ul>
+<p>Shape：C表示类数目，N表示batchsize</p>
+<ul>
+<li>Input：©，(N,C)，或者(N, C, d1, d2, …, dk)</li>
+<li>Target：如果包含类索引，形状为()，(N)或者(N, d1, d2, …, dk)，每个值的范围为[0, C)。如果包含类概率，形状和Input相同，每个值的范围为[0, 1]</li>
+<li>Output：如果reduction=‘none’，形状和target相同，否则为标量。</li>
+</ul>
+<p>调用实例：</p>
+<pre><code># Example of target with class indices
+loss = nn.CrossEntropyLoss()
+input = torch.randn(3, 5, requires_grad=True)
+target = torch.empty(3, dtype=torch.long).random_(5)
+output = loss(input, target)
+output.backward()
+# Example of target with class probabilities
+input = torch.randn(3, 5, requires_grad=True)
+target = torch.randn(3, 5).softmax(dim=1)
+output = loss(input, target)
+output.backward()
+</code></pre>
+<p><code>torch.nn.CrossEntropyLoss()</code>有如下的继承关系：</p>
+<pre><code>class CrossEntropyLoss(_WeightedLoss):
+class _WeightedLoss(_Loss):
+class _Loss(Module)
+</code></pre>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">CROSSENTROPYLOSS</a></li>
+<li><a href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/#loss-functions">Loss Functions</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch数据采样</title>
+    <url>/2022/07/20/PyTorch%E6%95%B0%E6%8D%AE%E9%87%87%E6%A0%B7/</url>
+    <content><![CDATA[<p>本文记录一下PyTorch中的数据采样操作。</p>
+<span id="more"></span>
+<h3 id="torchnnfunctionalinterpolate"><a class="markdownIt-Anchor" href="#torchnnfunctionalinterpolate"></a> torch.nn.functional.interpolate</h3>
+<p>其完整声明形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.nn.functional.interpolate(<span class="built_in">input</span>, size=<span class="literal">None</span>, scale_factor=<span class="literal">None</span>, mode=<span class="string">&#x27;nearest&#x27;</span>, align_corners=<span class="literal">None</span>, recompute_scale_factor=<span class="literal">None</span>, antialias=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>下/上采样输入到给定的尺寸或者缩放因子。</p>
+<p>用于插值的算法由<code>mode</code>参数定义。</p>
+<p>目前temporal、spatial和volumetric的采样是支持的，例如，期望的输入在shape上是3-D，4-D或者5-D。</p>
+<p>输入维度以该方式呈现：mni-batch x channels x [optional depth] x [optional height] x width</p>
+<p>可以用来resize的mode有：nearest, linear(3D-only), bilinear, bicubic(4D-only), trilinear(5D-only), area, nearest-exact。</p>
+<p>参数：</p>
+<ul>
+<li><code>input(Tensor)</code>：输入tensor</li>
+<li><code>size(int or Tuple[int] or Tuple[int, int] or Tuple[int, int, int])</code>：输入空间尺寸</li>
+<li><code>scale_factor (float or Tuple[float])</code>：对空间尺寸的缩放操作，如果<code>scale_factor</code>为一个元组，其长度必须与<code>input.dim()</code>匹配</li>
+<li><code>mode(str)</code>：用来上采样的算法：<code>'nearest'</code> | <code>'linear'</code> | <code>'bilinear'</code> | <code>'bicubic'</code> | <code>'trilinear'</code> | <code>'area'</code> | <code>'nearest-exact'</code>，默认为<code>'nearest'</code>。</li>
+<li><code>align_corners(bool, optional)</code>：略</li>
+<li><code>recompute_scale_factor(bool, optional)</code>：重新计算<code>scale_factor</code>以在插值计算中使用。</li>
+<li><code>antialias(bool, optional)</code>：略</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.functional.interpolate.html#torch.nn.functional.interpolate">TORCH.NN.FUNCTIONAL.INTERPOLATE</a></li>
+</ol>
+</blockquote>
+<h3 id="torchnnupsample"><a class="markdownIt-Anchor" href="#torchnnupsample"></a> torch.nn.Upsample</h3>
+<p>对一个给定的多通道 1D (temporal), 2D (spatial) 或 3D (volumetric) 数据进行上采样。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.Upsample.html">UPSAMPLE</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>文档</tag>
       </tags>
   </entry>
 </search>
