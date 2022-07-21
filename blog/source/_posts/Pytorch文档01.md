@@ -1024,7 +1024,7 @@ for batch_ndx, sample in enumerate(loader):
     print(sample.tgt.is_pinned())
 ```
 
-
+   
 
 > 参考资料：
 >
