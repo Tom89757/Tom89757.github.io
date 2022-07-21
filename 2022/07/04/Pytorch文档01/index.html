@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707105811403.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707160538483.png">
 <meta property="article:published_time" content="2022-07-04T07:29:47.000Z">
-<meta property="article:modified_time" content="2022-07-20T14:28:28.191Z">
+<meta property="article:modified_time" content="2022-07-21T04:11:02.828Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Pytorch">
 <meta property="article:tag" content="文档">
@@ -152,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnnparameterparameter"><span class="nav-number">1.</span> <span class="nav-text"> torch.nn.parameter.Parameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnnfunctional"><span class="nav-number">2.</span> <span class="nav-text"> torch.nn.functional</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnninit"><span class="nav-number">3.</span> <span class="nav-text"> torch.nn.init</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#torchnninitkaiming_normal_"><span class="nav-number">3.1.</span> <span class="nav-text"> torch.nn.init.kaiming_normal_</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#torchnninitzeros_"><span class="nav-number">3.2.</span> <span class="nav-text"> torch.nn.init.zeros_</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnnfunctional-vs-torchnn"><span class="nav-number">4.</span> <span class="nav-text"> torch.nn.functional vs torch.nn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch-internals"><span class="nav-number">5.</span> <span class="nav-text"> Pytorch Internals</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnnparameterparameter"><span class="nav-number">1.</span> <span class="nav-text"> torch.nn.parameter.Parameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnnfunctional"><span class="nav-number">2.</span> <span class="nav-text"> torch.nn.functional</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnninit"><span class="nav-number">3.</span> <span class="nav-text"> torch.nn.init</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#torchnninitkaiming_normal_"><span class="nav-number">3.1.</span> <span class="nav-text"> torch.nn.init.kaiming_normal_</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#torchnninitzeros_"><span class="nav-number">3.2.</span> <span class="nav-text"> torch.nn.init.zeros_</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchnnfunctional-vs-torchnn"><span class="nav-number">4.</span> <span class="nav-text"> torch.nn.functional vs torch.nn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch-internals"><span class="nav-number">5.</span> <span class="nav-text"> Pytorch Internals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nnmoduleforward"><span class="nav-number">6.</span> <span class="nav-text"> nn.Module.forward</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nnupsample"><span class="nav-number">7.</span> <span class="nav-text"> nn.Upsample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#torchutilsdata"><span class="nav-number">8.</span> <span class="nav-text"> torch.utils.data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dataset-types"><span class="nav-number">8.1.</span> <span class="nav-text"> Dataset Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map-style-datasets"><span class="nav-number">8.2.</span> <span class="nav-text"> Map-Style datasets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iterable-style-datasets"><span class="nav-number">8.3.</span> <span class="nav-text"> Iterable-style datasets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-loading-order-and-sampler"><span class="nav-number">8.4.</span> <span class="nav-text"> Data Loading Order and Sampler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loading-batched-and-non-batched-data"><span class="nav-number">8.5.</span> <span class="nav-text"> Loading Batched and Non-Batched Data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#disable-automatic-batching"><span class="nav-number">8.6.</span> <span class="nav-text"> Disable automatic batching</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#working-with-collate_fn"><span class="nav-number">8.7.</span> <span class="nav-text"> Working with collate_fn</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#memory-pinning"><span class="nav-number">8.8.</span> <span class="nav-text"> Memory Pinning</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -262,7 +262,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-20 22:28:28" itemprop="dateModified" datetime="2022-07-20T22:28:28+08:00">2022-07-20</time>
+      <time title="修改时间：2022-07-21 12:11:02" itemprop="dateModified" datetime="2022-07-21T12:11:02+08:00">2022-07-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,14 +281,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.2k</span>
+      <span>9.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -391,8 +391,118 @@
 <li><a target="_blank" rel="noopener" href="https://pytorch.org/blog/a-tour-of-pytorch-internals-1/">A Tour of PyTorch Internals (Part I)</a></li>
 <li><a target="_blank" rel="noopener" href="https://pytorch.org/blog/a-tour-of-pytorch-internals-2/">A Tour of PyTorch Internals (Part II) - The Build System</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.christianperone.com/2018/03/pytorch-internal-architecture-tour/">PyTorch – Internal Architecture Tour</a></li>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31003994/where-is-site-packages-located-in-a-conda-environment">Where is site-packages located in a Conda environment?</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31003994/where-is-site-packages-located-in-a-conda-environment">Where is site-packages located in a Conda environment?</a><br />
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
 </ol>
+</blockquote>
+<h3 id="nnmoduleforward"><a class="markdownIt-Anchor" href="#nnmoduleforward"></a> nn.Module.forward</h3>
+<p>为什么在下述代码中通过<code>model(input)</code>获取<code>output</code>，而不是<code>model.forward(input)</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyModel</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MyModel, self).__init__()</span><br><span class="line">        conv = nn.Conv2d(<span class="number">1</span>, <span class="number">6</span>, <span class="number">3</span>)</span><br><span class="line">        self.weight = conv.weight</span><br><span class="line">        self.bias = conv.bias</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.conv2d(x, self.weight, self.bias)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">	model = MyModel()</span><br><span class="line">	<span class="built_in">print</span>(model)</span><br><span class="line">	<span class="built_in">input</span>=torch.randn(<span class="number">1</span>, <span class="number">1</span>, <span class="number">32</span>, <span class="number">32</span>)</span><br><span class="line">	output = model(<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>
+<p>当直接调用model时，会调用内置的<code>__call__</code>函数。在代码 <a target="_blank" rel="noopener" href="https://github.com/pytorch/pytorch/blob/master/torch/nn/modules/module.py#L471">the code</a> 中可以看到，该函数会管理所有的registered hooks并且在之后调用<code>forward</code>。这也是应该直接调用model的原因，因为可能hooks可能不会work。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://discuss.pytorch.org/t/about-the-nn-module-forward/20858">About the ‘nn.Module.forward’</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html#define-the-network">NEURAL NETWORKS</a></li>
+</ol>
+</blockquote>
+<h3 id="nnupsample"><a class="markdownIt-Anchor" href="#nnupsample"></a> nn.Upsample</h3>
+<p>对一个给定的多通道 1D (temporal), 2D (spatial) 或 3D (volumetric) 数据进行上采样。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.Upsample.html">UPSAMPLE</a></li>
+</ol>
+</blockquote>
+<h3 id="torchutilsdata"><a class="markdownIt-Anchor" href="#torchutilsdata"></a> torch.utils.data</h3>
+<p>该 package 的核心类为 <code>torch.utils.data.DataLoader</code>，表示在一个数据集上的迭代，其支持：</p>
+<ul>
+<li>map-style 和 iterable-style 的数据集</li>
+<li>定制化数据加载顺序</li>
+<li>自动 batching</li>
+<li>单线程和多线程的数据加载</li>
+<li>自动内存 pinning (固定)</li>
+</ul>
+<p>这些选项通过以下的 <code>DataLoader</code> 对象的构造器配置，其有signature：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DataLoader(dataset, batch_size=<span class="number">1</span>, shuffle=<span class="literal">False</span>, sampler=<span class="literal">None</span>,</span><br><span class="line">           batch_sampler=<span class="literal">None</span>, num_workers=<span class="number">0</span>, collate_fn=<span class="literal">None</span>,</span><br><span class="line">           pin_memory=<span class="literal">False</span>, drop_last=<span class="literal">False</span>, timeout=<span class="number">0</span>,</span><br><span class="line">           worker_init_fn=<span class="literal">None</span>, *, prefetch_factor=<span class="number">2</span>,</span><br><span class="line">           persistent_workers=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="dataset-types"><a class="markdownIt-Anchor" href="#dataset-types"></a> Dataset Types</h4>
+<p><code>DataLoader</code>构造器最重要的参数为<code>dataset</code>，它指定了从中加载数据的数据集对象。PyTorch支持两种不同类型的数据集：</p>
+<ul>
+<li>map-style datasets</li>
+<li>iterable-style datasets</li>
+</ul>
+<h4 id="map-style-datasets"><a class="markdownIt-Anchor" href="#map-style-datasets"></a> Map-Style datasets</h4>
+<p>一个map-style的数据集需要实现<code>__getitem__()</code>和<code>__len__()</code>这两个protocols，表示从indices/keys (可能非整型) 到 data samples的映射。</p>
+<blockquote>
+<p>protocols: 管理数据传输和接收的形式和步骤，如HTTP protocol。</p>
+</blockquote>
+<p>例如，一个数据集，当能够通过<code>dataset[idx]</code>访问时，可以从磁盘上的文件夹中读取第<code>idx</code>张image和它对应的label。详见 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset"><code>Dataset</code></a></p>
+<h4 id="iterable-style-datasets"><a class="markdownIt-Anchor" href="#iterable-style-datasets"></a> Iterable-style datasets</h4>
+<p>一个iterable-style的数据集是<code>IterableDataset</code>子类的一个实例，该子类需要实现<code>__iter__()</code> protocol，并且表示在data samples上的一个迭代。这种类型的数据集尤其适合这种情况，当随机读取代价很大甚至不可能，或者batch size依赖于所获取的数据。</p>
+<p>例如，一个数据集，当调用<code>iter(dataset)</code>时，可以返回来自数据库、远程服务器甚至实时生成的logs的数据读取流。详见 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.IterableDataset"><code>IterableDataset</code></a></p>
+<p>PS：当使用<code>IterableDataset</code>进行multi-process data loading时，相同的数据对象在每个worker process上重复，因此必须对副本进行不同的配置以避免重复数据，可以看 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.IterableDataset"><code>IterableDataset</code></a>文档了解如何实现。</p>
+<h4 id="data-loading-order-and-sampler"><a class="markdownIt-Anchor" href="#data-loading-order-and-sampler"></a> Data Loading Order and <code>Sampler</code></h4>
+<p>对于 iterable-style 数据集，数据加载顺序完全由用户定义的迭代器控制。这允许更容易的chunk-reading和动态的batch size的实现（如，通过每次生成一个 batched sample）</p>
+<p>本节的剩余部分关心map-style数据集的情况。<code>torch.utils.data.Sampler</code>类被用来指定在数据加载中使用的indices/keys的序列。它们代表在数据集indices上的迭代器对象，例如，在SGD (stochastic gradient decent) 的公共实例中，一个Sampler可以任意排列indices的列表并且每次生成一个indice，或者对于mini-batch SGD生成少量indices。</p>
+<p>一个sequential或者shuffled的sampler将会自动根据传递给<code>Dataloader</code>的<code>shuffle</code>参数构造。可选地，用户可能使用<code>sampler</code>参数来指定一个custom Sampler object，每次生成要取的下一个index/key。</p>
+<p>一个可以一次生成一个batch indices列表的custom Sampler可以作为<code>batch_sampler</code>参数传递。automatic batching可以通过<code>batch_size</code>和<code>drop_last</code>参数来开启。详见下节获取细节。</p>
+<p>PS：<code>sampler</code>和<code>batch_sampler</code>都不兼容iterable-style数据集，因为它们没有key/index的概念。</p>
+<h4 id="loading-batched-and-non-batched-data"><a class="markdownIt-Anchor" href="#loading-batched-and-non-batched-data"></a> Loading Batched and Non-Batched Data</h4>
+<p><code>DataLoader</code>支持自动地将通过<code>batch_size</code>、<code>drop_last</code>、<code>batch_sampler</code>和<code>collate_fn</code>(有默认函数)参数的每个取到的data samples整理到batches中。</p>
+<p><strong>Automatic batching(default)</strong></p>
+<p>最通用的情况，对应取得 a minibatch of data并将它们整理进batched samplers，例如整理一维Tensors为batch的维度。</p>
+<p>当<code>batch_size</code>(默认为1)不为None时，data loader生成batched samples而不是individual samples，<code>batch_size</code>和<code>drop_last</code>被用来指定data loader如何获取batches of dataset keys。对于map-style数据集，用户可以选择指定<code>batch_sampler</code>，其将一次生成一个list of keys。</p>
+<p>PS：<code>batch_size</code>和<code>drop_last</code>是用来从<code>sampler</code>中构建一个<code>batch_sampler</code>的关键。对于map-style数据集，<code>sampler</code>要么由用户提供，要么基于<code>shuffle</code>参数构建。对于iterable-style数据集，没有<code>sampler</code>或<code>batch_sampler</code>的概念</p>
+<p>在通过sampler的indices取得 a list of samples后，作为<code>collate_fn</code>参数传递的函数被用来将list of samples整理为batches。在这种情况下，从map-style数据集中的加载数据可以大致等价于：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> indices <span class="keyword">in</span> batch_sampler:</span><br><span class="line">    <span class="keyword">yield</span> collate_fn([dataset[i] <span class="keyword">for</span> i <span class="keyword">in</span> indices])</span><br></pre></td></tr></table></figure>
+<p>从iterable-style数据集中加载数据可以大致等价于：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataset_iter = <span class="built_in">iter</span>(dataset)</span><br><span class="line"><span class="keyword">for</span> indices <span class="keyword">in</span> batch_sampler:</span><br><span class="line">    <span class="keyword">yield</span> collate_fn([<span class="built_in">next</span>(dataset_iter) <span class="keyword">for</span> _ <span class="keyword">in</span> indices])</span><br></pre></td></tr></table></figure>
+<p>一个custom <code>collate_fn</code> 可以被用来 customize collation，例如，填充序列数据到batch的最大长度。</p>
+<h4 id="disable-automatic-batching"><a class="markdownIt-Anchor" href="#disable-automatic-batching"></a> Disable automatic batching</h4>
+<p>在某些情况下，用户可能想在数据集中手动管理batching，或者只是简单地加载individual samples。例如，可能直接加载batched data代价更小（例如从数据库中进行块访问，或者读取连续的内存块），或者batch size是数据依赖的，或者程序被设计在individual sample上运行。在这些情况下，不使用automatic batching（使用<code>collate_fn</code>整理samples）可能更好，此时可以让数据加载器直接返回dataset对象的每个成员。</p>
+<p>当<code>batch_size</code>和<code>batch_sampler</code>都为None时（默认<code>batch_sampler</code>为None，就禁止了automatic batching。每个从dataset中获取的sampler被作为<code>collate_fn</code>参数传递的函数处理。</p>
+<p>当禁止automatic batching，默认的<code>collate_fn</code>简单的转换Numpy arrays为Pytorch Tensors，并且保持everything else untouched。</p>
+<p>在这种情况下，从一个map-style数据集中加载数据可以大致等价于：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> sampler:</span><br><span class="line">    <span class="keyword">yield</span> collate_fn(dataset[index])</span><br></pre></td></tr></table></figure>
+<p>从一个iterable-style数据集中加载数据可以大致等价于：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> data <span class="keyword">in</span> <span class="built_in">iter</span>(dataset):</span><br><span class="line">    <span class="keyword">yield</span> collate_fn(data)</span><br></pre></td></tr></table></figure>
+<h4 id="working-with-collate_fn"><a class="markdownIt-Anchor" href="#working-with-collate_fn"></a> Working with <code>collate_fn</code></h4>
+<p>当启用或禁用automatic batching时，<code>collate_fn</code>的使用略有不同。</p>
+<p>当禁用batching时，<code>collate_fn</code>被单个的data sample调用，输出从data loader iterator中生成。这种情况下，默认的<code>default_fn</code>简单地转换Numpy arrays为Pytorch tensors。</p>
+<p>当启用batching时，<code>collate_fn</code>每次被a list of data samples调用，需要将生成的input samples整理为a batch。本节的剩余部分描述默认的<code>collate_fn</code>  (<a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html#torch.utils.data.default_collate"><code>default_collate()</code></a>) 的行为。</p>
+<p>例如，如果每个sample包含一个3-channel的数据和一个整型的class label，也就是说，dataset的每个元素返回一个tuple (<code>image, class_index</code>)，默认的<code>collate_fn</code>会整理这样的list of tuples到a single tuple of a batched image tensor和a batched class label Tensor。尤其是，默认的<code>collate_fn</code>有如下的属性：</p>
+<ul>
+<li>总是将batch dimension作为新的dimension</li>
+<li>自动地转换NumPy arrays和Python numerical values为PyTorch Tensors</li>
+<li>保留数据结构，例如如果每个sample为一个dictionary，它输出一个有相同set of keys的dict，但是将batched Tensors作为值（或者lists，如果值不能转换为Tensors）。对list、tuple、namedtuple都是如此。</li>
+</ul>
+<p>… （文档中提及许多暂时用不到的知识，暂略）</p>
+<h4 id="memory-pinning"><a class="markdownIt-Anchor" href="#memory-pinning"></a> Memory Pinning</h4>
+<p>从主机到GPU的数据的copies会快得多，当它们从 pinned (page-locked) memory 中创建时。详见 <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/cuda.html#cuda-memory-pinning">Use pinned memory buffers</a> 如何更通用地使用 pinned memory。</p>
+<p>对于数据加载来说，传递<code>pin_memory=True</code>给<code>Dataloader</code>将自动的把获取到的数据放在pinned memory，因此会使得对CUDA-enabled GPUs有更快的数据传输。</p>
+<p>默认的memory pinning logic 只会识别Tensors和包含Tensors的maps/iterables。默认，如何pinning logic看到一个custom type (如果你有一个<code>collate_fn</code>返回一个custom batch type)，或者你的batch的每个元素为一个custom type，pinning logic不会认出它们，并将返回batch（或元素）而不pin the memory。为了对custom batch或者custom data type进行memory pinning，需要在custom type中定义一个<code>pin_memory()</code>方法。如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SimpleCustomBatch</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, data</span>):</span><br><span class="line">        transposed_data = <span class="built_in">list</span>(<span class="built_in">zip</span>(*data))</span><br><span class="line">        self.inp = torch.stack(transposed_data[<span class="number">0</span>], <span class="number">0</span>)</span><br><span class="line">        self.tgt = torch.stack(transposed_data[<span class="number">1</span>], <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># custom memory pinning method on custom type</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pin_memory</span>(<span class="params">self</span>):</span><br><span class="line">        self.inp = self.inp.pin_memory()</span><br><span class="line">        self.tgt = self.tgt.pin_memory()</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">collate_wrapper</span>(<span class="params">batch</span>):</span><br><span class="line">    <span class="keyword">return</span> SimpleCustomBatch(batch)</span><br><span class="line"></span><br><span class="line">inps = torch.arange(<span class="number">10</span> * <span class="number">5</span>, dtype=torch.float32).view(<span class="number">10</span>, <span class="number">5</span>)</span><br><span class="line">tgts = torch.arange(<span class="number">10</span> * <span class="number">5</span>, dtype=torch.float32).view(<span class="number">10</span>, <span class="number">5</span>)</span><br><span class="line">dataset = TensorDataset(inps, tgts)</span><br><span class="line"></span><br><span class="line">loader = DataLoader(dataset, batch_size=<span class="number">2</span>, collate_fn=collate_wrapper,</span><br><span class="line">                    pin_memory=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> batch_ndx, sample <span class="keyword">in</span> <span class="built_in">enumerate</span>(loader):</span><br><span class="line">    <span class="built_in">print</span>(sample.inp.is_pinned())</span><br><span class="line">    <span class="built_in">print</span>(sample.tgt.is_pinned())</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/data.html">TORCH.UTILS.DATA</a></li>
+</ol>
+</blockquote>
+<p>=======</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>d19dd391c64848b2ec1fd8b1d11d2660466f7856</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </blockquote>
 
     </div>
@@ -467,13 +577,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">173k</span>
+    <span title="站点总字数">179k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:37</span>
+    <span title="站点阅读时长">2:43</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
