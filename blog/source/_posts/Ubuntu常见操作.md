@@ -331,9 +331,22 @@ IFS=${IFS_OLD}
 
 </br>
 
+19.在Ubuntu终端常使用Ctrl + L组合快捷键清空终端屏幕，但向上滚动时屏幕内容依然存在。此时可以通过
 
+- `printf '\ec'`
+- `reset`
 
+二者来完全清空屏幕，但`reset`为彻底清除，执行速度较慢。故可以通过在`~/.bashrc`中添加如下别名：
 
+```bash
+alias cls='printf "\ec"'
+```
+
+来使用`cls`来清空终端屏幕。
+
+> 参考资料：
+>
+> 1. [Linux终端彻底清空屏幕](https://blog.csdn.net/pngynghay/article/details/23176757)
 
 
 

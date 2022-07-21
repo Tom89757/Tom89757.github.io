@@ -214,6 +214,7 @@ True
 > 参考资料：
 >
 > 1. [想要利用CPU多核资源一Python中多进程（一）](https://developer.51cto.com/article/632081.html)
+> 2. [多进程multiprocess](https://www.liujiangblog.com/course/python/82)
 
 7.在python文件中包含`from PIL import PILLOW_VERSION`代码时，可能会出现如下报错：
 
