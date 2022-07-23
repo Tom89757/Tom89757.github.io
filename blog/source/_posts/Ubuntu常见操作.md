@@ -348,9 +348,28 @@ alias cls='printf "\ec"'
 >
 > 1. [Linux终端彻底清空屏幕](https://blog.csdn.net/pngynghay/article/details/23176757)
 
+</br>
 
+20.在使用`ls`命令时，有时我们仅需要列出目录，然后将目录导入txt文件。下面是3种不同的方法：
 
+1. `ls -d */`：其输出如下：
 
+   ```bash
+   DUT-OMRON/  DUTS_Test/  ECSSD/  HKU-IS/  PASCAL-S/  SOD/  THUR15K/
+   ```
 
+   可以通过`ls -d */ | sed 's#/##' > dir.txt`将数据集名称导出到`dir.txt`
 
+2. `ls -F | grep "/$"`。`-F`会在输出的不同文件类型后面加上后缀，文件后会加上`*`，管道后会加上`|`，目录后会加上`/`。
 
+3. `ls -l | grep "^d"`。使用`grep`匹配输出每行开头的`d`字符。可以通过`awk`命令列出目录名本身：
+
+   ```bash
+   ls -l | grep "^d" | awk '{print $8}'
+   ```
+
+> 参考资料：
+>
+> 1. [Linux Shell 只列出目录的方法](https://blog.csdn.net/DLUTBruceZhang/article/details/9244897)
+
+</br>
