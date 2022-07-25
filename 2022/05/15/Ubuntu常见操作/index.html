@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172342306.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172942136.png">
 <meta property="article:published_time" content="2022-05-14T16:22:55.000Z">
-<meta property="article:modified_time" content="2022-07-21T15:30:25.321Z">
+<meta property="article:modified_time" content="2022-07-24T13:57:49.525Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
@@ -265,7 +265,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-21 23:30:25" itemprop="dateModified" datetime="2022-07-21T23:30:25+08:00">2022-07-21</time>
+      <time title="修改时间：2022-07-24 21:57:49" itemprop="dateModified" datetime="2022-07-24T21:57:49+08:00">2022-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,14 +284,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.9k</span>
+      <span>5.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -517,6 +517,113 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/pngynghay/article/details/23176757">Linux终端彻底清空屏幕</a></li>
 </ol>
 </blockquote>
+</br>
+<p>20.在使用<code>ls</code>命令时，有时我们仅需要列出目录，然后将目录导入txt文件。下面是3种不同的方法：</p>
+<ol>
+<li>
+<p><code>ls -d */</code>：其输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DUT-OMRON/  DUTS_Test/  ECSSD/  HKU-IS/  PASCAL-S/  SOD/  THUR15K/</span><br></pre></td></tr></table></figure>
+<p>可以通过<code>ls -d */ | sed 's#/##' &gt; dir.txt</code>将数据集名称导出到<code>dir.txt</code></p>
+</li>
+<li>
+<p><code>ls -F | grep &quot;/$&quot;</code>。<code>-F</code>会在输出的不同文件类型后面加上后缀，文件后会加上<code>*</code>，管道后会加上<code>|</code>，目录后会加上<code>/</code>。</p>
+</li>
+<li>
+<p><code>ls -l | grep &quot;^d&quot;</code>。使用<code>grep</code>匹配输出每行开头的<code>d</code>字符。可以通过<code>awk</code>命令列出目录名本身：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | awk <span class="string">&#x27;&#123;print $8&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/DLUTBruceZhang/article/details/9244897">Linux Shell 只列出目录的方法</a></li>
+</ol>
+</blockquote>
+</br>
+<p>21.在Ubuntu系统中，常常需要查看当前运行的进程，并根据需要筛选。下面介绍<code>ps</code>命令的选项：</p>
+<ul>
+<li>
+<p><code>ps -A</code>：列出所有的进程</p>
+</li>
+<li>
+<p><code>ps -w</code>：显示加宽可以显示更多的信息</p>
+</li>
+<li>
+<p><code>ps -au</code>：显示较为详细的信息</p>
+</li>
+<li>
+<p><code>ps -aux</code>：显示所有包含其他使用者的进程。下面是对该命令输出信息的介绍，其输出格式为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><code>USER</code>：进程拥有者</p>
+</li>
+<li>
+<p><code>PID</code>：process id</p>
+</li>
+<li>
+<p><code>%CPU</code>：CPU占用率</p>
+</li>
+<li>
+<p><code>VSZ</code>：虚拟内存大小</p>
+</li>
+<li>
+<p><code>RSS</code>：内存大小</p>
+</li>
+<li>
+<p><code>TTY</code>：minor device number of tty</p>
+</li>
+<li>
+<p><code>STAT</code>：进程状态</p>
+<ul>
+<li>D：无法终端的休眠状态（通常为IO的进程）</li>
+<li>R：正在执行中</li>
+<li>S：静止状态</li>
+<li>T：暂停执行</li>
+<li>Z：不存在但暂时无法消除</li>
+<li>W：没有足够的内存分页可分配</li>
+<li>&lt;：高优先序的进程</li>
+<li>N：低优先序的进程</li>
+<li>L：有内存分页分配且Lock在内存内</li>
+</ul>
+</li>
+<li>
+<p>START：进程开始时间</p>
+</li>
+<li>
+<p>TIME：执行的时间</p>
+</li>
+<li>
+<p>COMMAND：执行的指令</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>较为常用的命令为<code>ps -u FT</code>，其可以显示用户<code>FT</code>正在运行的进程，并可以通过<code>grep</code>对进程进行筛选。</p>
+<p>此外，<code>top</code>命令可以显示正在运行的进程并实时更新。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-ps.html">Linux ps 命令</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaoqiuxiang/article/details/9449179">ubuntu查看所有正在运行的进程</a></li>
+</ol>
+</blockquote>
+</br>
+<p>22.<code>kill</code>命令常用于通过进程号PID终止特定进程。可以用<code>kill -l</code>命令列出所有可用的信号，最常用的信号是：</p>
+<ul>
+<li><code>1 (HUP)</code>：重新加载进程</li>
+<li><code>9 (KILL)</code>：杀死一个进程</li>
+<li><code>15 (TERM)</code>：正常停止一个进程</li>
+</ul>
+<p>示例：</p>
+<p><code>kill -9 12345</code>：彻底杀死进程号为12345的进程。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-kill.html">Linux kill命令</a></li>
+</ol>
+</blockquote>
+</br>
 
     </div>
 
@@ -589,13 +696,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">179k</span>
+    <span title="站点总字数">181k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:43</span>
+    <span title="站点阅读时长">2:44</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

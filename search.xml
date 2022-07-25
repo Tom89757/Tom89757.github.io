@@ -688,6 +688,113 @@
 <li><a href="https://blog.csdn.net/pngynghay/article/details/23176757">Linux终端彻底清空屏幕</a></li>
 </ol>
 </blockquote>
+</br>
+<p>20.在使用<code>ls</code>命令时，有时我们仅需要列出目录，然后将目录导入txt文件。下面是3种不同的方法：</p>
+<ol>
+<li>
+<p><code>ls -d */</code>：其输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">DUT-OMRON/  DUTS_Test/  ECSSD/  HKU-IS/  PASCAL-S/  SOD/  THUR15K/</span><br></pre></td></tr></table></figure>
+<p>可以通过<code>ls -d */ | sed 's#/##' &gt; dir.txt</code>将数据集名称导出到<code>dir.txt</code></p>
+</li>
+<li>
+<p><code>ls -F | grep &quot;/$&quot;</code>。<code>-F</code>会在输出的不同文件类型后面加上后缀，文件后会加上<code>*</code>，管道后会加上<code>|</code>，目录后会加上<code>/</code>。</p>
+</li>
+<li>
+<p><code>ls -l | grep &quot;^d&quot;</code>。使用<code>grep</code>匹配输出每行开头的<code>d</code>字符。可以通过<code>awk</code>命令列出目录名本身：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | awk <span class="string">&#x27;&#123;print $8&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/DLUTBruceZhang/article/details/9244897">Linux Shell 只列出目录的方法</a></li>
+</ol>
+</blockquote>
+</br>
+<p>21.在Ubuntu系统中，常常需要查看当前运行的进程，并根据需要筛选。下面介绍<code>ps</code>命令的选项：</p>
+<ul>
+<li>
+<p><code>ps -A</code>：列出所有的进程</p>
+</li>
+<li>
+<p><code>ps -w</code>：显示加宽可以显示更多的信息</p>
+</li>
+<li>
+<p><code>ps -au</code>：显示较为详细的信息</p>
+</li>
+<li>
+<p><code>ps -aux</code>：显示所有包含其他使用者的进程。下面是对该命令输出信息的介绍，其输出格式为</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><code>USER</code>：进程拥有者</p>
+</li>
+<li>
+<p><code>PID</code>：process id</p>
+</li>
+<li>
+<p><code>%CPU</code>：CPU占用率</p>
+</li>
+<li>
+<p><code>VSZ</code>：虚拟内存大小</p>
+</li>
+<li>
+<p><code>RSS</code>：内存大小</p>
+</li>
+<li>
+<p><code>TTY</code>：minor device number of tty</p>
+</li>
+<li>
+<p><code>STAT</code>：进程状态</p>
+<ul>
+<li>D：无法终端的休眠状态（通常为IO的进程）</li>
+<li>R：正在执行中</li>
+<li>S：静止状态</li>
+<li>T：暂停执行</li>
+<li>Z：不存在但暂时无法消除</li>
+<li>W：没有足够的内存分页可分配</li>
+<li>&lt;：高优先序的进程</li>
+<li>N：低优先序的进程</li>
+<li>L：有内存分页分配且Lock在内存内</li>
+</ul>
+</li>
+<li>
+<p>START：进程开始时间</p>
+</li>
+<li>
+<p>TIME：执行的时间</p>
+</li>
+<li>
+<p>COMMAND：执行的指令</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>较为常用的命令为<code>ps -u FT</code>，其可以显示用户<code>FT</code>正在运行的进程，并可以通过<code>grep</code>对进程进行筛选。</p>
+<p>此外，<code>top</code>命令可以显示正在运行的进程并实时更新。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/linux/linux-comm-ps.html">Linux ps 命令</a></li>
+<li><a href="https://blog.csdn.net/yaoqiuxiang/article/details/9449179">ubuntu查看所有正在运行的进程</a></li>
+</ol>
+</blockquote>
+</br>
+<p>22.<code>kill</code>命令常用于通过进程号PID终止特定进程。可以用<code>kill -l</code>命令列出所有可用的信号，最常用的信号是：</p>
+<ul>
+<li><code>1 (HUP)</code>：重新加载进程</li>
+<li><code>9 (KILL)</code>：杀死一个进程</li>
+<li><code>15 (TERM)</code>：正常停止一个进程</li>
+</ul>
+<p>示例：</p>
+<p><code>kill -9 12345</code>：彻底杀死进程号为12345的进程。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/linux/linux-comm-kill.html">Linux kill命令</a></li>
+</ol>
+</blockquote>
+</br>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -5341,9 +5448,20 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </ol>
 </blockquote>
 </br>
-<ol start="15">
-<li></li>
+<p>15.在加载模型权重进行测试时，可能会出现如下报错：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Missing keys &amp; unexpected keys <span class="keyword">in</span> state_dict when loading self trained model</span><br></pre></td></tr></table></figure>
+<p>其原因可能在于在训练模型时使用了<code>nn.DataParallel</code>，因此存储的模型权重和不使用前者时的权重的keys有所不同。其解决方法为，在创建模型时同样用<code>nn.DataParallel</code>进行包装：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Network</span></span><br><span class="line">self.model = TRACER(args).to(self.device)</span><br><span class="line"><span class="keyword">if</span> args.multi_gpu:</span><br><span class="line">	self.model = nn.DataParallel(self.model).to(self.device)</span><br></pre></td></tr></table></figure>
+<p>也可以直接去除<code>.module</code>key：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">check_point = torch.load(<span class="string">&#x27;myfile.pth.tar&#x27;</span>)</span><br><span class="line">check_point.key()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line">new_state_dict = OrderedDict()</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> state_dict.items():</span><br><span class="line">    name = k[<span class="number">7</span>:] <span class="comment"># remove &#x27;module.&#x27; of dataparallel</span></span><br><span class="line">    new_state_dict[name]=v</span><br><span class="line"></span><br><span class="line">model.load_state_dict(new_state_dict)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://discuss.pytorch.org/t/missing-keys-unexpected-keys-in-state-dict-when-loading-self-trained-model/22379">Missing keys &amp; unexpected keys in state_dict when loading self trained model</a></li>
+<li><a href="https://discuss.pytorch.org/t/solved-keyerror-unexpected-key-module-encoder-embedding-weight-in-state-dict/1686">[solved] KeyError: ‘unexpected key “module.encoder.embedding.weight” in state_dict’</a></li>
 </ol>
+</blockquote>
+</br>
 ]]></content>
       <categories>
         <category>深度学习</category>
