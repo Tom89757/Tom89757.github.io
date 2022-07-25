@@ -379,7 +379,43 @@ def _initialize_weights(self, pre_train):
 
 </br>
 
-15.
+15.在加载模型权重进行测试时，可能会出现如下报错：
+
+```python
+Missing keys & unexpected keys in state_dict when loading self trained model
+```
+
+其原因可能在于在训练模型时使用了`nn.DataParallel`，因此存储的模型权重和不使用前者时的权重的keys有所不同。其解决方法为，在创建模型时同样用`nn.DataParallel`进行包装：
+
+```python
+# Network
+self.model = TRACER(args).to(self.device)
+if args.multi_gpu:
+	self.model = nn.DataParallel(self.model).to(self.device)
+```
+
+也可以直接去除`.module`key：
+
+```python
+check_point = torch.load('myfile.pth.tar')
+check_point.key()
+
+
+from collections import OrderedDict
+new_state_dict = OrderedDict()
+for k, v in state_dict.items():
+    name = k[7:] # remove 'module.' of dataparallel
+    new_state_dict[name]=v
+
+model.load_state_dict(new_state_dict)
+```
+
+> 参考资料：
+>
+> 1. [Missing keys & unexpected keys in state_dict when loading self trained model](https://discuss.pytorch.org/t/missing-keys-unexpected-keys-in-state-dict-when-loading-self-trained-model/22379)
+> 2. [[solved] KeyError: ‘unexpected key “module.encoder.embedding.weight” in state_dict’](https://discuss.pytorch.org/t/solved-keyerror-unexpected-key-module-encoder-embedding-weight-in-state-dict/1686)
+
+</br>
 
 
 

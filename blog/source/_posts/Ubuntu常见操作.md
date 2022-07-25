@@ -373,3 +373,84 @@ alias cls='printf "\ec"'
 > 1. [Linux Shell 只列出目录的方法](https://blog.csdn.net/DLUTBruceZhang/article/details/9244897)
 
 </br>
+
+21.在Ubuntu系统中，常常需要查看当前运行的进程，并根据需要筛选。下面介绍`ps`命令的选项：
+
+- `ps -A`：列出所有的进程
+
+- `ps -w`：显示加宽可以显示更多的信息
+
+- `ps -au`：显示较为详细的信息
+
+- `ps -aux`：显示所有包含其他使用者的进程。下面是对该命令输出信息的介绍，其输出格式为
+
+  ```bash
+  USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
+  ```
+
+  - `USER`：进程拥有者
+  - `PID`：process id
+  - `%CPU`：CPU占用率
+  - `VSZ`：虚拟内存大小
+  - `RSS`：内存大小
+  - `TTY`：minor device number of tty
+  - `STAT`：进程状态
+    - D：无法终端的休眠状态（通常为IO的进程）
+    - R：正在执行中
+    - S：静止状态
+    - T：暂停执行
+    - Z：不存在但暂时无法消除
+    - W：没有足够的内存分页可分配
+    - <：高优先序的进程
+    - N：低优先序的进程
+    - L：有内存分页分配且Lock在内存内
+
+  - START：进程开始时间
+  - TIME：执行的时间
+  - COMMAND：执行的指令
+
+较为常用的命令为`ps -u FT`，其可以显示用户`FT`正在运行的进程，并可以通过`grep`对进程进行筛选。
+
+此外，`top`命令可以显示正在运行的进程并实时更新。
+
+> 参考资料：
+>
+> 1. [Linux ps 命令](https://www.runoob.com/linux/linux-comm-ps.html)
+> 2. [ubuntu查看所有正在运行的进程](https://blog.csdn.net/yaoqiuxiang/article/details/9449179)
+
+</br>
+
+22.`kill`命令常用于通过进程号PID终止特定进程。可以用`kill -l`命令列出所有可用的信号，最常用的信号是：
+
+- `1 (HUP)`：重新加载进程
+- `9 (KILL)`：杀死一个进程
+- `15 (TERM)`：正常停止一个进程
+
+示例：
+
+`kill -9 12345`：彻底杀死进程号为12345的进程。
+
+> 参考资料：
+>
+> 1. [Linux kill命令](https://www.runoob.com/linux/linux-comm-kill.html)
+
+</br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
