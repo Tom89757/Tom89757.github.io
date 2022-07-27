@@ -330,15 +330,106 @@ pip install mmdet==2.12.0
 
 </br>
 
+6.Python中两个有用的函数：
 
+- `dir()`：
+- `help()`：
 
+> 参考资料：
+>
+> 1. [Difference between dir() and help()](http://net-informations.com/python/iq/help.htm)
 
+</br>
 
+7.根据字符串常量动态创建以字符串命名的变量：
 
+> 参考资料：
+>
+> 1. [Python进阶：如何将字符串常量转化为变量？](https://segmentfault.com/a/1190000018534188)
 
+</br>
 
+8.当通过`socket`创建本地服务器时：
 
+```python
+import socket
 
+HOST, PORT = '', 8888
 
+listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+listen_socket.bind((HOST, PORT))
+listen_socket.listen(1)
+print('Serving HTTP on port %s ...' % PORT)
+while True:
+    client_connection, client_address = listen_socket.accept()
+    request = client_connection.recv(1024)
+    print(request.decode("utf-8"))
 
+    http_response = """\
+HTTP/1.1 200 OK
+
+Hello, World!
+"""
+    client_connection.sendall(http_response.encode("utf-8"))
+    client_connection.close()
+```
+
+运行该脚本可能发生以下情况：
+
+![image-20220727134014236](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727134014236.png)
+
+其原因为本地端口`8888`被其他的应用占用（本例中其被Charles占用），解决方法为使用其他的端口。
+
+> 参考资料：
+>
+> 1. [Python实现简单的web服务器](https://zhuanlan.zhihu.com/p/35318041)
+> 2. [socket.error: [Errno 10013\] An attempt was made to access a socket in a way forbidden by its access permissions](https://stackoverflow.com/questions/2778840/socket-error-errno-10013-an-attempt-was-made-to-access-a-socket-in-a-way-forb)
+
+</br>
+
+8.如下，构建本地代理服务器来请求`https://www.baidu.com`：
+
+```python
+# 代理
+from urllib.error import URLError
+from urllib.request import ProxyHandler, Request, build_opener
+
+proxy_handler = ProxyHandler({
+    'http': 'http://127.0.0.1:9743',
+    'https': 'https://127.0.0.1:10000'
+})
+url = "https://www.baidu.com"
+# request = Request(url)
+opener = build_opener(proxy_handler)
+try:
+    response = opener.open(url)
+    # response = opener.open(request)
+    print(response.read().decode('utf-8'))
+except URLError as e:
+    print(e.reason)
+```
+
+运行后会出现如下情况：
+
+![image-20220727140934265](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727140934265.png)
+
+此时注释掉构建的`https`代理服务器：
+
+```python
+# 'https': 'https://127.0.0.1:10000'
+```
+
+运行正常：
+
+![image-20220727141031507](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727141031507.png)
+
+故推测是构建的`https`型代理服务器出现问题，有待探究。
+
+> 参考资料：
+>
+> 1. [urllib，request 设置代理](https://www.cnblogs.com/huangguifeng/p/7635512.html)
+> 2. [Errno 10061 : No connection could be made because the target machine actively refused it ( client - server )](https://stackoverflow.com/questions/12993276/errno-10061-no-connection-could-be-made-because-the-target-machine-actively-re)
+
+</br>
 

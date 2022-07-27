@@ -33,3 +33,10 @@ tags:
 >
 > 1. [pip installation](https://pip.pypa.io/en/stable/installation/)
 
+### 更新pip
+
+`python -m pip install --upgrade pip`。
+
+参考资料：
+
+> 1. [pip installation](https://pip.pypa.io/en/stable/installation/)

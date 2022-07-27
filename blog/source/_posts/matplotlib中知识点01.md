@@ -50,3 +50,8 @@ matplotlib.pyplot.imshow(X, cmap=None, norm=None, *, aspect=None, interpolation=
 
 </br>
 
+4.当使用matplotlib画有很多subplots的图时，改善subplots布局：
+
+> 参考资料：
+>
+> 1. [Improve subplot size/spacing with many subplots in matplotlib](https://stackoverflow.com/questions/6541123/improve-subplot-size-spacing-with-many-subplots-in-matplotlib)
