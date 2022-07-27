@@ -385,6 +385,14 @@
 <li><a href="https://pip.pypa.io/en/stable/installation/">pip installation</a></li>
 </ol>
 </blockquote>
+<h3 id="更新pip"><a class="markdownIt-Anchor" href="#更新pip"></a> 更新pip</h3>
+<p><code>python -m pip install --upgrade pip</code>。</p>
+<p>参考资料：</p>
+<blockquote>
+<ol>
+<li><a href="https://pip.pypa.io/en/stable/installation/">pip installation</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -5193,6 +5201,9 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </ol>
 </blockquote>
 </br>
+<ol start="28">
+<li></li>
+</ol>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -5515,6 +5526,13 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </ol>
 </blockquote>
 </br>
+<p>4.当使用matplotlib画有很多subplots的图时，改善subplots布局：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/6541123/improve-subplot-size-spacing-with-many-subplots-in-matplotlib">Improve subplot size/spacing with many subplots in matplotlib</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -5979,6 +5997,56 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 <p>参考资料：</p>
 <ol>
 <li><a href="https://www.google.com/search?q=pip+install+specific+version&amp;oq=pip+install+specivi&amp;aqs=chrome.1.69i57j0i512l9.4361j0j7&amp;sourceid=chrome&amp;ie=UTF-8">pip install specific version</a></li>
+</ol>
+</blockquote>
+</br>
+<p>6.Python中两个有用的函数：</p>
+<ul>
+<li><code>dir()</code>：</li>
+<li><code>help()</code>：</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://net-informations.com/python/iq/help.htm">Difference between dir() and help()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>7.根据字符串常量动态创建以字符串命名的变量：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://segmentfault.com/a/1190000018534188">Python进阶：如何将字符串常量转化为变量？</a></li>
+</ol>
+</blockquote>
+</br>
+<p>8.当通过<code>socket</code>创建本地服务器时：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">HOST, PORT = <span class="string">&#x27;&#x27;</span>, <span class="number">8888</span></span><br><span class="line"></span><br><span class="line">listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">listen_socket.bind((HOST, PORT))</span><br><span class="line">listen_socket.listen(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Serving HTTP on port %s ...&#x27;</span> % PORT)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    client_connection, client_address = listen_socket.accept()</span><br><span class="line">    request = client_connection.recv(<span class="number">1024</span>)</span><br><span class="line">    <span class="built_in">print</span>(request.decode(<span class="string">&quot;utf-8&quot;</span>))</span><br><span class="line"></span><br><span class="line">    http_response = <span class="string">&quot;&quot;&quot;\</span></span><br><span class="line"><span class="string">HTTP/1.1 200 OK</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Hello, World!</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">    client_connection.sendall(http_response.encode(<span class="string">&quot;utf-8&quot;</span>))</span><br><span class="line">    client_connection.close()</span><br></pre></td></tr></table></figure>
+<p>运行该脚本可能发生以下情况：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727134014236.png" alt="image-20220727134014236" /></p>
+<p>其原因为本地端口<code>8888</code>被其他的应用占用（本例中其被Charles占用），解决方法为使用其他的端口。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/35318041">Python实现简单的web服务器</a></li>
+<li>[socket.error: <a href="https://stackoverflow.com/questions/2778840/socket-error-errno-10013-an-attempt-was-made-to-access-a-socket-in-a-way-forb">Errno 10013] An attempt was made to access a socket in a way forbidden by its access permissions</a></li>
+</ol>
+</blockquote>
+</br>
+<p>8.如下，构建本地代理服务器来请求<code>https://www.baidu.com</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 代理</span></span><br><span class="line"><span class="keyword">from</span> urllib.error <span class="keyword">import</span> URLError</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> ProxyHandler, Request, build_opener</span><br><span class="line"></span><br><span class="line">proxy_handler = ProxyHandler(&#123;</span><br><span class="line">    <span class="string">&#x27;http&#x27;</span>: <span class="string">&#x27;http://127.0.0.1:9743&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;https&#x27;</span>: <span class="string">&#x27;https://127.0.0.1:10000&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line">url = <span class="string">&quot;https://www.baidu.com&quot;</span></span><br><span class="line"><span class="comment"># request = Request(url)</span></span><br><span class="line">opener = build_opener(proxy_handler)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = opener.<span class="built_in">open</span>(url)</span><br><span class="line">    <span class="comment"># response = opener.open(request)</span></span><br><span class="line">    <span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"><span class="keyword">except</span> URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(e.reason)</span><br></pre></td></tr></table></figure>
+<p>运行后会出现如下情况：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727140934265.png" alt="image-20220727140934265" /></p>
+<p>此时注释掉构建的<code>https</code>代理服务器：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># &#x27;https&#x27;: &#x27;https://127.0.0.1:10000&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>运行正常：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727141031507.png" alt="image-20220727141031507" /></p>
+<p>故推测是构建的<code>https</code>型代理服务器出现问题，有待探究。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/huangguifeng/p/7635512.html">urllib，request 设置代理</a></li>
+<li><a href="https://stackoverflow.com/questions/12993276/errno-10061-no-connection-could-be-made-because-the-target-machine-actively-re">Errno 10061 : No connection could be made because the target machine actively refused it ( client - server )</a></li>
 </ol>
 </blockquote>
 </br>
@@ -6809,6 +6877,90 @@ class _Loss(Module)
       <tags>
         <tag>Pytorch</tag>
         <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android Studio配置</title>
+    <url>/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录一下在配置Android Studio中一些tips：</p>
+<span id="more"></span>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://developer.android.com/studio/command-line/variables?hl=zh-cn">环境变量</a></li>
+<li><a href="https://blog.51cto.com/u_15307523/3133953">Android Studio 配置模拟器AVD存放路径（默认在c盘，解决c盘空间不够问题）</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>Android Studio</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker常用操作</title>
+    <url>/2022/07/27/Docker%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>本文记录一下使用Docker容器时的常见操作：</p>
+<span id="more"></span>
+<p>1.查看docker中安装部署的所有容器：<code>docker ps -a</code>。</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727111314196.png" alt="image-20220727111314196" /></p>
+</br>
+<p>2.Docker配置镜像加速：</p>
+<ul>
+<li>
+<p>从 <a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">阿里云</a> 获取镜像加速地址，会得到如下个人镜像加速地址</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727111855809.png" alt="image-20220727111855809" /></p>
+</li>
+<li>
+<p>在Windows 10上安装的Docker Desktop中，进入<code>settings-&gt;Docker Engine</code>。编辑右侧json格式的configuration文件如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727112129610.png" alt="image-20220727112129610" /></p>
+</li>
+<li>
+<p>点击<code>Apply &amp; Restart</code>。此时系统会要求注销当前账号，然后重新登录，同意即可，此时镜像即配置成功。</p>
+</li>
+<li>
+<p>验证：在任意地方打开<code>git bash</code>或者<code>cmd</code>窗口，输入<code>docker info</code>命令回车，可以看到如下信息：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220727112341200.png" alt="image-20220727112341200" /></p>
+<p>表示配置成功。</p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/docker/docker-mirror-acceleration.html">Docker 镜像加速</a></li>
+</ol>
+</blockquote>
+</br>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Charles配置</title>
+    <url>/2022/07/27/Charles%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录以下Charles配置中的一些tips：</p>
+<span id="more"></span>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/36128215/charles-ssl-certificate-download-failed-due-to-network-failures">Charles ssl certificate download failed “due to network failures”</a></li>
+<li><a href="https://stackoverflow.com/questions/17823434/ssl-proxy-charles-and-android-trouble">SSL Proxy/Charles and Android trouble [closed]</a></li>
+<li><a href="https://community.tealiumiq.com/t5/Tealium-for-Android/Setting-up-Charles-to-Proxy-your-Android-Device/ta-p/5121">Setting up Charles to Proxy your Android Device</a></li>
+<li><a href="https://blog.csdn.net/u014540814/article/details/80518208">Android手机安装.pem证书文件</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>Charles</tag>
       </tags>
   </entry>
 </search>
