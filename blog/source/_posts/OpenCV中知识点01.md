@@ -712,7 +712,22 @@ PS：上述列表并未展示所有的`dtype`类型，详见参考资料：
 
 </br>
 
-28.
+28.在使用`cv2.imshow('img', img)`时，传入的`img`的`dtype`需要为`np.uint8`类型，否则展示的图片会出现奇怪的扭曲 (distortion)：
 
+```python
+import numpy as np
+import cv2
+[...]
+info = np.iinfo(data.dtype) # Get the information of the incoming image type
+data = data.astype(np.float64) / info.max # normalize the data to 0 - 1
+data = 255 * data # Now scale by 255
+img = data.astype(dtype=np.uint8)
+cv2.imshow("Window", img)
+```
 
+> 参考资料：
+>
+> 1. [Convert np.array of type float64 to type uint8 scaling values](https://stackoverflow.com/questions/46689428/convert-np-array-of-type-float64-to-type-uint8-scaling-values)
+
+</br>
 

@@ -58,4 +58,5 @@ Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11
 > 参考资料：
 >
 > 1. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install)
+> 2. [WSL的基本命令](https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands)
 
