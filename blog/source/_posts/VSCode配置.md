@@ -66,3 +66,11 @@ tags:
 > 参考资料：
 >
 > 1. [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#:~:text=your%20User%20Settings.-,To%20do%20so%2C%20open%20the%20Command%20Palette%20(Ctrl%2BShift,Settings%2C%20with%20the%20appropriate%20interpreter.)
+
+### VSCode关闭Editor: Enable Preview
+
+VSCode默认打开Workbench的Preview，其表现为，在单击一个左边的一个文件后，如果在不对其进行modify操作后单击另一个文件，会直接切换为另一个文件而不是在新tab页打开另一个文件，这不符合本人的习惯。
+
+此时，可以通过打开`settings`搜索`preview`关键词然后关闭`Workbench>Editor: Enable preview`来实现：
+
+![image-20220729153253563](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220729153253563.png)
