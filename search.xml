@@ -470,6 +470,10 @@
 <li>[Using Python environments in VS Code](<a href="https://code.visualstudio.com/docs/python/environments#:~:text=your%20User%20Settings.-,To%20do%20so%2C%20open%20the%20Command%20Palette%20(Ctrl%2BShift,Settings%2C%20with%20the%20appropriate%20interpreter.)">https://code.visualstudio.com/docs/python/environments#:~:text=your User Settings.-,To do so%2C open the Command Palette (Ctrl%2BShift,Settings%2C with the appropriate interpreter.)</a></li>
 </ol>
 </blockquote>
+<h3 id="vscode关闭editor-enable-preview"><a class="markdownIt-Anchor" href="#vscode关闭editor-enable-preview"></a> VSCode关闭Editor: Enable Preview</h3>
+<p>VSCode默认打开Workbench的Preview，其表现为，在单击一个左边的一个文件后，如果在不对其进行modify操作后单击另一个文件，会直接切换为另一个文件而不是在新tab页打开另一个文件，这不符合本人的习惯。</p>
+<p>此时，可以通过打开<code>settings</code>搜索<code>preview</code>关键词然后关闭<code>Workbench&gt;Editor: Enable preview</code>来实现：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220729153253563.png" alt="image-20220729153253563" /></p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -1029,6 +1033,7 @@
 <p>参考资料：</p>
 <ol>
 <li><a href="https://docs.microsoft.com/en-us/windows/wsl/install">Install Linux on Windows with WSL</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands">WSL的基本命令</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -5201,9 +5206,15 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </ol>
 </blockquote>
 </br>
-<ol start="28">
-<li></li>
+<p>28.在使用<code>cv2.imshow('img', img)</code>时，传入的<code>img</code>的<code>dtype</code>需要为<code>np.uint8</code>类型，否则展示的图片会出现奇怪的扭曲 (distortion)：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">[...]</span><br><span class="line">info = np.iinfo(data.dtype) <span class="comment"># Get the information of the incoming image type</span></span><br><span class="line">data = data.astype(np.float64) / info.<span class="built_in">max</span> <span class="comment"># normalize the data to 0 - 1</span></span><br><span class="line">data = <span class="number">255</span> * data <span class="comment"># Now scale by 255</span></span><br><span class="line">img = data.astype(dtype=np.uint8)</span><br><span class="line">cv2.imshow(<span class="string">&quot;Window&quot;</span>, img)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/46689428/convert-np-array-of-type-float64-to-type-uint8-scaling-values">Convert np.array of type float64 to type uint8 scaling values</a></li>
 </ol>
+</blockquote>
+</br>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -6884,11 +6895,54 @@ class _Loss(Module)
     <url>/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>本文记录一下在配置Android Studio中一些tips：</p>
 <span id="more"></span>
+<h3 id="通过配置环境变量将sdk和emulator放在d盘"><a class="markdownIt-Anchor" href="#通过配置环境变量将sdk和emulator放在d盘"></a> 通过配置环境变量将SDK和Emulator放在D盘</h3>
+<ul>
+<li>
+<p>配置<code>ANDROID_SDK_ROOT</code>环境变量，对应目录下存放安装的<code>SDK</code>：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220730191707531.png" alt="image-20220730191707531" /></p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220730191849901.png" alt="image-20220730191849901" /></p>
+</li>
+<li>
+<p>配置<code>ANDROID_SDK_HOME</code>环境变量，对应目录下的<code>.android\avd</code>目录中存放安装的安卓模拟器。</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220730191737331.png" alt="image-20220730191737331" /></p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220730191916435.png" alt="image-20220730191916435" /></p>
+<p>注意将原本C盘中的<code>.android</code>文件夹复制到该目录处时，需要更改<code>avd</code>下面对应模拟器的<code>.ini</code>文件中的路径：</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220730190220294.png" alt="image-20220730190220294" /></p>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://developer.android.com/studio/command-line/variables?hl=zh-cn">环境变量</a></li>
 <li><a href="https://blog.51cto.com/u_15307523/3133953">Android Studio 配置模拟器AVD存放路径（默认在c盘，解决c盘空间不够问题）</a></li>
+</ol>
+</blockquote>
+<h3 id="在android-studio项目中导入已有安卓模拟器"><a class="markdownIt-Anchor" href="#在android-studio项目中导入已有安卓模拟器"></a> 在Android Studio项目中导入已有安卓模拟器</h3>
+<p>直接导入对应<code>avd</code>目录下的<code>.ini</code>文件即可。</p>
+<h3 id="android-studio各种报错"><a class="markdownIt-Anchor" href="#android-studio各种报错"></a> Android Studio各种报错</h3>
+<p>1.出现报错：<code>This view is not constrained vertically: at runtime it will jump to the top unless you add a vertical constraint</code>。出现场景如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220730190618272.png" alt="image-20220730190618272" /></p>
+<p>此时可以通过点击右上方的魔法工具完整自动补全解决报错：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220730190838880.png" alt="image-20220730190838880" /></p>
+<p>补全后代码如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/button1&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">&quot;Button 1&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintEnd_toEndOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;parent&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/37859613/this-view-is-not-constrained-vertically-at-runtime-it-will-jump-to-the-left-unl">This view is not constrained vertically. At runtime it will jump to the left unless you add a vertical constraint</a></li>
+</ol>
+</blockquote>
+<h3 id="android-studio配置国内镜像"><a class="markdownIt-Anchor" href="#android-studio配置国内镜像"></a> Android Studio配置国内镜像</h3>
+<h3 id="android-studio中用viewbinding替代kotlin-android-extension插件"><a class="markdownIt-Anchor" href="#android-studio中用viewbinding替代kotlin-android-extension插件"></a> Android Studio中用ViewBinding替代kotlin-android-extension插件</h3>
+<p>在Activity中使用视图绑定的流程如下：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FirstActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        <span class="keyword">var</span> binding = FirstLayoutBinding.inflate(layoutInflater)</span><br><span class="line">        <span class="keyword">val</span> view = binding.root</span><br><span class="line">        setContentView(view)</span><br><span class="line">        <span class="comment">// val button1: Button = findViewById(R.id.button1)</span></span><br><span class="line">        <span class="comment">// Toast.makeText要求传入三个参数，第一个参数为一个Context对象，Activity本身就是一个Context对象，因此传入this即可；第二个参数为显示的文本；第三个参数为显示时长</span></span><br><span class="line">        binding.button1.setOnClickListener&#123;</span><br><span class="line">            Toast.makeText(<span class="keyword">this</span>, <span class="string">&quot;You clicked Button 1&quot;</span>, Toast.LENGTH_LONG).show()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其与以下代码功能等价，但在页面中控件较多时更为高效：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FirstActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.first_layout)</span><br><span class="line">        <span class="keyword">val</span> button1: Button = findViewById(R.id.button1)</span><br><span class="line">        <span class="comment">// Toast.makeText要求传入三个参数，第一个参数为一个Context对象，Activity本身就是一个Context对象，因此传入this即可；第二个参数为显示的文本；第三个参数为显示时长</span></span><br><span class="line">        button1.setOnClickListener&#123;</span><br><span class="line">            Toast.makeText(<span class="keyword">this</span>, <span class="string">&quot;You clicked Button 1&quot;</span>, Toast.LENGTH_LONG).show()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/guolin_blog/article/details/113089706">kotlin-android-extensions插件也被废弃了？扶我起来</a></li>
+<li><a href="https://developer.android.com/topic/libraries/view-binding">视图绑定</a> 官方文档</li>
 </ol>
 </blockquote>
 ]]></content>
