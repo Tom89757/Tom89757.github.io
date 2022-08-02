@@ -116,7 +116,7 @@ tags:
   >
   > 1. [git设置、查看、取消代理](https://www.cnblogs.com/yongy1030/p/11699086.html)
 
-5.有时需要在`.gitignore`文件中添加仓库中所有的名为`folder_name`文件夹或文件，此时可以通过在`.gitignore`中添加如下内容实现：
+6.有时需要在`.gitignore`文件中添加仓库中所有的名为`folder_name`文件夹或文件，此时可以通过在`.gitignore`中添加如下内容实现：
 
 ```bash
 *folder_name*
@@ -133,3 +133,59 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 
 </br>
 
+7.同时进行多个项目的开发时，对`git commmit -m "msg"`中的`msg`没有过多要求的情况下，可以通过Windows `.bat`脚本对多个项目进行批量的`git pull`和`git push`。
+
+- `git pull`：
+
+  ```bash
+  @echo off
+  echo "batch git pull"
+  D:
+  
+  echo "moving to D:\Projects\AndroidProjects"
+  cd D:\Projects\AndroidProjects
+  echo git pull D:\Projects\AndroidProjects >>D:\Desktop\pull.txt
+  git pull >>D:\Desktop\pull.txt
+  echo "D:\Projects\AndroidProjects git pull finish"
+  echo= >>D:\Desktop\pull.txt
+  echo=
+  
+  ...
+  
+  pause
+  ```
+
+  上面演示了对`AndroidProjects`项目进行`git pull`操作，并将相关输出记录到`pull.txt`文件。最后的`pause`命令使得执行`.bat`脚本执行完毕后停留在`cmd`页面。
+
+- `git push`：
+
+  ```bash
+  @echo off
+  echo "batch git push"
+  D:
+  
+  echo "moving to D:\Desktop\Tom89757.github.io"
+  cd D:\Desktop\Tom89757.github.io
+  echo git push D:\Desktop\Tom89757.github.io >>D:\Desktop\push.txt
+  git add ./ >>D:\Desktop\push.txt
+  git commit -m "update" >>D:\Desktop\push.txt
+  git push origin hexo >>D:\Desktop\push.txt
+  echo "D:\Desktop\Tom89757.github.io git push finish"
+  echo= >>D:\Desktop\push.txt
+  echo= >>D:\Desktop\push.txt
+  echo=
+  cd D:\Desktop\Tom89757.github.io\blog
+  hexo d -g
+  
+  pause
+  ```
+
+  上面演示了对`Tom89757.github.io`项目进行`git push`操作，并将相关输出记录到`push.txt`文件。并在完成`git push`操作后，对`blog`中的内容进行生成和部署。
+
+> 参考资料：
+>
+> 1. [Windows 下bat脚本git提交代码到github](https://blog.csdn.net/Ep_Little_prince/article/details/108895103)
+> 2. [bat 批处理教程](https://www.w3cschool.cn/dosmlxxsc1/wvqyr9.html)
+> 3. [bat脚本echo命令输出空行的11种方法和效率](https://blog.csdn.net/justlpf/article/details/120077423)
+
+</br>
