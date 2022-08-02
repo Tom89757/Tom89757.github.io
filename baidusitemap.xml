@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2022-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://tom89757.github.io/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2022-07-30</lastmod>
   </url>
@@ -74,10 +78,6 @@
   </url>
   <url>
     <loc>https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/</loc>
-    <lastmod>2022-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://tom89757.github.io/2022/05/12/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2022-07-20</lastmod>
   </url>
   <url>

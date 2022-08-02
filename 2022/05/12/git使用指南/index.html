@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516212734022.png?token=AKWAGWYZ35VBES4T4KXFT5LCQJLUG">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516212832926.png?token=AKWAGWYTCJTJYHQH53NVMFDCQJLUS">
 <meta property="article:published_time" content="2022-05-12T09:54:26.000Z">
-<meta property="article:modified_time" content="2022-07-20T10:25:28.833Z">
+<meta property="article:modified_time" content="2022-08-02T05:12:23.948Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -261,7 +261,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-20 18:25:28" itemprop="dateModified" datetime="2022-07-20T18:25:28+08:00">2022-07-20</time>
+      <time title="修改时间：2022-08-02 13:12:23" itemprop="dateModified" datetime="2022-08-02T13:12:23+08:00">2022-08-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -280,14 +280,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
+      <span>3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -399,13 +399,34 @@
 </blockquote>
 </li>
 </ul>
-<p>5.有时需要在<code>.gitignore</code>文件中添加仓库中所有的名为<code>folder_name</code>文件夹或文件，此时可以通过在<code>.gitignore</code>中添加如下内容实现：</p>
+<p>6.有时需要在<code>.gitignore</code>文件中添加仓库中所有的名为<code>folder_name</code>文件夹或文件，此时可以通过在<code>.gitignore</code>中添加如下内容实现：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*folder_name*</span><br></pre></td></tr></table></figure>
 <p>例如，要忽略所有名为<code>datafile</code>和<code>pth</code>的文件夹或文件，可以在<code>.gitignore</code>中添加：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*datafile*</span><br><span class="line">*pth*</span><br></pre></td></tr></table></figure>
 <p>PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹名或文件名中包含<code>datafile</code>或<code>pth</code>的连续字符串都将被忽略。</p>
 </br>
-
+<p>7.同时进行多个项目的开发时，对<code>git commmit -m &quot;msg&quot;</code>中的<code>msg</code>没有过多要求的情况下，可以通过Windows <code>.bat</code>脚本对多个项目进行批量的<code>git pull</code>和<code>git push</code>。</p>
+<ul>
+<li>
+<p><code>git pull</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;batch git pull&quot;</span></span><br><span class="line">D:</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;moving to D:\Projects\AndroidProjects&quot;</span></span><br><span class="line"><span class="built_in">cd</span> D:\Projects\AndroidProjects</span><br><span class="line"><span class="built_in">echo</span> git pull D:\Projects\AndroidProjects &gt;&gt;D:\Desktop\pull.txt</span><br><span class="line">git pull &gt;&gt;D:\Desktop\pull.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;D:\Projects\AndroidProjects git pull finish&quot;</span></span><br><span class="line"><span class="built_in">echo</span>= &gt;&gt;D:\Desktop\pull.txt</span><br><span class="line"><span class="built_in">echo</span>=</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p>上面演示了对<code>AndroidProjects</code>项目进行<code>git pull</code>操作，并将相关输出记录到<code>pull.txt</code>文件。最后的<code>pause</code>命令使得执行<code>.bat</code>脚本执行完毕后停留在<code>cmd</code>页面。</p>
+</li>
+<li>
+<p><code>git push</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;batch git push&quot;</span></span><br><span class="line">D:</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;moving to D:\Desktop\Tom89757.github.io&quot;</span></span><br><span class="line"><span class="built_in">cd</span> D:\Desktop\Tom89757.github.io</span><br><span class="line"><span class="built_in">echo</span> git push D:\Desktop\Tom89757.github.io &gt;&gt;D:\Desktop\push.txt</span><br><span class="line">git add ./ &gt;&gt;D:\Desktop\push.txt</span><br><span class="line">git commit -m <span class="string">&quot;update&quot;</span> &gt;&gt;D:\Desktop\push.txt</span><br><span class="line">git push origin hexo &gt;&gt;D:\Desktop\push.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;D:\Desktop\Tom89757.github.io git push finish&quot;</span></span><br><span class="line"><span class="built_in">echo</span>= &gt;&gt;D:\Desktop\push.txt</span><br><span class="line"><span class="built_in">echo</span>= &gt;&gt;D:\Desktop\push.txt</span><br><span class="line"><span class="built_in">echo</span>=</span><br><span class="line"><span class="built_in">cd</span> D:\Desktop\Tom89757.github.io\blog</span><br><span class="line">hexo d -g</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p>上面演示了对<code>Tom89757.github.io</code>项目进行<code>git push</code>操作，并将相关输出记录到<code>push.txt</code>文件。并在完成<code>git push</code>操作后，对<code>blog</code>中的内容进行生成和部署。</p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Ep_Little_prince/article/details/108895103">Windows 下bat脚本git提交代码到github</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/dosmlxxsc1/wvqyr9.html">bat 批处理教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/justlpf/article/details/120077423">bat脚本echo命令输出空行的11种方法和效率</a></li>
+</ol>
+</blockquote>
+</br>
     </div>
 
     
@@ -477,13 +498,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">186k</span>
+    <span title="站点总字数">187k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:49</span>
+    <span title="站点阅读时长">2:50</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
