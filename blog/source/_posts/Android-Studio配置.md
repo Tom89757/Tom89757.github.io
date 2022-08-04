@@ -110,9 +110,19 @@ class FirstActivity : AppCompatActivity() {
 > 1. [kotlin-android-extensions插件也被废弃了？扶我起来](https://blog.csdn.net/guolin_blog/article/details/113089706)
 > 2. [视图绑定](https://developer.android.com/topic/libraries/view-binding) 官方文档
 
+### Android Studio返回上一次光标所在位置
 
+- 快捷键：`Ctrl+Alt+向左箭头`
 
+  ![image-20220804163700574](C:/Users/26899/AppData/Roaming/Typora/typora-user-images/image-20220804163700574.png)
 
+- 双击`shift`全局搜索，然后搜索`show Main ToolBar`配置，置为`ON`：
+
+  ![image-20220804163756703](C:/Users/26899/AppData/Roaming/Typora/typora-user-images/image-20220804163756703.png)
+
+  可以看到顶栏工具栏已经打开：
+
+  ![image-20220804163915966](C:/Users/26899/AppData/Roaming/Typora/typora-user-images/image-20220804163915966.png)
 
 
 
