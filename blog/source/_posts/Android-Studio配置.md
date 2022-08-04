@@ -114,15 +114,15 @@ class FirstActivity : AppCompatActivity() {
 
 - 快捷键：`Ctrl+Alt+向左箭头`
 
-  ![image-20220804163700574](C:/Users/26899/AppData/Roaming/Typora/typora-user-images/image-20220804163700574.png)
+  ![image-20220804163700574](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804163700574.png)
 
 - 双击`shift`全局搜索，然后搜索`show Main ToolBar`配置，置为`ON`：
 
-  ![image-20220804163756703](C:/Users/26899/AppData/Roaming/Typora/typora-user-images/image-20220804163756703.png)
+  ![image-20220804163756703](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804163756703.png)
 
   可以看到顶栏工具栏已经打开：
 
-  ![image-20220804163915966](C:/Users/26899/AppData/Roaming/Typora/typora-user-images/image-20220804163915966.png)
+  ![image-20220804163915966](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804163915966.png)
 
 
 
