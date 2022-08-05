@@ -712,7 +712,7 @@ PS：上述列表并未展示所有的`dtype`类型，详见参考资料：
 
 </br>
 
-28.在使用`cv2.imshow('img', img)`时，传入的`img`的`dtype`需要为`np.uint8`类型，否则展示的图片会出现奇怪的扭曲 (distortion)：
+29.在使用`cv2.imshow('img', img)`时，传入的`img`的`dtype`需要为`np.uint8`类型，否则展示的图片会出现奇怪的扭曲 (distortion)：
 
 ```python
 import numpy as np
@@ -731,3 +731,20 @@ cv2.imshow("Window", img)
 
 </br>
 
+30.在使用以下代码进行图片展示时：
+
+```python
+cv2.imshow('edge', edge)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+可能出现如下错误：
+
+![image-20220805231829547](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220805231829547.png)
+
+此时可能是本地的OpenCV包出现了编译错误，可以通过重装解决：
+
+- `pip uninstall opencv-python`
+
+- `pip install opencv-python`
