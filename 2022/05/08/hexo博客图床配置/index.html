@@ -31,8 +31,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516220239293.png?token=AKWAGW46DCB4MTDZJIFCFR3CQJMZU">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516220428369.png?token=AKWAGW6CJAWAMQRBNJQZ4RLCQJNAO">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516220638096.png?token=AKWAGW6R34UTLRBW7F5KINLCQJNIS">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804212205450.png">
 <meta property="article:published_time" content="2022-05-08T12:24:35.000Z">
-<meta property="article:modified_time" content="2022-05-27T16:22:11.353Z">
+<meta property="article:modified_time" content="2022-08-04T14:11:38.509Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="hexo博客">
 <meta name="twitter:card" content="summary">
@@ -165,7 +166,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -262,7 +263,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-28 00:22:11" itemprop="dateModified" datetime="2022-05-28T00:22:11+08:00">2022-05-28</time>
+      <time title="修改时间：2022-08-04 22:11:38" itemprop="dateModified" datetime="2022-08-04T22:11:38+08:00">2022-08-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,14 +282,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>390</span>
+      <span>2.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -324,6 +325,13 @@
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516220638096.png?token=AKWAGW6R34UTLRBW7F5KINLCQJNIS" alt="image-20220516220638096" /></p>
 </li>
 </ul>
+<p>由于使用github图床，有时上传时会发生如下的上传错误：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">------Error Stack Begin------</span><br><span class="line">RequestError: Error: read ECONNRESET</span><br><span class="line">at new RequestError (D:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\errors.js:<span class="number">14</span>:<span class="number">15</span>)</span><br><span class="line">at Request.plumbing.callback (D:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:<span class="number">87</span>:<span class="number">29</span>)</span><br><span class="line">at Request.RP$callback [<span class="keyword">as</span> _callback] (D:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:<span class="number">46</span>:<span class="number">31</span>)</span><br><span class="line">at self.callback (D:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:<span class="number">185</span>:<span class="number">22</span>)</span><br><span class="line">at Request.emit (events.js:<span class="number">200</span>:<span class="number">13</span>)</span><br><span class="line">at Request.onRequestError (D:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:<span class="number">881</span>:<span class="number">8</span>)</span><br><span class="line">at ClientRequest.emit (events.js:<span class="number">200</span>:<span class="number">13</span>)</span><br><span class="line">at TLSSocket.socketErrorListener (_http_client.js:<span class="number">402</span>:<span class="number">9</span>)</span><br><span class="line">at TLSSocket.emit (events.js:<span class="number">200</span>:<span class="number">13</span>)</span><br><span class="line">at emitErrorNT (internal/streams/destroy.js:<span class="number">91</span>:<span class="number">8</span>)</span><br><span class="line">-------Error Stack End-------</span><br></pre></td></tr></table></figure>
+<p>其原因为无法请求github服务器。在使用V2rayN的情况下，直接在PicGO中配置如下代理和镜像地址：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804212205450.png" alt="image-20220804212205450" /></p>
+<p>会导致如下报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">------Error Stack Begin------</span><br><span class="line">RequestError: Error: tunneling socket could <span class="keyword">not</span> be established, cause=socket hang up</span><br><span class="line">    at new RequestError (D:\Develop\PicGo\resources\app.asar\node_modules\request-promise-core\lib\errors.js:<span class="number">14</span>:<span class="number">15</span>)</span><br><span class="line">    at Request.plumbing.callback (D:\Develop\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:<span class="number">87</span>:<span class="number">29</span>)</span><br><span class="line">    at Request.RP$callback [<span class="keyword">as</span> _callback] (D:\Develop\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:<span class="number">46</span>:<span class="number">31</span>)</span><br><span class="line">    at self.callback (D:\Develop\PicGo\resources\app.asar\node_modules\request\request.js:<span class="number">185</span>:<span class="number">22</span>)</span><br><span class="line">    at Request.emit (node:events:<span class="number">394</span>:<span class="number">28</span>)</span><br><span class="line">    at Request.onRequestError (D:\Develop\PicGo\resources\app.asar\node_modules\request\request.js:<span class="number">877</span>:<span class="number">8</span>)</span><br><span class="line">    at ClientRequest.emit (node:events:<span class="number">394</span>:<span class="number">28</span>)</span><br><span class="line">    at ClientRequest.onError (D:\Develop\PicGo\resources\app.asar\node_modules\tunnel-agent\index.js:<span class="number">179</span>:<span class="number">21</span>)</span><br><span class="line">    at Object.onceWrapper (node:events:<span class="number">514</span>:<span class="number">26</span>)</span><br><span class="line">    at ClientRequest.emit (node:events:<span class="number">394</span>:<span class="number">28</span>)</span><br><span class="line">-------Error Stack End------- </span><br><span class="line"><span class="number">2022</span>-08-04 <span class="number">21</span>:02:<span class="number">55</span> [PicGo ERROR] </span><br></pre></td></tr></table></figure>
+<p>其原因在于PicGO只支持http协议的代理，而V2rayN只支持socks5协议代理。故应将代理软件替换为支持http协议的软件，有两种选择ShadowsocksR和Clash，我选择了Clash。更改代理软件并设置相应端口后会发现上传成功。</p>
 <blockquote>
 <p>参考资料：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4740993c5843">为Typora配置图床,实现图片自动上传</a></p>
 </blockquote>
@@ -400,13 +408,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">187k</span>
+    <span title="站点总字数">190k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:50</span>
+    <span title="站点阅读时长">2:53</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

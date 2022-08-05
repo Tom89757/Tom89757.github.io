@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-07-30T12:01:31.959Z</updated>
+  <updated>2022-08-04T14:11:38.509Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android文章索引</title>
+    <link href="https://tom89757.github.io/2022/08/04/Android%E6%96%87%E7%AB%A0%E7%B4%A2%E5%BC%95/"/>
+    <id>https://tom89757.github.io/2022/08/04/Android%E6%96%87%E7%AB%A0%E7%B4%A2%E5%BC%95/</id>
+    <published>2022-08-04T08:06:15.000Z</published>
+    <updated>2022-08-04T14:11:38.509Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在学习使用Android Studio进行Android开发过程中的一些比较好的文章：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="Android Studio" scheme="https://tom89757.github.io/tags/Android-Studio/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android Studio配置</title>
     <link href="https://tom89757.github.io/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE/</id>
     <published>2022-07-27T06:00:44.000Z</published>
-    <updated>2022-07-30T12:01:31.959Z</updated>
+    <updated>2022-08-05T14:18:55.509Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在配置Android Studio中一些tips：&lt;/p&gt;</summary>
@@ -347,7 +366,7 @@
     <link href="https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
     <id>https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
     <published>2022-06-02T09:09:03.000Z</published>
-    <updated>2022-07-29T12:16:37.951Z</updated>
+    <updated>2022-08-05T15:21:11.252Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在实现 &lt;a href=&quot;https://link.springer.com/article/10.1007/s11042-016-3392-4&quot;&gt;DDRQM&lt;/a&gt; 过程中的一些 OpenCV 框架和 python 相关知识点。&lt;/p&gt;</summary>
@@ -398,25 +417,6 @@
     
     
     <category term="Windows10" scheme="https://tom89757.github.io/tags/Windows10/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode配置</title>
-    <link href="https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/"/>
-    <id>https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/</id>
-    <published>2022-05-21T09:09:43.000Z</published>
-    <updated>2022-07-29T12:16:37.952Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下在 VSCode 编辑器中一些常用的配置方法。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="VSCode" scheme="https://tom89757.github.io/tags/VSCode/"/>
     
   </entry>
   

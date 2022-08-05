@@ -1093,6 +1093,13 @@
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220516220638096.png?token=AKWAGW6R34UTLRBW7F5KINLCQJNIS" alt="image-20220516220638096" /></p>
 </li>
 </ul>
+<p>由于使用github图床，有时上传时会发生如下的上传错误：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">------Error Stack Begin------</span><br><span class="line">RequestError: Error: read ECONNRESET</span><br><span class="line">at new RequestError (D:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\errors.js:<span class="number">14</span>:<span class="number">15</span>)</span><br><span class="line">at Request.plumbing.callback (D:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:<span class="number">87</span>:<span class="number">29</span>)</span><br><span class="line">at Request.RP$callback [<span class="keyword">as</span> _callback] (D:\Program Files\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:<span class="number">46</span>:<span class="number">31</span>)</span><br><span class="line">at self.callback (D:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:<span class="number">185</span>:<span class="number">22</span>)</span><br><span class="line">at Request.emit (events.js:<span class="number">200</span>:<span class="number">13</span>)</span><br><span class="line">at Request.onRequestError (D:\Program Files\PicGo\resources\app.asar\node_modules\request\request.js:<span class="number">881</span>:<span class="number">8</span>)</span><br><span class="line">at ClientRequest.emit (events.js:<span class="number">200</span>:<span class="number">13</span>)</span><br><span class="line">at TLSSocket.socketErrorListener (_http_client.js:<span class="number">402</span>:<span class="number">9</span>)</span><br><span class="line">at TLSSocket.emit (events.js:<span class="number">200</span>:<span class="number">13</span>)</span><br><span class="line">at emitErrorNT (internal/streams/destroy.js:<span class="number">91</span>:<span class="number">8</span>)</span><br><span class="line">-------Error Stack End-------</span><br></pre></td></tr></table></figure>
+<p>其原因为无法请求github服务器。在使用V2rayN的情况下，直接在PicGO中配置如下代理和镜像地址：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804212205450.png" alt="image-20220804212205450" /></p>
+<p>会导致如下报错：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">------Error Stack Begin------</span><br><span class="line">RequestError: Error: tunneling socket could <span class="keyword">not</span> be established, cause=socket hang up</span><br><span class="line">    at new RequestError (D:\Develop\PicGo\resources\app.asar\node_modules\request-promise-core\lib\errors.js:<span class="number">14</span>:<span class="number">15</span>)</span><br><span class="line">    at Request.plumbing.callback (D:\Develop\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:<span class="number">87</span>:<span class="number">29</span>)</span><br><span class="line">    at Request.RP$callback [<span class="keyword">as</span> _callback] (D:\Develop\PicGo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:<span class="number">46</span>:<span class="number">31</span>)</span><br><span class="line">    at self.callback (D:\Develop\PicGo\resources\app.asar\node_modules\request\request.js:<span class="number">185</span>:<span class="number">22</span>)</span><br><span class="line">    at Request.emit (node:events:<span class="number">394</span>:<span class="number">28</span>)</span><br><span class="line">    at Request.onRequestError (D:\Develop\PicGo\resources\app.asar\node_modules\request\request.js:<span class="number">877</span>:<span class="number">8</span>)</span><br><span class="line">    at ClientRequest.emit (node:events:<span class="number">394</span>:<span class="number">28</span>)</span><br><span class="line">    at ClientRequest.onError (D:\Develop\PicGo\resources\app.asar\node_modules\tunnel-agent\index.js:<span class="number">179</span>:<span class="number">21</span>)</span><br><span class="line">    at Object.onceWrapper (node:events:<span class="number">514</span>:<span class="number">26</span>)</span><br><span class="line">    at ClientRequest.emit (node:events:<span class="number">394</span>:<span class="number">28</span>)</span><br><span class="line">-------Error Stack End------- </span><br><span class="line"><span class="number">2022</span>-08-04 <span class="number">21</span>:02:<span class="number">55</span> [PicGo ERROR] </span><br></pre></td></tr></table></figure>
+<p>其原因在于PicGO只支持http协议的代理，而V2rayN只支持socks5协议代理。故应将代理软件替换为支持http协议的软件，有两种选择ShadowsocksR和Clash，我选择了Clash。更改代理软件并设置相应端口后会发现上传成功。</p>
 <blockquote>
 <p>参考资料：<a href="https://www.jianshu.com/p/4740993c5843">为Typora配置图床,实现图片自动上传</a></p>
 </blockquote>
@@ -5227,7 +5234,7 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </ol>
 </blockquote>
 </br>
-<p>28.在使用<code>cv2.imshow('img', img)</code>时，传入的<code>img</code>的<code>dtype</code>需要为<code>np.uint8</code>类型，否则展示的图片会出现奇怪的扭曲 (distortion)：</p>
+<p>29.在使用<code>cv2.imshow('img', img)</code>时，传入的<code>img</code>的<code>dtype</code>需要为<code>np.uint8</code>类型，否则展示的图片会出现奇怪的扭曲 (distortion)：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">[...]</span><br><span class="line">info = np.iinfo(data.dtype) <span class="comment"># Get the information of the incoming image type</span></span><br><span class="line">data = data.astype(np.float64) / info.<span class="built_in">max</span> <span class="comment"># normalize the data to 0 - 1</span></span><br><span class="line">data = <span class="number">255</span> * data <span class="comment"># Now scale by 255</span></span><br><span class="line">img = data.astype(dtype=np.uint8)</span><br><span class="line">cv2.imshow(<span class="string">&quot;Window&quot;</span>, img)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
@@ -5236,6 +5243,19 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </ol>
 </blockquote>
 </br>
+<p>30.在使用以下代码进行图片展示时：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;edge&#x27;</span>, edge)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p>可能出现如下错误：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220805231829547.png" alt="image-20220805231829547" /></p>
+<p>此时可能是本地的OpenCV包出现了编译错误，可以通过重装解决：</p>
+<ul>
+<li>
+<p><code>pip uninstall opencv-python</code></p>
+</li>
+<li>
+<p><code>pip install opencv-python</code></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -6966,6 +6986,26 @@ class _Loss(Module)
 <li><a href="https://developer.android.com/topic/libraries/view-binding">视图绑定</a> 官方文档</li>
 </ol>
 </blockquote>
+<h3 id="android-studio返回上一次光标所在位置"><a class="markdownIt-Anchor" href="#android-studio返回上一次光标所在位置"></a> Android Studio返回上一次光标所在位置</h3>
+<ul>
+<li>
+<p>快捷键：<code>Ctrl+Alt+向左箭头</code></p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804163700574.png" alt="image-20220804163700574" /></p>
+</li>
+<li>
+<p>双击<code>shift</code>全局搜索，然后搜索<code>show Main ToolBar</code>配置，置为<code>ON</code>：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804163756703.png" alt="image-20220804163756703" /></p>
+<p>可以看到顶栏工具栏已经打开：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804163915966.png" alt="image-20220804163915966" /></p>
+</li>
+</ul>
+<h3 id="android-studio报override-nothing错误"><a class="markdownIt-Anchor" href="#android-studio报override-nothing错误"></a> Android Studio报<code>override nothing</code>错误</h3>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220805212313748.png" alt="image-20220805212313748" /></p>
+<p>其原因在于没有继承包含该方法的类。在本例中，需要在下述代码：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppCompatActivity</span></span>()</span><br></pre></td></tr></table></figure>
+<p>后加上需要继承的类：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppCompatActivity</span></span>(), View.OnClickListener </span><br></pre></td></tr></table></figure>
+<p>tip：在IDE报错的时候，不要先怀疑它在缓存等方面出了问题，先怀疑自己 😃</p>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -7036,6 +7076,23 @@ class _Loss(Module)
       </categories>
       <tags>
         <tag>Charles</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android文章索引</title>
+    <url>/2022/08/04/Android%E6%96%87%E7%AB%A0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>本文记录一下在学习使用Android Studio进行Android开发过程中的一些比较好的文章：</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://developer.aliyun.com/article/293410">Android LayoutInflater详解</a></li>
+<li><a href="https://bbs.huaweicloud.com/blogs/233017">Android进阶(十四)Android Adapter详解</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>Android Studio</tag>
       </tags>
   </entry>
 </search>
