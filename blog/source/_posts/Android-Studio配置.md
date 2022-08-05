@@ -124,9 +124,23 @@ class FirstActivity : AppCompatActivity() {
 
   ![image-20220804163915966](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220804163915966.png)
 
+### Android Studio报`override nothing`错误
 
+![image-20220805212313748](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220805212313748.png)
 
+其原因在于没有继承包含该方法的类。在本例中，需要在下述代码：
 
+```kotlin
+class MainActivity : AppCompatActivity()
+```
+
+后加上需要继承的类：
+
+```kotlin
+class MainActivity : AppCompatActivity(), View.OnClickListener 
+```
+
+tip：在IDE报错的时候，不要先怀疑它在缓存等方面出了问题，先怀疑自己 :)
 
 
 
