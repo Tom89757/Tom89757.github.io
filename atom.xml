@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-08-04T14:11:38.509Z</updated>
+  <updated>2022-08-06T14:08:12.311Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyTorch TensorBoard</title>
+    <link href="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/"/>
+    <id>https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/</id>
+    <published>2022-08-06T07:12:52.000Z</published>
+    <updated>2022-08-06T14:08:12.311Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下PyTorch中工具类&lt;code&gt;torch.utils.tensorboard&lt;/code&gt;的使用教程。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>Android文章索引</title>
@@ -391,25 +412,6 @@
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用 Windows10 过程中的常见操作：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="Windows10" scheme="https://tom89757.github.io/tags/Windows10/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows10系统配置</title>
-    <link href="https://tom89757.github.io/2022/05/21/Windows10%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/"/>
-    <id>https://tom89757.github.io/2022/05/21/Windows10%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</id>
-    <published>2022-05-21T09:10:48.000Z</published>
-    <updated>2022-07-29T12:16:37.952Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下在使用 Windows10 系统过程中的一些常见配置：&lt;/p&gt;</summary>
     
     
     

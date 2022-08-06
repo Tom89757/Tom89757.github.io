@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文记录一下PyTorch中工具类torch.utils.tensorboard的使用教程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyTorch TensorBoard">
+<meta property="og:url" content="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录一下PyTorch中工具类torch.utils.tensorboard的使用教程。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806154817790.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806154841644.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806155433060.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806170609904.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806171201083.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806172307712.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806203930908.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806205216711.png">
+<meta property="article:published_time" content="2022-08-06T07:12:52.000Z">
+<meta property="article:modified_time" content="2022-08-06T14:08:12.311Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="Pytorch">
+<meta property="article:tag" content="文档">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806154817790.png">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/","path":"2022/08/06/PyTorch-TensorBoard/","title":"PyTorch TensorBoard"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>PyTorch TensorBoard | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="PyTorch TensorBoard | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PyTorch TensorBoard
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-08-06 15:12:52 / 修改时间：22:08:12" itemprop="dateCreated datePublished" datetime="2022-08-06T15:12:52+08:00">2022-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>9.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文记录一下PyTorch中工具类<code>torch.utils.tensorboard</code>的使用教程。</p>
+<span id="more"></span>
+<p>在进一步学习之前，更多关于TensorBoard的细节见 <a target="_blank" rel="noopener" href="https://www.tensorflow.org/tensorboard/%E3%80%82">https://www.tensorflow.org/tensorboard/。</a></p>
+<p>一旦安装了TensorBoard，这些utilities让我们能够将models和metrics记录到目录中，用于在TensorBoard UI中的可视化。对PyTorch models和tensors（以及Caffe2 nets和blobs）支持对Scalars、images、histograms、graphs和embedding的可视化。</p>
+<p>SummaryWriter类是通过TensorBoard进行log data的利用和可视化的主要入口。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> datasets, transforms</span><br><span class="line"></span><br><span class="line"><span class="comment"># Writer will output to ./runs/ directory by default, change to ./mnist/</span></span><br><span class="line">writer = SummaryWriter(<span class="string">&quot;mnist&quot;</span>)</span><br><span class="line"></span><br><span class="line">transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((<span class="number">0.5</span>,), (<span class="number">0.5</span>,))])</span><br><span class="line">trainset = datasets.MNIST(<span class="string">&#x27;mnist_train&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=transform)</span><br><span class="line">trainloader = torch.utils.data.DataLoader(trainset, batch_size=<span class="number">64</span>, shuffle=<span class="literal">True</span>)</span><br><span class="line">model = torchvision.models.resnet50(<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># Have ResNet model take in grayscale rather than RGB</span></span><br><span class="line">model.conv1 = torch.nn.Conv2d(<span class="number">1</span>, <span class="number">64</span>, kernel_size=<span class="number">7</span>, stride=<span class="number">2</span>, padding=<span class="number">3</span>, bias=<span class="literal">False</span>)</span><br><span class="line">images, labels = <span class="built_in">next</span>(<span class="built_in">iter</span>(trainloader))</span><br><span class="line"></span><br><span class="line">grid = torchvision.utils.make_grid(images)</span><br><span class="line">writer.add_image(<span class="string">&#x27;images&#x27;</span>, grid, <span class="number">0</span>)</span><br><span class="line">writer.add_graph(model, images)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>运行<code>tensorboard --logdir=mnist</code>：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806154817790.png" alt="image-20220806154817790" /></p>
+</li>
+<li>
+<p>打开<code>http://localhost:6006/</code>，可以看到如下结果：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806154841644.png" alt="image-20220806154841644" /></p>
+</li>
+</ul>
+<p>对一次实验可以记录很多信息。为了避免UI混乱和得到更好的结果聚类，我们eyi通过分层地命名来对plots进行分组。例如，&quot;Loss/train&quot;和&quot;Loss/test&quot;可以放在同一组，&quot;Accuracy/train&quot;和&quot;Accuracy/test&quot;可以放在TensorBoard界面的另一组：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># Writer outputs to ./loss/ directory</span></span><br><span class="line">writer = SummaryWriter(<span class="string">&quot;loss&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n_iter <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    writer.add_scalar(<span class="string">&#x27;Loss/train&#x27;</span>, np.random.random(), n_iter)</span><br><span class="line">    writer.add_scalar(<span class="string">&#x27;Loss/test&#x27;</span>, np.random.random(), n_iter)</span><br><span class="line">    writer.add_scalar(<span class="string">&#x27;Accuracy/train&#x27;</span>, np.random.random(), n_iter)</span><br><span class="line">    writer.add_scalar(<span class="string">&#x27;Accuracy/test&#x27;</span>, np.random.random(), n_iter)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>运行<code>tensorboard --logdir=mnist</code></p>
+</li>
+<li>
+<p>打开<code>http://localhost:6006/</code>，可以看到如下结果：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806155433060.png" alt="image-20220806155433060" /></p>
+</li>
+</ul>
+<p>下面是Summary类的完整声明：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CLASS torch.utils.tensorboard.writer.SummaryWriter(log_dir=<span class="literal">None</span>, comment=<span class="string">&#x27;&#x27;</span>, purge_step=<span class="literal">None</span>, max_queue=<span class="number">10</span>, flush_secs=<span class="number">120</span>, filename_suffix=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>将entry直接写入log_dir中的event文件，该文件可以直接被TensorBoard读取。</p>
+<p>SummaryWriter提供高级API来在给定目录中创建一个event文件，并且向其中添加summaries和events。该类异步地更新文件内容。这允许一个训练程序调用方法直接从训练loop中向这个文件添加数据，而不会拖慢训练速度。</p>
+<p><strong>其初始化代码为</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__init__(log_dir=<span class="literal">None</span>, comment=<span class="string">&#x27;&#x27;</span>, purge_step=<span class="literal">None</span>, max_queue=<span class="number">10</span>, flush_secs=<span class="number">120</span>, filename_suffix=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>log_dir(string)</code>：存储文件路径，默认为<code>runs/CURRENT_DATETIME_HOSTNAME</code>，会在每一次run之后更改。使用分层的文件夹结构可以很容易地在runs之间比较。例如，传入<code>runs/exp1</code>，<code>runs/exp2</code>等，对每个新的实验在它们之间进行比较。</li>
+<li><code>comment(string)</code>：加载默认<code>log_dir</code>后面的后缀，如果<code>log_dir</code>被赋值，该参数不起作用。</li>
+<li><code>purge_step(int)</code>：当logging在第T+X步崩溃，然后在第T步重启时，任何global_step大于或等于T的events将被清除。注意crashed和resumed的实验应该有相同的<code>log_dir</code></li>
+<li><code>max_queue(int)</code>：在通过调用<code>add</code>刷新磁盘之前pending的events和summaries的队列尺寸。默认为10个。</li>
+<li><code>flush_secs(int)</code>：刷新pending的events和summaries到磁盘的频率，默认为每两分钟。</li>
+<li><code>filename_suffix(string)</code>：在log_dir目录中添加到所有event文件名后面的后缀。更多的关于文件名构建的细节见<code>tensorboard.summary.writer.event_file_writer.EventFileWriter</code>。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"></span><br><span class="line"><span class="comment"># create a summary writer with automatically generated folder name.</span></span><br><span class="line">writer = SummaryWriter()</span><br><span class="line"><span class="comment"># folder location: runs/May04_22-14-54_s-MacBook-Pro.local/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># create a summary writer using the specified folder name.</span></span><br><span class="line">writer = SummaryWriter(<span class="string">&quot;my_experiment&quot;</span>)</span><br><span class="line"><span class="comment"># folder location: my_experiment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># create a summary writer with comment appended.</span></span><br><span class="line">writer = SummaryWriter(comment=<span class="string">&quot;LR_0.1_BATCH_16&quot;</span>)</span><br><span class="line"><span class="comment"># folder location: runs/May04_22-14-54_s-MacBook-Pro.localLR_0.1_BATCH_16/</span></span><br></pre></td></tr></table></figure>
+<p><strong>添加scalar数据到summary</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_scalar(tag, scalar_value, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>, new_style=<span class="literal">False</span>, double_precision=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>scalar_value(float or string/blobname)</code>：存储的值</li>
+<li><code>global_step(int)</code>：记录的Global step value</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+<li><code>new_style(boolean)</code>：是否使用新风格（tensor field）或者旧风格（simple_value field）。新风格有更快的data loading。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">x = <span class="built_in">range</span>(<span class="number">100</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">    writer.add_scalar(<span class="string">&#x27;y=2x&#x27;</span>, i * <span class="number">2</span>, i)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_scalar</code>运行结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806170609904.png" alt="image-20220806170609904" /></p>
+<p><strong>添加许多标量数据到summary</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_scalars(main_tag, tag_scalar_dict, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>main_tag(string)</code>：tags的parent name</li>
+<li><code>tag_scalar_dict(dict)</code>：存储tag和对应value的键值对</li>
+<li><code>global_step(int)</code>：记录的Global step value</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">r = <span class="number">5</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    writer.add_scalars(<span class="string">&#x27;run_14h&#x27;</span>, &#123;<span class="string">&#x27;xsinx&#x27;</span>:i*np.sin(i/r),</span><br><span class="line">                                    <span class="string">&#x27;xcosx&#x27;</span>:i*np.cos(i/r),</span><br><span class="line">                                    <span class="string">&#x27;tanx&#x27;</span>: np.tan(i/r)&#125;, i)</span><br><span class="line">writer.close()</span><br><span class="line"><span class="comment"># This call adds three values to the same scalar plot with the tag</span></span><br><span class="line"><span class="comment"># &#x27;run_14h&#x27; in TensorBoard&#x27;s scalar section.</span></span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_scalars</code>运行结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806171201083.png" alt="image-20220806171201083" /></p>
+<p><strong>添加histogram到summary</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_histogram(tag, values, global_step=<span class="literal">None</span>, bins=<span class="string">&#x27;tensorflow&#x27;</span>, walltime=<span class="literal">None</span>, max_bins=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>values(torch.Tensor, numpy.array, or string/blobname)</code>：用于构建histogram的值</li>
+<li><code>global_step(int)</code>：记录的Global step value</li>
+<li><code>bins(string)</code>：{‘tensorflow’, ‘auto’, ‘fd’, …}中的一个，决定如何形成bins。可以找到更多选项：<a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.histogram.html">https://docs.scipy.org/doc/numpy/reference/generated/numpy.histogram.html</a></li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">writer = SummaryWriter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    x = np.random.random(<span class="number">1000</span>)</span><br><span class="line">    writer.add_histogram(<span class="string">&#x27;distribution centers&#x27;</span>, x + i, i)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_histogram</code>运行结果如下（和官方结果不一致）：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806172307712.png" alt="image-20220806172307712" /></p>
+<p><strong>添加image data到summary</strong>：注意要求<code>pillow</code>包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_image(tag, img_tensor, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>, dataformats=<span class="string">&#x27;CHW&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>img_tensor(torch.Tensor, numpy.array, or string/blobname)</code>：image data</li>
+<li><code>global_step(int)</code>：记录的Global step value</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+<li><code>datafromats(string)</code>：指定特定的image数据格式（CHW, HWC, HW, WH等）。</li>
+</ul>
+<p>Shape：</p>
+<p><code>img_tensor</code>默认为(3, H, W)，可以使用<code>torchvision.utils.make_grid()</code>来转换a batch of tensor为3xHxW，或者调用<code>add_images</code>来做这件事。只要传递相应的<code>dataformats</code>(1, H, W)，(H, W)或者(H, W, 3)形状的Tensor也支持。</p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img = np.zeros((<span class="number">3</span>, <span class="number">100</span>, <span class="number">100</span>))</span><br><span class="line">img[<span class="number">0</span>] = np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span></span><br><span class="line">img[<span class="number">1</span>] = <span class="number">1</span> - np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">img_HWC = np.zeros((<span class="number">100</span>, <span class="number">100</span>, <span class="number">3</span>))</span><br><span class="line">img_HWC[:, :, <span class="number">0</span>] = np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span></span><br><span class="line">img_HWC[:, :, <span class="number">1</span>] = <span class="number">1</span> - np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">writer.add_image(<span class="string">&#x27;my_image&#x27;</span>, img, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># If you have non-default dimension setting, set the dataformats argument.</span></span><br><span class="line">writer.add_image(<span class="string">&#x27;my_image_HWC&#x27;</span>, img_HWC, <span class="number">0</span>, dataformats=<span class="string">&#x27;HWC&#x27;</span>)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_image</code>运行结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806203930908.png" alt="image-20220806203930908" /></p>
+<p><strong>添加batched image data到summary</strong>：注意其要求<code>pillow</code>包</p>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>img_tensor(torch.Tensor, numpy.array, or string/blobname)</code>：image data</li>
+<li><code>global_step(int)</code>：记录的Global step value</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+<li><code>dataformats(string)</code>：指定特定的image数据格式（CHW, HWC, HW, WH等）。</li>
+</ul>
+<p>Shape：</p>
+<p><code>img_tensor</code>默认为(N, 3, H, W)，如果指定<code>dataformats</code>，其他shape也可以被接受，如NCHW或NHWC。</p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">img_batch = np.zeros((<span class="number">16</span>, <span class="number">3</span>, <span class="number">100</span>, <span class="number">100</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">16</span>):</span><br><span class="line">    img_batch[i, <span class="number">0</span>] = np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span> / <span class="number">16</span> * i</span><br><span class="line">    img_batch[i, <span class="number">1</span>] = (<span class="number">1</span> - np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span>) / <span class="number">16</span> * i</span><br><span class="line"></span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">writer.add_images(<span class="string">&#x27;my_image_batch&#x27;</span>, img_batch, <span class="number">0</span>)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_images</code>运行结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806205216711.png" alt="image-20220806205216711" /></p>
+<p><strong>渲染matplotlib figure为一张image并加入summary</strong>：主要要求<code>matplotlib</code>包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_figure(tag, figure, global_step=<span class="literal">None</span>, close=<span class="literal">True</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>figure(matplotlib.pyplot.figure)</code>：Figure或者figures列表</li>
+<li><code>close(bool)</code>：自动关闭figure的flag</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+</ul>
+<p><strong>添加video数据到summary</strong>：主要要求<code>moviepy</code>包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_video(tag, vid_tensor, global_step=<span class="literal">None</span>, fps=<span class="number">4</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>vid_tensor(torch.Tensor)</code>：Video数据</li>
+<li><code>global_step(int)</code>：记录的Global step值</li>
+<li><code>fps(float or int)</code>：每秒帧数</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+</ul>
+<p>Shape：</p>
+<p><code>vid_tensor</code>为(N, T, C, H, W)。值应该位于[0, 255]为uint8类型，或者[0, 1]的float类型</p>
+<p><strong>添加audio数据到summary</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_audio(tag, snd_tensor, global_step=<span class="literal">None</span>, sample_rate=<span class="number">44100</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>snd_tensor(torch.Tensor)</code>：Sound数据</li>
+<li><code>global_step(int)</code>：记录的Global step value</li>
+<li><code>sample_rate(int)</code>：sample rate，单位为Hz</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+</ul>
+<p>Shape：</p>
+<p><code>snd_tensor</code>为(1, L)，值位于[-1, 1]</p>
+<p><strong>添加text数据到summary</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_text(tag, text_string, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>text_string(string)</code>：存储的String。</li>
+<li><code>global_step(int)</code>：记录的Global step value</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writer.add_text(<span class="string">&#x27;lstm&#x27;</span>, <span class="string">&#x27;This is an lstm&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">writer.add_text(<span class="string">&#x27;rnn&#x27;</span>, <span class="string">&#x27;This is an rnn&#x27;</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>添加graph数据到summary</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_graph(model, input_to_model=<span class="literal">None</span>, verbose=<span class="literal">False</span>, use_strict_trace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>model(torch.nn.Module)</code>：要画的模型</li>
+<li><code>input_to_model(torch.Tensor or list of torch.Tensor)</code>：一个变量或者要输入的一个变量元组。</li>
+<li><code>verbose(bool)</code>：是否在console中打印出graph结构。</li>
+<li><code>use_strict_trace(bool)</code>：是否传递keyword 参数 strict到<code>torch.jit.trace</code>。当你想tracer记录mutable container类型（如list, dict）时传递False</li>
+</ul>
+<p><strong>添加embedding projector数据到summary</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_embedding(mat, metadata=<span class="literal">None</span>, label_img=<span class="literal">None</span>, global_step=<span class="literal">None</span>, tag=<span class="string">&#x27;default&#x27;</span>, metadata_header=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>mat(torch.Tensor or numpy.array)</code>：一个矩阵，每一行为data point的feature vector</li>
+<li><code>metadata(list)</code>：labels列表，每个元素将转换为string</li>
+<li><code>label_img(torch.Tensor)</code>：对应每个data point的image</li>
+<li><code>global_step(int)</code>：记录的Global step值</li>
+<li><code>tag(string)</code>：embedding名</li>
+</ul>
+<p>Shape：</p>
+<p><code>mat</code>为(N, D)，N为data数量，D为特征维数；<code>label_img</code>为(N, C, H, W)</p>
+<p>例如：输出有误</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> keyword</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">meta = []</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">len</span>(meta)&lt;<span class="number">100</span>:</span><br><span class="line">    meta = meta+keyword.kwlist <span class="comment"># get some strings</span></span><br><span class="line">meta = meta[:<span class="number">100</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">enumerate</span>(meta):</span><br><span class="line">    meta[i] = v+<span class="built_in">str</span>(i)</span><br><span class="line"></span><br><span class="line">label_img = torch.rand(<span class="number">100</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">32</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    label_img[i]*=i/<span class="number">100.0</span></span><br><span class="line"></span><br><span class="line">writer.add_embedding(torch.randn(<span class="number">100</span>, <span class="number">5</span>), metadata=meta, label_img=label_img)</span><br><span class="line">writer.add_embedding(torch.randn(<span class="number">100</span>, <span class="number">5</span>), label_img=label_img)</span><br><span class="line">writer.add_embedding(torch.randn(<span class="number">100</span>, <span class="number">5</span>), metadata=meta)</span><br></pre></td></tr></table></figure>
+<p><strong>添加precision recall曲线</strong>：画precision-recall曲线</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/tensorboard.html">TORCH.UTILS.TENSORBOARD</a></li>
+</ol>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/" title="PyTorch TensorBoard">https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
+              <a href="/tags/%E6%96%87%E6%A1%A3/" rel="tag"># 文档</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/04/Android%E6%96%87%E7%AB%A0%E7%B4%A2%E5%BC%95/" rel="prev" title="Android文章索引">
+                  <i class="fa fa-chevron-left"></i> Android文章索引
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">200k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:01</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

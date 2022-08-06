@@ -1,3 +1,4 @@
+https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/
 https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/
 https://tom89757.github.io/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE/
 https://tom89757.github.io/2022/05/08/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/
