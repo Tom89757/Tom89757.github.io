@@ -218,7 +218,194 @@ add_image(tag, img_tensor, global_step=None, walltime=None, dataformats='CHW')
 - `img_tensor(torch.Tensor, numpy.array, or string/blobname)`：image data
 - `global_step(int)`：记录的Global step value
 - `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
-- `datafromats(string)`：指定特定的image数据格式。
+- `datafromats(string)`：指定特定的image数据格式（CHW, HWC, HW, WH等）。
+
+Shape：
+
+`img_tensor`默认为(3, H, W)，可以使用`torchvision.utils.make_grid()`来转换a batch of tensor为3xHxW，或者调用`add_images`来做这件事。只要传递相应的`dataformats`(1, H, W)，(H, W)或者(H, W, 3)形状的Tensor也支持。
+
+例如：
+
+```python
+from torch.utils.tensorboard import SummaryWriter
+import numpy as np
+img = np.zeros((3, 100, 100))
+img[0] = np.arange(0, 10000).reshape(100, 100) / 10000
+img[1] = 1 - np.arange(0, 10000).reshape(100, 100) / 10000
+
+img_HWC = np.zeros((100, 100, 3))
+img_HWC[:, :, 0] = np.arange(0, 10000).reshape(100, 100) / 10000
+img_HWC[:, :, 1] = 1 - np.arange(0, 10000).reshape(100, 100) / 10000
+
+writer = SummaryWriter()
+writer.add_image('my_image', img, 0)
+
+# If you have non-default dimension setting, set the dataformats argument.
+writer.add_image('my_image_HWC', img_HWC, 0, dataformats='HWC')
+writer.close()
+```
+
+`tensorboard --logdir=add_image`运行结果如下：
+
+![image-20220806203930908](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806203930908.png)
+
+**添加batched image data到summary**：注意其要求`pillow`包
+
+参数：
+
+- `tag(string)`：数据标识器（identifier）
+- `img_tensor(torch.Tensor, numpy.array, or string/blobname)`：image data
+- `global_step(int)`：记录的Global step value
+- `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
+- `dataformats(string)`：指定特定的image数据格式（CHW, HWC, HW, WH等）。
+
+Shape：
+
+`img_tensor`默认为(N, 3, H, W)，如果指定`dataformats`，其他shape也可以被接受，如NCHW或NHWC。
+
+例如：
+
+```python
+from torch.utils.tensorboard import SummaryWriter
+import numpy as np
+
+img_batch = np.zeros((16, 3, 100, 100))
+for i in range(16):
+    img_batch[i, 0] = np.arange(0, 10000).reshape(100, 100) / 10000 / 16 * i
+    img_batch[i, 1] = (1 - np.arange(0, 10000).reshape(100, 100) / 10000) / 16 * i
+
+writer = SummaryWriter()
+writer.add_images('my_image_batch', img_batch, 0)
+writer.close()
+```
+
+`tensorboard --logdir=add_images`运行结果如下：
+
+![image-20220806205216711](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806205216711.png)
+
+**渲染matplotlib figure为一张image并加入summary**：主要要求`matplotlib`包
+
+```python
+add_figure(tag, figure, global_step=None, close=True, walltime=None)
+```
+
+参数：
+
+- `tag(string)`：数据标识器（identifier）
+- `figure(matplotlib.pyplot.figure)`：Figure或者figures列表
+- `close(bool)`：自动关闭figure的flag
+- `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
+
+**添加video数据到summary**：主要要求`moviepy`包
+
+```python
+add_video(tag, vid_tensor, global_step=None, fps=4, walltime=None)
+```
+
+参数：
+
+- `tag(string)`：数据标识器（identifier）
+- `vid_tensor(torch.Tensor)`：Video数据
+- `global_step(int)`：记录的Global step值
+- `fps(float or int)`：每秒帧数
+- `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
+
+Shape：
+
+`vid_tensor`为(N, T, C, H, W)。值应该位于[0, 255]为uint8类型，或者[0, 1]的float类型
+
+**添加audio数据到summary**：
+
+```python
+add_audio(tag, snd_tensor, global_step=None, sample_rate=44100, walltime=None)
+```
+
+参数：
+
+- `tag(string)`：数据标识器（identifier）
+- `snd_tensor(torch.Tensor)`：Sound数据
+- `global_step(int)`：记录的Global step value
+- `sample_rate(int)`：sample rate，单位为Hz
+- `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
+
+Shape：
+
+`snd_tensor`为(1, L)，值位于[-1, 1]
+
+**添加text数据到summary**
+
+```python
+add_text(tag, text_string, global_step=None, walltime=None)
+```
+
+参数：
+
+- `tag(string)`：数据标识器（identifier）
+- `text_string(string)`：存储的String。
+- `global_step(int)`：记录的Global step value
+- `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
+
+例如：
+
+```python
+writer.add_text('lstm', 'This is an lstm', 0)
+writer.add_text('rnn', 'This is an rnn', 10)
+```
+
+**添加graph数据到summary**
+
+```python
+add_graph(model, input_to_model=None, verbose=False, use_strict_trace=True)
+```
+
+参数：
+
+- `model(torch.nn.Module)`：要画的模型
+- `input_to_model(torch.Tensor or list of torch.Tensor)`：一个变量或者要输入的一个变量元组。
+- `verbose(bool)`：是否在console中打印出graph结构。
+- `use_strict_trace(bool)`：是否传递keyword 参数 strict到`torch.jit.trace`。当你想tracer记录mutable container类型（如list, dict）时传递False
+
+**添加embedding projector数据到summary**
+
+```python
+add_embedding(mat, metadata=None, label_img=None, global_step=None, tag='default', metadata_header=None)
+```
+
+参数：
+
+- `mat(torch.Tensor or numpy.array)`：一个矩阵，每一行为data point的feature vector
+- `metadata(list)`：labels列表，每个元素将转换为string
+- `label_img(torch.Tensor)`：对应每个data point的image
+- `global_step(int)`：记录的Global step值
+- `tag(string)`：embedding名
+
+Shape：
+
+`mat`为(N, D)，N为data数量，D为特征维数；`label_img`为(N, C, H, W)
+
+例如：输出有误
+
+```python
+import keyword
+import torch
+meta = []
+while len(meta)<100:
+    meta = meta+keyword.kwlist # get some strings
+meta = meta[:100]
+
+for i, v in enumerate(meta):
+    meta[i] = v+str(i)
+
+label_img = torch.rand(100, 3, 10, 32)
+for i in range(100):
+    label_img[i]*=i/100.0
+
+writer.add_embedding(torch.randn(100, 5), metadata=meta, label_img=label_img)
+writer.add_embedding(torch.randn(100, 5), label_img=label_img)
+writer.add_embedding(torch.randn(100, 5), metadata=meta)
+```
+
+**添加precision recall曲线**：画precision-recall曲线
 
 > 参考资料：
 >
