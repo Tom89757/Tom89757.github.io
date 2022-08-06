@@ -405,7 +405,39 @@ writer.add_embedding(torch.randn(100, 5), label_img=label_img)
 writer.add_embedding(torch.randn(100, 5), metadata=meta)
 ```
 
-**添加precision recall曲线**：画precision-recall曲线
+**添加precision recall曲线**：画precision-recall曲线让你理解在不同阈值设置下你的模型性能。使用这个函数，你提供真值labeling(T/F)和对每个target的预测置信度（通常为模型输出）。TensorBoard UI将会让你交互式地选择阈值。
+
+```python
+add_pr_curve(tag, labels, predictions, global_step=None, num_thresholds=127, weights=None, walltime=None)
+```
+
+参数：
+
+- `tag(string)`：数据标识器（identifier）
+
+- `labels(torch.Tensor, numpy.array, or string/blobname)`：真值数据，每个元素的二值label。
+- `predictions(torch.Tensor, numpy.array, or string/blobname)`：每个元素正确分类的概率，值应该在[0, 1]
+- `global_step(int)`：记录的Global step值
+- `num_thresholds(int)`：用来画曲线的阈值数量
+- `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
+
+例如：
+
+```python
+from torch.utils.tensorboard import SummaryWriter
+import numpy as np
+labels = np.random.randint(2, size=100)  # binary label
+predictions = np.random.rand(100)
+writer = SummaryWriter("add_pr_curve")
+writer.add_pr_curve('pr_curve', labels, predictions, 0)
+writer.close()
+```
+
+`tensorboard --logdir=add_pr_curve`运行结果如下：
+
+![image-20220807000205981](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807000205981.png)
+
+
 
 > 参考资料：
 >
