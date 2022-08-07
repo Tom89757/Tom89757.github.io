@@ -417,7 +417,12 @@ model.load_state_dict(new_state_dict)
 
 </br>
 
+16.tensorboardX vs tensorboard：
 
+> 参考资料：
+>
+> 1. [tensorboardX](https://tensorboardx.readthedocs.io/en/latest/tutorial.html)
+> 2. [VISUALIZING MODELS, DATA, AND TRAINING WITH TENSORBOARD](https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html)
 
 
 
