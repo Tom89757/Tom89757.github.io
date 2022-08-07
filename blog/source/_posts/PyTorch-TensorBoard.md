@@ -82,7 +82,7 @@ CLASS torch.utils.tensorboard.writer.SummaryWriter(log_dir=None, comment='', pur
 
 SummaryWriter提供高级API来在给定目录中创建一个event文件，并且向其中添加summaries和events。该类异步地更新文件内容。这允许一个训练程序调用方法直接从训练loop中向这个文件添加数据，而不会拖慢训练速度。
 
-**其初始化代码为**：
+### 其初始化代码为
 
 ```python
 __init__(log_dir=None, comment='', purge_step=None, max_queue=10, flush_secs=120, filename_suffix='')
@@ -115,7 +115,7 @@ writer = SummaryWriter(comment="LR_0.1_BATCH_16")
 # folder location: runs/May04_22-14-54_s-MacBook-Pro.localLR_0.1_BATCH_16/
 ```
 
-**添加scalar数据到summary**：
+### 添加scalar数据到summary
 
 ```python
 add_scalar(tag, scalar_value, global_step=None, walltime=None, new_style=False, double_precision=False)
@@ -144,7 +144,7 @@ writer.close()
 
 ![image-20220806170609904](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806170609904.png)
 
-**添加许多标量数据到summary**：
+### 添加许多标量数据到summary
 
 ```python
 add_scalars(main_tag, tag_scalar_dict, global_step=None, walltime=None)
@@ -176,7 +176,7 @@ writer.close()
 
 ![image-20220806171201083](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806171201083.png)
 
-**添加histogram到summary**：
+### 添加histogram到summary
 
 ```python
 add_histogram(tag, values, global_step=None, bins='tensorflow', walltime=None, max_bins=None)
@@ -206,7 +206,9 @@ writer.close()
 
 ![image-20220806172307712](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806172307712.png)
 
-**添加image data到summary**：注意要求`pillow`包
+### 添加image data到summary
+
+注意要求`pillow`包
 
 ```python
 add_image(tag, img_tensor, global_step=None, walltime=None, dataformats='CHW')
@@ -249,7 +251,9 @@ writer.close()
 
 ![image-20220806203930908](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806203930908.png)
 
-**添加batched image data到summary**：注意其要求`pillow`包
+### 添加batched image data到summary
+
+注意其要求`pillow`包
 
 参数：
 
@@ -283,7 +287,9 @@ writer.close()
 
 ![image-20220806205216711](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806205216711.png)
 
-**渲染matplotlib figure为一张image并加入summary**：主要要求`matplotlib`包
+### 渲染matplotlib figure为一张image并加入summary
+
+注意要求`matplotlib`包
 
 ```python
 add_figure(tag, figure, global_step=None, close=True, walltime=None)
@@ -296,7 +302,9 @@ add_figure(tag, figure, global_step=None, close=True, walltime=None)
 - `close(bool)`：自动关闭figure的flag
 - `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
 
-**添加video数据到summary**：主要要求`moviepy`包
+### 添加video数据到summary
+
+主要要求`moviepy`包
 
 ```python
 add_video(tag, vid_tensor, global_step=None, fps=4, walltime=None)
@@ -314,7 +322,7 @@ Shape：
 
 `vid_tensor`为(N, T, C, H, W)。值应该位于[0, 255]为uint8类型，或者[0, 1]的float类型
 
-**添加audio数据到summary**：
+### 添加audio数据到summary
 
 ```python
 add_audio(tag, snd_tensor, global_step=None, sample_rate=44100, walltime=None)
@@ -332,7 +340,7 @@ Shape：
 
 `snd_tensor`为(1, L)，值位于[-1, 1]
 
-**添加text数据到summary**
+### 添加text数据到summary
 
 ```python
 add_text(tag, text_string, global_step=None, walltime=None)
@@ -352,7 +360,7 @@ writer.add_text('lstm', 'This is an lstm', 0)
 writer.add_text('rnn', 'This is an rnn', 10)
 ```
 
-**添加graph数据到summary**
+### 添加graph数据到summary
 
 ```python
 add_graph(model, input_to_model=None, verbose=False, use_strict_trace=True)
@@ -365,7 +373,7 @@ add_graph(model, input_to_model=None, verbose=False, use_strict_trace=True)
 - `verbose(bool)`：是否在console中打印出graph结构。
 - `use_strict_trace(bool)`：是否传递keyword 参数 strict到`torch.jit.trace`。当你想tracer记录mutable container类型（如list, dict）时传递False
 
-**添加embedding projector数据到summary**
+### 添加embedding projector数据到summary
 
 ```python
 add_embedding(mat, metadata=None, label_img=None, global_step=None, tag='default', metadata_header=None)
@@ -405,7 +413,9 @@ writer.add_embedding(torch.randn(100, 5), label_img=label_img)
 writer.add_embedding(torch.randn(100, 5), metadata=meta)
 ```
 
-**添加precision recall曲线**：画precision-recall曲线让你理解在不同阈值设置下你的模型性能。使用这个函数，你提供真值labeling(T/F)和对每个target的预测置信度（通常为模型输出）。TensorBoard UI将会让你交互式地选择阈值。
+### 添加precision recall曲线
+
+画precision-recall曲线让你理解在不同阈值设置下你的模型性能。使用这个函数，你提供真值labeling(T/F)和对每个target的预测置信度（通常为模型输出）。TensorBoard UI将会让你交互式地选择阈值。
 
 ```python
 add_pr_curve(tag, labels, predictions, global_step=None, num_thresholds=127, weights=None, walltime=None)
@@ -437,7 +447,124 @@ writer.close()
 
 ![image-20220807000205981](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807000205981.png)
 
+### 通过在scalars中收集charts tags创建专门的chart
 
+```python
+add_custom_scalars(layout)
+```
+
+注意该函数对每个SummaryWriter()对象只能调用一次。因为它只对tensorboard提供元数据，该函数可以在training loop之前或之后调用。
+
+参数：
+
+- `layout(dict)`：{categoryName: charts}，charts也是一个字典{chartName: ListOfProperties}。ListOfProperties的第一个元素是chart的类型（多行或者Margin之一），第二个元素应该是一个列表，包含在add_scalar函数中使用的tags，它们会被收集到new chart。
+
+例如：
+
+```python
+from torch.utils.tensorboard import SummaryWriter
+import numpy as np
+
+writer = SummaryWriter("add_custom_scalars")
+
+layout = {'Taiwan':{'twse':['Multiline',['twse/0050', 'twse/2330']]},
+             'USA':{ 'dow':['Margin',   ['dow/aaa', 'dow/bbb', 'dow/ccc']],
+                  'nasdaq':['Margin',   ['nasdaq/aaa', 'nasdaq/bbb', 'nasdaq/ccc']]}}
+
+writer.add_custom_scalars(layout)
+```
+
+`tensorboard --logdir=add_custom_scalars`运行结果如下：
+
+![image-20220807102302198](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807102302198.png)
+
+### 添加meshes或3D point clouds到TensorBoard
+
+```python
+add_mesh(tag, vertices, colors=None, faces=None, config_dict=None, global_step=None, walltime=None)
+```
+
+此可视化基于Three.js，所以它允许用户和被渲染的对象交互。除了基础的定义如vertices/faces外，用户可以提供camera parameters/lighting condition等。在 https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene 进一步学习
+
+参数：
+
+- `tag(string)`：数据标识器（identifier）
+- `vertices(torch.Tensor)`：3D 顶点坐标列表
+- `colors(torch.Tensor)`：每个顶点颜色
+- `faces(torch.Tensor)`：每个矩形中顶点索引（可选）
+- `config_dict`：ThreeJS类名和配置的字典
+- `global_step(int)`：记录Global step value
+- `walltime(float)`：可选择，用于覆盖默认的walltime(`time.time()`)，表示在epoch of event后的几秒
+
+Shape：
+
+- `vertices`：(B, N, 3)，顶点数目，通道数
+- `colors`：(B, N, 3)，值应该为[0, 255]的uint8，或者[0, 1]的float
+- `faces`：(B, N, 3)，值应该为[0, 顶点数]的uint8
+
+例如：
+
+```python
+from torch.utils.tensorboard import SummaryWriter
+vertices_tensor = torch.as_tensor([
+    [1, 1, 1],
+    [-1, -1, 1],
+    [1, -1, -1],
+    [-1, 1, -1],
+], dtype=torch.float).unsqueeze(0)
+colors_tensor = torch.as_tensor([
+    [255, 0, 0],
+    [0, 255, 0],
+    [0, 0, 255],
+    [255, 0, 255],
+], dtype=torch.int).unsqueeze(0)
+faces_tensor = torch.as_tensor([
+    [0, 2, 3],
+    [0, 3, 1],
+    [0, 1, 2],
+    [1, 3, 2],
+], dtype=torch.int).unsqueeze(0)
+
+writer = SummaryWriter()
+writer.add_mesh('my_mesh', vertices=vertices_tensor, colors=colors_tensor, faces=faces_tensor)
+
+writer.close()
+```
+
+`tensorboard --logdir=add_mesh`运行结果如下：
+
+![image-20220807103349415](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807103349415.png)
+
+### 添加一系列hyperparameters到TensorBoard中比较
+
+```python
+add_hparams(hparam_dict, metric_dict, hparam_domain_discrete=None, run_name=None)
+```
+
+参数：
+
+- `hparam_dict(dict)`：每个字典中的键值对为超参数名和其对应值。值类型为bool/string/float/int/None。
+- `metric_dict(dict)`：每个键值对为metric名和对应值。注意用在这的key应该是unique，否则通过`add_scalar`添加的值将显示在hparam部分。大多数场景下这不是我们想要的。
+- `hparam_domain_discrete`：可选，包含超参数名和其离散值的字典
+- `run_time(str)`：run的名，包含在logdir部分。如果不指定，将使用当前时间戳。
+
+例如：
+
+```python
+from torch.utils.tensorboard import SummaryWriter
+with SummaryWriter() as w:
+    for i in range(5):
+        w.add_hparams({'lr': 0.1*i, 'bsize': i},
+                      {'hparam/accuracy': 10*i, 'hparam/loss': 10*i})
+```
+
+`tensorboard --logdir=add_hparams`运行结果如下：
+
+![image-20220807104044985](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807104044985.png)
+
+`flush()`：刷新写入disk的event文件，调用该方法确保所有pending events写入disk
+
+`close()`：关闭SummaryWriter对象，停止写入
 
 > 参考资料：
 >
