@@ -436,7 +436,13 @@ alias cls='printf "\ec"'
 
 </br>
 
+23.服务器远程登录配置：
 
+> 参考资料：
+>
+> 1. [腾讯云 Permission denied (publickey,gssapi-keyex,gssapi-with-mic)](https://www.chengxiaobai.cn/record/tencent-cloud-denied-permission-publickey-gssapikeyex-gssapiwithmic.html)
+> 2. [Linux 配置SSH免密登录 “ssh-keygen”的基本用法](https://cloud.tencent.com/developer/article/1720991)
+> 3. [设置 SSH 通过密钥登录](https://www.runoob.com/w3cnote/set-ssh-login-key.html)
 
 
 

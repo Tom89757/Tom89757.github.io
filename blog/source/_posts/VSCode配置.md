@@ -74,3 +74,9 @@ VSCode默认打开Workbench的Preview，其表现为，在单击一个左边的�
 此时，可以通过打开`settings`搜索`preview`关键词然后关闭`Workbench>Editor: Enable preview`来实现：
 
 ![image-20220729153253563](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220729153253563.png)
+
+### VSCode出现Unexpected Indentation in Visual Studio Code with Python
+
+> 参考资料：
+>
+> 1. [Unexpected Indentation in Visual Studio Code with Python](https://stackoverflow.com/questions/52224313/unexpected-indentation-in-visual-studio-code-with-python)
