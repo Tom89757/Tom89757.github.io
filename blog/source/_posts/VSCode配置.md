@@ -63,9 +63,13 @@ tags:
 
 ### VSCode设置默认Python Interpreter
 
+依次打开`File->Preferences->Settings`，搜索`python.default`，配置如下：
+
+![image-20220808165221633](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808165221633.png)
+
 > 参考资料：
 >
-> 1. [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#:~:text=your%20User%20Settings.-,To%20do%20so%2C%20open%20the%20Command%20Palette%20(Ctrl%2BShift,Settings%2C%20with%20the%20appropriate%20interpreter.)
+> 1. [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments)
 
 ### VSCode关闭Editor: Enable Preview
 

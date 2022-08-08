@@ -424,11 +424,46 @@ model.load_state_dict(new_state_dict)
 > 1. [tensorboardX](https://tensorboardx.readthedocs.io/en/latest/tutorial.html)
 > 2. [VISUALIZING MODELS, DATA, AND TRAINING WITH TENSORBOARD](https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html)
 
+</br>
 
+17.当在`train.py`文件中指定了`os.environ["CUDA_VISIBLE_DEVICES"] = '1'`时，如果在调用的其他文件如`utils.py`中使用`fx = Variable(torch.from_numpy(fx)).cuda()`或`fx = torch.FloatTensor(fx).cuda()`，其默认gpu设备仍然为0，此时应该在`utils.py`文件中加上：
 
+```python
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = '1'
+```
 
+</br>
 
+18.当scipy版本过高时，如1.7.3。在使用如下代码进行图像存储时：
 
+```python
+from scipy import misc
+misc.imsave(save_path + name, pred_edge_kk)
+```
+
+会报如下错误：
+
+![image-20220808155219586](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808155219586.png)
+
+其原因在于在较新的scipy版本中`scipy.misc.imsave`已经被去除。解决方法为将上述代码改为：
+
+```python
+import imageio
+imageio.imwrite(save_path + name, pred_edge_kk)
+```
+
+> 参考资料：
+>
+> [[My scipy.misc module appears to be missing imsave](https://stackoverflow.com/questions/19991665/my-scipy-misc-module-appears-to-be-missing-imsave)
+
+</br>
+
+19.Variable deprecated
+
+> 参考资料：
+>
+> 1. [Variable deprecated- how to change the code](https://discuss.pytorch.org/t/variable-deprecated-how-to-change-the-code/103596)
 
 
 
