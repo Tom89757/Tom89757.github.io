@@ -61,3 +61,4 @@ tags:
 > 4. [how-to-use-tensorboard-with-pytorch](https://github.com/christianversloot/machine-learning-articles/blob/main/how-to-use-tensorboard-with-pytorch.md)
 > 5. [Deep Dive Into TensorBoard: Tutorial With Examples](https://neptune.ai/blog/tensorboard-tutorial)
 > 6. [本地浏览器使用tensorboard查看远程服务器训练情况](https://blog.csdn.net/u010626937/article/details/107747070)
+> 7. [How can I run Tensorboard on a remote server?](https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server)
