@@ -444,7 +444,13 @@ alias cls='printf "\ec"'
 > 2. [Linux 配置SSH免密登录 “ssh-keygen”的基本用法](https://cloud.tencent.com/developer/article/1720991)
 > 3. [设置 SSH 通过密钥登录](https://www.runoob.com/w3cnote/set-ssh-login-key.html)
 
+</br>
 
+24.使用`chmod`变更文件或目录权限。可以使用`chmod -R 777 ./folder`对目录以及目录一下的文件递归执行更改权限操作。
+
+> 参考资料：
+>
+> 1. [chmod](https://wangchujiang.com/linux-command/c/chmod.html)
 
 
 
