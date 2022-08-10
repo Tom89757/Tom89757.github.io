@@ -465,5 +465,13 @@ imageio.imwrite(save_path + name, pred_edge_kk)
 >
 > 1. [Variable deprecated- how to change the code](https://discuss.pytorch.org/t/variable-deprecated-how-to-change-the-code/103596)
 
+</br>
 
+20.tensor和numpy之间的转换：
+
+> 参考资料：
+>
+> 1. [RuntimeError: Can only calculate the mean of floating types. Got Byte instead. for mean += images_data.mean(2).sum(0)](https://stackoverflow.com/questions/64358283/runtimeerror-can-only-calculate-the-mean-of-floating-types-got-byte-instead-f)
+> 2. [Pytorch tensor to numpy array](https://stackoverflow.com/questions/49768306/pytorch-tensor-to-numpy-array)
+> 3. [TORCH.FROM_NUMPY](https://pytorch.org/docs/stable/generated/torch.from_numpy.html)
 
