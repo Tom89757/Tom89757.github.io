@@ -84,3 +84,18 @@ VSCode默认打开Workbench的Preview，其表现为，在单击一个左边的�
 > 参考资料：
 >
 > 1. [Unexpected Indentation in Visual Studio Code with Python](https://stackoverflow.com/questions/52224313/unexpected-indentation-in-visual-studio-code-with-python)
+
+### VSCode配置默认Terminal
+
+- 搜索`Terminal: Select Default Profile`
+
+![image-20220810185654267](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220810185654267.png)
+
+- 点击目标Terminal如cmd：
+
+  ![image-20220810185807233](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220810185807233.png)
+
+> 参考资料：
+>
+> 1. [VSCode Change Default Terminal](https://stackoverflow.com/questions/44435697/vscode-change-default-terminal)
+
