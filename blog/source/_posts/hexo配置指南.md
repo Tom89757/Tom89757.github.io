@@ -15,6 +15,11 @@ tags:
 
 ### 百度收录
 
+### 配置流程图和思维导图
+
+  
+
 参考资料：
 
 1. [如何让hexo博客被百度收录](https://zhuqiaolun.github.io/2020/05/1590766728000/1590766728000/)
+2. [在 hexo 的 next 主题中使用流程图和思维导图](https://liukun.site/post/d17f3bc0-e1a6-11ec-8be6-8bfaf164b008/)
