@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "4955d728d4290f76",
+        "id": "00cc9a4f3cb7b182",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "hexo配置指南.md",
+            "file": "Obsidian配置.md",
             "mode": "source",
             "source": false
           }
@@ -61,7 +61,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "a154c91947f052d5",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "hexo配置指南.md",
+                "file": "Obsidian配置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "hexo配置指南.md",
+                "file": "Obsidian配置.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "hexo配置指南.md"
+                "file": "Obsidian配置.md"
               }
             }
           }
@@ -128,13 +129,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "4955d728d4290f76",
+  "active": "00cc9a4f3cb7b182",
   "lastOpenFiles": [
+    "Obsidian配置.md",
+    "VSCode配置.md",
+    "PyTorch可视化实践.md",
+    "Pytorch中知识点02.md",
+    "Ubuntu常见操作.md",
+    "hexo配置指南.md",
     "2022深度学习框架.md",
     "Android-Studio配置.md",
     "Charles配置.md",
-    "Docker常用操作.md",
-    "go语言笔记.md",
-    "Android文章索引.md"
+    "Docker常用操作.md"
   ]
 }
