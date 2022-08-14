@@ -4,15 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "00cc9a4f3cb7b182",
+        "id": "7b8fbeefa0d0d77c",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Obsidian配置.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -78,7 +74,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obsidian配置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +90,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obsidian配置.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,9 +111,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Obsidian配置.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -129,7 +121,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "00cc9a4f3cb7b182",
+  "active": "7b8fbeefa0d0d77c",
   "lastOpenFiles": [
     "Obsidian配置.md",
     "VSCode配置.md",

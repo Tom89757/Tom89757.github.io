@@ -13,6 +13,7 @@ tags:
 
 ### 主题
 - Minimal：不太好用，短代码不会高亮
+- Obsidian-Typora-Vue：[Obsidian-Typora-Vue-Theme](https://github.com/ZekunC/Obsidian-Typora-Vue-Theme)，正在使用
 ### 插件
 - Image auto upload Plugin：和PicGO协同上传图片到github图床
 - Editor Syntax Highlight：代码语法高亮
