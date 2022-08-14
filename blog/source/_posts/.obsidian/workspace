@@ -1,29 +1,33 @@
 {
   "main": {
-    "id": "9183ca78740e66b4",
+    "id": "3edf38a15931b49d",
     "type": "split",
     "children": [
       {
-        "id": "7b8fbeefa0d0d77c",
+        "id": "7c81940c2adf10c1",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "python中知识点01.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "6d731d389ebfda58",
+    "id": "2c4d73ce03994368",
     "type": "split",
     "children": [
       {
-        "id": "582bec2ba5869faf",
+        "id": "a084edaad44d4436",
         "type": "tabs",
         "children": [
           {
-            "id": "3ae0ea185908d5e9",
+            "id": "4e480bc972f41fe8",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -31,7 +35,7 @@
             }
           },
           {
-            "id": "8f63c87b362ef0f6",
+            "id": "8a507f9f9cb23d1a",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -46,7 +50,7 @@
             }
           },
           {
-            "id": "4a0e20efae82f2ec",
+            "id": "688cd7661e917a5e",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -57,23 +61,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 202
   },
   "right": {
-    "id": "a154c91947f052d5",
+    "id": "3b12a275d48f1044",
     "type": "split",
     "children": [
       {
-        "id": "9b885693f7a6cec6",
+        "id": "b68135051d24c92e",
         "type": "tabs",
         "children": [
           {
-            "id": "80609088ef005e4e",
+            "id": "da06639e445e2696",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "python中知识点01.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -85,53 +89,57 @@
             }
           },
           {
-            "id": "05316b84c4d6dbb5",
+            "id": "35be8cbc1cf0f520",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "python中知识点01.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "5b291143ff4594d7",
+            "id": "e3acd0e4efdfaeba",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
-                "sortOrder": "frequency",
+                "sortOrder": "frequencyReverse",
                 "useHierarchy": true
               }
             }
           },
           {
-            "id": "c1f4d15b22116797",
+            "id": "0fae82d3477f2ea1",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "python中知识点01.md"
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 153.5,
     "collapsed": true
   },
-  "active": "7b8fbeefa0d0d77c",
+  "active": "7c81940c2adf10c1",
   "lastOpenFiles": [
-    "Obsidian配置.md",
-    "VSCode配置.md",
-    "PyTorch可视化实践.md",
-    "Pytorch中知识点02.md",
-    "Ubuntu常见操作.md",
+    "对开发人员有用的定律、理论、原则和模式.md",
     "hexo配置指南.md",
-    "2022深度学习框架.md",
-    "Android-Studio配置.md",
-    "Charles配置.md",
-    "Docker常用操作.md"
+    "Ubuntu常见操作.md",
+    "Obsidian配置.md",
+    "gfw.md",
+    "^724181.md",
+    "cs61a/Project1 - The Game of Hog.md",
+    "2022-08-14.md",
+    "cs61a/Composition.md",
+    "README.md"
   ]
 }

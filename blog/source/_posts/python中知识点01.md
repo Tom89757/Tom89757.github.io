@@ -432,4 +432,19 @@ except URLError as e:
 > 2. [Errno 10061 : No connection could be made because the target machine actively refused it ( client - server )](https://stackoverflow.com/questions/12993276/errno-10061-no-connection-could-be-made-because-the-target-machine-actively-re)
 
 </br>
-
+9.下面两段代码的区别：
+```python
+def max(a, b):
+	if a>b:
+		return a
+	return b
+```
+```python
+def max(a, b):
+	if a>b:
+		return a
+	else:
+		return b
+```
+> 参考资料：
+> 1. [It is more efficient to use if-return-return or if-else-return?](https://stackoverflow.com/questions/9191388/it-is-more-efficient-to-use-if-return-return-or-if-else-return)
