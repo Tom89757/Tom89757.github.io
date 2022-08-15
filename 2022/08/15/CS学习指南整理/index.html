@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文汇总一下目前位置本人接触到的比较好的学习资料：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS学习指南整理">
+<meta property="og:url" content="https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文汇总一下目前位置本人接触到的比较好的学习资料：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-15T05:53:08.000Z">
+<meta property="article:modified_time" content="2022-08-15T07:00:46.913Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="指南">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/","path":"2022/08/15/CS学习指南整理/","title":"CS学习指南整理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CS学习指南整理 | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92"><span class="nav-number">1.</span> <span class="nav-text"> 学习规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E6%95%B4%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text"> 课程整理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%8B%93%E8%A7%86%E9%87%8E"><span class="nav-number">3.</span> <span class="nav-text"> 开拓视野</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E7%B1%BB%E5%AD%A6%E4%B9%A0%E7%AB%99%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text"> 综合类学习站点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E8%B6%A3%E7%AB%99%E7%82%B9"><span class="nav-number">5.</span> <span class="nav-text"> 有趣站点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%BD%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="nav-number">6.</span> <span class="nav-text"> 好用工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A5%E9%97%A8%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86"><span class="nav-number">7.</span> <span class="nav-text"> 入门资料收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E8%B5%84%E6%96%99%E6%94%B6%E9%9B%86"><span class="nav-number">8.</span> <span class="nav-text"> 进阶资料收集</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CS学习指南整理 | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS学习指南整理
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-08-15 13:53:08 / 修改时间：15:00:46" itemprop="dateCreated datePublished" datetime="2022-08-15T13:53:08+08:00">2022-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%B5%84%E6%96%99/" itemprop="url" rel="index"><span itemprop="name">资料</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>913</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文汇总一下目前位置本人接触到的比较好的学习资料：</p>
+<span id="more"></span>
+<h3 id="学习规划"><a class="markdownIt-Anchor" href="#学习规划"></a> 学习规划</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://csdiy.wiki/">CS自学指南</a></li>
+<li><a target="_blank" rel="noopener" href="http://norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30742986">Teach Yourself Programming in Ten Years中文版</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/0xffff.one/cs-learning">0xFFFF CS Wiki</a></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.0xffff.one/">0xFFFF Wiki</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/izackwu/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md">TeachYourselfCS-CN</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.reddit.com/r/learnprogramming/wiki/faq/">learning programming</a></li>
+<li><a target="_blank" rel="noopener" href="https://roadmap.sh/">Developer Roadmaps</a></li>
+<li><a target="_blank" rel="noopener" href="https://time.geekbang.org/column/article/8216?code=%20HH8ceM6XIVutB%2F1Oj496tkAnq4o7HBjSZf%20t0Wy4qM%3D">程序员练级攻略</a></li>
+</ol>
+<h3 id="课程整理"><a class="markdownIt-Anchor" href="#课程整理"></a> 课程整理</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://csdiy.wiki/">CS自学指南</a><br />
+2.<a target="_blank" rel="noopener" href="https://conanhujinming.github.io/comments-for-awesome-courses/index.html">名校公开课程评价网</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.mcatin.com/index">MCATIN</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22436320/answer/32477238">Coursera 上有哪些课程值得推荐</a></li>
+<li><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/classes-eecs.html">EECS Course WEB Sites</a></li>
+<li><a target="_blank" rel="noopener" href="https://hkn.eecs.berkeley.edu/courseguides">UCB cs roadmap</a></li>
+</ol>
+<h3 id="开拓视野"><a class="markdownIt-Anchor" href="#开拓视野"></a> 开拓视野</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://fwjmath.wordpress.com/recommended-list/">《计算的极限》等文章索引</a></li>
+<li><a target="_blank" rel="noopener" href="https://aosabook.org/en/index.html">The Architecture of Open Source Applications</a></li>
+<li><a target="_blank" rel="noopener" href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">《category-theory-for-programmers》</a></li>
+</ol>
+<h3 id="综合类学习站点"><a class="markdownIt-Anchor" href="#综合类学习站点"></a> 综合类学习站点</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://hepsoftwarefoundation.org/training/curriculum.html">HSF Software Training Center</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.javatpoint.com/">javatpoint</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.tutorialspoint.com/index.htm">tutorialspoint</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.tuthub.io/">TutHub.io</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.w3cub.com/vite/">W3cubDocs</a>：整理了各大流行项目的Guide/API/Configuration等</li>
+</ol>
+<h3 id="有趣站点"><a class="markdownIt-Anchor" href="#有趣站点"></a> 有趣站点</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://iep.utm.edu/">互联网哲学百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://rosettacode.org/wiki/Rosetta_Code">Rosetta Code</a>：用不同的语言解决相同的问题</li>
+<li></li>
+</ol>
+<h3 id="好用工具"><a class="markdownIt-Anchor" href="#好用工具"></a> 好用工具</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://www.moreofit.com/">moreofit</a>：查找相似的网站</li>
+<li><a target="_blank" rel="noopener" href="https://cs.github.com/?scopeName=All+repos&amp;scope=&amp;q=">GitHub Code Search</a>：搜索GitHub中的代码，可指定仓库</li>
+<li><a target="_blank" rel="noopener" href="https://kaifa.baidu.com/">开发者搜索</a>：用于搜索GitHub上的目标仓库</li>
+<li><a target="_blank" rel="noopener" href="https://endoflife.date/">流行项目生命周期</a>：整理各种流行的大型项目的生命周期，从发布、更新到死亡</li>
+<li><a target="_blank" rel="noopener" href="https://www.tuthub.io/">TutHub.io</a>：其宗旨为不要在不好的编程教程上浪费时间，可以用来搜索免费和付费的编程教程</li>
+<li><a target="_blank" rel="noopener" href="https://m3o.com/explore">General APIs</a>：整理收集了各种通用API</li>
+<li></li>
+</ol>
+<h3 id="入门资料收集"><a class="markdownIt-Anchor" href="#入门资料收集"></a> 入门资料收集</h3>
+<p>用于上手项目，快速入门</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=Kg7UUpO3wwALX6x28cWA7A#list/path=%2F%E5%B0%9A%E7%A1%85%E8%B0%B7Java%E5%AD%A6%E7%A7%91%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%EF%BC%88%E6%80%BB207.77GB%EF%BC%89">尚硅谷Java学科全套教程（8op3）</a></li>
+<li><a target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=LxIxcHDO7SYB96SE-GZfuQ#list/path=%2Fsharelink3232509500-994016065012907%2Fjava%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B2021&amp;parentPath=%2Fsharelink3232509500-994016065012907">Java视频教程2021_黑马（dor4）</a></li>
+<li><a target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=oPdzQ7vO2bivTYtttD1jfw#list/path=%2F&amp;parentPath=%2Fsharelink3232509500-1002206530988551">Java精品视频教程_黑马（1234）</a><br />
+4 <a target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=5yVOafBdEz3VU6hvYCOsYA#list/path=%2Fsharelink3232509500-464559482111384%2F2022%E6%9C%80%E6%96%B0%E7%89%88%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE&amp;parentPath=%2Fsharelink3232509500-464559482111384">2022最新版黑马程序员前端（1234）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv5216534?spm_id_from=333.999.0.0">2022年度全网最全Java学习路线（尚硅谷）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv9965357?from=articleDetail">2022黑马程序员Java学习路线图（黑马）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv10431130">2022年web前端开发学习路线图（黑马）</a></li>
+</ol>
+<h3 id="进阶资料收集"><a class="markdownIt-Anchor" href="#进阶资料收集"></a> 进阶资料收集</h3>
+<p>用于扩展眼界，获得更好的技术视野</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://okmij.org/ftp/">okmij’s Index</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.smsunarto.com/web3">Working in Web3: The Handbook</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.189.cn/web/share?code=yIbuMnUFjmYz">极客实践课程（c8hx）</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/" title="CS学习指南整理">https://tom89757.github.io/2022/08/15/CS学习指南整理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%8C%87%E5%8D%97/" rel="tag"># 指南</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/15/%E5%86%99%E7%BB%99%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%8C%83%E7%95%B4%E8%AE%BA%E8%B5%84%E6%96%99%E7%B4%A2%E5%BC%95/" rel="prev" title="写给程序员的范畴论资料索引">
+                  <i class="fa fa-chevron-left"></i> 写给程序员的范畴论资料索引
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">208k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:09</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

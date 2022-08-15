@@ -464,16 +464,42 @@
 </ol>
 </blockquote>
 <h3 id="vscode设置默认python-interpreter"><a class="markdownIt-Anchor" href="#vscode设置默认python-interpreter"></a> VSCode设置默认Python Interpreter</h3>
+<p>依次打开<code>File-&gt;Preferences-&gt;Settings</code>，搜索<code>python.default</code>，配置如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808165221633.png" alt="image-20220808165221633" /></p>
 <blockquote>
 <p>参考资料：</p>
 <ol>
-<li>[Using Python environments in VS Code](<a href="https://code.visualstudio.com/docs/python/environments#:~:text=your%20User%20Settings.-,To%20do%20so%2C%20open%20the%20Command%20Palette%20(Ctrl%2BShift,Settings%2C%20with%20the%20appropriate%20interpreter.)">https://code.visualstudio.com/docs/python/environments#:~:text=your User Settings.-,To do so%2C open the Command Palette (Ctrl%2BShift,Settings%2C with the appropriate interpreter.)</a></li>
+<li><a href="https://code.visualstudio.com/docs/python/environments">Using Python environments in VS Code</a></li>
 </ol>
 </blockquote>
 <h3 id="vscode关闭editor-enable-preview"><a class="markdownIt-Anchor" href="#vscode关闭editor-enable-preview"></a> VSCode关闭Editor: Enable Preview</h3>
 <p>VSCode默认打开Workbench的Preview，其表现为，在单击一个左边的一个文件后，如果在不对其进行modify操作后单击另一个文件，会直接切换为另一个文件而不是在新tab页打开另一个文件，这不符合本人的习惯。</p>
 <p>此时，可以通过打开<code>settings</code>搜索<code>preview</code>关键词然后关闭<code>Workbench&gt;Editor: Enable preview</code>来实现：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220729153253563.png" alt="image-20220729153253563" /></p>
+<h3 id="vscode出现unexpected-indentation-in-visual-studio-code-with-python"><a class="markdownIt-Anchor" href="#vscode出现unexpected-indentation-in-visual-studio-code-with-python"></a> VSCode出现Unexpected Indentation in Visual Studio Code with Python</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/52224313/unexpected-indentation-in-visual-studio-code-with-python">Unexpected Indentation in Visual Studio Code with Python</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode配置默认terminal"><a class="markdownIt-Anchor" href="#vscode配置默认terminal"></a> VSCode配置默认Terminal</h3>
+<ul>
+<li>搜索<code>Terminal: Select Default Profile</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220810185654267.png" alt="image-20220810185654267" /></p>
+<ul>
+<li>
+<p>点击目标Terminal如cmd：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220810185807233.png" alt="image-20220810185807233" /></p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/44435697/vscode-change-default-terminal">VSCode Change Default Terminal</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -807,6 +833,23 @@
 </ol>
 </blockquote>
 </br>
+<p>23.服务器远程登录配置：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.chengxiaobai.cn/record/tencent-cloud-denied-permission-publickey-gssapikeyex-gssapiwithmic.html">腾讯云 Permission denied (publickey,gssapi-keyex,gssapi-with-mic)</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1720991">Linux 配置SSH免密登录 “ssh-keygen”的基本用法</a></li>
+<li><a href="https://www.runoob.com/w3cnote/set-ssh-login-key.html">设置 SSH 通过密钥登录</a></li>
+</ol>
+</blockquote>
+</br>
+<p>24.使用<code>chmod</code>变更文件或目录权限。可以使用<code>chmod -R 777 ./folder</code>对目录以及目录一下的文件递归执行更改权限操作。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://wangchujiang.com/linux-command/c/chmod.html">chmod</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -1119,9 +1162,11 @@
 <span id="more"></span>
 <h3 id="bug记录"><a class="markdownIt-Anchor" href="#bug记录"></a> bug记录</h3>
 <h3 id="百度收录"><a class="markdownIt-Anchor" href="#百度收录"></a> 百度收录</h3>
+<h3 id="配置流程图和思维导图"><a class="markdownIt-Anchor" href="#配置流程图和思维导图"></a> 配置流程图和思维导图</h3>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://zhuqiaolun.github.io/2020/05/1590766728000/1590766728000/">如何让hexo博客被百度收录</a></li>
+<li><a href="https://liukun.site/post/d17f3bc0-e1a6-11ec-8be6-8bfaf164b008/">在 hexo 的 next 主题中使用流程图和思维导图</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -2851,7 +2896,6 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 <p><a href="https://github.com/dwmkerr/hacker-laws">hacker-laws</a> 的的中文翻译。</p>
 <p>对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)</p>
 <p>为了方便阅读，维基百科增加了中文链接。英文链接表示 <a href="https://github.com/dwmkerr/hacker-laws">hacker-laws</a> 项目尚未完成的主题。</p>
-<p><a href="gfw.md">中国无法访问维基百科说明</a></p>
 <p>喜欢点 <strong>star</strong> 、关注点 <strong>watch</strong> 、贡献点 <strong>fork</strong> 。翻译错漏之处，欢迎指正！</p>
 <ul>
 <li><a href="#%E4%BB%8B%E7%BB%8D">介绍</a></li>
@@ -5525,6 +5569,46 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </ol>
 </blockquote>
 </br>
+<p>16.tensorboardX vs tensorboard：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://tensorboardx.readthedocs.io/en/latest/tutorial.html">tensorboardX</a></li>
+<li><a href="https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html">VISUALIZING MODELS, DATA, AND TRAINING WITH TENSORBOARD</a></li>
+</ol>
+</blockquote>
+</br>
+<p>17.当在<code>train.py</code>文件中指定了<code>os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = '1'</code>时，如果在调用的其他文件如<code>utils.py</code>中使用<code>fx = Variable(torch.from_numpy(fx)).cuda()</code>或<code>fx = torch.FloatTensor(fx).cuda()</code>，其默认gpu设备仍然为0，此时应该在<code>utils.py</code>文件中加上：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.environ[<span class="string">&quot;CUDA_VISIBLE_DEVICES&quot;</span>] = <span class="string">&#x27;1&#x27;</span></span><br></pre></td></tr></table></figure>
+</br>
+<p>18.当scipy版本过高时，如1.7.3。在使用如下代码进行图像存储时：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> misc</span><br><span class="line">misc.imsave(save_path + name, pred_edge_kk)</span><br></pre></td></tr></table></figure>
+<p>会报如下错误：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808155219586.png" alt="image-20220808155219586" /></p>
+<p>其原因在于在较新的scipy版本中<code>scipy.misc.imsave</code>已经被去除。解决方法为将上述代码改为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> imageio</span><br><span class="line">imageio.imwrite(save_path + name, pred_edge_kk)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<p>[<a href="https://stackoverflow.com/questions/19991665/my-scipy-misc-module-appears-to-be-missing-imsave">My scipy.misc module appears to be missing imsave</a></p>
+</blockquote>
+</br>
+<p>19.Variable deprecated</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://discuss.pytorch.org/t/variable-deprecated-how-to-change-the-code/103596">Variable deprecated- how to change the code</a></li>
+</ol>
+</blockquote>
+</br>
+<p>20.tensor和numpy之间的转换：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/64358283/runtimeerror-can-only-calculate-the-mean-of-floating-types-got-byte-instead-f">RuntimeError: Can only calculate the mean of floating types. Got Byte instead. for mean += images_data.mean(2).sum(0)</a></li>
+<li><a href="https://stackoverflow.com/questions/49768306/pytorch-tensor-to-numpy-array">Pytorch tensor to numpy array</a></li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.from_numpy.html">TORCH.FROM_NUMPY</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -6102,7 +6186,11 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 </ol>
 </blockquote>
 </br>
-]]></content>
+9.下面两段代码的区别：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">max</span>(<span class="params">a, b</span>):</span><br><span class="line">	<span class="keyword">if</span> a&gt;b:</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	<span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">max</span>(<span class="params">a, b</span>):</span><br><span class="line">	<span class="keyword">if</span> a&gt;b:</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [It is more efficient to use if-return-return or if-else-return?](https://stackoverflow.com/questions/9191388/it-is-more-efficient-to-use-if-return-return-or-if-else-return)]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -7129,7 +7217,7 @@ class _Loss(Module)
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CLASS torch.utils.tensorboard.writer.SummaryWriter(log_dir=<span class="literal">None</span>, comment=<span class="string">&#x27;&#x27;</span>, purge_step=<span class="literal">None</span>, max_queue=<span class="number">10</span>, flush_secs=<span class="number">120</span>, filename_suffix=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>将entry直接写入log_dir中的event文件，该文件可以直接被TensorBoard读取。</p>
 <p>SummaryWriter提供高级API来在给定目录中创建一个event文件，并且向其中添加summaries和events。该类异步地更新文件内容。这允许一个训练程序调用方法直接从训练loop中向这个文件添加数据，而不会拖慢训练速度。</p>
-<p><strong>其初始化代码为</strong>：</p>
+<h3 id="其初始化代码为"><a class="markdownIt-Anchor" href="#其初始化代码为"></a> 其初始化代码为</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">__init__(log_dir=<span class="literal">None</span>, comment=<span class="string">&#x27;&#x27;</span>, purge_step=<span class="literal">None</span>, max_queue=<span class="number">10</span>, flush_secs=<span class="number">120</span>, filename_suffix=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7142,7 +7230,7 @@ class _Loss(Module)
 </ul>
 <p>例如：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"></span><br><span class="line"><span class="comment"># create a summary writer with automatically generated folder name.</span></span><br><span class="line">writer = SummaryWriter()</span><br><span class="line"><span class="comment"># folder location: runs/May04_22-14-54_s-MacBook-Pro.local/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># create a summary writer using the specified folder name.</span></span><br><span class="line">writer = SummaryWriter(<span class="string">&quot;my_experiment&quot;</span>)</span><br><span class="line"><span class="comment"># folder location: my_experiment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># create a summary writer with comment appended.</span></span><br><span class="line">writer = SummaryWriter(comment=<span class="string">&quot;LR_0.1_BATCH_16&quot;</span>)</span><br><span class="line"><span class="comment"># folder location: runs/May04_22-14-54_s-MacBook-Pro.localLR_0.1_BATCH_16/</span></span><br></pre></td></tr></table></figure>
-<p><strong>添加scalar数据到summary</strong>：</p>
+<h3 id="添加scalar数据到summary"><a class="markdownIt-Anchor" href="#添加scalar数据到summary"></a> 添加scalar数据到summary</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_scalar(tag, scalar_value, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>, new_style=<span class="literal">False</span>, double_precision=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7156,7 +7244,7 @@ class _Loss(Module)
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">x = <span class="built_in">range</span>(<span class="number">100</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</span><br><span class="line">    writer.add_scalar(<span class="string">&#x27;y=2x&#x27;</span>, i * <span class="number">2</span>, i)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
 <p><code>tensorboard --logdir=add_scalar</code>运行结果如下：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806170609904.png" alt="image-20220806170609904" /></p>
-<p><strong>添加许多标量数据到summary</strong>：</p>
+<h3 id="添加许多标量数据到summary"><a class="markdownIt-Anchor" href="#添加许多标量数据到summary"></a> 添加许多标量数据到summary</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_scalars(main_tag, tag_scalar_dict, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7169,7 +7257,7 @@ class _Loss(Module)
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">r = <span class="number">5</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    writer.add_scalars(<span class="string">&#x27;run_14h&#x27;</span>, &#123;<span class="string">&#x27;xsinx&#x27;</span>:i*np.sin(i/r),</span><br><span class="line">                                    <span class="string">&#x27;xcosx&#x27;</span>:i*np.cos(i/r),</span><br><span class="line">                                    <span class="string">&#x27;tanx&#x27;</span>: np.tan(i/r)&#125;, i)</span><br><span class="line">writer.close()</span><br><span class="line"><span class="comment"># This call adds three values to the same scalar plot with the tag</span></span><br><span class="line"><span class="comment"># &#x27;run_14h&#x27; in TensorBoard&#x27;s scalar section.</span></span><br></pre></td></tr></table></figure>
 <p><code>tensorboard --logdir=add_scalars</code>运行结果如下：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806171201083.png" alt="image-20220806171201083" /></p>
-<p><strong>添加histogram到summary</strong>：</p>
+<h3 id="添加histogram到summary"><a class="markdownIt-Anchor" href="#添加histogram到summary"></a> 添加histogram到summary</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_histogram(tag, values, global_step=<span class="literal">None</span>, bins=<span class="string">&#x27;tensorflow&#x27;</span>, walltime=<span class="literal">None</span>, max_bins=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7183,7 +7271,8 @@ class _Loss(Module)
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">writer = SummaryWriter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    x = np.random.random(<span class="number">1000</span>)</span><br><span class="line">    writer.add_histogram(<span class="string">&#x27;distribution centers&#x27;</span>, x + i, i)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
 <p><code>tensorboard --logdir=add_histogram</code>运行结果如下（和官方结果不一致）：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806172307712.png" alt="image-20220806172307712" /></p>
-<p><strong>添加image data到summary</strong>：注意要求<code>pillow</code>包</p>
+<h3 id="添加image-data到summary"><a class="markdownIt-Anchor" href="#添加image-data到summary"></a> 添加image data到summary</h3>
+<p>注意要求<code>pillow</code>包</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_image(tag, img_tensor, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>, dataformats=<span class="string">&#x27;CHW&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7199,7 +7288,8 @@ class _Loss(Module)
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img = np.zeros((<span class="number">3</span>, <span class="number">100</span>, <span class="number">100</span>))</span><br><span class="line">img[<span class="number">0</span>] = np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span></span><br><span class="line">img[<span class="number">1</span>] = <span class="number">1</span> - np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">img_HWC = np.zeros((<span class="number">100</span>, <span class="number">100</span>, <span class="number">3</span>))</span><br><span class="line">img_HWC[:, :, <span class="number">0</span>] = np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span></span><br><span class="line">img_HWC[:, :, <span class="number">1</span>] = <span class="number">1</span> - np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">writer.add_image(<span class="string">&#x27;my_image&#x27;</span>, img, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># If you have non-default dimension setting, set the dataformats argument.</span></span><br><span class="line">writer.add_image(<span class="string">&#x27;my_image_HWC&#x27;</span>, img_HWC, <span class="number">0</span>, dataformats=<span class="string">&#x27;HWC&#x27;</span>)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
 <p><code>tensorboard --logdir=add_image</code>运行结果如下：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806203930908.png" alt="image-20220806203930908" /></p>
-<p><strong>添加batched image data到summary</strong>：注意其要求<code>pillow</code>包</p>
+<h3 id="添加batched-image-data到summary"><a class="markdownIt-Anchor" href="#添加batched-image-data到summary"></a> 添加batched image data到summary</h3>
+<p>注意其要求<code>pillow</code>包</p>
 <p>参数：</p>
 <ul>
 <li><code>tag(string)</code>：数据标识器（identifier）</li>
@@ -7214,7 +7304,8 @@ class _Loss(Module)
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">img_batch = np.zeros((<span class="number">16</span>, <span class="number">3</span>, <span class="number">100</span>, <span class="number">100</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">16</span>):</span><br><span class="line">    img_batch[i, <span class="number">0</span>] = np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span> / <span class="number">16</span> * i</span><br><span class="line">    img_batch[i, <span class="number">1</span>] = (<span class="number">1</span> - np.arange(<span class="number">0</span>, <span class="number">10000</span>).reshape(<span class="number">100</span>, <span class="number">100</span>) / <span class="number">10000</span>) / <span class="number">16</span> * i</span><br><span class="line"></span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">writer.add_images(<span class="string">&#x27;my_image_batch&#x27;</span>, img_batch, <span class="number">0</span>)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
 <p><code>tensorboard --logdir=add_images</code>运行结果如下：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220806205216711.png" alt="image-20220806205216711" /></p>
-<p><strong>渲染matplotlib figure为一张image并加入summary</strong>：主要要求<code>matplotlib</code>包</p>
+<h3 id="渲染matplotlib-figure为一张image并加入summary"><a class="markdownIt-Anchor" href="#渲染matplotlib-figure为一张image并加入summary"></a> 渲染matplotlib figure为一张image并加入summary</h3>
+<p>注意要求<code>matplotlib</code>包</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_figure(tag, figure, global_step=<span class="literal">None</span>, close=<span class="literal">True</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7223,7 +7314,8 @@ class _Loss(Module)
 <li><code>close(bool)</code>：自动关闭figure的flag</li>
 <li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
 </ul>
-<p><strong>添加video数据到summary</strong>：主要要求<code>moviepy</code>包</p>
+<h3 id="添加video数据到summary"><a class="markdownIt-Anchor" href="#添加video数据到summary"></a> 添加video数据到summary</h3>
+<p>主要要求<code>moviepy</code>包</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_video(tag, vid_tensor, global_step=<span class="literal">None</span>, fps=<span class="number">4</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7235,7 +7327,7 @@ class _Loss(Module)
 </ul>
 <p>Shape：</p>
 <p><code>vid_tensor</code>为(N, T, C, H, W)。值应该位于[0, 255]为uint8类型，或者[0, 1]的float类型</p>
-<p><strong>添加audio数据到summary</strong>：</p>
+<h3 id="添加audio数据到summary"><a class="markdownIt-Anchor" href="#添加audio数据到summary"></a> 添加audio数据到summary</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_audio(tag, snd_tensor, global_step=<span class="literal">None</span>, sample_rate=<span class="number">44100</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7247,7 +7339,7 @@ class _Loss(Module)
 </ul>
 <p>Shape：</p>
 <p><code>snd_tensor</code>为(1, L)，值位于[-1, 1]</p>
-<p><strong>添加text数据到summary</strong></p>
+<h3 id="添加text数据到summary"><a class="markdownIt-Anchor" href="#添加text数据到summary"></a> 添加text数据到summary</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_text(tag, text_string, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7258,7 +7350,7 @@ class _Loss(Module)
 </ul>
 <p>例如：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">writer.add_text(<span class="string">&#x27;lstm&#x27;</span>, <span class="string">&#x27;This is an lstm&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">writer.add_text(<span class="string">&#x27;rnn&#x27;</span>, <span class="string">&#x27;This is an rnn&#x27;</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>添加graph数据到summary</strong></p>
+<h3 id="添加graph数据到summary"><a class="markdownIt-Anchor" href="#添加graph数据到summary"></a> 添加graph数据到summary</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_graph(model, input_to_model=<span class="literal">None</span>, verbose=<span class="literal">False</span>, use_strict_trace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7267,7 +7359,7 @@ class _Loss(Module)
 <li><code>verbose(bool)</code>：是否在console中打印出graph结构。</li>
 <li><code>use_strict_trace(bool)</code>：是否传递keyword 参数 strict到<code>torch.jit.trace</code>。当你想tracer记录mutable container类型（如list, dict）时传递False</li>
 </ul>
-<p><strong>添加embedding projector数据到summary</strong></p>
+<h3 id="添加embedding-projector数据到summary"><a class="markdownIt-Anchor" href="#添加embedding-projector数据到summary"></a> 添加embedding projector数据到summary</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_embedding(mat, metadata=<span class="literal">None</span>, label_img=<span class="literal">None</span>, global_step=<span class="literal">None</span>, tag=<span class="string">&#x27;default&#x27;</span>, metadata_header=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
@@ -7281,7 +7373,83 @@ class _Loss(Module)
 <p><code>mat</code>为(N, D)，N为data数量，D为特征维数；<code>label_img</code>为(N, C, H, W)</p>
 <p>例如：输出有误</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> keyword</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">meta = []</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">len</span>(meta)&lt;<span class="number">100</span>:</span><br><span class="line">    meta = meta+keyword.kwlist <span class="comment"># get some strings</span></span><br><span class="line">meta = meta[:<span class="number">100</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">enumerate</span>(meta):</span><br><span class="line">    meta[i] = v+<span class="built_in">str</span>(i)</span><br><span class="line"></span><br><span class="line">label_img = torch.rand(<span class="number">100</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">32</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    label_img[i]*=i/<span class="number">100.0</span></span><br><span class="line"></span><br><span class="line">writer.add_embedding(torch.randn(<span class="number">100</span>, <span class="number">5</span>), metadata=meta, label_img=label_img)</span><br><span class="line">writer.add_embedding(torch.randn(<span class="number">100</span>, <span class="number">5</span>), label_img=label_img)</span><br><span class="line">writer.add_embedding(torch.randn(<span class="number">100</span>, <span class="number">5</span>), metadata=meta)</span><br></pre></td></tr></table></figure>
-<p><strong>添加precision recall曲线</strong>：画precision-recall曲线</p>
+<h3 id="添加precision-recall曲线"><a class="markdownIt-Anchor" href="#添加precision-recall曲线"></a> 添加precision recall曲线</h3>
+<p>画precision-recall曲线让你理解在不同阈值设置下你的模型性能。使用这个函数，你提供真值labeling(T/F)和对每个target的预测置信度（通常为模型输出）。TensorBoard UI将会让你交互式地选择阈值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_pr_curve(tag, labels, predictions, global_step=<span class="literal">None</span>, num_thresholds=<span class="number">127</span>, weights=<span class="literal">None</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li>
+<p><code>tag(string)</code>：数据标识器（identifier）</p>
+</li>
+<li>
+<p><code>labels(torch.Tensor, numpy.array, or string/blobname)</code>：真值数据，每个元素的二值label。</p>
+</li>
+<li>
+<p><code>predictions(torch.Tensor, numpy.array, or string/blobname)</code>：每个元素正确分类的概率，值应该在[0, 1]</p>
+</li>
+<li>
+<p><code>global_step(int)</code>：记录的Global step值</p>
+</li>
+<li>
+<p><code>num_thresholds(int)</code>：用来画曲线的阈值数量</p>
+</li>
+<li>
+<p><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</p>
+</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">labels = np.random.randint(<span class="number">2</span>, size=<span class="number">100</span>)  <span class="comment"># binary label</span></span><br><span class="line">predictions = np.random.rand(<span class="number">100</span>)</span><br><span class="line">writer = SummaryWriter(<span class="string">&quot;add_pr_curve&quot;</span>)</span><br><span class="line">writer.add_pr_curve(<span class="string">&#x27;pr_curve&#x27;</span>, labels, predictions, <span class="number">0</span>)</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_pr_curve</code>运行结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807000205981.png" alt="image-20220807000205981" /></p>
+<h3 id="通过在scalars中收集charts-tags创建专门的chart"><a class="markdownIt-Anchor" href="#通过在scalars中收集charts-tags创建专门的chart"></a> 通过在scalars中收集charts tags创建专门的chart</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_custom_scalars(layout)</span><br></pre></td></tr></table></figure>
+<p>注意该函数对每个SummaryWriter()对象只能调用一次。因为它只对tensorboard提供元数据，该函数可以在training loop之前或之后调用。</p>
+<p>参数：</p>
+<ul>
+<li><code>layout(dict)</code>：{categoryName: charts}，charts也是一个字典{chartName: ListOfProperties}。ListOfProperties的第一个元素是chart的类型（多行或者Margin之一），第二个元素应该是一个列表，包含在add_scalar函数中使用的tags，它们会被收集到new chart。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">writer = SummaryWriter(<span class="string">&quot;add_custom_scalars&quot;</span>)</span><br><span class="line"></span><br><span class="line">layout = &#123;<span class="string">&#x27;Taiwan&#x27;</span>:&#123;<span class="string">&#x27;twse&#x27;</span>:[<span class="string">&#x27;Multiline&#x27;</span>,[<span class="string">&#x27;twse/0050&#x27;</span>, <span class="string">&#x27;twse/2330&#x27;</span>]]&#125;,</span><br><span class="line">             <span class="string">&#x27;USA&#x27;</span>:&#123; <span class="string">&#x27;dow&#x27;</span>:[<span class="string">&#x27;Margin&#x27;</span>,   [<span class="string">&#x27;dow/aaa&#x27;</span>, <span class="string">&#x27;dow/bbb&#x27;</span>, <span class="string">&#x27;dow/ccc&#x27;</span>]],</span><br><span class="line">                  <span class="string">&#x27;nasdaq&#x27;</span>:[<span class="string">&#x27;Margin&#x27;</span>,   [<span class="string">&#x27;nasdaq/aaa&#x27;</span>, <span class="string">&#x27;nasdaq/bbb&#x27;</span>, <span class="string">&#x27;nasdaq/ccc&#x27;</span>]]&#125;&#125;</span><br><span class="line"></span><br><span class="line">writer.add_custom_scalars(layout)</span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_custom_scalars</code>运行结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807102302198.png" alt="image-20220807102302198" /></p>
+<h3 id="添加meshes或3d-point-clouds到tensorboard"><a class="markdownIt-Anchor" href="#添加meshes或3d-point-clouds到tensorboard"></a> 添加meshes或3D point clouds到TensorBoard</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_mesh(tag, vertices, colors=<span class="literal">None</span>, faces=<span class="literal">None</span>, config_dict=<span class="literal">None</span>, global_step=<span class="literal">None</span>, walltime=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>此可视化基于Three.js，所以它允许用户和被渲染的对象交互。除了基础的定义如vertices/faces外，用户可以提供camera parameters/lighting condition等。在 <a href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene">https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene</a> 进一步学习</p>
+<p>参数：</p>
+<ul>
+<li><code>tag(string)</code>：数据标识器（identifier）</li>
+<li><code>vertices(torch.Tensor)</code>：3D 顶点坐标列表</li>
+<li><code>colors(torch.Tensor)</code>：每个顶点颜色</li>
+<li><code>faces(torch.Tensor)</code>：每个矩形中顶点索引（可选）</li>
+<li><code>config_dict</code>：ThreeJS类名和配置的字典</li>
+<li><code>global_step(int)</code>：记录Global step value</li>
+<li><code>walltime(float)</code>：可选择，用于覆盖默认的walltime(<code>time.time()</code>)，表示在epoch of event后的几秒</li>
+</ul>
+<p>Shape：</p>
+<ul>
+<li><code>vertices</code>：(B, N, 3)，顶点数目，通道数</li>
+<li><code>colors</code>：(B, N, 3)，值应该为[0, 255]的uint8，或者[0, 1]的float</li>
+<li><code>faces</code>：(B, N, 3)，值应该为[0, 顶点数]的uint8</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line">vertices_tensor = torch.as_tensor([</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [-<span class="number">1</span>, -<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>],</span><br><span class="line">    [-<span class="number">1</span>, <span class="number">1</span>, -<span class="number">1</span>],</span><br><span class="line">], dtype=torch.<span class="built_in">float</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">colors_tensor = torch.as_tensor([</span><br><span class="line">    [<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>],</span><br><span class="line">    [<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>],</span><br><span class="line">], dtype=torch.<span class="built_in">int</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">faces_tensor = torch.as_tensor([</span><br><span class="line">    [<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>],</span><br><span class="line">], dtype=torch.<span class="built_in">int</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">writer = SummaryWriter()</span><br><span class="line">writer.add_mesh(<span class="string">&#x27;my_mesh&#x27;</span>, vertices=vertices_tensor, colors=colors_tensor, faces=faces_tensor)</span><br><span class="line"></span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_mesh</code>运行结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807103349415.png" alt="image-20220807103349415" /></p>
+<h3 id="添加一系列hyperparameters到tensorboard中比较"><a class="markdownIt-Anchor" href="#添加一系列hyperparameters到tensorboard中比较"></a> 添加一系列hyperparameters到TensorBoard中比较</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">add_hparams(hparam_dict, metric_dict, hparam_domain_discrete=<span class="literal">None</span>, run_name=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>hparam_dict(dict)</code>：每个字典中的键值对为超参数名和其对应值。值类型为bool/string/float/int/None。</li>
+<li><code>metric_dict(dict)</code>：每个键值对为metric名和对应值。注意用在这的key应该是unique，否则通过<code>add_scalar</code>添加的值将显示在hparam部分。大多数场景下这不是我们想要的。</li>
+<li><code>hparam_domain_discrete</code>：可选，包含超参数名和其离散值的字典</li>
+<li><code>run_time(str)</code>：run的名，包含在logdir部分。如果不指定，将使用当前时间戳。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">with</span> SummaryWriter() <span class="keyword">as</span> w:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        w.add_hparams(&#123;<span class="string">&#x27;lr&#x27;</span>: <span class="number">0.1</span>*i, <span class="string">&#x27;bsize&#x27;</span>: i&#125;,</span><br><span class="line">                      &#123;<span class="string">&#x27;hparam/accuracy&#x27;</span>: <span class="number">10</span>*i, <span class="string">&#x27;hparam/loss&#x27;</span>: <span class="number">10</span>*i&#125;)</span><br></pre></td></tr></table></figure>
+<p><code>tensorboard --logdir=add_hparams</code>运行结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220807104044985.png" alt="image-20220807104044985" /></p>
+<p><code>flush()</code>：刷新写入disk的event文件，调用该方法确保所有pending events写入disk</p>
+<p><code>close()</code>：关闭SummaryWriter对象，停止写入</p>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -7295,6 +7463,269 @@ class _Loss(Module)
       <tags>
         <tag>Pytorch</tag>
         <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA配置</title>
+    <url>/2022/08/15/IDEA%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录一下在IDEA中一些好用的配置：</p>
+<span id="more"></span>
+<h3 id="将快捷键更改为vscode-keymap"><a class="markdownIt-Anchor" href="#将快捷键更改为vscode-keymap"></a> 将快捷键更改为VSCode keymap</h3>
+<ol>
+<li>安装VSCode keymap插件：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220815102337.png" alt="" /><br />
+2.打开<code>File-&gt;Settings-&gt;Keymap</code>，设置Keymap为VSCode：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220815102443.png" alt="" /></li>
+</ol>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS学习指南整理</title>
+    <url>/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>本文汇总一下目前位置本人接触到的比较好的学习资料：</p>
+<span id="more"></span>
+<h3 id="学习规划"><a class="markdownIt-Anchor" href="#学习规划"></a> 学习规划</h3>
+<ol>
+<li><a href="https://csdiy.wiki/">CS自学指南</a></li>
+<li><a href="http://norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/30742986">Teach Yourself Programming in Ten Years中文版</a></li>
+<li><a href="https://www.yuque.com/0xffff.one/cs-learning">0xFFFF CS Wiki</a></li>
+<li><a href="https://wiki.0xffff.one/">0xFFFF Wiki</a></li>
+<li><a href="https://github.com/izackwu/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md">TeachYourselfCS-CN</a></li>
+<li><a href="https://www.reddit.com/r/learnprogramming/wiki/faq/">learning programming</a></li>
+<li><a href="https://roadmap.sh/">Developer Roadmaps</a></li>
+<li><a href="https://time.geekbang.org/column/article/8216?code=%20HH8ceM6XIVutB%2F1Oj496tkAnq4o7HBjSZf%20t0Wy4qM%3D">程序员练级攻略</a></li>
+</ol>
+<h3 id="课程整理"><a class="markdownIt-Anchor" href="#课程整理"></a> 课程整理</h3>
+<ol>
+<li><a href="https://csdiy.wiki/">CS自学指南</a><br />
+2.<a href="https://conanhujinming.github.io/comments-for-awesome-courses/index.html">名校公开课程评价网</a></li>
+<li><a href="https://www.mcatin.com/index">MCATIN</a></li>
+<li><a href="https://www.zhihu.com/question/22436320/answer/32477238">Coursera 上有哪些课程值得推荐</a></li>
+<li><a href="https://inst.eecs.berkeley.edu/classes-eecs.html">EECS Course WEB Sites</a></li>
+<li><a href="https://hkn.eecs.berkeley.edu/courseguides">UCB cs roadmap</a></li>
+</ol>
+<h3 id="开拓视野"><a class="markdownIt-Anchor" href="#开拓视野"></a> 开拓视野</h3>
+<ol>
+<li><a href="https://fwjmath.wordpress.com/recommended-list/">《计算的极限》等文章索引</a></li>
+<li><a href="https://aosabook.org/en/index.html">The Architecture of Open Source Applications</a></li>
+<li><a href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">《category-theory-for-programmers》</a></li>
+</ol>
+<h3 id="综合类学习站点"><a class="markdownIt-Anchor" href="#综合类学习站点"></a> 综合类学习站点</h3>
+<ol>
+<li><a href="https://hepsoftwarefoundation.org/training/curriculum.html">HSF Software Training Center</a></li>
+<li><a href="https://www.javatpoint.com/">javatpoint</a></li>
+<li><a href="https://www.tutorialspoint.com/index.htm">tutorialspoint</a></li>
+<li><a href="https://www.tuthub.io/">TutHub.io</a></li>
+<li><a href="https://docs.w3cub.com/vite/">W3cubDocs</a>：整理了各大流行项目的Guide/API/Configuration等</li>
+</ol>
+<h3 id="有趣站点"><a class="markdownIt-Anchor" href="#有趣站点"></a> 有趣站点</h3>
+<ol>
+<li><a href="https://iep.utm.edu/">互联网哲学百科</a></li>
+<li><a href="https://rosettacode.org/wiki/Rosetta_Code">Rosetta Code</a>：用不同的语言解决相同的问题</li>
+<li></li>
+</ol>
+<h3 id="好用工具"><a class="markdownIt-Anchor" href="#好用工具"></a> 好用工具</h3>
+<ol>
+<li><a href="http://www.moreofit.com/">moreofit</a>：查找相似的网站</li>
+<li><a href="https://cs.github.com/?scopeName=All+repos&amp;scope=&amp;q=">GitHub Code Search</a>：搜索GitHub中的代码，可指定仓库</li>
+<li><a href="https://kaifa.baidu.com/">开发者搜索</a>：用于搜索GitHub上的目标仓库</li>
+<li><a href="https://endoflife.date/">流行项目生命周期</a>：整理各种流行的大型项目的生命周期，从发布、更新到死亡</li>
+<li><a href="https://www.tuthub.io/">TutHub.io</a>：其宗旨为不要在不好的编程教程上浪费时间，可以用来搜索免费和付费的编程教程</li>
+<li><a href="https://m3o.com/explore">General APIs</a>：整理收集了各种通用API</li>
+<li></li>
+</ol>
+<h3 id="入门资料收集"><a class="markdownIt-Anchor" href="#入门资料收集"></a> 入门资料收集</h3>
+<p>用于上手项目，快速入门</p>
+<ol>
+<li><a href="https://pan.baidu.com/share/init?surl=Kg7UUpO3wwALX6x28cWA7A#list/path=%2F%E5%B0%9A%E7%A1%85%E8%B0%B7Java%E5%AD%A6%E7%A7%91%E5%85%A8%E5%A5%97%E6%95%99%E7%A8%8B%EF%BC%88%E6%80%BB207.77GB%EF%BC%89">尚硅谷Java学科全套教程（8op3）</a></li>
+<li><a href="https://pan.baidu.com/share/init?surl=LxIxcHDO7SYB96SE-GZfuQ#list/path=%2Fsharelink3232509500-994016065012907%2Fjava%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B2021&amp;parentPath=%2Fsharelink3232509500-994016065012907">Java视频教程2021_黑马（dor4）</a></li>
+<li><a href="https://pan.baidu.com/share/init?surl=oPdzQ7vO2bivTYtttD1jfw#list/path=%2F&amp;parentPath=%2Fsharelink3232509500-1002206530988551">Java精品视频教程_黑马（1234）</a><br />
+4 <a href="https://pan.baidu.com/share/init?surl=5yVOafBdEz3VU6hvYCOsYA#list/path=%2Fsharelink3232509500-464559482111384%2F2022%E6%9C%80%E6%96%B0%E7%89%88%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE&amp;parentPath=%2Fsharelink3232509500-464559482111384">2022最新版黑马程序员前端（1234）</a></li>
+<li><a href="https://www.bilibili.com/read/cv5216534?spm_id_from=333.999.0.0">2022年度全网最全Java学习路线（尚硅谷）</a></li>
+<li><a href="https://www.bilibili.com/read/cv9965357?from=articleDetail">2022黑马程序员Java学习路线图（黑马）</a></li>
+<li><a href="https://www.bilibili.com/read/cv10431130">2022年web前端开发学习路线图（黑马）</a></li>
+</ol>
+<h3 id="进阶资料收集"><a class="markdownIt-Anchor" href="#进阶资料收集"></a> 进阶资料收集</h3>
+<p>用于扩展眼界，获得更好的技术视野</p>
+<ol>
+<li><a href="https://okmij.org/ftp/">okmij’s Index</a></li>
+<li><a href="https://www.smsunarto.com/web3">Working in Web3: The Handbook</a></li>
+<li><a href="https://cloud.189.cn/web/share?code=yIbuMnUFjmYz">极客实践课程（c8hx）</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>指南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java知识点01</title>
+    <url>/2022/08/15/Java%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文记录一下与Java相关的一些知识点：</p>
+<span id="more"></span>
+<h3 id="属性和方法签名"><a class="markdownIt-Anchor" href="#属性和方法签名"></a> 属性和方法签名</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://morrisware01.gitbooks.io/android-learning-note/content/ndkkai-fa-zhi-lv/jniji-chu/shu-xing-yu-fang-fa-qian-ming.html?q=">关于属性与方法的签名</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Obsidian配置</title>
+    <url>/2022/08/14/Obsidian%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录一下在Obsidian中一些常用的配置和使用技巧</p>
+<span id="more"></span>
+<h3 id="使用教程"><a class="markdownIt-Anchor" href="#使用教程"></a> 使用教程</h3>
+<h3 id="主题"><a class="markdownIt-Anchor" href="#主题"></a> 主题</h3>
+<ul>
+<li>Minimal：不太好用，短代码不会高亮</li>
+<li>Obsidian-Typora-Vue：<a href="https://github.com/ZekunC/Obsidian-Typora-Vue-Theme">Obsidian-Typora-Vue-Theme</a>，正在使用</li>
+</ul>
+<h3 id="插件"><a class="markdownIt-Anchor" href="#插件"></a> 插件</h3>
+<ul>
+<li>Image auto upload Plugin：和PicGO协同上传图片到github图床</li>
+<li>Editor Syntax Highlight：代码语法高亮</li>
+<li>cMenu：用于支持word的富文本编辑，可自行配置</li>
+<li>Title Serial Number Plugin：用于自动给标题编号</li>
+</ul>
+<h3 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h3>
+<h4 id="41-将vscode代码粘贴到代码块中时出现多于空行"><a class="markdownIt-Anchor" href="#41-将vscode代码粘贴到代码块中时出现多于空行"></a> 4.1 将VSCode代码粘贴到代码块中时出现多于空行</h4>
+<p>解决方案：</p>
+<ol>
+<li>右键以纯文本形式粘贴<br />
+参考资料：</li>
+<li><a href="https://forum-zh.obsidian.md/t/topic/7496">【已解决】在阅读模式下，代码块中的代码不高亮</a></li>
+<li><a href="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BD%A0%E7%9A%84%E7%AC%94%E8%AE%B0">格式化你的笔记</a></li>
+<li><a href="https://forum-zh.obsidian.md/t/topic/7432">求助：关于在Obsidian上粘贴代码每行会出现多余空行如何解决？</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch可视化实践</title>
+    <url>/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<p>本文记录一下如何使用TensorBoard工具对深度学习模型及其数据进行可视化：</p>
+<span id="more"></span>
+<p>此处以调用<code>add_graph()</code>展示模型的computation graph为例，说明如何使用TensorBoard对模型计算图进行可视化，并在本地浏览器可以查看远程服务器的tensorboard可视化情况。</p>
+<p>其主要步骤如下：</p>
+<ol>
+<li>
+<p>在<code>trian.py</code>文件中导入tensorboard的<code>SummaryWriter</code>类并创建对象：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line">writer = SummaryWriter(<span class="string">&quot;add_graph&quot;</span>) <span class="comment"># 默认为runs文件夹，此处指定为add_graph文件夹</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在<code>epoch=0</code>且<code>idx=0</code>处调用<code>add_graph</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> epoch == <span class="number">0</span> <span class="keyword">and</span> i == <span class="number">0</span>:</span><br><span class="line">	<span class="comment"># add_graph</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;epoch=&quot;</span>, epoch, <span class="string">&quot;, i=&quot;</span>, i)</span><br><span class="line">	writer.add_graph(model, input_to_model=images, verbose=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>运行<code>python train.py</code>，在训练成功开始后会发现add_graph文件夹中会出现如下所示类型的文件：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808170232112.png" alt="image-20220808170232112" /></p>
+</li>
+<li>
+<p>远程登录服务器并指定与后续tensorboard使用端口对应的本地端口，以便后续在本地浏览器对应端口显示：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -L 16008:127.0.0.1:6008  user@server</span><br></pre></td></tr></table></figure>
+<p>上述命令表示后续在服务器的6008端口打开tensorboard可视化文件时，可以在本地浏览器的16008端口查看可视化结果。</p>
+</li>
+<li>
+<p>在服务器上运行<code>tensorboard --logdir=add_graph --port==6008</code>，此时已经在服务器的6008端口打开tensorboard的可视化文件，并将其同步到本地的16008端口（报错不影响结果展示）：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808170714479.png" alt="image-20220808170714479" /></p>
+</li>
+<li>
+<p>此时，在本地浏览器打开 <a href="http://localhost:16008">http://localhost:16008</a> 即可看到如下结果：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808170919983.png" alt="image-20220808170919983" /></p>
+</li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://neptune.ai/blog/the-best-tools-for-machine-learning-model-visualization">The Best Tools for Machine Learning Model Visualization</a></li>
+<li><a href="https://liarsliarsliars.com/visualize-pytorch-model-graph-with-tensorboard/">Visualize PyTorch Model Graph with TensorBoard</a></li>
+<li><a href="https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html">VISUALIZING MODELS, DATA, AND TRAINING WITH TENSORBOARD</a></li>
+<li><a href="https://github.com/christianversloot/machine-learning-articles/blob/main/how-to-use-tensorboard-with-pytorch.md">how-to-use-tensorboard-with-pytorch</a></li>
+<li><a href="https://neptune.ai/blog/tensorboard-tutorial">Deep Dive Into TensorBoard: Tutorial With Examples</a></li>
+<li><a href="https://blog.csdn.net/u010626937/article/details/107747070">本地浏览器使用tensorboard查看远程服务器训练情况</a></li>
+<li><a href="https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server">How can I run Tensorboard on a remote server?</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UML教程</title>
+    <url>/2022/08/15/UML%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本文记录一下UML类图的相关概念和使用技巧：</p>
+<span id="more"></span>
+<blockquote>
+<p>参考资料</p>
+<ol>
+<li><a href="https://programmer.group/uml-class-diagram-relationship-and-its-corresponding-code.html">UML class diagram relationship and its corresponding code</a></li>
+<li><a href="https://segmentfault.com/a/1190000039232402">UML类图简明教程</a></li>
+<li><a href="https://www.w3cschool.cn/uml_tutorial/">UML 教程</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>UML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>写给程序员的范畴论资料索引</title>
+    <url>/2022/08/15/%E5%86%99%E7%BB%99%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%8C%83%E7%95%B4%E8%AE%BA%E8%B5%84%E6%96%99%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>本文为<a href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">《category-theory-for-programmers》</a>一书对应的资料索引：</p>
+<span id="more"></span>
+<h3 id="译文part-one"><a class="markdownIt-Anchor" href="#译文part-one"></a> 译文(Part One)</h3>
+<p><a href="https://segmentfault.com/a/1190000003882331">&lt;译&gt; 写给程序猿的范畴论 · 序</a></p>
+<ol>
+<li><a href="https://segmentfault.com/a/1190000003883257">&lt;译&gt; 范畴：复合的本质</a></li>
+<li><a href="https://segmentfault.com/a/1190000003888544">&lt;译&gt; 类型与函数</a></li>
+<li><a href="https://segmentfault.com/a/1190000003894116">&lt;译&gt; 范畴，可大可小</a></li>
+<li><a href="https://segmentfault.com/a/1190000003898795">&lt;译&gt; Kleisli 范畴</a></li>
+<li><a href="https://segmentfault.com/a/1190000003913079">&lt;译&gt; 积与余积</a></li>
+<li><a href="https://segmentfault.com/a/1190000003943687">&lt;译&gt; 简单的代数数据类型</a></li>
+<li><a href="https://segmentfault.com/a/1190000003954370">&lt;译&gt; 函子</a></li>
+<li><a href="https://segmentfault.com/a/1190000003993662">&lt;译&gt; 函子性</a></li>
+<li><a href="https://segmentfault.com/a/1190000004631638">&lt;译&gt; 函数类型</a></li>
+<li><a href="https://segmentfault.com/a/1190000012381561">&lt;译&gt; 自然变换</a></li>
+</ol>
+<h3 id="github仓库"><a class="markdownIt-Anchor" href="#github仓库"></a> GitHub仓库</h3>
+<p><a href="https://github.com/hmemcpy/milewski-ctfp-pdf">milewski-ctfp-pdf</a></p>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>范畴论</tag>
       </tags>
   </entry>
 </search>

@@ -32,8 +32,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719095058661.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719095819493.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220719100227462.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808155219586.png">
 <meta property="article:published_time" content="2022-06-03T07:15:43.000Z">
-<meta property="article:modified_time" content="2022-07-24T14:08:16.352Z">
+<meta property="article:modified_time" content="2022-08-10T10:21:30.597Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Pytorch">
 <meta property="article:tag" content="python">
@@ -166,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -177,7 +178,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -263,7 +264,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-24 22:08:16" itemprop="dateModified" datetime="2022-07-24T22:08:16+08:00">2022-07-24</time>
+      <time title="修改时间：2022-08-10 18:21:30" itemprop="dateModified" datetime="2022-08-10T18:21:30+08:00">2022-08-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,7 +283,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>9.5k</span>
+      <span>10k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -557,6 +558,46 @@
 </ol>
 </blockquote>
 </br>
+<p>16.tensorboardX vs tensorboard：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://tensorboardx.readthedocs.io/en/latest/tutorial.html">tensorboardX</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html">VISUALIZING MODELS, DATA, AND TRAINING WITH TENSORBOARD</a></li>
+</ol>
+</blockquote>
+</br>
+<p>17.当在<code>train.py</code>文件中指定了<code>os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = '1'</code>时，如果在调用的其他文件如<code>utils.py</code>中使用<code>fx = Variable(torch.from_numpy(fx)).cuda()</code>或<code>fx = torch.FloatTensor(fx).cuda()</code>，其默认gpu设备仍然为0，此时应该在<code>utils.py</code>文件中加上：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.environ[<span class="string">&quot;CUDA_VISIBLE_DEVICES&quot;</span>] = <span class="string">&#x27;1&#x27;</span></span><br></pre></td></tr></table></figure>
+</br>
+<p>18.当scipy版本过高时，如1.7.3。在使用如下代码进行图像存储时：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> misc</span><br><span class="line">misc.imsave(save_path + name, pred_edge_kk)</span><br></pre></td></tr></table></figure>
+<p>会报如下错误：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808155219586.png" alt="image-20220808155219586" /></p>
+<p>其原因在于在较新的scipy版本中<code>scipy.misc.imsave</code>已经被去除。解决方法为将上述代码改为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> imageio</span><br><span class="line">imageio.imwrite(save_path + name, pred_edge_kk)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<p>[<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/19991665/my-scipy-misc-module-appears-to-be-missing-imsave">My scipy.misc module appears to be missing imsave</a></p>
+</blockquote>
+</br>
+<p>19.Variable deprecated</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://discuss.pytorch.org/t/variable-deprecated-how-to-change-the-code/103596">Variable deprecated- how to change the code</a></li>
+</ol>
+</blockquote>
+</br>
+<p>20.tensor和numpy之间的转换：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/64358283/runtimeerror-can-only-calculate-the-mean-of-floating-types-got-byte-instead-f">RuntimeError: Can only calculate the mean of floating types. Got Byte instead. for mean += images_data.mean(2).sum(0)</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/49768306/pytorch-tensor-to-numpy-array">Pytorch tensor to numpy array</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.from_numpy.html">TORCH.FROM_NUMPY</a></li>
+</ol>
+</blockquote>
 
     </div>
 
@@ -630,13 +671,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">200k</span>
+    <span title="站点总字数">208k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:01</span>
+    <span title="站点阅读时长">3:09</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
