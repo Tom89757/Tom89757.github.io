@@ -39,10 +39,14 @@ tags:
 3. [tutorialspoint](https://www.tutorialspoint.com/index.htm)
 4. [TutHub.io](https://www.tuthub.io/)
 5. [W3cubDocs](https://docs.w3cub.com/vite/)：整理了各大流行项目的Guide/API/Configuration等
+6. [devdocs](https://devdocs.io/)
+7. [网道](https://wangdoc.com/)
+8. [菜鸟教程](https://www.runoob.com/)
+9. [W3Cschool](https://www.w3cschool.cn/)
+10. [ZetCode](https://zetcode.com/all/)
 ### 有趣站点
 1. [互联网哲学百科](https://iep.utm.edu/)
 2. [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code)：用不同的语言解决相同的问题
-3. 
 
 ### 好用工具
 1. [moreofit](http://www.moreofit.com/)：查找相似的网站
@@ -69,4 +73,5 @@ tags:
 1. [okmij's Index](https://okmij.org/ftp/)
 2. [Working in Web3: The Handbook](https://www.smsunarto.com/web3)
 3. [极客实践课程（c8hx）](https://cloud.189.cn/web/share?code=yIbuMnUFjmYz)
+4. [Google开源项目风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/)
 
