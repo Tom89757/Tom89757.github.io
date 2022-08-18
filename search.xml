@@ -4297,6 +4297,9 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 </ol>
 </blockquote>
 </br>
+2. `Execution` vs `Applying/Application` vs `Invoking/Invocation` vs `Calling`：
+>参考资料：
+>1. [What's the difference between "call" and "invoke"?](https://stackoverflow.com/questions/18505422/whats-the-difference-between-call-and-invoke)
 ]]></content>
       <categories>
         <category>资料</category>
@@ -7581,6 +7584,42 @@ class _Loss(Module)
 <p>参考资料：</p>
 <ol>
 <li><a href="https://morrisware01.gitbooks.io/android-learning-note/content/ndkkai-fa-zhi-lv/jniji-chu/shu-xing-yu-fang-fa-qian-ming.html?q=">关于属性与方法的签名</a></li>
+</ol>
+</blockquote>
+<h3 id="idea将-java-项目打包成-jar-包"><a class="markdownIt-Anchor" href="#idea将-java-项目打包成-jar-包"></a> IDEA将 Java 项目打包成 Jar 包</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://juejin.cn/post/7031717860003020814">IDEA 将普通 Java 项目打包成 Jar 包并运行</a></li>
+</ol>
+</blockquote>
+<h3 id="exe4j将jar包转换为可执行文件"><a class="markdownIt-Anchor" href="#exe4j将jar包转换为可执行文件"></a> exe4j将jar包转换为可执行文件</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/jepson6669/p/9211208.html">exe4j安装及注册</a></li>
+<li><a href="https://blog.csdn.net/weixin_45149355/article/details/106839486">idea打包java项目成exe可执行文件</a></li>
+</ol>
+</blockquote>
+<h3 id="从pomxml导入项目"><a class="markdownIt-Anchor" href="#从pomxml导入项目"></a> 从pom.xml导入项目</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://sp21.datastructur.es/materials/lab/lab2setup/lab2setup">Lab 2 Setup: Library Setup</a></li>
+</ol>
+</blockquote>
+<h3 id="junit-debugging"><a class="markdownIt-Anchor" href="#junit-debugging"></a> JUnit debugging</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://sp19.datastructur.es/materials/lab/lab3/lab3">Lab3: Unit Testing with JUnit, Debugging</a></li>
+</ol>
+</blockquote>
+<h3 id="intellij-idea使用java-visualizer可视化"><a class="markdownIt-Anchor" href="#intellij-idea使用java-visualizer可视化"></a> IntelliJ IDEA使用Java visualizer可视化</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://examples.javacodegeeks.com/java-visualizer-tutorial/">Java Visualizer Tutorial</a></li>
 </ol>
 </blockquote>
 ]]></content>
