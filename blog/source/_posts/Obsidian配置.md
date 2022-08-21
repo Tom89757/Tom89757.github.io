@@ -27,3 +27,5 @@ tags:
 1.  [【已解决】在阅读模式下，代码块中的代码不高亮](https://forum-zh.obsidian.md/t/topic/7496)
 2. [格式化你的笔记](https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BD%A0%E7%9A%84%E7%AC%94%E8%AE%B0)
 3. [求助：关于在Obsidian上粘贴代码每行会出现多余空行如何解决？](https://forum-zh.obsidian.md/t/topic/7432)
+### 4.2 有时会出现打开某个仓库安装插件全部消失的情况
+这是因为Obsidian的每个仓库的配置独立，即每个仓库文件夹下都有独立的`.obsidian`文件夹，对应不同的配置。为了解决该问题，可以将某仓库下的`.obsidian`复制到另一仓库下以实现配置迁移的目的。
