@@ -190,3 +190,13 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 
 </br>
 8.当`git push`较大文件（大于50M）时，会出现如下`warning`：
+			图片丢失...
+此时可以通过`git lfs`来解决，其步骤如下：
+1. 安装git bash，运行`git lfs install`。注意对每个user account只运行一次
+2. 在每个你想要使用`Git LFS`的仓库，训责你想要用`Git LFS`管理的文件类型（或者直接编辑你的`.gitattributes`文件），可以在任何使用配置额外的扩展文件类型。例如：`git lfs track ".pptx"`。将`.pptx`文件类型添加到`Git LFS`管理的文件类型中。
+3. 上述操作会在当前仓库根目录下添加`.gitattributes`文件，其内容如下：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220903153435.png)
+使用`git add .gitattributes`便可使`Git LFS`生效。
+> 参考资料：
+> 1. [Git Large File Storage](https://git-lfs.github.com/)
+
