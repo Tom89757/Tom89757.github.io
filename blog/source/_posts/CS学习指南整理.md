@@ -27,6 +27,7 @@ tags:
 4. [Coursera 上有哪些课程值得推荐](https://www.zhihu.com/question/22436320/answer/32477238)
 5. [EECS Course WEB Sites](https://inst.eecs.berkeley.edu/classes-eecs.html)
 6. [UCB cs roadmap](https://hkn.eecs.berkeley.edu/courseguides)
+7. [分享各类电子书（政治、IT、科普、历史、等，97本）](https://program-think.blogspot.com/2021/05/share-books.html)
 
 ### 开拓视野
 1. [《计算的极限》等文章索引](https://fwjmath.wordpress.com/recommended-list/)
