@@ -189,3 +189,4 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 > 3. [bat脚本echo命令输出空行的11种方法和效率](https://blog.csdn.net/justlpf/article/details/120077423)
 
 </br>
+8.当`git push`较大文件（大于50M）时，会出现如下`warning`：
