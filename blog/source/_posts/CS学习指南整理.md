@@ -76,3 +76,6 @@ tags:
 3. [极客实践课程（c8hx）](https://cloud.189.cn/web/share?code=yIbuMnUFjmYz)
 4. [Google开源项目风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/)
 
+### 代码风格规范(Style Guide)
+1. [styleguide](https://github.com/google/styleguide)
+2. [Website Style Guide Resources](http://styleguides.io/)

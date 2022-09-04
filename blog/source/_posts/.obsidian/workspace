@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "流行工具和框架资料整理.md",
+            "file": "Pytorch中知识点02.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "流行工具和框架资料整理.md",
+                "file": "Pytorch中知识点02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "流行工具和框架资料整理.md",
+                "file": "Pytorch中知识点02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "流行工具和框架资料整理.md"
+                "file": "Pytorch中知识点02.md"
               }
             }
           }
@@ -131,14 +131,14 @@
   },
   "active": "7c81940c2adf10c1",
   "lastOpenFiles": [
+    "CS学习指南整理.md",
+    "流行工具和框架资料整理.md",
     "编程语言资料整理.md",
     "git使用指南.md",
     "图像处理试题.md",
     "通过python脚本实现向kindle邮箱发送书籍.md",
-    "CS学习指南整理.md",
     "UML教程.md",
     "写给程序员的范畴论资料索引.md",
-    "流行工具和框架资料整理.md",
     "Obsidian配置.md",
     "Java知识点01.md"
   ]

@@ -475,3 +475,12 @@ imageio.imwrite(save_path + name, pred_edge_kk)
 > 2. [Pytorch tensor to numpy array](https://stackoverflow.com/questions/49768306/pytorch-tensor-to-numpy-array)
 > 3. [TORCH.FROM_NUMPY](https://pytorch.org/docs/stable/generated/torch.from_numpy.html)
 
+</br>
+
+21.pytorch中的L1/L2 regularization。
+> 参考资料：
+> 1. [How to add a L1 or L2 regularization to weights in pytorch](https://stackoverflow.com/questions/65998695/how-to-add-a-l1-or-l2-regularization-to-weights-in-pytorch)
+> 2. [L1/L2 regularization in PyTorch](https://stackoverflow.com/questions/42704283/l1-l2-regularization-in-pytorch)
+
+</br>
+
