@@ -16,7 +16,7 @@ tags:
 
 其完整形式为：`CLASS torch.utils.data.Dataset(*args, **kwds)`。
 
-所有表示从`keys`到`data samples`的映射的数据集都应该是该抽象类的子集。它的所有子类都应该重写`__getitem__()`方法，从而支持通过`key`获取`data sample`；其子类可以选择重写`__len__()`方法，该方法返回许多通过`Sampler`实现或`Dataloader`默认实现的数据集尺寸。
+所有表示从`keys`到`data samples`的映射的数据集都应该是该抽象类的子集。它的所有子类都应该重写`__getitem__()`方法，从而支持通过`key`获取`data sample`；其子类可以选择重写`__len__()`方法，该方法返回许多通过`Sampler`实现或`Dataloader`默认实现的数据集尺寸。a
 
 PS：`Dataloader`默认构造一个生成整数索引的`index sampler`，要想其对一个具有非整数的`indices/keys`的 map-style 的数据集生效，需要提供定制化的`sampler`。
 

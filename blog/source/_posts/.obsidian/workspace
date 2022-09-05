@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "algs",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -57,7 +57,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -129,7 +130,7 @@
     "width": 153.5,
     "collapsed": true
   },
-  "active": "7c81940c2adf10c1",
+  "active": "8a507f9f9cb23d1a",
   "lastOpenFiles": [
     "CS学习指南整理.md",
     "流行工具和框架资料整理.md",
