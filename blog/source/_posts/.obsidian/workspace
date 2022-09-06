@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "编程语言资料整理.md",
+            "file": "Windows10常见操作.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "编程语言资料整理.md",
+                "file": "Windows10常见操作.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程语言资料整理.md",
+                "file": "Windows10常见操作.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "编程语言资料整理.md"
+                "file": "Windows10常见操作.md"
               }
             }
           }
@@ -131,15 +131,15 @@
   },
   "active": "7c81940c2adf10c1",
   "lastOpenFiles": [
+    "Windows10系统配置.md",
+    "Java知识点01.md",
+    "编程语言资料整理.md",
     "Pytorch中知识点02.md",
     "CS学习指南整理.md",
     "流行工具和框架资料整理.md",
-    "编程语言资料整理.md",
     "git使用指南.md",
     "图像处理试题.md",
     "通过python脚本实现向kindle邮箱发送书籍.md",
-    "UML教程.md",
-    "写给程序员的范畴论资料索引.md",
-    "Obsidian配置.md"
+    "UML教程.md"
   ]
 }

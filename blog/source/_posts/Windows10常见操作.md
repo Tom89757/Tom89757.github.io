@@ -40,3 +40,10 @@ tags:
 参考资料：
 
 > 1. [pip installation](https://pip.pypa.io/en/stable/installation/)
+
+### 键盘键位映射修改
+问题：笔记本left shift键失灵，将Caps Lock键映射到left shift键然后作为left shift键使用
+> 参考资料：
+> 1. [键盘键位修改及管理（Windows篇）](https://zhuanlan.zhihu.com/p/29581818)
+> 2. [Windows：修改键盘映射表](https://blog.csdn.net/qq_42191914/article/details/104840458)
+
