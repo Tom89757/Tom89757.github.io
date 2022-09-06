@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Pytorch中知识点02.md",
+            "file": "编程语言资料整理.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "algs",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -57,8 +57,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pytorch中知识点02.md",
+                "file": "编程语言资料整理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Pytorch中知识点02.md",
+                "file": "编程语言资料整理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pytorch中知识点02.md"
+                "file": "编程语言资料整理.md"
               }
             }
           }
@@ -130,8 +129,9 @@
     "width": 153.5,
     "collapsed": true
   },
-  "active": "8a507f9f9cb23d1a",
+  "active": "7c81940c2adf10c1",
   "lastOpenFiles": [
+    "Pytorch中知识点02.md",
     "CS学习指南整理.md",
     "流行工具和框架资料整理.md",
     "编程语言资料整理.md",
@@ -140,7 +140,6 @@
     "通过python脚本实现向kindle邮箱发送书籍.md",
     "UML教程.md",
     "写给程序员的范畴论资料索引.md",
-    "Obsidian配置.md",
-    "Java知识点01.md"
+    "Obsidian配置.md"
   ]
 }
