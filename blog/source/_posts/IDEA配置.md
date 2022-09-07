@@ -16,3 +16,5 @@ tags:
 2.打开`File->Settings->Keymap`，设置Keymap为VSCode：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220815102443.png)
 
+### IDEA返回上一次光标所在位置
+同 [Android Studio返回上一次光标所在位置](https://tom89757.github.io/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE)
