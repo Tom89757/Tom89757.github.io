@@ -484,3 +484,12 @@ imageio.imwrite(save_path + name, pred_edge_kk)
 
 </br>
 
+22.pytorch报错“CUDA out of memory”，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220907150639.png)
+
+> 参考资料：
+> 1. [How to avoid "CUDA out of memory" in PyTorch](https://stackoverflow.com/questions/59129812/how-to-avoid-cuda-out-of-memory-in-pytorch)
+> 2. [Solving "CUDA out of memory" Error](https://www.kaggle.com/getting-started/140636)
+> 3. [RuntimeError: CUDA out of memory. Tried to allocate 12.50 MiB (GPU 0; 10.92 GiB total capacity; 8.57 MiB already allocated; 9.28 GiB free; 4.68 MiB cached)](https://github.com/pytorch/pytorch/issues/16417)
+> 4. [pytorch如何使用多块gpu?](https://www.zhihu.com/question/67726969)
+> 5. [pytorch多gpu并行训练](https://zhuanlan.zhihu.com/p/86441879)
