@@ -448,3 +448,10 @@ def max(a, b):
 ```
 > 参考资料：
 > 1. [It is more efficient to use if-return-return or if-else-return?](https://stackoverflow.com/questions/9191388/it-is-more-efficient-to-use-if-return-return-or-if-else-return)
+
+</br>
+10.Python中星号*(asterisk)的各种用法总结
+> 参考资料：
+> 1. [All you need to know about Asterisks in Python](https://bas.codes/posts/python-asterisks)
+
+</br>

@@ -1,19 +1,15 @@
 {
   "main": {
-    "id": "3edf38a15931b49d",
+    "id": "f718a0daee5e27e9",
     "type": "split",
     "children": [
       {
-        "id": "7c81940c2adf10c1",
+        "id": "59609d2fb03133de",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-<<<<<<< HEAD
-            "file": "编程语言资料整理.md",
-=======
-            "file": "IDEA配置.md",
->>>>>>> 5af60351240cb6b5dea86a94027f6cd8f5eb45c8
+            "file": "CV系列文章.md",
             "mode": "source",
             "source": false
           }
@@ -23,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "2c4d73ce03994368",
+    "id": "c3ae34b2b1b7b3e9",
     "type": "split",
     "children": [
       {
-        "id": "a084edaad44d4436",
+        "id": "5bdcd27b17d713c3",
         "type": "tabs",
         "children": [
           {
-            "id": "4e480bc972f41fe8",
+            "id": "35aab1bdf1357135",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -39,12 +35,12 @@
             }
           },
           {
-            "id": "8a507f9f9cb23d1a",
+            "id": "85fdaabda55cea6f",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "Rust",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -54,39 +50,34 @@
             }
           },
           {
-            "id": "688cd7661e917a5e",
+            "id": "51ccdc314b6b35a7",
             "type": "leaf",
             "state": {
               "type": "starred",
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 202
+    "width": 300
   },
   "right": {
-    "id": "3b12a275d48f1044",
+    "id": "8556d8b25b6888b0",
     "type": "split",
     "children": [
       {
-        "id": "b68135051d24c92e",
+        "id": "f119561361b76c37",
         "type": "tabs",
         "children": [
           {
-            "id": "da06639e445e2696",
+            "id": "e75fe3453b01c1f2",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
-                "file": "编程语言资料整理.md",
-=======
-                "file": "IDEA配置.md",
->>>>>>> 5af60351240cb6b5dea86a94027f6cd8f5eb45c8
+                "file": "CV系列文章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,75 +89,48 @@
             }
           },
           {
-            "id": "35be8cbc1cf0f520",
+            "id": "05cfb95ee2e343fa",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
-                "file": "编程语言资料整理.md",
-=======
-                "file": "IDEA配置.md",
->>>>>>> 5af60351240cb6b5dea86a94027f6cd8f5eb45c8
+                "file": "CV系列文章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "e3acd0e4efdfaeba",
+            "id": "ddef99eabf2207c2",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
-                "sortOrder": "frequencyReverse",
+                "sortOrder": "frequency",
                 "useHierarchy": true
               }
             }
           },
           {
-            "id": "0fae82d3477f2ea1",
+            "id": "febe02cec7437ca1",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-<<<<<<< HEAD
-                "file": "编程语言资料整理.md"
-=======
-                "file": "IDEA配置.md"
->>>>>>> 5af60351240cb6b5dea86a94027f6cd8f5eb45c8
+                "file": "CV系列文章.md"
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 153.5,
+    "width": 300,
     "collapsed": true
   },
-  "active": "8a507f9f9cb23d1a",
+  "active": "59609d2fb03133de",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "免费书籍、文档和教程.md",
-    "编程语言资料整理.md",
-    "CS学习指南整理.md",
-    "Windows10常见操作.md",
-    "Windows10系统配置.md",
-    "Java知识点01.md",
-    "Pytorch中知识点02.md",
-=======
-    "Android-Studio配置.md",
-    "Pytorch中知识点02.md",
-    "Windows10常见操作.md",
-    "Windows10系统配置.md",
-    "Java知识点01.md",
-    "编程语言资料整理.md",
-    "CS学习指南整理.md",
->>>>>>> 5af60351240cb6b5dea86a94027f6cd8f5eb45c8
-    "流行工具和框架资料整理.md",
-    "git使用指南.md",
-    "图像处理试题.md"
+    "python中知识点01.md",
+    "CV系列文章.md"
   ]
 }
