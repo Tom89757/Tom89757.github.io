@@ -493,3 +493,34 @@ imageio.imwrite(save_path + name, pred_edge_kk)
 > 3. [RuntimeError: CUDA out of memory. Tried to allocate 12.50 MiB (GPU 0; 10.92 GiB total capacity; 8.57 MiB already allocated; 9.28 GiB free; 4.68 MiB cached)](https://github.com/pytorch/pytorch/issues/16417)
 > 4. [pytorch如何使用多块gpu?](https://www.zhihu.com/question/67726969)
 > 5. [pytorch多gpu并行训练](https://zhuanlan.zhihu.com/p/86441879)
+
+</br>
+23.在定义模型时，我们通常使用如下框架的代码：
+```python
+class Model(nn.Module):
+	def __init__(self, config):
+		self(Model, self).__init__()
+		self.config = config
+		self.layers = ...
+
+	def forward(self, x):
+		out = self.layers(x)
+		return out
+```
+在训练或者测试模型时，我们则使用如下的代码：
+```python
+net = Model(config)
+net.train(true)
+net.cuda()
+out = net(image)
+```
+上述代码中`net(image)`是`net.__call__(image)`的简写形式，那么上述`Model`中定义的`forward`在哪被调用呢？实际上，`__call__`已经在`nn.Module`中定义，将会register all hooks 并且调用`forward`，因此我们不需要调用`model.forward(image)`而只需要调用`model(image)`。
+可以参考下面参考资料4对python hook有一个迅速的了解。
+> 参考资料：
+> 1. [Is model.forward(x) the same as model.\__call\__(x)?](https://discuss.pytorch.org/t/is-model-forward-x-the-same-as-model-call-x/33460)
+> 2. [PyTorch module__call__() vs forward()](https://stephencowchau.medium.com/pytorch-module-call-vs-forward-c4df3ff304b1)
+> 3. [5 分钟掌握 Python 中的 Hook 钩子函数](https://cloud.tencent.com/developer/article/1761121)
+> 4. [python hook 机制](https://zhuanlan.zhihu.com/p/275643739)
+
+
+
