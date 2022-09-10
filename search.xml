@@ -393,6 +393,15 @@
 <li><a href="https://pip.pypa.io/en/stable/installation/">pip installation</a></li>
 </ol>
 </blockquote>
+<h3 id="键盘键位映射修改"><a class="markdownIt-Anchor" href="#键盘键位映射修改"></a> 键盘键位映射修改</h3>
+<p>问题：笔记本left shift键失灵，将Caps Lock键映射到left shift键然后作为left shift键使用</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/29581818">键盘键位修改及管理（Windows篇）</a></li>
+<li><a href="https://blog.csdn.net/qq_42191914/article/details/104840458">Windows：修改键盘映射表</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -1011,7 +1020,23 @@
 <li><a href="https://blog.csdn.net/justlpf/article/details/120077423">bat脚本echo命令输出空行的11种方法和效率</a></li>
 </ol>
 </blockquote>
-</br>]]></content>
+</br>
+<p>8.当<code>git push</code>较大文件（大于50M）时，会出现如下<code>warning</code>。<br />
+此时可以通过<code>git lfs</code>来解决，其步骤如下：</p>
+<ol>
+<li>安装git bash，运行<code>git lfs install</code>。注意对每个user account只运行一次</li>
+<li>在每个你想要使用<code>Git LFS</code>的仓库，训责你想要用<code>Git LFS</code>管理的文件类型（或者直接编辑你的<code>.gitattributes</code>文件），可以在任何使用配置额外的扩展文件类型。例如：<code>git lfs track &quot;.pptx&quot;</code>。将<code>.pptx</code>文件类型添加到<code>Git LFS</code>管理的文件类型中。</li>
+<li>上述操作会在当前仓库根目录下添加<code>.gitattributes</code>文件，其内容如下：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220903153435.png" alt="" /></li>
+<li>使用<code>git add .gitattributes</code>便可使<code>Git LFS</code>生效。</li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://git-lfs.github.com/">Git Large File Storage</a></li>
+</ol>
+</blockquote>
+]]></content>
       <categories>
         <category>开发工具</category>
       </categories>
@@ -5319,7 +5344,7 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <span id="more"></span>
 <p>1.<code>torch.utils.data.Dataset</code>：一个表示数据集的抽象类。</p>
 <p>其完整形式为：<code>CLASS torch.utils.data.Dataset(*args, **kwds)</code>。</p>
-<p>所有表示从<code>keys</code>到<code>data samples</code>的映射的数据集都应该是该抽象类的子集。它的所有子类都应该重写<code>__getitem__()</code>方法，从而支持通过<code>key</code>获取<code>data sample</code>；其子类可以选择重写<code>__len__()</code>方法，该方法返回许多通过<code>Sampler</code>实现或<code>Dataloader</code>默认实现的数据集尺寸。</p>
+<p>所有表示从<code>keys</code>到<code>data samples</code>的映射的数据集都应该是该抽象类的子集。它的所有子类都应该重写<code>__getitem__()</code>方法，从而支持通过<code>key</code>获取<code>data sample</code>；其子类可以选择重写<code>__len__()</code>方法，该方法返回许多通过<code>Sampler</code>实现或<code>Dataloader</code>默认实现的数据集尺寸。a</p>
 <p>PS：<code>Dataloader</code>默认构造一个生成整数索引的<code>index sampler</code>，要想其对一个具有非整数的<code>indices/keys</code>的 map-style 的数据集生效，需要提供定制化的<code>sampler</code>。</p>
 <p>参考资料：</p>
 <ol>
@@ -5612,6 +5637,40 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <li><a href="https://pytorch.org/docs/stable/generated/torch.from_numpy.html">TORCH.FROM_NUMPY</a></li>
 </ol>
 </blockquote>
+</br>
+<p>21.pytorch中的L1/L2 regularization。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/65998695/how-to-add-a-l1-or-l2-regularization-to-weights-in-pytorch">How to add a L1 or L2 regularization to weights in pytorch</a></li>
+<li><a href="https://stackoverflow.com/questions/42704283/l1-l2-regularization-in-pytorch">L1/L2 regularization in PyTorch</a></li>
+</ol>
+</blockquote>
+</br>
+<p>22.pytorch报错“CUDA out of memory”，如下图所示：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220907150639.png" alt="" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/59129812/how-to-avoid-cuda-out-of-memory-in-pytorch">How to avoid “CUDA out of memory” in PyTorch</a></li>
+<li><a href="https://www.kaggle.com/getting-started/140636">Solving “CUDA out of memory” Error</a></li>
+<li><a href="https://github.com/pytorch/pytorch/issues/16417">RuntimeError: CUDA out of memory. Tried to allocate 12.50 MiB (GPU 0; 10.92 GiB total capacity; 8.57 MiB already allocated; 9.28 GiB free; 4.68 MiB cached)</a></li>
+<li><a href="https://www.zhihu.com/question/67726969">pytorch如何使用多块gpu?</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/86441879">pytorch多gpu并行训练</a></li>
+</ol>
+</blockquote>
+</br>
+23.在定义模型时，我们通常使用如下框架的代码：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Model</span>(nn.Module):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, config</span>):</span><br><span class="line">		self(Model, self).__init__()</span><br><span class="line">		self.config = config</span><br><span class="line">		self.layers = ...</span><br><span class="line"></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">		out = self.layers(x)</span><br><span class="line">		<span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
+在训练或者测试模型时，我们则使用如下的代码：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">net = Model(config)</span><br><span class="line">net.train(true)</span><br><span class="line">net.cuda()</span><br><span class="line">out = net(image)</span><br></pre></td></tr></table></figure>
+上述代码中`net(image)`是`net.__call__(image)`的简写形式，那么上述`Model`中定义的`forward`在哪被调用呢？实际上，`__call__`已经在`nn.Module`中定义，将会register all hooks 并且调用`forward`，因此我们不需要调用`model.forward(image)`而只需要调用`model(image)`。
+可以参考下面参考资料4对python hook有一个迅速的了解。
+> 参考资料：
+> 1. [Is model.forward(x) the same as model.\__call\__(x)?](https://discuss.pytorch.org/t/is-model-forward-x-the-same-as-model-call-x/33460)
+> 2. [PyTorch module__call__() vs forward()](https://stephencowchau.medium.com/pytorch-module-call-vs-forward-c4df3ff304b1)
+> 3. [5 分钟掌握 Python 中的 Hook 钩子函数](https://cloud.tencent.com/developer/article/1761121)
+> 4. [python hook 机制](https://zhuanlan.zhihu.com/p/275643739)
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -6193,7 +6252,13 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">max</span>(<span class="params">a, b</span>):</span><br><span class="line">	<span class="keyword">if</span> a&gt;b:</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	<span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">max</span>(<span class="params">a, b</span>):</span><br><span class="line">	<span class="keyword">if</span> a&gt;b:</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
 > 参考资料：
-> 1. [It is more efficient to use if-return-return or if-else-return?](https://stackoverflow.com/questions/9191388/it-is-more-efficient-to-use-if-return-return-or-if-else-return)]]></content>
+> 1. [It is more efficient to use if-return-return or if-else-return?](https://stackoverflow.com/questions/9191388/it-is-more-efficient-to-use-if-return-return-or-if-else-return)
+</br>
+10.Python中星号*(asterisk)的各种用法总结
+> 参考资料：
+> 1. [All you need to know about Asterisks in Python](https://bas.codes/posts/python-asterisks)
+</br>
+]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -7480,6 +7545,8 @@ class _Loss(Module)
 2.打开<code>File-&gt;Settings-&gt;Keymap</code>，设置Keymap为VSCode：<br />
 <img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220815102443.png" alt="" /></li>
 </ol>
+<h3 id="idea返回上一次光标所在位置"><a class="markdownIt-Anchor" href="#idea返回上一次光标所在位置"></a> IDEA返回上一次光标所在位置</h3>
+<p>同 <a href="https://tom89757.github.io/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE">Android Studio返回上一次光标所在位置</a></p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -7513,6 +7580,7 @@ class _Loss(Module)
 <li><a href="https://www.zhihu.com/question/22436320/answer/32477238">Coursera 上有哪些课程值得推荐</a></li>
 <li><a href="https://inst.eecs.berkeley.edu/classes-eecs.html">EECS Course WEB Sites</a></li>
 <li><a href="https://hkn.eecs.berkeley.edu/courseguides">UCB cs roadmap</a></li>
+<li><a href="https://program-think.blogspot.com/2021/05/share-books.html">分享各类电子书（政治、IT、科普、历史、等，97本）</a></li>
 </ol>
 <h3 id="开拓视野"><a class="markdownIt-Anchor" href="#开拓视野"></a> 开拓视野</h3>
 <ol>
@@ -7565,6 +7633,15 @@ class _Loss(Module)
 <li><a href="https://www.smsunarto.com/web3">Working in Web3: The Handbook</a></li>
 <li><a href="https://cloud.189.cn/web/share?code=yIbuMnUFjmYz">极客实践课程（c8hx）</a></li>
 <li><a href="https://zh-google-styleguide.readthedocs.io/en/latest/">Google开源项目风格指南</a></li>
+</ol>
+<h3 id="代码风格规范style-guide"><a class="markdownIt-Anchor" href="#代码风格规范style-guide"></a> 代码风格规范(Style Guide)</h3>
+<ol>
+<li><a href="https://github.com/google/styleguide">styleguide</a></li>
+<li><a href="http://styleguides.io/">Website Style Guide Resources</a></li>
+</ol>
+<h3 id="后端"><a class="markdownIt-Anchor" href="#后端"></a> 后端</h3>
+<ol>
+<li><a href="https://www.cnblogs.com/ityouknow/articles/5471930.html">江南白衣：我的后端（Java）开发书架</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -7622,6 +7699,13 @@ class _Loss(Module)
 <li><a href="https://examples.javacodegeeks.com/java-visualizer-tutorial/">Java Visualizer Tutorial</a></li>
 </ol>
 </blockquote>
+<h3 id="java-错误不支持发行版本5"><a class="markdownIt-Anchor" href="#java-错误不支持发行版本5"></a> java 错误，不支持发行版本5</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/qq_51263533/article/details/120209830">Error java 错误 不支持发行版本5 ( 完美解决版）</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -7658,6 +7742,8 @@ class _Loss(Module)
 <li><a href="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BD%A0%E7%9A%84%E7%AC%94%E8%AE%B0">格式化你的笔记</a></li>
 <li><a href="https://forum-zh.obsidian.md/t/topic/7432">求助：关于在Obsidian上粘贴代码每行会出现多余空行如何解决？</a></li>
 </ol>
+<h3 id="42-有时会出现打开某个仓库安装插件全部消失的情况"><a class="markdownIt-Anchor" href="#42-有时会出现打开某个仓库安装插件全部消失的情况"></a> 4.2 有时会出现打开某个仓库安装插件全部消失的情况</h3>
+<p>这是因为Obsidian的每个仓库的配置独立，即每个仓库文件夹下都有独立的<code>.obsidian</code>文件夹，对应不同的配置。为了解决该问题，可以将某仓库下的<code>.obsidian</code>复制到另一仓库下以实现配置迁移的目的。</p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -7795,6 +7881,15 @@ class _Loss(Module)
 <h4 id="文章收集-2"><a class="markdownIt-Anchor" href="#文章收集-2"></a> 文章收集</h4>
 <ol>
 <li><a href="https://www.tuicool.com/articles/yAZVZjV">electron 应用开发优秀实践</a></li>
+</ol>
+<h3 id="redis"><a class="markdownIt-Anchor" href="#redis"></a> Redis</h3>
+<ol>
+<li><a href="https://architecturenotes.co/redis/">Redis Explained</a></li>
+</ol>
+<h3 id="manim"><a class="markdownIt-Anchor" href="#manim"></a> Manim</h3>
+<ol>
+<li><a href="https://manim.org.cn/docs">Manim Kindergarten</a></li>
+<li><a href="https://docs.manim.org.cn/">ManimGL 教程文档</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -7990,6 +8085,10 @@ class _Loss(Module)
 <ol>
 <li><a href="https://nomicon.purewhite.io/">Rust秘典</a></li>
 <li><a href="https://zh.practice.rs/why-exercise.html">Rust语言实战</a></li>
+<li><a href="https://course.rs/about-book.html">Rust语言圣经(Rust Course)</a></li>
+<li><a href="https://doc.rust-lang.org/book/#the-rust-programming-language">The Rust Programming Language</a></li>
+<li><a href="https://doc.rust-lang.org/rust-by-example/index.html#rust-by-example">Rust by Example</a></li>
+<li><a href="https://doc.rust-lang.org/std/index.html#the-rust-standard-library">The Rust Standard Library</a></li>
 </ol>
 <h4 id="文章收集-7"><a class="markdownIt-Anchor" href="#文章收集-7"></a> 文章收集</h4>
 <ol>
@@ -8020,11 +8119,25 @@ class _Loss(Module)
 <h4 id="综合教程-11"><a class="markdownIt-Anchor" href="#综合教程-11"></a> 综合教程</h4>
 <ol>
 <li><a href="https://lotz84.github.io/haskellbyexample/">Haskell by Example</a></li>
+<li><a href="https://lhbg-book.link/">Learn Haskell By Build A Blog</a></li>
+<li><a href="http://cnhaskell.com/#">Real World Haskell 中文版</a></li>
+<li><a href="https://learnyouahaskell.mno2.org">Haskell 趣学指南</a></li>
 </ol>
 <h4 id="dart"><a class="markdownIt-Anchor" href="#dart"></a> Dart</h4>
 <h4 id="综合教程-12"><a class="markdownIt-Anchor" href="#综合教程-12"></a> 综合教程</h4>
 <ol>
 <li><a href="https://www.jpryan.me/dartbyexample/">Dart by Example</a></li>
+</ol>
+<h3 id="ocaml"><a class="markdownIt-Anchor" href="#ocaml"></a> OCaml</h3>
+<h4 id="综合教程-13"><a class="markdownIt-Anchor" href="#综合教程-13"></a> 综合教程</h4>
+<ol>
+<li><a href="https://cs3110.github.io/textbook/chapters/intro/intro.html">Better Programming Through OCaml</a></li>
+</ol>
+<h3 id="scheme"><a class="markdownIt-Anchor" href="#scheme"></a> Scheme</h3>
+<h3 id="综合教程-14"><a class="markdownIt-Anchor" href="#综合教程-14"></a> 综合教程</h3>
+<ol>
+<li><a href="https://htdp.org/">How to Design Programs</a></li>
+<li><a href="https://book.douban.com/subject/1140942/">程序设计方法（中文版）</a>（下载有电子版）</li>
 </ol>
 <h3 id="cheatsheets"><a class="markdownIt-Anchor" href="#cheatsheets"></a> CheatSheets</h3>
 <ul>
@@ -8036,12 +8149,13 @@ class _Loss(Module)
 <li><a href="https://github.com/FavioVazquez/ds-cheatsheets">Data Science Cheatsheets</a></li>
 </ul>
 <h3 id="综合资料"><a class="markdownIt-Anchor" href="#综合资料"></a> 综合资料</h3>
-<h4 id="综合教程-13"><a class="markdownIt-Anchor" href="#综合教程-13"></a> 综合教程</h4>
+<h4 id="综合教程-15"><a class="markdownIt-Anchor" href="#综合教程-15"></a> 综合教程</h4>
 <ul>
 <li><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a></li>
 <li><a href="https://exercism.org/tracks">exercism</a>：60 languages for you to master</li>
 <li><a href="http://www.java2s.com/">Programming Tutorials and Source Code Examples</a></li>
 <li><a href="https://quickref.me">Quick Reference</a></li>
+<li><a href="https://www.codewars.com/join">codewars</a></li>
 </ul>
 <h4 id="文章收集-9"><a class="markdownIt-Anchor" href="#文章收集-9"></a> 文章收集</h4>
 <ol>
@@ -8054,6 +8168,76 @@ class _Loss(Module)
       <tags>
         <tag>指南</tag>
         <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CV系列文章</title>
+    <url>/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点"></a> 知识点</h3>
+<ol>
+<li><a href="https://tom89757.github.io/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">Pytorch中知识点01</a></li>
+<li><a href="https://tom89757.github.io/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/">Pytorch中知识点02</a></li>
+<li><a href="https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">OpenCV中知识点01</a></li>
+<li><a href="https://tom89757.github.io/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">matplotlib中知识点01</a></li>
+<li><a href="https://tom89757.github.io/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">python中知识点01</a></li>
+</ol>
+<h3 id="文档"><a class="markdownIt-Anchor" href="#文档"></a> 文档</h3>
+<ol>
+<li><a href="https://tom89757.github.io/2022/07/04/Pytorch%E6%96%87%E6%A1%A301/">Pytorch文档01</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/">PyTorch nn.Module</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/">PyTorch saving and loading models</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/">PyTorch torch.utils.data</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-%E4%BC%98%E5%8C%96%E5%99%A8/">PyTorch 优化器</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-%E6%8D%9F%E5%A4%B1/">PyTorch 损失</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-Module-subclasses/">PyTorch Module subclasses</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch%E6%95%B0%E6%8D%AE%E9%87%87%E6%A0%B7/">PyTorch数据采样</a>、</li>
+<li><a href="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/">PyTorch TensorBoard</a></li>
+</ol>
+<h3 id="工具和实践"><a class="markdownIt-Anchor" href="#工具和实践"></a> 工具和实践</h3>
+<ol>
+<li><a href="https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/">PyTorch可视化实践</a></li>
+</ol>
+<h3 id="推荐文章"><a class="markdownIt-Anchor" href="#推荐文章"></a> 推荐文章</h3>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows10系统和环境配置</title>
+    <url>/2022/09/10/Windows10%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h3 id="windows多屏使用技巧"><a class="markdownIt-Anchor" href="#windows多屏使用技巧"></a> Windows多屏使用技巧</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://sspai.com/post/66381">在 Windows 下使用多块屏幕的你，可以收下这些建议</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Windows10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开发工具整理</title>
+    <url>/2022/09/10/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h3 id="json"><a class="markdownIt-Anchor" href="#json"></a> JSON</h3>
+<ol>
+<li><a href="https://github.com/AykutSarac/jsoncrack.com">JSON Crack</a>：将JSON数据可视化为图的形式：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220910171015.png" alt="" /></li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
       </tags>
   </entry>
 </search>
