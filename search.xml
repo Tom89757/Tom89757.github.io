@@ -8210,6 +8210,11 @@ class _Loss(Module)
     <title>Windows10系统和环境配置</title>
     <url>/2022/09/10/Windows10%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h3 id="windows多屏使用技巧"><a class="markdownIt-Anchor" href="#windows多屏使用技巧"></a> Windows多屏使用技巧</h3>
+<p>安装软件：</p>
+<ol>
+<li>PowerToys -&gt; FancyZones：屏幕分区</li>
+<li>Twinkle Tray：多屏亮度调节</li>
+</ol>
 <blockquote>
 <p>参考资料：</p>
 <ol>
