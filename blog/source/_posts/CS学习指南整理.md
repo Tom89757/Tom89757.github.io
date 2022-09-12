@@ -82,3 +82,8 @@ tags:
 
 ### 后端
 1. [江南白衣：我的后端（Java）开发书架](https://www.cnblogs.com/ityouknow/articles/5471930.html)
+
+### 编辑器
+1. [一年成为Emacs高手 (像神一样使用编辑器)](https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org)
+
+
