@@ -491,8 +491,11 @@ imageio.imwrite(save_path + name, pred_edge_kk)
 > 1. [How to avoid "CUDA out of memory" in PyTorch](https://stackoverflow.com/questions/59129812/how-to-avoid-cuda-out-of-memory-in-pytorch)
 > 2. [Solving "CUDA out of memory" Error](https://www.kaggle.com/getting-started/140636)
 > 3. [RuntimeError: CUDA out of memory. Tried to allocate 12.50 MiB (GPU 0; 10.92 GiB total capacity; 8.57 MiB already allocated; 9.28 GiB free; 4.68 MiB cached)](https://github.com/pytorch/pytorch/issues/16417)
-> 4. [pytorch如何使用多块gpu?](https://www.zhihu.com/question/67726969)
-> 5. [pytorch多gpu并行训练](https://zhuanlan.zhihu.com/p/86441879)
+> 4. [FREQUENTLY ASKED QUESTIONS](https://pytorch.org/docs/stable/notes/faq.html)
+> 5. [How to allocate more GPU memory to be reserved by PyTorch to avoid “RuntimeError: CUDA out of memory”?](https://discuss.pytorch.org/t/how-to-allocate-more-gpu-memory-to-be-reserved-by-pytorch-to-avoid-runtimeerror-cuda-out-of-memory/149037)
+> 6. How does “reserved in total by PyTorch” work?[https://discuss.pytorch.org/t/how-does-reserved-in-total-by-pytorch-work/70172]
+> 7. [pytorch如何使用多块gpu?](https://www.zhihu.com/question/67726969)
+> 8. [pytorch多gpu并行训练](https://zhuanlan.zhihu.com/p/86441879)
 
 </br>
 23.在定义模型时，我们通常使用如下框架的代码：

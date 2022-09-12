@@ -1,19 +1,15 @@
 {
   "main": {
-    "id": "f718a0daee5e27e9",
+    "id": "0aefe1df15c4a8f5",
     "type": "split",
     "children": [
       {
-        "id": "59609d2fb03133de",
+        "id": "d6e59a57809d9454",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-<<<<<<< HEAD
-            "file": "Pytorch-Distributed-Data-Parallel.md",
-=======
-            "file": "成组概念厘清.md",
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+            "file": "Pytorch中知识点02.md",
             "mode": "source",
             "source": false
           }
@@ -23,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "c3ae34b2b1b7b3e9",
+    "id": "6f513cd18cb00f93",
     "type": "split",
     "children": [
       {
-        "id": "5bdcd27b17d713c3",
+        "id": "30d78e116b62519f",
         "type": "tabs",
         "children": [
           {
-            "id": "35aab1bdf1357135",
+            "id": "d4140631c284efcd",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -39,12 +35,12 @@
             }
           },
           {
-            "id": "85fdaabda55cea6f",
+            "id": "40e3c26b28fa042b",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "out of",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -54,38 +50,36 @@
             }
           },
           {
-            "id": "51ccdc314b6b35a7",
+            "id": "d1139c0b7d5e8c65",
             "type": "leaf",
             "state": {
               "type": "starred",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
-    "id": "8556d8b25b6888b0",
+    "id": "514f8f8977cdfd55",
     "type": "split",
     "children": [
       {
-        "id": "f119561361b76c37",
+        "id": "84cc1d1cb023ee33",
         "type": "tabs",
         "children": [
           {
-            "id": "e75fe3453b01c1f2",
+            "id": "c3750e03fc09ea6d",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
-                "file": "Pytorch-Distributed-Data-Parallel.md",
-=======
-                "file": "成组概念厘清.md",
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+                "file": "Pytorch中知识点02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,23 +91,19 @@
             }
           },
           {
-            "id": "05cfb95ee2e343fa",
+            "id": "c7d1fbfb7a22e865",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
-                "file": "Pytorch-Distributed-Data-Parallel.md",
-=======
-                "file": "成组概念厘清.md",
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+                "file": "Pytorch中知识点02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "ddef99eabf2207c2",
+            "id": "1d78b40c27016df8",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -124,16 +114,12 @@
             }
           },
           {
-            "id": "febe02cec7437ca1",
+            "id": "f19ef657bc4f2215",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-<<<<<<< HEAD
-                "file": "Pytorch-Distributed-Data-Parallel.md"
-=======
-                "file": "成组概念厘清.md"
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+                "file": "Pytorch中知识点02.md"
               }
             }
           }
@@ -144,27 +130,6 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "59609d2fb03133de",
-  "lastOpenFiles": [
-<<<<<<< HEAD
-    "PyTorch-saving-and-loading-models.md",
-    "Pytorch-Distributed-Data-Parallel.md",
-    "CV系列文章和工具.md",
-    "CS学习指南整理.md",
-    "编程语言资料整理.md",
-    "Pytorch中知识点02.md",
-    "python中知识点01.md"
-=======
-    "Windows10常见操作.md",
-    "Java知识点01.md",
-    "CS学习指南整理.md",
-    "编程语言资料整理.md",
-    "IDEA配置.md",
-    "Pytorch中知识点02.md",
-    "python中知识点01.md",
-    "Windows10系统和环境配置.md",
-    "CV系列文章.md",
-    "开发工具整理.md"
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
-  ]
+  "active": "d6e59a57809d9454",
+  "lastOpenFiles": []
 }
