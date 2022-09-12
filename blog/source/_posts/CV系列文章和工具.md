@@ -6,6 +6,8 @@ categories:
 tags:
 - 笔记
 ---
+本文整理一下CV系列的文章，其包括本人博客中的文章和在互联网上收集的他人的文章：
+<!--more-->
 
 ### 知识点
 1. [Pytorch中知识点01](https://tom89757.github.io/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/)
