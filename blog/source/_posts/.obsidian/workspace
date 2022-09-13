@@ -9,11 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-<<<<<<< HEAD
-            "file": "Pytorch-Distributed-Data-Parallel.md",
-=======
-            "file": "成组概念厘清.md",
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+            "file": "深度学习环境配置.md",
             "mode": "source",
             "source": false
           }
@@ -81,11 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
-                "file": "Pytorch-Distributed-Data-Parallel.md",
-=======
-                "file": "成组概念厘清.md",
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+                "file": "深度学习环境配置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,11 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
-                "file": "Pytorch-Distributed-Data-Parallel.md",
-=======
-                "file": "成组概念厘清.md",
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+                "file": "深度学习环境配置.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,11 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-<<<<<<< HEAD
-                "file": "Pytorch-Distributed-Data-Parallel.md"
-=======
-                "file": "成组概念厘清.md"
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+                "file": "深度学习环境配置.md"
               }
             }
           }
@@ -146,25 +130,15 @@
   },
   "active": "59609d2fb03133de",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "PyTorch-saving-and-loading-models.md",
-    "Pytorch-Distributed-Data-Parallel.md",
+    "Ubuntu常见操作.md",
+    "深度学习环境配置.md",
+    "PyTorch可视化实践.md",
     "CV系列文章和工具.md",
-    "CS学习指南整理.md",
-    "编程语言资料整理.md",
-    "Pytorch中知识点02.md",
-    "python中知识点01.md"
-=======
-    "Windows10常见操作.md",
-    "Java知识点01.md",
-    "CS学习指南整理.md",
-    "编程语言资料整理.md",
     "IDEA配置.md",
-    "Pytorch中知识点02.md",
-    "python中知识点01.md",
-    "Windows10系统和环境配置.md",
-    "CV系列文章.md",
-    "开发工具整理.md"
->>>>>>> 102325bc5b799fd5a2ada8a91813d515536c9868
+    "2022深度学习框架.md",
+    "Pytorch-Distributed-Data-Parallel.md",
+    "PyTorch-saving-and-loading-models.md",
+    "CS学习指南整理.md",
+    "编程语言资料整理.md"
   ]
 }

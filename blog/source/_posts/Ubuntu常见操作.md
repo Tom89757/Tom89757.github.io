@@ -452,6 +452,16 @@ alias cls='printf "\ec"'
 >
 > 1. [chmod](https://wangchujiang.com/linux-command/c/chmod.html)
 
+</br>
+
+25.查看Linux系统内核版本和系统架构：
+- `hostnamectl`：查看内核版本和系统架构
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164139.png)
+- `uname -a`：查看内核版本和系统架构
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164340.png)
+> 参考资料：
+> 1. [查看Linux系统架构类型的5条常用命令](https://www.sysgeek.cn/find-out-linux-system-32-or-64-bit/)
+> 2. [查看Linux内核版本](https://www.cnblogs.com/linuxprobe/p/11664104.html)
 
 
 
