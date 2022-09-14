@@ -1,0 +1,144 @@
+{
+  "main": {
+    "id": "f718a0daee5e27e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "59609d2fb03133de",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Pytorch中知识点02.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c3ae34b2b1b7b3e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "5bdcd27b17d713c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "35aab1bdf1357135",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "85fdaabda55cea6f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "51ccdc314b6b35a7",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8556d8b25b6888b0",
+    "type": "split",
+    "children": [
+      {
+        "id": "f119561361b76c37",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e75fe3453b01c1f2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Pytorch中知识点02.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "05cfb95ee2e343fa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Pytorch中知识点02.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ddef99eabf2207c2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "febe02cec7437ca1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Pytorch中知识点02.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "59609d2fb03133de",
+  "lastOpenFiles": [
+    "深度学习环境配置.md",
+    "PyTorch可视化实践.md",
+    "Pytorch中知识点02.md",
+    "Ubuntu常见操作.md",
+    "CV系列文章和工具.md",
+    "IDEA配置.md",
+    "2022深度学习框架.md",
+    "Pytorch-Distributed-Data-Parallel.md",
+    "PyTorch-saving-and-loading-models.md",
+    "CS学习指南整理.md"
+  ]
+}

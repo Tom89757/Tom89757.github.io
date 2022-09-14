@@ -525,5 +525,21 @@ out = net(image)
 > 3. [5 分钟掌握 Python 中的 Hook 钩子函数](https://cloud.tencent.com/developer/article/1761121)
 > 4. [python hook 机制](https://zhuanlan.zhihu.com/p/275643739)
 
+</br>
+24.出现`RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor`，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220914162425.png)
+其原因为model和data分处于GPU和CPU，如果模型在GPU中 (`model.to(device)`)，此时需要添加如下代码将data也加载进GPU：
+```python
+inputs, labels = data                         # this is what you had
+inputs, labels = inputs.cuda(), labels.cuda() # add this line
+```
+> 参考资料：
+> 1. [RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same](https://stackoverflow.com/questions/59013109/runtimeerror-input-type-torch-floattensor-and-weight-type-torch-cuda-floatte)
+> 2. [Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor](https://discuss.pytorch.org/t/input-type-torch-floattensor-and-weight-type-torch-cuda-floattensor-should-be-the-same-or-input-should-be-a-mkldnn-tensor-and-weight-is-a-dense-tensor/152430)
+
+
+
+
+
 
 
