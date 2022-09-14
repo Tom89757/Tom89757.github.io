@@ -537,6 +537,14 @@ inputs, labels = inputs.cuda(), labels.cuda() # add this line
 > 1. [RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same](https://stackoverflow.com/questions/59013109/runtimeerror-input-type-torch-floattensor-and-weight-type-torch-cuda-floatte)
 > 2. [Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor](https://discuss.pytorch.org/t/input-type-torch-floattensor-and-weight-type-torch-cuda-floattensor-should-be-the-same-or-input-should-be-a-mkldnn-tensor-and-weight-is-a-dense-tensor/152430)
 
+</br>
+25.出现报错`AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0`。
+解决方案：`pip install setuptools==59.5.0`，安装较老的setuptools版本
+> 参考资料：
+> 1. [AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0 #69894](https://github.com/pytorch/pytorch/issues/69894)
+
+</br>
+
 
 
 
