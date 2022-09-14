@@ -1,3 +1,6 @@
 blog/public
 blog/theme
 blog/.deploy_git
+
+# 
+blog/source/_posts/.obsidian/workspace
