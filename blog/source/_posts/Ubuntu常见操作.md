@@ -463,6 +463,32 @@ alias cls='printf "\ec"'
 > 1. [查看Linux系统架构类型的5条常用命令](https://www.sysgeek.cn/find-out-linux-system-32-or-64-bit/)
 > 2. [查看Linux内核版本](https://www.cnblogs.com/linuxprobe/p/11664104.html)
 
+</br>
+26.查看Linux空间使用情况：
+- `df -lh`：查看分区使用情况
+- `du -sh /home/FT`：查看当前用户使用的存储空间大小
+> 参考资料：
+> 1. [Linux笔记』查看磁盘空间大小和所有用户各自占用空间](https://blog.csdn.net/abc13526222160/article/details/84962310#:~:text=Linux%E4%B8%8B%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%8D%A0,%E5%91%BD%E4%BB%A4%E6%9C%89%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E7%9A%84%E3%80%82)
+> 2. [Linux 查看磁盘空间](https://www.runoob.com/w3cnote/linux-view-disk-space.html)
+
+</br>
+27.Ubuntu添加和删除用户
+> 参考资料：
+> 1. [如何在Ubuntu添加和删除用户](https://www.myfreax.com/how-to-add-and-delete-users-on-ubuntu-18-04/#:~:text=%E9%80%9A%E8%BF%87GUI%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%94%A8%E6%88%B7&text=%E6%89%93%E5%BC%80Ubuntu%E8%AE%BE%E7%BD%AE%EF%BC%8C%E6%89%BE%E5%88%B0%20%E7%94%A8%E6%88%B7,%E5%91%98%E7%94%A8%E6%88%B7%E5%B9%B6%E8%BE%93%E5%85%A5%E4%BF%A1%E6%81%AF%E3%80%82)
+
+</br>
+28.配置环境变量
+- `export PATH=/usr/local/bin:$PATH`：将环境变量放在环境变量检索目录最开始，即优先查找该变量
+- `export PATH=$PATH:/usr/local/bin`：将环境变量放在环境变量检索目录最后，即最后查找该变量
+> 1. [Multiple CUDA versions on machine nvcc -V confusion](https://stackoverflow.com/questions/40517083/multiple-cuda-versions-on-machine-nvcc-v-confusion)
+> 2. [How to correctly add a path to PATH?](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)
+
+</br>
+
+
+
+
+
 
 
 

@@ -45,7 +45,7 @@ tags:
 
    上述命令表示后续在服务器的6008端口打开tensorboard可视化文件时，可以在本地浏览器的16008端口查看可视化结果。
 
-5. 在服务器上运行`tensorboard --logdir=add_graph --port==6008`，此时已经在服务器的6008端口打开tensorboard的可视化文件，并将其同步到本地的16008端口（报错不影响结果展示）：
+5. 在服务器上运行`tensorboard --logdir=add_graph --port=6008`，此时已经在服务器的6008端口打开tensorboard的可视化文件，并将其同步到本地的16008端口（报错不影响结果展示）：
 
    ![image-20220808170714479](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808170714479.png)
 

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "深度学习环境配置.md",
+            "file": "PyTorch可视化实践.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "深度学习环境配置.md",
+                "file": "PyTorch可视化实践.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "深度学习环境配置.md",
+                "file": "PyTorch可视化实践.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "深度学习环境配置.md"
+                "file": "PyTorch可视化实践.md"
               }
             }
           }
@@ -130,6 +130,7 @@
   },
   "active": "59609d2fb03133de",
   "lastOpenFiles": [
+    "Pytorch中知识点02.md",
     "Ubuntu常见操作.md",
     "深度学习环境配置.md",
     "PyTorch可视化实践.md",
@@ -138,7 +139,6 @@
     "2022深度学习框架.md",
     "Pytorch-Distributed-Data-Parallel.md",
     "PyTorch-saving-and-loading-models.md",
-    "CS学习指南整理.md",
-    "编程语言资料整理.md"
+    "CS学习指南整理.md"
   ]
 }
