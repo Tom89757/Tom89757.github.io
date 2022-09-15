@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-09-11T11:42:34.772Z</updated>
+  <updated>2022-09-15T15:32:33.292Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyTorch调试模块实践</title>
+    <link href="https://tom89757.github.io/2022/09/15/PyTorch%E8%B0%83%E8%AF%95%E6%A8%A1%E5%9D%97%E5%AE%9E%E8%B7%B5/"/>
+    <id>https://tom89757.github.io/2022/09/15/PyTorch%E8%B0%83%E8%AF%95%E6%A8%A1%E5%9D%97%E5%AE%9E%E8%B7%B5/</id>
+    <published>2022-09-15T10:49:18.000Z</published>
+    <updated>2022-09-15T15:32:33.292Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下如何在PyTorch中调试单个模块在处理张量过程中张量的尺寸变化。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="笔记" scheme="https://tom89757.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习环境配置</title>
+    <link href="https://tom89757.github.io/2022/09/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://tom89757.github.io/2022/09/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
+    <published>2022-09-13T08:33:03.000Z</published>
+    <updated>2022-09-14T16:40:50.336Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下深度学习的环境配置：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pytorch Distributed Data Parallel</title>
+    <link href="https://tom89757.github.io/2022/09/12/Pytorch-Distributed-Data-Parallel/"/>
+    <id>https://tom89757.github.io/2022/09/12/Pytorch-Distributed-Data-Parallel/</id>
+    <published>2022-09-12T08:51:19.000Z</published>
+    <updated>2022-09-12T14:20:57.811Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下Pytorch中的核心操作之一——Distributed Data Parallel (分布式数据并行)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows10系统和环境配置</title>
@@ -55,11 +118,11 @@
   </entry>
   
   <entry>
-    <title>CV系列文章</title>
-    <link href="https://tom89757.github.io/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/"/>
-    <id>https://tom89757.github.io/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/</id>
+    <title>CV系列文章和工具</title>
+    <link href="https://tom89757.github.io/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E5%92%8C%E5%B7%A5%E5%85%B7/"/>
+    <id>https://tom89757.github.io/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E5%92%8C%E5%B7%A5%E5%85%B7/</id>
     <published>2022-09-09T02:55:44.000Z</published>
-    <updated>2022-09-11T11:45:03.598Z</updated>
+    <updated>2022-09-12T14:20:57.811Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文整理一下CV系列的文章，其包括本人博客中的文章和在互联网上收集的他人的文章：&lt;/p&gt;</summary>
@@ -120,7 +183,7 @@
     <link href="https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/"/>
     <id>https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/</id>
     <published>2022-08-15T05:53:08.000Z</published>
-    <updated>2022-09-06T15:48:53.465Z</updated>
+    <updated>2022-09-12T14:20:57.810Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文汇总一下目前位置本人接触到的比较好的学习资料：&lt;/p&gt;</summary>
@@ -234,7 +297,7 @@
     <link href="https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/"/>
     <id>https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/</id>
     <published>2022-08-07T02:45:38.000Z</published>
-    <updated>2022-08-08T15:01:14.642Z</updated>
+    <updated>2022-09-14T16:40:50.334Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下如何使用TensorBoard工具对深度学习模型及其数据进行可视化：&lt;/p&gt;</summary>
@@ -344,69 +407,6 @@
     
     
     <category term="Docker" scheme="https://tom89757.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PyTorch数据采样</title>
-    <link href="https://tom89757.github.io/2022/07/20/PyTorch%E6%95%B0%E6%8D%AE%E9%87%87%E6%A0%B7/"/>
-    <id>https://tom89757.github.io/2022/07/20/PyTorch%E6%95%B0%E6%8D%AE%E9%87%87%E6%A0%B7/</id>
-    <published>2022-07-20T14:23:44.000Z</published>
-    <updated>2022-07-20T14:26:00.841Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下PyTorch中的数据采样操作。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
-    
-    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PyTorch Module subclasses</title>
-    <link href="https://tom89757.github.io/2022/07/20/PyTorch-Module-subclasses/"/>
-    <id>https://tom89757.github.io/2022/07/20/PyTorch-Module-subclasses/</id>
-    <published>2022-07-20T14:17:55.000Z</published>
-    <updated>2022-07-20T14:22:14.524Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下PyTorch &lt;code&gt;nn.Module&lt;/code&gt;基类的常用subclasses。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
-    
-    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PyTorch 损失</title>
-    <link href="https://tom89757.github.io/2022/07/20/PyTorch-%E6%8D%9F%E5%A4%B1/"/>
-    <id>https://tom89757.github.io/2022/07/20/PyTorch-%E6%8D%9F%E5%A4%B1/</id>
-    <published>2022-07-20T14:00:12.000Z</published>
-    <updated>2022-07-20T14:15:13.727Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下PyTorch中的常用损失。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
-    
-    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   

@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808155219586.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220907150639.png">
 <meta property="article:published_time" content="2022-06-03T07:15:43.000Z">
-<meta property="article:modified_time" content="2022-09-09T13:37:42.620Z">
+<meta property="article:modified_time" content="2022-09-14T16:56:23.094Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Pytorch">
 <meta property="article:tag" content="python">
@@ -168,13 +168,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -265,7 +265,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-09 21:37:42" itemprop="dateModified" datetime="2022-09-09T21:37:42+08:00">2022-09-09</time>
+      <time title="修改时间：2022-09-15 00:56:23" itemprop="dateModified" datetime="2022-09-15T00:56:23+08:00">2022-09-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,14 +284,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>12k</span>
+      <span>13k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>11 分钟</span>
+      <span>12 分钟</span>
     </span>
 </div>
 
@@ -617,6 +617,9 @@
 <li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/59129812/how-to-avoid-cuda-out-of-memory-in-pytorch">How to avoid “CUDA out of memory” in PyTorch</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.kaggle.com/getting-started/140636">Solving “CUDA out of memory” Error</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/pytorch/pytorch/issues/16417">RuntimeError: CUDA out of memory. Tried to allocate 12.50 MiB (GPU 0; 10.92 GiB total capacity; 8.57 MiB already allocated; 9.28 GiB free; 4.68 MiB cached)</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/notes/faq.html">FREQUENTLY ASKED QUESTIONS</a></li>
+<li><a target="_blank" rel="noopener" href="https://discuss.pytorch.org/t/how-to-allocate-more-gpu-memory-to-be-reserved-by-pytorch-to-avoid-runtimeerror-cuda-out-of-memory/149037">How to allocate more GPU memory to be reserved by PyTorch to avoid “RuntimeError: CUDA out of memory”?</a></li>
+<li>How does “reserved in total by PyTorch” work?[<a target="_blank" rel="noopener" href="https://discuss.pytorch.org/t/how-does-reserved-in-total-by-pytorch-work/70172">https://discuss.pytorch.org/t/how-does-reserved-in-total-by-pytorch-work/70172</a>]</li>
 <li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/67726969">pytorch如何使用多块gpu?</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/86441879">pytorch多gpu并行训练</a></li>
 </ol>
@@ -633,6 +636,20 @@
 > 2. [PyTorch module__call__() vs forward()](https://stephencowchau.medium.com/pytorch-module-call-vs-forward-c4df3ff304b1)
 > 3. [5 分钟掌握 Python 中的 Hook 钩子函数](https://cloud.tencent.com/developer/article/1761121)
 > 4. [python hook 机制](https://zhuanlan.zhihu.com/p/275643739)
+</br>
+24.出现`RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor`，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220914162425.png)
+其原因为model和data分处于GPU和CPU，如果模型在GPU中 (`model.to(device)`)，此时需要添加如下代码将data也加载进GPU：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">inputs, labels = data                         <span class="comment"># this is what you had</span></span><br><span class="line">inputs, labels = inputs.cuda(), labels.cuda() <span class="comment"># add this line</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same](https://stackoverflow.com/questions/59013109/runtimeerror-input-type-torch-floattensor-and-weight-type-torch-cuda-floatte)
+> 2. [Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor](https://discuss.pytorch.org/t/input-type-torch-floattensor-and-weight-type-torch-cuda-floattensor-should-be-the-same-or-input-should-be-a-mkldnn-tensor-and-weight-is-a-dense-tensor/152430)
+</br>
+25.出现报错`AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0`。
+解决方案：`pip install setuptools==59.5.0`，安装较老的setuptools版本
+> 参考资料：
+> 1. [AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0 #69894](https://github.com/pytorch/pytorch/issues/69894)
+</br>
 
     </div>
 
@@ -706,13 +723,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">213k</span>
+    <span title="站点总字数">219k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:14</span>
+    <span title="站点阅读时长">3:19</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

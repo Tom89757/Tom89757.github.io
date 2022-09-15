@@ -859,6 +859,39 @@
 <li><a href="https://wangchujiang.com/linux-command/c/chmod.html">chmod</a></li>
 </ol>
 </blockquote>
+</br>
+<p>25.查看Linux系统内核版本和系统架构：</p>
+<ul>
+<li><code>hostnamectl</code>：查看内核版本和系统架构<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164139.png" alt="" /></li>
+<li><code>uname -a</code>：查看内核版本和系统架构<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164340.png" alt="" /></li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.sysgeek.cn/find-out-linux-system-32-or-64-bit/">查看Linux系统架构类型的5条常用命令</a></li>
+<li><a href="https://www.cnblogs.com/linuxprobe/p/11664104.html">查看Linux内核版本</a></li>
+</ol>
+</blockquote>
+</br>
+26.查看Linux空间使用情况：
+- `df -lh`：查看分区使用情况
+- `du -sh /home/FT`：查看当前用户使用的存储空间大小
+> 参考资料：
+> 1. [Linux笔记』查看磁盘空间大小和所有用户各自占用空间](https://blog.csdn.net/abc13526222160/article/details/84962310#:~:text=Linux%E4%B8%8B%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%8D%A0,%E5%91%BD%E4%BB%A4%E6%9C%89%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E7%9A%84%E3%80%82)
+> 2. [Linux 查看磁盘空间](https://www.runoob.com/w3cnote/linux-view-disk-space.html)
+</br>
+27.Ubuntu添加和删除用户
+> 参考资料：
+> 1. [如何在Ubuntu添加和删除用户](https://www.myfreax.com/how-to-add-and-delete-users-on-ubuntu-18-04/#:~:text=%E9%80%9A%E8%BF%87GUI%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%94%A8%E6%88%B7&text=%E6%89%93%E5%BC%80Ubuntu%E8%AE%BE%E7%BD%AE%EF%BC%8C%E6%89%BE%E5%88%B0%20%E7%94%A8%E6%88%B7,%E5%91%98%E7%94%A8%E6%88%B7%E5%B9%B6%E8%BE%93%E5%85%A5%E4%BF%A1%E6%81%AF%E3%80%82)
+</br>
+28.配置环境变量
+- `export PATH=/usr/local/bin:$PATH`：将环境变量放在环境变量检索目录最开始，即优先查找该变量
+- `export PATH=$PATH:/usr/local/bin`：将环境变量放在环境变量检索目录最后，即最后查找该变量
+> 1. [Multiple CUDA versions on machine nvcc -V confusion](https://stackoverflow.com/questions/40517083/multiple-cuda-versions-on-machine-nvcc-v-confusion)
+> 2. [How to correctly add a path to PATH?](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)
+</br>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -4322,9 +4355,17 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 </ol>
 </blockquote>
 </br>
-2. `Execution` vs `Applying/Application` vs `Invoking/Invocation` vs `Calling`：
+2.`Execution` vs `Applying/Application` vs `Invoking/Invocation` vs `Calling`：
 >参考资料：
 >1. [What's the difference between "call" and "invoke"?](https://stackoverflow.com/questions/18505422/whats-the-difference-between-call-and-invoke)
+</br>
+3.`override` vs `overload` in Java：
+- override：在Java中指superclass和subclass中具有相同的method signature的方法。
+- overload：在Java中指相同类中具有相同方法名，但是具有不同的参数的方法。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220911212932.png)
+> 参考资料：
+> 1. [Overriding vs Overloading in Java](https://www.digitalocean.com/community/tutorials/overriding-vs-overloading-in-java)
+</br>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -5655,6 +5696,9 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <li><a href="https://stackoverflow.com/questions/59129812/how-to-avoid-cuda-out-of-memory-in-pytorch">How to avoid “CUDA out of memory” in PyTorch</a></li>
 <li><a href="https://www.kaggle.com/getting-started/140636">Solving “CUDA out of memory” Error</a></li>
 <li><a href="https://github.com/pytorch/pytorch/issues/16417">RuntimeError: CUDA out of memory. Tried to allocate 12.50 MiB (GPU 0; 10.92 GiB total capacity; 8.57 MiB already allocated; 9.28 GiB free; 4.68 MiB cached)</a></li>
+<li><a href="https://pytorch.org/docs/stable/notes/faq.html">FREQUENTLY ASKED QUESTIONS</a></li>
+<li><a href="https://discuss.pytorch.org/t/how-to-allocate-more-gpu-memory-to-be-reserved-by-pytorch-to-avoid-runtimeerror-cuda-out-of-memory/149037">How to allocate more GPU memory to be reserved by PyTorch to avoid “RuntimeError: CUDA out of memory”?</a></li>
+<li>How does “reserved in total by PyTorch” work?[<a href="https://discuss.pytorch.org/t/how-does-reserved-in-total-by-pytorch-work/70172">https://discuss.pytorch.org/t/how-does-reserved-in-total-by-pytorch-work/70172</a>]</li>
 <li><a href="https://www.zhihu.com/question/67726969">pytorch如何使用多块gpu?</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/86441879">pytorch多gpu并行训练</a></li>
 </ol>
@@ -5671,6 +5715,20 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 > 2. [PyTorch module__call__() vs forward()](https://stephencowchau.medium.com/pytorch-module-call-vs-forward-c4df3ff304b1)
 > 3. [5 分钟掌握 Python 中的 Hook 钩子函数](https://cloud.tencent.com/developer/article/1761121)
 > 4. [python hook 机制](https://zhuanlan.zhihu.com/p/275643739)
+</br>
+24.出现`RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor`，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220914162425.png)
+其原因为model和data分处于GPU和CPU，如果模型在GPU中 (`model.to(device)`)，此时需要添加如下代码将data也加载进GPU：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">inputs, labels = data                         <span class="comment"># this is what you had</span></span><br><span class="line">inputs, labels = inputs.cuda(), labels.cuda() <span class="comment"># add this line</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same](https://stackoverflow.com/questions/59013109/runtimeerror-input-type-torch-floattensor-and-weight-type-torch-cuda-floatte)
+> 2. [Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor](https://discuss.pytorch.org/t/input-type-torch-floattensor-and-weight-type-torch-cuda-floattensor-should-be-the-same-or-input-should-be-a-mkldnn-tensor-and-weight-is-a-dense-tensor/152430)
+</br>
+25.出现报错`AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0`。
+解决方案：`pip install setuptools==59.5.0`，安装较老的setuptools版本
+> 参考资料：
+> 1. [AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0 #69894](https://github.com/pytorch/pytorch/issues/69894)
+</br>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -7643,6 +7701,10 @@ class _Loss(Module)
 <ol>
 <li><a href="https://www.cnblogs.com/ityouknow/articles/5471930.html">江南白衣：我的后端（Java）开发书架</a></li>
 </ol>
+<h3 id="编辑器"><a class="markdownIt-Anchor" href="#编辑器"></a> 编辑器</h3>
+<ol>
+<li><a href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org">一年成为Emacs高手 (像神一样使用编辑器)</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -7778,7 +7840,7 @@ class _Loss(Module)
 <p>上述命令表示后续在服务器的6008端口打开tensorboard可视化文件时，可以在本地浏览器的16008端口查看可视化结果。</p>
 </li>
 <li>
-<p>在服务器上运行<code>tensorboard --logdir=add_graph --port==6008</code>，此时已经在服务器的6008端口打开tensorboard的可视化文件，并将其同步到本地的16008端口（报错不影响结果展示）：</p>
+<p>在服务器上运行<code>tensorboard --logdir=add_graph --port=6008</code>，此时已经在服务器的6008端口打开tensorboard的可视化文件，并将其同步到本地的16008端口（报错不影响结果展示）：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808170714479.png" alt="image-20220808170714479" /></p>
 </li>
 <li>
@@ -8171,44 +8233,6 @@ class _Loss(Module)
       </tags>
   </entry>
   <entry>
-    <title>CV系列文章</title>
-    <url>/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>本文整理一下CV系列的文章，其包括本人博客中的文章和在互联网上收集的他人的文章：</p>
-<span id="more"></span>
-<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点"></a> 知识点</h3>
-<ol>
-<li><a href="https://tom89757.github.io/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">Pytorch中知识点01</a></li>
-<li><a href="https://tom89757.github.io/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/">Pytorch中知识点02</a></li>
-<li><a href="https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">OpenCV中知识点01</a></li>
-<li><a href="https://tom89757.github.io/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">matplotlib中知识点01</a></li>
-<li><a href="https://tom89757.github.io/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">python中知识点01</a></li>
-</ol>
-<h3 id="文档"><a class="markdownIt-Anchor" href="#文档"></a> 文档</h3>
-<ol>
-<li><a href="https://tom89757.github.io/2022/07/04/Pytorch%E6%96%87%E6%A1%A301/">Pytorch文档01</a></li>
-<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/">PyTorch nn.Module</a></li>
-<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/">PyTorch saving and loading models</a></li>
-<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/">PyTorch torch.utils.data</a></li>
-<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-%E4%BC%98%E5%8C%96%E5%99%A8/">PyTorch 优化器</a></li>
-<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-%E6%8D%9F%E5%A4%B1/">PyTorch 损失</a></li>
-<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-Module-subclasses/">PyTorch Module subclasses</a></li>
-<li><a href="https://tom89757.github.io/2022/07/20/PyTorch%E6%95%B0%E6%8D%AE%E9%87%87%E6%A0%B7/">PyTorch数据采样</a>、</li>
-<li><a href="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/">PyTorch TensorBoard</a></li>
-</ol>
-<h3 id="工具和实践"><a class="markdownIt-Anchor" href="#工具和实践"></a> 工具和实践</h3>
-<ol>
-<li><a href="https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/">PyTorch可视化实践</a></li>
-</ol>
-<h3 id="推荐文章"><a class="markdownIt-Anchor" href="#推荐文章"></a> 推荐文章</h3>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows10系统和环境配置</title>
     <url>/2022/09/10/Windows10%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>本文记录一些Windows10系统中的配置和对应工具：</p>
@@ -8249,6 +8273,129 @@ class _Loss(Module)
       </categories>
       <tags>
         <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CV系列文章和工具</title>
+    <url>/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E5%92%8C%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<p>本文整理一下CV系列的文章，其包括本人博客中的文章和在互联网上收集的他人的文章：</p>
+<span id="more"></span>
+<h3 id="知识点"><a class="markdownIt-Anchor" href="#知识点"></a> 知识点</h3>
+<ol>
+<li><a href="https://tom89757.github.io/2022/05/16/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">Pytorch中知识点01</a></li>
+<li><a href="https://tom89757.github.io/2022/06/03/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/">Pytorch中知识点02</a></li>
+<li><a href="https://tom89757.github.io/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">OpenCV中知识点01</a></li>
+<li><a href="https://tom89757.github.io/2022/06/03/matplotlib%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">matplotlib中知识点01</a></li>
+<li><a href="https://tom89757.github.io/2022/07/05/python%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/">python中知识点01</a></li>
+</ol>
+<h3 id="文档"><a class="markdownIt-Anchor" href="#文档"></a> 文档</h3>
+<ol>
+<li><a href="https://tom89757.github.io/2022/07/04/Pytorch%E6%96%87%E6%A1%A301/">Pytorch文档01</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-nn-Module/">PyTorch nn.Module</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-saving-and-loading-models/">PyTorch saving and loading models</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-torch-utils-data/">PyTorch torch.utils.data</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-%E4%BC%98%E5%8C%96%E5%99%A8/">PyTorch 优化器</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-%E6%8D%9F%E5%A4%B1/">PyTorch 损失</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch-Module-subclasses/">PyTorch Module subclasses</a></li>
+<li><a href="https://tom89757.github.io/2022/07/20/PyTorch%E6%95%B0%E6%8D%AE%E9%87%87%E6%A0%B7/">PyTorch数据采样</a>、</li>
+<li><a href="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/">PyTorch TensorBoard</a></li>
+</ol>
+<h3 id="工具和实践"><a class="markdownIt-Anchor" href="#工具和实践"></a> 工具和实践</h3>
+<ol>
+<li><a href="https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/">PyTorch可视化实践</a></li>
+<li><a href="https://github.com/HarisIqbal88/PlotNeuralNet">PlotNeuralNet</a>：神经网络画图</li>
+<li><a href="https://github.com/median-research-group/LibMTL">LibMTL</a>：多任务学习工具，可以用来平衡多个损失</li>
+</ol>
+<h3 id="推荐文章"><a class="markdownIt-Anchor" href="#推荐文章"></a> 推荐文章</h3>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch调试模块实践</title>
+    <url>/2022/09/15/PyTorch%E8%B0%83%E8%AF%95%E6%A8%A1%E5%9D%97%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<p>本文记录一下如何在PyTorch中调试单个模块在处理张量过程中张量的尺寸变化。</p>
+<span id="more"></span>
+<p>以一个边缘生成模块为例，以下为该边缘生成模块的代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ConvBNR</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, inplanes, planes, kernel_size=<span class="number">3</span>, stride=<span class="number">1</span>, dilation=<span class="number">1</span>, bias=<span class="literal">False</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(ConvBNR, self).__init__()</span><br><span class="line"></span><br><span class="line">        self.block = nn.Sequential(</span><br><span class="line">            nn.Conv2d(inplanes, planes, kernel_size, stride=stride,</span><br><span class="line">            padding=dilation, dilation=dilation, bias=bias),</span><br><span class="line">            nn.BatchNorm2d(planes),</span><br><span class="line">            nn.ReLU(inplace=<span class="literal">True</span>)</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="keyword">return</span> self.block(x)</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Conv1x1</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, inplanes, planes</span>):</span><br><span class="line">        <span class="built_in">super</span>(Conv1x1, self).__init__()</span><br><span class="line">        self.conv = nn.Conv2d(inplanes, planes, <span class="number">1</span>)</span><br><span class="line">        self.bn = nn.BatchNorm2d(planes)</span><br><span class="line">        self.relu = nn.ReLU(inplace=<span class="literal">True</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = self.conv(x)</span><br><span class="line">        x = self.bn(x)</span><br><span class="line">        x = self.relu(x)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">EAM</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(EAM, self).__init__()</span><br><span class="line">        self.reduce1 = Conv1x1(<span class="number">256</span>, <span class="number">64</span>)</span><br><span class="line">        self.reduce4 = Conv1x1(<span class="number">2048</span>, <span class="number">256</span>)</span><br><span class="line">        self.block = nn.Sequential(</span><br><span class="line">            ConvBNR(<span class="number">256</span> + <span class="number">64</span>, <span class="number">256</span>, <span class="number">3</span>),</span><br><span class="line">            ConvBNR(<span class="number">256</span>, <span class="number">256</span>, <span class="number">3</span>),</span><br><span class="line">            nn.Conv2d(<span class="number">256</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x4, x1</span>):</span><br><span class="line">        <span class="comment"># x1 256 * 104 * 104</span></span><br><span class="line">        <span class="comment"># x4 2048 * 13 * 13</span></span><br><span class="line">        size = x1.size()[<span class="number">2</span>:]</span><br><span class="line">        x1 = self.reduce1(x1)</span><br><span class="line">        x4 = self.reduce4(x4)</span><br><span class="line">        x4 = F.interpolate(x4, size, mode=<span class="string">&#x27;bilinear&#x27;</span>, </span><br><span class="line">        align_corners=<span class="literal">False</span>)</span><br><span class="line">        out = torch.cat((x4, x1), dim=<span class="number">1</span>)</span><br><span class="line">        out = self.block(out)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
+<p>可以通过以下测试模块来测试该模块：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">test_EAM</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(test_EAM, self).__init__()</span><br><span class="line">        self.eam = EAM()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x4, x1</span>):</span><br><span class="line">        edge = self.eam(x4, x1)</span><br><span class="line">        edge_att = torch.sigmoid(edge)</span><br><span class="line"></span><br><span class="line">        oe = F.interpolate(edge_att, scale_factor=<span class="number">4</span>, mode=<span class="string">&#x27;bilinear&#x27;</span>, align_corners=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> edge, edge_att, oe</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    model = test_EAM()</span><br><span class="line">    model.<span class="built_in">eval</span>()</span><br><span class="line">    x1 = torch.rand((<span class="number">4</span>, <span class="number">256</span>, <span class="number">80</span>, <span class="number">80</span>))</span><br><span class="line">    <span class="comment"># x1 = torch.rand((4, 256, 104, 104))</span></span><br><span class="line">    x4 = torch.rand((<span class="number">4</span>, <span class="number">2048</span>, <span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">    <span class="comment"># x4 = torch.rand((4, 2048, 13, 13))</span></span><br><span class="line">    edge, edge_att, oe = model(x4, x1)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch Distributed Data Parallel</title>
+    <url>/2022/09/12/Pytorch-Distributed-Data-Parallel/</url>
+    <content><![CDATA[<p>本文记录一下Pytorch中的核心操作之一——Distributed Data Parallel (分布式数据并行)</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习环境配置</title>
+    <url>/2022/09/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录一下深度学习的环境配置：</p>
+<span id="more"></span>
+<p>1.查看已安装的CUDA和cudnn版本号</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://bbs.huaweicloud.com/blogs/140384#:~:text=1.%20%E6%9F%A5%E7%9C%8BCUDA%E7%89%88%E6%9C%ACcuda,%2Flocal%20%7C%20gre...">Linux上查看已安装的CUDA和cuDNN版本号</a></li>
+</ol>
+</blockquote>
+</br>
+2.CUDA, CUDA toolkit, CUDNN和NVCC关系
+> 参考资料：
+> 1. [一文讲清楚CUDA、CUDA toolkit、CUDNN、NVCC关系](https://blog.csdn.net/qq_41094058/article/details/116207333)
+</br>
+3.安装CUDA和cudnn到指定目录。
+安装cudatoolkit：
+- `sh cuda_11.1.0_455.23.05_linux.run --help`：查看选项
+- `sh cuda_11.1.0_455.23.05_linux.run --toolkit --toolkitpath=/storage/FT/local/cuda-11.1 --tmpdir=/storage/FT/local/tmp`：指定安装选项，安装目录，和tmp目录
+- 运行上述步骤后会出现交互式界面让你选择安装哪些部分，可以根据需求选择。
+安装完的界面如下所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220914102908.png)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA Toolkit Archive</a></li>
+<li><a href="https://blog.csdn.net/yinxingtianxia/article/details/80462892">ubuntu 安装多个CUDA版本并可以随时切换</a></li>
+<li><a href="https://blog.csdn.net/kxqt233/article/details/113825524">安装CUDA和cuDNN到指定目录</a></li>
+<li><a href="https://blog.csdn.net/qq_35498453/article/details/110532839">非root用户在服务器上安装CUDA和cudnn到指定目录</a></li>
+<li><a href="https://stackoverflow.com/questions/40517083/multiple-cuda-versions-on-machine-nvcc-v-confusion">Multiple CUDA versions on machine nvcc -V confusion</a></li>
+<li><a href="https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path">How to correctly add a path to PATH?</a></li>
+</ol>
+</blockquote>
+</br>
+4.进行模型训练时出现`Could not load dynamic library 'libnvinfer.so.7'`。此为TensorFlow警告，可以通过设置环境变量：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> TF_CPP_MIN_LOG_LEVEL=<span class="string">&quot;2&quot;</span></span><br></pre></td></tr></table></figure>
+使系统不显示警告。
+> 参考资料：
+> 1. [Could not load dynamic library 'libnvinfer.so.6'](https://stackoverflow.com/questions/60368298/could-not-load-dynamic-library-libnvinfer-so-6)
+</br>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
       </tags>
   </entry>
 </search>
