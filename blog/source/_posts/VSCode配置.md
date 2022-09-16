@@ -99,3 +99,9 @@ VSCode默认打开Workbench的Preview，其表现为，在单击一个左边的�
 >
 > 1. [VSCode Change Default Terminal](https://stackoverflow.com/questions/44435697/vscode-change-default-terminal)
 
+### VSCode在运行或者编译C++文件出现问题
+launch: workingDirectory 'D:\\Develop\\msys2\\mingw64\\bin' does not exist
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220917002755.png)
+此时，为`.vscode`文件夹下的json配置文件出错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220917002916.png)
+需要将上图中的`msys2`改为正确的安装目录`msys64`。
