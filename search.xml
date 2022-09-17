@@ -8405,11 +8405,10 @@ class _Loss(Module)
 </blockquote>
 </br>
 2.CUDA, CUDA toolkit, CUDNN和NVCC关系
-> 参考资料：
+>参考资料：
 > 1. [一文讲清楚CUDA、CUDA toolkit、CUDNN、NVCC关系](https://blog.csdn.net/qq_41094058/article/details/116207333)
 </br>
-3.安装CUDA和cudnn到指定目录。
-安装cudatoolkit：
+3.安装CUDA和cudnn到指定目录。安装cudatoolkit：
 - `sh cuda_11.1.0_455.23.05_linux.run --help`：查看选项
 - `sh cuda_11.1.0_455.23.05_linux.run --toolkit --toolkitpath=/storage/FT/local/cuda-11.1 --tmpdir=/storage/FT/local/tmp`：指定安装选项，安装目录，和tmp目录
 - 运行上述步骤后会出现交互式界面让你选择安装哪些部分，可以根据需求选择。
@@ -8430,7 +8429,7 @@ class _Loss(Module)
 4.进行模型训练时出现`Could not load dynamic library 'libnvinfer.so.7'`。此为TensorFlow警告，可以通过设置环境变量：
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> TF_CPP_MIN_LOG_LEVEL=<span class="string">&quot;2&quot;</span></span><br></pre></td></tr></table></figure>
 使系统不显示警告。
-> 参考资料：
+>参考资料：
 > 1. [Could not load dynamic library 'libnvinfer.so.6'](https://stackoverflow.com/questions/60368298/could-not-load-dynamic-library-libnvinfer-so-6)
 </br>
 ]]></content>
