@@ -509,6 +509,12 @@
 <li><a href="https://stackoverflow.com/questions/44435697/vscode-change-default-terminal">VSCode Change Default Terminal</a></li>
 </ol>
 </blockquote>
+<h3 id="vscode在运行或者编译c文件出现问题"><a class="markdownIt-Anchor" href="#vscode在运行或者编译c文件出现问题"></a> VSCode在运行或者编译C++文件出现问题</h3>
+<p>launch: workingDirectory ‘D:\Develop\msys2\mingw64\bin’ does not exist<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220917002755.png" alt="" /><br />
+此时，为<code>.vscode</code>文件夹下的json配置文件出错：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220917002916.png" alt="" /><br />
+需要将上图中的<code>msys2</code>改为正确的安装目录<code>msys64</code>。</p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -1095,6 +1101,13 @@
 <h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="hexo一篇文章指定多个categories"><a class="markdownIt-Anchor" href="#hexo一篇文章指定多个categories"></a> Hexo一篇文章指定多个categories</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://aiellochan.com/2018/02/13/hexo/Hexo-%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%A4%9A%E4%B8%AA-categories/">Hexo 一篇文章多个 categories</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -2916,6 +2929,16 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 <p>参考资料：</p>
 <ol>
 <li><a href="https://answers.microsoft.com/zh-hans/windows/forum/all/0x800704cf/0949346c-ed7c-40d6-a72d-3dd2fd3d0306">0x800704cf</a></li>
+</ol>
+</blockquote>
+</br>
+9.当默认浏览器为google时，点击其他应用内的链接无法跳转到浏览器。
+解决方案：在系统设置默认应用里将Web browser改为其他浏览器，发现可以正常跳转链接，然后改回为google，重启电脑
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220917112759.png)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/xichengqc/article/details/102988258">win10点击超链接无法跳转到浏览器</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -7605,6 +7628,19 @@ class _Loss(Module)
 </ol>
 <h3 id="idea返回上一次光标所在位置"><a class="markdownIt-Anchor" href="#idea返回上一次光标所在位置"></a> IDEA返回上一次光标所在位置</h3>
 <p>同 <a href="https://tom89757.github.io/2022/07/27/Android-Studio%E9%85%8D%E7%BD%AE">Android Studio返回上一次光标所在位置</a></p>
+<h3 id="解决idea打开某个项目卡住白屏"><a class="markdownIt-Anchor" href="#解决idea打开某个项目卡住白屏"></a> 解决IDEA打开某个项目卡住（白屏）</h3>
+<p>其解决思路为删除IDEA在本地保存的该项目的状态文件；<br />
+其代价为需要重新导入该项目的各个模块。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://digtime.cn/articles/534/jie-jue-idea-da-kai-mou-ge-xiang-mu-ka-zhu-bai-ping">解决 idea 打开某个项目卡住 (白屏)</a></li>
+</ol>
+</blockquote>
+<h3 id="解决idea无法指定compile-output-path的问题"><a class="markdownIt-Anchor" href="#解决idea无法指定compile-output-path的问题"></a> 解决IDEA无法指定compile output path的问题</h3>
+<p>如下图所示：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220916000324.png" alt="" /><br />
+有时上图中的Compile output路径无法通过浏览目录指定，此时可以直接复制目录完整路径到该选项，如上图中的<code>D:\Desktop\CS61B\out</code>，应用后重启项目即可。</p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -7766,6 +7802,14 @@ class _Loss(Module)
 <p>参考资料：</p>
 <ol>
 <li><a href="https://blog.csdn.net/qq_51263533/article/details/120209830">Error java 错误 不支持发行版本5 ( 完美解决版）</a></li>
+</ol>
+</blockquote>
+<h3 id="java内存使用评估"><a class="markdownIt-Anchor" href="#java内存使用评估"></a> Java内存使用评估</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.javamex.com/tutorials/memory/object_memory_usage.shtml">How to calculate the memory usage of Java objects</a></li>
+<li><a href="http://blog.kiyanpro.com/2016/10/07/system_design/memory-usage-estimation-in-java/" title="Memory Usage Estimation in Java">Memory Usage Estimation in Java</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -8391,8 +8435,8 @@ class _Loss(Module)
 </br>
 ]]></content>
       <categories>
-        <category>环境配置</category>
         <category>深度学习</category>
+        <category>环境配置</category>
       </categories>
       <tags>
         <tag>Pytorch</tag>
