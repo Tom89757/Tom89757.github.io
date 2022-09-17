@@ -43,3 +43,6 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+### Hexo一篇文章指定多个categories
+> 参考资料：
+> 1. [Hexo 一篇文章多个 categories](https://aiellochan.com/2018/02/13/hexo/Hexo-%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%A4%9A%E4%B8%AA-categories/)

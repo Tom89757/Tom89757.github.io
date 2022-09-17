@@ -140,7 +140,13 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 >
 > 1. [0x800704cf](https://answers.microsoft.com/zh-hans/windows/forum/all/0x800704cf/0949346c-ed7c-40d6-a72d-3dd2fd3d0306)
 
+</br>
+9.当默认浏览器为google时，点击其他应用内的链接无法跳转到浏览器。
+解决方案：在系统设置默认应用里将Web browser改为其他浏览器，发现可以正常跳转链接，然后改回为google，重启电脑
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220917112759.png)
 
+> 参考资料：
+> 1. [win10点击超链接无法跳转到浏览器](https://blog.csdn.net/xichengqc/article/details/102988258)
 
 
 

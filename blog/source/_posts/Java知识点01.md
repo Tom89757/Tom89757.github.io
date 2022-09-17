@@ -31,6 +31,9 @@ tags:
 ### java 错误，不支持发行版本5
 > 参考资料：
 > 1. [Error java 错误 不支持发行版本5 ( 完美解决版）](https://blog.csdn.net/qq_51263533/article/details/120209830)
-
+### Java内存使用评估
+> 参考资料：
+> 1. [How to calculate the memory usage of Java objects](https://www.javamex.com/tutorials/memory/object_memory_usage.shtml)
+> 2. [Memory Usage Estimation in Java](http://blog.kiyanpro.com/2016/10/07/system_design/memory-usage-estimation-in-java/ "Memory Usage Estimation in Java")
 
 
