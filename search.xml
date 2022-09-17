@@ -8322,8 +8322,12 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 </blockquote>
 </br>
 2.CUDA, CUDA toolkit, CUDNN和NVCC关系
->参考资料：
-> 1. [一文讲清楚CUDA、CUDA toolkit、CUDNN、NVCC关系](https://blog.csdn.net/qq_41094058/article/details/116207333)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/qq_41094058/article/details/116207333">一文讲清楚CUDA、CUDA toolkit、CUDNN、NVCC关系</a></li>
+</ol>
+</blockquote>
 </br>
 3.安装CUDA和cudnn到指定目录。安装cudatoolkit：
 <ul>
@@ -8348,8 +8352,12 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 4.进行模型训练时出现`Could not load dynamic library 'libnvinfer.so.7'`。此为TensorFlow警告，可以通过设置环境变量：
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> TF_CPP_MIN_LOG_LEVEL=<span class="string">&quot;2&quot;</span></span><br></pre></td></tr></table></figure>
 使系统不显示警告。
->参考资料：
-> 1. [Could not load dynamic library 'libnvinfer.so.6'](https://stackoverflow.com/questions/60368298/could-not-load-dynamic-library-libnvinfer-so-6)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/60368298/could-not-load-dynamic-library-libnvinfer-so-6">Could not load dynamic library ‘libnvinfer.so.6’</a></li>
+</ol>
+</blockquote>
 </br>
 ]]></content>
       <categories>
