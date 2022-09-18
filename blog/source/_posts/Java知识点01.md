@@ -35,5 +35,6 @@ tags:
 > 参考资料：
 > 1. [How to calculate the memory usage of Java objects](https://www.javamex.com/tutorials/memory/object_memory_usage.shtml)
 > 2. [Memory Usage Estimation in Java](http://blog.kiyanpro.com/2016/10/07/system_design/memory-usage-estimation-in-java/ "Memory Usage Estimation in Java")
-
+### 多个模块之间的依赖
+有时一个项目可能包含多个模块，在想要在一个模块中引用另一个模块的类或方法时，会发现IDEA并没有弹出提示，其原因为另一个模块中的类或方法没有声明为`public`。
 
