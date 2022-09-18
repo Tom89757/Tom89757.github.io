@@ -1,6 +1,6 @@
+https://tom89757.github.io/2022/08/15/Java%E7%9F%A5%E8%AF%86%E7%82%B901/
 https://tom89757.github.io/2022/09/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/
 https://tom89757.github.io/2022/05/11/hello-world/
-https://tom89757.github.io/2022/08/15/Java%E7%9F%A5%E8%AF%86%E7%82%B901/
 https://tom89757.github.io/2022/05/13/%E5%B8%B8%E8%A7%81bug%E8%AE%B0%E5%BD%95/
 https://tom89757.github.io/2022/05/21/VSCode%E9%85%8D%E7%BD%AE/
 https://tom89757.github.io/2022/08/15/IDEA%E9%85%8D%E7%BD%AE/

@@ -563,6 +563,8 @@
 <li><a href="http://blog.kiyanpro.com/2016/10/07/system_design/memory-usage-estimation-in-java/" title="Memory Usage Estimation in Java">Memory Usage Estimation in Java</a></li>
 </ol>
 </blockquote>
+<h3 id="多个模块之间的依赖"><a class="markdownIt-Anchor" href="#多个模块之间的依赖"></a> 多个模块之间的依赖</h3>
+<p>有时一个项目可能包含多个模块，在想要在一个模块中引用另一个模块的类或方法时，会发现IDEA并没有弹出提示，其原因为另一个模块中的类或方法没有声明为<code>public</code>。</p>
 ]]></content>
       <categories>
         <category>资料</category>
