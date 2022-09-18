@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java知识点01.md",
+            "file": "课程资源整理.md",
             "mode": "source",
             "source": false
           }
@@ -43,7 +43,7 @@
                 "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java知识点01.md",
+                "file": "课程资源整理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Java知识点01.md",
+                "file": "课程资源整理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java知识点01.md"
+                "file": "课程资源整理.md"
               }
             }
           }
@@ -131,14 +131,14 @@
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
     "CS学习指南整理.md",
+    "Python文章整理.md",
+    "python中知识点01.md",
+    "Java知识点01.md",
     "深度学习环境配置.md",
     "hello-world.md",
     "写给程序员的范畴论资料索引.md",
     "Obsidian配置.md",
     "图像处理试题.md",
-    "流行工具和框架资料整理.md",
-    "git使用指南.md",
-    "Windows10常见操作.md",
-    "编程语言资料整理.md"
+    "流行工具和框架资料整理.md"
   ]
 }
