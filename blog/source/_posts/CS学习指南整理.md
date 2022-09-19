@@ -11,7 +11,7 @@ tags:
 <!--more-->
 
 ### 学习规划
-1. [CS自学指南](https://csdiy.wiki/)
+1. [CS自学指南](https://csdiy.wiki/)：搭配[UCB cs roadmap](https://hkn.eecs.berkeley.edu/courseguides)使用更佳
 2. [Teach Yourself Programming in Ten Years](http://norvig.com/21-days.html)
 3. [Teach Yourself Programming in Ten Years中文版](https://zhuanlan.zhihu.com/p/30742986)
 4. [0xFFFF CS Wiki](https://www.yuque.com/0xffff.one/cs-learning)
