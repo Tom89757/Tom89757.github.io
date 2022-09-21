@@ -32,6 +32,11 @@ tags:
 2. [PlotNeuralNet](https://github.com/HarisIqbal88/PlotNeuralNet)：神经网络画图
 3. [LibMTL](https://github.com/median-research-group/LibMTL)：多任务学习工具，可以用来平衡多个损失
 
+### Graph Neural Networks
+
+> 1. [A Beginner’s Guide to Graph Neural Networks Using PyTorch Geometric — Part 1](https://towardsdatascience.com/a-beginners-guide-to-graph-neural-networks-using-pytorch-geometric-part-1-d98dc93e7742)
+> 2. [A Beginner’s Guide to Graph Neural Networks Using PyTorch Geometric — Part 2](https://towardsdatascience.com/a-beginners-guide-to-graph-neural-networks-using-pytorch-geometric-part-2-cd82c01330ab)
+
 ### 推荐文章
 
 
