@@ -105,3 +105,7 @@ launch: workingDirectory 'D:\\Develop\\msys2\\mingw64\\bin' does not exist
 此时，为`.vscode`文件夹下的json配置文件出错：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220917002916.png)
 需要将上图中的`msys2`改为正确的安装目录`msys64`。
+### 彻底卸载VSCode
+
+> 参考资料：
+> 1. [彻底卸载VSCode](https://bbs.huaweicloud.com/blogs/254150)
