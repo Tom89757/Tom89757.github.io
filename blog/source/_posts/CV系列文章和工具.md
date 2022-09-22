@@ -36,6 +36,8 @@ tags:
 
 > 1. [A Beginner’s Guide to Graph Neural Networks Using PyTorch Geometric — Part 1](https://towardsdatascience.com/a-beginners-guide-to-graph-neural-networks-using-pytorch-geometric-part-1-d98dc93e7742)
 > 2. [A Beginner’s Guide to Graph Neural Networks Using PyTorch Geometric — Part 2](https://towardsdatascience.com/a-beginners-guide-to-graph-neural-networks-using-pytorch-geometric-part-2-cd82c01330ab)
+> 3. [从图(Graph)到图卷积(Graph Convolution)：漫谈图神经网络模型 (一)](https://www.cnblogs.com/SivilTaram/p/graph_neural_network_1.html)
+> 4. [一文读懂图卷积GCN](https://zhuanlan.zhihu.com/p/89503068)
 
 ### 推荐文章
 
