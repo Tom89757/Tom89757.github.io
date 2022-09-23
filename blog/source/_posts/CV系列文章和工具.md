@@ -30,7 +30,7 @@ tags:
 ### 工具和实践
 1. [PyTorch可视化实践](https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/)
 2. [PlotNeuralNet](https://github.com/HarisIqbal88/PlotNeuralNet)：神经网络画图
-3. [LibMTL](https://github.com/median-research-group/LibMTL)：多任务学习工具，可以用来平衡多个损失
+3. [LibMTL](https://github.com/median-research-group/LibMTL)：多任务学习工具，可以用来平衡多个损失，A Pytorch Library for Multi-task Learning
 
 ### Graph Neural Networks
 

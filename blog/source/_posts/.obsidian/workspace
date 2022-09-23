@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "开发工具整理.md",
+            "file": "编程语言资料整理.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "开发工具整理.md",
+                "file": "编程语言资料整理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "开发工具整理.md",
+                "file": "编程语言资料整理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "开发工具整理.md"
+                "file": "编程语言资料整理.md"
               }
             }
           }
@@ -130,15 +130,15 @@
   },
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
-    "CS学习指南整理.md",
-    "VSCode配置.md",
+    "开发工具整理.md",
+    "流行工具和框架资料整理.md",
+    "课程和书籍资源整理.md",
     "CV系列文章和工具.md",
     "图像处理中知识点02.md",
     "图像处理中知识点01.md",
     "深度学习环境配置.md",
-    "开发工具整理.md",
     "git文章整理.md",
     "git使用指南.md",
-    "课程和书籍资源整理.md"
+    "CS学习指南整理.md"
   ]
 }
