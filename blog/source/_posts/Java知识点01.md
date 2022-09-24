@@ -38,4 +38,30 @@ tags:
 > 2. [Memory Usage Estimation in Java](http://blog.kiyanpro.com/2016/10/07/system_design/memory-usage-estimation-in-java/ "Memory Usage Estimation in Java")
 ### 多个模块之间的依赖
 有时一个项目可能包含多个模块，在想要在一个模块中引用另一个模块的类或方法时，会发现IDEA并没有弹出提示，其原因为另一个模块中的类或方法没有声明为`public`。
+### Error running 'Remote Debugger'
+使用Remote JVM Debug时，运行debug出现：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220924174528.png)
+
+
+> 参考资料：
+> 1. [Error running 'Remote Debugger': Unable to open debugger port (localhost:5005): java.net.ConnectException "Connection refused (Connection refused)"](https://stackoverflow.com/questions/53327701/error-running-remote-debugger-unable-to-open-debugger-port-localhost5005)
+
+### javac编译详解
+> 参考资料：
+> 1. [第1期：抛开IDE，了解一下javac如何编译](https://imshuai.com/using-javac#)
+### Java外部包配置
+有两种方式：
+- 在IDEA Project Structure里配置
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220925001124.png)
+- 在环境变量里配置`CLASSPATH`，可能需要重启后生效（未测试）。
+> 参考资料：
+> 1. [Algorithms, 4th Edition（算法-第四版）源码使用系统配置](https://zhuanlan.zhihu.com/p/25551032)
+
+
+### 在添加CLASSPATH环境变量后出现ClassNotFoundException
+> 参考资料：
+> 1. [Java.lang.classnotfoundexception - HelloWorld.class [duplicate]](https://stackoverflow.com/questions/52386085/java-lang-classnotfoundexception-helloworld-class)
+> 2. [What does "Could not find or load main class" mean?](https://stackoverflow.com/questions/18093928/what-does-could-not-find-or-load-main-class-mean)
+> 3. [PATH and CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
+
 
