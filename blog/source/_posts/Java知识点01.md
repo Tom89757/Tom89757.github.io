@@ -53,15 +53,19 @@ tags:
 有两种方式：
 - 在IDEA Project Structure里配置
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220925001124.png)
-- 在环境变量里配置`CLASSPATH`，可能需要重启后生效（未测试）。
+- 在环境变量里配置`CLASSPATH`，可能需要重启后生效（无效，似乎IDEA不会自动导入`CLASSPATH`变量）。
 > 参考资料：
 > 1. [Algorithms, 4th Edition（算法-第四版）源码使用系统配置](https://zhuanlan.zhihu.com/p/25551032)
-
-
-### 在添加CLASSPATH环境变量后出现ClassNotFoundException
+> 2. [Java Algorithms and Clients](https://algs4.cs.princeton.edu/code/)
+### 出现ClassNotFoundException
+原因：未将所依赖的jar包配置到`CLASSPATH`环境变量
+解决方案：
+- 临时生效：`java -cp .;D:\\Develop\\Java\\jdk11.0.11\\lib\\algs4.jar BinarySearch largeW.txt < largeT.txt`
+- 永久生效：在`CLASSPATH`中添加`.;D:\\Develop\\Java\\jdk11.0.11\\lib\\algs4.jar`。`.`表示将当前目录加入class path的检索路径。
 > 参考资料：
 > 1. [Java.lang.classnotfoundexception - HelloWorld.class [duplicate]](https://stackoverflow.com/questions/52386085/java-lang-classnotfoundexception-helloworld-class)
 > 2. [What does "Could not find or load main class" mean?](https://stackoverflow.com/questions/18093928/what-does-could-not-find-or-load-main-class-mean)
 > 3. [PATH and CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
+> 4. [Java Algorithms and Clients](https://algs4.cs.princeton.edu/code/)
 
 
