@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java知识点01.md",
+            "file": "深度学习环境配置.md",
             "mode": "source",
             "source": false
           }
@@ -61,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 250.5,
-    "collapsed": true
+    "width": 250.5
   },
   "right": {
     "id": "514f8f8977cdfd55",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java知识点01.md",
+                "file": "深度学习环境配置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Java知识点01.md",
+                "file": "深度学习环境配置.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java知识点01.md"
+                "file": "深度学习环境配置.md"
               }
             }
           }
@@ -131,6 +130,7 @@
   },
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
+    "Java知识点01.md",
     "编程语言资料整理.md",
     "开发工具整理.md",
     "流行工具和框架资料整理.md",
@@ -139,7 +139,6 @@
     "图像处理中知识点02.md",
     "图像处理中知识点01.md",
     "深度学习环境配置.md",
-    "git文章整理.md",
-    "git使用指南.md"
+    "git文章整理.md"
   ]
 }
