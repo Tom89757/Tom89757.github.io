@@ -148,7 +148,10 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 参考资料：
 > 1. [win10点击超链接无法跳转到浏览器](https://blog.csdn.net/xichengqc/article/details/102988258)
 
-
+</br>
+10.点击Windows10 OneDrive应用没有反应
+> 参考资料：
+> 1. [OneDrive无法打开的原因](https://zhuanlan.zhihu.com/p/343335173)
 
 
 

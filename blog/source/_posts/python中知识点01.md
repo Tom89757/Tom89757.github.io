@@ -455,3 +455,15 @@ def max(a, b):
 > 1. [All you need to know about Asterisks in Python](https://bas.codes/posts/python-asterisks)
 
 </br>
+11.python语法：判断字符串中是否包含某子字符串
+```python
+test_str = 'helloworld'
+
+if 'world' in test_str:
+	print('yes')
+else:
+	print('no')
+```
+> 参考资料：
+> 1. [Python判断字符串是否包含特定子串的7种方法](https://cloud.tencent.com/developer/article/1699719)
+
