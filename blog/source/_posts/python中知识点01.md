@@ -467,3 +467,11 @@ else:
 > 参考资料：
 > 1. [Python判断字符串是否包含特定子串的7种方法](https://cloud.tencent.com/developer/article/1699719)
 
+</br>
+11.格式化字符串：
+```python
+TAG = 'scwssod'
+id = 30
+filename = 'mytest_%s_model-%d.log'%(TAG, id)
+```
+上述命令可以根据

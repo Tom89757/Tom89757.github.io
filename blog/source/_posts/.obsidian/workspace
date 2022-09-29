@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "python中知识点01.md",
+            "file": "git使用指南.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "python中知识点01.md",
+                "file": "git使用指南.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "python中知识点01.md",
+                "file": "git使用指南.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "python中知识点01.md"
+                "file": "git使用指南.md"
               }
             }
           }
@@ -130,6 +130,7 @@
   },
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
+    "python中知识点01.md",
     "常见bug记录.md",
     "Windows10系统配置.md",
     "Windows10常见操作.md",
@@ -138,7 +139,6 @@
     "Java知识点01.md",
     "编程语言资料整理.md",
     "开发工具整理.md",
-    "流行工具和框架资料整理.md",
-    "课程和书籍资源整理.md"
+    "流行工具和框架资料整理.md"
   ]
 }

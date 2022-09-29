@@ -200,3 +200,12 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 > 参考资料：
 > 1. [Git Large File Storage](https://git-lfs.github.com/)
 
+</br>
+5.使用git bash进行javac编译时出现中文乱码：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929170956.png)
+解决方案：在选项里将字符集设为GBK，重启git bash：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929171040.png)
+
+> 参考资料：
+> 1. [在 git bash 里运行 java 命令，打印出的中文显示乱码](https://blog.csdn.net/qq_21260033/article/details/78786608)
+> 2. [解决 Git Bash 在 windows 下中文乱码的问题](https://minsonlee.github.io/2020/11/how-to-set-utf8-with-git-bash)（不针对此问题）
