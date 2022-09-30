@@ -545,6 +545,44 @@ inputs, labels = inputs.cuda(), labels.cuda() # add this line
 
 </br>
 
+26.numpy array与torch tensor之间的转换：
+- numpy array to torch tensor
+```python
+np_array = np.array(data)
+x_np = torch.from_numpy(np_array)
+```
+- torch tensor to numpy
+```python
+na = a.to('cpu').numpy()
+```
+> 参考资料：
+> 1. [Pytorch tensor to numpy array](https://stackoverflow.com/questions/49768306/pytorch-tensor-to-numpy-array)
+
+</br>
+27.查看numpy数组的各属性信息：
+```python
+def numpy_attr(image):
+    print("type: ", type(image))
+    print("dtype: ", image.dtype)
+    print("size: ", image.size)
+    print("shape: ", image.shape)
+    print("dims: ", image.ndim)
+```
+> 参考资料：
+> 1. [numpy库数组属性查看：类型、尺寸、形状、维度](https://blog.csdn.net/weixin_41770169/article/details/80565326)
+
+</br>
+28.出现如下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220930172422.png)
+
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220930172447.png)
+其原因为数据集中读取的数据超出范围，例如对于n类label的数据，其值应该`t>=0 && t<n`。本人遇到这种报错的原因为mask数据未做转换：
+```python
+mask[mask == 0.] = 255.
+mask[mask == 2.] = 0.
+```
+> 参考资料：
+> 1. [RuntimeError: cuda runtime error (59) : device-side assert triggered when running transfer_learning_tutorial #1204](https://github.com/pytorch/pytorch/issues/1204)
 
 
 
