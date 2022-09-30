@@ -485,7 +485,12 @@ alias cls='printf "\ec"'
 
 </br>
 
-
+29.复制指定目录下的全部文件到另一个目录中：
+```bash
+cp -r dir1 dir2
+```
+> 参考资料：
+> 1. [linux复制指定目录下的全部文件到另一个目录中，linux cp 文件夹](https://www.cnblogs.com/zdz8207/p/linux-cp-dir.html)
 
 
 
