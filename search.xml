@@ -241,8 +241,17 @@
 <ol>
 <li><a href="https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/">PyTorch可视化实践</a></li>
 <li><a href="https://github.com/HarisIqbal88/PlotNeuralNet">PlotNeuralNet</a>：神经网络画图</li>
-<li><a href="https://github.com/median-research-group/LibMTL">LibMTL</a>：多任务学习工具，可以用来平衡多个损失</li>
+<li><a href="https://github.com/median-research-group/LibMTL">LibMTL</a>：多任务学习工具，可以用来平衡多个损失，A Pytorch Library for Multi-task Learning</li>
 </ol>
+<h3 id="graph-neural-networks"><a class="markdownIt-Anchor" href="#graph-neural-networks"></a> Graph Neural Networks</h3>
+<blockquote>
+<ol>
+<li><a href="https://towardsdatascience.com/a-beginners-guide-to-graph-neural-networks-using-pytorch-geometric-part-1-d98dc93e7742">A Beginner’s Guide to Graph Neural Networks Using PyTorch Geometric — Part 1</a></li>
+<li><a href="https://towardsdatascience.com/a-beginners-guide-to-graph-neural-networks-using-pytorch-geometric-part-2-cd82c01330ab">A Beginner’s Guide to Graph Neural Networks Using PyTorch Geometric — Part 2</a></li>
+<li><a href="https://www.cnblogs.com/SivilTaram/p/graph_neural_network_1.html">从图(Graph)到图卷积(Graph Convolution)：漫谈图神经网络模型 (一)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/89503068">一文读懂图卷积GCN</a></li>
+</ol>
+</blockquote>
 <h3 id="推荐文章"><a class="markdownIt-Anchor" href="#推荐文章"></a> 推荐文章</h3>
 ]]></content>
       <categories>
@@ -298,7 +307,7 @@
 <span id="more"></span>
 <h3 id="学习规划"><a class="markdownIt-Anchor" href="#学习规划"></a> 学习规划</h3>
 <ol>
-<li><a href="https://csdiy.wiki/">CS自学指南</a></li>
+<li><a href="https://csdiy.wiki/">CS自学指南</a>：搭配<a href="https://hkn.eecs.berkeley.edu/courseguides">UCB cs roadmap</a>使用更佳</li>
 <li><a href="http://norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/30742986">Teach Yourself Programming in Ten Years中文版</a></li>
 <li><a href="https://www.yuque.com/0xffff.one/cs-learning">0xFFFF CS Wiki</a></li>
@@ -565,6 +574,52 @@
 </blockquote>
 <h3 id="多个模块之间的依赖"><a class="markdownIt-Anchor" href="#多个模块之间的依赖"></a> 多个模块之间的依赖</h3>
 <p>有时一个项目可能包含多个模块，在想要在一个模块中引用另一个模块的类或方法时，会发现IDEA并没有弹出提示，其原因为另一个模块中的类或方法没有声明为<code>public</code>。</p>
+<h3 id="error-running-remote-debugger"><a class="markdownIt-Anchor" href="#error-running-remote-debugger"></a> Error running ‘Remote Debugger’</h3>
+<p>使用Remote JVM Debug时，运行debug出现：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220924174528.png" alt="" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/53327701/error-running-remote-debugger-unable-to-open-debugger-port-localhost5005">Error running ‘Remote Debugger’: Unable to open debugger port (localhost:5005): java.net.ConnectException “Connection refused (Connection refused)”</a></li>
+</ol>
+</blockquote>
+<h3 id="javac编译详解"><a class="markdownIt-Anchor" href="#javac编译详解"></a> javac编译详解</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://imshuai.com/using-javac#">第1期：抛开IDE，了解一下javac如何编译</a></li>
+</ol>
+</blockquote>
+<h3 id="java外部包配置"><a class="markdownIt-Anchor" href="#java外部包配置"></a> Java外部包配置</h3>
+<p>有两种方式：</p>
+<ul>
+<li>在IDEA Project Structure里配置<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220925001124.png" alt="" /></li>
+<li>在环境变量里配置<code>CLASSPATH</code>，可能需要重启后生效（无效，似乎IDEA不会自动导入<code>CLASSPATH</code>变量）。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/25551032">Algorithms, 4th Edition（算法-第四版）源码使用系统配置</a></li>
+<li><a href="https://algs4.cs.princeton.edu/code/">Java Algorithms and Clients</a></li>
+</ol>
+</blockquote>
+<h3 id="出现classnotfoundexception"><a class="markdownIt-Anchor" href="#出现classnotfoundexception"></a> 出现ClassNotFoundException</h3>
+<p>原因：未将所依赖的jar包配置到<code>CLASSPATH</code>环境变量<br />
+解决方案：</p>
+<ul>
+<li>临时生效：<code>java -cp .;D:\\Develop\\Java\\jdk11.0.11\\lib\\algs4.jar BinarySearch largeW.txt &lt; largeT.txt</code></li>
+<li>永久生效：在<code>CLASSPATH</code>中添加<code>.;D:\\Develop\\Java\\jdk11.0.11\\lib\\algs4.jar</code>。<code>.</code>表示将当前目录加入class path的检索路径。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/52386085/java-lang-classnotfoundexception-helloworld-class">Java.lang.classnotfoundexception - HelloWorld.class [duplicate]</a></li>
+<li><a href="https://stackoverflow.com/questions/18093928/what-does-could-not-find-or-load-main-class-mean">What does “Could not find or load main class” mean?</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/essential/environment/paths.html">PATH and CLASSPATH</a></li>
+<li><a href="https://algs4.cs.princeton.edu/code/">Java Algorithms and Clients</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -669,520 +724,6 @@
       </categories>
       <tags>
         <tag>VSCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV中知识点01</title>
-    <url>/2022/06/02/OpenCV%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
-    <content><![CDATA[<p>本文记录一下在实现 <a href="https://link.springer.com/article/10.1007/s11042-016-3392-4">DDRQM</a> 过程中的一些 OpenCV 框架和 python 相关知识点。</p>
-<span id="more"></span>
-<p>1.<code>cv2.filter2D()</code>：该函数表示在一张图像上应用相应的卷积核，完整的函数调用形式如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.filter2D(src, ddepth, kernel[, dst[, anchor[, delta[, borderType]]]]) -&gt; dst</span><br></pre></td></tr></table></figure>
-<p>该函数将任意的 linear filter 应用到一张图像上。当 filter 的部分孔径落在图像之外时，函数会根据 border 类型进行插值。该函数实际上计算的是相关（correlation），而不是卷积（convolution）。</p>
-<p>例如，下面代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">retval = cv2.getGaborKernel(ksize=(<span class="number">111</span>,<span class="number">111</span>), sigma=<span class="number">10</span>, theta=<span class="number">60</span>, lambd=<span class="number">10</span>, gamma=<span class="number">1.2</span>)</span><br><span class="line">image1 = cv2.imread(<span class="string">&#x27;src.jpg&#x27;</span>)</span><br><span class="line">result = cv2.filter2D(image1,-<span class="number">1</span>,retval)</span><br></pre></td></tr></table></figure>
-<p>表示将对应的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 滤波器应用在图像<code>src.jpg</code>上。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a=cv2.getGaborKernel((40,40), 1.69, 0, 3, 0.5)</span><br><span class="line">b=Gabor_filter((40,40), 1.69, 0, 3, 0.5)</span><br></pre></td></tr></table></figure>
-</br>
-<p>2.<code>cv2.getGaborKernel()</code>：该函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 滤波器函数，其返回值为一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi><mi>f</mi><mi>i</mi><mi>l</mi><mi>t</mi><mi>e</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor filter</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>，具体形式为一个二维数组，完整的函数调用形式如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv.getGaborKernel(ksize, sigma, theta, lambd, gamma[, psi[, ktype]]) -&gt; retval</span><br></pre></td></tr></table></figure>
-</br>
-<p>3.代码为：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result[x][y] = <span class="built_in">abs</span>(depth_img[x][y] - <span class="number">0.5</span>*(depth_img[x1][y1]+depth_img[x2][y2]))</span><br></pre></td></tr></table></figure>
-<p>报错信息：<code>RuntimeWarning: overflow encountered in ubyte_scalars</code>。</p>
-<p>分析：可能是将两个<code>unit8</code>类型的值相加并将其存入一个<code>unit8</code>，导致数值溢出</p>
-<p>解决方案：将<code>unit8</code>类型数值转换为<code>int</code>类型。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result[x][y] = <span class="built_in">abs</span>(<span class="built_in">int</span>(depth_img[x][y]) - <span class="number">0.5</span>*(<span class="built_in">int</span>(depth_img[x1][y1])+<span class="built_in">int</span>(depth_img[x2][y2])))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li>
-<p><a href="https://stackoverflow.com/questions/9384435/runtimewarning-overflow-encountered-in-ubyte-scalars">RuntimeWarning: overflow encountered in ubyte_scalars</a></p>
-</li>
-<li>
-<p><a href="https://stackoverflow.com/questions/59531334/why-i-am-getting-runtimewarning-overflow-encountered-in-ubyte-scalars-error-i">Why I am getting “RuntimeWarning: overflow encountered in ubyte_scalars error” in python?</a></p>
-</li>
-</ol>
-</blockquote>
-</br>
-<p>4.以下代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(path)</span><br><span class="line">height, width, channels = img.shape</span><br></pre></td></tr></table></figure>
-<p>表示从路径<code>path</code>中读取图像文件并存入<code>img</code>对象中，通过<code>type(img)</code>可知该对象类型为<code>&lt;class 'numpy.ndarray'&gt;</code>。<code>img.shape</code>返回的是一个三元元组，其值分别对应图像的<code>height</code>、<code>width</code>和<code>channels</code>，即图像形状并不是我们熟悉的<code>width * height * channels</code>的形式</p>
-<p>可以通过以下代码：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.transpose(img)</span><br></pre></td></tr></table></figure>
-<p>将<code>img</code>转置为<code>width * height * channels</code>形状，通过我们熟悉的方式访问。</p>
-<p>PS：<code>img</code>中<code>channels</code>顺序为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>G</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">B G R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>。</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/55636318/opencv-showing-wrong-width-and-height-of-image">Opencv showing wrong width and height of image</a></li>
-<li><a href="http://www.juzicode.com/opencv-python-resize-transpose-flip/">OpenCV-Python教程：几何空间变换~缩放、转置、翻转(resize,transpose,flip)</a></li>
-<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">Image file reading and writing</a></li>
-</ol>
-</blockquote>
-</br>
-<p>5.<code>PILLOW</code> vs <code>OpenCV</code>：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取和加载图片</span></span><br><span class="line"><span class="comment"># PILLOW</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开图片</span></span><br><span class="line">img.size <span class="comment"># 获取图片尺寸 width * height</span></span><br><span class="line">img_rgb = img.load() <span class="comment"># 分配内存，并将图像像素值添加到img_rgb对象</span></span><br><span class="line">img_rgb[width, height] <span class="comment"># 通过width/height访问像素值，返回值为RGB模式</span></span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开并将图像像素值添加到img对象</span></span><br><span class="line">img.shape <span class="comment"># 获取图片尺寸 height * width * channels</span></span><br><span class="line">img[height][width] <span class="comment">#通过height/width访问像素值，返回值为BGR模式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取和转换为灰度图</span></span><br><span class="line"><span class="comment"># PILLOW</span></span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开图片</span></span><br><span class="line">img_gray = img.convert(<span class="string">&#x27;L&#x27;</span>) <span class="comment"># 转换为灰度图</span></span><br><span class="line">pixels_gray = img_gray.load() <span class="comment"># 分配内存，并将图像灰度值添加到img_gray对象</span></span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="comment"># 直接读取灰度图</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>, <span class="number">0</span>) <span class="comment"># 将图像转换为灰度图后读取</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># 先读取彩色图，再转化为灰度图</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <span class="comment"># 将BGR模式的彩色图像转换为灰度图</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://pillow.readthedocs.io/en/stable/reference/Image.html?highlight=load#PIL.Image.Image.load">Image.load()</a></li>
-<li><a href="https://blog.csdn.net/sinat_29957455/article/details/84845016">python opencv将图片转为灰度图</a></li>
-<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">imread()</a></li>
-<li><a href="https://docs.opencv.org/4.x/d8/d6a/group__imgcodecs__flags.html#ga61d9b0126a3e57d9277ac48327799c80">ImreadModes</a></li>
-<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab">cvtColor</a></li>
-<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0">ColorConversionCodes</a></li>
-</ol>
-</blockquote>
-</br>
-<p>6.<code>cv2.imread()</code>详解：用于读取图像</p>
-<p>该函数的完整调用形式为：<code>cv.imread(filename[, flags]) -&gt;retval</code>，<code>retval</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
-<ul>
-<li>
-<p><code>filename</code>：要读取的图像路径，可以为绝对路径或相对路径</p>
-</li>
-<li>
-<p><code>flags</code>：可以对图像采取的<code>ImreadModes</code>，常见的有<code>cv2.IMREAD_GRAYSCALE</code>、<code>cv.IMREAD_COLOR</code>。</p>
-</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开并将图像像素值添加到img对象</span></span><br></pre></td></tr></table></figure>
-<p>PS：该函数对RGB图的默认读取顺序为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>G</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">BGR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>。</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">imread()</a></li>
-<li><a href="https://docs.opencv.org/4.x/d8/d6a/group__imgcodecs__flags.html#ga61d9b0126a3e57d9277ac48327799c80">ImreadModes</a></li>
-</ol>
-</blockquote>
-</br>
-<p>7.<code>cv2.cvtColor</code>详解：用于转换图像</p>
-<p>该函数的完整调用形式为：<code>cv.cvtColor(src, code[, dst[, dstCn]]) -&gt;dst</code>，<code>dst</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
-<ul>
-<li>
-<p><code>src</code>：输入图像</p>
-</li>
-<li>
-<p><code>dst</code>：输出图像，和<code>src</code>有相同的<code>size</code>和<code>depth</code>，即相同的<code>height</code>、<code>width</code>和<code>channles</code></p>
-</li>
-<li>
-<p><code>code</code>：颜色空间转换模式<code>ColorConversionCodes</code>，常见的有<code>cv2.BGR2GRAY</code>、<code>cv2.BGR2RGB</code>。</p>
-</li>
-<li>
-<p><code>dstCn</code>：输出图像的<code>channels</code>数，该参数为0时，根据<code>src</code>和<code>dst</code>自动生成</p>
-</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <span class="comment"># 将BGR模式的彩色图像转换为灰度图</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab">cvtColor</a></li>
-<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0">ColorConversionCodes</a></li>
-</ol>
-</blockquote>
-</br>
-<p>8.<code>cv2.resize()</code>详解：用于放缩图像</p>
-<p>该函数的完整调用形式为：<code>cv.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]]) -&gt;dst</code>，<code>dst</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
-<ul>
-<li>
-<p><code>src</code>：输入图像</p>
-</li>
-<li>
-<p><code>dst</code>：输出图像，当<code>dsize</code>不为0（Python中为<code>None</code>）时，其size与<code>dsize</code>相同；<code>dsize</code>为零时，则与<code>src.size()</code>即<code>fx</code>和<code>fy</code>相同。其类型与<code>src</code>相同。</p>
-</li>
-<li>
-<p><code>dsize</code>：输出图像尺寸，当<code>dsize</code>为0或<code>None</code>时，计算方式为：</p>
-<p><code>dsize = Size(round(fx*sr.cols), round(fy*src.rows))</code></p>
-<p>要么<code>dsize</code>非零，要么<code>fx</code>和<code>fy</code>非零</p>
-</li>
-<li>
-<p><code>fx</code>：沿着水平轴的放缩因子，当为0时，可以通过<code>(double)dsize.width/src.cols</code>计算</p>
-</li>
-<li>
-<p><code>fy</code>：沿着垂直轴的放缩因子，当为0时，可以通过<code>(double)dsize.height/src.rows</code>计算</p>
-</li>
-<li>
-<p><code>interpolation</code>：插值方法，常见的插值方法有<code>cv2.INTER_NEAREST</code>、<code>cv2.INTER_LINEAR</code>，默认为<code>cv2.INTER_LINEAR</code>。</p>
-</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>)</span><br><span class="line">img_resize = cv2.resize(img, (<span class="number">100</span>, <span class="number">100</span>)) <span class="comment"># 通过dsize 放缩</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">img_resize = cv2.resize(img, <span class="literal">None</span>, fx=<span class="number">0.5</span>, fy=<span class="number">0.3</span>) <span class="comment"># 通过 fx, fy 放缩</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html#ga47a974309e9102f5f08231edc7e7529d">resize()</a></li>
-<li><a href="https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html#ga5bb5a1fea74ea38e1a5445ca803ff121">InterpolationFlags</a></li>
-</ol>
-</blockquote>
-</br>
-<p>9.<code>cv2.transpose()</code>详解：用于转置矩阵（数组）</p>
-<p>该函数的完整调用形式为：<code>cv.transpose(src[, dst]) -&gt;dst</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
-<ul>
-<li><code>src</code>：输入数组</li>
-<li><code>dst</code>：和<code>src</code>相同类型的输出数组</li>
-</ul>
-<p>其效果为：<code>dst(i, j) = src(j, i)</code>。调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.transpose(img)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga46630ed6c0ea6254a35f447289bd7404">transpose()</a></li>
-</ol>
-</blockquote>
-</br>
-<p>10.<code>cv2.flip()</code>详解：用于翻转图像（数组）</p>
-<p>该函数的完整调用形式为：<code>cv.flip(src, flipCode[, dst]) -&gt;dst</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
-<ul>
-<li><code>src</code>：输入数组</li>
-<li><code>dst</code>：输出数组，和<code>src</code>具有相同类型和尺寸</li>
-<li><code>flitCode</code>：用来指定怎样翻转数组，0表示沿x轴翻转，正值如1表示沿y轴翻转，-1表示同时沿x轴和y轴翻转，即绕(0,0)翻转</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.flip(img, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#gaca7be533e3dac7feb70fc60635adf441">flip()</a></li>
-</ol>
-</blockquote>
-</br>
-<p>11.<code>cv2.imshow()</code>详解：用于显示图像</p>
-<p>该函数的完整调用形式为：<code>cv.imshow(winname, mat) -&gt;None</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
-<ul>
-<li><code>winname</code>：窗口名，显示在窗口顶栏</li>
-<li><code>mat</code>：要显示的矩阵</li>
-</ul>
-<p>调用示例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga453d42fe4cb60e5723281a89973ee563">imshow()</a></li>
-</ol>
-</blockquote>
-</br>
-<p>12.<code>cv2.waitKey()</code>详解：用于指定窗口打开时间</p>
-<p>该函数的完整调用形式为：<code>cv.waitKey([, delay]) -&gt;retval</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
-<ul>
-<li><code>delay</code>：表示窗口的持续时间，为0时表示保持窗口打开，为其他正值时表示窗口持续的毫秒数</li>
-</ul>
-<p>调用示例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga5628525ad33f52eab17feebcfba38bd7">waitKey()</a></li>
-</ol>
-</blockquote>
-</br>
-<p>13.<code>cv2.destroyAllWindows()</code>详解：用于关闭所有 HightGUI 窗口</p>
-<p>该函数的完整调用形式为：<code>cv.destroyAllWindows() -&gt;None</code>。</p>
-<p>调用实例：似乎不会关闭窗口</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">1000</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p>PS：<code>cv2.destroyWindows(winname)</code>用于关闭指定窗口</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga6b7fc1c1a8960438156912027b38f481">destroyWindow()</a></li>
-</ol>
-</blockquote>
-</br>
-<p>14.python中获取当前目录路径和上级路径：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;***获取当前目录***&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(__file__))) <span class="comment"># __file__表示文件名</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;***获取上级目录***&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(os.getcwd())))</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.join(os.getcwd(), <span class="string">&quot;..&quot;</span>)))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;***获取上上级目录***&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.join(os.getcwd(), <span class="string">&quot;../..&quot;</span>)))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://blog.csdn.net/leorx01/article/details/71141643">python获取当前目录路径和上级路径</a></li>
-<li><a href="https://www.jianshu.com/p/bfa29141437e">Python获取当前文件路径</a></li>
-</ol>
-</blockquote>
-</br>
-<p>15.<code>cv2.GaussianBlur()</code>详解：用于给图片添加高斯模糊</p>
-<p>该函数的完整调用形式为：</p>
-<p><code>cv.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]) -&gt;dst</code></p>
-<p>下面对各个参数做具体说明（说明针对C++函数版本）：</p>
-<ul>
-<li><code>src</code>：输入图像，图像有不同的通道，会被分别处理</li>
-<li><code>dst</code>：输出图像，类型和尺寸与<code>src</code>相同</li>
-<li><code>ksize</code>：高斯核尺寸。<code>ksize.width</code>和<code>ksize.height</code>必须为正奇数；否则<code>ksize</code>为0，此时其值通过<code>sigmaX</code>和<code>sigmaY</code>计算</li>
-<li><code>sigmaX</code>：在X方向上的 Gaussian kernel standard deviation</li>
-<li><code>sigmaY</code>：在Y方向上的 Gaussian kernel standard deviation。为0时设为与<code>sigmaX</code>相等。</li>
-<li><code>borderType</code>：像素外插值方法，常见的有<code>cv.BORDER_CONSTANT</code>、<code>cv.BORDER_REPLICATE</code>，不支持<code>cv.BORDER_WRAP</code>。</li>
-</ul>
-<p>为了完全控制对图片的操作而不需要管OpenCV后续对语义的修改，建议对<code>ksize</code>/<code>sigmaX</code>/<code>sigmaY</code>都进行指定。</p>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">depth_img = cv2.imread(<span class="string">&#x27;NLPR2_depth.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 给深度图添加高斯模糊</span></span><br><span class="line">depth_img = cv2.GaussianBlur(depth_img, (<span class="number">31</span>, <span class="number">31</span>), sigmaX=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1">GaussianBlur()</a></li>
-<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5">BorderTypes</a></li>
-<li><a href="https://zh.m.wikipedia.org/zh/%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A">高斯模糊</a></li>
-<li><a href="https://www.zhihu.com/question/54918332">高斯模糊的原理是什么，怎样在界面中实现</a></li>
-</ol>
-</blockquote>
-</br>
-<p>16.<code>cv2.threshold()</code>：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。该函数支持几种阈值，通过类型参数来设置。</p>
-<p>与此同时，<code>THRESH_OTSU</code>和<code>THRESH_TRIANGLE</code>可以联合上述的值来使用。这种情况下，函数通过 Otsu 或者 Triangle 算法来计算最优的阈值。</p>
-<p>PS：目前，Otsu 算法和 Triangle 算法只在 8-bit 的单通道图像上实现</p>
-<p>该函数的完整调用形式为：</p>
-<p><code>cv.threshold(src, thresh, maxval, type[, dst]) -&gt;retval, dst</code></p>
-<ul>
-<li><code>src</code>：输入数组（多通道，8-bit 或者 32-bit 浮点数）</li>
-<li><code>dst</code>：和<code>src</code>同尺寸、类型和通道的输出数组</li>
-<li><code>thresh</code>：阈值</li>
-<li><code>maxval</code>：在使用<code>THRESH_BINARY</code>和<code>THRESH_BINARY_INV</code>参数时的最大值</li>
-<li><code>type</code>：阈值类型，常见的有<code>THRESH_BINARY</code>和<code>THRESH_BINARY_INV</code>。</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57">threshold()</a></li>
-<li><a href="https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gaa9e58d2860d4afa658ef70a9b1115576">ThresholdTypes</a></li>
-<li><a href="https://www.cnblogs.com/gezhuangzhuang/p/10295181.html">OpenCV-Python入门教程6-Otsu阈值法</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/395708037">OTSU算法（大津法）原理解析</a></li>
-</ol>
-</blockquote>
-</br>
-<p>17.<code>cv2.imwrite()</code>：用于存储图片到指定文件，图片类型取决于文件后缀名。其完整声明形式如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv.imwrite(filename, img[, params]) -&gt; retval</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>filename</code>：存储文件名</li>
-<li><code>img</code>：图片数据对应的矩阵</li>
-<li><code>params</code>：成对的指定存储格式的参数。</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#gabbc7ef1aa2edfaa87772f1202d67e0ce">imwrite()</a></li>
-</ol>
-</blockquote>
-</br>
-<p>18.<code>cv2.Canny()</code>：用于通过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Canny</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>算法查找图像边缘。其完整声明形式如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cv::Canny</span>	<span class="params">(InputArray image,</span></span></span><br><span class="line"><span class="params"><span class="function">	OutputArray edges,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> threshold1,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> threshold2,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> apertureSize = <span class="number">3</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">bool</span> L2gradient = <span class="literal">false</span> </span></span></span><br><span class="line"><span class="params"><span class="function">	)</span></span></span><br></pre></td></tr></table></figure>
-<p>该函数在输入的图像中查找边缘并通过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Canny</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>算法在输出中标记出它们。在threshold1和threshold2中最小的值将用于edge linking，最大值将用于查找初始的更为强烈/显著的边缘。具体见 <a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny edge detector</a></p>
-<ul>
-<li><code>image</code>：8-bit的输入图片</li>
-<li><code>edges</code>：输出的 edge map，8-bit单通道，和<code>image</code>尺寸相同</li>
-<li><code>threshold1</code>：滞后过程（hysteresis procedure）的第一个阈值</li>
-<li><code>threshold2</code>：滞后过程的第二个阈值</li>
-<li><code>apertureSize</code>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>o</mi><mi>b</mi><mi>e</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">Sobel</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>操作子的孔径尺寸</li>
-<li><code>L2gradient</code>：a flag。表明是否使用更准确的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">L2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord">2</span></span></span></span>范数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mrow><mo stretchy="false">(</mo><mi>d</mi><mi>I</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>d</mi><mi>I</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>y</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{(dI/dx)^2+(dI/dy)^2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.30499999999999994em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord">/</span><span class="mord mathdefault">d</span><span class="mord mathdefault">x</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord">/</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.8950000000000005em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
-158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
-c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
-175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
-c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
--252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
-s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30499999999999994em;"><span></span></span></span></span></span></span></span></span>计算图像梯度大小（<code>L2gradient=true</code>），还是使用默认的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">L1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord">1</span></span></span></span>范数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mrow><mi mathvariant="normal">∣</mi><mi>d</mi><mi>I</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>+</mo><mi mathvariant="normal">∣</mi><mi>d</mi><mi>I</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>y</mi><mi mathvariant="normal">∣</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{|dI/dx|+|dI/dy|}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.30499999999999994em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord">∣</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord">/</span><span class="mord mathdefault">d</span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">∣</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord">/</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">∣</span></span></span><span style="top:-2.8950000000000005em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
-158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
-c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
-175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
-c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
--252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
-s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30499999999999994em;"><span></span></span></span></span></span></span></span></span>（<code>L2gradient=false</code>）。</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;messi5.jpg&#x27;</span>,<span class="number">0</span>)</span><br><span class="line">edges = cv2.Canny(img,<span class="number">100</span>,<span class="number">200</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">121</span>),plt.imshow(img,cmap = <span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Original Image&#x27;</span>), plt.xticks([]), plt.yticks([])</span><br><span class="line">plt.subplot(<span class="number">122</span>),plt.imshow(edges,cmap = <span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Edge Image&#x27;</span>), plt.xticks([]), plt.yticks([])</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/3.1.0/dd/d1a/group__imgproc__feature.html#ga04723e007ed888ddf11d9ba04e2232de">Canny()</a></li>
-<li><a href="https://docs.opencv.org/3.1.0/da/d22/tutorial_py_canny.html">Canny Edge Detection in OpenCV</a></li>
-<li><a href="https://zh.m.wikipedia.org/zh-hans/Canny%E7%AE%97%E5%AD%90">Canny算子</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny edge detector</a></li>
-<li><a href="https://zj-image-processing.readthedocs.io/zh_CN/latest/opencv/code/%5BCanny%5D%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/">Canny边缘检测</a></li>
-<li><a href="https://yueyue200830.github.io/2020/04/04/Python%E5%AE%9E%E7%8E%B0Canny%E7%AE%97%E5%AD%90%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/">Python实现Canny算子边缘检测</a></li>
-</ol>
-</br>
-<p>19.<code>cv2.Sobel()</code>：使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>o</mi><mi>b</mi><mi>e</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">Sobel</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>算子计算图像导数。其完整声明形式如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">cv::Sobel</span><span class="params">(InputArray src,</span></span></span><br><span class="line"><span class="params"><span class="function">	OutputArray dst,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> ddepth,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> dx,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> dy,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> ksize = <span class="number">3</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> scale = <span class="number">1</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> delta = <span class="number">0</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> borderType = BORDER_DEFAULT </span></span></span><br><span class="line"><span class="params"><span class="function">	)</span>	</span></span><br></pre></td></tr></table></figure>
-<p>该函数通过用合适的核与函数做卷积来计算图像导数。通常，该函数通过<code>xorder=1, yorder=0, ksize=3</code>和<code>xorder=0, yorder=1, ksize=3</code>来计算图像的一阶<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>导数，分别对应：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mi mathvariant="normal">和</mi><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{bmatrix}
--1 &amp; 0 &amp; 1 \\
--2 &amp; 0 &amp; 2 \\
--1 &amp; 0 &amp; 1
-\end{bmatrix} 和
-\begin{bmatrix}
--1 &amp; -2 &amp; 1 \\
-0 &amp; 0 &amp; 0 \\
-1 &amp; 2 &amp; 1
-\end{bmatrix}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">2</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord cjk_fallback">和</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">2</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p>这两个核。</p>
-<ul>
-<li><code>src</code>：输入图片</li>
-<li><code>dst</code>：相同尺寸和通道数的输出图片</li>
-<li><code>ddepth</code>：输出图片depth，见 <a href="https://docs.opencv.org/3.1.0/d4/d86/group__imgproc__filter.html#filter_depths">combinations</a>。（depth指图片的数据类型，例如对应图像梯度你想要16bit而不是8bit。当输入图片为8-bit类型时，将导致梯度裁剪（精度不够）</li>
-<li><code>dx</code>：梯度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>的order</li>
-<li><code>dy</code>：梯度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>的order</li>
-<li><code>ksize</code>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>o</mi><mi>b</mi><mi>e</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">Sobel</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>核尺寸，必须是1/3/5/7。</li>
-<li><code>scale</code>：计算梯度值时的可选因子，默认不提供</li>
-<li><code>delta</code>：在<code>dst</code>中存储结果之前默认加到结果上的可选delta值。</li>
-<li><code>borderType</code>：像素插值类型。</li>
-</ul>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.opencv.org/3.1.0/d4/d86/group__imgproc__filter.html#gacea54f142e81b6758cb6f375ce782c8d">Soble()</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E7%B4%A2%E8%B2%9D%E7%88%BE%E7%AE%97%E5%AD%90">Sobel算子</a></li>
-<li><a href="https://www.cnblogs.com/zhuifeng-mayi/p/9563947.html">边缘检测</a></li>
-</ol>
-</br>
-<p>20.<code>numpy.ndarray.flatten()</code>：返回一个坍缩成一维的数组的副本。</p>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.flatten()</span><br><span class="line">array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.flatten(<span class="string">&#x27;F&#x27;</span>)</span><br><span class="line">array([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>])</span><br></pre></td></tr></table></figure>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html">numpy.ndarray.flatten</a></li>
-</ol>
-</br>
-<p>21.<code>math.atan(x)</code>vs<code>math.atan2(y, x)</code>：</p>
-<p><code>atan</code>返回<code>x</code>对应的arc tangent，其结果所属区间为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-\pi/2, \pi/2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">)</span></span></span></span>；</p>
-<p><code>atan2(y, x)</code>则返回<code>atan(y/x)</code>，其结果所属区间为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mi>π</mi><mo separator="true">,</mo><mi>π</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-\pi, \pi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mclose">)</span></span></span></span>。</p>
-<p>举例来说，<code>atan(1)=atan2(1,1)</code><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">=\pi/4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">4</span></span></span></span>；<code>atan2(-1,-1)</code><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mo>−</mo><mn>3</mn><mi>π</mi><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">=-3\pi/4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">4</span></span></span></span>。</p>
-<blockquote>
-<p>参考文献：</p>
-<ol>
-<li><a href="https://docs.python.org/3.8/library/math.html?highlight=atan#math.atan">math.atan(x)</a></li>
-</ol>
-</blockquote>
-</br>
-<p>22.<code>numpy.zeros</code>：用于返回给定<code>shape</code>和<code>type</code>的用零填充的新的数组。其完整调用形式为：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numpy.zeros(shape, dtype=<span class="built_in">float</span>, order=<span class="string">&#x27;C&#x27;</span>, *, like=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>shape</code>：指定数组形状，如<code>(2, )</code>或<code>(2,3)</code>。</li>
-<li><code>dtype</code>：指定填充的数据类型，如<code>dtype=int</code>，默认为<code>numpy.float64</code>。</li>
-<li><code>order</code>：指定行优先还是列优先，默认为<code>order='C'</code>，行优先，<code>order='F'</code>表示列优先。</li>
-<li><code>like</code>：引用对象，用于创建非Numpy arrays类型的数组，可以兼容其他类型的数组。</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.zeros(<span class="number">5</span>)</span><br><span class="line">array([ <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.zeros((<span class="number">5</span>,), dtype=<span class="built_in">int</span>)</span><br><span class="line">array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-<p>PS：<code>numpy.ones</code>与之类似</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html">numpy.zeros</a></li>
-<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html#numpy.ones">numpy.ones</a></li>
-</ol>
-</blockquote>
-</br>
-<p>23.在进行灰度图转为BGR图<code>img = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)</code>之前，需要确保灰度图<code>gray</code>中数值的类型满足转换要求，否则会出现如下错误：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220626163339376.png" alt="image-20220626163339376" /></p>
-<p>可以通过<code>gray = np.uint8(gray)</code>将灰度图转换为满足条件的格式：</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/55179724/opencv-error-unsupported-depth-of-input-image">Opencv error -Unsupported depth of input image:</a></li>
-</ol>
-</blockquote>
-</br>
-<p>24.<code>numpy.sum</code>：计算给定<code>axis</code>上数组的元素之和。其完整调用形式为：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numpy.<span class="built_in">sum</span>(a, axis=<span class="literal">None</span>, dtype=<span class="literal">None</span>, out=<span class="literal">None</span>, keepdims=&lt;no value&gt;, initial=&lt;no value&gt;, where=&lt;no value&gt;)[source]</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>a</code>：数组类型的对象</li>
-<li><code>axis</code>：None、整数或整数类型的元组，可选。默认为None，将对所有元素求和。</li>
-<li><code>dtype</code>：数据类型，可选。</li>
-<li><code>out</code>：用于存放求和结果的输出数组，可选。</li>
-<li>略</li>
-</ul>
-<p>调用实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.ones((<span class="number">10</span>,<span class="number">2</span>), dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>()</span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>(axis=<span class="number">0</span>)</span><br><span class="line">array([<span class="number">10</span>, <span class="number">10</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>(axis=<span class="number">0</span>)/<span class="number">6</span></span><br><span class="line">array([<span class="number">1.66666667</span>, <span class="number">1.66666667</span>])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html">numpy.sum</a></li>
-</ol>
-</blockquote>
-</br>
-<p>25.在算法实现中使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>F</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">DFS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>时出现以下报错：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">RecursionError: maximum recursion depth exceeded <span class="keyword">in</span> comparison</span><br></pre></td></tr></table></figure>
-<p>其出现原因为递归序列太长超过了系统设置，可以通过以下方式查看系统设置的最大递归深度：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(sys.getrecursionlimit())</span><br><span class="line"><span class="number">1000</span></span><br></pre></td></tr></table></figure>
-<p>此时可以通过两种方式解决该问题：</p>
-<ul>
-<li>设置更大的系统递归深度：<code>sys.setrecursionlimit(1000*1000+10)</code></li>
-<li>优化算法，采用更高效的方式实现。（推荐）</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://github.com/pltrdy/rouge/issues/19">Maximum recursion depth exceeded in comparison</a></li>
-<li><a href="https://stackoverflow.com/questions/46659192/python-infinite-recursion-with-formula">Python infinite recursion with formula</a></li>
-</ol>
-</blockquote>
-</br>
-<p>26.当判断python字典中是否存在某个key时，<code>has_key()</code>方法在python中无法使用：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220629171740572.png" alt="image-20220629171740572" /></p>
-<p>其原因在于<code>has_key()</code>方法在Python3中被去除。</p>
-<p>通过<code>for i, j in img_depth_pair.keys:</code>遍历字典键时，会出现如下报错：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220629172819981.png" alt="image-20220629172819981" /></p>
-<p>其原因在于<code>dict.keys</code>为不可迭代对象，此时应该通过以下方式遍历key和value：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> img_depth_pair:</span><br><span class="line">	<span class="built_in">print</span>(key)</span><br><span class="line">    <span class="built_in">print</span>(img_depth_pair[key])</span><br></pre></td></tr></table></figure>
-<p>此外，值得补充的是，列表不能作为python字典的键，而元组可以，这一特性源自python语言的设计。</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://cloud.tencent.com/developer/article/1893987">使用 for 循环遍历 Python 字典的 3 种方法 !</a></li>
-<li><a href="https://stackoverflow.com/questions/33727149/dict-object-has-no-attribute-has-key">‘dict’ object has no attribute ‘has_key’</a></li>
-<li><a href="https://stackoverflow.com/questions/7257588/why-cant-i-use-a-list-as-a-dict-key-in-python">Why can’t I use a list as a dict key in python?</a></li>
-<li><a href="https://wiki.python.org/moin/DictionaryKeys">Why Lists Can’t Be Dictionary Keys</a></li>
-</ol>
-</blockquote>
-</br>
-<p>27.在OpenCV中进行图像处理时，经常会出现类似于下列的数据类型的问题：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103210112.png" alt="image-20220630103210112" /></p>
-<p>下面是OpenCV中各种数据类型的参考列表：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103342159.png" alt="image-20220630103342159" /></p>
-<p>其中C1/C2/C3/C4表示通道数。0~30表示编号。</p>
-<p>下面是一个更为详细的列表：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103853172.png" alt="image-20220630103853172" /></p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="http://ninghang.blogspot.com/2012/11/list-of-mat-type-in-opencv.html">LIST OF MAT TYPE IN OPENCV</a></li>
-<li><a href="https://udayawijenayake.com/2021/06/07/opencv-data-types/">OpenCV “cv::Mat” Data Types</a></li>
-</ol>
-</blockquote>
-</br>
-<p>28.在使用numpy中的<code>dtype</code>（data type）参数时，常疑惑于参数类型的选择，此处对常用的<code>dtype</code>类型做一个梳理：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630104939506.png" alt="image-20220630104939506" /></p>
-<p>PS：上述列表并未展示所有的<code>dtype</code>类型，详见参考资料：</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://numpy.org/doc/stable/user/basics.types.html">Array types and conversions between types</a></li>
-<li><a href="https://numpy.org/doc/stable/reference/arrays.dtypes.html">Data type objects <code>dtype</code></a></li>
-</ol>
-</blockquote>
-</br>
-<p>29.在使用<code>cv2.imshow('img', img)</code>时，传入的<code>img</code>的<code>dtype</code>需要为<code>np.uint8</code>类型，否则展示的图片会出现奇怪的扭曲 (distortion)：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">[...]</span><br><span class="line">info = np.iinfo(data.dtype) <span class="comment"># Get the information of the incoming image type</span></span><br><span class="line">data = data.astype(np.float64) / info.<span class="built_in">max</span> <span class="comment"># normalize the data to 0 - 1</span></span><br><span class="line">data = <span class="number">255</span> * data <span class="comment"># Now scale by 255</span></span><br><span class="line">img = data.astype(dtype=np.uint8)</span><br><span class="line">cv2.imshow(<span class="string">&quot;Window&quot;</span>, img)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/46689428/convert-np-array-of-type-float64-to-type-uint8-scaling-values">Convert np.array of type float64 to type uint8 scaling values</a></li>
-</ol>
-</blockquote>
-</br>
-<p>30.在使用以下代码进行图片展示时：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;edge&#x27;</span>, edge)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<p>可能出现如下错误：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220805231829547.png" alt="image-20220805231829547" /></p>
-<p>此时可能是本地的OpenCV包出现了编译错误，可以通过重装解决：</p>
-<ul>
-<li>
-<p><code>pip uninstall opencv-python</code></p>
-</li>
-<li>
-<p><code>pip install opencv-python</code></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -2860,6 +2401,38 @@ class _Loss(Module)
 > 参考资料：
 > 1. [AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0 #69894](https://github.com/pytorch/pytorch/issues/69894)
 </br>
+<p>26.numpy array与torch tensor之间的转换：</p>
+<ul>
+<li>numpy array to torch tensor</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np_array = np.array(data)</span><br><span class="line">x_np = torch.from_numpy(np_array)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>torch tensor to numpy</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">na = a.to(<span class="string">&#x27;cpu&#x27;</span>).numpy()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/49768306/pytorch-tensor-to-numpy-array">Pytorch tensor to numpy array</a></li>
+</ol>
+</blockquote>
+</br>
+27.查看numpy数组的各属性信息：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">numpy_attr</span>(<span class="params">image</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;type: &quot;</span>, <span class="built_in">type</span>(image))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;dtype: &quot;</span>, image.dtype)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;size: &quot;</span>, image.size)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;shape: &quot;</span>, image.shape)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;dims: &quot;</span>, image.ndim)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [numpy库数组属性查看：类型、尺寸、形状、维度](https://blog.csdn.net/weixin_41770169/article/details/80565326)
+</br>
+28.出现如下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220930172422.png)
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220930172447.png" alt="" /><br />
+其原因为数据集中读取的数据超出范围，例如对于n类label的数据，其值应该<code>t&gt;=0 &amp;&amp; t&lt;n</code>。本人遇到这种报错的原因为mask数据未做转换：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mask[mask == <span class="number">0.</span>] = <span class="number">255.</span></span><br><span class="line">mask[mask == <span class="number">2.</span>] = <span class="number">0.</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/pytorch/pytorch/issues/1204">RuntimeError: cuda runtime error (59) : device-side assert triggered when running transfer_learning_tutorial #1204</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -3482,6 +3055,14 @@ class _Loss(Module)
 > 1. [Multiple CUDA versions on machine nvcc -V confusion](https://stackoverflow.com/questions/40517083/multiple-cuda-versions-on-machine-nvcc-v-confusion)
 > 2. [How to correctly add a path to PATH?](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)
 </br>
+<p>29.复制指定目录下的全部文件到另一个目录中：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r dir1 dir2</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/zdz8207/p/linux-cp-dir.html">linux复制指定目录下的全部文件到另一个目录中，linux cp 文件夹</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -3649,6 +3230,13 @@ class _Loss(Module)
 此时，为<code>.vscode</code>文件夹下的json配置文件出错：<br />
 <img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220917002916.png" alt="" /><br />
 需要将上图中的<code>msys2</code>改为正确的安装目录<code>msys64</code>。</p>
+<h3 id="彻底卸载vscode"><a class="markdownIt-Anchor" href="#彻底卸载vscode"></a> 彻底卸载VSCode</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://bbs.huaweicloud.com/blogs/254150">彻底卸载VSCode</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -3890,6 +3478,18 @@ class _Loss(Module)
 <p>参考资料：</p>
 <ol>
 <li><a href="https://git-lfs.github.com/">Git Large File Storage</a></li>
+</ol>
+</blockquote>
+</br>
+5.使用git bash进行javac编译时出现中文乱码：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929170956.png)
+解决方案：在选项里将字符集设为GBK，重启git bash：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929171040.png)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/qq_21260033/article/details/78786608">在 git bash 里运行 java 命令，打印出的中文显示乱码</a></li>
+<li><a href="https://minsonlee.github.io/2020/11/how-to-set-utf8-with-git-bash">解决 Git Bash 在 windows 下中文乱码的问题</a>（不针对此问题）</li>
 </ol>
 </blockquote>
 ]]></content>
@@ -4369,7 +3969,14 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 > 参考资料：
 > 1. [All you need to know about Asterisks in Python](https://bas.codes/posts/python-asterisks)
 </br>
-]]></content>
+11.python语法：判断字符串中是否包含某子字符串
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">test_str = <span class="string">&#x27;helloworld&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">&#x27;world&#x27;</span> <span class="keyword">in</span> test_str:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;yes&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;no&#x27;</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Python判断字符串是否包含特定子串的7种方法](https://cloud.tencent.com/developer/article/1699719)
+</br>
+11.格式化字符串：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">TAG = <span class="string">&#x27;scwssod&#x27;</span></span><br><span class="line"><span class="built_in">id</span> = <span class="number">30</span></span><br><span class="line">filename = <span class="string">&#x27;mytest_%s_model-%d.log&#x27;</span>%(TAG, <span class="built_in">id</span>)</span><br></pre></td></tr></table></figure>
+上述命令可以根据]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -6116,6 +5723,10 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 <li><a href="https://blog.csdn.net/xichengqc/article/details/102988258">win10点击超链接无法跳转到浏览器</a></li>
 </ol>
 </blockquote>
+</br>
+10.点击Windows10 OneDrive应用没有反应
+> 参考资料：
+> 1. [OneDrive无法打开的原因](https://zhuanlan.zhihu.com/p/343335173)
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -6153,6 +5764,22 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 <ol>
 <li><a href="https://github.com/AykutSarac/jsoncrack.com">JSON Crack</a>：将JSON数据可视化为图的形式：<br />
 <img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220910171015.png" alt="" /></li>
+</ol>
+<h3 id="软件内部信息可视化"><a class="markdownIt-Anchor" href="#软件内部信息可视化"></a> 软件内部信息可视化</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://lmy.medium.com/7-tools-for-visualizing-a-codebase-41b7cddb1a14">7 tools for visualizing a codebase</a></li>
+</ol>
+</blockquote>
+<h3 id="编程字体"><a class="markdownIt-Anchor" href="#编程字体"></a> 编程字体</h3>
+<ol>
+<li><a href="https://www.programmingfonts.org">https://www.programmingfonts.org</a> ：可以在线查看300种字体的代码风格和样式</li>
+</ol>
+<h3 id="shell"><a class="markdownIt-Anchor" href="#shell"></a> Shell</h3>
+<ol>
+<li><a href="https://links.bestxtools.com/explainshell.com/">explainshell.com</a>：输入一段shell命令行，将参数和对应帮助文本匹配</li>
+<li></li>
 </ol>
 ]]></content>
       <categories>
@@ -8080,6 +7707,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://en.cppreference.com/w/cpp/language">C++ language (cppreference)</a></li>
 <li><a href="https://www.stroustrup.com/index.html">Bjarne Stroustrup’s homepage</a>：C++之父的主页</li>
 <li><a href="https://cppbyexample.com/">C++ By Example</a></li>
+<li><a href="https://cntransgroup.github.io/EffectiveModernCppChinese/Introduction.html">Effective Modern C++</a></li>
 </ol>
 <h4 id="工具-2"><a class="markdownIt-Anchor" href="#工具-2"></a> 工具</h4>
 <ol>
@@ -8229,6 +7857,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://doc.rust-lang.org/book/#the-rust-programming-language">The Rust Programming Language</a></li>
 <li><a href="https://doc.rust-lang.org/rust-by-example/index.html#rust-by-example">Rust by Example</a></li>
 <li><a href="https://doc.rust-lang.org/std/index.html#the-rust-standard-library">The Rust Standard Library</a></li>
+<li><a href="https://cheats.rs/">Rust Language Cheat Sheet</a></li>
 </ol>
 <h4 id="文章收集-7"><a class="markdownIt-Anchor" href="#文章收集-7"></a> 文章收集</h4>
 <ol>
@@ -8361,6 +7990,39 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 </ol>
 </blockquote>
 </br>
+5.VSCode配置OpenCV (Windows)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/m0_37833142/article/details/105686820">VS code配置C/C++、OpenCV(Windows)</a></li>
+<li><a href="https://www.cnblogs.com/czlhxm/p/13848278.html">再整理：Visual Studio Code(vscode)下的基于C++的OpenCV的最新搭建攻略解析</a></li>
+<li><a href="https://cuda-chen.github.io/programming/image%20processing/2020/01/21/vscode-with-opencv-cpp-on-windows10-explained.html">VS Code with OpenCV C++ on Windows 10 Explained</a></li>
+</ol>
+</blockquote>
+</br>
+6. 将home目录下的.vscode-server迁移至其他目录
+例如，迁移到`/storage/user`下面：
+1. `cd /storage/user`
+2. `mv ~/.vscode-server ./`
+3. `ln -s /storage/user/.vscode-server ~/.vscode-server`
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>
+<h1 id="how-to-change-vscode-server-directory"><a class="markdownIt-Anchor" href="#how-to-change-vscode-server-directory"></a> <a href="https://stackoverflow.com/questions/62613523/how-to-change-vscode-server-directory">How to change vscode-server directory</a></h1>
+</li>
+</ol>
+</blockquote>
+</br>
+7.查看当前目录文件夹占用大小：`du -lh --max-depth=1`
+> 参考资料：
+> 1. [du](https://wangchujiang.com/linux-command/c/du.html)
+</br>
+8.将home目录下的.cache迁移至其他目录
+例如，迁移到`/storage`下面：
+1. `cd /storage`
+2. `mv ~/.cache ./`
+3. `ln -s /storage/user/.cache ~/.cache`
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -8452,5 +8114,648 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
     <title>通过python脚本实现向kindle邮箱发送书籍</title>
     <url>/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Python文章整理</title>
+    <url>/2022/09/18/Python%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>本文汇总一下网上收集的较好的一些讲解Python相关知识点和特性的文章：</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://sadh.life/post/builtins/">Understanding all of Python, through its builtins</a>：Python有许多大多数不熟知的内置函数。本文通过Python的一些鲜为人知的内置函数介绍Python提供的功能和特性。(未读)</li>
+<li></li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像处理中知识点01</title>
+    <url>/2022/06/02/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文记录一下在实现 <a href="https://link.springer.com/article/10.1007/s11042-016-3392-4">DDRQM</a> 过程中的一些 OpenCV 框架和 python 相关知识点。</p>
+<span id="more"></span>
+<p>1.<code>cv2.filter2D()</code>：该函数表示在一张图像上应用相应的卷积核，完整的函数调用形式如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.filter2D(src, ddepth, kernel[, dst[, anchor[, delta[, borderType]]]]) -&gt; dst</span><br></pre></td></tr></table></figure>
+<p>该函数将任意的 linear filter 应用到一张图像上。当 filter 的部分孔径落在图像之外时，函数会根据 border 类型进行插值。该函数实际上计算的是相关（correlation），而不是卷积（convolution）。</p>
+<p>例如，下面代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">retval = cv2.getGaborKernel(ksize=(<span class="number">111</span>,<span class="number">111</span>), sigma=<span class="number">10</span>, theta=<span class="number">60</span>, lambd=<span class="number">10</span>, gamma=<span class="number">1.2</span>)</span><br><span class="line">image1 = cv2.imread(<span class="string">&#x27;src.jpg&#x27;</span>)</span><br><span class="line">result = cv2.filter2D(image1,-<span class="number">1</span>,retval)</span><br></pre></td></tr></table></figure>
+<p>表示将对应的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 滤波器应用在图像<code>src.jpg</code>上。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a=cv2.getGaborKernel((40,40), 1.69, 0, 3, 0.5)</span><br><span class="line">b=Gabor_filter((40,40), 1.69, 0, 3, 0.5)</span><br></pre></td></tr></table></figure>
+</br>
+<p>2.<code>cv2.getGaborKernel()</code>：该函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 滤波器函数，其返回值为一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>r</mi><mi>f</mi><mi>i</mi><mi>l</mi><mi>t</mi><mi>e</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Gabor filter</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>，具体形式为一个二维数组，完整的函数调用形式如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv.getGaborKernel(ksize, sigma, theta, lambd, gamma[, psi[, ktype]]) -&gt; retval</span><br></pre></td></tr></table></figure>
+</br>
+<p>3.代码为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result[x][y] = <span class="built_in">abs</span>(depth_img[x][y] - <span class="number">0.5</span>*(depth_img[x1][y1]+depth_img[x2][y2]))</span><br></pre></td></tr></table></figure>
+<p>报错信息：<code>RuntimeWarning: overflow encountered in ubyte_scalars</code>。</p>
+<p>分析：可能是将两个<code>unit8</code>类型的值相加并将其存入一个<code>unit8</code>，导致数值溢出</p>
+<p>解决方案：将<code>unit8</code>类型数值转换为<code>int</code>类型。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result[x][y] = <span class="built_in">abs</span>(<span class="built_in">int</span>(depth_img[x][y]) - <span class="number">0.5</span>*(<span class="built_in">int</span>(depth_img[x1][y1])+<span class="built_in">int</span>(depth_img[x2][y2])))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>
+<p><a href="https://stackoverflow.com/questions/9384435/runtimewarning-overflow-encountered-in-ubyte-scalars">RuntimeWarning: overflow encountered in ubyte_scalars</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/59531334/why-i-am-getting-runtimewarning-overflow-encountered-in-ubyte-scalars-error-i">Why I am getting “RuntimeWarning: overflow encountered in ubyte_scalars error” in python?</a></p>
+</li>
+</ol>
+</blockquote>
+</br>
+<p>4.以下代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(path)</span><br><span class="line">height, width, channels = img.shape</span><br></pre></td></tr></table></figure>
+<p>表示从路径<code>path</code>中读取图像文件并存入<code>img</code>对象中，通过<code>type(img)</code>可知该对象类型为<code>&lt;class 'numpy.ndarray'&gt;</code>。<code>img.shape</code>返回的是一个三元元组，其值分别对应图像的<code>height</code>、<code>width</code>和<code>channels</code>，即图像形状并不是我们熟悉的<code>width * height * channels</code>的形式</p>
+<p>可以通过以下代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.transpose(img)</span><br></pre></td></tr></table></figure>
+<p>将<code>img</code>转置为<code>width * height * channels</code>形状，通过我们熟悉的方式访问。</p>
+<p>PS：<code>img</code>中<code>channels</code>顺序为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>G</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">B G R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/55636318/opencv-showing-wrong-width-and-height-of-image">Opencv showing wrong width and height of image</a></li>
+<li><a href="http://www.juzicode.com/opencv-python-resize-transpose-flip/">OpenCV-Python教程：几何空间变换~缩放、转置、翻转(resize,transpose,flip)</a></li>
+<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">Image file reading and writing</a></li>
+</ol>
+</blockquote>
+</br>
+<p>5.<code>PILLOW</code> vs <code>OpenCV</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取和加载图片</span></span><br><span class="line"><span class="comment"># PILLOW</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开图片</span></span><br><span class="line">img.size <span class="comment"># 获取图片尺寸 width * height</span></span><br><span class="line">img_rgb = img.load() <span class="comment"># 分配内存，并将图像像素值添加到img_rgb对象</span></span><br><span class="line">img_rgb[width, height] <span class="comment"># 通过width/height访问像素值，返回值为RGB模式</span></span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开并将图像像素值添加到img对象</span></span><br><span class="line">img.shape <span class="comment"># 获取图片尺寸 height * width * channels</span></span><br><span class="line">img[height][width] <span class="comment">#通过height/width访问像素值，返回值为BGR模式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取和转换为灰度图</span></span><br><span class="line"><span class="comment"># PILLOW</span></span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开图片</span></span><br><span class="line">img_gray = img.convert(<span class="string">&#x27;L&#x27;</span>) <span class="comment"># 转换为灰度图</span></span><br><span class="line">pixels_gray = img_gray.load() <span class="comment"># 分配内存，并将图像灰度值添加到img_gray对象</span></span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="comment"># 直接读取灰度图</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>, <span class="number">0</span>) <span class="comment"># 将图像转换为灰度图后读取</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># 先读取彩色图，再转化为灰度图</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <span class="comment"># 将BGR模式的彩色图像转换为灰度图</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://pillow.readthedocs.io/en/stable/reference/Image.html?highlight=load#PIL.Image.Image.load">Image.load()</a></li>
+<li><a href="https://blog.csdn.net/sinat_29957455/article/details/84845016">python opencv将图片转为灰度图</a></li>
+<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">imread()</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d6a/group__imgcodecs__flags.html#ga61d9b0126a3e57d9277ac48327799c80">ImreadModes</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab">cvtColor</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0">ColorConversionCodes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>6.<code>cv2.imread()</code>详解：用于读取图像</p>
+<p>该函数的完整调用形式为：<code>cv.imread(filename[, flags]) -&gt;retval</code>，<code>retval</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>filename</code>：要读取的图像路径，可以为绝对路径或相对路径</p>
+</li>
+<li>
+<p><code>flags</code>：可以对图像采取的<code>ImreadModes</code>，常见的有<code>cv2.IMREAD_GRAYSCALE</code>、<code>cv.IMREAD_COLOR</code>。</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>) <span class="comment"># 打开并将图像像素值添加到img对象</span></span><br></pre></td></tr></table></figure>
+<p>PS：该函数对RGB图的默认读取顺序为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi>G</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">BGR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56">imread()</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d6a/group__imgcodecs__flags.html#ga61d9b0126a3e57d9277ac48327799c80">ImreadModes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>7.<code>cv2.cvtColor</code>详解：用于转换图像</p>
+<p>该函数的完整调用形式为：<code>cv.cvtColor(src, code[, dst[, dstCn]]) -&gt;dst</code>，<code>dst</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>src</code>：输入图像</p>
+</li>
+<li>
+<p><code>dst</code>：输出图像，和<code>src</code>有相同的<code>size</code>和<code>depth</code>，即相同的<code>height</code>、<code>width</code>和<code>channles</code></p>
+</li>
+<li>
+<p><code>code</code>：颜色空间转换模式<code>ColorConversionCodes</code>，常见的有<code>cv2.BGR2GRAY</code>、<code>cv2.BGR2RGB</code>。</p>
+</li>
+<li>
+<p><code>dstCn</code>：输出图像的<code>channels</code>数，该参数为0时，根据<code>src</code>和<code>dst</code>自动生成</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <span class="comment"># 将BGR模式的彩色图像转换为灰度图</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab">cvtColor</a></li>
+<li><a href="https://docs.opencv.org/4.x/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0">ColorConversionCodes</a></li>
+</ol>
+</blockquote>
+</br>
+<p>8.<code>cv2.resize()</code>详解：用于放缩图像</p>
+<p>该函数的完整调用形式为：<code>cv.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]]) -&gt;dst</code>，<code>dst</code>为返回值。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li>
+<p><code>src</code>：输入图像</p>
+</li>
+<li>
+<p><code>dst</code>：输出图像，当<code>dsize</code>不为0（Python中为<code>None</code>）时，其size与<code>dsize</code>相同；<code>dsize</code>为零时，则与<code>src.size()</code>即<code>fx</code>和<code>fy</code>相同。其类型与<code>src</code>相同。</p>
+</li>
+<li>
+<p><code>dsize</code>：输出图像尺寸，当<code>dsize</code>为0或<code>None</code>时，计算方式为：</p>
+<p><code>dsize = Size(round(fx*sr.cols), round(fy*src.rows))</code></p>
+<p>要么<code>dsize</code>非零，要么<code>fx</code>和<code>fy</code>非零</p>
+</li>
+<li>
+<p><code>fx</code>：沿着水平轴的放缩因子，当为0时，可以通过<code>(double)dsize.width/src.cols</code>计算</p>
+</li>
+<li>
+<p><code>fy</code>：沿着垂直轴的放缩因子，当为0时，可以通过<code>(double)dsize.height/src.rows</code>计算</p>
+</li>
+<li>
+<p><code>interpolation</code>：插值方法，常见的插值方法有<code>cv2.INTER_NEAREST</code>、<code>cv2.INTER_LINEAR</code>，默认为<code>cv2.INTER_LINEAR</code>。</p>
+</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR1.jpg&#x27;</span>)</span><br><span class="line">img_resize = cv2.resize(img, (<span class="number">100</span>, <span class="number">100</span>)) <span class="comment"># 通过dsize 放缩</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">img_resize = cv2.resize(img, <span class="literal">None</span>, fx=<span class="number">0.5</span>, fy=<span class="number">0.3</span>) <span class="comment"># 通过 fx, fy 放缩</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html#ga47a974309e9102f5f08231edc7e7529d">resize()</a></li>
+<li><a href="https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html#ga5bb5a1fea74ea38e1a5445ca803ff121">InterpolationFlags</a></li>
+</ol>
+</blockquote>
+</br>
+<p>9.<code>cv2.transpose()</code>详解：用于转置矩阵（数组）</p>
+<p>该函数的完整调用形式为：<code>cv.transpose(src[, dst]) -&gt;dst</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入数组</li>
+<li><code>dst</code>：和<code>src</code>相同类型的输出数组</li>
+</ul>
+<p>其效果为：<code>dst(i, j) = src(j, i)</code>。调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.transpose(img)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga46630ed6c0ea6254a35f447289bd7404">transpose()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>10.<code>cv2.flip()</code>详解：用于翻转图像（数组）</p>
+<p>该函数的完整调用形式为：<code>cv.flip(src, flipCode[, dst]) -&gt;dst</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入数组</li>
+<li><code>dst</code>：输出数组，和<code>src</code>具有相同类型和尺寸</li>
+<li><code>flitCode</code>：用来指定怎样翻转数组，0表示沿x轴翻转，正值如1表示沿y轴翻转，-1表示同时沿x轴和y轴翻转，即绕(0,0)翻转</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.flip(img, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#gaca7be533e3dac7feb70fc60635adf441">flip()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>11.<code>cv2.imshow()</code>详解：用于显示图像</p>
+<p>该函数的完整调用形式为：<code>cv.imshow(winname, mat) -&gt;None</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>winname</code>：窗口名，显示在窗口顶栏</li>
+<li><code>mat</code>：要显示的矩阵</li>
+</ul>
+<p>调用示例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">&#x27;NLPR.jpg&#x27;</span>)</span><br><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga453d42fe4cb60e5723281a89973ee563">imshow()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>12.<code>cv2.waitKey()</code>详解：用于指定窗口打开时间</p>
+<p>该函数的完整调用形式为：<code>cv.waitKey([, delay]) -&gt;retval</code>。下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>delay</code>：表示窗口的持续时间，为0时表示保持窗口打开，为其他正值时表示窗口持续的毫秒数</li>
+</ul>
+<p>调用示例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga5628525ad33f52eab17feebcfba38bd7">waitKey()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>13.<code>cv2.destroyAllWindows()</code>详解：用于关闭所有 HightGUI 窗口</p>
+<p>该函数的完整调用形式为：<code>cv.destroyAllWindows() -&gt;None</code>。</p>
+<p>调用实例：似乎不会关闭窗口</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;img&#x27;</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">1000</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p>PS：<code>cv2.destroyWindows(winname)</code>用于关闭指定窗口</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga6b7fc1c1a8960438156912027b38f481">destroyWindow()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>14.python中获取当前目录路径和上级路径：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;***获取当前目录***&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(__file__))) <span class="comment"># __file__表示文件名</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;***获取上级目录***&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.dirname(os.getcwd())))</span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.join(os.getcwd(), <span class="string">&quot;..&quot;</span>)))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;***获取上上级目录***&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(os.path.abspath(os.path.join(os.getcwd(), <span class="string">&quot;../..&quot;</span>)))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/leorx01/article/details/71141643">python获取当前目录路径和上级路径</a></li>
+<li><a href="https://www.jianshu.com/p/bfa29141437e">Python获取当前文件路径</a></li>
+</ol>
+</blockquote>
+</br>
+<p>15.<code>cv2.GaussianBlur()</code>详解：用于给图片添加高斯模糊</p>
+<p>该函数的完整调用形式为：</p>
+<p><code>cv.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]) -&gt;dst</code></p>
+<p>下面对各个参数做具体说明（说明针对C++函数版本）：</p>
+<ul>
+<li><code>src</code>：输入图像，图像有不同的通道，会被分别处理</li>
+<li><code>dst</code>：输出图像，类型和尺寸与<code>src</code>相同</li>
+<li><code>ksize</code>：高斯核尺寸。<code>ksize.width</code>和<code>ksize.height</code>必须为正奇数；否则<code>ksize</code>为0，此时其值通过<code>sigmaX</code>和<code>sigmaY</code>计算</li>
+<li><code>sigmaX</code>：在X方向上的 Gaussian kernel standard deviation</li>
+<li><code>sigmaY</code>：在Y方向上的 Gaussian kernel standard deviation。为0时设为与<code>sigmaX</code>相等。</li>
+<li><code>borderType</code>：像素外插值方法，常见的有<code>cv.BORDER_CONSTANT</code>、<code>cv.BORDER_REPLICATE</code>，不支持<code>cv.BORDER_WRAP</code>。</li>
+</ul>
+<p>为了完全控制对图片的操作而不需要管OpenCV后续对语义的修改，建议对<code>ksize</code>/<code>sigmaX</code>/<code>sigmaY</code>都进行指定。</p>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">depth_img = cv2.imread(<span class="string">&#x27;NLPR2_depth.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 给深度图添加高斯模糊</span></span><br><span class="line">depth_img = cv2.GaussianBlur(depth_img, (<span class="number">31</span>, <span class="number">31</span>), sigmaX=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1">GaussianBlur()</a></li>
+<li><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga209f2f4869e304c82d07739337eae7c5">BorderTypes</a></li>
+<li><a href="https://zh.m.wikipedia.org/zh/%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A">高斯模糊</a></li>
+<li><a href="https://www.zhihu.com/question/54918332">高斯模糊的原理是什么，怎样在界面中实现</a></li>
+</ol>
+</blockquote>
+</br>
+<p>16.<code>cv2.threshold()</code>：用于对每个数组元素应用固定水平的阈值。该函数通常用于从一个灰度图中得到二值图像或者去除噪音（即过滤掉太小或太大的值）。该函数支持几种阈值，通过类型参数来设置。</p>
+<p>与此同时，<code>THRESH_OTSU</code>和<code>THRESH_TRIANGLE</code>可以联合上述的值来使用。这种情况下，函数通过 Otsu 或者 Triangle 算法来计算最优的阈值。</p>
+<p>PS：目前，Otsu 算法和 Triangle 算法只在 8-bit 的单通道图像上实现</p>
+<p>该函数的完整调用形式为：</p>
+<p><code>cv.threshold(src, thresh, maxval, type[, dst]) -&gt;retval, dst</code></p>
+<ul>
+<li><code>src</code>：输入数组（多通道，8-bit 或者 32-bit 浮点数）</li>
+<li><code>dst</code>：和<code>src</code>同尺寸、类型和通道的输出数组</li>
+<li><code>thresh</code>：阈值</li>
+<li><code>maxval</code>：在使用<code>THRESH_BINARY</code>和<code>THRESH_BINARY_INV</code>参数时的最大值</li>
+<li><code>type</code>：阈值类型，常见的有<code>THRESH_BINARY</code>和<code>THRESH_BINARY_INV</code>。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57">threshold()</a></li>
+<li><a href="https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gaa9e58d2860d4afa658ef70a9b1115576">ThresholdTypes</a></li>
+<li><a href="https://www.cnblogs.com/gezhuangzhuang/p/10295181.html">OpenCV-Python入门教程6-Otsu阈值法</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/395708037">OTSU算法（大津法）原理解析</a></li>
+</ol>
+</blockquote>
+</br>
+<p>17.<code>cv2.imwrite()</code>：用于存储图片到指定文件，图片类型取决于文件后缀名。其完整声明形式如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv.imwrite(filename, img[, params]) -&gt; retval</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>filename</code>：存储文件名</li>
+<li><code>img</code>：图片数据对应的矩阵</li>
+<li><code>params</code>：成对的指定存储格式的参数。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/4.x/d4/da8/group__imgcodecs.html#gabbc7ef1aa2edfaa87772f1202d67e0ce">imwrite()</a></li>
+</ol>
+</blockquote>
+</br>
+<p>18.<code>cv2.Canny()</code>：用于通过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Canny</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>算法查找图像边缘。其完整声明形式如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cv::Canny</span>	<span class="params">(InputArray image,</span></span></span><br><span class="line"><span class="params"><span class="function">	OutputArray edges,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> threshold1,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> threshold2,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> apertureSize = <span class="number">3</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">bool</span> L2gradient = <span class="literal">false</span> </span></span></span><br><span class="line"><span class="params"><span class="function">	)</span></span></span><br></pre></td></tr></table></figure>
+<p>该函数在输入的图像中查找边缘并通过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Canny</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>算法在输出中标记出它们。在threshold1和threshold2中最小的值将用于edge linking，最大值将用于查找初始的更为强烈/显著的边缘。具体见 <a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny edge detector</a></p>
+<ul>
+<li><code>image</code>：8-bit的输入图片</li>
+<li><code>edges</code>：输出的 edge map，8-bit单通道，和<code>image</code>尺寸相同</li>
+<li><code>threshold1</code>：滞后过程（hysteresis procedure）的第一个阈值</li>
+<li><code>threshold2</code>：滞后过程的第二个阈值</li>
+<li><code>apertureSize</code>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>o</mi><mi>b</mi><mi>e</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">Sobel</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>操作子的孔径尺寸</li>
+<li><code>L2gradient</code>：a flag。表明是否使用更准确的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">L2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord">2</span></span></span></span>范数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mrow><mo stretchy="false">(</mo><mi>d</mi><mi>I</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>d</mi><mi>I</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>y</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{(dI/dx)^2+(dI/dy)^2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.30499999999999994em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord">/</span><span class="mord mathdefault">d</span><span class="mord mathdefault">x</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord">/</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.8950000000000005em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
+158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
+c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
+175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
+c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
+-252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
+s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30499999999999994em;"><span></span></span></span></span></span></span></span></span>计算图像梯度大小（<code>L2gradient=true</code>），还是使用默认的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">L1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord">1</span></span></span></span>范数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mrow><mi mathvariant="normal">∣</mi><mi>d</mi><mi>I</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>+</mo><mi mathvariant="normal">∣</mi><mi>d</mi><mi>I</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>y</mi><mi mathvariant="normal">∣</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{|dI/dx|+|dI/dy|}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.30499999999999994em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord">∣</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord">/</span><span class="mord mathdefault">d</span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">∣</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord">/</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">∣</span></span></span><span style="top:-2.8950000000000005em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
+158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
+c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
+175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
+c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
+-252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
+s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30499999999999994em;"><span></span></span></span></span></span></span></span></span>（<code>L2gradient=false</code>）。</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;messi5.jpg&#x27;</span>,<span class="number">0</span>)</span><br><span class="line">edges = cv2.Canny(img,<span class="number">100</span>,<span class="number">200</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">121</span>),plt.imshow(img,cmap = <span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Original Image&#x27;</span>), plt.xticks([]), plt.yticks([])</span><br><span class="line">plt.subplot(<span class="number">122</span>),plt.imshow(edges,cmap = <span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Edge Image&#x27;</span>), plt.xticks([]), plt.yticks([])</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/3.1.0/dd/d1a/group__imgproc__feature.html#ga04723e007ed888ddf11d9ba04e2232de">Canny()</a></li>
+<li><a href="https://docs.opencv.org/3.1.0/da/d22/tutorial_py_canny.html">Canny Edge Detection in OpenCV</a></li>
+<li><a href="https://zh.m.wikipedia.org/zh-hans/Canny%E7%AE%97%E5%AD%90">Canny算子</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny edge detector</a></li>
+<li><a href="https://zj-image-processing.readthedocs.io/zh_CN/latest/opencv/code/%5BCanny%5D%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/">Canny边缘检测</a></li>
+<li><a href="https://yueyue200830.github.io/2020/04/04/Python%E5%AE%9E%E7%8E%B0Canny%E7%AE%97%E5%AD%90%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/">Python实现Canny算子边缘检测</a></li>
+</ol>
+</br>
+<p>19.<code>cv2.Sobel()</code>：使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>o</mi><mi>b</mi><mi>e</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">Sobel</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>算子计算图像导数。其完整声明形式如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">cv::Sobel</span><span class="params">(InputArray src,</span></span></span><br><span class="line"><span class="params"><span class="function">	OutputArray dst,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> ddepth,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> dx,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> dy,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> ksize = <span class="number">3</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> scale = <span class="number">1</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">double</span> delta = <span class="number">0</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">	<span class="type">int</span> borderType = BORDER_DEFAULT </span></span></span><br><span class="line"><span class="params"><span class="function">	)</span>	</span></span><br></pre></td></tr></table></figure>
+<p>该函数通过用合适的核与函数做卷积来计算图像导数。通常，该函数通过<code>xorder=1, yorder=0, ksize=3</code>和<code>xorder=0, yorder=1, ksize=3</code>来计算图像的一阶<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>导数，分别对应：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mi mathvariant="normal">和</mi><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{bmatrix}
+-1 &amp; 0 &amp; 1 \\
+-2 &amp; 0 &amp; 2 \\
+-1 &amp; 0 &amp; 1
+\end{bmatrix} 和
+\begin{bmatrix}
+-1 &amp; -2 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+1 &amp; 2 &amp; 1
+\end{bmatrix}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">2</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord cjk_fallback">和</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">2</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>这两个核。</p>
+<ul>
+<li><code>src</code>：输入图片</li>
+<li><code>dst</code>：相同尺寸和通道数的输出图片</li>
+<li><code>ddepth</code>：输出图片depth，见 <a href="https://docs.opencv.org/3.1.0/d4/d86/group__imgproc__filter.html#filter_depths">combinations</a>。（depth指图片的数据类型，例如对应图像梯度你想要16bit而不是8bit。当输入图片为8-bit类型时，将导致梯度裁剪（精度不够）</li>
+<li><code>dx</code>：梯度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>的order</li>
+<li><code>dy</code>：梯度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>的order</li>
+<li><code>ksize</code>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>o</mi><mi>b</mi><mi>e</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">Sobel</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>核尺寸，必须是1/3/5/7。</li>
+<li><code>scale</code>：计算梯度值时的可选因子，默认不提供</li>
+<li><code>delta</code>：在<code>dst</code>中存储结果之前默认加到结果上的可选delta值。</li>
+<li><code>borderType</code>：像素插值类型。</li>
+</ul>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.opencv.org/3.1.0/d4/d86/group__imgproc__filter.html#gacea54f142e81b6758cb6f375ce782c8d">Soble()</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%B4%A2%E8%B2%9D%E7%88%BE%E7%AE%97%E5%AD%90">Sobel算子</a></li>
+<li><a href="https://www.cnblogs.com/zhuifeng-mayi/p/9563947.html">边缘检测</a></li>
+</ol>
+</br>
+<p>20.<code>numpy.ndarray.flatten()</code>：返回一个坍缩成一维的数组的副本。</p>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.flatten()</span><br><span class="line">array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.flatten(<span class="string">&#x27;F&#x27;</span>)</span><br><span class="line">array([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html">numpy.ndarray.flatten</a></li>
+</ol>
+</br>
+<p>21.<code>math.atan(x)</code>vs<code>math.atan2(y, x)</code>：</p>
+<p><code>atan</code>返回<code>x</code>对应的arc tangent，其结果所属区间为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-\pi/2, \pi/2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">)</span></span></span></span>；</p>
+<p><code>atan2(y, x)</code>则返回<code>atan(y/x)</code>，其结果所属区间为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mi>π</mi><mo separator="true">,</mo><mi>π</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-\pi, \pi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mclose">)</span></span></span></span>。</p>
+<p>举例来说，<code>atan(1)=atan2(1,1)</code><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">=\pi/4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">4</span></span></span></span>；<code>atan2(-1,-1)</code><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mo>−</mo><mn>3</mn><mi>π</mi><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">=-3\pi/4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">4</span></span></span></span>。</p>
+<blockquote>
+<p>参考文献：</p>
+<ol>
+<li><a href="https://docs.python.org/3.8/library/math.html?highlight=atan#math.atan">math.atan(x)</a></li>
+</ol>
+</blockquote>
+</br>
+<p>22.<code>numpy.zeros</code>：用于返回给定<code>shape</code>和<code>type</code>的用零填充的新的数组。其完整调用形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numpy.zeros(shape, dtype=<span class="built_in">float</span>, order=<span class="string">&#x27;C&#x27;</span>, *, like=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>shape</code>：指定数组形状，如<code>(2, )</code>或<code>(2,3)</code>。</li>
+<li><code>dtype</code>：指定填充的数据类型，如<code>dtype=int</code>，默认为<code>numpy.float64</code>。</li>
+<li><code>order</code>：指定行优先还是列优先，默认为<code>order='C'</code>，行优先，<code>order='F'</code>表示列优先。</li>
+<li><code>like</code>：引用对象，用于创建非Numpy arrays类型的数组，可以兼容其他类型的数组。</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.zeros(<span class="number">5</span>)</span><br><span class="line">array([ <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.zeros((<span class="number">5</span>,), dtype=<span class="built_in">int</span>)</span><br><span class="line">array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>PS：<code>numpy.ones</code>与之类似</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html">numpy.zeros</a></li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html#numpy.ones">numpy.ones</a></li>
+</ol>
+</blockquote>
+</br>
+<p>23.在进行灰度图转为BGR图<code>img = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)</code>之前，需要确保灰度图<code>gray</code>中数值的类型满足转换要求，否则会出现如下错误：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220626163339376.png" alt="image-20220626163339376" /></p>
+<p>可以通过<code>gray = np.uint8(gray)</code>将灰度图转换为满足条件的格式：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/55179724/opencv-error-unsupported-depth-of-input-image">Opencv error -Unsupported depth of input image:</a></li>
+</ol>
+</blockquote>
+</br>
+<p>24.<code>numpy.sum</code>：计算给定<code>axis</code>上数组的元素之和。其完整调用形式为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numpy.<span class="built_in">sum</span>(a, axis=<span class="literal">None</span>, dtype=<span class="literal">None</span>, out=<span class="literal">None</span>, keepdims=&lt;no value&gt;, initial=&lt;no value&gt;, where=&lt;no value&gt;)[source]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>a</code>：数组类型的对象</li>
+<li><code>axis</code>：None、整数或整数类型的元组，可选。默认为None，将对所有元素求和。</li>
+<li><code>dtype</code>：数据类型，可选。</li>
+<li><code>out</code>：用于存放求和结果的输出数组，可选。</li>
+<li>略</li>
+</ul>
+<p>调用实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.ones((<span class="number">10</span>,<span class="number">2</span>), dtype=<span class="built_in">int</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>()</span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>(axis=<span class="number">0</span>)</span><br><span class="line">array([<span class="number">10</span>, <span class="number">10</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.<span class="built_in">sum</span>(axis=<span class="number">0</span>)/<span class="number">6</span></span><br><span class="line">array([<span class="number">1.66666667</span>, <span class="number">1.66666667</span>])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html">numpy.sum</a></li>
+</ol>
+</blockquote>
+</br>
+<p>25.在算法实现中使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>F</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">DFS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>时出现以下报错：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">RecursionError: maximum recursion depth exceeded <span class="keyword">in</span> comparison</span><br></pre></td></tr></table></figure>
+<p>其出现原因为递归序列太长超过了系统设置，可以通过以下方式查看系统设置的最大递归深度：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(sys.getrecursionlimit())</span><br><span class="line"><span class="number">1000</span></span><br></pre></td></tr></table></figure>
+<p>此时可以通过两种方式解决该问题：</p>
+<ul>
+<li>设置更大的系统递归深度：<code>sys.setrecursionlimit(1000*1000+10)</code></li>
+<li>优化算法，采用更高效的方式实现。（推荐）</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/pltrdy/rouge/issues/19">Maximum recursion depth exceeded in comparison</a></li>
+<li><a href="https://stackoverflow.com/questions/46659192/python-infinite-recursion-with-formula">Python infinite recursion with formula</a></li>
+</ol>
+</blockquote>
+</br>
+<p>26.当判断python字典中是否存在某个key时，<code>has_key()</code>方法在python中无法使用：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220629171740572.png" alt="image-20220629171740572" /></p>
+<p>其原因在于<code>has_key()</code>方法在Python3中被去除。</p>
+<p>通过<code>for i, j in img_depth_pair.keys:</code>遍历字典键时，会出现如下报错：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220629172819981.png" alt="image-20220629172819981" /></p>
+<p>其原因在于<code>dict.keys</code>为不可迭代对象，此时应该通过以下方式遍历key和value：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> img_depth_pair:</span><br><span class="line">	<span class="built_in">print</span>(key)</span><br><span class="line">    <span class="built_in">print</span>(img_depth_pair[key])</span><br></pre></td></tr></table></figure>
+<p>此外，值得补充的是，列表不能作为python字典的键，而元组可以，这一特性源自python语言的设计。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://cloud.tencent.com/developer/article/1893987">使用 for 循环遍历 Python 字典的 3 种方法 !</a></li>
+<li><a href="https://stackoverflow.com/questions/33727149/dict-object-has-no-attribute-has-key">‘dict’ object has no attribute ‘has_key’</a></li>
+<li><a href="https://stackoverflow.com/questions/7257588/why-cant-i-use-a-list-as-a-dict-key-in-python">Why can’t I use a list as a dict key in python?</a></li>
+<li><a href="https://wiki.python.org/moin/DictionaryKeys">Why Lists Can’t Be Dictionary Keys</a></li>
+</ol>
+</blockquote>
+</br>
+<p>27.在OpenCV中进行图像处理时，经常会出现类似于下列的数据类型的问题：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103210112.png" alt="image-20220630103210112" /></p>
+<p>下面是OpenCV中各种数据类型的参考列表：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103342159.png" alt="image-20220630103342159" /></p>
+<p>其中C1/C2/C3/C4表示通道数。0~30表示编号。</p>
+<p>下面是一个更为详细的列表：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630103853172.png" alt="image-20220630103853172" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://ninghang.blogspot.com/2012/11/list-of-mat-type-in-opencv.html">LIST OF MAT TYPE IN OPENCV</a></li>
+<li><a href="https://udayawijenayake.com/2021/06/07/opencv-data-types/">OpenCV “cv::Mat” Data Types</a></li>
+</ol>
+</blockquote>
+</br>
+<p>28.在使用numpy中的<code>dtype</code>（data type）参数时，常疑惑于参数类型的选择，此处对常用的<code>dtype</code>类型做一个梳理：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220630104939506.png" alt="image-20220630104939506" /></p>
+<p>PS：上述列表并未展示所有的<code>dtype</code>类型，详见参考资料：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://numpy.org/doc/stable/user/basics.types.html">Array types and conversions between types</a></li>
+<li><a href="https://numpy.org/doc/stable/reference/arrays.dtypes.html">Data type objects <code>dtype</code></a></li>
+</ol>
+</blockquote>
+</br>
+<p>29.在使用<code>cv2.imshow('img', img)</code>时，传入的<code>img</code>的<code>dtype</code>需要为<code>np.uint8</code>类型，否则展示的图片会出现奇怪的扭曲 (distortion)：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">[...]</span><br><span class="line">info = np.iinfo(data.dtype) <span class="comment"># Get the information of the incoming image type</span></span><br><span class="line">data = data.astype(np.float64) / info.<span class="built_in">max</span> <span class="comment"># normalize the data to 0 - 1</span></span><br><span class="line">data = <span class="number">255</span> * data <span class="comment"># Now scale by 255</span></span><br><span class="line">img = data.astype(dtype=np.uint8)</span><br><span class="line">cv2.imshow(<span class="string">&quot;Window&quot;</span>, img)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/46689428/convert-np-array-of-type-float64-to-type-uint8-scaling-values">Convert np.array of type float64 to type uint8 scaling values</a></li>
+</ol>
+</blockquote>
+</br>
+<p>30.在使用以下代码进行图片展示时：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.imshow(<span class="string">&#x27;edge&#x27;</span>, edge)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<p>可能出现如下错误：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220805231829547.png" alt="image-20220805231829547" /></p>
+<p>此时可能是本地的OpenCV包出现了编译错误，可以通过重装解决：</p>
+<ul>
+<li>
+<p><code>pip uninstall opencv-python</code></p>
+</li>
+<li>
+<p><code>pip install opencv-python</code></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>python</tag>
+        <tag>图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像处理中知识点02</title>
+    <url>/2022/09/22/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/</url>
+    <content><![CDATA[<p>本文记录一下在进行图片处理过程中的一些知识点和bug：</p>
+<span id="more"></span>
+<p>1.使用Skimage处理图片时，出现以下报错：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220922091640.png" alt="" /><br />
+其原因在于做图像转换时，如<code>image=io.imread(path)</code>，要求3通道的数据，但是读取的图片包含第4个通道alpha通道，粗暴的解决方法为<code>image = io.imread(path)[:, :, :3]</code>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/70895576/skimage-rgb2gray-giving-errors-the-input-array-must-have-size-3-along">Skimage rgb2gray giving errors, the input array must have size 3 along</a></li>
+</ol>
+</blockquote>
+</br>
+2.出现以下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220922092150.png)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/34952651/only-integers-slices-ellipsis-numpy-newaxis-none-and-intege">only integers, slices (<code>:</code>), ellipsis (<code>...</code>), numpy.newaxis (<code>None</code>) and integer or boolean arrays are valid indices</a></li>
+</ol>
+</blockquote>
+</br>
+<p>3.SuperPixel超像素分割SLIC算法实现</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.zywvvd.com/notes/study/image-processing/super-pixel/super-pixel/#">SuperPixel 超像素分割 SLIC 算法</a></li>
+<li><a href="https://github.com/laixintao/slic-python-implementation">slic-python-implementation</a></li>
+<li>
+<h1 id="slic算法分割超像素原理及python实现"><a class="markdownIt-Anchor" href="#slic算法分割超像素原理及python实现"></a> <a href="https://www.kawabangga.com/posts/1923" title="Permalink to SLIC算法分割超像素原理及Python实现">SLIC算法分割超像素原理及Python实现</a></h1>
+</li>
+<li><a href="https://github.com/jayrambhia/superpixels-SLIC">superpixels-SLIC</a></li>
+</ol>
+</blockquote>
+</br>
+4.Moduel 'cv2' has no attribute 'ximgproc'。其原因为安装了多个opencv版本如同时安装了opencv-python和opencv-contrib-python或者只安装了opencv-python。解决方案为卸载已经安装的opencv包，只安装opencv-contrib-python，后者相比opencv-python拥有更完整的功能：
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">pip uninstall opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/57427233/module-cv2-cv2-has-no-attribute-ximgproc">Module ‘cv2.cv2’ has no attribute ‘ximgproc’</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+        <tag>python</tag>
+        <tag>图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编程中的惯例</title>
+    <url>/2022/09/24/%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%83%AF%E4%BE%8B/</url>
+    <content><![CDATA[<p>本文记录一下编程中的一些约定俗成的惯例：</p>
+<span id="more"></span>
+<h3 id="在代码中类似fixme-todo的code-comments"><a class="markdownIt-Anchor" href="#在代码中类似fixme-todo的code-comments"></a> 在代码中类似<code>FIXME</code>、<code>TODO</code>的code comments</h3>
+<ul>
+<li><code>NOTE</code>：描述代码如何工作（当代码功能不显然的时候）</li>
+<li><code>XXX</code>：警告可能的陷阱，可以用作<code>NOTE:XXX:</code></li>
+<li><code>HACK</code>：代码写的不好或者代码变形可能导致bug，应该用作<code>HACK:FIXME</code></li>
+<li><code>FIXME</code>：代码可以工作，但是可以改进（通常用于代码写得很匆忙需要重写）</li>
+<li><code>BUG</code>：有问题</li>
+<li><code>TODO</code>：没有问题，但是要额外的代码需要编写，通常用于跳过某些功能的实现时。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/1452934/what-is-the-meaning-of-xxx-in-code-comments">What is the meaning of #XXX in code comments?</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>概念</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>课程和书籍资源整理</title>
+    <url>/2022/09/19/%E8%AF%BE%E7%A8%8B%E5%92%8C%E4%B9%A6%E7%B1%8D%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>本文整理一下网上口碑较好的英文课程和书籍所对应的中文翻译版本：</p>
+<span id="more"></span>
+<h3 id="编程入门"><a class="markdownIt-Anchor" href="#编程入门"></a> 编程入门</h3>
+<ol>
+<li><a href="https://github.com/apachecn/sicp-py-zh">SICP Python版</a>：部署版</li>
+<li><a href="https://wizardforcel.gitbooks.io/sicp-py/content/">SICP Python 描述 中文版</a>：在线版</li>
+</ol>
+<h3 id="分布式系统"><a class="markdownIt-Anchor" href="#分布式系统"></a> 分布式系统</h3>
+<ol>
+<li><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/">MIT6.824</a>：MIT6.824 中文翻译。</li>
+</ol>
+<h3 id="操作系统"><a class="markdownIt-Anchor" href="#操作系统"></a> 操作系统</h3>
+<ol>
+<li><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">MIT6.S081</a>：MIT6.S081中文翻译。</li>
+<li><a href="https://os.phil-opp.com/">Writing an OS in Rust</a>：使用Rust语言编写一个小型的操作系统。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>指南</tag>
+        <tag>课程</tag>
+      </tags>
   </entry>
 </search>
