@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-09-28T14:01:45.196Z</updated>
+  <updated>2022-10-01T04:27:03.007Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyTorch调试DataLoader实践</title>
+    <link href="https://tom89757.github.io/2022/09/30/PyTorch%E8%B0%83%E8%AF%95DataLoader%E5%AE%9E%E8%B7%B5/"/>
+    <id>https://tom89757.github.io/2022/09/30/PyTorch%E8%B0%83%E8%AF%95DataLoader%E5%AE%9E%E8%B7%B5/</id>
+    <published>2022-09-30T01:39:11.000Z</published>
+    <updated>2022-10-01T04:27:03.007Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下如何调试模型的数据加载类。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="笔记" scheme="https://tom89757.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+  </entry>
   
   <entry>
     <title>编程中的惯例</title>
@@ -55,6 +76,25 @@
     <category term="python" scheme="https://tom89757.github.io/tags/python/"/>
     
     <category term="图像处理" scheme="https://tom89757.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git文章整理</title>
+    <link href="https://tom89757.github.io/2022/09/19/git%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86/"/>
+    <id>https://tom89757.github.io/2022/09/19/git%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86/</id>
+    <published>2022-09-19T03:08:03.000Z</published>
+    <updated>2022-10-01T04:26:46.812Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文整理一下网上比较好的介绍git用法和特性的文章：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="git" scheme="https://tom89757.github.io/tags/git/"/>
     
   </entry>
   
@@ -371,48 +411,6 @@
     
     
     <category term="VSCode" scheme="https://tom89757.github.io/tags/VSCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PyTorch可视化实践</title>
-    <link href="https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/"/>
-    <id>https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/</id>
-    <published>2022-08-07T02:45:38.000Z</published>
-    <updated>2022-09-14T16:40:50.334Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下如何使用TensorBoard工具对深度学习模型及其数据进行可视化：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="笔记" scheme="https://tom89757.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PyTorch TensorBoard</title>
-    <link href="https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/"/>
-    <id>https://tom89757.github.io/2022/08/06/PyTorch-TensorBoard/</id>
-    <published>2022-08-06T07:12:52.000Z</published>
-    <updated>2022-08-07T04:04:29.325Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下PyTorch中工具类&lt;code&gt;torch.utils.tensorboard&lt;/code&gt;的使用教程。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
-    
-    <category term="文档" scheme="https://tom89757.github.io/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   

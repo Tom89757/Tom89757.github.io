@@ -8758,4 +8758,49 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
         <tag>课程</tag>
       </tags>
   </entry>
+  <entry>
+    <title>PyTorch调试DataLoader实践</title>
+    <url>/2022/09/30/PyTorch%E8%B0%83%E8%AF%95DataLoader%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<p>本文记录一下如何调试模型的数据加载类。</p>
+<span id="more"></span>
+<p>下述代码为模型构建数据加载器对象的一般方法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_loader</span>(<span class="params">image_root, gt_root, edge_root, batchsize, trainsize, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>, pin_memory=<span class="literal">True</span></span>):</span><br><span class="line">    dataset = CamObjDataset(image_root, gt_root, edge_root, trainsize)</span><br><span class="line">    data_loader = data.DataLoader(dataset=dataset,</span><br><span class="line">                                  batch_size=batchsize,</span><br><span class="line">                                  shuffle=shuffle,</span><br><span class="line">                                  num_workers=num_workers,</span><br><span class="line">                                  pin_memory=pin_memory)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data_loader</span><br></pre></td></tr></table></figure>
+<p>其中，<code>CamObjDataset</code>为定制化的数据集类，其继承<code>torch.utils.data.Dataset</code>，需要</p>
+<ul>
+<li>进行<code>__init__</code>，对数据集的一些属性进行初始化，其中最重要的是提供数据变换<code>transforms.Compose</code>。</li>
+<li>覆写<code>__getitem__</code>，使得可以通过索引如<code>dataset[0]</code>访问数据集数据。一般会调用初始化后的<code>self.transform</code>对数据进行变换后再返回。</li>
+<li>覆写<code>__len__</code>，可通过<code>len(dataset)</code>返回数据集长度。</li>
+</ul>
+<p>有时，我们会有访问加载的数据集中的单个数据以查看其形状、数据类型以及所含数据范围（如0<sub>255还是0</sub>1）的需求，此时就需要有简易的方法构建数据加载器对象并访问。其方法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_path = <span class="string">&#x27;/storage/FT/data/TrainDataset&#x27;</span></span><br><span class="line">batchsize = <span class="number">16</span></span><br><span class="line">trainsize = <span class="number">416</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">image_root = <span class="string">&#x27;&#123;&#125;/Imgs/&#x27;</span>.<span class="built_in">format</span>(train_path)</span><br><span class="line">gt_root = <span class="string">&#x27;&#123;&#125;/GT/&#x27;</span>.<span class="built_in">format</span>(train_path)</span><br><span class="line">edge_root = <span class="string">&#x27;&#123;&#125;/Edge/&#x27;</span>.<span class="built_in">format</span>(train_path)</span><br><span class="line"></span><br><span class="line">train_loader = get_loader(image_root, gt_root, edge_root, batchsize=batchsize, trainsize=trainsize)</span><br></pre></td></tr></table></figure>
+<p>通过上述代码，我们已经实例化了数据加载器对象<code>train_loader</code>，此时可以通过在Python解释器窗口中进行如下调试访问数据：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt; loader = <span class="built_in">iter</span>(train_loader) <span class="comment"># 将train_loader转换为迭代器</span></span><br><span class="line">&gt; image, gt, edge = <span class="built_in">next</span>(loader) <span class="comment"># 取迭代器loader的下一个元素，此处为第一个</span></span><br><span class="line">&gt; image.shape</span><br><span class="line">torch.Size([<span class="number">16</span>, <span class="number">3</span>, <span class="number">416</span>, <span class="number">416</span>])</span><br></pre></td></tr></table></figure>
+<p>还可以通过以下定制化方法对image进行统计：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进行图像数据属性统计，输入为二维张量，其尺寸为torch.Size([h, w])</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">image_stat</span>(<span class="params">image</span>):</span><br><span class="line">    <span class="built_in">min</span> = <span class="number">256</span></span><br><span class="line">    <span class="built_in">max</span> = -<span class="number">1</span></span><br><span class="line">    delta = <span class="number">0.00001</span> <span class="comment"># 接近于零的值</span></span><br><span class="line">    count = <span class="number">0</span> <span class="comment"># 大于delta的像素数量</span></span><br><span class="line">    h, w = image.shape</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">            <span class="keyword">if</span> image[i][j]&lt;<span class="built_in">min</span>:</span><br><span class="line">                <span class="built_in">min</span> = image[i][j]</span><br><span class="line">            <span class="keyword">if</span> image[i][j]&gt;<span class="built_in">max</span>:</span><br><span class="line">                <span class="built_in">max</span> = image[i][j]</span><br><span class="line">            <span class="keyword">if</span> image[i][j]&gt;delta:</span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">    count_ratio = count / (h*w) <span class="comment"># 大于零的像素数量所占比例</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;min: &quot;</span>, <span class="built_in">min</span>, <span class="string">&quot; max: &quot;</span>, <span class="built_in">max</span>, <span class="string">&quot; count: &quot;</span>, count, <span class="string">&quot; count_ratio: &quot;</span>, count_ratio)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>, <span class="built_in">max</span>, count, count_ratio</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>Pytorch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git文章整理</title>
+    <url>/2022/09/19/git%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>本文整理一下网上比较好的介绍git用法和特性的文章：</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://sp19.datastructur.es/materials/guides/using-git">Using Git</a>：本教程需要你对命令行有几处的了解（未读）</li>
+<li><a href="https://sp19.datastructur.es/materials/guides/git-wtfs">Git WTFS</a>：本文档旨在帮你解决你在使用git过程中频繁遇到的WTFS (weird technical failure scenarios)（未读）</li>
+</ol>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
 </search>
