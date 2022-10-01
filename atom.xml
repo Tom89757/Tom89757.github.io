@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-10-01T04:27:03.007Z</updated>
+  <updated>2022-10-01T04:28:48.134Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tom89757.github.io/2022/09/30/PyTorch%E8%B0%83%E8%AF%95DataLoader%E5%AE%9E%E8%B7%B5/"/>
     <id>https://tom89757.github.io/2022/09/30/PyTorch%E8%B0%83%E8%AF%95DataLoader%E5%AE%9E%E8%B7%B5/</id>
     <published>2022-09-30T01:39:11.000Z</published>
-    <updated>2022-10-01T04:27:03.007Z</updated>
+    <updated>2022-10-01T04:28:48.134Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下如何调试模型的数据加载类。&lt;/p&gt;</summary>
@@ -61,7 +61,7 @@
     <link href="https://tom89757.github.io/2022/09/22/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/"/>
     <id>https://tom89757.github.io/2022/09/22/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/</id>
     <published>2022-09-22T01:14:52.000Z</published>
-    <updated>2022-09-22T12:47:04.102Z</updated>
+    <updated>2022-10-01T04:33:46.601Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在进行图片处理过程中的一些知识点和bug：&lt;/p&gt;</summary>
@@ -71,9 +71,9 @@
     <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="OpenCV" scheme="https://tom89757.github.io/tags/OpenCV/"/>
-    
     <category term="python" scheme="https://tom89757.github.io/tags/python/"/>
+    
+    <category term="OpenCV" scheme="https://tom89757.github.io/tags/OpenCV/"/>
     
     <category term="图像处理" scheme="https://tom89757.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
