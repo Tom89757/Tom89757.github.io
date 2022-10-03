@@ -12,14 +12,15 @@ tags:
 
 ### 学习规划
 1. [CS自学指南](https://csdiy.wiki/)：搭配[UCB cs roadmap](https://hkn.eecs.berkeley.edu/courseguides)使用更佳
-2. [Teach Yourself Programming in Ten Years](http://norvig.com/21-days.html)
-3. [Teach Yourself Programming in Ten Years中文版](https://zhuanlan.zhihu.com/p/30742986)
-4. [0xFFFF CS Wiki](https://www.yuque.com/0xffff.one/cs-learning)
-5. [0xFFFF Wiki](https://wiki.0xffff.one/)
-6. [TeachYourselfCS-CN](https://github.com/izackwu/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md)
-7. [learning programming](https://www.reddit.com/r/learnprogramming/wiki/faq/)
-8. [Developer Roadmaps](https://roadmap.sh/)
-9. [程序员练级攻略](https://time.geekbang.org/column/article/8216?code=%20HH8ceM6XIVutB%2F1Oj496tkAnq4o7HBjSZf%20t0Wy4qM%3D)
+2. [EECS Course WEB Sites](https://inst.eecs.berkeley.edu/classes-eecs.html)：UCB的EE和CS课程归档。
+3. [Teach Yourself Programming in Ten Years](http://norvig.com/21-days.html)
+4. [Teach Yourself Programming in Ten Years中文版](https://zhuanlan.zhihu.com/p/30742986)
+5. [0xFFFF CS Wiki](https://www.yuque.com/0xffff.one/cs-learning)
+6. [0xFFFF Wiki](https://wiki.0xffff.one/)
+7. [TeachYourselfCS-CN](https://github.com/izackwu/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md)
+8. [learning programming](https://www.reddit.com/r/learnprogramming/wiki/faq/)
+9. [Developer Roadmaps](https://roadmap.sh/)
+10. [程序员练级攻略](https://time.geekbang.org/column/article/8216?code=%20HH8ceM6XIVutB%2F1Oj496tkAnq4o7HBjSZf%20t0Wy4qM%3D)
 ### 课程整理
 1. [CS自学指南](https://csdiy.wiki/)
 2. [名校公开课程评价网](https://conanhujinming.github.io/comments-for-awesome-courses/index.html)
