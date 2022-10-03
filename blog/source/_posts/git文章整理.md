@@ -1,6 +1,7 @@
 ---
 title: git文章整理
 date: 2022-09-19 11:08:03
+categories:
 - 开发工具
 tags:
 - git

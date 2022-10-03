@@ -153,6 +153,17 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 参考资料：
 > 1. [OneDrive无法打开的原因](https://zhuanlan.zhihu.com/p/343335173)
 
+</br>
+在git bash终端运行java程序无法通过`Ctrl+Z`终止`hasNext()`输入，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221001224702.png)
+其原因在于git bash不支持通过`Ctrl+Z`发送Signal 18即`SIGTSTP`信号。在cmd中运行会发现`Ctrl+Z`后回车可以正常终止输入：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221001225100.png)
+
+> 参考资料：
+> 1. [python error Suppressing signal 18 to win32](https://stackoverflow.com/questions/50110571/python-error-suppressing-signal-18-to-win32)
+
+
+
 
 
 

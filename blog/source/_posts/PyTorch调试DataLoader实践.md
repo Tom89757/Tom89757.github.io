@@ -1,6 +1,7 @@
 ---
 title: PyTorch调试DataLoader实践
 date: 2022-09-30 09:39:11
+categories:
 - 深度学习
 tags:
 - Pytorch
@@ -27,7 +28,7 @@ def get_loader(image_root, gt_root, edge_root, batchsize, trainsize, shuffle=Tru
 - 覆写`__getitem__`，使得可以通过索引如`dataset[0]`访问数据集数据。一般会调用初始化后的`self.transform`对数据进行变换后再返回。
 - 覆写`__len__`，可通过`len(dataset)`返回数据集长度。
 
-有时，我们会有访问加载的数据集中的单个数据以查看其形状、数据类型以及所含数据范围（如0~255还是0~1）的需求，此时就需要有简易的方法构建数据加载器对象并访问。其方法如下：
+有时，我们会有访问加载的数据集中的单个数据以查看其形状、数据类型以及所含数据范围（如0\~255还是0\~1）的需求，此时就需要有简易的方法构建数据加载器对象并访问。其方法如下：
 ```python
 train_path = '/storage/FT/data/TrainDataset'
 batchsize = 16

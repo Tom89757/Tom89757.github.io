@@ -67,5 +67,16 @@ tags:
 > 2. [What does "Could not find or load main class" mean?](https://stackoverflow.com/questions/18093928/what-does-could-not-find-or-load-main-class-mean)
 > 3. [PATH and CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
 > 4. [Java Algorithms and Clients](https://algs4.cs.princeton.edu/code/)
+### 出现乱码
+当直接使用`javac Evaluate.java`编译文件时出现以下乱码：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221002095435.png)
+此时可以通过指定编码格式解决该问题：
+```bash
+javac -encoding utf8 p3/Evaluate.java
+```
+
+> 参考资料：
+> 1. [Javac和JVM的字符编码问题](https://www.cnblogs.com/jayson-jamaica/p/12695427.html)
+
 
 
