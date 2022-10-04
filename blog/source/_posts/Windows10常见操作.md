@@ -47,3 +47,8 @@ tags:
 > 1. [键盘键位修改及管理（Windows篇）](https://zhuanlan.zhihu.com/p/29581818)
 > 2. [Windows：修改键盘映射表](https://blog.csdn.net/qq_42191914/article/details/104840458)
 
+### 网络问题排查
+> 参考资料：
+> 1. [网络出了问题，如何排查? 这篇文章告诉你](https://www.51cto.com/article/620620.html)
+
+

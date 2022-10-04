@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "CS学习指南整理.md",
+            "file": "Windows10常见操作.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "UCB",
+                "query": "常见",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -57,8 +57,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS学习指南整理.md",
+                "file": "Windows10常见操作.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CS学习指南整理.md",
+                "file": "Windows10常见操作.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CS学习指南整理.md"
+                "file": "Windows10常见操作.md"
               }
             }
           }
@@ -131,15 +130,15 @@
   },
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
-    "课程和书籍资源整理.md",
-    "CS学习指南整理.md",
-    "Large-Projects.md",
-    "编程语言资料整理.md",
-    "Little-Projects.md",
+    "Ubuntu常见操作.md",
+    "Pytorch中知识点02.md",
+    "PyTorch调试DataLoader实践.md",
+    "PyTorch调试模块实践.md",
+    "CV系列文章和工具.md",
     "开发工具整理.md",
-    "Java知识点01.md",
-    "常见bug记录.md",
-    "图像处理中知识点02.md",
-    "PyTorch调试DataLoader实践.md"
+    "课程和书籍资源整理.md",
+    "git使用指南.md",
+    "python中知识点01.md",
+    "常见bug记录.md"
   ]
 }
