@@ -584,7 +584,39 @@ mask[mask == 2.] = 0.
 > 参考资料：
 > 1. [RuntimeError: cuda runtime error (59) : device-side assert triggered when running transfer_learning_tutorial #1204](https://github.com/pytorch/pytorch/issues/1204)
 
+</br>
+29.出现报错：`Boolean value of Tensor with more than one value is ambiguous in PyTorch`。
+original code:
+```python
+loss = CrossEntropyLoss(y_pred, y_true)
+```
+应该改为：
+```python
+# 初始化损失
+L = CrossEntropyLoss()
+# 计算损失
+L(y_pred, y_true)
+```
+> 参考资料：
+> 1. [Bool value of Tensor with more than one value is ambiguous in Pytorch](https://stackoverflow.com/questions/52946920/bool-value-of-tensor-with-more-than-one-value-is-ambiguous-in-pytorch)
 
+
+</br>
+30.交叉熵为负数：
+original code:
+```python
+losse = torch.nn.BCELoss()
+losse = losse(edge_map, edge)
+```
+原因：`edge`未归一化或者`edge_map`未归一化
+应改为：
+```python
+edge = edge / 255.0
+# 或
+edge_amp = F.softmax(out1, dim=1)
+```
+> 参考资料：
+> 1. [解决pytorch 交叉熵损失输出为负数的问题](https://cloud.tencent.com/developer/article/1725343)
 
 
 
