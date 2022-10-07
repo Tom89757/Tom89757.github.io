@@ -16,3 +16,4 @@ tags:
 4. [自己动手写编译器](https://pandolia.net/tinyc/)：介绍了一个简单的C编译器的实现。
 5. [Writing an OS in Rust](https://os.phil-opp.com/)：使用Rust语言编写一个小型的操作系统。
 6.  [rCore-Tutorial-Book]：本教程旨在一步一步展示如何从零开始用Rust语言写一个基于RISC-V架构的类Unix内核。
+7. aria2：[aria2 源码解析专题—— (一)基础架构](https://www.cnblogs.com/endingly/p/15832027.html)
