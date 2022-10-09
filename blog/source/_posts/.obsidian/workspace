@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "开发和学习工具整理.md",
+            "file": "图像处理中知识点02.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "opencv-cont",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -57,7 +57,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "开发和学习工具整理.md",
+                "file": "图像处理中知识点02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "开发和学习工具整理.md",
+                "file": "图像处理中知识点02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "开发和学习工具整理.md"
+                "file": "图像处理中知识点02.md"
               }
             }
           }
@@ -130,15 +131,15 @@
   },
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
-    "Large-Projects.md",
-    "Pytorch中知识点02.md",
-    "Pytorch中知识点03.md",
-    "PyTorch数据采样.md",
-    "PyTorch-优化器.md",
+    "深度学习环境配置.md",
+    "CV系列文章和工具.md",
+    "Pytorch中知识点01.md",
+    "图像处理中知识点01.md",
+    "Ubuntu常见操作.md",
+    "编程中的惯例.md",
     "课程和书籍资源整理.md",
-    "Windows10常见操作.md",
-    "Java知识点01.md",
-    "CS学习指南整理.md",
-    "编程语言资料整理.md"
+    "编程语言资料整理.md",
+    "开发和学习工具整理.md",
+    "Large-Projects.md"
   ]
 }
