@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Pytorch中知识点03.md",
+            "file": "开发和学习工具整理.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pytorch中知识点03.md",
+                "file": "开发和学习工具整理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Pytorch中知识点03.md",
+                "file": "开发和学习工具整理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pytorch中知识点03.md"
+                "file": "开发和学习工具整理.md"
               }
             }
           }
@@ -130,6 +130,7 @@
   },
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
+    "Pytorch中知识点03.md",
     "Ubuntu常见操作.md",
     "图像处理中知识点02.md",
     "深度学习环境配置.md",
@@ -138,7 +139,6 @@
     "图像处理中知识点01.md",
     "编程中的惯例.md",
     "课程和书籍资源整理.md",
-    "编程语言资料整理.md",
-    "开发和学习工具整理.md"
+    "编程语言资料整理.md"
   ]
 }
