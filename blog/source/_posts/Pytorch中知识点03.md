@@ -15,7 +15,17 @@ tags:
 ```
 TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect … This means that the trace might not generalize to other inputs!
 ```
-状态：未解决
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221011160635.png)
+
+解决方案：将对应位置条件语句删除
+```python
+# if c.size() != att.size():
+#     att = F.interpolate(att, c.size()[2:], mode='bilinear', align_corners=False)
+# 删除if语句
+att = F.interpolate(att, c.size()[2:], mode='bilinear', align_corners=False)
+# if lf.size()[2:] != hf.size()[2:]:
+hf = F.interpolate(hf, size=lf.size()[2:], mode='bilinear', align_corners=False)
+```
 
 > 参考资料：
 > 1. [TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect…This means that the trace might not generalize to other inputs!](https://discuss.pytorch.org/t/tracerwarning-converting-a-tensor-to-a-python-index-might-cause-the-trace-to-be-incorrect-this-means-that-the-trace-might-not-generalize-to-other-inputs/42282)
@@ -31,6 +41,7 @@ TracerWarning: Converting a tensor to a Python index might cause the trace to be
 
 </br>
 3.出现报错` Can't parse 'dsize'. Sequence item with index 0 has a wrong type`：
+
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221010164417.png)
 
 其原因为`(W,H)`中数据类型不对，应该将`torch.Tensor`转为`int`。由于`H`和`W`均为一维Tensor，可以通过以下代码实现：

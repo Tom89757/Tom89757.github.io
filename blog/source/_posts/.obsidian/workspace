@@ -40,8 +40,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "unzip",
-                "matchingCase": false,
+                "query": "- 深度学习",
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
                 "extraContext": false,
@@ -131,14 +131,14 @@
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
     "Pytorch中知识点03.md",
+    "编程语言资料整理.md",
+    "开发和学习工具整理.md",
     "Ubuntu常见操作.md",
     "图像处理中知识点02.md",
     "深度学习环境配置.md",
     "CV系列文章和工具.md",
     "Pytorch中知识点01.md",
     "图像处理中知识点01.md",
-    "编程中的惯例.md",
-    "课程和书籍资源整理.md",
-    "编程语言资料整理.md"
+    "编程中的惯例.md"
   ]
 }
