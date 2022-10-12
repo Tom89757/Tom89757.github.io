@@ -143,6 +143,21 @@ cat test.txt | sed 's#^#data/#' > test2.txt
 ```
 
 可以在每一行的开头添加`data/`字符串。
+- 在每一行开头添加`'`单引号字符，`ls | sed "s/^/'/"`
+- 在每一行末尾添加`',`字符，`ls | sed "s/$/',/"`。
+完整使用`ls | sed "s/^/'/" | sed "s/$/',/"`效果如下：
+```
+'ILSVRC2012_test_00000003.png',
+'ILSVRC2012_test_00000023.png',
+'ILSVRC2012_test_00000025.png',
+'ILSVRC2012_test_00000026.png',
+'ILSVRC2012_test_00000034.png',
+'ILSVRC2012_test_00000038.png',
+'ILSVRC2012_test_00000064.png',
+'ILSVRC2012_test_00000086.png',
+'ILSVRC2012_test_00000105.png',
+'ILSVRC2012_test_00000128.png',
+```
 
 > 参考资料：
 >
