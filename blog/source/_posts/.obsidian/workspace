@@ -57,8 +57,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -129,7 +128,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "d6e59a57809d9454",
+  "active": "d4140631c284efcd",
   "lastOpenFiles": [
     "开发和学习工具整理.md",
     "Pytorch中知识点03.md",
