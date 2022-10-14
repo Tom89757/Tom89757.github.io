@@ -78,5 +78,26 @@ javac -encoding utf8 p3/Evaluate.java
 > 参考资料：
 > 1. [Javac和JVM的字符编码问题](https://www.cnblogs.com/jayson-jamaica/p/12695427.html)
 
+## Linux下编译和运行Java引用多个外部包
+以算法第四版第三章的3.1.3的用例举例为例进行说明。在windows中已经根据上述的**出现ClassNotFoundException**进行外部库的依赖配置。
+此时在windows中只需在cmd窗口按照以下步骤运行用例类：
+- `javac p1/TestST.java`：编译生成`TestST.class`文件
+- `java p1/TestST <tinyTale.txt`：将`tinyTale.txt`文件作为标准输入运行
+PS：
+1. 由于cmd极弱的自动补全，每次运行都需要手敲完整文件名，很难受
+2. powershell虽然有适当的自动补全，但在命令行窗口中`<`符号不能作为标准输入的重定向符。
+因此，对在WSL的Linux系统中编译和运行java文件的需求应运而生。
+其步骤如下：首先确保在WSL系统中已经安装好java环境，`javac`和`java`可正常运行。
+- `javac -cp "/mnt/d/Develop/Java/jdk11.0.11/lib/*" p1/TestST.java`：`/mnt/d/Develop/Java/jdk11.0.11/lib/*`为外部库所在路径，其中包含`algs.jar`这个外部依赖库。
+- `java -cp $CLASSPATH:"/mnt/d/Develop/Java/jdk11.0.11/lib/*" p1.TestST <p1/tinyTale.txt`：运行`.class`文件。
+为了避免上述命令中繁琐的输入，可以设置`alias`别名：
+```bash
+alias javac="javac -cp '/mnt/d/Develop/Java/jdk11.0.11/lib/*'"
+alias java="java -cp $CLASSPATH:/mnt/d/Develop/Java/jdk11.0.11/lib/*"
+```
+> 参考资料：
+> 1. [linux 下编译和运行 java 引用多个外部包](https://blog.csdn.net/onebigday/article/details/123266336)
+> 2. [linux alias 命令 查看系统设置的命令别名](https://www.cnblogs.com/mingerlcm/p/10791074.html)
+
 
 

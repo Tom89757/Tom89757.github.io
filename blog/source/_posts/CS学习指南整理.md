@@ -81,10 +81,10 @@ tags:
 1. [styleguide](https://github.com/google/styleguide)
 2. [Website Style Guide Resources](http://styleguides.io/)
 
-### 后端
-1. [江南白衣：我的后端（Java）开发书架](https://www.cnblogs.com/ityouknow/articles/5471930.html)
-
 ### 编辑器
 1. [一年成为Emacs高手 (像神一样使用编辑器)](https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org)
+
+### 八股文
+1. [阿秀的学习笔记](https://interviewguide.cn/)
 
 

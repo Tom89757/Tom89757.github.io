@@ -60,3 +60,20 @@ Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11
 > 1. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install)
 > 2. [WSL的基本命令](https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands)
 
+## cmd
+### 别名设置
+在windows系统中可以使用类似Linux中`alias`的别名设置。
+- 编写`cmd_auto.bat`脚本文件，内容如下：
+```bash
+@doskey javac=javac -encoding utf8
+@doskey ls=dir /b
+@doskey grep=findstr
+```
+`@doskey`即等价于Linux中的`alias`。
+- 在注册表中的`Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor`添加`AutoRun`字符串项，并设置`cmd_auto.bat`的路径，其等价于Linux中的`/etc/profile/`或`~/.bashrc`文件设置，会在cmd启动时自动运行。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221014235536.png)
+
+> 参考资料：
+> 1. [在cmd中为命令设置别名以及启动cmd时自动执行bat](https://www.cnblogs.com/fstang/archive/2013/04/06/3002006.html)
+> 2. [window alias给cmd命令起别名](https://www.cnblogs.com/onelikeone/p/10783497.html)
+> 3. [Windows版Grep – findstr示例](https://blog.csdn.net/cyan20115/article/details/106551191)
