@@ -99,5 +99,10 @@ alias java="java -cp $CLASSPATH:/mnt/d/Develop/Java/jdk11.0.11/lib/*"
 > 1. [linux 下编译和运行 java 引用多个外部包](https://blog.csdn.net/onebigday/article/details/123266336)
 > 2. [linux alias 命令 查看系统设置的命令别名](https://www.cnblogs.com/mingerlcm/p/10791074.html)
 
+### Ubuntu上安装Java
+
+> 参考资料：
+> 1. [如何在Ubuntu 18.04上安装Java(JDK11)](https://www.jianshu.com/p/5a25b9535016)
+
 
 

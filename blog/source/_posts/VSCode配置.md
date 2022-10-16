@@ -7,8 +7,6 @@ tags:
 - VSCode
 ---
 
-
-
 本文记录一下在 VSCode 编辑器中一些常用的配置方法。
 
 <!--more-->
@@ -109,3 +107,24 @@ launch: workingDirectory 'D:\\Develop\\msys2\\mingw64\\bin' does not exist
 
 > 参考资料：
 > 1. [彻底卸载VSCode](https://bbs.huaweicloud.com/blogs/254150)
+
+### VSCode配置Git终端
+- 打开Settings
+- 搜索`shell:windows`，打开`settings.json`：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016110802.png)
+- 添加如下GitBash终端配置：
+```json
+"GitBash": {
+            "path": "D:\\Develop\\Git\\bin\\bash.exe",
+            "args": [],
+            "icon": "terminal-bash"
+        },
+```
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016110936.png)
+- 重启VSCode，可以发现配置生效
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016111046.png)
+PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法生效
+> 参考资料：
+> 1. [GitBash not showing up as a terminal option in Visual Studio Code](https://stackoverflow.com/questions/68068359/gitbash-not-showing-up-as-a-terminal-option-in-visual-studio-code)
+
+
