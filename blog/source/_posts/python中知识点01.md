@@ -474,4 +474,19 @@ TAG = 'scwssod'
 id = 30
 filename = 'mytest_%s_model-%d.log'%(TAG, id)
 ```
-上述命令可以根据
+
+</br>
+12.查看函数的类汇编代码：
+可以通过python的`dis`库查看函数的类汇编形式的代码，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016154442.png)
+同样，可以通过其`ast`库查看代码会被转换为怎样的语法树（python=3.10.6，python3.8输出或打印的语法树没有换行）：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161921.png)
+
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161739.png)
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161809.png)
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161809.png)
+> 参考资料：
+> 1. 《代码之髓》3.2节
+> 2. [`ast`](https://docs.python.org/3.10/library/ast.html#module-ast "ast: Abstract Syntax Tree classes and manipulation.") — Abstract Syntax Trees
+
+</br>

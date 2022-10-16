@@ -162,7 +162,15 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 参考资料：
 > 1. [python error Suppressing signal 18 to win32](https://stackoverflow.com/questions/50110571/python-error-suppressing-signal-18-to-win32)
 
-
+</br>
+11.使用conda创建新环境时出现以下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016160914.png)
+1. `conda clean -i`
+2. 删除`.condarc`文件，关闭代理
+3. 重新打开Anaconda Prompt窗口，运行命令创建新环境。（此时删除了所有镜像，使用官方源进行安装，未尝试镜像源安装）
+> 参考资料：
+> 1. [conda install packages error: Collecting package metadata (current_repodata.json): failed](https://stackoverflow.com/questions/61134985/conda-install-packages-error-collecting-package-metadata-current-repodata-json)
+> 2. [Managing channels](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html)
 
 
 
