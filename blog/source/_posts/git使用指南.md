@@ -201,7 +201,7 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 > 1. [Git Large File Storage](https://git-lfs.github.com/)
 
 </br>
-5.使用git bash进行javac编译时出现中文乱码：
+9.使用git bash进行javac编译时出现中文乱码：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929170956.png)
 解决方案：在选项里将字符集设为GBK，重启git bash：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929171040.png)
@@ -209,3 +209,13 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 > 参考资料：
 > 1. [在 git bash 里运行 java 命令，打印出的中文显示乱码](https://blog.csdn.net/qq_21260033/article/details/78786608)
 > 2. [解决 Git Bash 在 windows 下中文乱码的问题](https://minsonlee.github.io/2020/11/how-to-set-utf8-with-git-bash)（不针对此问题）
+
+</br>
+10.有时需要给git终端设置别名。给git设置别名分为两种：
+- 给git本身的命令设置别名，此时可以通过`git config --global alias.co checkout`设置全局别名，这样可以`git co`等同于`git checkout`，该配置会写入`~/.gitconfig`文件。故也可以直接编辑该文件来设置别名
+- 给git终端运行的其他命令设置别名，如`javac -encoding utf8`简化为`javac`，此时可以编辑`~/.bashrc`文件（如果没有则创建），在里面写入`alias javac='javac -encoding utf8'`。设置后每次启动git终端窗口后该文件中的配置都会生效
+> 参考资料：
+> 1. [2.7 Git 基础 - Git 别名](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-Git-%E5%88%AB%E5%90%8D)
+> 2. [玩转 Git 别名](https://segmentfault.com/a/1190000023541589)
+
+</br>

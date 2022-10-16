@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "export",
+                "query": "windows",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -61,7 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.5
+    "width": 212.5
   },
   "right": {
     "id": "514f8f8977cdfd55",
@@ -130,15 +130,15 @@
   },
   "active": "d6e59a57809d9454",
   "lastOpenFiles": [
-    "Ubuntu常见操作.md",
+    "VSCode配置.md",
     "Java知识点01.md",
+    "Windows10系统配置.md",
     "CS学习指南整理.md",
+    "Ubuntu常见操作.md",
+    "2022深度学习框架.md",
     "课程和书籍资源整理.md",
     "开发和学习工具整理.md",
-    "编程语言资料整理.md",
-    "Pytorch中知识点03.md",
-    "图像处理中知识点02.md",
-    "深度学习环境配置.md",
-    "CV系列文章和工具.md"
+    "Markdown语法记录.md",
+    "图像处理中知识点02.md"
   ]
 }
