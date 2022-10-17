@@ -41,6 +41,10 @@ tags:
 
 ### 推荐文章
 
+### 推荐博客
+1. [The Illustrated Series](https://jalammar.github.io/)：：作者通过自制动画解释各种模型架构。（英文）
+2. [科学空间](https://spaces.ac.cn/category/Big-Data)：偏数学推导，较为硬核。（中文）
+3. 
 
 
 
