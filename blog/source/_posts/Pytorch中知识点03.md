@@ -52,4 +52,12 @@ H, W = H.item(), W.item()
 > 1. [How to cast a 1-d IntTensor to int in Pytorch](https://stackoverflow.com/questions/47588682/how-to-cast-a-1-d-inttensor-to-int-in-pytorch)
 
 </br>
-4.
+4.当通过`state_dict = model_zoo.load_url(url_map_[model_name]`在线下载预训练的模型权重文件时，出现`urllib.error.HTTPError: HTTP Error 503: Egress is over the account limit.`错误。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221018162424.png)
+
+- 原因：状态码为`503 Service Unavailable`，表示临时的服务器维护或者过载，服务器当前无法处理请求，这个情况是暂时的，会在一段时间后恢复（实际上过了好多天都没修复）
+- 解决方案：因为调用`model_zoo.load_url()`时会打印出该权重文件的下载地址和保存路径，可以通过手动下载并放入该路径来解决该问题，如下图所示
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221018162553.png)
+
+> 参考资料：
+> 1. [HTTP状态码](https://zh.m.wikipedia.org/zh/HTTP%E7%8A%B6%E6%80%81%E7%A0%81)
