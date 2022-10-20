@@ -19,6 +19,7 @@ tags:
 - Editor Syntax Highlight：代码语法高亮
 - cMenu：用于支持word的富文本编辑，可自行配置
 - Title Serial Number Plugin：用于自动给标题编号
+- Auto Title Link：用于自动根据复制的链接拉取网页标题
 ### 问题
 #### 4.1 将VSCode代码粘贴到代码块中时出现多于空行
 解决方案：
