@@ -31,6 +31,10 @@ tags:
 1. [PyTorch可视化实践](https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/)
 2. [PlotNeuralNet](https://github.com/HarisIqbal88/PlotNeuralNet)：神经网络画图
 3. [LibMTL](https://github.com/median-research-group/LibMTL)：多任务学习工具，可以用来平衡多个损失，A Pytorch Library for Multi-task Learning
+4. [pytorch-grad-cam](https://github.com/jacobgil/pytorch-grad-cam)：在PyTorch中对特征图进行CAM可视化的工具
+5. [Tutorial: Class Activation Maps for Semantic Segmentation]：对语义分割网络进行CAM可视化教程。
+6. [万字长文：特征可视化技术(CAM)](https://zhuanlan.zhihu.com/p/269702192)
+7. [CNN可视化技术总结（三）——类可视化](https://mp.weixin.qq.com/s?__biz=MzkyMDE2OTA3Mw==&mid=2247485006&idx=1&sn=5991ec380dd97a0f0fb3337b9df4abc5&chksm=c197b950f6e0304641c2cacdcc45925e526f6a1187943fb1eca26dfaaf516ca71c4988097eb9&scene=21#wechat_redirect)
 
 ### Graph Neural Networks
 
