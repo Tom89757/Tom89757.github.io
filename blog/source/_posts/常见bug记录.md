@@ -172,6 +172,18 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 1. [conda install packages error: Collecting package metadata (current_repodata.json): failed](https://stackoverflow.com/questions/61134985/conda-install-packages-error-collecting-package-metadata-current-repodata-json)
 > 2. [Managing channels](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html)
 
+</br>
+12.安装`pydensecrf`pip包时出现如下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221025102938.png)
+提示`Microsoft Visual C++ 14.0 or greater is required`。
+
+> 参考资料：
+> 1. [Error "Microsoft Visual C++ 14.0 is required (Unable to find vcvarsall.bat)"](https://stackoverflow.com/questions/29846087/error-microsoft-visual-c-14-0-is-required-unable-to-find-vcvarsall-bat)
+> 2. [Pip error: Microsoft Visual C++ 14.0 is required](https://stackoverflow.com/questions/44951456/pip-error-microsoft-visual-c-14-0-is-required)
+> 3. [Error "Microsoft Visual C++ 14.0 is required (Unable to find vcvarsall.bat)"](https://stackoverflow.com/questions/29846087/error-microsoft-visual-c-14-0-is-required-unable-to-find-vcvarsall-bat)
+
+
+
 
 
 
