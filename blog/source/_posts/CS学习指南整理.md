@@ -46,6 +46,7 @@ tags:
 8. [菜鸟教程](https://www.runoob.com/)
 9. [W3Cschool](https://www.w3cschool.cn/)
 10. [ZetCode](https://zetcode.com/all/)
+11. [OI Wiki](https://oi-wiki.org/)
 ### 有趣站点
 1. [互联网哲学百科](https://iep.utm.edu/)
 2. [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code)：用不同的语言解决相同的问题
