@@ -127,4 +127,9 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 参考资料：
 > 1. [GitBash not showing up as a terminal option in Visual Studio Code](https://stackoverflow.com/questions/68068359/gitbash-not-showing-up-as-a-terminal-option-in-visual-studio-code)
 
+### VSCode leetcode插件无法登录
+出现`command 'leetcode.sign in' not found`。
+解决方案：
 
+> 参考资料：
+> 1. [Can't load and login: command 'leetcode.signin' not found · Issue #622 · LeetCode-OpenSource/vscode-leetcode · GitHub](https://github.com/LeetCode-OpenSource/vscode-leetcode/issues/622)

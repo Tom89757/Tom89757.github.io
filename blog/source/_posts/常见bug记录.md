@@ -190,7 +190,16 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 4. [Pydensecrf 安装报错_MenahemLi的博客-CSDN博客](https://blog.csdn.net/qq_36978986/article/details/108130879)
 > 5. [Archived: Python Extension Packages for Windows - Christoph Gohlke](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pydensecrf)
 
-
+</br>
+13.运行`npm install package-name`时，卡在`sill idealTree buildDeps`没有反应。
+解决方案：
+- 配置淘宝镜像：`npm config set registry https://registry.npm.taobao.org `
+- 检验镜像配置：`npm config get registry `
+- 继续运行：`npm install`。
+- 如果问题仍然存在，运行：`npm set strict-ssl false`
+> 参考资料：
+> 1. [1.运行npm install 时，卡在sill idealTree buildDeps没有反应_豆豆豆豆芽的博客-CSDN博客](https://blog.csdn.net/weixin_46182244/article/details/121302702)
+> 2. [[BUG] "sill idealTree buildDeps" takes a lot of time a project with workspaces · Issue #3257 · npm/cli · GitHub](https://github.com/npm/cli/issues/3257)
 
 
 
