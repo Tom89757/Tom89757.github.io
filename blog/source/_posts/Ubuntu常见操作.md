@@ -43,6 +43,7 @@ tags:
 `zip -r filename.zip /path/to/folder1`：把`folder1`压缩到`filename.zip`。
 
 `unzip /path/to/file.zip -d foldername`：把`file.zip`解压缩到`foldername`。
+解压命令大全见：[linux下解压命令大全](https://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html)
 
 > 参考资料：
 >
