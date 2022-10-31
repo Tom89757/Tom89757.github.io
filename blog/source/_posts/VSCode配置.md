@@ -127,9 +127,18 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 参考资料：
 > 1. [GitBash not showing up as a terminal option in Visual Studio Code](https://stackoverflow.com/questions/68068359/gitbash-not-showing-up-as-a-terminal-option-in-visual-studio-code)
 
-### VSCode leetcode插件无法登录
+### VSCode leetcode插件
 出现`command 'leetcode.sign in' not found`。
 解决方案：
-
+- 在everything中搜索`leetcode`文件夹，删除如下安装的leetcode插件文件夹
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221031222539.png)
+- 搜索`.lc`文件夹，同样删除
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221031222640.png)
+- 重新安装leetcode插件。
+当进行代码Test时出现如下问题：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221031225401.png)
+解决方案：登录leetcode官网后在设置里进行邮箱验证
 > 参考资料：
 > 1. [Can't load and login: command 'leetcode.signin' not found · Issue #622 · LeetCode-OpenSource/vscode-leetcode · GitHub](https://github.com/LeetCode-OpenSource/vscode-leetcode/issues/622)
+> 2. [vscode LeetCode显示sign in 成功，但是[ERROR] session expired, please login again [code=-1]的问题！！！_LIQIANDI的博客-CSDN博客](https://blog.csdn.net/qq_41521512/article/details/115199293)
+> 3. [Site Unreachable](https://github.com/skygragon/leetcode-cli/issues/94)
