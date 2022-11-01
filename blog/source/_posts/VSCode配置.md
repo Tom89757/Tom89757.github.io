@@ -141,4 +141,4 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 参考资料：
 > 1. [Can't load and login: command 'leetcode.signin' not found · Issue #622 · LeetCode-OpenSource/vscode-leetcode · GitHub](https://github.com/LeetCode-OpenSource/vscode-leetcode/issues/622)
 > 2. [vscode LeetCode显示sign in 成功，但是[ERROR] session expired, please login again [code=-1]的问题！！！_LIQIANDI的博客-CSDN博客](https://blog.csdn.net/qq_41521512/article/details/115199293)
-> 3. [Site Unreachable](https://github.com/skygragon/leetcode-cli/issues/94)
+> 3. [登录不上，[ERROR] session expired, please login again [-1] #94](https://github.com/skygragon/leetcode-cli/issues/94)
