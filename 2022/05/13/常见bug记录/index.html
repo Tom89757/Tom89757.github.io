@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-16/image-20220516005208707.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220608231526381.png">
 <meta property="article:published_time" content="2022-05-12T17:37:45.000Z">
-<meta property="article:modified_time" content="2022-09-29T10:13:12.219Z">
+<meta property="article:modified_time" content="2022-10-31T13:51:00.892Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="bug">
 <meta name="twitter:card" content="summary">
@@ -168,7 +168,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -179,7 +179,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -265,7 +265,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-29 18:13:12" itemprop="dateModified" datetime="2022-09-29T18:13:12+08:00">2022-09-29</time>
+      <time title="修改时间：2022-10-31 21:51:00" itemprop="dateModified" datetime="2022-10-31T21:51:00+08:00">2022-10-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,14 +284,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
+      <span>5.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -428,6 +428,53 @@
 10.点击Windows10 OneDrive应用没有反应
 > 参考资料：
 > 1. [OneDrive无法打开的原因](https://zhuanlan.zhihu.com/p/343335173)
+</br>
+在git bash终端运行java程序无法通过`Ctrl+Z`终止`hasNext()`输入，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221001224702.png)
+其原因在于git bash不支持通过`Ctrl+Z`发送Signal 18即`SIGTSTP`信号。在cmd中运行会发现`Ctrl+Z`后回车可以正常终止输入：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221001225100.png)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/50110571/python-error-suppressing-signal-18-to-win32">python error Suppressing signal 18 to win32</a></li>
+</ol>
+</blockquote>
+</br>
+11.使用conda创建新环境时出现以下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016160914.png)
+1. `conda clean -i`
+2. 删除`.condarc`文件，关闭代理
+3. 重新打开Anaconda Prompt窗口，运行命令创建新环境。（此时删除了所有镜像，使用官方源进行安装，未尝试镜像源安装）
+> 参考资料：
+> 1. [conda install packages error: Collecting package metadata (current_repodata.json): failed](https://stackoverflow.com/questions/61134985/conda-install-packages-error-collecting-package-metadata-current-repodata-json)
+> 2. [Managing channels](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html)
+</br>
+12.安装`pydensecrf`pip包时出现如下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221025102938.png)
+提示`Microsoft Visual C++ 14.0 or greater is required`。
+解决方案：
+1. 按照参考资料3安装对应Visual Studio工具
+安装后使用`pip install pydensecrf`安装出现新的报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221025111316.png)
+2. 参照参考资料4将`pydensecrf-1.0rc2-cp38-cp38-win32.whl`下载到本地安装后出现如下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221025111520.png)
+更换为`amd64.whl`版本后解决。
+> 参考资料：
+> 1. [Error "Microsoft Visual C++ 14.0 is required (Unable to find vcvarsall.bat)"](https://stackoverflow.com/questions/29846087/error-microsoft-visual-c-14-0-is-required-unable-to-find-vcvarsall-bat)
+> 2. [Pip error: Microsoft Visual C++ 14.0 is required](https://stackoverflow.com/questions/44951456/pip-error-microsoft-visual-c-14-0-is-required)
+> 3. [Error "Microsoft Visual C++ 14.0 is required (Unable to find vcvarsall.bat)"](https://stackoverflow.com/questions/29846087/error-microsoft-visual-c-14-0-is-required-unable-to-find-vcvarsall-bat)
+> 4. [Pydensecrf 安装报错_MenahemLi的博客-CSDN博客](https://blog.csdn.net/qq_36978986/article/details/108130879)
+> 5. [Archived: Python Extension Packages for Windows - Christoph Gohlke](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pydensecrf)
+</br>
+13.运行`npm install package-name`时，卡在`sill idealTree buildDeps`没有反应。
+解决方案：
+- 配置淘宝镜像：`npm config set registry https://registry.npm.taobao.org `
+- 检验镜像配置：`npm config get registry `
+- 继续运行：`npm install`。
+- 如果问题仍然存在，运行：`npm set strict-ssl false`
+> 参考资料：
+> 1. [1.运行npm install 时，卡在sill idealTree buildDeps没有反应_豆豆豆豆芽的博客-CSDN博客](https://blog.csdn.net/weixin_46182244/article/details/121302702)
+> 2. [[BUG] "sill idealTree buildDeps" takes a lot of time a project with workspaces · Issue #3257 · npm/cli · GitHub](https://github.com/npm/cli/issues/3257)
 
     </div>
 
@@ -500,13 +547,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">226k</span>
+    <span title="站点总字数">240k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:26</span>
+    <span title="站点阅读时长">3:39</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

@@ -220,6 +220,7 @@
 <h3 id="学习规划"><a class="markdownIt-Anchor" href="#学习规划"></a> 学习规划</h3>
 <ol>
 <li><a href="https://csdiy.wiki/">CS自学指南</a>：搭配<a href="https://hkn.eecs.berkeley.edu/courseguides">UCB cs roadmap</a>使用更佳</li>
+<li><a href="https://inst.eecs.berkeley.edu/classes-eecs.html">EECS Course WEB Sites</a>：UCB的EE和CS课程归档。</li>
 <li><a href="http://norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/30742986">Teach Yourself Programming in Ten Years中文版</a></li>
 <li><a href="https://www.yuque.com/0xffff.one/cs-learning">0xFFFF CS Wiki</a></li>
@@ -257,6 +258,7 @@
 <li><a href="https://www.runoob.com/">菜鸟教程</a></li>
 <li><a href="https://www.w3cschool.cn/">W3Cschool</a></li>
 <li><a href="https://zetcode.com/all/">ZetCode</a></li>
+<li><a href="https://oi-wiki.org/">OI Wiki</a></li>
 </ol>
 <h3 id="有趣站点"><a class="markdownIt-Anchor" href="#有趣站点"></a> 有趣站点</h3>
 <ol>
@@ -296,13 +298,13 @@
 <li><a href="https://github.com/google/styleguide">styleguide</a></li>
 <li><a href="http://styleguides.io/">Website Style Guide Resources</a></li>
 </ol>
-<h3 id="后端"><a class="markdownIt-Anchor" href="#后端"></a> 后端</h3>
-<ol>
-<li><a href="https://www.cnblogs.com/ityouknow/articles/5471930.html">江南白衣：我的后端（Java）开发书架</a></li>
-</ol>
 <h3 id="编辑器"><a class="markdownIt-Anchor" href="#编辑器"></a> 编辑器</h3>
 <ol>
 <li><a href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org">一年成为Emacs高手 (像神一样使用编辑器)</a></li>
+</ol>
+<h3 id="八股文"><a class="markdownIt-Anchor" href="#八股文"></a> 八股文</h3>
+<ol>
+<li><a href="https://interviewguide.cn/">阿秀的学习笔记</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -342,6 +344,10 @@
 <li><a href="https://tom89757.github.io/2022/08/07/PyTorch%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E8%B7%B5/">PyTorch可视化实践</a></li>
 <li><a href="https://github.com/HarisIqbal88/PlotNeuralNet">PlotNeuralNet</a>：神经网络画图</li>
 <li><a href="https://github.com/median-research-group/LibMTL">LibMTL</a>：多任务学习工具，可以用来平衡多个损失，A Pytorch Library for Multi-task Learning</li>
+<li><a href="https://github.com/jacobgil/pytorch-grad-cam">pytorch-grad-cam</a>：在PyTorch中对特征图进行CAM可视化的工具</li>
+<li>[Tutorial: Class Activation Maps for Semantic Segmentation]：对语义分割网络进行CAM可视化教程。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/269702192">万字长文：特征可视化技术(CAM)</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzkyMDE2OTA3Mw==&amp;mid=2247485006&amp;idx=1&amp;sn=5991ec380dd97a0f0fb3337b9df4abc5&amp;chksm=c197b950f6e0304641c2cacdcc45925e526f6a1187943fb1eca26dfaaf516ca71c4988097eb9&amp;scene=21#wechat_redirect">CNN可视化技术总结（三）——类可视化</a></li>
 </ol>
 <h3 id="graph-neural-networks"><a class="markdownIt-Anchor" href="#graph-neural-networks"></a> Graph Neural Networks</h3>
 <blockquote>
@@ -353,6 +359,12 @@
 </ol>
 </blockquote>
 <h3 id="推荐文章"><a class="markdownIt-Anchor" href="#推荐文章"></a> 推荐文章</h3>
+<h3 id="推荐博客"><a class="markdownIt-Anchor" href="#推荐博客"></a> 推荐博客</h3>
+<ol>
+<li><a href="https://jalammar.github.io/">The Illustrated Series</a>：：作者通过自制动画解释各种模型架构。（英文）</li>
+<li><a href="https://spaces.ac.cn/category/Big-Data">科学空间</a>：偏数学推导，较为硬核。（中文）</li>
+<li></li>
+</ol>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -620,6 +632,51 @@
 <li><a href="https://algs4.cs.princeton.edu/code/">Java Algorithms and Clients</a></li>
 </ol>
 </blockquote>
+<h3 id="出现乱码"><a class="markdownIt-Anchor" href="#出现乱码"></a> 出现乱码</h3>
+<p>当直接使用<code>javac Evaluate.java</code>编译文件时出现以下乱码：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221002095435.png" alt="" /><br />
+此时可以通过指定编码格式解决该问题：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">javac -encoding utf8 p3/Evaluate.java</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/jayson-jamaica/p/12695427.html">Javac和JVM的字符编码问题</a></li>
+</ol>
+</blockquote>
+<h2 id="linux下编译和运行java引用多个外部包"><a class="markdownIt-Anchor" href="#linux下编译和运行java引用多个外部包"></a> Linux下编译和运行Java引用多个外部包</h2>
+<p>以算法第四版第三章的3.1.3的用例举例为例进行说明。在windows中已经根据上述的<strong>出现ClassNotFoundException</strong>进行外部库的依赖配置。<br />
+此时在windows中只需在cmd窗口按照以下步骤运行用例类：</p>
+<ul>
+<li><code>javac p1/TestST.java</code>：编译生成<code>TestST.class</code>文件</li>
+<li><code>java p1/TestST &lt;tinyTale.txt</code>：将<code>tinyTale.txt</code>文件作为标准输入运行<br />
+PS：</li>
+</ul>
+<ol>
+<li>由于cmd极弱的自动补全，每次运行都需要手敲完整文件名，很难受</li>
+<li>powershell虽然有适当的自动补全，但在命令行窗口中<code>&lt;</code>符号不能作为标准输入的重定向符。<br />
+因此，对在WSL的Linux系统中编译和运行java文件的需求应运而生。<br />
+其步骤如下：首先确保在WSL系统中已经安装好java环境，<code>javac</code>和<code>java</code>可正常运行。</li>
+</ol>
+<ul>
+<li><code>javac -cp &quot;/mnt/d/Develop/Java/jdk11.0.11/lib/*&quot; p1/TestST.java</code>：<code>/mnt/d/Develop/Java/jdk11.0.11/lib/*</code>为外部库所在路径，其中包含<code>algs.jar</code>这个外部依赖库。</li>
+<li><code>java -cp $CLASSPATH:&quot;/mnt/d/Develop/Java/jdk11.0.11/lib/*&quot; p1.TestST &lt;p1/tinyTale.txt</code>：运行<code>.class</code>文件。<br />
+为了避免上述命令中繁琐的输入，可以设置<code>alias</code>别名：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> javac=<span class="string">&quot;javac -cp &#x27;/mnt/d/Develop/Java/jdk11.0.11/lib/*&#x27;&quot;</span></span><br><span class="line"><span class="built_in">alias</span> java=<span class="string">&quot;java -cp <span class="variable">$CLASSPATH</span>:/mnt/d/Develop/Java/jdk11.0.11/lib/*&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/onebigday/article/details/123266336">linux 下编译和运行 java 引用多个外部包</a></li>
+<li><a href="https://www.cnblogs.com/mingerlcm/p/10791074.html">linux alias 命令 查看系统设置的命令别名</a></li>
+</ol>
+</blockquote>
+<h3 id="ubuntu上安装java"><a class="markdownIt-Anchor" href="#ubuntu上安装java"></a> Ubuntu上安装Java</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.jianshu.com/p/5a25b9535016">如何在Ubuntu 18.04上安装Java(JDK11)</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -645,6 +702,7 @@
 <li>Editor Syntax Highlight：代码语法高亮</li>
 <li>cMenu：用于支持word的富文本编辑，可自行配置</li>
 <li>Title Serial Number Plugin：用于自动给标题编号</li>
+<li>Auto Title Link：用于自动根据复制的链接拉取网页标题</li>
 </ul>
 <h3 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h3>
 <h4 id="41-将vscode代码粘贴到代码块中时出现多于空行"><a class="markdownIt-Anchor" href="#41-将vscode代码粘贴到代码块中时出现多于空行"></a> 4.1 将VSCode代码粘贴到代码块中时出现多于空行</h4>
@@ -2695,6 +2753,23 @@ class _Loss(Module)
 <li><a href="https://github.com/pytorch/pytorch/issues/1204">RuntimeError: cuda runtime error (59) : device-side assert triggered when running transfer_learning_tutorial #1204</a></li>
 </ol>
 </blockquote>
+</br>
+29.出现报错：`Boolean value of Tensor with more than one value is ambiguous in PyTorch`。
+original code:
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">loss = CrossEntropyLoss(y_pred, y_true)</span><br></pre></td></tr></table></figure>
+应该改为：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化损失</span></span><br><span class="line">L = CrossEntropyLoss()</span><br><span class="line"><span class="comment"># 计算损失</span></span><br><span class="line">L(y_pred, y_true)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Bool value of Tensor with more than one value is ambiguous in Pytorch](https://stackoverflow.com/questions/52946920/bool-value-of-tensor-with-more-than-one-value-is-ambiguous-in-pytorch)
+</br>
+30.交叉熵为负数：
+original code:
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">losse = torch.nn.BCELoss()</span><br><span class="line">losse = losse(edge_map, edge)</span><br></pre></td></tr></table></figure>
+原因：`edge`未归一化或者`edge_map`未归一化
+应改为：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">edge = edge / <span class="number">255.0</span></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">edge_amp = F.softmax(out1, dim=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [解决pytorch 交叉熵损失输出为负数的问题](https://cloud.tencent.com/developer/article/1725343)
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -2837,6 +2912,47 @@ class _Loss(Module)
 <li><a href="https://bbs.huaweicloud.com/blogs/254150">彻底卸载VSCode</a></li>
 </ol>
 </blockquote>
+<h3 id="vscode配置git终端"><a class="markdownIt-Anchor" href="#vscode配置git终端"></a> VSCode配置Git终端</h3>
+<ul>
+<li>打开Settings</li>
+<li>搜索<code>shell:windows</code>，打开<code>settings.json</code>：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016110802.png" alt="" /></li>
+<li>添加如下GitBash终端配置：</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;GitBash&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\Develop\\Git\\bin\\bash.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;terminal-bash&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016110936.png" alt="" /></p>
+<ul>
+<li>重启VSCode，可以发现配置生效<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016111046.png" alt="" /><br />
+PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配置无法生效</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/68068359/gitbash-not-showing-up-as-a-terminal-option-in-visual-studio-code">GitBash not showing up as a terminal option in Visual Studio Code</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode-leetcode插件"><a class="markdownIt-Anchor" href="#vscode-leetcode插件"></a> VSCode leetcode插件</h3>
+<p>出现<code>command 'leetcode.sign in' not found</code>。<br />
+解决方案：</p>
+<ul>
+<li>在everything中搜索<code>leetcode</code>文件夹，删除如下安装的leetcode插件文件夹<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221031222539.png" alt="" /></li>
+<li>搜索<code>.lc</code>文件夹，同样删除<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221031222640.png" alt="" /></li>
+<li>重新安装leetcode插件。<br />
+当进行代码Test时出现如下问题：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221031225401.png" alt="" /><br />
+解决方案：登录leetcode官网后在设置里进行邮箱验证</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/LeetCode-OpenSource/vscode-leetcode/issues/622">Can’t load and login: command ‘leetcode.signin’ not found · Issue #622 · LeetCode-OpenSource/vscode-leetcode · GitHub</a></li>
+<li><a href="https://blog.csdn.net/qq_41521512/article/details/115199293">vscode LeetCode显示sign in 成功，但是[ERROR] session expired, please login again [code=-1]的问题！！！_LIQIANDI的博客-CSDN博客</a></li>
+<li><a href="https://github.com/skygragon/leetcode-cli/issues/94">登录不上，[ERROR] session expired, please login again [-1] #94</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -2891,6 +3007,21 @@ class _Loss(Module)
 <li><a href="https://blog.csdn.net/qq_42191914/article/details/104840458">Windows：修改键盘映射表</a></li>
 </ol>
 </blockquote>
+<h3 id="网络问题排查"><a class="markdownIt-Anchor" href="#网络问题排查"></a> 网络问题排查</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.51cto.com/article/620620.html">网络出了问题，如何排查? 这篇文章告诉你</a></li>
+</ol>
+</blockquote>
+<h3 id="在不断开网线的情况下断网"><a class="markdownIt-Anchor" href="#在不断开网线的情况下断网"></a> 在不断开网线的情况下断网</h3>
+<p>控制面板-&gt;更改适配器设置-&gt;以太网右键禁用</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://jingyan.baidu.com/article/0964eca27410968285f53613.html">如何不拔网线断网，怎么断开电脑网络本地连接</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -2926,7 +3057,8 @@ class _Loss(Module)
 </br>
 <p>5.<code>zip</code>和<code>unzip</code>：用于压缩解压缩 zip 文件。</p>
 <p><code>zip -r filename.zip /path/to/folder1</code>：把<code>folder1</code>压缩到<code>filename.zip</code>。</p>
-<p><code>unzip /path/to/file.zip -d foldername</code>：把<code>file.zip</code>解压缩到<code>foldername</code>。</p>
+<p><code>unzip /path/to/file.zip -d foldername</code>：把<code>file.zip</code>解压缩到<code>foldername</code>。<br />
+解压命令大全见：<a href="https://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html">linux下解压命令大全</a></p>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -3000,6 +3132,12 @@ class _Loss(Module)
 <p>可以将<code>.jpg</code>字符串替换为<code>.png</code>。但当要查找或替换的字符串包含<code>/</code>本身时，该方式无法使用。此时可以利用<code>sed</code>命令会将紧跟在<code>s</code>后面的字符作为分隔符的特性，将分隔符改为<code>#</code>或其他字符。例如：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cat test.txt | sed <span class="string">&#x27;s#^#data/#&#x27;</span> &gt; test2.txt</span><br></pre></td></tr></table></figure>
 <p>可以在每一行的开头添加<code>data/</code>字符串。</p>
+<ul>
+<li>在每一行开头添加<code>'</code>单引号字符，<code>ls | sed &quot;s/^/'/&quot;</code></li>
+<li>在每一行末尾添加<code>',</code>字符，<code>ls | sed &quot;s/$/',/&quot;</code>。<br />
+完整使用<code>ls | sed &quot;s/^/'/&quot; | sed &quot;s/$/',/&quot;</code>效果如下：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;ILSVRC2012_test_00000003.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000023.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000025.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000026.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000034.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000038.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000064.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000086.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000105.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000128.png&#x27;,</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -3370,6 +3508,26 @@ class _Loss(Module)
 <li><a href="https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands">WSL的基本命令</a></li>
 </ol>
 </blockquote>
+<h2 id="cmd"><a class="markdownIt-Anchor" href="#cmd"></a> cmd</h2>
+<h3 id="别名设置"><a class="markdownIt-Anchor" href="#别名设置"></a> 别名设置</h3>
+<p>在windows系统中可以使用类似Linux中<code>alias</code>的别名设置。</p>
+<ul>
+<li>编写<code>cmd_auto.bat</code>脚本文件，内容如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@doskey javac=javac -encoding utf8</span><br><span class="line">@doskey <span class="built_in">ls</span>=<span class="built_in">dir</span> /b</span><br><span class="line">@doskey grep=findstr</span><br></pre></td></tr></table></figure>
+<p><code>@doskey</code>即等价于Linux中的<code>alias</code>。</p>
+<ul>
+<li>在注册表中的<code>Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor</code>添加<code>AutoRun</code>字符串项，并设置<code>cmd_auto.bat</code>的路径，其等价于Linux中的<code>/etc/profile/</code>或<code>~/.bashrc</code>文件设置，会在cmd启动时自动运行。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221014235536.png" alt="" /></li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/fstang/archive/2013/04/06/3002006.html">在cmd中为命令设置别名以及启动cmd时自动执行bat</a></li>
+<li><a href="https://www.cnblogs.com/onelikeone/p/10783497.html">window alias给cmd命令起别名</a></li>
+<li><a href="https://blog.csdn.net/cyan20115/article/details/106551191">Windows版Grep – findstr示例</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -3526,7 +3684,7 @@ class _Loss(Module)
 </ol>
 </blockquote>
 </br>
-5.使用git bash进行javac编译时出现中文乱码：
+9.使用git bash进行javac编译时出现中文乱码：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929170956.png)
 解决方案：在选项里将字符集设为GBK，重启git bash：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929171040.png)
@@ -3537,6 +3695,14 @@ class _Loss(Module)
 <li><a href="https://minsonlee.github.io/2020/11/how-to-set-utf8-with-git-bash">解决 Git Bash 在 windows 下中文乱码的问题</a>（不针对此问题）</li>
 </ol>
 </blockquote>
+</br>
+10.有时需要给git终端设置别名。给git设置别名分为两种：
+- 给git本身的命令设置别名，此时可以通过`git config --global alias.co checkout`设置全局别名，这样可以`git co`等同于`git checkout`，该配置会写入`~/.gitconfig`文件。故也可以直接编辑该文件来设置别名
+- 给git终端运行的其他命令设置别名，如`javac -encoding utf8`简化为`javac`，此时可以编辑`~/.bashrc`文件（如果没有则创建），在里面写入`alias javac='javac -encoding utf8'`。设置后每次启动git终端窗口后该文件中的配置都会生效
+> 参考资料：
+> 1. [2.7 Git 基础 - Git 别名](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-Git-%E5%88%AB%E5%90%8D)
+> 2. [玩转 Git 别名](https://segmentfault.com/a/1190000023541589)
+</br>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -3693,6 +3859,7 @@ class _Loss(Module)
 <h3 id="使用calibre推送电子书"><a class="markdownIt-Anchor" href="#使用calibre推送电子书"></a> 使用Calibre推送电子书</h3>
 <p>建议直接留空邮箱服务器：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220707235743798.png" alt="image-20220707235743798" /></p>
+<blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/80604597">如何用Calibre将电子书转换成MOBI格式？</a></li>
@@ -3700,6 +3867,17 @@ class _Loss(Module)
 <li><a href="https://bookfere.com/post/793.html">使用 Kindle 推送时为何会收到“验证请求”邮件？</a></li>
 <li><a href="https://bookfere.com/post/11.html">Calibre 使用教程之邮件一键推送电子书</a></li>
 </ol>
+</blockquote>
+<h3 id="破解cajviewer加密文件并打印出pdf"><a class="markdownIt-Anchor" href="#破解cajviewer加密文件并打印出pdf"></a> 破解CAJViewer加密文件并打印出pdf</h3>
+<p>通过科学文库下载书籍，然后配合CAJViwer精简版进行打印。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.bilibili.com/video/BV1e741177s5">将加密的CAJ文件打印成PDF（请直接看2P，不用看1P）</a></li>
+<li><a href="http://www.downcc.com/soft/6844.html">CAJViewer7.2精简绿色版下载</a></li>
+<li><a href="https://book.sciencereading.cn/shop/main/Login/shopFrame.do">科学文库</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>生活</category>
@@ -3988,7 +4166,24 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 </br>
 11.格式化字符串：
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">TAG = <span class="string">&#x27;scwssod&#x27;</span></span><br><span class="line"><span class="built_in">id</span> = <span class="number">30</span></span><br><span class="line">filename = <span class="string">&#x27;mytest_%s_model-%d.log&#x27;</span>%(TAG, <span class="built_in">id</span>)</span><br></pre></td></tr></table></figure>
-上述命令可以根据]]></content>
+</br>
+12.查看函数的类汇编代码：
+可以通过python的`dis`库查看函数的类汇编形式的代码，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016154442.png)
+同样，可以通过其`ast`库查看代码会被转换为怎样的语法树（python=3.10.6，python3.8输出或打印的语法树没有换行）：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161921.png)
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161739.png" alt="" /><br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161809.png" alt="" /><br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161809.png" alt="" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>《代码之髓》3.2节</li>
+<li><a href="https://docs.python.org/3.10/library/ast.html#module-ast" title="ast: Abstract Syntax Tree classes and manipulation."><code>ast</code></a> — Abstract Syntax Trees</li>
+</ol>
+</blockquote>
+</br>
+]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -6360,6 +6555,53 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 10.点击Windows10 OneDrive应用没有反应
 > 参考资料：
 > 1. [OneDrive无法打开的原因](https://zhuanlan.zhihu.com/p/343335173)
+</br>
+在git bash终端运行java程序无法通过`Ctrl+Z`终止`hasNext()`输入，如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221001224702.png)
+其原因在于git bash不支持通过`Ctrl+Z`发送Signal 18即`SIGTSTP`信号。在cmd中运行会发现`Ctrl+Z`后回车可以正常终止输入：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221001225100.png)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/50110571/python-error-suppressing-signal-18-to-win32">python error Suppressing signal 18 to win32</a></li>
+</ol>
+</blockquote>
+</br>
+11.使用conda创建新环境时出现以下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016160914.png)
+1. `conda clean -i`
+2. 删除`.condarc`文件，关闭代理
+3. 重新打开Anaconda Prompt窗口，运行命令创建新环境。（此时删除了所有镜像，使用官方源进行安装，未尝试镜像源安装）
+> 参考资料：
+> 1. [conda install packages error: Collecting package metadata (current_repodata.json): failed](https://stackoverflow.com/questions/61134985/conda-install-packages-error-collecting-package-metadata-current-repodata-json)
+> 2. [Managing channels](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html)
+</br>
+12.安装`pydensecrf`pip包时出现如下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221025102938.png)
+提示`Microsoft Visual C++ 14.0 or greater is required`。
+解决方案：
+1. 按照参考资料3安装对应Visual Studio工具
+安装后使用`pip install pydensecrf`安装出现新的报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221025111316.png)
+2. 参照参考资料4将`pydensecrf-1.0rc2-cp38-cp38-win32.whl`下载到本地安装后出现如下报错：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221025111520.png)
+更换为`amd64.whl`版本后解决。
+> 参考资料：
+> 1. [Error "Microsoft Visual C++ 14.0 is required (Unable to find vcvarsall.bat)"](https://stackoverflow.com/questions/29846087/error-microsoft-visual-c-14-0-is-required-unable-to-find-vcvarsall-bat)
+> 2. [Pip error: Microsoft Visual C++ 14.0 is required](https://stackoverflow.com/questions/44951456/pip-error-microsoft-visual-c-14-0-is-required)
+> 3. [Error "Microsoft Visual C++ 14.0 is required (Unable to find vcvarsall.bat)"](https://stackoverflow.com/questions/29846087/error-microsoft-visual-c-14-0-is-required-unable-to-find-vcvarsall-bat)
+> 4. [Pydensecrf 安装报错_MenahemLi的博客-CSDN博客](https://blog.csdn.net/qq_36978986/article/details/108130879)
+> 5. [Archived: Python Extension Packages for Windows - Christoph Gohlke](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pydensecrf)
+</br>
+13.运行`npm install package-name`时，卡在`sill idealTree buildDeps`没有反应。
+解决方案：
+- 配置淘宝镜像：`npm config set registry https://registry.npm.taobao.org `
+- 检验镜像配置：`npm config get registry `
+- 继续运行：`npm install`。
+- 如果问题仍然存在，运行：`npm set strict-ssl false`
+> 参考资料：
+> 1. [1.运行npm install 时，卡在sill idealTree buildDeps没有反应_豆豆豆豆芽的博客-CSDN博客](https://blog.csdn.net/weixin_46182244/article/details/121302702)
+> 2. [[BUG] "sill idealTree buildDeps" takes a lot of time a project with workspaces · Issue #3257 · npm/cli · GitHub](https://github.com/npm/cli/issues/3257)
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -7290,40 +7532,6 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
       </tags>
   </entry>
   <entry>
-    <title>开发工具整理</title>
-    <url>/2022/09/10/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<p>本文记录一下好用的开发工具：</p>
-<span id="more"></span>
-<h3 id="json"><a class="markdownIt-Anchor" href="#json"></a> JSON</h3>
-<ol>
-<li><a href="https://github.com/AykutSarac/jsoncrack.com">JSON Crack</a>：将JSON数据可视化为图的形式：<br />
-<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220910171015.png" alt="" /></li>
-</ol>
-<h3 id="软件内部信息可视化"><a class="markdownIt-Anchor" href="#软件内部信息可视化"></a> 软件内部信息可视化</h3>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://lmy.medium.com/7-tools-for-visualizing-a-codebase-41b7cddb1a14">7 tools for visualizing a codebase</a></li>
-</ol>
-</blockquote>
-<h3 id="编程字体"><a class="markdownIt-Anchor" href="#编程字体"></a> 编程字体</h3>
-<ol>
-<li><a href="https://www.programmingfonts.org">https://www.programmingfonts.org</a> ：可以在线查看300种字体的代码风格和样式</li>
-</ol>
-<h3 id="shell"><a class="markdownIt-Anchor" href="#shell"></a> Shell</h3>
-<ol>
-<li><a href="https://links.bestxtools.com/explainshell.com/">explainshell.com</a>：输入一段shell命令行，将参数和对应帮助文本匹配</li>
-<li></li>
-</ol>
-]]></content>
-      <categories>
-        <category>资料</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>成组概念厘清</title>
     <url>/2022/05/15/%E6%88%90%E7%BB%84%E6%A6%82%E5%BF%B5%E5%8E%98%E6%B8%85/</url>
     <content><![CDATA[<p>本文记录一下成组的易混淆或者应该加以区分的概念。</p>
@@ -7977,6 +8185,8 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 1. `cd /storage`
 2. `mv ~/.cache ./`
 3. `ln -s /storage/user/.cache ~/.cache`
+</br>
+9.安装
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -8688,6 +8898,9 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://lhbg-book.link/">Learn Haskell By Build A Blog</a></li>
 <li><a href="http://cnhaskell.com/#">Real World Haskell 中文版</a></li>
 <li><a href="https://learnyouahaskell.mno2.org">Haskell 趣学指南</a></li>
+<li><a href="https://github.com/bitemyapp/learnhaskell">bitemyapp/learnhaskell</a></li>
+<li><a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours">Write Yourself a Scheme in 48 Hours</a></li>
+<li><a href="https://smunix.github.io/dev.stephendiehl.com/fun/index.html">Write You a Haskell</a></li>
 </ol>
 <h4 id="dart"><a class="markdownIt-Anchor" href="#dart"></a> Dart</h4>
 <h4 id="综合教程-12"><a class="markdownIt-Anchor" href="#综合教程-12"></a> 综合教程</h4>
@@ -8780,15 +8993,75 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://github.com/apachecn/sicp-py-zh">SICP Python版</a>：部署版</li>
 <li><a href="https://wizardforcel.gitbooks.io/sicp-py/content/">SICP Python 描述 中文版</a>：在线版</li>
+<li><a href="https://inst.eecs.berkeley.edu/~cs61a/sp21/">CS61A</a>。对应精译<a href="https://www.bilibili.com/video/BV1v64y1Q78o">视频</a></li>
 </ol>
 <h3 id="分布式系统"><a class="markdownIt-Anchor" href="#分布式系统"></a> 分布式系统</h3>
 <ol>
-<li><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/">MIT6.824</a>：MIT6.824 中文翻译。</li>
+<li><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/">MIT6.824</a>：MIT6.824 中文翻译。对应Lab仓库<a href="https://github.com/OneSizeFitsQuorum/MIT6.824-2021">MIT6.824-2021</a></li>
 </ol>
 <h3 id="操作系统"><a class="markdownIt-Anchor" href="#操作系统"></a> 操作系统</h3>
 <ol>
 <li><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">MIT6.S081</a>：MIT6.S081中文翻译。</li>
 <li><a href="https://os.phil-opp.com/">Writing an OS in Rust</a>：使用Rust语言编写一个小型的操作系统。</li>
+<li><a href="http://www.osdever.net/tutorials/">OS Development Tutorials</a>：操作系统开发教程</li>
+<li><a href="http://www.osdev.org/">OSDev.org</a>：操作系统开发维基百科</li>
+</ol>
+<h3 id="解释器和编译器"><a class="markdownIt-Anchor" href="#解释器和编译器"></a> 解释器和编译器</h3>
+<ol>
+<li><a href="https://craftinginterpreters.com/contents.html">Crafting Interpreters</a></li>
+<li><a href="https://zihengcat.github.io/crafting-interpreters-zh-cn/">解释器设计与实现</a>：上书的中文版，只翻译了部分</li>
+<li><a href="https://www.yinwang.org/blog-cn/2012/08/01/interpreter">怎样写一个解释器</a>：王垠的文章</li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_parser_generators">Comparison of parser generators</a>：维基百科上对各种parser生成器的比较和总结</li>
+<li><a href="http://web.stanford.edu/class/cs143/">CS143 Compilers</a>：斯坦福的编译器课程</li>
+<li><a href="https://github.com/lazyparser/becoming-a-compiler-engineer">becoming-a-compiler-engineer</a>：中科大出品的较现代化的编译器课程</li>
+<li><a href="https://www.zhihu.com/question/315313590/answer/626705164">学习编译原理有什么好的书籍?</a>：有较多知乎大佬认可的编译原理书籍推荐。</li>
+<li><a href="https://www.zhihu.com/collection/699187877">编译器</a>：本人编译器知乎收藏夹</li>
+<li><a href="https://silverbullettt.bitbucket.io/courses/compiler-2022/index.html">编译原理</a>：南京大学编译原理课程，项目文档为中文</li>
+<li><a href="https://hpc-wiki.info/hpc/Compiler">Compiler</a>：HPC网站上关于Compiler的介绍</li>
+<li><a href="https://book.douban.com/people/RednaxelaFX/all?sort=rating&amp;start=0&amp;tag=%E7%BC%96%E8%AF%91%E5%99%A8&amp;mode=grid&amp;tags_sort=count">RednaxelaFX的书/编译器(73)</a>：知乎叛逆者的编译器豆瓣书单。</li>
+</ol>
+<h3 id="计算机图形学"><a class="markdownIt-Anchor" href="#计算机图形学"></a> 计算机图形学</h3>
+<ol>
+<li><a href="https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html">GAMES101</a>：现代计算机图形学入门</li>
+</ol>
+<h3 id="静态分析"><a class="markdownIt-Anchor" href="#静态分析"></a> 静态分析</h3>
+<ol>
+<li><a href="https://pascal-group.bitbucket.io/teaching.html">PASCAL</a>：南大静态分析课程</li>
+</ol>
+<h3 id="计算机结构"><a class="markdownIt-Anchor" href="#计算机结构"></a> 计算机结构</h3>
+<ol>
+<li><a href="https://www.coursera.org/learn/build-a-computer">依据基本原理构建现代计算机：从与非门到俄罗斯方块（基于项目的课程）</a>：coursera上的课程，教你从零造一台计算机。课程名又名《nand to tetris》，对应书籍为《计算机系统要素》，官网为 <a href="https://www.nand2tetris.org">https://www.nand2tetris.org</a></li>
+<li><a href="https://fengmuzi2003.gitbook.io/csapp3e/">CSAPP重点解读</a>：整理了CSAPP一书的重点和学习建议。</li>
+<li><a href="https://nandgame.com/">Nandgame</a>：在玩游戏的过程中教你学会计算机底层硬件知识。</li>
+<li><a href="https://nju-projectn.github.io/ics-pa-gitbook/ics2022/index.html">计算机系统基础</a>：南大计算机系统基础</li>
+<li>[rCore-Tutorial-Book]：本教程旨在一步一步展示如何从零开始用Rust语言写一个基于RISC-V架构的类Unix内核。</li>
+<li><a href="https://inst.eecs.berkeley.edu/~cs61c/sp22/">CS 61C</a>：UCB的计算机架构课程。对应中文字幕<a href="https://www.bilibili.com/video/BV1Lu411X7u7">视频</a></li>
+<li><a href="http://csapp.cs.cmu.edu/3e/labs.html">CSAPP</a>：CMU的CSAPP课程lab。</li>
+</ol>
+<h3 id="软件工程"><a class="markdownIt-Anchor" href="#软件工程"></a> 软件工程</h3>
+<ol>
+<li><a href="http://ddia.vonng.com/#/">设计数据密集型应用</a>：神书DDIA的中文版</li>
+</ol>
+<h3 id="深度学习和机器学习"><a class="markdownIt-Anchor" href="#深度学习和机器学习"></a> 深度学习和机器学习</h3>
+<ol>
+<li><a href="https://dlsyscourse.org/">Deep Learning Systems</a>：CMU深度学习课程，涉及算法和实现。</li>
+</ol>
+<h3 id="程序语言理论"><a class="markdownIt-Anchor" href="#程序语言理论"></a> 程序语言理论</h3>
+<ol>
+<li><a href="https://bobzhang.github.io/courses/">程序语言理论与实现</a>：Rescript语言创建者张宏波退出的程序语言理论课程，注重于实践，使用Rescript教学。</li>
+</ol>
+<h3 id="数据库"><a class="markdownIt-Anchor" href="#数据库"></a> 数据库</h3>
+<ol>
+<li><a href="https://cstack.github.io/db_tutorial/">How Does a Database Work? | Let’s Build a Simple Database</a></li>
+</ol>
+<h3 id="服务器开发"><a class="markdownIt-Anchor" href="#服务器开发"></a> 服务器开发</h3>
+<ol>
+<li><a href="https://github.com/yuesong-feng/30dayMakeCppServer">30dayMakeCppServer</a>：30天自制服务器（C++）</li>
+</ol>
+<h3 id="技术文章"><a class="markdownIt-Anchor" href="#技术文章"></a> 技术文章</h3>
+<ol>
+<li><a href="http://learn.lianglianglee.com/">技术文章摘抄</a></li>
+<li><a href="https://tls13.xargs.org/">The Illustrated TLS 1.3 Connection: Every Byte Explained</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -8803,5 +9076,279 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
     <title>通过python脚本实现向kindle邮箱发送书籍</title>
     <url>/2022/05/15/%E9%80%9A%E8%BF%87python%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%90%91kindle%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E4%B9%A6%E7%B1%8D/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>ANTLR学习过程和资料</title>
+    <url>/2022/10/21/ANTLR%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E5%92%8C%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<p>本文记录以下学习ANTLR过程中所使用的资料和学习经验：</p>
+<span id="more"></span>
+<h3 id="学习资料"><a class="markdownIt-Anchor" href="#学习资料"></a> 学习资料</h3>
+<ol>
+<li><a href="https://abcdabcd987.com/notes-on-antlr4/">ANTLR4 笔记</a>：记录了ANTLR4的使用技巧</li>
+<li><a href="https://www.zhihu.com/question/437337408/answer/1661188049">如何学习ANTLR? - 知乎</a>：记录了学习ANTLR的经验</li>
+<li><a href="https://github.com/antlr/grammars-v4">grammars-v4</a>：ANTLR4官方仓库，收集了大量ANTLR v4的形式化语法</li>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/grammars.md">antlr4/grammars.md</a>：ANTLR4官方开源仓库的语法文档，描述了语法结构</li>
+<li><a href="https://book.douban.com/subject/27082372/">ANTLR 4权威指南 (豆瓣)</a></li>
+</ol>
+<h3 id="配置教程"><a class="markdownIt-Anchor" href="#配置教程"></a> 配置教程</h3>
+<ol>
+<li><a href="https://www.cnblogs.com/solvit/p/10097234.html">ANTLR4在windows10下的安装 - solvit - 博客园</a></li>
+</ol>
+<h3 id="快速上手"><a class="markdownIt-Anchor" href="#快速上手"></a> 快速上手</h3>
+<ol>
+<li><a href="https://juejin.cn/post/7018521754125467661">语法解析器ANTLR4从入门到实践 - 掘金</a></li>
+<li><a href="https://www.chungkwong.cc/antlr.html">用ANTLR解析领域特定语言 | 陈颂光</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/114982293">Antlr4简易快速入门 - 知乎</a></li>
+</ol>
+<h3 id="所遇问题"><a class="markdownIt-Anchor" href="#所遇问题"></a> 所遇问题</h3>
+<ol>
+<li>出现<code>Cannot resolve symbol 'antlr'</code>。如下图所示：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221021115827.png" alt="" /><br />
+原因：虽然已经在本地下载了antlr包并将其添加进了CLASSPATH，但IDEA并不能识别出。<br />
+解决方案：在Project Settings对应Module中添加依赖<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221021120414.png" alt="" /></li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>ANTLR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Large Projects</title>
+    <url>/2022/10/03/Large-Projects/</url>
+    <content><![CDATA[<hr />
+<p>本文记录一下一些网上出现的较大型项目，其会提供从零开始的实现让你把握完整的项目。</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours">Write Yourself a Scheme in 48 Hours</a>：会教你使用Haskell语言实现一个Scheme。</li>
+<li><a href="https://bellard.org/tcc/">Tiny C Compiler</a>：bellard提供的小型C编译器的实现，其在github上维护的仓库为<a href="https://github.com/TinyCC/tinycc">tinycc</a>。并未提供教程，但提供了 <a href="https://bellard.org/tcc/tcc-doc.html">Tiny C Compiler Reference Documentation</a>，且仍在更新。</li>
+<li><a href="https://lotabout.me/2015/write-a-C-interpreter-0/">手把手教你构建 C 语言编译器</a>：本项目将分为9个部分手把手教你实现一个C语言编译器。</li>
+<li><a href="https://pandolia.net/tinyc/">自己动手写编译器</a>：介绍了一个简单的C编译器的实现。</li>
+<li><a href="https://os.phil-opp.com/">Writing an OS in Rust</a>：使用Rust语言编写一个小型的操作系统。</li>
+<li>[rCore-Tutorial-Book]：本教程旨在一步一步展示如何从零开始用Rust语言写一个基于RISC-V架构的类Unix内核。</li>
+<li>aria2：<a href="https://www.cnblogs.com/endingly/p/15832027.html">aria2 源码解析专题—— (一)基础架构</a></li>
+<li><a href="https://github.com/lilongweidev/GoodWeather">GoodWeather</a>：从零开发Android天气APP。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Little Projects</title>
+    <url>/2022/10/03/Little-Projects/</url>
+    <content><![CDATA[<hr />
+<p>本文记录一下那些在互联网上的一些可以让你快速上手或者学习到相关领域只是的小型项目：</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://introcs.cs.princeton.edu/java/assignments/">Creative Programming Assignments</a>：普林斯顿大学给学生布置的的富有创造性的作业。</li>
+<li><a href="https://github.com/bradtraversy/50projects50days">50projects50days</a>：使用HTML/CSS和JavaScript完成的前端小项目。50天50个，每天一个。</li>
+<li><a href="https://github.com/aosabook/500lines">500lines</a>：<a href="http://aosabook.org/en/index.html">The Architecture of Open Source Applications</a>系列第四版中《500 Lines or less》中各个小型项目的官方实现，其使用不到500行的代码实现一个小型功能或组件。</li>
+<li><a href="https://github.com/jamiebuilds/the-super-tiny-compiler">the-super-tiny-compiler</a>：使用JavaScript实现的一个小型的编译器，其包含一个现代编译器的所有主要组件。有对应的解析文章：<a href="https://segmentfault.com/a/1190000016402699">有史以来最小的编译器源码解析</a></li>
+<li><a href="https://github.com/521xueweihan/OneFile">OneFile</a>：该项目整理了可以使用单个文件实现的小型项目或者功能。</li>
+</ol>
+<p>…持续更新中</p>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch中知识点03</title>
+    <url>/2022/10/06/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B903/</url>
+    <content><![CDATA[<p>本文记录一下在调试模型过程中的一些 Pytorch 框架和 python 相关知识点。</p>
+<span id="more"></span>
+<ol>
+<li>报错：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect … This means that the trace might not generalize to other inputs!</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221011160635.png" alt="" /></p>
+<p>解决方案：将对应位置条件语句删除</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># if c.size() != att.size():</span></span><br><span class="line"><span class="comment">#     att = F.interpolate(att, c.size()[2:], mode=&#x27;bilinear&#x27;, align_corners=False)</span></span><br><span class="line"><span class="comment"># 删除if语句</span></span><br><span class="line">att = F.interpolate(att, c.size()[<span class="number">2</span>:], mode=<span class="string">&#x27;bilinear&#x27;</span>, align_corners=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># if lf.size()[2:] != hf.size()[2:]:</span></span><br><span class="line">hf = F.interpolate(hf, size=lf.size()[<span class="number">2</span>:], mode=<span class="string">&#x27;bilinear&#x27;</span>, align_corners=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://discuss.pytorch.org/t/tracerwarning-converting-a-tensor-to-a-python-index-might-cause-the-trace-to-be-incorrect-this-means-that-the-trace-might-not-generalize-to-other-inputs/42282">TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect…This means that the trace might not generalize to other inputs!</a></li>
+<li><a href="https://github.com/onnx/onnx/issues/2836">TracerWarning: Converting a tensor to a Python index might cause the trace to be incorrect. We can’t record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs! #2836</a></li>
+<li><a href="https://stackoverflow.com/questions/66746307/torch-jit-trace-tracerwarning-converting-a-tensor-to-a-python-boolean-might-c">Torch JIT Trace = TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect</a></li>
+</ol>
+</blockquote>
+</br>
+<p>2.报如下错误：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221006184108.png" alt="" /><br />
+其原因在于数据集的大小除以batch_size余1，最后只包含单个数据的batch无法完成<code>batch_norm</code>操作。<br />
+解决方案：更改batch_size。</p>
+</br>
+3.出现报错` Can't parse 'dsize'. Sequence item with index 0 has a wrong type`：
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221010164417.png" alt="" /></p>
+<p>其原因为<code>(W,H)</code>中数据类型不对，应该将<code>torch.Tensor</code>转为<code>int</code>。由于<code>H</code>和<code>W</code>均为一维Tensor，可以通过以下代码实现：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">H, W = H.item(), W.item()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/47588682/how-to-cast-a-1-d-inttensor-to-int-in-pytorch">How to cast a 1-d IntTensor to int in Pytorch</a></li>
+</ol>
+</blockquote>
+</br>
+4.当通过`state_dict = model_zoo.load_url(url_map_[model_name]`在线下载预训练的模型权重文件时，出现`urllib.error.HTTPError: HTTP Error 503: Egress is over the account limit.`错误。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221018162424.png)
+<ul>
+<li>原因：状态码为<code>503 Service Unavailable</code>，表示临时的服务器维护或者过载，服务器当前无法处理请求，这个情况是暂时的，会在一段时间后恢复（实际上过了好多天都没修复）</li>
+<li>解决方案：因为调用<code>model_zoo.load_url()</code>时会打印出该权重文件的下载地址和保存路径，可以通过手动下载并放入该路径来解决该问题，如下图所示<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221018162553.png" alt="" /></li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://zh.m.wikipedia.org/zh/HTTP%E7%8A%B6%E6%80%81%E7%A0%81">HTTP状态码</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode刷题技巧</title>
+    <url>/2022/11/02/leetcode%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>本文记录一下在刷leetcode算法题过程中积累的一些技巧和方法：</p>
+<span id="more"></span>
+<h3 id="java本地调试"><a class="markdownIt-Anchor" href="#java本地调试"></a> Java本地调试</h3>
+<ul>
+<li>以<code>81.搜索旋转排序数组-ii.java</code>为例，其代码如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @lc app=leetcode.cn id=81 lang=java</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * [81] 搜索旋转排序数组 II</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">first</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">last</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> mid;</span><br><span class="line">        <span class="keyword">while</span> (first != last) &#123;</span><br><span class="line">            mid = (first+last)&gt;&gt;&gt;<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[first] &lt; nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[first] &lt;= target &amp;&amp; target &lt; nums[mid]) &#123;</span><br><span class="line">                    last = mid;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    first = mid + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[first] &gt; nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[mid] &lt; target &amp;&amp; target &lt;= nums[last - <span class="number">1</span>]) &#123;</span><br><span class="line">                    first = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    last = mid;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// nums[first]==nums[mid]，由于有重复元素存在，不能判断增减性，first加1</span></span><br><span class="line">                first++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// @lc code=end</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在上述文件夹下新键<code>Test</code>类即<code>Test.java</code>文件用于测试，并将上述<code>Solution</code>类名改为<code>Solution</code>避免冲突：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">S</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">S</span>();</span><br><span class="line">        <span class="type">int</span>[] nums = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>&#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        System.out.println(s1.search(nums, target));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在下述位置打断点并点击<code>Debug</code>按钮进入调试：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221102180444.png" alt="" /></li>
+<li>注意需要安装<code>Extension Pack for Java</code>以及<code>Code Runner</code>等插件，系统里需要安装java jdk。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.bilibili.com/video/BV1qL4y1q7bY">免费 Leetcode Debug？教你用VSCode优雅的刷算法题！！！_哔哩哔哩_bilibili</a></li>
+</ol>
+</blockquote>
+<h3 id="c本地调试"><a class="markdownIt-Anchor" href="#c本地调试"></a> C++本地调试</h3>
+<ul>
+<li>同样以<code>81.cpp</code>为例，注意进行C++调试时<code>.cpp</code>文件和路径名中不要含有中文。<code>81.cpp</code>代码如下：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @lc app=leetcode.cn id=81 lang=cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * [81] 搜索旋转排序数组 II</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//代码</span></span><br><span class="line"><span class="comment">//分析：允许重复元素，33题中如果 A[mid]&gt;=A[first]，则[first, mid]为递增序列不再成立。</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">search</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> first =<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> last = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> mid;</span><br><span class="line">        <span class="keyword">while</span>(first!=last)&#123;</span><br><span class="line">            mid = first + (last-first)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid]==target) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[first]&lt;nums[mid])&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[first]&lt;=target &amp;&amp; target&lt;nums[mid])&#123;</span><br><span class="line">                    last=mid;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    first=mid+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[first]&gt;nums[mid])&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[mid]&lt;target &amp;&amp; target&lt;=nums[last<span class="number">-1</span>])&#123;</span><br><span class="line">                    first=mid+<span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    last=mid;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//nums[first]==nums[mid]，因为有重复元素的存在，不能判断增减性，first++</span></span><br><span class="line">                first++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// @lc code=end</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>直接在上述文件中添加<code>main</code>函数作为调试入口：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; nums;</span><br><span class="line">    nums=&#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    <span class="type">int</span> target = <span class="number">0</span>;</span><br><span class="line">    Solution s;</span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">search</span>(nums, target) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在下述位置打断点并点击右上角<code>Debug C/C++ File</code>进行调试：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221102183138.png" alt="" /></li>
+<li>注意在调试之前，需要配置好C++环境（即<code>.vscode</code>文件夹），并安装<code>C/C++</code>和<code>Code Runner</code>等插件。</li>
+</ul>
+<blockquote>
+<p>参考资料：<br />
+<a href="https://blog.songjiahao.com/archives/362">leetcode刷题本地调试模板（C++） – SAquariusの梦想屋</a><br />
+<a href="https://www.jianshu.com/p/2524c34511f3">C++ <code>vector&lt;int&gt;&amp;nums</code> 用法总结 </a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开发和学习工具整理</title>
+    <url>/2022/09/10/%E5%BC%80%E5%8F%91%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>本文记录一下好用的开发工具：</p>
+<span id="more"></span>
+<h3 id="json"><a class="markdownIt-Anchor" href="#json"></a> JSON</h3>
+<ol>
+<li><a href="https://github.com/AykutSarac/jsoncrack.com">JSON Crack</a>：将JSON数据可视化为图的形式：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220910171015.png" alt="" /></li>
+</ol>
+<h3 id="软件内部信息可视化"><a class="markdownIt-Anchor" href="#软件内部信息可视化"></a> 软件内部信息可视化</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://lmy.medium.com/7-tools-for-visualizing-a-codebase-41b7cddb1a14">7 tools for visualizing a codebase</a></li>
+</ol>
+</blockquote>
+<h3 id="编程字体"><a class="markdownIt-Anchor" href="#编程字体"></a> 编程字体</h3>
+<ol>
+<li><a href="https://www.programmingfonts.org">https://www.programmingfonts.org</a> ：可以在线查看300种字体的代码风格和样式</li>
+</ol>
+<h3 id="shell"><a class="markdownIt-Anchor" href="#shell"></a> Shell</h3>
+<ol>
+<li><a href="https://links.bestxtools.com/explainshell.com/">explainshell.com</a>：输入一段shell命令行，将参数和对应帮助文本匹配</li>
+</ol>
+<h3 id="uml图工具"><a class="markdownIt-Anchor" href="#uml图工具"></a> UML图工具</h3>
+<ol>
+<li><a href="https://plantuml.com/zh/">PlantUML</a>：通过类似于markdown的纯文本语法生成UML图，VSCode插件中使用Alt+D打开预览。<a href="http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000">PlantUML在线编辑器</a></li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://gaoxiang15125.gitee.io/2020/10/07/VSCode%E4%B8%8BPlantUML%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">VSCode下PlantUML使用教程</a></li>
+<li><a href="https://www.bilibili.com/video/BV1kv411q7Kt/">VSCode还能绘制UML图?</a></li>
+</ol>
+</blockquote>
+<h3 id="大型txt文件打开工具"><a class="markdownIt-Anchor" href="#大型txt文件打开工具"></a> 大型txt文件打开工具</h3>
+<ol>
+<li><a href="https://www.emeditor.com/">emeditor</a>：可以秒开几十G的文件，已经支持16TB文件。</li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.zhihu.com/question/279637736">超大txt用什么工具秒开？</a></li>
+</ol>
+</blockquote>
+<h3 id="数据结构和算法可视化"><a class="markdownIt-Anchor" href="#数据结构和算法可视化"></a> 数据结构和算法可视化</h3>
+<ol>
+<li><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structure Visualization</a>：洛杉矶大学提供的数据结构可视化在线网站</li>
+<li><a href="https://visualgo.net/zh">visualgo</a>：数据结构和算法动态可视化中文版。新加坡国立大学提供。</li>
+<li><a href="https://algorithm-visualizer.org/">Algorithm Visualizer</a></li>
+</ol>
+<h3 id="sql可视化"><a class="markdownIt-Anchor" href="#sql可视化"></a> SQL可视化</h3>
+<ol>
+<li><a href="https://sqlflow.gudusoft.com/?utm_content=buffer137ea&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer#/">SQLFlow</a></li>
+</ol>
+<h3 id="各种画图工具"><a class="markdownIt-Anchor" href="#各种画图工具"></a> 各种画图工具</h3>
+<ol>
+<li>awesome-diagramming](<a href="https://github.com/shubhamgrg04/awesome-diagramming">https://github.com/shubhamgrg04/awesome-diagramming</a>)：该仓库整理了用于画各种图的工具</li>
+</ol>
+<h3 id="打字练习"><a class="markdownIt-Anchor" href="#打字练习"></a> 打字练习</h3>
+<ol>
+<li><a href="https://www.keybr.com/">Typing Practice</a>：界面最为简洁友好的打字网站（英文）</li>
+<li><a href="https://www.speedcoder.net/">Speedcoder</a>：练习各种编程语言语法的打字网站（英文）</li>
+</ol>
+<h3 id="kubernetes"><a class="markdownIt-Anchor" href="#kubernetes"></a> Kubernetes</h3>
+<ol>
+<li><a href="https://github.com/guangzhengli/k8s-tutorials">k8s-tutorials</a>：k8s教程（中文）</li>
+<li><a href="https://github.com/up9inc/mizu">mizu</a>：k8s API流量查看工具</li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
   </entry>
 </search>
