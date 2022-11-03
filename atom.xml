@@ -55,6 +55,25 @@
   </entry>
   
   <entry>
+    <title>Markdown语法记录</title>
+    <link href="https://tom89757.github.io/2022/10/08/Markdown%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95/"/>
+    <id>https://tom89757.github.io/2022/10/08/Markdown%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95/</id>
+    <published>2022-10-08T13:01:13.000Z</published>
+    <updated>2022-11-03T16:20:37.673Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下Markdown写作中的常用语法：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Markdown" scheme="https://tom89757.github.io/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Pytorch中知识点03</title>
     <link href="https://tom89757.github.io/2022/10/06/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B903/"/>
     <id>https://tom89757.github.io/2022/10/06/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B903/</id>
@@ -396,25 +415,6 @@
     <category term="指南" scheme="https://tom89757.github.io/tags/%E6%8C%87%E5%8D%97/"/>
     
     <category term="编程语言" scheme="https://tom89757.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CS学习指南整理</title>
-    <link href="https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/"/>
-    <id>https://tom89757.github.io/2022/08/15/CS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E6%95%B4%E7%90%86/</id>
-    <published>2022-08-15T05:53:08.000Z</published>
-    <updated>2022-10-30T15:18:36.044Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文汇总一下目前位置本人接触到的比较好的学习资料：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="指南" scheme="https://tom89757.github.io/tags/%E6%8C%87%E5%8D%97/"/>
     
   </entry>
   

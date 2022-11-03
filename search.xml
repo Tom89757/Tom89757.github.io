@@ -9373,4 +9373,28 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
         <tag>工具</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Markdown语法记录</title>
+    <url>/2022/10/08/Markdown%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>本文记录一下Markdown写作中的常用语法：</p>
+<span id="more"></span>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Ω</span></span></span></span>：<code>\Omega</code><br />
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">┌</mo></mrow><annotation encoding="application/x-tex">\ulcorner</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mopen amsrm">┌</span></span></span></span>：<code>\ulcorner</code><br />
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">└</mo></mrow><annotation encoding="application/x-tex">\llcorner</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.37788em;vertical-align:0em;"></span><span class="mopen amsrm">└</span></span></span></span>：<code>\dlcorner</code><br />
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\Theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Θ</span></span></span></span>：<code>\Theta</code><br />
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">∈</span></span></span></span>：<code>\in</code></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">帮助:数学公式</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
 </search>
