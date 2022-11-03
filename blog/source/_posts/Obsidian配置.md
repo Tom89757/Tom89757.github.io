@@ -20,6 +20,10 @@ tags:
 - cMenu：用于支持word的富文本编辑，可自行配置
 - Title Serial Number Plugin：用于自动给标题编号
 - Auto Title Link：用于自动根据复制的链接拉取网页标题
+#### Vim配置
+> 参考资料：
+> 1. [Obsidian 中使用 Vim 模式并配置 Vimrc | Verne in GitHub](https://einverne.github.io/post/2022/07/obsidian-vim-and-vimrc.html)
+> 2. [Obsidian中使用Vim的最佳实践？ · Discussion #10 · obsidianzh/forum · GitHub](https://github.com/obsidianzh/forum/discussions/10)
 ### 问题
 #### 4.1 将VSCode代码粘贴到代码块中时出现多于空行
 解决方案：

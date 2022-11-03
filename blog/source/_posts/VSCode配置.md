@@ -146,34 +146,39 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 
 ### VSCode Vim插件配置
 ```json
+//插入模式设置，将双击"j"键映射为"<Esc>"键
 "vim.insertModeKeyBindings": [
         {
             "before": ["j", "j"],
             "after": ["<Esc>"]
         }
     ],
-    "vim.handleKeys": {
-        "<C-h>": false,
-        "<C-a>": false,
-        "<C-f>": false,
-        "<C-n>": false,
-        "<C-p>": false,
-        "<C-x>": false
-    },
-    "vim.useCtrlKeys": false, //使vim不会捕获Ctrl键，从而可以使用所有Ctrl+Key VSCode快捷键
-    "vim.leader": "<space>",
-    "vim.commandLineModeKeyBindings": [
-    ],
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["H"],
-            "after": ["^"]
-        },
-        {
-            "before": ["L"],
-            "after": ["$"]
-        }
-    ]
+//通过键<C-h>等设置为false保留VSCode原生快捷键
+"vim.handleKeys": {
+	"<C-h>": false,
+	"<C-a>": false,
+	"<C-f>": false,
+	"<C-n>": false,
+	"<C-p>": false,
+	"<C-x>": false
+},
+//使vim不会捕获Ctrl键，从而可以使用所有Ctrl+Key VSCode快捷键，此时可不设置上面
+"vim.useCtrlKeys": false,
+//"vim.leader"可以看作类似Ctrl的前缀键，可以对Vim做很多的个性化设置
+"vim.leader": "<space>",
+"vim.commandLineModeKeyBindings": [
+],
+//正常模式设置，此处将"H"映射为"^"（行首），将"L"映射为"$"（行尾）
+"vim.normalModeKeyBindings": [
+	{
+		"before": ["H"],
+		"after": ["^"]
+	},
+	{
+		"before": ["L"],
+		"after": ["$"]
+	}
+]
 ```
 > 参考资料：
 > 1. [在VSCode里面配置Vim的正确姿势（细节解析） - 知乎](https://zhuanlan.zhihu.com/p/188499395)
@@ -181,3 +186,5 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 3. [指尖飞舞：vscode + vim 高效开发（easymotion）_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Ry4y1H7zH)
 > 4. [写给 VS Code 用户的 Vim 入坑指南](https://www.yuexun.me/blog/the-vim-guide-for-vs-code-users/)
 > 5. [vim 使用技巧](https://www.pengfeixc.com/blogs/developer-handbook/vim-shortcuts)
+> 6. [vs code 使用 vim 插件 快捷键问题 - V2EX](https://www.v2ex.com/t/703444)
+> 7. [vscode + vim 全键盘操作高效搭配方案 - 知乎](https://zhuanlan.zhihu.com/p/430603620)
