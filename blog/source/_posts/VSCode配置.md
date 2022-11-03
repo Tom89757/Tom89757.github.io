@@ -145,8 +145,39 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 
 
 ### VSCode Vim插件配置
-
+```json
+"vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-h>": false,
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-n>": false,
+        "<C-p>": false,
+        "<C-x>": false
+    },
+    "vim.useCtrlKeys": false, //使vim不会捕获Ctrl键，从而可以使用所有Ctrl+Key VSCode快捷键
+    "vim.leader": "<space>",
+    "vim.commandLineModeKeyBindings": [
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["$"]
+        }
+    ]
+```
 > 参考资料：
 > 1. [在VSCode里面配置Vim的正确姿势（细节解析） - 知乎](https://zhuanlan.zhihu.com/p/188499395)
 > 2. [vscode + vim : vscode 全键盘使用方案_vim_lmymirror_InfoQ写作社区](https://xie.infoq.cn/article/654e137365b09e217f57bc965)
 > 3. [指尖飞舞：vscode + vim 高效开发（easymotion）_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Ry4y1H7zH)
+> 4. [写给 VS Code 用户的 Vim 入坑指南](https://www.yuexun.me/blog/the-vim-guide-for-vs-code-users/)
+> 5. [vim 使用技巧](https://www.pengfeixc.com/blogs/developer-handbook/vim-shortcuts)
