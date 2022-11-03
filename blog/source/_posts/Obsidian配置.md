@@ -24,6 +24,7 @@ tags:
 > 参考资料：
 > 1. [Obsidian 中使用 Vim 模式并配置 Vimrc | Verne in GitHub](https://einverne.github.io/post/2022/07/obsidian-vim-and-vimrc.html)
 > 2. [Obsidian中使用Vim的最佳实践？ · Discussion #10 · obsidianzh/forum · GitHub](https://github.com/obsidianzh/forum/discussions/10)
+> 3. [从零配置Obsidian-像Vim一样跳转_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1ZN4y1j73m)
 ### 问题
 #### 4.1 将VSCode代码粘贴到代码块中时出现多于空行
 解决方案：
