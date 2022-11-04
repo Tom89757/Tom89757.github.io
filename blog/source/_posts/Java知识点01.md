@@ -105,4 +105,16 @@ alias java="java -cp $CLASSPATH:/mnt/d/Develop/Java/jdk11.0.11/lib/*"
 > 1. [如何在Ubuntu 18.04上安装Java(JDK11)](https://www.jianshu.com/p/5a25b9535016)
 
 
+### Java中的HashMap、TreeMap和HashSet、TreeSet
+
+> 参考资料：
+> 1. [哈希表和有序表的简单介绍 - 掘金](https://juejin.cn/post/6978052334911766558)
+> 2. [Map的有序和无序实现类，与Map的排序 - 龙昊雪 - 博客园](https://www.cnblogs.com/chen-lhx/p/8432422.html)
+> 3. [Java HashSet | 菜鸟教程](https://www.runoob.com/java/java-hashset.html)
+> 4. [Java TreeSet - Java教程 - 菜鸟教程](https://www.cainiaojc.com/java/java-treeset.html)
+> 5. [Java HashMap | 菜鸟教程](https://www.runoob.com/java/java-hashmap.html)
+> 6. [Java TreeMap - Java教程 - 菜鸟教程](https://www.cainiaojc.com/java/java-treemap.html)
+
+
+
 
