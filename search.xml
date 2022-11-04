@@ -705,19 +705,23 @@ PS：</li>
 <li>Auto Title Link：用于自动根据复制的链接拉取网页标题</li>
 </ul>
 <h4 id="vim配置"><a class="markdownIt-Anchor" href="#vim配置"></a> Vim配置</h4>
+<p>在笔记库根目录添加<code>.obsidian.vimrc</code>文件，并在里面添加如下按键映射：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot; I like using H and L for beginning/end of line</span></span><br><span class="line"><span class="string">nmap H ^</span></span><br><span class="line"><span class="string">nmap L $</span></span><br><span class="line"><span class="string">&quot;</span>map j j to Esc<span class="string">&quot;</span></span><br><span class="line"><span class="string">imap jj Esc</span></span><br><span class="line"><span class="string">&quot;</span> Have j and k navigate visual lines rather than logical ones</span><br><span class="line">nmap j gj</span><br><span class="line">nmap k gk</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://einverne.github.io/post/2022/07/obsidian-vim-and-vimrc.html">Obsidian 中使用 Vim 模式并配置 Vimrc | Verne in GitHub</a></li>
 <li><a href="https://github.com/obsidianzh/forum/discussions/10">Obsidian中使用Vim的最佳实践？ · Discussion #10 · obsidianzh/forum · GitHub</a></li>
+<li><a href="https://www.bilibili.com/video/BV1ZN4y1j73m">从零配置Obsidian-像Vim一样跳转_哔哩哔哩_bilibili</a></li>
+<li><a href="https://github.com/esm7/obsidian-vimrc-support">obsidian-vimrc-support</a></li>
+<li><a href="https://github.com/esm7/obsidian-vimrc-support/issues/4">jj imap to Esc not work ? · Issue #4 · esm7/obsidian-vimrc-support · GitHub</a></li>
 </ol>
 </blockquote>
 <h3 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h3>
 <h4 id="41-将vscode代码粘贴到代码块中时出现多于空行"><a class="markdownIt-Anchor" href="#41-将vscode代码粘贴到代码块中时出现多于空行"></a> 4.1 将VSCode代码粘贴到代码块中时出现多于空行</h4>
-<p>解决方案：</p>
+<p>解决方案：右键以纯文本形式粘贴<br />
+参考资料：</p>
 <ol>
-<li>右键以纯文本形式粘贴<br />
-参考资料：</li>
 <li><a href="https://forum-zh.obsidian.md/t/topic/7496">【已解决】在阅读模式下，代码块中的代码不高亮</a></li>
 <li><a href="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BD%A0%E7%9A%84%E7%AC%94%E8%AE%B0">格式化你的笔记</a></li>
 <li><a href="https://forum-zh.obsidian.md/t/topic/7432">求助：关于在Obsidian上粘贴代码每行会出现多余空行如何解决？</a></li>
@@ -9364,6 +9368,10 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://github.com/guangzhengli/k8s-tutorials">k8s-tutorials</a>：k8s教程（中文）</li>
 <li><a href="https://github.com/up9inc/mizu">mizu</a>：k8s API流量查看工具</li>
+</ol>
+<h3 id="chrome实用插件"><a class="markdownIt-Anchor" href="#chrome实用插件"></a> Chrome实用插件</h3>
+<ol>
+<li><a href="https://www.escapelife.site/posts/28dc24ac.html">Vimium浏览器插件使用 | Escape</a></li>
 </ol>
 ]]></content>
       <categories>
