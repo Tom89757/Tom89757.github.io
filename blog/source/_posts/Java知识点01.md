@@ -115,6 +115,9 @@ alias java="java -cp $CLASSPATH:/mnt/d/Develop/Java/jdk11.0.11/lib/*"
 > 5. [Java HashMap | 菜鸟教程](https://www.runoob.com/java/java-hashmap.html)
 > 6. [Java TreeMap - Java教程 - 菜鸟教程](https://www.cainiaojc.com/java/java-treemap.html)
 
+### Java中溢出处理
 
+> 参考资料：
+> 1. [java int溢出总结 | njuCZ's blog](https://njucz.github.io/2017/08/16/java-int%E6%BA%A2%E5%87%BA%E6%80%BB%E7%BB%93/)
 
 

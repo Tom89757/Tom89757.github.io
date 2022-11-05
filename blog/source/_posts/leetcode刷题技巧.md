@@ -50,7 +50,7 @@ class Solution {
 }
 // @lc code=end
 ```
-- 在上述文件夹下新键`Test`类即`Test.java`文件用于测试，并将上述`Solution`类名改为`Solution`避免冲突：
+- 在上述文件夹下新键`Test`类即`Test.java`文件用于测试，并将上述`Solution`类名改为`S`避免冲突：
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -61,6 +61,8 @@ public class Test {
     }
 }
 ```
+- 以上述`S`类和`Test`类为例，由于在debug时实在本地查找相应的`.class`文件，所以需要在本地编译得到`S.class`和`Test.class`后再调试（下述`S.class`可以由其他文件名的`.java`文件编译得到，如`18.四数之和.java`：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221105152720.png)
 - 在下述位置打断点并点击`Debug`按钮进入调试：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221102180444.png)
 - 注意需要安装`Extension Pack for Java`以及`Code Runner`等插件，系统里需要安装java jdk。
