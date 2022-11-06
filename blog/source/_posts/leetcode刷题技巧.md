@@ -130,3 +130,6 @@ int main(){
 > 参考资料：
 > [leetcode刷题本地调试模板（C++） – SAquariusの梦想屋](https://blog.songjiahao.com/archives/362)
 > [C++ `vector<int>&nums` 用法总结 ](https://www.jianshu.com/p/2524c34511f3)
+### 康托展开和逆康托展开
+> 参考资料：
+> 1. [康托展开和逆康托展开_wbin233的博客-CSDN博客_逆康托展开](https://blog.csdn.net/wbin233/article/details/72998375)
