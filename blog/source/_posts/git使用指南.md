@@ -219,3 +219,10 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 > 2. [玩转 Git 别名](https://segmentfault.com/a/1190000023541589)
 
 </br>
+11.出现报错`error: RPC failed; curl 92 HTTP/2 stream 7 was not closed cleanly before end of the underlying stream`：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221108182409.png)
+解决方案：
+1. 配置http版本：`git config --global http.version HTTP/1.1`
+2. 配置`http.postBuffer：git config --global http.postBuffer 157286400`
+> 参考资料：
+> 1. [git - error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1) - Stack Overflow](https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro)
