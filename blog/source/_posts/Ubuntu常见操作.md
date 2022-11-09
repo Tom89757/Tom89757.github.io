@@ -508,8 +508,11 @@ cp -r dir1 dir2
 > 参考资料：
 > 1. [linux复制指定目录下的全部文件到另一个目录中，linux cp 文件夹](https://www.cnblogs.com/zdz8207/p/linux-cp-dir.html)
 
+</br>
+30.rename批量修改文件名：
 
-
+> 参考资料：
+> 1. [每天学习一个命令: rename 批量修改文件名 | Verne in GitHub](https://einverne.github.io/post/2018/01/rename-files-batch.html)
 
 
 
