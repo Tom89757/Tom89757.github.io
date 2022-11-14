@@ -490,3 +490,44 @@ filename = 'mytest_%s_model-%d.log'%(TAG, id)
 > 2. [`ast`](https://docs.python.org/3.10/library/ast.html#module-ast "ast: Abstract Syntax Tree classes and manipulation.") — Abstract Syntax Trees
 
 </br>
+13.Python按键 (key) 或值 (value) 对字典进行排序
+- 按键排序：
+```python
+# 声明字典
+key_value ={}     
+
+# 初始化
+key_value[2] = 56       
+key_value[1] = 2 
+key_value[5] = 12 
+key_value[4] = 24
+key_value[6] = 18      
+key_value[3] = 323 
+
+print ("按键(key)排序:")   
+
+# sorted(key_value) 返回重新排序的列表
+# 字典按键排序
+for i in sorted (key_value) : 
+	print ((i, key_value[i]), end =" ") 
+```
+- 按值排序：
+```python
+# 声明字典
+key_value ={}     
+
+# 初始化
+key_value[2] = 56       
+key_value[1] = 2 
+key_value[5] = 12 
+key_value[4] = 24
+key_value[6] = 18      
+key_value[3] = 323 
+
+
+print ("按值(value)排序:")   
+print(sorted(key_value.items(), key = lambda kv:(kv[1], kv[0])))    
+```
+> 参考资料：
+> 1. [Python 按键(key)或值(value)对字典进行排序 | 菜鸟教程](https://www.runoob.com/python3/python-sort-dictionaries-by-key-or-value.html)
+> 2. [python字典按照key,value进行排序的几种方法_51CTO博客_python 对字典按照value进行排序](https://blog.51cto.com/hzf16321/2721549)
