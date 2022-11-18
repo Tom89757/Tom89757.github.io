@@ -128,3 +128,7 @@ alias java="java -cp $CLASSPATH:/mnt/d/Develop/Java/jdk11.0.11/lib/*"
 
 > 参考资料：
 > 1. [java中的位操作、移位操作_51CTO博客_java移位操作](https://blog.51cto.com/zhjh256/3137340)
+
+### Java数据类型
+> 参考资料：
+> 1. [Java 基本数据类型 | 菜鸟教程](https://www.runoob.com/java/java-basic-datatypes.html)
