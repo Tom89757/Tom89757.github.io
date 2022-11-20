@@ -201,6 +201,12 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 1. [1.运行npm install 时，卡在sill idealTree buildDeps没有反应_豆豆豆豆芽的博客-CSDN博客](https://blog.csdn.net/weixin_46182244/article/details/121302702)
 > 2. [[BUG] "sill idealTree buildDeps" takes a lot of time a project with workspaces · Issue #3257 · npm/cli · GitHub](https://github.com/npm/cli/issues/3257)
 
+</br>
+14.出现`RuntimeError: latex was not able to process the following string`：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221121004755.png)
+解决方案：安装MiKTeX并添加到环境变量。（安装正版LaTeX更好）
+> 参考资料：
+> 1. [Getting MiKTeX](https://miktex.org/download)
 
 
 
