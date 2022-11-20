@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2022-11-02T10:50:44.357Z</updated>
+  <updated>2022-11-20T05:06:21.406Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vim学习笔记</title>
+    <link href="https://tom89757.github.io/2022/11/20/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://tom89757.github.io/2022/11/20/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2022-11-20T05:05:32.000Z</published>
+    <updated>2022-11-20T05:06:21.406Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在学习Vim过程中的经验和总结：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工具" scheme="https://tom89757.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Vim" scheme="https://tom89757.github.io/tags/Vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阅读别人的经历和人生</title>
+    <link href="https://tom89757.github.io/2022/11/18/%E9%98%85%E8%AF%BB%E5%88%AB%E4%BA%BA%E7%9A%84%E7%BB%8F%E5%8E%86%E5%92%8C%E4%BA%BA%E7%94%9F/"/>
+    <id>https://tom89757.github.io/2022/11/18/%E9%98%85%E8%AF%BB%E5%88%AB%E4%BA%BA%E7%9A%84%E7%BB%8F%E5%8E%86%E5%92%8C%E4%BA%BA%E7%94%9F/</id>
+    <published>2022-11-18T09:01:44.000Z</published>
+    <updated>2022-11-18T13:05:38.800Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下别人对自己过去经历的总结和感悟的博客文章：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="自传" scheme="https://tom89757.github.io/tags/%E8%87%AA%E4%BC%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++知识点01</title>
+    <link href="https://tom89757.github.io/2022/11/04/C++%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
+    <id>https://tom89757.github.io/2022/11/04/C++%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
+    <published>2022-11-04T12:45:10.000Z</published>
+    <updated>2022-11-19T05:08:03.921Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下与C++相关的知识点：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="C++" scheme="https://tom89757.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>leetcode刷题技巧</title>
     <link href="https://tom89757.github.io/2022/11/02/leetcode%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/"/>
     <id>https://tom89757.github.io/2022/11/02/leetcode%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/</id>
     <published>2022-11-02T03:29:04.000Z</published>
-    <updated>2022-11-02T10:50:44.357Z</updated>
+    <updated>2022-11-06T16:24:50.097Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在刷leetcode算法题过程中积累的一些技巧和方法：&lt;/p&gt;</summary>
@@ -179,7 +236,7 @@
     <link href="https://tom89757.github.io/2022/09/22/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/"/>
     <id>https://tom89757.github.io/2022/09/22/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B902/</id>
     <published>2022-09-22T01:14:52.000Z</published>
-    <updated>2022-10-01T04:33:46.601Z</updated>
+    <updated>2022-11-10T10:36:35.118Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在进行图片处理过程中的一些知识点和bug：&lt;/p&gt;</summary>
@@ -282,7 +339,7 @@
     <link href="https://tom89757.github.io/2022/09/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/09/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2022-09-13T08:33:03.000Z</published>
-    <updated>2022-10-09T14:56:37.747Z</updated>
+    <updated>2022-11-13T18:20:31.918Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下深度学习的环境配置：&lt;/p&gt;</summary>
@@ -343,7 +400,7 @@
     <link href="https://tom89757.github.io/2022/09/10/%E5%BC%80%E5%8F%91%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/"/>
     <id>https://tom89757.github.io/2022/09/10/%E5%BC%80%E5%8F%91%E5%92%8C%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7%E6%95%B4%E7%90%86/</id>
     <published>2022-09-10T09:08:01.000Z</published>
-    <updated>2022-11-04T04:18:23.326Z</updated>
+    <updated>2022-11-12T03:27:46.330Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下好用的开发工具：&lt;/p&gt;</summary>
@@ -354,67 +411,6 @@
     
     
     <category term="工具" scheme="https://tom89757.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CV系列文章和工具</title>
-    <link href="https://tom89757.github.io/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E5%92%8C%E5%B7%A5%E5%85%B7/"/>
-    <id>https://tom89757.github.io/2022/09/09/CV%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E5%92%8C%E5%B7%A5%E5%85%B7/</id>
-    <published>2022-09-09T02:55:44.000Z</published>
-    <updated>2022-10-20T13:56:19.153Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文整理一下CV系列的文章，其包括本人博客中的文章和在互联网上收集的他人的文章：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="笔记" scheme="https://tom89757.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>流行工具和框架资料整理</title>
-    <link href="https://tom89757.github.io/2022/08/15/%E6%B5%81%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/"/>
-    <id>https://tom89757.github.io/2022/08/15/%E6%B5%81%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%92%8C%E6%A1%86%E6%9E%B6%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/</id>
-    <published>2022-08-15T09:52:42.000Z</published>
-    <updated>2022-09-04T09:54:59.427Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文整理一下流行的工具和框架的学习文档和资料：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="指南" scheme="https://tom89757.github.io/tags/%E6%8C%87%E5%8D%97/"/>
-    
-    <category term="框架" scheme="https://tom89757.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编程语言资料整理</title>
-    <link href="https://tom89757.github.io/2022/08/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/"/>
-    <id>https://tom89757.github.io/2022/08/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/</id>
-    <published>2022-08-15T07:49:59.000Z</published>
-    <updated>2022-10-02T03:06:58.262Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文汇总一下目前接触到的各编程语言的学习资料：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="指南" scheme="https://tom89757.github.io/tags/%E6%8C%87%E5%8D%97/"/>
-    
-    <category term="编程语言" scheme="https://tom89757.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   

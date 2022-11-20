@@ -677,6 +677,46 @@ PS：</li>
 <li><a href="https://www.jianshu.com/p/5a25b9535016">如何在Ubuntu 18.04上安装Java(JDK11)</a></li>
 </ol>
 </blockquote>
+<h3 id="java中的hashmap-treemap和hashset-treeset"><a class="markdownIt-Anchor" href="#java中的hashmap-treemap和hashset-treeset"></a> Java中的HashMap、TreeMap和HashSet、TreeSet</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://juejin.cn/post/6978052334911766558">哈希表和有序表的简单介绍 - 掘金</a></li>
+<li><a href="https://www.cnblogs.com/chen-lhx/p/8432422.html">Map的有序和无序实现类，与Map的排序 - 龙昊雪 - 博客园</a></li>
+<li><a href="https://www.runoob.com/java/java-hashset.html">Java HashSet | 菜鸟教程</a></li>
+<li><a href="https://www.cainiaojc.com/java/java-treeset.html">Java TreeSet - Java教程 - 菜鸟教程</a></li>
+<li><a href="https://www.runoob.com/java/java-hashmap.html">Java HashMap | 菜鸟教程</a></li>
+<li><a href="https://www.cainiaojc.com/java/java-treemap.html">Java TreeMap - Java教程 - 菜鸟教程</a></li>
+</ol>
+</blockquote>
+<h3 id="java中溢出处理"><a class="markdownIt-Anchor" href="#java中溢出处理"></a> Java中溢出处理</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://njucz.github.io/2017/08/16/java-int%E6%BA%A2%E5%87%BA%E6%80%BB%E7%BB%93/">java int溢出总结 | njuCZ’s blog</a></li>
+</ol>
+</blockquote>
+<h3 id="java中arraylist"><a class="markdownIt-Anchor" href="#java中arraylist"></a> Java中ArrayList</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/java/java-arraylist.html">Java ArrayList | 菜鸟教程</a></li>
+</ol>
+</blockquote>
+<h3 id="java中位操作"><a class="markdownIt-Anchor" href="#java中位操作"></a> Java中位操作</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.51cto.com/zhjh256/3137340">java中的位操作、移位操作_51CTO博客_java移位操作</a></li>
+</ol>
+</blockquote>
+<h3 id="java数据类型"><a class="markdownIt-Anchor" href="#java数据类型"></a> Java数据类型</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/java/java-basic-datatypes.html">Java 基本数据类型 | 菜鸟教程</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -3041,7 +3081,7 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 </ol>
 </blockquote>
 <h3 id="在不断开网线的情况下断网"><a class="markdownIt-Anchor" href="#在不断开网线的情况下断网"></a> 在不断开网线的情况下断网</h3>
-<p>控制面板-&gt;更改适配器设置-&gt;以太网右键禁用</p>
+<p>控制面板-&gt;网络和共享中心-&gt;更改适配器设置-&gt;以太网右键禁用</p>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -3446,6 +3486,14 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 <li><a href="https://www.cnblogs.com/zdz8207/p/linux-cp-dir.html">linux复制指定目录下的全部文件到另一个目录中，linux cp 文件夹</a></li>
 </ol>
 </blockquote>
+</br>
+30.rename批量修改文件名：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://einverne.github.io/post/2018/01/rename-files-batch.html">每天学习一个命令: rename 批量修改文件名 | Verne in GitHub</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -3729,6 +3777,13 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 > 1. [2.7 Git 基础 - Git 别名](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-Git-%E5%88%AB%E5%90%8D)
 > 2. [玩转 Git 别名](https://segmentfault.com/a/1190000023541589)
 </br>
+11.出现报错`error: RPC failed; curl 92 HTTP/2 stream 7 was not closed cleanly before end of the underlying stream`：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221108182409.png)
+解决方案：
+1. 配置http版本：`git config --global http.version HTTP/1.1`
+2. 配置`http.postBuffer：git config --global http.postBuffer 157286400`
+> 参考资料：
+> 1. [git - error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1) - Stack Overflow](https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro)
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -4209,7 +4264,14 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 </ol>
 </blockquote>
 </br>
-]]></content>
+13.Python按键 (key) 或值 (value) 对字典进行排序
+- 按键排序：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 声明字典</span></span><br><span class="line">key_value =&#123;&#125;     </span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化</span></span><br><span class="line">key_value[<span class="number">2</span>] = <span class="number">56</span>       </span><br><span class="line">key_value[<span class="number">1</span>] = <span class="number">2</span> </span><br><span class="line">key_value[<span class="number">5</span>] = <span class="number">12</span> </span><br><span class="line">key_value[<span class="number">4</span>] = <span class="number">24</span></span><br><span class="line">key_value[<span class="number">6</span>] = <span class="number">18</span>      </span><br><span class="line">key_value[<span class="number">3</span>] = <span class="number">323</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;按键(key)排序:&quot;</span>)   </span><br><span class="line"></span><br><span class="line"><span class="comment"># sorted(key_value) 返回重新排序的列表</span></span><br><span class="line"><span class="comment"># 字典按键排序</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">sorted</span> (key_value) : </span><br><span class="line">	<span class="built_in">print</span> ((i, key_value[i]), end =<span class="string">&quot; &quot;</span>) </span><br></pre></td></tr></table></figure>
+- 按值排序：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 声明字典</span></span><br><span class="line">key_value =&#123;&#125;     </span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化</span></span><br><span class="line">key_value[<span class="number">2</span>] = <span class="number">56</span>       </span><br><span class="line">key_value[<span class="number">1</span>] = <span class="number">2</span> </span><br><span class="line">key_value[<span class="number">5</span>] = <span class="number">12</span> </span><br><span class="line">key_value[<span class="number">4</span>] = <span class="number">24</span></span><br><span class="line">key_value[<span class="number">6</span>] = <span class="number">18</span>      </span><br><span class="line">key_value[<span class="number">3</span>] = <span class="number">323</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;按值(value)排序:&quot;</span>)   </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sorted</span>(key_value.items(), key = <span class="keyword">lambda</span> kv:(kv[<span class="number">1</span>], kv[<span class="number">0</span>])))    </span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Python 按键(key)或值(value)对字典进行排序 | 菜鸟教程](https://www.runoob.com/python3/python-sort-dictionaries-by-key-or-value.html)
+> 2. [python字典按照key,value进行排序的几种方法_51CTO博客_python 对字典按照value进行排序](https://blog.51cto.com/hzf16321/2721549)]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -6025,7 +6087,37 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <li><a href="https://stackoverflow.com/questions/57427233/module-cv2-cv2-has-no-attribute-ximgproc">Module ‘cv2.cv2’ has no attribute ‘ximgproc’</a></li>
 </ol>
 </blockquote>
-]]></content>
+</br>
+5.`cv2.grabcut`：该算法为经典传统算法GrabCut的实现，其利用图像中的纹理（颜色）信息和边界（反差）信息，只需要少量的用户交互操作即可得到较好的分割结果。
+该函数的完整调用形式为，下面对各参数进行说明：
+`cv.grabCut(img, mask, rect, bgdModel, fgdModel, iterCount[, mode]) ->mask, bgdModel, fgdModel`
+- `img`：输入的8-bit 3-channel图像
+- `mask`：input/output的8-bit单通道mask，当模式设为`GC_INIT_WITH_RECT`时会被函数初始化，其设置有多个选项[GrabCutClasses](https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gad43d3e4208d3cf025d8304156b02ba38 "class of the pixel in GrabCut algorithm")
+- `rect`：包含分割物体的ROI (Region Of Interest)。ROI之外的像素被标记为显著的背景，只在`mode=GC_INIT_WITH_RECT`时使用。
+- `bgdModel`：background model的临时数组，当你处理同一张图片时不要更改它
+- `fgdModel`：foreground modele的临时数组，当你处理同一张图片时不要更改它
+- `iterCount`：在返回结果之前，算法迭代的次数。注意结果可以通过`mode=GC_INIT_WITH_MASK`或者`mode=GC_EVAL` refine。
+- `mode`：选项[GrabCutClasses](https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gad43d3e4208d3cf025d8304156b02ba38 "class of the pixel in GrabCut algorithm")。
+下面是依据参考资料8对grabcub算法的调用：
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;opencv2\highgui\highgui.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;opencv2\imgproc\imgproc.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;opencv2\opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//grabcut算法</span></span><br><span class="line"><span class="type">bool</span> setMouse = <span class="literal">false</span>;    <span class="comment">//判断鼠标左键的状态（up / down）</span></span><br><span class="line"><span class="type">bool</span> init;</span><br><span class="line">Point pt;</span><br><span class="line">Rect rect;</span><br><span class="line">Mat srcImg, mask, bgModel, fgModel;</span><br><span class="line"><span class="type">int</span> numRun = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">onMouse</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>, <span class="type">void</span>*)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">runGrabCut</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showImage</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	srcImg = <span class="built_in">imread</span>(<span class="string">&quot;D:\\Desktop\\image\\123.png&quot;</span>);</span><br><span class="line">	<span class="keyword">if</span> (srcImg.<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;could not load image...\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;源图像&quot;</span>, srcImg);</span><br><span class="line"></span><br><span class="line">	mask.<span class="built_in">create</span>(srcImg.<span class="built_in">size</span>(), CV_8U);</span><br><span class="line">	<span class="built_in">setMouseCallback</span>(<span class="string">&quot;源图像&quot;</span>, onMouse, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">char</span> c = (<span class="type">char</span>)<span class="built_in">waitKey</span>(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">&#x27; &#x27;</span>) &#123;<span class="comment">//选中矩形框后，按空格键执行grabcut分割</span></span><br><span class="line">			<span class="built_in">runGrabCut</span>();</span><br><span class="line">			numRun++;</span><br><span class="line">			<span class="built_in">showImage</span>();</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;current iteative times : %d\n&quot;</span>, numRun);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> ((<span class="type">int</span>)c == <span class="number">27</span>) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Mat result, binmask;</span><br><span class="line">	binmask = mask &amp; <span class="number">1</span>;				<span class="comment">//进一步掩膜</span></span><br><span class="line">	<span class="keyword">if</span> (init)						<span class="comment">//进一步抠出无效区域。鼠标按下，init变为false</span></span><br><span class="line">	&#123;</span><br><span class="line">		srcImg.<span class="built_in">copyTo</span>(result, binmask);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		result = srcImg.<span class="built_in">clone</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">rectangle</span>(result, rect, <span class="built_in">Scalar</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>, <span class="number">8</span>);</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;源图像&quot;</span>, result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">onMouse</span><span class="params">(<span class="type">int</span> events, <span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> flag, <span class="type">void</span>*)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &lt; <span class="number">0</span> || y &lt; <span class="number">0</span> || x &gt; srcImg.cols || y &gt; srcImg.rows)	<span class="comment">//无效区域</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (events == EVENT_LBUTTONDOWN)</span><br><span class="line">	&#123;</span><br><span class="line">		setMouse = <span class="literal">true</span>;</span><br><span class="line">		pt.x = x;</span><br><span class="line">		pt.y = y;</span><br><span class="line">		init = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (events == EVENT_MOUSEMOVE)<span class="comment">//鼠标只要动，就执行一次</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (setMouse == <span class="literal">true</span>)			<span class="comment">//鼠标左键按住，滑动</span></span><br><span class="line">		&#123;</span><br><span class="line">			Point pt1;</span><br><span class="line">			pt1.x = x;</span><br><span class="line">			pt1.y = y;</span><br><span class="line">			rect = <span class="built_in">Rect</span>(pt, pt1);<span class="comment">//定义矩形区域</span></span><br><span class="line">			<span class="built_in">showImage</span>();</span><br><span class="line">			mask.<span class="built_in">setTo</span>(Scalar::<span class="built_in">all</span>(GC_BGD));<span class="comment">//背景</span></span><br><span class="line">			<span class="built_in">mask</span>(rect).<span class="built_in">setTo</span>(<span class="built_in">Scalar</span>(GC_PR_FGD));<span class="comment">//前景			    //对rect内部设置为可能的前景，外部设置为背景</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (events == EVENT_LBUTTONUP)</span><br><span class="line">		setMouse = <span class="literal">false</span>;	        	<span class="comment">//鼠标左键抬起</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">runGrabCut</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (init)<span class="comment">//鼠标按下，init变为false</span></span><br><span class="line">		<span class="built_in">grabCut</span>(srcImg, mask, rect, bgModel, fgModel, <span class="number">1</span>);<span class="comment">//第二次迭代，用mask初始化grabcut</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">grabCut</span>(srcImg, mask, rect, bgModel, fgModel, <span class="number">1</span>, GC_INIT_WITH_RECT);<span class="comment">//用矩形窗初始化GrabCut</span></span><br><span class="line">		init = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [OpenCV——Grabcut算法_DDsoup的博客-CSDN博客_grabcut算法](https://blog.csdn.net/m0_61897853/article/details/123458465)
+> 2. [GrabCut - Wikipedia](https://en.wikipedia.org/wiki/GrabCut)
+> 3. [OpenCV: Image Segmentation](https://docs.opencv.org/4.x/d3/d47/group__imgproc__segmentation.html#ga909c1dda50efcbeaa3ce126be862b37f)
+> 4. [Opencv 使用Rect选取与设置窗口ROI_yhl_leo的博客-CSDN博客](https://blog.csdn.net/yhl_leo/article/details/50593825)
+> 5. [opencv-rectangle矩形 - 天子骄龙 - 博客园](https://www.cnblogs.com/liming19680104/p/15523295.html)
+> 6. [Site Unreachable](https://blog.csdn.net/zouxy09/article/details/8534954)
+> 7. [图像分割之（四）OpenCV的GrabCut函数使用和源码解读_无敌三角猫的博客-CSDN博客_grabcut函数](https://blog.csdn.net/fightingforcv/article/details/78400982)
+> 8. [OpenCV3学习（7.3）——图像分割之三（GrabCut算法）_菜鸟知识搬运工的博客-CSDN博客_grabcut](https://blog.csdn.net/qq_30815237/article/details/86763443)
+> 9. [c++ - GrabCut - bgdModel & fgdModel empty - Assertion error - Stack Overflow](https://stackoverflow.com/questions/7546083/grabcut-bgdmodel-fgdmodel-empty-assertion-error)
+> 10. [ios - Can't seem to use 'GC_INIT_WITH_MASK' on OpenCV GrabCut - Stack Overflow](https://stackoverflow.com/questions/29322413/cant-seem-to-use-gc-init-with-mask-on-opencv-grabcut)
+</br>
+6.Image Matting(图像抠图)任务介绍及其相关操作。
+> 参考资料：
+> 1. [目前抠图（Image Matting）的主流算法有哪些？ - 知乎](https://www.zhihu.com/question/68146993/answer/1914887189)
+> 2. [Image Matting](https://xinyangdut.github.io/matting/index.html)
+> 3. [c++ - OpenCV : Using a Trimap image - Stack Overflow](https://stackoverflow.com/questions/41777654/opencv-using-a-trimap-image)
+> 4. [Smart_Scribbles](https://qiaoyu2015.github.io/Smart_Scribbles/#)]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -8212,7 +8304,28 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 2. `mv ~/.cache ./`
 3. `ln -s /storage/user/.cache ~/.cache`
 </br>
-9.安装
+9.安装OpenCV C++版：
+> 参考资料：
+> 1. [超详细windows 安装opencv以及在VS中配置opencv_sqzeng的博客-CSDN博客](https://blog.csdn.net/zengshaoqing/article/details/105046277)
+> 2. [[C/C++] OpenCV 4.1.0 windows下安装、配置实践及问题解决_枪枪枪的博客-CSDN博客_opencv c++安装](https://blog.csdn.net/az9996/article/details/89715309)
+> 3. [如何在 Visual Studio 2022 安裝 OpenCV C++ 開發環境？ - 偵錯桐人](https://tedliou.com/opencv-cpp-visual-studio-2022/)
+</br>
+10.在Windows10上安装Caffe：
+> 参考资料：
+> 1. [Windows10 下RTX30系列Caffe安装教程 - BrianX - 博客园](https://www.cnblogs.com/zhongzhaoxie/p/15267489.html)
+> 2. [教程 | Caffe在Windows10系统上安装与配置 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1545949)
+> 3. [Site Unreachable](https://www.zmonster.me/2015/07/21/caffe-base-usage.html)
+> 4. [VS2015下载地址和安装教程（图解）](http://c.biancheng.net/view/453.html)
+> 5. [Caffe: Problem in downloading prebuilt dependenies · Issue #5679 · BVLC/caffe · GitHub](https://github.com/BVLC/caffe/issues/5679)
+> 6. [如何在 Windows 10(GPU) 環境中安裝 Caffe framework--VS2015+CUDA10.0+Python3.5.6篇](https://davistseng.blogspot.com/2020/01/windows-10gpu-caffe-framework.html)
+> 7. [Download Visual Studio 2015 (ISO / Offline Installer + Web Installer) | Kunal Chowdhury](https://www.kunal-chowdhury.com/2015/07/download-visualstudio-2015.html)
+> 8. [Caffe+Visual Studio 2015编译可以有多简单？_冰不语的博客-CSDN博客](https://blog.csdn.net/xingchenbingbuyu/article/details/72765612)
+> 9. [Caffe Windows 配置 - 黄钢的部落格|Canary Blog](https://alberthg.github.io/2018/04/12/Caffe-Windows-%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/)
+> 10. [protobuf requires Python ‘＞=3.7‘ but the running Python is 3.6.5的解决方法_LucyGill的博客-CSDN博客](https://blog.csdn.net/LucyGill/article/details/125268665)
+</br>
+11.在Python环境中用Caffe创建LeNet：
+> 参考资料：
+> 1. [Solving in Python with LeNet](https://nbviewer.org/github/BVLC/caffe/blob/master/examples/01-learning-lenet.ipynb)
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -9258,10 +9371,12 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @lc app=leetcode.cn id=81 lang=java</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * [81] 搜索旋转排序数组 II</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">first</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">last</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> mid;</span><br><span class="line">        <span class="keyword">while</span> (first != last) &#123;</span><br><span class="line">            mid = (first+last)&gt;&gt;&gt;<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[first] &lt; nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[first] &lt;= target &amp;&amp; target &lt; nums[mid]) &#123;</span><br><span class="line">                    last = mid;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    first = mid + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[first] &gt; nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[mid] &lt; target &amp;&amp; target &lt;= nums[last - <span class="number">1</span>]) &#123;</span><br><span class="line">                    first = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    last = mid;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// nums[first]==nums[mid]，由于有重复元素存在，不能判断增减性，first加1</span></span><br><span class="line">                first++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// @lc code=end</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>在上述文件夹下新键<code>Test</code>类即<code>Test.java</code>文件用于测试，并将上述<code>Solution</code>类名改为<code>Solution</code>避免冲突：</li>
+<li>在上述文件夹下新键<code>Test</code>类即<code>Test.java</code>文件用于测试，并将上述<code>Solution</code>类名改为<code>S</code>避免冲突：</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">S</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">S</span>();</span><br><span class="line">        <span class="type">int</span>[] nums = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>&#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        System.out.println(s1.search(nums, target));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
+<li>以上述<code>S</code>类和<code>Test</code>类为例，由于在debug时实在本地查找相应的<code>.class</code>文件，所以需要在本地编译得到<code>S.class</code>和<code>Test.class</code>后再调试（下述<code>S.class</code>可以由其他文件名的<code>.java</code>文件编译得到，如<code>18.四数之和.java</code>：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221105152720.png" alt="" /></li>
 <li>在下述位置打断点并点击<code>Debug</code>按钮进入调试：<br />
 <img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221102180444.png" alt="" /></li>
 <li>注意需要安装<code>Extension Pack for Java</code>以及<code>Code Runner</code>等插件，系统里需要安装java jdk。</li>
@@ -9290,6 +9405,13 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <p>参考资料：<br />
 <a href="https://blog.songjiahao.com/archives/362">leetcode刷题本地调试模板（C++） – SAquariusの梦想屋</a><br />
 <a href="https://www.jianshu.com/p/2524c34511f3">C++ <code>vector&lt;int&gt;&amp;nums</code> 用法总结 </a></p>
+</blockquote>
+<h3 id="康托展开和逆康托展开"><a class="markdownIt-Anchor" href="#康托展开和逆康托展开"></a> 康托展开和逆康托展开</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/wbin233/article/details/72998375">康托展开和逆康托展开_wbin233的博客-CSDN博客_逆康托展开</a></li>
+</ol>
 </blockquote>
 ]]></content>
       <categories>
@@ -9373,6 +9495,10 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://www.escapelife.site/posts/28dc24ac.html">Vimium浏览器插件使用 | Escape</a></li>
 </ol>
+<h3 id="postgres数据库在线练习环境"><a class="markdownIt-Anchor" href="#postgres数据库在线练习环境"></a> Postgres数据库在线练习环境</h3>
+<ol>
+<li><a href="https://www.crunchydata.com/developers/tutorials">Postgres Tutorials | Crunchy Data</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -9403,6 +9529,177 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
       </categories>
       <tags>
         <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++知识点01</title>
+    <url>/2022/11/04/C++%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文记录一下与C++相关的知识点：</p>
+<span id="more"></span>
+<h3 id="c中setfindxsetend"><a class="markdownIt-Anchor" href="#c中setfindxsetend"></a> C++中<code>set.find(x)!=set.end()</code></h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/45119362/why-is-it-necessary-to-to-use-set-findx-set-end-while-finding-an-element">Why is it necessary to to use set.find(x) != set.end() while finding an element.</a></li>
+</ol>
+</blockquote>
+<h3 id="c中int和string的转换"><a class="markdownIt-Anchor" href="#c中int和string的转换"></a> C++中int和string的转换</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/smile233/p/8379802.html">C++ int与string的相互转换(含源码实现) - <sub>君莫笑</sub> - 博客园</a></li>
+</ol>
+</blockquote>
+<h3 id="c中string的reserve和resize"><a class="markdownIt-Anchor" href="#c中string的reserve和resize"></a> C++中string的reserve和resize</h3>
+<p>用于给容器分配空间以及resize容器空间</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.51cto.com/u_15127568/3455526">string的reserve和resize_51CTO博客_vector resize和reserve</a></li>
+</ol>
+</blockquote>
+<h3 id="c中fill"><a class="markdownIt-Anchor" href="#c中fill"></a> C++中fill</h3>
+<p>对一个容器进行填充</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.51cto.com/lawsonabs/3011028">C++ 中 fill() 的使用_51CTO博客_c++ fill</a></li>
+</ol>
+</blockquote>
+<h3 id="c中size_t类型"><a class="markdownIt-Anchor" href="#c中size_t类型"></a> C++中size_t类型</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.zhihu.com/question/24773728">size_t 这个类型的意义是什么？ - 知乎</a></li>
+</ol>
+</blockquote>
+<h3 id="c风格规范"><a class="markdownIt-Anchor" href="#c风格规范"></a> C++风格规范</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/contents/">C++ 风格指南 - 内容目录 — Google 开源项目风格指南</a></li>
+</ol>
+</blockquote>
+<h3 id="c按值-引用和指针传递"><a class="markdownIt-Anchor" href="#c按值-引用和指针传递"></a> C++按值、引用和指针传递</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/yanlingyin/archive/2011/12/07/2278961.html">C++ 值传递、指针传递、引用传递详解 - Geek_Ling - 博客园</a></li>
+</ol>
+</blockquote>
+<h3 id="c中auto关键字"><a class="markdownIt-Anchor" href="#c中auto关键字"></a> C++中auto关键字</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://zh.m.wikipedia.org/zh-hans/Auto_(C%2B%2B)">auto (C++) - 维基百科，自由的百科全书</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1660750">C++ auto 关键字的使用 - 腾讯云开发者社区-腾讯云</a></li>
+</ol>
+</blockquote>
+<h3 id="c中移位操作"><a class="markdownIt-Anchor" href="#c中移位操作"></a> C++中移位操作</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/shrimp-can/p/5145351.html">C++移位运算符详解 - shrimp_929 - 博客园</a></li>
+<li><a href="https://www.runoob.com/cplusplus/cpp-operators.html">C++ 运算符 | 菜鸟教程</a></li>
+</ol>
+</blockquote>
+<h3 id="c中溢出"><a class="markdownIt-Anchor" href="#c中溢出"></a> C++中溢出</h3>
+<p>以leetcod260为例，如下为有问题的代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">singleNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">result</span><span class="params">(<span class="number">2</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="type">int</span> eor = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num: nums) eor ^= num;</span><br><span class="line">        <span class="comment">//假设两个元素为a1, a2；则a1 ^ a2 = eor。a1和a2从最右边即最低位开始第一个不同的位可以通过以下操作得到：</span></span><br><span class="line">        <span class="type">int</span> lowbit = eor &amp; -eor;</span><br><span class="line">        <span class="comment">//由于可以通过异或抵消两个重复元素，故通过下面的异或可以得到两个单元素中的一个</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(lowbit &amp; num)&#123;</span><br><span class="line">                result[<span class="number">0</span>] ^= num;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//由result[0] ^ result[1] = eor, 故result[1] = result[0] ^ eor</span></span><br><span class="line">        result[<span class="number">1</span>] = result[<span class="number">0</span>] ^ eor;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>问题：<code>int</code>类型最小值<code>-2147483648</code>和最大值<code>2147483647</code>绝对值差一，故上述<code>eor ^= -eor</code>操作会导致溢出。<br />
+解决方案：将<code>eor</code>声明为<code>long long</code>类型，即<code>long long eor=0</code>。</p>
+<h3 id="c数据类型"><a class="markdownIt-Anchor" href="#c数据类型"></a> C++数据类型</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/cplusplus/cpp-data-types.html">C++ 数据类型 | 菜鸟教程</a></li>
+</ol>
+</blockquote>
+<h3 id="cc中的头文件"><a class="markdownIt-Anchor" href="#cc中的头文件"></a> C/C++中的头文件</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>《Linux C编程一站式学习》第20章</li>
+<li><a href="https://reality0ne.com/how-to-struct-c-header-files/">如何组织好 C 的头文件</a></li>
+<li><a href="https://bbs.csdn.net/topics/380062140">请大家说说　结构体　是放在头文件中好?　还是放在源文件好呢?-CSDN社区</a></li>
+<li><a href="https://www.runoob.com/cprogramming/c-header-files.html">C 头文件 | 菜鸟教程</a></li>
+</ol>
+</blockquote>
+<h3 id="c中和-"><a class="markdownIt-Anchor" href="#c中和-"></a> C++中<code>.</code>和<code>-&gt;</code></h3>
+<p><code>-&gt;</code>主要用于对类类型的指针访问类的成员，<code>.</code>主要用于对类类型的引用对象访问类的成员。例如：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">	<span class="type">int</span> val;</span><br><span class="line">	ListNode *next;</span><br><span class="line">	<span class="built_in">ListNode</span>(<span class="type">int</span> x): <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function">ListNode* <span class="title">dummy1</span><span class="params">(<span class="number">-1</span>)</span></span>;</span><br><span class="line">	<span class="function">ListNode <span class="title">dummy2</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">	cout &lt;&lt; dummy1-&gt;val &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; dummy2.val &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/aziji/p/10701156.html">c++中 . 和 -&gt; 的区别是什么？ - iSZ - 博客园</a></li>
+<li><a href="https://blog.csdn.net/s15868887695/article/details/56834685">C++中的.和::和：和-&gt;的区别_define_SGZ的博客-CSDN博客</a></li>
+</ol>
+</blockquote>
+<h3 id="c中的和"><a class="markdownIt-Anchor" href="#c中的和"></a> C++中的&amp;和*</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/cplusplus/cpp-pointer-operators.html">C++ 指针运算符（&amp; 和 *） | 菜鸟教程</a></li>
+<li><a href="https://segmentfault.com/a/1190000017434150">c++ - C++中的&amp;和&amp;&amp;_个人文章 - SegmentFault 思否</a></li>
+<li><a href="https://www.cnblogs.com/klb561/p/13830487.html">C++中&amp;的功能 及 用法 - konglingbin - 博客园</a></li>
+</ol>
+</blockquote>
+<h3 id="c结构体构造函数"><a class="markdownIt-Anchor" href="#c结构体构造函数"></a> C++结构体构造函数</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/wlw-x/p/11566191.html">C++ - 结构体构造函数使用总结 - _starsky - 博客园</a></li>
+<li><a href="http://c.biancheng.net/view/1570.html">C++链表及其创建</a></li>
+</ol>
+</blockquote>
+<h3 id="c头插法和尾插法"><a class="markdownIt-Anchor" href="#c头插法和尾插法"></a> C++头插法和尾插法</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.51cto.com/u_15178976/2988807">单链表的头插法与尾插法代码实现及详解_51CTO博客_单链表尾插法代码</a></li>
+<li></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim学习笔记</title>
+    <url>/2022/11/20/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>本文记录一下在学习Vim过程中的经验和总结：</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阅读别人的经历和人生</title>
+    <url>/2022/11/18/%E9%98%85%E8%AF%BB%E5%88%AB%E4%BA%BA%E7%9A%84%E7%BB%8F%E5%8E%86%E5%92%8C%E4%BA%BA%E7%94%9F/</url>
+    <content><![CDATA[<p>本文记录一下别人对自己过去经历的总结和感悟的博客文章：</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://book.douban.com/subject/4006425/discussion/22802960/">徐宥：掉进读书的兔子洞</a></li>
+<li><a href="http://mindhacks.cn/2009/05/17/seven-years-in-nju/">我在南大的七年 – 刘未鹏 | Mind Hacks</a></li>
+<li>陈天奇：<a href="https://zhuanlan.zhihu.com/p/74249758">机器学习科研的十年 - 知乎</a></li>
+<li>李沐：<a href="https://zhuanlan.zhihu.com/p/25099638">博士这五年 - 知乎</a></li>
+<li>蒋陈凡夫：<a href="https://zhuanlan.zhihu.com/p/560415998">从转系生到终身教授：十二年图形学物理模拟的自我回顾 - 知乎</a></li>
+<li></li>
+</ol>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>自传</tag>
       </tags>
   </entry>
 </search>
