@@ -208,8 +208,28 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 参考资料：
 > 1. [Getting MiKTeX](https://miktex.org/download)
 
+</br>
+15.Clash for Windows端口为0且无法更改，导致代理不可用：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221121235520.png)
+原因：系统更新后，由于使用`Hyper-V`的功能，虚拟机需要映射一部分端口，并且在系统更新后对动态映射的端口进行了更改，导致占用了本来的`Clash`使用的端口。
+解决方案：更改系统进行动态映射的端口范围
+- cmd中`netsh int ipv4 show dynamicport tcp`，可以发现系统更新后动态端口范围变为从1024开始，导致原先的1080端口被占用
+- `netsh int ipv4 set dynamicport tcp start=49152 num=16383`，将为tcp协议分配的端口范围进行更改
+- `netsh int ipv4 set dynamicport udp start=49152 num=16383`，将为udp协议分配的端口范围进行更改
+- `netsh interface ipv4 show excludedportrange protocol=tcp`，结果如下：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221122000350.png)
+- 说明此时端口设置已经更新，重启电脑后可以在Clash中对端口进行设置。
+>就参考资料：
+>1. [解决 Clash for windows 端口为 0 导致无法使用_51CTO博客_clash for windows连不上](https://blog.51cto.com/frytea/4146902)
+>2. [Clash For Windows代理端口为0问题 - 寒梦](https://siegelion.cn/2022/01/31/Clash%20For%20Windows%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%E4%B8%BA0%E9%97%AE%E9%A2%98/)
 
-
+</br>
+16.v2rayN出现`v2rayN tcp:127.0.0.1: rejected proxy/socks: unknow Socks version`刷屏：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221121235442.png)
+问题：系统的代理设置协议为`http`和`https`协议，而v2rayN只支持`socks5`协议，导致出错。
+解决方案：将系统代理设置协议更改为`socks5`，或者将代理软件改为SSR或者Clash，此二者同时支持`http`和`socks5`协议。
+> 参考资料：
+> 1. [如何解决“rejected v2ray.com/core/proxy/socks: unknown Socks version: ”的问题 - Xuing的个人博客](https://xuing.cn/security/v2ray_unknown_socks.html)
 
 
 
