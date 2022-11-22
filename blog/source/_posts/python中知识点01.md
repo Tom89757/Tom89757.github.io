@@ -531,3 +531,11 @@ print(sorted(key_value.items(), key = lambda kv:(kv[1], kv[0])))
 > 参考资料：
 > 1. [Python 按键(key)或值(value)对字典进行排序 | 菜鸟教程](https://www.runoob.com/python3/python-sort-dictionaries-by-key-or-value.html)
 > 2. [python字典按照key,value进行排序的几种方法_51CTO博客_python 对字典按照value进行排序](https://blog.51cto.com/hzf16321/2721549)
+
+</br>
+14.Python中创建包和导入包的操作
+> 参考资料：
+> 1. [Python创建包，导入包（入门必读）](http://c.biancheng.net/view/4669.html)
+> 2. [Distutils/Tutorial - Python Wiki](https://wiki.python.org/moin/Distutils/Tutorial?highlight=%28setup.py%29)
+
+</br>
