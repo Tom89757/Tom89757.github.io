@@ -1,5 +1,5 @@
 ---
-title: Ubuntu常见操作
+title: Ubuntu常见操作01
 date: 2022-05-15 00:22:55
 categories:
 - 开发工具
@@ -513,7 +513,6 @@ cp -r dir1 dir2
 
 > 参考资料：
 > 1. [每天学习一个命令: rename 批量修改文件名 | Verne in GitHub](https://einverne.github.io/post/2018/01/rename-files-batch.html)
-
 
 
 
