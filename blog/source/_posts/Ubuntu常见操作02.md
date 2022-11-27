@@ -23,6 +23,8 @@ tags:
 - `rm -rf ./*`：重新尝试删除文件
 一行命令实现：
 `lsof +D ./ | awk '{print $2}' | tail -n +2 | xargs -r kill -9`
+类似命令：
+`ps ef | grep python | awk '{print $2} | xargs -r kill -9'`
 > 参考资料：
 > 1. [files - How to get over "device or resource busy"? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/11238/how-to-get-over-device-or-resource-busy)
 
