@@ -44,12 +44,24 @@ tags:
 > 4. [一文读懂图卷积GCN](https://zhuanlan.zhihu.com/p/89503068)
 
 ### 推荐文章
-
+#### 不确定性
+1. [What Uncertainties Do We Need in Bayesian DeepLearning for Computer Vision? | Guo Jiazhen's Blog](https://jasonguojz.github.io/blog/2020/07/28/What%20Uncertainties%20Do%20We%20Need%20in%20Bayesian%20DeepLearning%20for%20Computer%20Vision/)
+2. [IJCV | 利用Uncertainty修正Domain Adaptation中的伪标签 - 知乎](https://zhuanlan.zhihu.com/p/130220572)
+3. [读 What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? - 知乎](https://zhuanlan.zhihu.com/p/430849602)
+#### 半监督学习
+1. [计算机视觉中的半监督学习 - 知乎](https://zhuanlan.zhihu.com/p/161449559)
+#### 扩散模型
+1. [如何通俗理解扩散模型？ - 知乎](https://zhuanlan.zhihu.com/p/563543020)
+### 注意力机制
+1. [注意力机制到底是什么？ - 知乎](https://www.zhihu.com/question/519290359/answer/2666328351)
 ### 推荐博客
 1. [The Illustrated Series](https://jalammar.github.io/)：：作者通过自制动画解释各种模型架构。（英文）
 2. [科学空间](https://spaces.ac.cn/category/Big-Data)：偏数学推导，较为硬核。（中文）
-3. 
+3. [Guo Jiazhen's Blog](https://jasonguojz.github.io/blog/)：主要是对一些深度学习理论文章的翻译
+4. [无痛的机器学习第一季目录 - 知乎](https://zhuanlan.zhihu.com/p/22464594)
 
-
+### 动手学
+#### 实现深度学习框架
+1. [想学着自己实现一个深度学习框架该如何入手？ - 知乎](https://www.zhihu.com/question/329235391/answer/1197486431)
 
 
