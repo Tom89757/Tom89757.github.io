@@ -259,6 +259,8 @@
 <li><a href="https://www.w3cschool.cn/">W3Cschool</a></li>
 <li><a href="https://zetcode.com/all/">ZetCode</a></li>
 <li><a href="https://oi-wiki.org/">OI Wiki</a></li>
+<li><a href="https://www.geeksforgeeks.org/">GeeksForGeeks</a></li>
+<li><a href="https://steshaw.org/plt/">PLT by steshaw</a></li>
 </ol>
 <h3 id="有趣站点"><a class="markdownIt-Anchor" href="#有趣站点"></a> 有趣站点</h3>
 <ol>
@@ -305,6 +307,18 @@
 <h3 id="八股文"><a class="markdownIt-Anchor" href="#八股文"></a> 八股文</h3>
 <ol>
 <li><a href="https://interviewguide.cn/">阿秀的学习笔记</a></li>
+</ol>
+<h3 id="前端"><a class="markdownIt-Anchor" href="#前端"></a> 前端</h3>
+<ol>
+<li><a href="https://q.shanyue.tech/engineering/">前言 | 大厂面试题每日一题</a>：程序员山月整理的资料</li>
+</ol>
+<h3 id="工作网站"><a class="markdownIt-Anchor" href="#工作网站"></a> 工作网站</h3>
+<ol>
+<li><a href="https://www.indeed.com/q-Java-jobs.html?vjk=dd38219803504422">Flexible Java Jobs | Indeed.com</a></li>
+<li><a href="https://web3.career/rust-jobs">Rust Jobs in Web3 - Dec 2022</a></li>
+<li><a href="https://rustjobs.dev/">Rust Jobs | RustJobs.dev</a></li>
+<li><a href="https://www.rubyjobboard.com/newest-ruby-on-rails-jobs">Newest Ruby On Rails Jobs | Ruby Job Board</a></li>
+<li><a href="https://functional.works-hub.com/">Functional Works</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -359,11 +373,40 @@
 </ol>
 </blockquote>
 <h3 id="推荐文章"><a class="markdownIt-Anchor" href="#推荐文章"></a> 推荐文章</h3>
+<h4 id="不确定性"><a class="markdownIt-Anchor" href="#不确定性"></a> 不确定性</h4>
+<ol>
+<li><a href="https://jasonguojz.github.io/blog/2020/07/28/What%20Uncertainties%20Do%20We%20Need%20in%20Bayesian%20DeepLearning%20for%20Computer%20Vision/">What Uncertainties Do We Need in Bayesian DeepLearning for Computer Vision? | Guo Jiazhen’s Blog</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/130220572">IJCV | 利用Uncertainty修正Domain Adaptation中的伪标签 - 知乎</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/430849602">读 What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? - 知乎</a></li>
+</ol>
+<h4 id="半监督学习"><a class="markdownIt-Anchor" href="#半监督学习"></a> 半监督学习</h4>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/161449559">计算机视觉中的半监督学习 - 知乎</a></li>
+</ol>
+<h4 id="扩散模型"><a class="markdownIt-Anchor" href="#扩散模型"></a> 扩散模型</h4>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/563543020">如何通俗理解扩散模型？ - 知乎</a></li>
+</ol>
+<h3 id="注意力机制"><a class="markdownIt-Anchor" href="#注意力机制"></a> 注意力机制</h3>
+<ol>
+<li><a href="https://www.zhihu.com/question/519290359/answer/2666328351">注意力机制到底是什么？ - 知乎</a></li>
+</ol>
+<h3 id="损失函数"><a class="markdownIt-Anchor" href="#损失函数"></a> 损失函数</h3>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/35709485">损失函数｜交叉熵损失函数 - 知乎</a>：交叉熵损失函数</li>
+<li></li>
+</ol>
 <h3 id="推荐博客"><a class="markdownIt-Anchor" href="#推荐博客"></a> 推荐博客</h3>
 <ol>
 <li><a href="https://jalammar.github.io/">The Illustrated Series</a>：：作者通过自制动画解释各种模型架构。（英文）</li>
 <li><a href="https://spaces.ac.cn/category/Big-Data">科学空间</a>：偏数学推导，较为硬核。（中文）</li>
-<li></li>
+<li><a href="https://jasonguojz.github.io/blog/">Guo Jiazhen’s Blog</a>：主要是对一些深度学习理论文章的翻译</li>
+<li><a href="https://zhuanlan.zhihu.com/p/22464594">无痛的机器学习第一季目录 - 知乎</a></li>
+</ol>
+<h3 id="动手学"><a class="markdownIt-Anchor" href="#动手学"></a> 动手学</h3>
+<h4 id="实现深度学习框架"><a class="markdownIt-Anchor" href="#实现深度学习框架"></a> 实现深度学习框架</h4>
+<ol>
+<li><a href="https://www.zhihu.com/question/329235391/answer/1197486431">想学着自己实现一个深度学习框架该如何入手？ - 知乎</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -3097,412 +3140,6 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu常见操作</title>
-    <url>/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
-<span id="more"></span>
-<p>1.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>bash</code>终端中分行展示环境变量。</p>
-<blockquote>
-<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
-</blockquote>
-</br>
-<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
-<ul>
-<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
-<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
-</ul>
-<p>运行结果如下：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
-<blockquote>
-<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
-</blockquote>
-</br>
-<p>3.<code>ls</code></p>
-</br>
-<p>4.<code>wc</code></p>
-</br>
-<p>5.<code>zip</code>和<code>unzip</code>：用于压缩解压缩 zip 文件。</p>
-<p><code>zip -r filename.zip /path/to/folder1</code>：把<code>folder1</code>压缩到<code>filename.zip</code>。</p>
-<p><code>unzip /path/to/file.zip -d foldername</code>：把<code>file.zip</code>解压缩到<code>foldername</code>。<br />
-解压命令大全见：<a href="https://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html">linux下解压命令大全</a></p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://www.runoob.com/linux/linux-comm-unzip.html">Linux unzip 命令</a></li>
-<li><a href="https://unix.stackexchange.com/questions/57013/zip-all-files-in-directory">Zip all files in directory?</a></li>
-<li><a href="https://askubuntu.com/questions/520546/how-to-extract-a-zip-file-to-a-specific-folder">How to extract a zip file to a specific folder?</a></li>
-</ol>
-</blockquote>
-</br>
-<p>6.<code>rename</code>：用于重命名文件。</p>
-<ul>
-<li><code>000001_left.png -&gt; 000001_left_depth.png</code>：<code>rename -v 's/.png/_depth.png/' *.png</code>。</li>
-<li><code>000001_left.png -&gt; 000001_left_gt.png</code>：<code>rename -v 's/.png/_gt.png/' *.png</code>。</li>
-<li><code>000001_left_GT.png -&gt; 000001_left_gt.png</code>：<code>rename -v 's/GT.png/gt.png/' *.png</code>。</li>
-</ul>
-<p>也可用于批量给文件名添加前缀或后缀，例如给多个文件批量添加<code>.cpp</code>后缀或<code>1</code>前缀：</p>
-<ul>
-<li><code>helloworld -&gt; helloworld.cpp</code>：<code>rename -v 's/$/.cpp/' *</code>。</li>
-<li><code>helloworld.cpp -&gt; 1helloworld.cpp</code>：<code>rename -v 's/^/1/' *</code>。</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://unix.stackexchange.com/questions/1136/batch-renaming-files">Batch renaming files</a></li>
-</ol>
-</blockquote>
-</br>
-<p>7.在 Ubuntu 终端中隐藏当前工作目录：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103802742.png" alt="image-20220609103802742" /></p>
-<ul>
-<li>
-<p>当前终端中生效：在当前终端中运行<code>export PS1='\u@\h$ '</code></p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103954302.png" alt="image-20220609103954302" /></p>
-</li>
-<li>
-<p>永久生效：在<code>~/.bashrc</code>文件末尾添加<code>export PS1='\u@\h$ '</code>，并运行<code>source ~/.bashrc</code>使之生效</p>
-</li>
-<li>
-<p>设置颜色：<code>export PS1='\e[34m\u\e[0m@\e[35m\h\e[0m$ '</code>。</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609113641179.png" alt="image-20220609113641179" /></p>
-</li>
-</ul>
-<p>PS：<code>\e</code>表示<code>Esc</code>即转义，<code>\e[34m</code>和<code>\e[35m</code>表示颜色，<code>\e[0m</code>表示清除前面的格式，故<code>@</code>和<code>$</code>符号无格式。</p>
-<p>参考资料：</p>
-<ol>
-<li>
-<p><a href="https://askubuntu.com/questions/16728/hide-current-working-directory-in-terminal">Hide current working directory in terminal</a></p>
-</li>
-<li>
-<p><a href="https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html">How to Change / Set up bash custom prompt (PS1) in Linux</a></p>
-</li>
-<li>
-<p><a href="https://misc.flogisoft.com/bash/tip_colors_and_formatting">Bash tips: Colors and formatting (ANSI/VT100 Control sequences)</a></p>
-</li>
-</ol>
-</br>
-<p>8.<code>ls | sed 's/.jpg//'</code>：用于对<code>ls</code>的输出做处理。</p>
-<ul>
-<li>
-<p>处理之前：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">FT@node2$ ls | head</span><br><span class="line">ILSVRC2012_test_00000004.jpg</span><br><span class="line">ILSVRC2012_test_00000018.jpg</span><br><span class="line">ILSVRC2012_test_00000019.jpg</span><br><span class="line">ILSVRC2012_test_00000022.jpg</span><br><span class="line">ILSVRC2012_test_00000030.jpg</span><br><span class="line">ILSVRC2012_test_00000072.jpg</span><br><span class="line">ILSVRC2012_test_00000082.jpg</span><br><span class="line">ILSVRC2012_test_00000108.jpg</span><br><span class="line">ILSVRC2012_test_00000130.jpg</span><br><span class="line">ILSVRC2012_test_00000172.jpg</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>处理之后：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">FT@node2$ ls | head | sed <span class="string">&#x27;s/.jpg//&#x27;</span></span><br><span class="line">ILSVRC2012_test_00000004</span><br><span class="line">ILSVRC2012_test_00000018</span><br><span class="line">ILSVRC2012_test_00000019</span><br><span class="line">ILSVRC2012_test_00000022</span><br><span class="line">ILSVRC2012_test_00000030</span><br><span class="line">ILSVRC2012_test_00000072</span><br><span class="line">ILSVRC2012_test_00000082</span><br><span class="line">ILSVRC2012_test_00000108</span><br><span class="line">ILSVRC2012_test_00000130</span><br><span class="line">ILSVRC2012_test_00000172</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</br>
-<p>9.在<code>sed</code>命令中包含斜杆的替换。一般情况下，我们会用<code>/</code>作为<code>sed</code>指令的分隔符进行字符串的查找替换。例如：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cat test.txt | sed <span class="string">&#x27;s/.jpg/.png/&#x27;</span> &gt; test1.txt</span><br></pre></td></tr></table></figure>
-<p>可以将<code>.jpg</code>字符串替换为<code>.png</code>。但当要查找或替换的字符串包含<code>/</code>本身时，该方式无法使用。此时可以利用<code>sed</code>命令会将紧跟在<code>s</code>后面的字符作为分隔符的特性，将分隔符改为<code>#</code>或其他字符。例如：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cat test.txt | sed <span class="string">&#x27;s#^#data/#&#x27;</span> &gt; test2.txt</span><br></pre></td></tr></table></figure>
-<p>可以在每一行的开头添加<code>data/</code>字符串。</p>
-<ul>
-<li>在每一行开头添加<code>'</code>单引号字符，<code>ls | sed &quot;s/^/'/&quot;</code></li>
-<li>在每一行末尾添加<code>',</code>字符，<code>ls | sed &quot;s/$/',/&quot;</code>。<br />
-完整使用<code>ls | sed &quot;s/^/'/&quot; | sed &quot;s/$/',/&quot;</code>效果如下：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;ILSVRC2012_test_00000003.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000023.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000025.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000026.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000034.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000038.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000064.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000086.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000105.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000128.png&#x27;,</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://blog.csdn.net/weixin_39031707/article/details/104065184">Sed替换 内容带反斜杠（/）</a></li>
-</ol>
-</blockquote>
-</br>
-<p>10.有时候可能会许村将两个文件中的数据合并到一个文件，并且数据分处第一列和第二列，此时可以通过<code>paste</code>命令实现。例如，文件<code>train.txt</code>和<code>train1.txt</code>分别包含以下内容：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ cat train.txt</span><br><span class="line"><span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg</span><br><span class="line">$ cat train1.txt</span><br><span class="line"><span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg</span><br></pre></td></tr></table></figure>
-<p>通过<code>paste train.txt train1.txt</code>命令可以获得以下输出：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.j</span>pg   <span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg   <span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg   <span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg   <span class="number">4.j</span>pg</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://blog.csdn.net/jiao_zhoucy/article/details/20693179">Linux下paste命令，按列合并文件</a></li>
-</ol>
-</blockquote>
-</br>
-<p>11.可以通过以下脚本批量移动文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;processing <span class="variable">$dir</span> data&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$dir</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$dir</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    image=<span class="variable">$dir</span>/image</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;image is <span class="variable">$image</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$image</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$image</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    mask=<span class="variable">$dir</span>/mask</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;mask is <span class="variable">$mask</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$mask</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$mask</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">mv</span> ./img/<span class="variable">$dir</span>/* <span class="variable">$image</span></span><br><span class="line">    <span class="built_in">mv</span> ./gt/<span class="variable">$dir</span>/* <span class="variable">$mask</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<p>先通过<code>[-d $dir]</code>确定是否存在<code>$dir</code>文件夹，如果没有则创建，然后将<code>img</code>和<code>gt</code>文件夹下的图片移动到对应的文件夹。</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li>《Linux命令行和shell脚本编程》第12章</li>
-</ol>
-</blockquote>
-</br>
-<p>12.在Linux系统中可以很方便地对两个文本文件求取交集、并集和差集</p>
-<ul>
-<li>交集：<code>sort a.txt b.txt | uniq -d</code></li>
-<li>并集：<code>sort a.txt b.txt | uniq</code></li>
-<li>差集：
-<ul>
-<li>a.txt - b.txt：<code>sort a.txt b.txt b.txt | uniq -u</code></li>
-<li>b.txt - a.txt：<code>sort b.txt a.txt a.txt | uniq -u</code></li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://www.cnblogs.com/molong1208/p/5358509.html">Linux两个文件求交集、并集、差集</a></li>
-</ol>
-</blockquote>
-</br>
-<p>13.结合[11]和[12]可以方便地求取image和mask文件夹中图片的交集并输出到对应的txt文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;processing <span class="variable">$dir</span> data&quot;</span></span><br><span class="line">    image=<span class="variable">$dir</span>/image</span><br><span class="line">    mask=<span class="variable">$dir</span>/mask</span><br><span class="line">    <span class="built_in">ls</span> <span class="variable">$image</span> | sed <span class="string">&#x27;s/.jpg//&#x27;</span> | sed <span class="string">&#x27;s/.png//&#x27;</span> &gt;<span class="variable">$dir</span>/image.txt</span><br><span class="line">    <span class="built_in">ls</span> <span class="variable">$mask</span> | sed <span class="string">&#x27;s/.png//&#x27;</span> | sed <span class="string">&#x27;s/.bmp//&#x27;</span> &gt;<span class="variable">$dir</span>/mask.txt</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span> <span class="variable">$dir</span>/image.txt <span class="variable">$dir</span>/mask.txt | <span class="built_in">uniq</span> -d &gt;<span class="variable">$dir</span>/test.txt</span><br><span class="line">    <span class="built_in">cat</span> <span class="variable">$dir</span>/test.txt | <span class="built_in">wc</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-</br>
-<p>14.<code>sh</code> vs <code>bash</code>：注意，二者并不等价。bash是sh的超集。</p>
-<ul>
-<li>
-<p>通过<code>sh test7.sh</code>运行脚本，会出现如下报错：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172241725.png" alt="image-20220716172241725" /></p>
-</li>
-<li>
-<p>通过<code>bash test7.sh</code>运行脚本，可以正常运行：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172342306.png" alt="image-20220716172342306" /></p>
-</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://www.geeksforgeeks.org/difference-between-sh-and-bash/">Difference between sh and bash</a></li>
-<li><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected">Shell script fails: Syntax error: “(” unexpected</a></li>
-</ol>
-</blockquote>
-</br>
-<p>15.在bash脚本中将命令行的输出复制给一个变量：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">output=$(<span class="built_in">cat</span> batchDir.sh | <span class="built_in">wc</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$&#123;output&#125;</span>&quot;</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$output</span></span><br></pre></td></tr></table></figure>
-<p>其输出如下：</p>
-<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172942136.png" alt="image-20220716172942136" /></p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/4651437/how-do-i-set-a-variable-to-the-output-of-a-command-in-bash">How do I set a variable to the output of a command in Bash?</a></li>
-</ol>
-</blockquote>
-</br>
-<p>16.在Anaconda中创建环境时<code>-n/--name</code>不能和<code>-p/--prefix</code>同时使用：</p>
-<ul>
-<li><code>-n, --name</code>：环境名，如<code>conda create --name py35 python=3.5</code>。</li>
-<li><code>-p, --prefix</code>：环境位置的完整路径。如<code>conda create --prefix /users/.../yourenvname python=2.7</code>。</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html#conda-create">conda create</a></li>
-<li><a href="https://stackoverflow.com/questions/37926940/how-to-specify-new-environment-location-for-conda-create">how to specify new environment location for conda create</a></li>
-</ol>
-</blockquote>
-</br>
-<p>17.删除conda环境：<code>conda env remove -n ENV_NAME</code>。</p>
-</br>
-<p>18.在编写bash脚本时，指定<code>IFS</code>变量为多个分隔符：<code>IFS=', | \\'</code>。如下图所示：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">echo <span class="string">&quot;reading values from a file&quot;</span></span><br><span class="line">file=<span class="string">&quot;list&quot;</span></span><br><span class="line"><span class="comment"># change seperator</span></span><br><span class="line"><span class="comment"># save IFS before changing it</span></span><br><span class="line">IFS_OLD=$IFS</span><br><span class="line"><span class="comment"># set multiple seperators?</span></span><br><span class="line">IFS=<span class="string">&#x27;; | :&#x27;</span></span><br><span class="line"><span class="keyword">for</span> state <span class="keyword">in</span> $(cat $file)</span><br><span class="line">do</span><br><span class="line">    echo <span class="string">&quot;Visit $state&quot;</span></span><br><span class="line">done</span><br><span class="line">IFS=$&#123;IFS_OLD&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/25163486/split-string-using-2-different-delimiters-in-bash">Split string using 2 different delimiters in Bash</a></li>
-</ol>
-</blockquote>
-</br>
-<p>19.在Ubuntu终端常使用Ctrl + L组合快捷键清空终端屏幕，但向上滚动时屏幕内容依然存在。此时可以通过</p>
-<ul>
-<li><code>printf '\ec'</code></li>
-<li><code>reset</code></li>
-</ul>
-<p>二者来完全清空屏幕，但<code>reset</code>为彻底清除，执行速度较慢。故可以通过在<code>~/.bashrc</code>中添加如下别名：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> cls=<span class="string">&#x27;printf &quot;\ec&quot;&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>来使用<code>cls</code>来清空终端屏幕。</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://blog.csdn.net/pngynghay/article/details/23176757">Linux终端彻底清空屏幕</a></li>
-</ol>
-</blockquote>
-</br>
-<p>20.在使用<code>ls</code>命令时，有时我们仅需要列出目录，然后将目录导入txt文件。下面是3种不同的方法：</p>
-<ol>
-<li>
-<p><code>ls -d */</code>：其输出如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">DUT-OMRON/  DUTS_Test/  ECSSD/  HKU-IS/  PASCAL-S/  SOD/  THUR15K/</span><br></pre></td></tr></table></figure>
-<p>可以通过<code>ls -d */ | sed 's#/##' &gt; dir.txt</code>将数据集名称导出到<code>dir.txt</code></p>
-</li>
-<li>
-<p><code>ls -F | grep &quot;/$&quot;</code>。<code>-F</code>会在输出的不同文件类型后面加上后缀，文件后会加上<code>*</code>，管道后会加上<code>|</code>，目录后会加上<code>/</code>。</p>
-</li>
-<li>
-<p><code>ls -l | grep &quot;^d&quot;</code>。使用<code>grep</code>匹配输出每行开头的<code>d</code>字符。可以通过<code>awk</code>命令列出目录名本身：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | awk <span class="string">&#x27;&#123;print $8&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://blog.csdn.net/DLUTBruceZhang/article/details/9244897">Linux Shell 只列出目录的方法</a></li>
-</ol>
-</blockquote>
-</br>
-<p>21.在Ubuntu系统中，常常需要查看当前运行的进程，并根据需要筛选。下面介绍<code>ps</code>命令的选项：</p>
-<ul>
-<li>
-<p><code>ps -A</code>：列出所有的进程</p>
-</li>
-<li>
-<p><code>ps -w</code>：显示加宽可以显示更多的信息</p>
-</li>
-<li>
-<p><code>ps -au</code>：显示较为详细的信息</p>
-</li>
-<li>
-<p><code>ps -aux</code>：显示所有包含其他使用者的进程。下面是对该命令输出信息的介绍，其输出格式为</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p><code>USER</code>：进程拥有者</p>
-</li>
-<li>
-<p><code>PID</code>：process id</p>
-</li>
-<li>
-<p><code>%CPU</code>：CPU占用率</p>
-</li>
-<li>
-<p><code>VSZ</code>：虚拟内存大小</p>
-</li>
-<li>
-<p><code>RSS</code>：内存大小</p>
-</li>
-<li>
-<p><code>TTY</code>：minor device number of tty</p>
-</li>
-<li>
-<p><code>STAT</code>：进程状态</p>
-<ul>
-<li>D：无法终端的休眠状态（通常为IO的进程）</li>
-<li>R：正在执行中</li>
-<li>S：静止状态</li>
-<li>T：暂停执行</li>
-<li>Z：不存在但暂时无法消除</li>
-<li>W：没有足够的内存分页可分配</li>
-<li>&lt;：高优先序的进程</li>
-<li>N：低优先序的进程</li>
-<li>L：有内存分页分配且Lock在内存内</li>
-</ul>
-</li>
-<li>
-<p>START：进程开始时间</p>
-</li>
-<li>
-<p>TIME：执行的时间</p>
-</li>
-<li>
-<p>COMMAND：执行的指令</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>较为常用的命令为<code>ps -u FT</code>，其可以显示用户<code>FT</code>正在运行的进程，并可以通过<code>grep</code>对进程进行筛选。</p>
-<p>此外，<code>top</code>命令可以显示正在运行的进程并实时更新。</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://www.runoob.com/linux/linux-comm-ps.html">Linux ps 命令</a></li>
-<li><a href="https://blog.csdn.net/yaoqiuxiang/article/details/9449179">ubuntu查看所有正在运行的进程</a></li>
-</ol>
-</blockquote>
-</br>
-<p>22.<code>kill</code>命令常用于通过进程号PID终止特定进程。可以用<code>kill -l</code>命令列出所有可用的信号，最常用的信号是：</p>
-<ul>
-<li><code>1 (HUP)</code>：重新加载进程</li>
-<li><code>9 (KILL)</code>：杀死一个进程</li>
-<li><code>15 (TERM)</code>：正常停止一个进程</li>
-</ul>
-<p>示例：</p>
-<p><code>kill -9 12345</code>：彻底杀死进程号为12345的进程。</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://www.runoob.com/linux/linux-comm-kill.html">Linux kill命令</a></li>
-</ol>
-</blockquote>
-</br>
-<p>23.服务器远程登录配置：</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://www.chengxiaobai.cn/record/tencent-cloud-denied-permission-publickey-gssapikeyex-gssapiwithmic.html">腾讯云 Permission denied (publickey,gssapi-keyex,gssapi-with-mic)</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1720991">Linux 配置SSH免密登录 “ssh-keygen”的基本用法</a></li>
-<li><a href="https://www.runoob.com/w3cnote/set-ssh-login-key.html">设置 SSH 通过密钥登录</a></li>
-</ol>
-</blockquote>
-</br>
-<p>24.使用<code>chmod</code>变更文件或目录权限。可以使用<code>chmod -R 777 ./folder</code>对目录以及目录一下的文件递归执行更改权限操作。</p>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://wangchujiang.com/linux-command/c/chmod.html">chmod</a></li>
-</ol>
-</blockquote>
-</br>
-<p>25.查看Linux系统内核版本和系统架构：</p>
-<ul>
-<li><code>hostnamectl</code>：查看内核版本和系统架构<br />
-<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164139.png" alt="" /></li>
-<li><code>uname -a</code>：查看内核版本和系统架构<br />
-<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164340.png" alt="" /></li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://www.sysgeek.cn/find-out-linux-system-32-or-64-bit/">查看Linux系统架构类型的5条常用命令</a></li>
-<li><a href="https://www.cnblogs.com/linuxprobe/p/11664104.html">查看Linux内核版本</a></li>
-</ol>
-</blockquote>
-</br>
-26.查看Linux空间使用情况：
-- `df -lh`：查看分区使用情况
-- `du -sh /home/FT`：查看当前用户使用的存储空间大小
-> 参考资料：
-> 1. [Linux笔记』查看磁盘空间大小和所有用户各自占用空间](https://blog.csdn.net/abc13526222160/article/details/84962310#:~:text=Linux%E4%B8%8B%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%8D%A0,%E5%91%BD%E4%BB%A4%E6%9C%89%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E7%9A%84%E3%80%82)
-> 2. [Linux 查看磁盘空间](https://www.runoob.com/w3cnote/linux-view-disk-space.html)
-</br>
-27.Ubuntu添加和删除用户
-> 参考资料：
-> 1. [如何在Ubuntu添加和删除用户](https://www.myfreax.com/how-to-add-and-delete-users-on-ubuntu-18-04/#:~:text=%E9%80%9A%E8%BF%87GUI%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%94%A8%E6%88%B7&text=%E6%89%93%E5%BC%80Ubuntu%E8%AE%BE%E7%BD%AE%EF%BC%8C%E6%89%BE%E5%88%B0%20%E7%94%A8%E6%88%B7,%E5%91%98%E7%94%A8%E6%88%B7%E5%B9%B6%E8%BE%93%E5%85%A5%E4%BF%A1%E6%81%AF%E3%80%82)
-</br>
-28.配置环境变量
-- `export PATH=/usr/local/bin:$PATH`：将环境变量放在环境变量检索目录最开始，即优先查找该变量
-- `export PATH=$PATH:/usr/local/bin`：将环境变量放在环境变量检索目录最后，即最后查找该变量
-> 1. [Multiple CUDA versions on machine nvcc -V confusion](https://stackoverflow.com/questions/40517083/multiple-cuda-versions-on-machine-nvcc-v-confusion)
-> 2. [How to correctly add a path to PATH?](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)
-</br>
-<p>29.复制指定目录下的全部文件到另一个目录中：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r dir1 dir2</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://www.cnblogs.com/zdz8207/p/linux-cp-dir.html">linux复制指定目录下的全部文件到另一个目录中，linux cp 文件夹</a></li>
-</ol>
-</blockquote>
-</br>
-30.rename批量修改文件名：
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://einverne.github.io/post/2018/01/rename-files-batch.html">每天学习一个命令: rename 批量修改文件名 | Verne in GitHub</a></li>
-</ol>
-</blockquote>
-]]></content>
-      <categories>
-        <category>开发工具</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows10系统和环境配置</title>
     <url>/2022/09/10/Windows10%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>本文记录一些Windows10系统中的配置和对应工具：</p>
@@ -4271,7 +3908,28 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 声明字典</span></span><br><span class="line">key_value =&#123;&#125;     </span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化</span></span><br><span class="line">key_value[<span class="number">2</span>] = <span class="number">56</span>       </span><br><span class="line">key_value[<span class="number">1</span>] = <span class="number">2</span> </span><br><span class="line">key_value[<span class="number">5</span>] = <span class="number">12</span> </span><br><span class="line">key_value[<span class="number">4</span>] = <span class="number">24</span></span><br><span class="line">key_value[<span class="number">6</span>] = <span class="number">18</span>      </span><br><span class="line">key_value[<span class="number">3</span>] = <span class="number">323</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;按值(value)排序:&quot;</span>)   </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sorted</span>(key_value.items(), key = <span class="keyword">lambda</span> kv:(kv[<span class="number">1</span>], kv[<span class="number">0</span>])))    </span><br></pre></td></tr></table></figure>
 > 参考资料：
 > 1. [Python 按键(key)或值(value)对字典进行排序 | 菜鸟教程](https://www.runoob.com/python3/python-sort-dictionaries-by-key-or-value.html)
-> 2. [python字典按照key,value进行排序的几种方法_51CTO博客_python 对字典按照value进行排序](https://blog.51cto.com/hzf16321/2721549)]]></content>
+> 2. [python字典按照key,value进行排序的几种方法_51CTO博客_python 对字典按照value进行排序](https://blog.51cto.com/hzf16321/2721549)
+> 3. [python笔记17-字典如何按value排序 - 上海-悠悠 - 博客园](https://www.cnblogs.com/yoyoketang/p/9147052.html)
+</br>
+14.Python中创建包和导入包的操作
+> 参考资料：
+> 1. [Python创建包，导入包（入门必读）](http://c.biancheng.net/view/4669.html)
+> 2. [Distutils/Tutorial - Python Wiki](https://wiki.python.org/moin/Distutils/Tutorial?highlight=%28setup.py%29)
+</br>
+15.Python中清空txt文件
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;a&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">	file.truncate(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python如何清空txt文件 - 问答 - 亿速云](https://www.yisu.com/ask/6997.html)
+</br>
+16.pip、setuptools、python环境变量、python命令行参数等
+- [pip指南 · January Star](http://chenjiee815.github.io/pipzhi-nan.html)
+- [setuptools指南：未完待续 · January Star](http://chenjiee815.github.io/setuptoolszhi-nan-wei-wan-dai-xu.html)
+- [Python环境变量 · January Star](http://chenjiee815.github.io/pythonhuan-jing-bian-liang.html)
+- [Python命令行参数 · January Star](http://chenjiee815.github.io/pythonming-ling-xing-can-shu.html)
+>参考资料：
+>1. [All Posts · January Star](http://chenjiee815.github.io/archives.html)
+</br>
+]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -6117,7 +5775,12 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 > 1. [目前抠图（Image Matting）的主流算法有哪些？ - 知乎](https://www.zhihu.com/question/68146993/answer/1914887189)
 > 2. [Image Matting](https://xinyangdut.github.io/matting/index.html)
 > 3. [c++ - OpenCV : Using a Trimap image - Stack Overflow](https://stackoverflow.com/questions/41777654/opencv-using-a-trimap-image)
-> 4. [Smart_Scribbles](https://qiaoyu2015.github.io/Smart_Scribbles/#)]]></content>
+> 4. [Smart_Scribbles](https://qiaoyu2015.github.io/Smart_Scribbles/#)
+</br>
+7.在Python中捕捉`OpenCV Error`：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># do a thing</span></span><br><span class="line"><span class="keyword">except</span> (cv.error, OpenCV Error):</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;Can&#x27;t do the thing&quot;</span></span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [How to catch "OpenCV Error" in Python - Stack Overflow](https://stackoverflow.com/questions/8873657/how-to-catch-opencv-error-in-python)]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -6720,6 +6383,33 @@ F(u&#x27;)=\int_{-\infty}^{\infty}f(y)e^{-j2 \pi u(y+x_0)}dx \\
 > 参考资料：
 > 1. [1.运行npm install 时，卡在sill idealTree buildDeps没有反应_豆豆豆豆芽的博客-CSDN博客](https://blog.csdn.net/weixin_46182244/article/details/121302702)
 > 2. [[BUG] "sill idealTree buildDeps" takes a lot of time a project with workspaces · Issue #3257 · npm/cli · GitHub](https://github.com/npm/cli/issues/3257)
+</br>
+14.出现`RuntimeError: latex was not able to process the following string`：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221121004755.png)
+解决方案：安装MiKTeX并添加到环境变量。（安装正版LaTeX更好）
+> 参考资料：
+> 1. [Getting MiKTeX](https://miktex.org/download)
+</br>
+15.Clash for Windows端口为0且无法更改，导致代理不可用：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221121235520.png)
+原因：系统更新后，由于使用`Hyper-V`的功能，虚拟机需要映射一部分端口，并且在系统更新后对动态映射的端口进行了更改，导致占用了本来的`Clash`使用的端口。
+解决方案：更改系统进行动态映射的端口范围
+- cmd中`netsh int ipv4 show dynamicport tcp`，可以发现系统更新后动态端口范围变为从1024开始，导致原先的1080端口被占用
+- `netsh int ipv4 set dynamicport tcp start=49152 num=16383`，将为tcp协议分配的端口范围进行更改
+- `netsh int ipv4 set dynamicport udp start=49152 num=16383`，将为udp协议分配的端口范围进行更改
+- `netsh interface ipv4 show excludedportrange protocol=tcp`，结果如下：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221122000350.png)
+- 说明此时端口设置已经更新，重启电脑后可以在Clash中对端口进行设置。
+>就参考资料：
+>1. [解决 Clash for windows 端口为 0 导致无法使用_51CTO博客_clash for windows连不上](https://blog.51cto.com/frytea/4146902)
+>2. [Clash For Windows代理端口为0问题 - 寒梦](https://siegelion.cn/2022/01/31/Clash%20For%20Windows%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%E4%B8%BA0%E9%97%AE%E9%A2%98/)
+</br>
+16.v2rayN出现`v2rayN tcp:127.0.0.1: rejected proxy/socks: unknow Socks version`刷屏：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221121235442.png)
+问题：系统的代理设置协议为`http`和`https`协议，而v2rayN只支持`socks5`协议，导致出错。
+解决方案：将系统代理设置协议更改为`socks5`，或者将代理软件改为SSR或者Clash，此二者同时支持`http`和`socks5`协议。
+> 参考资料：
+> 1. [如何解决“rejected v2ray.com/core/proxy/socks: unknown Socks version: ”的问题 - Xuing的个人博客](https://xuing.cn/security/v2ray_unknown_socks.html)
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -9040,6 +8730,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://github.com/bitemyapp/learnhaskell">bitemyapp/learnhaskell</a></li>
 <li><a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours">Write Yourself a Scheme in 48 Hours</a></li>
 <li><a href="https://smunix.github.io/dev.stephendiehl.com/fun/index.html">Write You a Haskell</a></li>
+<li><a href="https://argumatronic.com/">argumatronic -</a>：函数式编程和代数</li>
 </ol>
 <h4 id="dart"><a class="markdownIt-Anchor" href="#dart"></a> Dart</h4>
 <h4 id="综合教程-12"><a class="markdownIt-Anchor" href="#综合教程-12"></a> 综合教程</h4>
@@ -9158,6 +8849,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://silverbullettt.bitbucket.io/courses/compiler-2022/index.html">编译原理</a>：南京大学编译原理课程，项目文档为中文</li>
 <li><a href="https://hpc-wiki.info/hpc/Compiler">Compiler</a>：HPC网站上关于Compiler的介绍</li>
 <li><a href="https://book.douban.com/people/RednaxelaFX/all?sort=rating&amp;start=0&amp;tag=%E7%BC%96%E8%AF%91%E5%99%A8&amp;mode=grid&amp;tags_sort=count">RednaxelaFX的书/编译器(73)</a>：知乎叛逆者的编译器豆瓣书单。</li>
+<li><a href="http://parsing-techniques.duguying.net/">介绍 - 解析技术</a></li>
 </ol>
 <h3 id="计算机图形学"><a class="markdownIt-Anchor" href="#计算机图形学"></a> 计算机图形学</h3>
 <ol>
@@ -9196,6 +8888,20 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <h3 id="服务器开发"><a class="markdownIt-Anchor" href="#服务器开发"></a> 服务器开发</h3>
 <ol>
 <li><a href="https://github.com/yuesong-feng/30dayMakeCppServer">30dayMakeCppServer</a>：30天自制服务器（C++）</li>
+</ol>
+<h3 id="计算机网络"><a class="markdownIt-Anchor" href="#计算机网络"></a> 计算机网络</h3>
+<p>计算机网络：</p>
+<ol>
+<li><a href="https://gaia.cs.umass.edu/kurose_ross/wireshark.php">Jim Kurose Homepage</a>：《计算机网络自顶向下方法》第八版官网</li>
+</ol>
+<h2 id="函数式编程"><a class="markdownIt-Anchor" href="#函数式编程"></a> 函数式编程</h2>
+<ol>
+<li><a href="https://a-little-java-a-few-patterns.readthedocs.io/zh_CN/latest/index.html">Welcome to 《A Little Java, A Few Patterns》笔记 — 《A Little Java, A Few Patterns》笔记 1.0 文档</a></li>
+<li><a href="https://the-little-schemer.readthedocs.io/zh_CN/latest/index.html">Welcome to 《The Little Schemer》笔记 — 《The Little Schemer》笔记 1.0 文档</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/37056659">DrRacket 的安装与 SICP 的配置 - 知乎</a></li>
+<li><a href="https://uternet.gitbooks.io/tspl-v4-cn/content/">Introduction · Scheme编程语言（第四版）</a></li>
+<li><a href="https://tyrchen.github.io/racket-book/begin.html">Racket语言入门</a></li>
+<li><a href="http://xbluer.github.io/note/2013/12/04/drracket_include_module/">DrRacket 载入模块</a></li>
 </ol>
 <h3 id="技术文章"><a class="markdownIt-Anchor" href="#技术文章"></a> 技术文章</h3>
 <ol>
@@ -9499,6 +9205,15 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://www.crunchydata.com/developers/tutorials">Postgres Tutorials | Crunchy Data</a></li>
 </ol>
+<h3 id="git教程"><a class="markdownIt-Anchor" href="#git教程"></a> Git教程</h3>
+<ol>
+<li><a href="https://github.com/bg6cq/learngit">GitHub - bg6cq/learngit: 大家一起学git</a></li>
+<li><a href="https://backlog.com/git-tutorial/cn/">猴子都能懂的GIT入门 | 贝格乐（Backlog）</a></li>
+</ol>
+<h3 id="快捷键练习网站"><a class="markdownIt-Anchor" href="#快捷键练习网站"></a> 快捷键练习网站</h3>
+<ol>
+<li><a href="https://www.shortcutfoo.com/?utm_source=bestxtools.com">Learn shortcuts and commands | ShortcutFoo</a>：Vim/VSCode/Git等工具的快捷键练习网站</li>
+</ol>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -9623,11 +9338,12 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://reality0ne.com/how-to-struct-c-header-files/">如何组织好 C 的头文件</a></li>
 <li><a href="https://bbs.csdn.net/topics/380062140">请大家说说　结构体　是放在头文件中好?　还是放在源文件好呢?-CSDN社区</a></li>
 <li><a href="https://www.runoob.com/cprogramming/c-header-files.html">C 头文件 | 菜鸟教程</a></li>
+<li><a href="https://www.cnblogs.com/moodlxs/archive/2012/03/08/2385118.html">函数实现不放在头文件的原因，及何时可以放头文件的情况 - 绿色冰点 - 博客园</a></li>
 </ol>
 </blockquote>
 <h3 id="c中和-"><a class="markdownIt-Anchor" href="#c中和-"></a> C++中<code>.</code>和<code>-&gt;</code></h3>
 <p><code>-&gt;</code>主要用于对类类型的指针访问类的成员，<code>.</code>主要用于对类类型的引用对象访问类的成员。例如：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">	<span class="type">int</span> val;</span><br><span class="line">	ListNode *next;</span><br><span class="line">	<span class="built_in">ListNode</span>(<span class="type">int</span> x): <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function">ListNode* <span class="title">dummy1</span><span class="params">(<span class="number">-1</span>)</span></span>;</span><br><span class="line">	<span class="function">ListNode <span class="title">dummy2</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">	cout &lt;&lt; dummy1-&gt;val &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; dummy2.val &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span>&#123;</span><br><span class="line">	<span class="type">int</span> val;</span><br><span class="line">	ListNode *next;</span><br><span class="line">	<span class="built_in">ListNode</span>(<span class="type">int</span> x): <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ListNode* dummy1 = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">-1</span>);</span><br><span class="line">	<span class="function">ListNode <span class="title">dummy2</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">	cout &lt;&lt; dummy1-&gt;val &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; dummy2.val &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -9657,7 +9373,31 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <p>参考资料：</p>
 <ol>
 <li><a href="https://blog.51cto.com/u_15178976/2988807">单链表的头插法与尾插法代码实现及详解_51CTO博客_单链表尾插法代码</a></li>
-<li></li>
+</ol>
+</blockquote>
+<h3 id="c结构体的初始化"><a class="markdownIt-Anchor" href="#c结构体的初始化"></a> C++结构体的初始化</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="type">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;;</span><br><span class="line">    <span class="comment">//通过数组来初始化</span></span><br><span class="line">    <span class="built_in">ListNode</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums)&#123;</span><br><span class="line">        <span class="function">ListNode <span class="title">dummy</span><span class="params">(<span class="number">-1</span>)</span></span>;</span><br><span class="line">        ListNode* curNode = &amp;dummy;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num: nums)&#123;</span><br><span class="line">            curNode-&gt;next = <span class="keyword">new</span> <span class="built_in">ListNode</span>(num, <span class="literal">nullptr</span>);</span><br><span class="line">            curNode = curNode-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        val = dummy.next-&gt;val; </span><br><span class="line">        next = dummy.next-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://c.biancheng.net/view/1407.html">C++结构体完全攻略（超详细）</a></li>
+<li><a href="https://www.cnblogs.com/wlw-x/p/11566191.html">C++ - 结构体构造函数使用总结 - _starsky - 博客园</a></li>
+</ol>
+</blockquote>
+<h3 id="c编译器在windows上的配置"><a class="markdownIt-Anchor" href="#c编译器在windows上的配置"></a> C++编译器在Windows上的配置</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.mingw-w64.org/downloads/#pre-built-toolchains-and-packages">Downloads - MinGW-w64</a></li>
+<li><a href="https://packages.msys2.org/package/mingw-w64-x86_64-gcc-fortran">Package: mingw-w64-x86_64-gcc-fortran - MSYS2 Packages</a></li>
+<li><a href="https://packages.msys2.org/package/mingw-w64-x86_64-gcc">Package: mingw-w64-x86_64-gcc - MSYS2 Packages</a></li>
+</ol>
+</blockquote>
+<h3 id="c多维数组"><a class="markdownIt-Anchor" href="#c多维数组"></a> C++多维数组</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/cplusplus/cpp-multi-dimensional-arrays.html">C++ 多维数组 | 菜鸟教程</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -9700,6 +9440,485 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
       </categories>
       <tags>
         <tag>自传</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu常见操作02</title>
+    <url>/2022/11/22/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C02/</url>
+    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
+<span id="more"></span>
+<p>1.<code>sed</code>命令中的<code>.</code>字符。<code>.</code>用于匹配除换行符之外的任意单个字符，它必须匹配一个字符。通过这种形式加上正则表达式的贪婪匹配（匹配符合模式的最长字符串）可以进行如下替换操作：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221122221549.png" alt="" /><br />
+其命令为`head scores2.txt | sed ‘s#.*/##’。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>《Linux命令行于shell脚本编程大全》第三版20.2.4点号字符</li>
+</ol>
+</blockquote>
+</br>
+2.删除文件时出现`cannot remove:device or resource busy`：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221123001238.png)
+解决方案：
+- `lsof +D /path`：查看当前路径下哪些进程占用文件
+- `kill -9 $PID`：关闭对应进程id
+- `rm -rf ./*`：重新尝试删除文件
+一行命令实现：
+`lsof +D ./ | awk '{print $2}' | tail -n +2 | xargs -r kill -9`
+类似命令：
+`ps ef | grep python | awk '{print $2} | xargs -r kill -9'`
+> 参考资料：
+> 1. [files - How to get over "device or resource busy"? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/11238/how-to-get-over-device-or-resource-busy)
+</br>
+3.bash脚本中的字符串比较：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$dir</span>&quot;</span> == <span class="string">&quot;image&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">	img=DUTS/<span class="variable">$dir</span>/<span class="variable">$line</span><span class="string">&quot;.jpg&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	img=DUTS/<span class="variable">$dir</span>/<span class="variable">$line</span><span class="string">&quot;.png&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Bash shell字符串比较 | myfreax](https://www.myfreax.com/how-to-compare-strings-in-bash/#:~:text=%E5%9C%A8Bash%E4%B8%AD%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8B,%E4%BD%A0%E5%BA%94%E8%AF%A5%E4%B8%8E%20%5B%20%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E3%80%82)
+> 2. [Bash Shell字符串比较入门_Linux教程_Linux公社-Linux系统门户网站](https://www.linuxidc.com/Linux/2019-05/158678.htm)
+</br>
+4.由于Windows系统和Linux系统中换行符的差异（前者为\n\r，后者为\n），在WSL进行批量处理时可能出现以下问题：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221203144329.png)
+其解决方式是，在遍历时进行`sed`替换操作替换掉`\r`：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> img_1000.txt | sed <span class="string">&#x27;s/\r//&#x27;</span> | <span class="keyword">while</span> <span class="built_in">read</span> line</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    img=./image/<span class="variable">$line</span><span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="built_in">cp</span> <span class="variable">$img</span> ./DUTS1000/</span><br><span class="line">    <span class="comment"># echo &quot;$img&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu常见操作01</title>
+    <url>/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C01/</url>
+    <content><![CDATA[<p>本文记录一下使用Ubuntu操作系统时的常见操作：</p>
+<span id="more"></span>
+<p>1.<code>echo $PATH | tr &quot;:&quot; &quot;\n&quot;</code>：在<code>bash</code>终端中分行展示环境变量。</p>
+<blockquote>
+<p>参考资料：<a href="https://stackoverflow.com/questions/33469374/how-to-split-the-contents-of-path-into-distinct-lines">How to split the contents of $PATH into distinct lines</a></p>
+</blockquote>
+</br>
+<p>2.<code>httping -x localhost:1080 -g http://google.com -c 3</code>：在Ubuntu终端中测试通过代理是否能访问<code>google.com</code>。之所以使用<code>httping</code>是因为<code>ping</code>无法通过代理访问。具体步骤如下：</p>
+<ul>
+<li>1）通过<code>sudo apt install httping</code>安装工具<code>httping</code>。</li>
+<li>2）（在代理开启的情况下）运行上述命令。<code>-x</code>表示代理服务器地址；<code>localhost:1080</code>表示代理服务器为本机，监听<code>1080</code>端口；<code>-g</code>表示对其发送请求的URL，本例中为<code>http://google.com</code>；<code>-c</code>表示在结束请求前代理服务器会向目标URL发送多少 probe，此处为3。</li>
+</ul>
+<p>运行结果如下：</p>
+<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515111109604.png" alt="image-20220515111109604" /></p>
+<blockquote>
+<p>参考资料：<a href="https://askubuntu.com/questions/428408/can-not-ping-google-using-proxy">can not ping google using proxy</a></p>
+</blockquote>
+</br>
+<p>3.<code>ls</code></p>
+</br>
+<p>4.<code>wc</code></p>
+</br>
+<p>5.<code>zip</code>和<code>unzip</code>：用于压缩解压缩 zip 文件。</p>
+<p><code>zip -r filename.zip /path/to/folder1</code>：把<code>folder1</code>压缩到<code>filename.zip</code>。</p>
+<p><code>unzip /path/to/file.zip -d foldername</code>：把<code>file.zip</code>解压缩到<code>foldername</code>。<br />
+解压命令大全见：<a href="https://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html">linux下解压命令大全</a></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/linux/linux-comm-unzip.html">Linux unzip 命令</a></li>
+<li><a href="https://unix.stackexchange.com/questions/57013/zip-all-files-in-directory">Zip all files in directory?</a></li>
+<li><a href="https://askubuntu.com/questions/520546/how-to-extract-a-zip-file-to-a-specific-folder">How to extract a zip file to a specific folder?</a></li>
+</ol>
+</blockquote>
+</br>
+<p>6.<code>rename</code>：用于重命名文件。</p>
+<ul>
+<li><code>000001_left.png -&gt; 000001_left_depth.png</code>：<code>rename -v 's/.png/_depth.png/' *.png</code>。</li>
+<li><code>000001_left.png -&gt; 000001_left_gt.png</code>：<code>rename -v 's/.png/_gt.png/' *.png</code>。</li>
+<li><code>000001_left_GT.png -&gt; 000001_left_gt.png</code>：<code>rename -v 's/GT.png/gt.png/' *.png</code>。</li>
+</ul>
+<p>也可用于批量给文件名添加前缀或后缀，例如给多个文件批量添加<code>.cpp</code>后缀或<code>1</code>前缀：</p>
+<ul>
+<li><code>helloworld -&gt; helloworld.cpp</code>：<code>rename -v 's/$/.cpp/' *</code>。</li>
+<li><code>helloworld.cpp -&gt; 1helloworld.cpp</code>：<code>rename -v 's/^/1/' *</code>。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://unix.stackexchange.com/questions/1136/batch-renaming-files">Batch renaming files</a></li>
+</ol>
+</blockquote>
+</br>
+<p>7.在 Ubuntu 终端中隐藏当前工作目录：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103802742.png" alt="image-20220609103802742" /></p>
+<ul>
+<li>
+<p>当前终端中生效：在当前终端中运行<code>export PS1='\u@\h$ '</code></p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609103954302.png" alt="image-20220609103954302" /></p>
+</li>
+<li>
+<p>永久生效：在<code>~/.bashrc</code>文件末尾添加<code>export PS1='\u@\h$ '</code>，并运行<code>source ~/.bashrc</code>使之生效</p>
+</li>
+<li>
+<p>设置颜色：<code>export PS1='\e[34m\u\e[0m@\e[35m\h\e[0m$ '</code>。</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220609113641179.png" alt="image-20220609113641179" /></p>
+</li>
+</ul>
+<p>PS：<code>\e</code>表示<code>Esc</code>即转义，<code>\e[34m</code>和<code>\e[35m</code>表示颜色，<code>\e[0m</code>表示清除前面的格式，故<code>@</code>和<code>$</code>符号无格式。</p>
+<p>参考资料：</p>
+<ol>
+<li>
+<p><a href="https://askubuntu.com/questions/16728/hide-current-working-directory-in-terminal">Hide current working directory in terminal</a></p>
+</li>
+<li>
+<p><a href="https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html">How to Change / Set up bash custom prompt (PS1) in Linux</a></p>
+</li>
+<li>
+<p><a href="https://misc.flogisoft.com/bash/tip_colors_and_formatting">Bash tips: Colors and formatting (ANSI/VT100 Control sequences)</a></p>
+</li>
+</ol>
+</br>
+<p>8.<code>ls | sed 's/.jpg//'</code>：用于对<code>ls</code>的输出做处理。</p>
+<ul>
+<li>
+<p>处理之前：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">FT@node2$ ls | head</span><br><span class="line">ILSVRC2012_test_00000004.jpg</span><br><span class="line">ILSVRC2012_test_00000018.jpg</span><br><span class="line">ILSVRC2012_test_00000019.jpg</span><br><span class="line">ILSVRC2012_test_00000022.jpg</span><br><span class="line">ILSVRC2012_test_00000030.jpg</span><br><span class="line">ILSVRC2012_test_00000072.jpg</span><br><span class="line">ILSVRC2012_test_00000082.jpg</span><br><span class="line">ILSVRC2012_test_00000108.jpg</span><br><span class="line">ILSVRC2012_test_00000130.jpg</span><br><span class="line">ILSVRC2012_test_00000172.jpg</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>处理之后：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">FT@node2$ ls | head | sed <span class="string">&#x27;s/.jpg//&#x27;</span></span><br><span class="line">ILSVRC2012_test_00000004</span><br><span class="line">ILSVRC2012_test_00000018</span><br><span class="line">ILSVRC2012_test_00000019</span><br><span class="line">ILSVRC2012_test_00000022</span><br><span class="line">ILSVRC2012_test_00000030</span><br><span class="line">ILSVRC2012_test_00000072</span><br><span class="line">ILSVRC2012_test_00000082</span><br><span class="line">ILSVRC2012_test_00000108</span><br><span class="line">ILSVRC2012_test_00000130</span><br><span class="line">ILSVRC2012_test_00000172</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</br>
+<p>9.在<code>sed</code>命令中包含斜杆的替换。一般情况下，我们会用<code>/</code>作为<code>sed</code>指令的分隔符进行字符串的查找替换。例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cat test.txt | sed <span class="string">&#x27;s/.jpg/.png/&#x27;</span> &gt; test1.txt</span><br></pre></td></tr></table></figure>
+<p>可以将<code>.jpg</code>字符串替换为<code>.png</code>。但当要查找或替换的字符串包含<code>/</code>本身时，该方式无法使用。此时可以利用<code>sed</code>命令会将紧跟在<code>s</code>后面的字符作为分隔符的特性，将分隔符改为<code>#</code>或其他字符。例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cat test.txt | sed <span class="string">&#x27;s#^#data/#&#x27;</span> &gt; test2.txt</span><br></pre></td></tr></table></figure>
+<p>可以在每一行的开头添加<code>data/</code>字符串。</p>
+<ul>
+<li>在每一行开头添加<code>'</code>单引号字符，<code>ls | sed &quot;s/^/'/&quot;</code></li>
+<li>在每一行末尾添加<code>',</code>字符，<code>ls | sed &quot;s/$/',/&quot;</code>。<br />
+完整使用<code>ls | sed &quot;s/^/'/&quot; | sed &quot;s/$/',/&quot;</code>效果如下：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;ILSVRC2012_test_00000003.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000023.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000025.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000026.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000034.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000038.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000064.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000086.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000105.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000128.png&#x27;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/weixin_39031707/article/details/104065184">Sed替换 内容带反斜杠（/）</a></li>
+</ol>
+</blockquote>
+</br>
+<p>10.有时候可能会许村将两个文件中的数据合并到一个文件，并且数据分处第一列和第二列，此时可以通过<code>paste</code>命令实现。例如，文件<code>train.txt</code>和<code>train1.txt</code>分别包含以下内容：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ cat train.txt</span><br><span class="line"><span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg</span><br><span class="line">$ cat train1.txt</span><br><span class="line"><span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg</span><br></pre></td></tr></table></figure>
+<p>通过<code>paste train.txt train1.txt</code>命令可以获得以下输出：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.j</span>pg   <span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg   <span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg   <span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg   <span class="number">4.j</span>pg</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/jiao_zhoucy/article/details/20693179">Linux下paste命令，按列合并文件</a></li>
+</ol>
+</blockquote>
+</br>
+<p>11.可以通过以下脚本批量移动文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;processing <span class="variable">$dir</span> data&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$dir</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$dir</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    image=<span class="variable">$dir</span>/image</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;image is <span class="variable">$image</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$image</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$image</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    mask=<span class="variable">$dir</span>/mask</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;mask is <span class="variable">$mask</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$mask</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$mask</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">mv</span> ./img/<span class="variable">$dir</span>/* <span class="variable">$image</span></span><br><span class="line">    <span class="built_in">mv</span> ./gt/<span class="variable">$dir</span>/* <span class="variable">$mask</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>先通过<code>[-d $dir]</code>确定是否存在<code>$dir</code>文件夹，如果没有则创建，然后将<code>img</code>和<code>gt</code>文件夹下的图片移动到对应的文件夹。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>《Linux命令行和shell脚本编程》第12章</li>
+</ol>
+</blockquote>
+</br>
+<p>12.在Linux系统中可以很方便地对两个文本文件求取交集、并集和差集</p>
+<ul>
+<li>交集：<code>sort a.txt b.txt | uniq -d</code></li>
+<li>并集：<code>sort a.txt b.txt | uniq</code></li>
+<li>差集：
+<ul>
+<li>a.txt - b.txt：<code>sort a.txt b.txt b.txt | uniq -u</code></li>
+<li>b.txt - a.txt：<code>sort b.txt a.txt a.txt | uniq -u</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/molong1208/p/5358509.html">Linux两个文件求交集、并集、差集</a></li>
+</ol>
+</blockquote>
+</br>
+<p>13.结合[11]和[12]可以方便地求取image和mask文件夹中图片的交集并输出到对应的txt文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;processing <span class="variable">$dir</span> data&quot;</span></span><br><span class="line">    image=<span class="variable">$dir</span>/image</span><br><span class="line">    mask=<span class="variable">$dir</span>/mask</span><br><span class="line">    <span class="built_in">ls</span> <span class="variable">$image</span> | sed <span class="string">&#x27;s/.jpg//&#x27;</span> | sed <span class="string">&#x27;s/.png//&#x27;</span> &gt;<span class="variable">$dir</span>/image.txt</span><br><span class="line">    <span class="built_in">ls</span> <span class="variable">$mask</span> | sed <span class="string">&#x27;s/.png//&#x27;</span> | sed <span class="string">&#x27;s/.bmp//&#x27;</span> &gt;<span class="variable">$dir</span>/mask.txt</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span> <span class="variable">$dir</span>/image.txt <span class="variable">$dir</span>/mask.txt | <span class="built_in">uniq</span> -d &gt;<span class="variable">$dir</span>/test.txt</span><br><span class="line">    <span class="built_in">cat</span> <span class="variable">$dir</span>/test.txt | <span class="built_in">wc</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+</br>
+<p>14.<code>sh</code> vs <code>bash</code>：注意，二者并不等价。bash是sh的超集。</p>
+<ul>
+<li>
+<p>通过<code>sh test7.sh</code>运行脚本，会出现如下报错：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172241725.png" alt="image-20220716172241725" /></p>
+</li>
+<li>
+<p>通过<code>bash test7.sh</code>运行脚本，可以正常运行：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172342306.png" alt="image-20220716172342306" /></p>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.geeksforgeeks.org/difference-between-sh-and-bash/">Difference between sh and bash</a></li>
+<li><a href="https://unix.stackexchange.com/questions/45781/shell-script-fails-syntax-error-unexpected">Shell script fails: Syntax error: “(” unexpected</a></li>
+</ol>
+</blockquote>
+</br>
+<p>15.在bash脚本中将命令行的输出复制给一个变量：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">output=$(<span class="built_in">cat</span> batchDir.sh | <span class="built_in">wc</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$&#123;output&#125;</span>&quot;</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$output</span></span><br></pre></td></tr></table></figure>
+<p>其输出如下：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172942136.png" alt="image-20220716172942136" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/4651437/how-do-i-set-a-variable-to-the-output-of-a-command-in-bash">How do I set a variable to the output of a command in Bash?</a></li>
+</ol>
+</blockquote>
+</br>
+<p>16.在Anaconda中创建环境时<code>-n/--name</code>不能和<code>-p/--prefix</code>同时使用：</p>
+<ul>
+<li><code>-n, --name</code>：环境名，如<code>conda create --name py35 python=3.5</code>。</li>
+<li><code>-p, --prefix</code>：环境位置的完整路径。如<code>conda create --prefix /users/.../yourenvname python=2.7</code>。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html#conda-create">conda create</a></li>
+<li><a href="https://stackoverflow.com/questions/37926940/how-to-specify-new-environment-location-for-conda-create">how to specify new environment location for conda create</a></li>
+</ol>
+</blockquote>
+</br>
+<p>17.删除conda环境：<code>conda env remove -n ENV_NAME</code>。</p>
+</br>
+<p>18.在编写bash脚本时，指定<code>IFS</code>变量为多个分隔符：<code>IFS=', | \\'</code>。如下图所示：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">echo <span class="string">&quot;reading values from a file&quot;</span></span><br><span class="line">file=<span class="string">&quot;list&quot;</span></span><br><span class="line"><span class="comment"># change seperator</span></span><br><span class="line"><span class="comment"># save IFS before changing it</span></span><br><span class="line">IFS_OLD=$IFS</span><br><span class="line"><span class="comment"># set multiple seperators?</span></span><br><span class="line">IFS=<span class="string">&#x27;; | :&#x27;</span></span><br><span class="line"><span class="keyword">for</span> state <span class="keyword">in</span> $(cat $file)</span><br><span class="line">do</span><br><span class="line">    echo <span class="string">&quot;Visit $state&quot;</span></span><br><span class="line">done</span><br><span class="line">IFS=$&#123;IFS_OLD&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/25163486/split-string-using-2-different-delimiters-in-bash">Split string using 2 different delimiters in Bash</a></li>
+</ol>
+</blockquote>
+</br>
+<p>19.在Ubuntu终端常使用Ctrl + L组合快捷键清空终端屏幕，但向上滚动时屏幕内容依然存在。此时可以通过</p>
+<ul>
+<li><code>printf '\ec'</code></li>
+<li><code>reset</code></li>
+</ul>
+<p>二者来完全清空屏幕，但<code>reset</code>为彻底清除，执行速度较慢。故可以通过在<code>~/.bashrc</code>中添加如下别名：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> cls=<span class="string">&#x27;printf &quot;\ec&quot;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>来使用<code>cls</code>来清空终端屏幕。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/pngynghay/article/details/23176757">Linux终端彻底清空屏幕</a></li>
+</ol>
+</blockquote>
+</br>
+<p>20.在使用<code>ls</code>命令时，有时我们仅需要列出目录，然后将目录导入txt文件。下面是3种不同的方法：</p>
+<ol>
+<li>
+<p><code>ls -d */</code>：其输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">DUT-OMRON/  DUTS_Test/  ECSSD/  HKU-IS/  PASCAL-S/  SOD/  THUR15K/</span><br></pre></td></tr></table></figure>
+<p>可以通过<code>ls -d */ | sed 's#/##' &gt; dir.txt</code>将数据集名称导出到<code>dir.txt</code></p>
+</li>
+<li>
+<p><code>ls -F | grep &quot;/$&quot;</code>。<code>-F</code>会在输出的不同文件类型后面加上后缀，文件后会加上<code>*</code>，管道后会加上<code>|</code>，目录后会加上<code>/</code>。</p>
+</li>
+<li>
+<p><code>ls -l | grep &quot;^d&quot;</code>。使用<code>grep</code>匹配输出每行开头的<code>d</code>字符。可以通过<code>awk</code>命令列出目录名本身：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | awk <span class="string">&#x27;&#123;print $8&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/DLUTBruceZhang/article/details/9244897">Linux Shell 只列出目录的方法</a></li>
+</ol>
+</blockquote>
+</br>
+<p>21.在Ubuntu系统中，常常需要查看当前运行的进程，并根据需要筛选。下面介绍<code>ps</code>命令的选项：</p>
+<ul>
+<li>
+<p><code>ps -A</code>：列出所有的进程</p>
+</li>
+<li>
+<p><code>ps -w</code>：显示加宽可以显示更多的信息</p>
+</li>
+<li>
+<p><code>ps -au</code>：显示较为详细的信息</p>
+</li>
+<li>
+<p><code>ps -aux</code>：显示所有包含其他使用者的进程。下面是对该命令输出信息的介绍，其输出格式为</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><code>USER</code>：进程拥有者</p>
+</li>
+<li>
+<p><code>PID</code>：process id</p>
+</li>
+<li>
+<p><code>%CPU</code>：CPU占用率</p>
+</li>
+<li>
+<p><code>VSZ</code>：虚拟内存大小</p>
+</li>
+<li>
+<p><code>RSS</code>：内存大小</p>
+</li>
+<li>
+<p><code>TTY</code>：minor device number of tty</p>
+</li>
+<li>
+<p><code>STAT</code>：进程状态</p>
+<ul>
+<li>D：无法终端的休眠状态（通常为IO的进程）</li>
+<li>R：正在执行中</li>
+<li>S：静止状态</li>
+<li>T：暂停执行</li>
+<li>Z：不存在但暂时无法消除</li>
+<li>W：没有足够的内存分页可分配</li>
+<li>&lt;：高优先序的进程</li>
+<li>N：低优先序的进程</li>
+<li>L：有内存分页分配且Lock在内存内</li>
+</ul>
+</li>
+<li>
+<p>START：进程开始时间</p>
+</li>
+<li>
+<p>TIME：执行的时间</p>
+</li>
+<li>
+<p>COMMAND：执行的指令</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>较为常用的命令为<code>ps -u FT</code>，其可以显示用户<code>FT</code>正在运行的进程，并可以通过<code>grep</code>对进程进行筛选。</p>
+<p>此外，<code>top</code>命令可以显示正在运行的进程并实时更新。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/linux/linux-comm-ps.html">Linux ps 命令</a></li>
+<li><a href="https://blog.csdn.net/yaoqiuxiang/article/details/9449179">ubuntu查看所有正在运行的进程</a></li>
+</ol>
+</blockquote>
+</br>
+<p>22.<code>kill</code>命令常用于通过进程号PID终止特定进程。可以用<code>kill -l</code>命令列出所有可用的信号，最常用的信号是：</p>
+<ul>
+<li><code>1 (HUP)</code>：重新加载进程</li>
+<li><code>9 (KILL)</code>：杀死一个进程</li>
+<li><code>15 (TERM)</code>：正常停止一个进程</li>
+</ul>
+<p>示例：</p>
+<p><code>kill -9 12345</code>：彻底杀死进程号为12345的进程。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/linux/linux-comm-kill.html">Linux kill命令</a></li>
+</ol>
+</blockquote>
+</br>
+<p>23.服务器远程登录配置：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.chengxiaobai.cn/record/tencent-cloud-denied-permission-publickey-gssapikeyex-gssapiwithmic.html">腾讯云 Permission denied (publickey,gssapi-keyex,gssapi-with-mic)</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1720991">Linux 配置SSH免密登录 “ssh-keygen”的基本用法</a></li>
+<li><a href="https://www.runoob.com/w3cnote/set-ssh-login-key.html">设置 SSH 通过密钥登录</a></li>
+</ol>
+</blockquote>
+</br>
+<p>24.使用<code>chmod</code>变更文件或目录权限。可以使用<code>chmod -R 777 ./folder</code>对目录以及目录一下的文件递归执行更改权限操作。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://wangchujiang.com/linux-command/c/chmod.html">chmod</a></li>
+</ol>
+</blockquote>
+</br>
+<p>25.查看Linux系统内核版本和系统架构：</p>
+<ul>
+<li><code>hostnamectl</code>：查看内核版本和系统架构<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164139.png" alt="" /></li>
+<li><code>uname -a</code>：查看内核版本和系统架构<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164340.png" alt="" /></li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.sysgeek.cn/find-out-linux-system-32-or-64-bit/">查看Linux系统架构类型的5条常用命令</a></li>
+<li><a href="https://www.cnblogs.com/linuxprobe/p/11664104.html">查看Linux内核版本</a></li>
+</ol>
+</blockquote>
+</br>
+26.查看Linux空间使用情况：
+- `df -lh`：查看分区使用情况
+- `du -sh /home/FT`：查看当前用户使用的存储空间大小
+> 参考资料：
+> 1. [Linux笔记』查看磁盘空间大小和所有用户各自占用空间](https://blog.csdn.net/abc13526222160/article/details/84962310#:~:text=Linux%E4%B8%8B%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%8D%A0,%E5%91%BD%E4%BB%A4%E6%9C%89%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%E7%9A%84%E3%80%82)
+> 2. [Linux 查看磁盘空间](https://www.runoob.com/w3cnote/linux-view-disk-space.html)
+</br>
+27.Ubuntu添加和删除用户
+> 参考资料：
+> 1. [如何在Ubuntu添加和删除用户](https://www.myfreax.com/how-to-add-and-delete-users-on-ubuntu-18-04/#:~:text=%E9%80%9A%E8%BF%87GUI%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%94%A8%E6%88%B7&text=%E6%89%93%E5%BC%80Ubuntu%E8%AE%BE%E7%BD%AE%EF%BC%8C%E6%89%BE%E5%88%B0%20%E7%94%A8%E6%88%B7,%E5%91%98%E7%94%A8%E6%88%B7%E5%B9%B6%E8%BE%93%E5%85%A5%E4%BF%A1%E6%81%AF%E3%80%82)
+</br>
+28.配置环境变量
+- `export PATH=/usr/local/bin:$PATH`：将环境变量放在环境变量检索目录最开始，即优先查找该变量
+- `export PATH=$PATH:/usr/local/bin`：将环境变量放在环境变量检索目录最后，即最后查找该变量
+> 1. [Multiple CUDA versions on machine nvcc -V confusion](https://stackoverflow.com/questions/40517083/multiple-cuda-versions-on-machine-nvcc-v-confusion)
+> 2. [How to correctly add a path to PATH?](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)
+</br>
+<p>29.复制指定目录下的全部文件到另一个目录中：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r dir1 dir2</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/zdz8207/p/linux-cp-dir.html">linux复制指定目录下的全部文件到另一个目录中，linux cp 文件夹</a></li>
+</ol>
+</blockquote>
+</br>
+30.rename批量修改文件名：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://einverne.github.io/post/2018/01/rename-files-batch.html">每天学习一个命令: rename 批量修改文件名 | Verne in GitHub</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开发环境配置</title>
+    <url>/2022/12/03/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文记录一下各种开发环境的配置：</p>
+<span id="more"></span>
+<h3 id="scheme"><a class="markdownIt-Anchor" href="#scheme"></a> Scheme</h3>
+<p>Tips:</p>
+<ol>
+<li>安装DrRacket包时如果无法在GUI中安装，可以关闭GUI后通过<code>raco pkg install package_name</code>来安装。</li>
+</ol>
+<blockquote>
+<p>参考资料：<br />
+1. <a href="https://chee5e.space/sicp-vscode-setup/">VS Code 搭建 SICP 环境 | 芝士部落格</a><br />
+2. <a href="https://zhuanlan.zhihu.com/p/344423980">使用VSCode来做SICP习题 - 知乎</a><br />
+3. <a href="https://zhuanlan.zhihu.com/p/37056659">DrRacket 的安装与 SICP 的配置 - 知乎</a><br />
+4. <a href="https://zhuanlan.zhihu.com/p/262180614">AyaSEditor:在vscode中写scheme/racket - 知乎</a><br />
+5. <a href="https://www.zhihu.com/question/295010022">如何使用终端运行 Racket？ - 知乎</a></p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221204001620.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Scheme</tag>
       </tags>
   </entry>
 </search>
