@@ -10,7 +10,7 @@ tags:
 <!--more-->
 1.`sed`命令中的`.`字符。`.`用于匹配除换行符之外的任意单个字符，它必须匹配一个字符。通过这种形式加上正则表达式的贪婪匹配（匹配符合模式的最长字符串）可以进行如下替换操作：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221122221549.png)
-其命令为`head scores2.txt | sed 's#.*/##*'。
+其命令为`head scores2.txt | sed 's#.*/##'。
 > 参考资料：
 > 1. 《Linux命令行于shell脚本编程大全》第三版20.2.4点号字符
 
@@ -42,5 +42,15 @@ fi
 > 2. [Bash Shell字符串比较入门_Linux教程_Linux公社-Linux系统门户网站](https://www.linuxidc.com/Linux/2019-05/158678.htm)
 
 </br>
-
+4.由于Windows系统和Linux系统中换行符的差异（前者为\n\r，后者为\n），在WSL进行批量处理时可能出现以下问题：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221203144329.png)
+其解决方式是，在遍历时进行`sed`替换操作替换掉`\r`：
+```bash
+cat img_1000.txt | sed 's/\r//' | while read line
+do
+    img=./image/$line".jpg"
+    cp $img ./DUTS1000/
+    # echo "$img"
+done
+```
 

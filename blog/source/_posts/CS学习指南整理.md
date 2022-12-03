@@ -47,6 +47,8 @@ tags:
 9. [W3Cschool](https://www.w3cschool.cn/)
 10. [ZetCode](https://zetcode.com/all/)
 11. [OI Wiki](https://oi-wiki.org/)
+12. [GeeksForGeeks](https://www.geeksforgeeks.org/)
+13. [PLT by steshaw](https://steshaw.org/plt/)
 ### 有趣站点
 1. [互联网哲学百科](https://iep.utm.edu/)
 2. [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code)：用不同的语言解决相同的问题
@@ -90,3 +92,10 @@ tags:
 
 ### 前端
 1. [前言 | 大厂面试题每日一题](https://q.shanyue.tech/engineering/)：程序员山月整理的资料
+
+### 工作网站
+1. [Flexible Java Jobs | Indeed.com](https://www.indeed.com/q-Java-jobs.html?vjk=dd38219803504422)
+2. [Rust Jobs in Web3 - Dec 2022](https://web3.career/rust-jobs)
+3. [Rust Jobs | RustJobs.dev](https://rustjobs.dev/)
+4. [Newest Ruby On Rails Jobs | Ruby Job Board](https://www.rubyjobboard.com/newest-ruby-on-rails-jobs)
+5. [Functional Works](https://functional.works-hub.com/)

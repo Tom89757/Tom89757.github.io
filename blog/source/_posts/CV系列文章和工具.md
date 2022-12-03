@@ -54,6 +54,9 @@ tags:
 1. [如何通俗理解扩散模型？ - 知乎](https://zhuanlan.zhihu.com/p/563543020)
 ### 注意力机制
 1. [注意力机制到底是什么？ - 知乎](https://www.zhihu.com/question/519290359/answer/2666328351)
+### 损失函数
+1. [损失函数｜交叉熵损失函数 - 知乎](https://zhuanlan.zhihu.com/p/35709485)：交叉熵损失函数
+2. 
 ### 推荐博客
 1. [The Illustrated Series](https://jalammar.github.io/)：：作者通过自制动画解释各种模型架构。（英文）
 2. [科学空间](https://spaces.ac.cn/category/Big-Data)：偏数学推导，较为硬核。（中文）

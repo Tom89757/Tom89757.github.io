@@ -547,3 +547,15 @@ with open("test.txt", "a") as file:
 ```
 > 参考资料：
 > 1. [python如何清空txt文件 - 问答 - 亿速云](https://www.yisu.com/ask/6997.html)
+
+</br>
+16.pip、setuptools、python环境变量、python命令行参数等
+- [pip指南 · January Star](http://chenjiee815.github.io/pipzhi-nan.html)
+- [setuptools指南：未完待续 · January Star](http://chenjiee815.github.io/setuptoolszhi-nan-wei-wan-dai-xu.html)
+- [Python环境变量 · January Star](http://chenjiee815.github.io/pythonhuan-jing-bian-liang.html)
+- [Python命令行参数 · January Star](http://chenjiee815.github.io/pythonming-ling-xing-can-shu.html)
+>参考资料：
+>1. [All Posts · January Star](http://chenjiee815.github.io/archives.html)
+
+</br>
+
