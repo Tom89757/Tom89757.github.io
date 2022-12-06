@@ -55,3 +55,49 @@ matplotlib.pyplot.imshow(X, cmap=None, norm=None, *, aspect=None, interpolation=
 > 参考资料：
 >
 > 1. [Improve subplot size/spacing with many subplots in matplotlib](https://stackoverflow.com/questions/6541123/improve-subplot-size-spacing-with-many-subplots-in-matplotlib)
+
+</br>
+5.使用matplot画散点图，利用scipy计算相关系数并利用sklearn计算回归：
+```python
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+import numpy as np
+from scipy.stats import pearsonr
+
+def point_plot(model, dataset, size=0.1):
+    score_avgf_file = model + '_' + dataset + '.txt'
+    score_avgf_pair = open('./txt/' + score_avgf_file).read().splitlines()
+    score = []
+    avgf = []
+    for pair in score_avgf_pair:
+        score.append(float(pair.split(' ')[0]))
+        avgf.append(float(pair.split(' ')[1]))
+    
+    scores = np.array(score)
+    avgfs = np.array(avgf)
+
+    # plt.plot(scores, avgfs, 'o')
+    # corrco = np.corrcoef(scores, avgfs)
+    corrco = pearsonr(scores, avgfs)
+    plt.scatter(scores, avgfs, s=size)
+    plt.xlabel('image complexity')
+    plt.ylabel('avg F')
+    title = model + ' on ' + dataset + ', correlation coefficient=' + str(corrco[0])
+    plt.title(title)
+    save_fig = model + '_' + dataset + '.png'
+
+    reg = LinearRegression().fit(scores.reshape(-1,1), avgfs)
+    pred = reg.predict(scores.reshape(-1,1))
+    plt.plot(scores, pred,linewidth=2, color='red', label='回归线')
+
+    plt.savefig('./fig/' + save_fig)
+    plt.show()
+```
+> 参考资料：
+> 1. [从零开始学Python【15】--matplotlib(散点图) - 天善智能：专注于商业智能BI和数据分析、大数据领域的垂直社区平台](https://ask.hellobi.com/blog/lsxxx2011/10243)
+> 2. [如何在 Matplotlib 中设置散点图的标记大小](https://www.delftstack.com/zh/howto/matplotlib/how-to-set-marker-size-of-scatter-plot-in-matplotlib/)
+> 3. [Matplotlib 散点图 | 菜鸟教程](https://www.runoob.com/matplotlib/matplotlib-scatter.html)
+> 4. [Python三种方法计算皮尔逊相关系数](https://blog.csdn.net/qq_40260867/article/details/90667462)
+
+</br>
+

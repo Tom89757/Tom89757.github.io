@@ -54,3 +54,9 @@ do
 done
 ```
 
+</br>
+5.`awk`指令。
+- 打印第4列：`cat test.txt | awk '{print $4}'`
+- 打印第1，3列：`cat test.txt | awk '{print $1, $3}'`
+> 参考资料：
+> 1. [Fetching Title#90mq](https://www.runoob.com/linux/linux-comm-awk.html)
