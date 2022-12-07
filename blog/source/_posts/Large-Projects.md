@@ -18,3 +18,4 @@ tags:
 6.  [rCore-Tutorial-Book]：本教程旨在一步一步展示如何从零开始用Rust语言写一个基于RISC-V架构的类Unix内核。
 7. aria2：[aria2 源码解析专题—— (一)基础架构](https://www.cnblogs.com/endingly/p/15832027.html)
 8. [GoodWeather](https://github.com/lilongweidev/GoodWeather)：从零开发Android天气APP。
+9. [(How to Write a (Lisp) Interpreter (in Python))](https://norvig.com/lispy.html)：如何使用Python写一个Lisp解释器。
