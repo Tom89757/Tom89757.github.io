@@ -188,3 +188,8 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 5. [vim 使用技巧](https://www.pengfeixc.com/blogs/developer-handbook/vim-shortcuts)
 > 6. [vs code 使用 vim 插件 快捷键问题 - V2EX](https://www.v2ex.com/t/703444)
 > 7. [vscode + vim 全键盘操作高效搭配方案 - 知乎](https://zhuanlan.zhihu.com/p/430603620)
+
+
+### VSCode配置在终端和编辑器之间切换的快捷键
+> 参考资料：
+> 1. [VScode在终端和编辑器之间切换的快捷键_Xu小亿的博客-CSDN博客](https://blog.csdn.net/Jeffxu_lib/article/details/86651173)
