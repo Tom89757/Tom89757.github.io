@@ -558,4 +558,8 @@ with open("test.txt", "a") as file:
 >1. [All Posts · January Star](http://chenjiee815.github.io/archives.html)
 
 </br>
+17.Python中的正则表达式匹配：
 
+> 参考资料：
+> 1. [用python正则表达式提取字符串_猪笨是念来过倒的博客-CSDN博客_python正则表达式提取字符串](https://blog.csdn.net/liao392781/article/details/80181088)
+> 2. [正则表达式 第三篇：分组和捕获 - 悦光阴 - 博客园](https://www.cnblogs.com/ljhdo/p/10678281.html)
