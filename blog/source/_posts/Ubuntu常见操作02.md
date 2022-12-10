@@ -60,3 +60,10 @@ done
 - 打印第1，3列：`cat test.txt | awk '{print $1, $3}'`
 > 参考资料：
 > 1. [Fetching Title#90mq](https://www.runoob.com/linux/linux-comm-awk.html)
+
+</br>
+6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分：
+```bash
+sed 's/hello \(world\)/hi \1/' file.txt
+```
+可以将`hello world`替换为`hi world`。
