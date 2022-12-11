@@ -21,6 +21,7 @@ tags:
 8. [learning programming](https://www.reddit.com/r/learnprogramming/wiki/faq/)
 9. [Developer Roadmaps](https://roadmap.sh/)
 10. [程序员练级攻略](https://time.geekbang.org/column/article/8216?code=%20HH8ceM6XIVutB%2F1Oj496tkAnq4o7HBjSZf%20t0Wy4qM%3D)
+11. [Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.](https://honeysuckle-terrier-6c8.notion.site/CS-4b9f59acd3a64bf8916f834d0c7f25ea)
 ### 课程整理
 1. [CS自学指南](https://csdiy.wiki/)
 2. [名校公开课程评价网](https://conanhujinming.github.io/comments-for-awesome-courses/index.html)
