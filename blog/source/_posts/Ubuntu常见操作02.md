@@ -67,3 +67,10 @@ done
 sed 's/hello \(world\)/hi \1/' file.txt
 ```
 可以将`hello world`替换为`hi world`。
+
+</br>
+7.由于Linux和Windows系统中换行符的差异，有时需要将`\r`替换为空字符。
+```bash
+$ cat test.txt | sed 's/\r//' >a.txt
+$ sort b.txt a.txt a.txt | uniq -u > b-a.txt
+```
