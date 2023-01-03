@@ -202,8 +202,11 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 
 </br>
 9.使用git bash进行javac编译时出现中文乱码：
+
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929170956.png)
+
 解决方案：在选项里将字符集设为GBK，重启git bash：
+
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929171040.png)
 
 > 参考资料：
@@ -214,15 +217,18 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 10.有时需要给git终端设置别名。给git设置别名分为两种：
 - 给git本身的命令设置别名，此时可以通过`git config --global alias.co checkout`设置全局别名，这样可以`git co`等同于`git checkout`，该配置会写入`~/.gitconfig`文件。故也可以直接编辑该文件来设置别名
 - 给git终端运行的其他命令设置别名，如`javac -encoding utf8`简化为`javac`，此时可以编辑`~/.bashrc`文件（如果没有则创建），在里面写入`alias javac='javac -encoding utf8'`。设置后每次启动git终端窗口后该文件中的配置都会生效
+
 > 参考资料：
 > 1. [2.7 Git 基础 - Git 别名](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-Git-%E5%88%AB%E5%90%8D)
 > 2. [玩转 Git 别名](https://segmentfault.com/a/1190000023541589)
 
 </br>
 11.出现报错`error: RPC failed; curl 92 HTTP/2 stream 7 was not closed cleanly before end of the underlying stream`：
+
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221108182409.png)
 解决方案：
 1. 配置http版本：`git config --global http.version HTTP/1.1`
 2. 配置`http.postBuffer：git config --global http.postBuffer 157286400`
+
 > 参考资料：
 > 1. [git - error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1) - Stack Overflow](https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro)

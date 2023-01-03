@@ -56,7 +56,9 @@ tags:
 1. [注意力机制到底是什么？ - 知乎](https://www.zhihu.com/question/519290359/answer/2666328351)
 ### 损失函数
 1. [损失函数｜交叉熵损失函数 - 知乎](https://zhuanlan.zhihu.com/p/35709485)：交叉熵损失函数
-2. 
+### Conditional Random Fields (CRFs)
+1. [Conditional Random Fields: A 2021 Overview | Jigsaw Academy](https://www.jigsawacademy.com/blogs/data-science/conditional-random-fields#:~:text=A%20conditional%20random%20field%20(CRF,data%20for%20adding%20the%20information.)
+2. [语义分割中 CRF 的运用 | Mooyu's Blog](http://guoxs.github.io/Blog/2018/03/10/CRF/)
 ### 推荐博客
 1. [The Illustrated Series](https://jalammar.github.io/)：：作者通过自制动画解释各种模型架构。（英文）
 2. [科学空间](https://spaces.ac.cn/category/Big-Data)：偏数学推导，较为硬核。（中文）
@@ -66,5 +68,8 @@ tags:
 ### 动手学
 #### 实现深度学习框架
 1. [想学着自己实现一个深度学习框架该如何入手？ - 知乎](https://www.zhihu.com/question/329235391/answer/1197486431)
+
+### 开源书籍
+1. [ESL CN]：([The Elements of Statistical Learning) (豆瓣)](https://book.douban.com/subject/3294335/)的中文开源版
 
 
