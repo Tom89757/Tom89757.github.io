@@ -29,7 +29,7 @@
 <meta property="og:description" content="本文记录一下在实现 DDRQM 过程中的一些 matplotlib 包和 python 相关知识点。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-03T06:37:10.000Z">
-<meta property="article:modified_time" content="2022-07-27T05:06:50.979Z">
+<meta property="article:modified_time" content="2022-12-06T14:02:35.439Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="matplotlib">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -172,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -258,7 +258,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-27 13:06:50" itemprop="dateModified" datetime="2022-07-27T13:06:50+08:00">2022-07-27</time>
+      <time title="修改时间：2022-12-06 22:02:35" itemprop="dateModified" datetime="2022-12-06T22:02:35+08:00">2022-12-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,14 +277,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>941</span>
+      <span>2.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -343,6 +343,15 @@
 <li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/6541123/improve-subplot-size-spacing-with-many-subplots-in-matplotlib">Improve subplot size/spacing with many subplots in matplotlib</a></li>
 </ol>
 </blockquote>
+</br>
+5.使用matplot画散点图，利用scipy计算相关系数并利用sklearn计算回归：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> pearsonr</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">point_plot</span>(<span class="params">model, dataset, size=<span class="number">0.1</span></span>):</span><br><span class="line">    score_avgf_file = model + <span class="string">&#x27;_&#x27;</span> + dataset + <span class="string">&#x27;.txt&#x27;</span></span><br><span class="line">    score_avgf_pair = <span class="built_in">open</span>(<span class="string">&#x27;./txt/&#x27;</span> + score_avgf_file).read().splitlines()</span><br><span class="line">    score = []</span><br><span class="line">    avgf = []</span><br><span class="line">    <span class="keyword">for</span> pair <span class="keyword">in</span> score_avgf_pair:</span><br><span class="line">        score.append(<span class="built_in">float</span>(pair.split(<span class="string">&#x27; &#x27;</span>)[<span class="number">0</span>]))</span><br><span class="line">        avgf.append(<span class="built_in">float</span>(pair.split(<span class="string">&#x27; &#x27;</span>)[<span class="number">1</span>]))</span><br><span class="line">    </span><br><span class="line">    scores = np.array(score)</span><br><span class="line">    avgfs = np.array(avgf)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># plt.plot(scores, avgfs, &#x27;o&#x27;)</span></span><br><span class="line">    <span class="comment"># corrco = np.corrcoef(scores, avgfs)</span></span><br><span class="line">    corrco = pearsonr(scores, avgfs)</span><br><span class="line">    plt.scatter(scores, avgfs, s=size)</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;image complexity&#x27;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;avg F&#x27;</span>)</span><br><span class="line">    title = model + <span class="string">&#x27; on &#x27;</span> + dataset + <span class="string">&#x27;, correlation coefficient=&#x27;</span> + <span class="built_in">str</span>(corrco[<span class="number">0</span>])</span><br><span class="line">    plt.title(title)</span><br><span class="line">    save_fig = model + <span class="string">&#x27;_&#x27;</span> + dataset + <span class="string">&#x27;.png&#x27;</span></span><br><span class="line"></span><br><span class="line">    reg = LinearRegression().fit(scores.reshape(-<span class="number">1</span>,<span class="number">1</span>), avgfs)</span><br><span class="line">    pred = reg.predict(scores.reshape(-<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">    plt.plot(scores, pred,linewidth=<span class="number">2</span>, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;回归线&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    plt.savefig(<span class="string">&#x27;./fig/&#x27;</span> + save_fig)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [从零开始学Python【15】--matplotlib(散点图) - 天善智能：专注于商业智能BI和数据分析、大数据领域的垂直社区平台](https://ask.hellobi.com/blog/lsxxx2011/10243)
+> 2. [如何在 Matplotlib 中设置散点图的标记大小](https://www.delftstack.com/zh/howto/matplotlib/how-to-set-marker-size-of-scatter-plot-in-matplotlib/)
+> 3. [Matplotlib 散点图 | 菜鸟教程](https://www.runoob.com/matplotlib/matplotlib-scatter.html)
+> 4. [Python三种方法计算皮尔逊相关系数](https://blog.csdn.net/qq_40260867/article/details/90667462)
+</br>
 
     </div>
 
@@ -405,7 +414,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -416,13 +425,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">259k</span>
+    <span title="站点总字数">263k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:55</span>
+    <span title="站点阅读时长">3:59</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

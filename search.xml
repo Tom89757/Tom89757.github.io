@@ -229,6 +229,7 @@
 <li><a href="https://www.reddit.com/r/learnprogramming/wiki/faq/">learning programming</a></li>
 <li><a href="https://roadmap.sh/">Developer Roadmaps</a></li>
 <li><a href="https://time.geekbang.org/column/article/8216?code=%20HH8ceM6XIVutB%2F1Oj496tkAnq4o7HBjSZf%20t0Wy4qM%3D">程序员练级攻略</a></li>
+<li><a href="https://honeysuckle-terrier-6c8.notion.site/CS-4b9f59acd3a64bf8916f834d0c7f25ea">Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.</a></li>
 </ol>
 <h3 id="课程整理"><a class="markdownIt-Anchor" href="#课程整理"></a> 课程整理</h3>
 <ol>
@@ -394,7 +395,11 @@
 <h3 id="损失函数"><a class="markdownIt-Anchor" href="#损失函数"></a> 损失函数</h3>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/35709485">损失函数｜交叉熵损失函数 - 知乎</a>：交叉熵损失函数</li>
-<li></li>
+</ol>
+<h3 id="conditional-random-fields-crfs"><a class="markdownIt-Anchor" href="#conditional-random-fields-crfs"></a> Conditional Random Fields (CRFs)</h3>
+<ol>
+<li>[Conditional Random Fields: A 2021 Overview | Jigsaw Academy](<a href="https://www.jigsawacademy.com/blogs/data-science/conditional-random-fields#:~:text=A%20conditional%20random%20field%20(CRF,data%20for%20adding%20the%20information.)">https://www.jigsawacademy.com/blogs/data-science/conditional-random-fields#:~:text=A conditional random field (CRF,data for adding the information.)</a></li>
+<li><a href="http://guoxs.github.io/Blog/2018/03/10/CRF/">语义分割中 CRF 的运用 | Mooyu’s Blog</a></li>
 </ol>
 <h3 id="推荐博客"><a class="markdownIt-Anchor" href="#推荐博客"></a> 推荐博客</h3>
 <ol>
@@ -407,6 +412,10 @@
 <h4 id="实现深度学习框架"><a class="markdownIt-Anchor" href="#实现深度学习框架"></a> 实现深度学习框架</h4>
 <ol>
 <li><a href="https://www.zhihu.com/question/329235391/answer/1197486431">想学着自己实现一个深度学习框架该如何入手？ - 知乎</a></li>
+</ol>
+<h3 id="开源书籍"><a class="markdownIt-Anchor" href="#开源书籍"></a> 开源书籍</h3>
+<ol>
+<li>[ESL CN]：(<a href="https://book.douban.com/subject/3294335/">The Elements of Statistical Learning) (豆瓣)</a>的中文开源版</li>
 </ol>
 ]]></content>
       <categories>
@@ -3060,6 +3069,14 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 <li><a href="https://www.pengfeixc.com/blogs/developer-handbook/vim-shortcuts">vim 使用技巧</a></li>
 <li><a href="https://www.v2ex.com/t/703444">vs code 使用 vim 插件 快捷键问题 - V2EX</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/430603620">vscode + vim 全键盘操作高效搭配方案 - 知乎</a></li>
+<li><a href="https://www.zhaixue.cc/vim/vim-insert.html#:~:text=%E5%B8%B8%E7%94%A8%E7%9A%84vim%E6%8F%92%E5%85%A5%E5%91%BD%E4%BB%A4%EF%BC%9A&amp;text=a%EF%BC%9A%E5%9C%A8%E5%BD%93%E5%89%8D%E5%85%89%E6%A0%87%E7%9A%84,%E7%9A%84%E7%BB%93%E5%B0%BE%E5%A4%84%E6%B7%BB%E5%8A%A0%E6%96%87%E6%9C%AC">vim 文本插入 - 在光标的前面，后面，行尾，行首插入字符 - vim使用入门 | 宅学部落</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode配置在终端和编辑器之间切换的快捷键"><a class="markdownIt-Anchor" href="#vscode配置在终端和编辑器之间切换的快捷键"></a> VSCode配置在终端和编辑器之间切换的快捷键</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/Jeffxu_lib/article/details/86651173">VScode在终端和编辑器之间切换的快捷键_Xu小亿的博客-CSDN博客</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -3396,9 +3413,9 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 </blockquote>
 </br>
 9.使用git bash进行javac编译时出现中文乱码：
-![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929170956.png)
-解决方案：在选项里将字符集设为GBK，重启git bash：
-![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929171040.png)
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929170956.png" alt="" /></p>
+<p>解决方案：在选项里将字符集设为GBK，重启git bash：</p>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929171040.png" alt="" /></p>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -3410,17 +3427,27 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 10.有时需要给git终端设置别名。给git设置别名分为两种：
 - 给git本身的命令设置别名，此时可以通过`git config --global alias.co checkout`设置全局别名，这样可以`git co`等同于`git checkout`，该配置会写入`~/.gitconfig`文件。故也可以直接编辑该文件来设置别名
 - 给git终端运行的其他命令设置别名，如`javac -encoding utf8`简化为`javac`，此时可以编辑`~/.bashrc`文件（如果没有则创建），在里面写入`alias javac='javac -encoding utf8'`。设置后每次启动git终端窗口后该文件中的配置都会生效
-> 参考资料：
-> 1. [2.7 Git 基础 - Git 别名](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-Git-%E5%88%AB%E5%90%8D)
-> 2. [玩转 Git 别名](https://segmentfault.com/a/1190000023541589)
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-Git-%E5%88%AB%E5%90%8D">2.7 Git 基础 - Git 别名</a></li>
+<li><a href="https://segmentfault.com/a/1190000023541589">玩转 Git 别名</a></li>
+</ol>
+</blockquote>
 </br>
 11.出现报错`error: RPC failed; curl 92 HTTP/2 stream 7 was not closed cleanly before end of the underlying stream`：
-![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221108182409.png)
-解决方案：
-1. 配置http版本：`git config --global http.version HTTP/1.1`
-2. 配置`http.postBuffer：git config --global http.postBuffer 157286400`
-> 参考资料：
-> 1. [git - error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1) - Stack Overflow](https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro)
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221108182409.png" alt="" /><br />
+解决方案：</p>
+<ol>
+<li>配置http版本：<code>git config --global http.version HTTP/1.1</code></li>
+<li>配置<code>http.postBuffer：git config --global http.postBuffer 157286400</code></li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro">git - error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1) - Stack Overflow</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -3435,7 +3462,7 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
     <content><![CDATA[<p>本文整理一下网上比较好的介绍git用法和特性的文章：</p>
 <span id="more"></span>
 <ol>
-<li><a href="https://sp19.datastructur.es/materials/guides/using-git">Using Git</a>：本教程需要你对命令行有几处的了解（未读）</li>
+<li><a href="https://sp19.datastructur.es/materials/guides/using-git">Using Git</a>：本教程需要你对命令行有基础的了解（未读）</li>
 <li><a href="https://sp19.datastructur.es/materials/guides/git-wtfs">Git WTFS</a>：本文档旨在帮你解决你在使用git过程中频繁遇到的WTFS (weird technical failure scenarios)（未读）</li>
 </ol>
 ]]></content>
@@ -3655,6 +3682,15 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 <li><a href="https://stackoverflow.com/questions/6541123/improve-subplot-size-spacing-with-many-subplots-in-matplotlib">Improve subplot size/spacing with many subplots in matplotlib</a></li>
 </ol>
 </blockquote>
+</br>
+5.使用matplot画散点图，利用scipy计算相关系数并利用sklearn计算回归：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> pearsonr</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">point_plot</span>(<span class="params">model, dataset, size=<span class="number">0.1</span></span>):</span><br><span class="line">    score_avgf_file = model + <span class="string">&#x27;_&#x27;</span> + dataset + <span class="string">&#x27;.txt&#x27;</span></span><br><span class="line">    score_avgf_pair = <span class="built_in">open</span>(<span class="string">&#x27;./txt/&#x27;</span> + score_avgf_file).read().splitlines()</span><br><span class="line">    score = []</span><br><span class="line">    avgf = []</span><br><span class="line">    <span class="keyword">for</span> pair <span class="keyword">in</span> score_avgf_pair:</span><br><span class="line">        score.append(<span class="built_in">float</span>(pair.split(<span class="string">&#x27; &#x27;</span>)[<span class="number">0</span>]))</span><br><span class="line">        avgf.append(<span class="built_in">float</span>(pair.split(<span class="string">&#x27; &#x27;</span>)[<span class="number">1</span>]))</span><br><span class="line">    </span><br><span class="line">    scores = np.array(score)</span><br><span class="line">    avgfs = np.array(avgf)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># plt.plot(scores, avgfs, &#x27;o&#x27;)</span></span><br><span class="line">    <span class="comment"># corrco = np.corrcoef(scores, avgfs)</span></span><br><span class="line">    corrco = pearsonr(scores, avgfs)</span><br><span class="line">    plt.scatter(scores, avgfs, s=size)</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;image complexity&#x27;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;avg F&#x27;</span>)</span><br><span class="line">    title = model + <span class="string">&#x27; on &#x27;</span> + dataset + <span class="string">&#x27;, correlation coefficient=&#x27;</span> + <span class="built_in">str</span>(corrco[<span class="number">0</span>])</span><br><span class="line">    plt.title(title)</span><br><span class="line">    save_fig = model + <span class="string">&#x27;_&#x27;</span> + dataset + <span class="string">&#x27;.png&#x27;</span></span><br><span class="line"></span><br><span class="line">    reg = LinearRegression().fit(scores.reshape(-<span class="number">1</span>,<span class="number">1</span>), avgfs)</span><br><span class="line">    pred = reg.predict(scores.reshape(-<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">    plt.plot(scores, pred,linewidth=<span class="number">2</span>, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;回归线&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    plt.savefig(<span class="string">&#x27;./fig/&#x27;</span> + save_fig)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [从零开始学Python【15】--matplotlib(散点图) - 天善智能：专注于商业智能BI和数据分析、大数据领域的垂直社区平台](https://ask.hellobi.com/blog/lsxxx2011/10243)
+> 2. [如何在 Matplotlib 中设置散点图的标记大小](https://www.delftstack.com/zh/howto/matplotlib/how-to-set-marker-size-of-scatter-plot-in-matplotlib/)
+> 3. [Matplotlib 散点图 | 菜鸟教程](https://www.runoob.com/matplotlib/matplotlib-scatter.html)
+> 4. [Python三种方法计算皮尔逊相关系数](https://blog.csdn.net/qq_40260867/article/details/90667462)
+</br>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -3929,6 +3965,14 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 >参考资料：
 >1. [All Posts · January Star](http://chenjiee815.github.io/archives.html)
 </br>
+17.Python中的正则表达式匹配：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/liao392781/article/details/80181088">用python正则表达式提取字符串_猪笨是念来过倒的博客-CSDN博客_python正则表达式提取字符串</a></li>
+<li><a href="https://www.cnblogs.com/ljhdo/p/10678281.html">正则表达式 第三篇：分组和捕获 - 悦光阴 - 博客园</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -8586,6 +8630,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://www.kawabangga.com/how-to-learn-python">如何学Python?</a></li>
 <li><a href="https://www.cnblogs.com/liangmingshen/p/9297381.html">Pycharm常用快捷键</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/98096152">有什么 Pycharm 插件能让你撸代码撸到高潮？</a></li>
+<li><a href="https://github.com/chinesehuazhou/python-whydo">Explore Python’s charms by asking WHY questions</a>：一系列关于Python特性的文章</li>
 </ol>
 <h4 id="工具-3"><a class="markdownIt-Anchor" href="#工具-3"></a> 工具</h4>
 <ol>
@@ -8742,11 +8787,27 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://cs3110.github.io/textbook/chapters/intro/intro.html">Better Programming Through OCaml</a></li>
 </ol>
-<h3 id="scheme"><a class="markdownIt-Anchor" href="#scheme"></a> Scheme</h3>
-<h3 id="综合教程-14"><a class="markdownIt-Anchor" href="#综合教程-14"></a> 综合教程</h3>
+<h3 id="scheme-包括racket"><a class="markdownIt-Anchor" href="#scheme-包括racket"></a> Scheme (包括Racket)</h3>
+<h4 id="综合教程-14"><a class="markdownIt-Anchor" href="#综合教程-14"></a> 综合教程</h4>
 <ol>
 <li><a href="https://htdp.org/">How to Design Programs</a></li>
 <li><a href="https://book.douban.com/subject/1140942/">程序设计方法（中文版）</a>（下载有电子版）</li>
+<li><a href="https://wizardforcel.gitbooks.io/teach-yourself-scheme/content/000-preface.html">前言 | Scheme 语言简明教程</a></li>
+<li><a href="https://deathking.github.io/yast-cn/">Scheme入门教程</a>：英文版为<a href="http://www.shido.info/lisp/idx_scm_e.html">Yet Another Scheme Tutorial</a></li>
+<li><a href="https://github.com/OnRoadZy/RacketGuideInChinese">GitHub - OnRoadZy/RacketGuideInChinese: Racket指南（中文翻译）</a></li>
+<li><a href="https://tyrchen.github.io/racket-book/index.html">Racket语言入门</a></li>
+<li><a href="https://docs.racket-lang.org/quick/index.html">Quick: An Introduction to Racket with Pictures</a></li>
+<li><a href="https://mrmathematica.gitbooks.io/ooplai/content/">前言 · OOPLAI中文版</a>：《面向对象编程语言：应用和解释》</li>
+<li><a href="https://lotuc.gitbooks.io/plai-cn/content/">封面 · PLAI-cn</a>：《编程语言：应用与解释》</li>
+</ol>
+<h4 id="文章收集-9"><a class="markdownIt-Anchor" href="#文章收集-9"></a> 文章收集</h4>
+<ol>
+<li><a href="https://www.ruanyifeng.com/blog/2010/10/why_lisp_is_superior.html">为什么Lisp语言如此先进？（译文） - 阮一峰的网络日志</a></li>
+</ol>
+<h3 id="agda"><a class="markdownIt-Anchor" href="#agda"></a> Agda</h3>
+<h4 id="综合教程-15"><a class="markdownIt-Anchor" href="#综合教程-15"></a> 综合教程</h4>
+<ol>
+<li><a href="https://people.inf.elte.hu/divip/AgdaTutorial/Index.html">Agda Tutorial</a></li>
 </ol>
 <h3 id="cheatsheets"><a class="markdownIt-Anchor" href="#cheatsheets"></a> CheatSheets</h3>
 <ul>
@@ -8758,7 +8819,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://github.com/FavioVazquez/ds-cheatsheets">Data Science Cheatsheets</a></li>
 </ul>
 <h3 id="综合资料"><a class="markdownIt-Anchor" href="#综合资料"></a> 综合资料</h3>
-<h4 id="综合教程-15"><a class="markdownIt-Anchor" href="#综合教程-15"></a> 综合教程</h4>
+<h4 id="综合教程-16"><a class="markdownIt-Anchor" href="#综合教程-16"></a> 综合教程</h4>
 <ul>
 <li><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a></li>
 <li><a href="https://exercism.org/tracks">exercism</a>：60 languages for you to master</li>
@@ -8766,7 +8827,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://quickref.me">Quick Reference</a></li>
 <li><a href="https://www.codewars.com/join">codewars</a></li>
 </ul>
-<h4 id="文章收集-9"><a class="markdownIt-Anchor" href="#文章收集-9"></a> 文章收集</h4>
+<h4 id="文章收集-10"><a class="markdownIt-Anchor" href="#文章收集-10"></a> 文章收集</h4>
 <ol>
 <li><a href="https://stackoverflow.blog/2022/04/04/comparing-go-vs-c-in-embedded-applications/">Comparing Go vs. C in embedded applications</a></li>
 </ol>
@@ -8825,6 +8886,11 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://wizardforcel.gitbooks.io/sicp-py/content/">SICP Python 描述 中文版</a>：在线版</li>
 <li><a href="https://inst.eecs.berkeley.edu/~cs61a/sp21/">CS61A</a>。对应精译<a href="https://www.bilibili.com/video/BV1v64y1Q78o">视频</a></li>
 </ol>
+<h3 id="数据结构和算法"><a class="markdownIt-Anchor" href="#数据结构和算法"></a> 数据结构和算法</h3>
+<ol>
+<li><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/">Algorithms by Jeff Erickson</a>：据说递归和DP（动态规划）的部分讲的很好。</li>
+<li><a href="https://book.douban.com/subject/4048566/">算法设计手册 (豆瓣)</a>：Steve Yegge推荐。</li>
+</ol>
 <h3 id="分布式系统"><a class="markdownIt-Anchor" href="#分布式系统"></a> 分布式系统</h3>
 <ol>
 <li><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/">MIT6.824</a>：MIT6.824 中文翻译。对应Lab仓库<a href="https://github.com/OneSizeFitsQuorum/MIT6.824-2021">MIT6.824-2021</a></li>
@@ -8850,6 +8916,8 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://hpc-wiki.info/hpc/Compiler">Compiler</a>：HPC网站上关于Compiler的介绍</li>
 <li><a href="https://book.douban.com/people/RednaxelaFX/all?sort=rating&amp;start=0&amp;tag=%E7%BC%96%E8%AF%91%E5%99%A8&amp;mode=grid&amp;tags_sort=count">RednaxelaFX的书/编译器(73)</a>：知乎叛逆者的编译器豆瓣书单。</li>
 <li><a href="http://parsing-techniques.duguying.net/">介绍 - 解析技术</a></li>
+<li><a href="https://iucompilercourse.github.io/IU-P423-P523-E313-E513-Fall-2020/">Course Webpage for Compilers (P423, P523, E313, and E513) | IU-P423-P523-E313-E513-Fall-2020</a>：印第安纳大学使用Racket教学的编译器课程</li>
+<li><a href="https://sqlite.org/src/doc/trunk/doc/lemon.html">The Lemon Parser Generator</a>：4000行的C语言parser，搭配《LEMON语法分析生成器（LALR（1）类型）源代码情景分析》使用</li>
 </ol>
 <h3 id="计算机图形学"><a class="markdownIt-Anchor" href="#计算机图形学"></a> 计算机图形学</h3>
 <ol>
@@ -8877,13 +8945,21 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://dlsyscourse.org/">Deep Learning Systems</a>：CMU深度学习课程，涉及算法和实现。</li>
 </ol>
+<h3 id="概率图模型"><a class="markdownIt-Anchor" href="#概率图模型"></a> 概率图模型</h3>
+<ol>
+<li><a href="https://www.coursera.org/learn/probabilistic-graphical-models">Probabilistic Graphical Models 1: Representation | Coursera</a>：斯坦福概率图模型课程</li>
+</ol>
 <h3 id="程序语言理论"><a class="markdownIt-Anchor" href="#程序语言理论"></a> 程序语言理论</h3>
 <ol>
 <li><a href="https://bobzhang.github.io/courses/">程序语言理论与实现</a>：Rescript语言创建者张宏波退出的程序语言理论课程，注重于实践，使用Rescript教学。</li>
+<li><a href="https://cgi.luddy.indiana.edu/~c311/doku.php?id=home">C311/B521/A596 Programming Languages [Home]</a>：印第安纳大学Dan P.Friedman的程序语言课程</li>
+<li><a href="https://www.cs.cmu.edu/~fp/courses.html">Frank Pfenning / Courses</a> 和 <a href="https://www.cs.cornell.edu/~kozen/#Courses">Dexter Kozen’s Home Page</a> 和 <a href="https://www.coursera.org/instructor/~873260">Dan Grossman, Instructor | Coursera</a> (Programming Languages A/B/C)</li>
+<li><a href="https://cs.brown.edu/courses/cs173/2012/OnLine/">Programming Languages: On-Line Offering</a></li>
 </ol>
 <h3 id="数据库"><a class="markdownIt-Anchor" href="#数据库"></a> 数据库</h3>
 <ol>
 <li><a href="https://cstack.github.io/db_tutorial/">How Does a Database Work? | Let’s Build a Simple Database</a></li>
+<li><a href="http://www.redbook.io/">Readings in Database Systems, 5th Edition</a>：数据库方向的论文集</li>
 </ol>
 <h3 id="服务器开发"><a class="markdownIt-Anchor" href="#服务器开发"></a> 服务器开发</h3>
 <ol>
@@ -8894,7 +8970,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://gaia.cs.umass.edu/kurose_ross/wireshark.php">Jim Kurose Homepage</a>：《计算机网络自顶向下方法》第八版官网</li>
 </ol>
-<h2 id="函数式编程"><a class="markdownIt-Anchor" href="#函数式编程"></a> 函数式编程</h2>
+<h3 id="函数式编程"><a class="markdownIt-Anchor" href="#函数式编程"></a> 函数式编程</h3>
 <ol>
 <li><a href="https://a-little-java-a-few-patterns.readthedocs.io/zh_CN/latest/index.html">Welcome to 《A Little Java, A Few Patterns》笔记 — 《A Little Java, A Few Patterns》笔记 1.0 文档</a></li>
 <li><a href="https://the-little-schemer.readthedocs.io/zh_CN/latest/index.html">Welcome to 《The Little Schemer》笔记 — 《The Little Schemer》笔记 1.0 文档</a></li>
@@ -8976,6 +9052,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li>[rCore-Tutorial-Book]：本教程旨在一步一步展示如何从零开始用Rust语言写一个基于RISC-V架构的类Unix内核。</li>
 <li>aria2：<a href="https://www.cnblogs.com/endingly/p/15832027.html">aria2 源码解析专题—— (一)基础架构</a></li>
 <li><a href="https://github.com/lilongweidev/GoodWeather">GoodWeather</a>：从零开发Android天气APP。</li>
+<li><a href="https://norvig.com/lispy.html">(How to Write a (Lisp) Interpreter (in Python))</a>：如何使用Python写一个Lisp解释器。</li>
 </ol>
 ]]></content>
       <categories>
@@ -9196,6 +9273,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://github.com/guangzhengli/k8s-tutorials">k8s-tutorials</a>：k8s教程（中文）</li>
 <li><a href="https://github.com/up9inc/mizu">mizu</a>：k8s API流量查看工具</li>
+<li><a href="https://opensource.com/article/22/12/kubernetes-articles">6 Kubernetes articles every open source enthusiast should read | Opensource.com</a></li>
 </ol>
 <h3 id="chrome实用插件"><a class="markdownIt-Anchor" href="#chrome实用插件"></a> Chrome实用插件</h3>
 <ol>
@@ -9214,6 +9292,19 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://www.shortcutfoo.com/?utm_source=bestxtools.com">Learn shortcuts and commands | ShortcutFoo</a>：Vim/VSCode/Git等工具的快捷键练习网站</li>
 </ol>
+<h3 id="在线编译网站"><a class="markdownIt-Anchor" href="#在线编译网站"></a> 在线编译网站</h3>
+<ol>
+<li><a href="https://godbolt.org/">Compiler Explorer</a>：可以在线将高级语言汇编为汇编语言</li>
+<li><a href="https://dogbolt.org/">Decompiler Explorer</a>：可以将二进制文件反编译为原始文件</li>
+</ol>
+<h3 id="写作工具"><a class="markdownIt-Anchor" href="#写作工具"></a> 写作工具：</h3>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230102002712.png" alt="" /></p>
+<blockquote>
+<p>参考：</p>
+<ol>
+<li><a href="https://twitter.com/xyz98/status/1607731247987433473">Tweet / Twitter</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -9393,11 +9484,14 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://packages.msys2.org/package/mingw-w64-x86_64-gcc">Package: mingw-w64-x86_64-gcc - MSYS2 Packages</a></li>
 </ol>
 </blockquote>
-<h3 id="c多维数组"><a class="markdownIt-Anchor" href="#c多维数组"></a> C++多维数组</h3>
+<h3 id="c中数组的使用"><a class="markdownIt-Anchor" href="#c中数组的使用"></a> C++中数组的使用</h3>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://www.runoob.com/cplusplus/cpp-multi-dimensional-arrays.html">C++ 多维数组 | 菜鸟教程</a></li>
+<li><a href="https://www.runoob.com/cplusplus/cpp-passing-arrays-to-functions.html">C++ 传递数组给函数 | 菜鸟教程</a></li>
+<li><a href="https://www.cnblogs.com/pacino12134/p/11277153.html">数组引用、数组做参数 - keepgoing18 - 博客园</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1784790#:~:text=%E7%9B%B8%E5%BD%93%E4%BA%8E%E6%89%A7%E8%A1%8C%E5%A6%82%E4%B8%8B%E8%AF%AD%E5%8F%A5,%E7%9A%84%E4%B8%AA%E6%95%B0%EF%BC%8C%E5%90%A6%E5%88%99%E5%87%BA%E9%94%99%E3%80%82">C++二维数组初始化的形式 - 腾讯云开发者社区-腾讯云</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -9413,6 +9507,13 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
     <url>/2022/11/20/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>本文记录一下在学习Vim过程中的经验和总结：</p>
 <span id="more"></span>
+<ol>
+<li><code>A</code>：在当前行末尾插入</li>
+<li><code>I</code>：在当前行开头插入</li>
+<li><code>a</code>：在当前光标后插入</li>
+<li><code>i</code>：在当前光标前插入</li>
+<li><code>J</code>：</li>
+</ol>
 ]]></content>
       <categories>
         <category>工具</category>
@@ -9480,6 +9581,19 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221203144329.png)
 其解决方式是，在遍历时进行`sed`替换操作替换掉`\r`：
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> img_1000.txt | sed <span class="string">&#x27;s/\r//&#x27;</span> | <span class="keyword">while</span> <span class="built_in">read</span> line</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    img=./image/<span class="variable">$line</span><span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="built_in">cp</span> <span class="variable">$img</span> ./DUTS1000/</span><br><span class="line">    <span class="comment"># echo &quot;$img&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+</br>
+5.`awk`指令。
+- 打印第4列：`cat test.txt | awk '{print $4}'`
+- 打印第1，3列：`cat test.txt | awk '{print $1, $3}'`
+> 参考资料：
+> 1. [Fetching Title#90mq](https://www.runoob.com/linux/linux-comm-awk.html)
+</br>
+6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed <span class="string">&#x27;s/hello \(world\)/hi \1/&#x27;</span> file.txt</span><br></pre></td></tr></table></figure>
+可以将`hello world`替换为`hi world`。
+</br>
+7.由于Linux和Windows系统中换行符的差异，有时需要将`\r`替换为空字符。
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> test.txt | sed <span class="string">&#x27;s/\r//&#x27;</span> &gt;a.txt</span><br><span class="line">$ <span class="built_in">sort</span> b.txt a.txt a.txt | <span class="built_in">uniq</span> -u &gt; b-a.txt</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -9918,6 +10032,74 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
       </categories>
       <tags>
         <tag>Scheme</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Racket中知识点01</title>
+    <url>/2022/12/07/Racket%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文记录Racket中相关的知识点：</p>
+<span id="more"></span>
+<p>1.运行<code>.rkt</code>文件并进入racket REPL终端</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">racket --repl --<span class="built_in">eval</span> <span class="string">&#x27;(enter! (file &quot;d:/Desktop/DataStructure/YetAnotherSchemeTutorial/3.function.rkt&quot;))&#x27;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>Racket</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>各种教程记录</title>
+    <url>/2022/12/05/%E5%90%84%E7%A7%8D%E6%95%99%E7%A8%8B%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>本文记录一下在网络上收集的各种教程：</p>
+<ol>
+<li><a href="https://mirror.xyz/boxchen.eth/9O9CSqyKDj4BKUIil7NC1Sa1LJM-3hsPqaeW_QjfFBc">注册ChatGPT全攻略 — BoxChen</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开阔视野的文章和博客</title>
+    <url>/2022/12/26/%E5%BC%80%E9%98%94%E8%A7%86%E9%87%8E%E7%9A%84%E6%96%87%E7%AB%A0%E5%92%8C%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>本文记录一下一些开阔视野的文章和博客：</p>
+<h3 id="y组合子y-combinator"><a class="markdownIt-Anchor" href="#y组合子y-combinator"></a> Y组合子（Y combinator）</h3>
+<ol>
+<li><a href="https://yinwang0.wordpress.com/2012/04/09/reinvent-y/">How to reinvent the Y combinator – Surely I Am Joking</a></li>
+<li><a href="http://mindhacks.cn/2006/10/15/cantor-godel-turing-an-eternal-golden-diagonal/">康托尔、哥德尔、图灵——永恒的金色对角线(rev#2) – 刘未鹏 | Mind Hacks</a></li>
+<li><a href="https://www.zhihu.com/question/21099081">Y不动点组合子用在哪里？ - 知乎</a></li>
+<li><a href="https://www.zhihu.com/question/20115649/answer/14029761">函数式编程的 Y Combinator 有哪些实用价值？ - 知乎</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/262284625">Y组合子（Y Combinator）| The Little Schemer 第九章 - 知乎</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/547191928">Y组合子的一个启发式推导 - 知乎</a></li>
+</ol>
+<h3 id="cps-continuation-passing-style"><a class="markdownIt-Anchor" href="#cps-continuation-passing-style"></a> CPS (Continuation-Passing Style)</h3>
+<ol>
+<li><a href="https://matt.might.net/articles/by-example-continuation-passing-style/">By example: Continuation-passing style in JavaScript</a></li>
+<li><a href="https://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/continuation_passing_style.html">Continuation Passing Style | HE Tao</a></li>
+<li><a href="https://kb.cnblogs.com/page/94325/">示例：JavaScript中的后续传递风格_知识库_博客园</a></li>
+</ol>
+<h3 id="协变-逆变和不变"><a class="markdownIt-Anchor" href="#协变-逆变和不变"></a> 协变、逆变和不变</h3>
+<ol>
+<li><a href="https://zh.m.wikipedia.org/zh-hans/%E5%8D%8F%E5%8F%98%E4%B8%8E%E9%80%86%E5%8F%98">协变与逆变 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://blog.csdn.net/B1151937289/article/details/119523464">协变 (Covariant)、逆变 (Contravariant) 与不变 (Invariant)_小麦先生的博客-CSDN博客_contravariant</a></li>
+</ol>
+<h3 id="递归函数和语义"><a class="markdownIt-Anchor" href="#递归函数和语义"></a> 递归函数和语义</h3>
+<ol>
+<li><a href="https://thzt.github.io/2017/02/24/recursive-function-1/">递归函数（一）：开篇 | 何幻</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%8C%87%E7%A7%B0%E8%AF%AD%E4%B9%89">指称语义 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://www.zhihu.com/question/23861885">操作语义、指称语义、代数语义、公理语义学，谁能简单介绍下？ - 知乎</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>开阔视野</tag>
       </tags>
   </entry>
 </search>
