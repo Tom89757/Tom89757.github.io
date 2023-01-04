@@ -70,6 +70,6 @@ tags:
 1. [想学着自己实现一个深度学习框架该如何入手？ - 知乎](https://www.zhihu.com/question/329235391/answer/1197486431)
 
 ### 开源书籍
-1. [ESL CN]：([The Elements of Statistical Learning) (豆瓣)](https://book.douban.com/subject/3294335/)的中文开源版
+1. [ESL CN](https://esl.hohoweiya.xyz/)：([The Elements of Statistical Learning) (豆瓣)](https://book.douban.com/subject/3294335/)的中文开源版
 
 
