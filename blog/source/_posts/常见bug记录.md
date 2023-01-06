@@ -231,7 +231,9 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 参考资料：
 > 1. [如何解决“rejected v2ray.com/core/proxy/socks: unknown Socks version: ”的问题 - Xuing的个人博客](https://xuing.cn/security/v2ray_unknown_socks.html)
 
-
+17.桌面出现`Microsoft OneNote Namespace Extension for Windows Desktop Search`文件夹无法删除。
+> 参考资料：
+> 1. [Can't delete "Microsoft OneNote Namespace Extension for Windows Desktop Search" from desktop - automatically gets restored - Super User](https://superuser.com/questions/1674358/cant-delete-microsoft-onenote-namespace-extension-for-windows-desktop-search)
 
 
 
