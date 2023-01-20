@@ -189,8 +189,26 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 6. [vs code 使用 vim 插件 快捷键问题 - V2EX](https://www.v2ex.com/t/703444)
 > 7. [vscode + vim 全键盘操作高效搭配方案 - 知乎](https://zhuanlan.zhihu.com/p/430603620)
 > 8. [vim 文本插入 - 在光标的前面，后面，行尾，行首插入字符 - vim使用入门 | 宅学部落](https://www.zhaixue.cc/vim/vim-insert.html#:~:text=%E5%B8%B8%E7%94%A8%E7%9A%84vim%E6%8F%92%E5%85%A5%E5%91%BD%E4%BB%A4%EF%BC%9A&text=a%EF%BC%9A%E5%9C%A8%E5%BD%93%E5%89%8D%E5%85%89%E6%A0%87%E7%9A%84,%E7%9A%84%E7%BB%93%E5%B0%BE%E5%A4%84%E6%B7%BB%E5%8A%A0%E6%96%87%E6%9C%AC)
+> 9. [How do you avoid key binding collisions between VS Code and vscodevim? - Stack Overflow](https://stackoverflow.com/questions/62405783/how-do-you-avoid-key-binding-collisions-between-vs-code-and-vscodevim)
 
 
 ### VSCode配置在终端和编辑器之间切换的快捷键
 > 参考资料：
 > 1. [VScode在终端和编辑器之间切换的快捷键_Xu小亿的博客-CSDN博客](https://blog.csdn.net/Jeffxu_lib/article/details/86651173)
+
+
+### VSCode打开new tab
+在VSCode中单击左侧的侧边栏中的file brower中的文件或者通过`Ctrl-p`搜索跳转或者通过`Ctrl+左键`在代码中跳转到文件时，会在新的tab打开对应文件，但如果不对该文件进行编辑，文件处于 preview mode (文件名为意大利斜体)：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230114000110.png)
+此时如果通过上述三种方式打开或跳转到新的文件，之前处于preview mode的文件会被替换掉：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230114000131.png)
+解决方法：
+1. 双击左侧侧边栏的文件名或者上方tab的文件名，此时文件会进入edit mode：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230114000313.png)
+2. 通过设置配置文件`settings.json` (通过`Ctrl-Shift-P`搜索`User Settings`打开) 在里面关闭preview mode：
+```json
+"workbench.editor.enablePreview": false
+"workbench.editor.enablePreviewFromQuickOpen": false
+```
+> 参考资料：
+> 1. [visual studio code - Open files always in a new tab - Stack Overflow](https://stackoverflow.com/questions/38713405/open-files-always-in-a-new-tab)

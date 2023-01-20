@@ -563,3 +563,44 @@ with open("test.txt", "a") as file:
 > 参考资料：
 > 1. [用python正则表达式提取字符串_猪笨是念来过倒的博客-CSDN博客_python正则表达式提取字符串](https://blog.csdn.net/liao392781/article/details/80181088)
 > 2. [正则表达式 第三篇：分组和捕获 - 悦光阴 - 博客园](https://www.cnblogs.com/ljhdo/p/10678281.html)
+
+</br>
+18.Python中的`next()`函数：
+- 描述：`next()`函数返回iterator的下一个项目，主要和生成迭代器的`iter()`一起使用
+- 语法：`next(iterable[,defaulat]`
+- 参数说明：iterable为可迭代对象，default可选，用于设置在没有下一个元素时返回该默认值，如果不设置又没有下一个元素，会触发`StopIteration`异常
+- 返回值：返回下一个item。
+- 实例：对于一个pytorch中的`DataLoader`对象，可以如下使用：
+```python
+from torch.utils.data import Dataset, DataLoader
+class myDataset(Dataset):
+	...
+dataset = myDataset(...)
+loader = DataLoader(dataset, batch_size=16, shuffle=True, num_workers=8)
+iter_loader = iter(loader) # 生成迭代器
+next_input, next_target, _ , _ = next(iter_loader) # 访问迭代器下一个item
+```
+> 参考资料：
+> 1. [Python next() 函数 | 菜鸟教程](https://www.runoob.com/python/python-func-next.html)
+> 2. [python - What does next() and iter() do in PyTorch's DataLoader() - Stack Overflow](https://stackoverflow.com/questions/62549990/what-does-next-and-iter-do-in-pytorchs-dataloader)
+> 3. [torch.utils.data.DataLoader "next" function? - PyTorch Forums](https://discuss.pytorch.org/t/torch-utils-data-dataloader-next-function/87270/2)
+
+</br>
+19.python中的`enumerate`的用法：
+```python
+>>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']  
+>>> list(enumerate(seasons))  
+[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]  
+>>> list(enumerate(seasons, start=1))       # 下标从 1 开始  
+[(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
+
+>>> seq = ['one', 'two', 'three']  
+>>> for i, element in enumerate(seq):  
+...     print i, element  
+...  
+0 one  
+1 two  
+2 three
+```
+> 参考资料：
+> 1. [Python enumerate() 函数 | 菜鸟教程](https://www.runoob.com/python/python-func-enumerate.html)

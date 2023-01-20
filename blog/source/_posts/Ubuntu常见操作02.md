@@ -24,7 +24,7 @@ tags:
 一行命令实现：
 `lsof +D ./ | awk '{print $2}' | tail -n +2 | xargs -r kill -9`
 类似命令：
-`ps ef | grep python | awk '{print $2} | xargs -r kill -9'`
+`ps -ef | grep FT | awk '{print $2}' | xargs -r kill -9'`
 > 参考资料：
 > 1. [files - How to get over "device or resource busy"? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/11238/how-to-get-over-device-or-resource-busy)
 
@@ -74,3 +74,59 @@ sed 's/hello \(world\)/hi \1/' file.txt
 $ cat test.txt | sed 's/\r//' >a.txt
 $ sort b.txt a.txt a.txt | uniq -u > b-a.txt
 ```
+
+</br>
+8.使用FreePic2Pdf给书制作目录时，从豆瓣或使用OCR对应的目录txt文本往往如下图所示：
+```txt
+第1章 基础：逻辑和证明 1
+1.1 命题逻辑 1
+1.1.1 引言 1
+1.1.2 命题 1
+1.1.3 条件语句 4
+1.1.4 复合命题的真值表 7
+1.1.5 逻辑运算符的优先级 8
+```
+根据FreePic2Pdf要求，需要将末尾的" "(空格)+数字转换为"\t"(tab键)+数字。此时可以使用vim中的替换（使用子模式匹配），命令如下：
+```vim
+/\v( )([0-9]**)$
+```
+先使用上述正则语法，然后回车找到末尾的`( )(页码)$`模式；
+```vim
+:%s//\t\2
+```
+再使用上述的替换命令，将页码前的空格替换为`\t`。
+同样可以使用类似命令在行首添加`\t`：
+```vim
+/\v^([0-9]*).([0-9]*) #末尾包含空格
+:%s//\t\1.\2 #末尾包含空格
+```
+更精准的做法是：
+```vim
+/\v^([0-9]{1,2}.[0-9]{1.2} ) #末尾包含空格，{1,2}表示匹配1或2次
+:%s//\t\1
+```
+还可以使用`^`排除匹配：
+```vim
+/\v^([^第\t]) #[^第\t]表示排除对"第"和"\t"的匹配
+:%s//\t\1
+```
+> 参考资料：
+> 1. 《Vim实用技巧》技巧94
+> 2. [VIM学习笔记 正则表达式-进阶 (Regular Expression Advanced)](http://yyq123.github.io/learn-vim/learn-vi-82-RegularExpressionAdv.html)
+
+</br>
+9.当使用pip或者conda安装新的package时，可能出现"No Space Left on Device"。此时推荐的做法是本文档的第2点，杀掉自己的所有进程然后重新连接服务器。下面查找到的其它的方法均需要root权限，并不推荐。
+> 参考资料：
+> 1. [Top 3 Ways to Fix “No Space Left on Device” Error in Linux](https://helpdeskgeek.com/linux-tips/top-3-ways-to-fix-no-space-left-on-device-error-in-linux/)
+> 2. [How to Fix the "No Space Left on Device" Error on Linux - Make Tech Easier](https://www.maketecheasier.com/fix-linux-no-space-left-on-device-error/)
+> 3. [privileges - lsof: WARNING: can't stat() fuse.gvfsd-fuse file system - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/171519/lsof-warning-cant-stat-fuse-gvfsd-fuse-file-system)
+
+
+</br>
+10.当使用`grep`指令时，搭配正则表达式，例如或运算：
+```bash
+grep 'fatal\|error\|critical' /var/log/nginx/error.log # 使用\转义
+grep -E 'fatal|error|critical' /var/log/nginx/error.log
+```
+> 参考资料：
+> 1. [Linux grep中的正则表达式Regex | myfreax](https://www.myfreax.com/regular-expressions-in-grep/)

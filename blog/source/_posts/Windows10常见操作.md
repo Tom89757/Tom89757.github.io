@@ -56,5 +56,16 @@ tags:
 > 参考资料：
 > 1. [如何不拔网线断网，怎么断开电脑网络本地连接](https://jingyan.baidu.com/article/0964eca27410968285f53613.html)
 
-
-
+### 如何使得VSCode可以有多个taskbar icon以方便切换
+如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230112140219.png)
+1. 方法1：
+Windows 10打开Taskbar设置：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230112140315.png)
+改为：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230112140336.png)
+但这会对所有软件生效。
+2. 方法2：使用7+ Taskbar Tweaker管理Taskbar，推荐
+> 参考资料：
+> 1. [VS Code multiple taskbar icon - Stack Overflow](https://stackoverflow.com/questions/63381934/vs-code-multiple-taskbar-icon)
+> 2. [88：7+ Taskbar Tweaker 最新 5.1一款功能强大的Windows任务栏自定义设置工具使用教程_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1VV411n7hW)

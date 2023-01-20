@@ -52,6 +52,7 @@ tags:
 6. 此时，在本地浏览器打开 http://localhost:16008 即可看到如下结果：
 
    ![image-20220808170919983](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220808170919983.png)
+PS：当出现`you haven't written any data to your event files.`的情形时，不要急着调试错误。将`runs/add_graph`等events文件所在的文件夹换个位置，重新使用tensorboard加载。
 
 > 参考资料：
 >

@@ -61,3 +61,19 @@ H, W = H.item(), W.item()
 
 > 参考资料：
 > 1. [HTTP状态码](https://zh.m.wikipedia.org/zh/HTTP%E7%8A%B6%E6%80%81%E7%A0%81)
+
+</br>
+5.报错：
+```python
+Cannot interpret '<attribute 'dtype' of 'numpy.generic' objects>' as a data type
+```
+解决方法：更新pandas
+> 参考资料：
+> 1. [TypeError: Cannot interpret '<attribute 'dtype' of 'numpy.generic' objects>' as a data type · Issue #18355 · numpy/numpy · GitHub](https://github.com/numpy/numpy/issues/18355)
+
+
+</br>
+6.`loss.backward()`报错：`grad can be implicitly created only for scalar outputs`
+解决方法：`loss.mean().backward()`。
+> 参考资料：
+> 1. [Loss.backward() raises error 'grad can be implicitly created only for scalar outputs' - autograd - PyTorch Forums](https://discuss.pytorch.org/t/loss-backward-raises-error-grad-can-be-implicitly-created-only-for-scalar-outputs/12152/2)

@@ -50,6 +50,7 @@ tags:
 11. [OI Wiki](https://oi-wiki.org/)
 12. [GeeksForGeeks](https://www.geeksforgeeks.org/)
 13. [PLT by steshaw](https://steshaw.org/plt/)
+
 ### 有趣站点
 1. [互联网哲学百科](https://iep.utm.edu/)
 2. [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code)：用不同的语言解决相同的问题
@@ -176,3 +177,13 @@ tags:
 10. [Application Development using Microservices and Serverless | Coursera](https://www.coursera.org/learn/applications-development-microservices-serverless-openshift?specialization=ibm-full-stack-cloud-developer)
 11. [Full Stack Cloud Development Capstone Project | Coursera](https://www.coursera.org/learn/ibm-cloud-native-full-stack-development-capstone?specialization=ibm-full-stack-cloud-developer)
 12. [Full Stack Software Developer Assessment | Coursera](https://www.coursera.org/learn/full-stack-software-developer-assessment?specialization=ibm-full-stack-cloud-developer)
+
+### Rice大学 [Fundamentals of Computing | Coursera](https://www.coursera.org/specializations/computer-fundamentals)
+其包含：
+1. [An Introduction to Interactive Programming in Python (Part 1) | Coursera](https://www.coursera.org/learn/interactive-python-1?specialization=computer-fundamentals)
+2. [An Introduction to Interactive Programming in Python (Part 2) | Coursera](https://www.coursera.org/learn/interactive-python-2?specialization=computer-fundamentals)
+3. [Principles of Computing (Part 1) | Coursera](https://www.coursera.org/learn/principles-of-computing-1?specialization=computer-fundamentals)
+4. [Principles of Computing (Part 2) | Coursera](https://www.coursera.org/learn/principles-of-computing-2?specialization=computer-fundamentals)
+5. [Algorithmic Thinking (Part 1) | Coursera](https://www.coursera.org/learn/algorithmic-thinking-1?specialization=computer-fundamentals)
+6. [Algorithmic Thinking (Part 2) | Coursera](https://www.coursera.org/learn/algorithmic-thinking-2?specialization=computer-fundamentals)
+7. [The Fundamentals of Computing Capstone Exam | Coursera](https://www.coursera.org/learn/fundamentals-of-computing-capstone?specialization=computer-fundamentals)
