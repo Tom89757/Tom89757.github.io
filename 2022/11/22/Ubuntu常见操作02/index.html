@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221122221549.png">
 <meta property="article:published_time" content="2022-11-22T12:49:01.000Z">
-<meta property="article:modified_time" content="2022-12-25T15:53:06.913Z">
+<meta property="article:modified_time" content="2023-01-18T15:49:31.598Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -173,7 +173,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -259,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-25 23:53:06" itemprop="dateModified" datetime="2022-12-25T23:53:06+08:00">2022-12-25</time>
+      <time title="修改时间：2023-01-18 23:49:31" itemprop="dateModified" datetime="2023-01-18T23:49:31+08:00">2023-01-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -278,14 +278,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
+      <span>3.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -317,7 +317,7 @@
 一行命令实现：
 `lsof +D ./ | awk '{print $2}' | tail -n +2 | xargs -r kill -9`
 类似命令：
-`ps ef | grep python | awk '{print $2} | xargs -r kill -9'`
+`ps -ef | grep FT | awk '{print $2}' | xargs -r kill -9'`
 > 参考资料：
 > 1. [files - How to get over "device or resource busy"? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/11238/how-to-get-over-device-or-resource-busy)
 </br>
@@ -344,7 +344,34 @@
 </br>
 7.由于Linux和Windows系统中换行符的差异，有时需要将`\r`替换为空字符。
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> test.txt | sed <span class="string">&#x27;s/\r//&#x27;</span> &gt;a.txt</span><br><span class="line">$ <span class="built_in">sort</span> b.txt a.txt a.txt | <span class="built_in">uniq</span> -u &gt; b-a.txt</span><br></pre></td></tr></table></figure>
-
+</br>
+8.使用FreePic2Pdf给书制作目录时，从豆瓣或使用OCR对应的目录txt文本往往如下图所示：
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第1章 基础：逻辑和证明 1</span><br><span class="line">1.1 命题逻辑 1</span><br><span class="line">1.1.1 引言 1</span><br><span class="line">1.1.2 命题 1</span><br><span class="line">1.1.3 条件语句 4</span><br><span class="line">1.1.4 复合命题的真值表 7</span><br><span class="line">1.1.5 逻辑运算符的优先级 8</span><br></pre></td></tr></table></figure>
+根据FreePic2Pdf要求，需要将末尾的" "(空格)+数字转换为"\t"(tab键)+数字。此时可以使用vim中的替换（使用子模式匹配），命令如下：
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/\v( )([<span class="number">0</span>-<span class="number">9</span>]**)$</span><br></pre></td></tr></table></figure>
+先使用上述正则语法，然后回车找到末尾的`( )(页码)$`模式；
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s//\t\<span class="number">2</span></span><br></pre></td></tr></table></figure>
+再使用上述的替换命令，将页码前的空格替换为`\t`。
+同样可以使用类似命令在行首添加`\t`：
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\v^([<span class="number">0</span>-<span class="number">9</span>]*).([<span class="number">0</span>-<span class="number">9</span>]*) #末尾包含空格</span><br><span class="line">:%s//\t\<span class="number">1</span>.\<span class="number">2</span> #末尾包含空格</span><br></pre></td></tr></table></figure>
+更精准的做法是：
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\v^([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>,<span class="number">2</span>&#125;.[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1.2</span>&#125; ) #末尾包含空格，&#123;<span class="number">1</span>,<span class="number">2</span>&#125;表示匹配<span class="number">1</span>或<span class="number">2</span>次</span><br><span class="line">:%s//\t\<span class="number">1</span></span><br></pre></td></tr></table></figure>
+还可以使用`^`排除匹配：
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\v^([^第\t]) #[^第\t]表示排除对<span class="string">&quot;第&quot;</span>和<span class="string">&quot;\t&quot;</span>的匹配</span><br><span class="line">:%s//\t\<span class="number">1</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. 《Vim实用技巧》技巧94
+> 2. [VIM学习笔记 正则表达式-进阶 (Regular Expression Advanced)](http://yyq123.github.io/learn-vim/learn-vi-82-RegularExpressionAdv.html)
+</br>
+9.当使用pip或者conda安装新的package时，可能出现"No Space Left on Device"。此时推荐的做法是本文档的第2点，杀掉自己的所有进程然后重新连接服务器。下面查找到的其它的方法均需要root权限，并不推荐。
+> 参考资料：
+> 1. [Top 3 Ways to Fix “No Space Left on Device” Error in Linux](https://helpdeskgeek.com/linux-tips/top-3-ways-to-fix-no-space-left-on-device-error-in-linux/)
+> 2. [How to Fix the "No Space Left on Device" Error on Linux - Make Tech Easier](https://www.maketecheasier.com/fix-linux-no-space-left-on-device-error/)
+> 3. [privileges - lsof: WARNING: can't stat() fuse.gvfsd-fuse file system - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/171519/lsof-warning-cant-stat-fuse-gvfsd-fuse-file-system)
+</br>
+10.当使用`grep`指令时，搭配正则表达式，例如或运算：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&#x27;fatal\|error\|critical&#x27;</span> /var/log/nginx/error.log <span class="comment"># 使用\转义</span></span><br><span class="line">grep -E <span class="string">&#x27;fatal|error|critical&#x27;</span> /var/log/nginx/error.log</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Linux grep中的正则表达式Regex | myfreax](https://www.myfreax.com/regular-expressions-in-grep/)
     </div>
 
     
@@ -416,13 +443,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">263k</span>
+    <span title="站点总字数">275k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:59</span>
+    <span title="站点阅读时长">4:10</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

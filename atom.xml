@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2023-01-01T10:34:15.982Z</updated>
+  <updated>2023-01-14T15:55:23.251Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,21 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>模型信息记录</title>
+    <link href="https://tom89757.github.io/2023/01/14/%E6%A8%A1%E5%9E%8B%E4%BF%A1%E6%81%AF%E8%AE%B0%E5%BD%95/"/>
+    <id>https://tom89757.github.io/2023/01/14/%E6%A8%A1%E5%9E%8B%E4%BF%A1%E6%81%AF%E8%AE%B0%E5%BD%95/</id>
+    <published>2023-01-14T15:52:30.000Z</published>
+    <updated>2023-01-14T15:55:23.251Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在调试模型的过程中输出的信息：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    
+    <category term="模型信息" scheme="https://tom89757.github.io/tags/%E6%A8%A1%E5%9E%8B%E4%BF%A1%E6%81%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>开阔视野的文章和博客</title>
     <link href="https://tom89757.github.io/2022/12/26/%E5%BC%80%E9%98%94%E8%A7%86%E9%87%8E%E7%9A%84%E6%96%87%E7%AB%A0%E5%92%8C%E5%8D%9A%E5%AE%A2/"/>
     <id>https://tom89757.github.io/2022/12/26/%E5%BC%80%E9%98%94%E8%A7%86%E9%87%8E%E7%9A%84%E6%96%87%E7%AB%A0%E5%92%8C%E5%8D%9A%E5%AE%A2/</id>
     <published>2022-12-26T14:17:13.000Z</published>
-    <updated>2023-01-01T10:34:15.982Z</updated>
+    <updated>2023-01-20T18:57:04.549Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;本文记录一下一些开阔视野的文章和博客：&lt;/p&gt;
-&lt;h3 id=&quot;y组合子y-combinator&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#y组合子y-combinator&quot;&gt;&lt;/a&gt; Y组合子（Y</summary>
-        
-      
+    <summary type="html">&lt;p&gt;本文记录一下一些开阔视野的文章和博客：&lt;/p&gt;</summary>
     
     
     
@@ -93,7 +107,7 @@
     <link href="https://tom89757.github.io/2022/12/03/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://tom89757.github.io/2022/12/03/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2022-12-03T13:00:19.000Z</published>
-    <updated>2022-12-03T17:35:58.203Z</updated>
+    <updated>2023-01-07T10:06:53.927Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下各种开发环境的配置：&lt;/p&gt;</summary>
@@ -112,7 +126,7 @@
     <link href="https://tom89757.github.io/2022/11/22/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C02/"/>
     <id>https://tom89757.github.io/2022/11/22/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C02/</id>
     <published>2022-11-22T12:49:01.000Z</published>
-    <updated>2022-12-25T15:53:06.913Z</updated>
+    <updated>2023-01-18T15:49:31.598Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;</summary>
@@ -245,7 +259,7 @@
     <link href="https://tom89757.github.io/2022/10/06/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B903/"/>
     <id>https://tom89757.github.io/2022/10/06/Pytorch%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B903/</id>
     <published>2022-10-06T09:06:19.000Z</published>
-    <updated>2022-10-18T11:17:55.338Z</updated>
+    <updated>2023-01-17T18:57:50.096Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在调试模型过程中的一些 Pytorch 框架和 python 相关知识点。&lt;/p&gt;</summary>
@@ -388,7 +402,7 @@
     <link href="https://tom89757.github.io/2022/09/19/%E8%AF%BE%E7%A8%8B%E5%92%8C%E4%B9%A6%E7%B1%8D%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/"/>
     <id>https://tom89757.github.io/2022/09/19/%E8%AF%BE%E7%A8%8B%E5%92%8C%E4%B9%A6%E7%B1%8D%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</id>
     <published>2022-09-18T16:59:42.000Z</published>
-    <updated>2023-01-03T16:08:34.463Z</updated>
+    <updated>2023-01-15T14:12:00.701Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文整理一下网上口碑较好的英文课程和书籍所对应的中文翻译版本：&lt;/p&gt;</summary>
@@ -401,25 +415,6 @@
     <category term="指南" scheme="https://tom89757.github.io/tags/%E6%8C%87%E5%8D%97/"/>
     
     <category term="课程" scheme="https://tom89757.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python文章整理</title>
-    <link href="https://tom89757.github.io/2022/09/18/Python%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86/"/>
-    <id>https://tom89757.github.io/2022/09/18/Python%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86/</id>
-    <published>2022-09-18T14:43:46.000Z</published>
-    <updated>2022-09-18T14:47:43.910Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文汇总一下网上收集的较好的一些讲解Python相关知识点和特性的文章：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="python" scheme="https://tom89757.github.io/tags/python/"/>
     
   </entry>
   
