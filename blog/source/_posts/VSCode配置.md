@@ -212,3 +212,11 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 ```
 > 参考资料：
 > 1. [visual studio code - Open files always in a new tab - Stack Overflow](https://stackoverflow.com/questions/38713405/open-files-always-in-a-new-tab)
+
+
+### VSCode配置defaultFormatter
+
+> 参考资料：
+> 1. [Installing the Ruby Plugin for Prettier in VS Code - DEV Community](https://dev.to/drayeleo/installing-the-ruby-plugin-for-prettier-in-vs-code-2m6c#:~:text=You%20should%20now%20be%20able,for%20macOS)
+> 2. [html - How do I auto format Ruby or .erb files in VS Code? - Stack Overflow](https://stackoverflow.com/questions/41051423/how-do-i-auto-format-ruby-or-erb-files-in-vs-code)
+> 3. 
