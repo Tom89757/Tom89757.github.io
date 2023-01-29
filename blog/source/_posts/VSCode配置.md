@@ -219,4 +219,14 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 参考资料：
 > 1. [Installing the Ruby Plugin for Prettier in VS Code - DEV Community](https://dev.to/drayeleo/installing-the-ruby-plugin-for-prettier-in-vs-code-2m6c#:~:text=You%20should%20now%20be%20able,for%20macOS)
 > 2. [html - How do I auto format Ruby or .erb files in VS Code? - Stack Overflow](https://stackoverflow.com/questions/41051423/how-do-i-auto-format-ruby-or-erb-files-in-vs-code)
-> 3. 
+
+
+### VSCode配置Fira Code字体
+```json
+"editor.fontLigatures": true,
+"editor.fontFamily": "Fira Code",
+```
+>参考资料：
+>1. [Fira Code: 一个有趣而实用的编程字体 - 知乎](https://zhuanlan.zhihu.com/p/38605932)
+>2. [visual studio/vscode 使用Fira code字体 - KizunaT - 博客园](https://www.cnblogs.com/kizuna1314/p/15423673.html)
+>3. [FiraCode/README_CN.md at master · tonsky/FiraCode · GitHub](https://github.com/tonsky/FiraCode/blob/master/README_CN.md)
