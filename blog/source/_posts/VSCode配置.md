@@ -230,3 +230,8 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 >1. [Fira Code: 一个有趣而实用的编程字体 - 知乎](https://zhuanlan.zhihu.com/p/38605932)
 >2. [visual studio/vscode 使用Fira code字体 - KizunaT - 博客园](https://www.cnblogs.com/kizuna1314/p/15423673.html)
 >3. [FiraCode/README_CN.md at master · tonsky/FiraCode · GitHub](https://github.com/tonsky/FiraCode/blob/master/README_CN.md)
+
+### VSCode管理Java项目
+
+> 参考资料：
+> 1. [Java project management in Visual Studio Code](https://code.visualstudio.com/docs/java/java-project)
