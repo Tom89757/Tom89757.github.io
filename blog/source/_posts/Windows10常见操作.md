@@ -65,7 +65,8 @@ Windows 10打开Taskbar设置：
 改为：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230112140336.png)
 但这会对所有软件生效。
-2. 方法2：使用7+ Taskbar Tweaker管理Taskbar，推荐
+2. 方法2：使用7+ Taskbar Tweaker管理Taskbar，推荐。配置如下：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230203201506.png)
 > 参考资料：
 > 1. [VS Code multiple taskbar icon - Stack Overflow](https://stackoverflow.com/questions/63381934/vs-code-multiple-taskbar-icon)
 > 2. [88：7+ Taskbar Tweaker 最新 5.1一款功能强大的Windows任务栏自定义设置工具使用教程_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1VV411n7hW)
