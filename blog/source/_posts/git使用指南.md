@@ -232,3 +232,15 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 
 > 参考资料：
 > 1. [git - error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1) - Stack Overflow](https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro)
+
+
+</br>
+12.在linux中使用git时，出现如下情况：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230203180529.png)
+解决方案：在Linux的git中配置personal token
+- `git config --global credential.helper cache`：在`.gitconfig`中添加配置，使得系统记住后续输入的token，避免重复输入
+- `git clone https://github.com/Tom89757/dotfiles.git`：clone对应仓库，并输入对应用户名和token。由于上述配置，此次输入后后续无需再次输入。
+
+>参考资料：
+>1. [git - Message "Support for password authentication was removed. Please use a personal access token instead." - Stack Overflow](https://stackoverflow.com/questions/68775869/message-support-for-password-authentication-was-removed-please-use-a-personal#:~:text=From%202021%2D08%2D13%2C,a%20PAT%20on%20your%20system.)
+>

@@ -54,11 +54,18 @@ Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11
 - 可以通过`wsl --install -d kali-linux`指定安装的wsl为kali发行版：
 
   ![image-20220522210402831](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220522210402831.png)
-
+### WSL代理配置
+配置代理后测试代理不能使用ping，因为ping使用ICMP协议，而代理只支持TCP/UDP数据包。应该使用curl：
+```bash
+curl https://www.youtube.com | head -1
+```
 > 参考资料：
->
 > 1. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install)
 > 2. [WSL的基本命令](https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands)
+> 3. [WSL2配置代理 - Leaos - 博客园](https://www.cnblogs.com/tuilk/p/16287472.html)
+> 4. [httping：测量网站延迟_Linux教程_Linux公社-Linux系统门户网站](https://www.linuxidc.com/Linux/2016-05/131448.htm)
+> 5. [windows上使用代理，使用ping命令会超时](https://blog.csdn.net/zhongliangtang/article/details/81280460)
+> 6. [WSL2-解决无法ping通主机/配置使用主机代理_wsl 使用代理_会伏丘的博客-CSDN博客](https://blog.csdn.net/fur_pikachu/article/details/127973376)
 
 ## cmd
 ### 别名设置
