@@ -130,3 +130,16 @@ grep -E 'fatal|error|critical' /var/log/nginx/error.log
 ```
 > 参考资料：
 > 1. [Linux grep中的正则表达式Regex | myfreax](https://www.myfreax.com/regular-expressions-in-grep/)
+
+</br>
+11.Ubuntu卸载软件：
+```bash
+sudo apt-get remove lua5.3 #只去除lua5.3
+sudo apt-get remove --auto-remove lua5.3 #去除lua5.3及其依赖packages
+sudo apt-get purge lua5.3 # 使用purge，所有配置和依赖packages将被移除
+sudo apt-get purge --auto-remove lua5.3 # 使用auto remove选项时，将根据该package来去除，在你想要重装时很有用
+```
+> 参考资料：
+> 1. [在ubuntu系统中删除软件的三种最佳方法_51CTO博客_ubuntu 卸载软件](https://blog.51cto.com/u_168360/2407085)
+> 2. [server - How to completely remove virtual packages? - Ask Ubuntu](https://askubuntu.com/questions/207505/how-to-completely-remove-virtual-packages)
+> 3. [How to uninstall or remove lua5.3 software package from Ubuntu 17.04 (Zesty Zapus)](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/lua5.3?type=uninstall)
