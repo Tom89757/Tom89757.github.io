@@ -244,3 +244,20 @@ PS：此种方式由于使用了极其宽松的正则表达式，凡是文件夹
 >参考资料：
 >1. [git - Message "Support for password authentication was removed. Please use a personal access token instead." - Stack Overflow](https://stackoverflow.com/questions/68775869/message-support-for-password-authentication-was-removed-please-use-a-personal#:~:text=From%202021%2D08%2D13%2C,a%20PAT%20on%20your%20system.)
 >
+
+</br>
+13.clone仓库时出现：
+```bash
+Host key verification failed. fatal: The remote end hung up unexpectedly
+```
+解决方案：
+```bash
+git config --global user.name "你的github账户名"
+git config --global user.email "你的github账户默认的邮箱地址"
+ssh-keygen -t rsa -b 4096 -C "你的github账户默认的邮箱地址"
+cat ~/.ssh/id_rsa.pub # 添加到git ssh
+ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts 
+```
+> 参考资料：
+> 1. [我的现代化Neovim配置 - 知乎](https://zhuanlan.zhihu.com/p/382092667)
+> 2. [ssh - Git error: "Host Key Verification Failed" when connecting to remote repository - Stack Overflow](https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository)
