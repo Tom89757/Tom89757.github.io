@@ -16,3 +16,6 @@ tags:
 4. [我的现代化Neovim配置 - 知乎](https://zhuanlan.zhihu.com/p/382092667)
 5. [入门指南 | SpaceVim](https://spacevim.org/cn/quick-start-guide/#windows)
 6. [学习 Neovim 全 lua 配置 - 知乎](https://zhuanlan.zhihu.com/p/571617696)：Neovim配置实战的旧版，免费
+
+### 碰到的一些问题的解决方法
+1. [No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub](https://github.com/LunarVim/Neovim-from-scratch/issues/274)
