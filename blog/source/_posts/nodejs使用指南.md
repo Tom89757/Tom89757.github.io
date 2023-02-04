@@ -57,3 +57,16 @@ PS：本问题在为hexo博客安装`hexo`和`hexo-cli`包时出现，解决方�
 > 2. [npm-install](https://docs.npmjs.com/cli/v8/commands/npm-install)
 
 </br>
+7.Linux安装nodejs：
+```bash
+VERSION=v10.15.0
+DISTRO=linux-x64
+sudo mkdir -p /usr/local/lib/nodejs
+sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs 
+# Nodejs
+VERSION=v10.15.0
+DISTRO=linux-x64
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+```
+> 参考资料：
+> 1. [Installation · nodejs/help Wiki · GitHub](https://github.com/nodejs/help/wiki/Installation)
