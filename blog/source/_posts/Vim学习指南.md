@@ -83,6 +83,25 @@ go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 > 1. [Can only use path@version syntax with 'go get'? · Issue #220 · mattn/efm-langserver · GitHub](https://github.com/mattn/efm-langserver/issues/220)
 > 2. [efm-langserver: Error while opening a new .cc file · Issue #98 · ayamir/nvimdots · GitHub](https://github.com/ayamir/nvimdots/issues/98)
 
+### 配置主题
+以上述安装的配置为例。
+1. 在对应配置文件`lua/ui/plugins.lua`中添加主题：
+```lua
+ui["folke/tokyonight.nvim"] = {
+	lazy = false,
+	name = "tokyonight", 
+	config = conf.tokyonight,
+}
+```
+2. 在对应配置文件中`lazy-lock.json`中添加主题仓库信息：
+```json
+"tokyonight": { "branch": "main", "commit": "affb21a81e6d7de073378eb86d02864c594104d9" },
+```
+3. 在`lua/core/settings.lua`中将`colorsheme`设置为`tokyonight`：
+```lua
+settings["colorscheme"] = "tokyonight"
+```
+
 
 ### neovim配置java环境
 
