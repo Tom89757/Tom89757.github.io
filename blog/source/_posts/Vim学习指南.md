@@ -16,6 +16,7 @@ tags:
 4. [我的现代化Neovim配置 - 知乎](https://zhuanlan.zhihu.com/p/382092667)
 5. [入门指南 | SpaceVim](https://spacevim.org/cn/quick-start-guide/#windows)
 6. [学习 Neovim 全 lua 配置 - 知乎](https://zhuanlan.zhihu.com/p/571617696)：Neovim配置实战的旧版，免费
+7. [Learn Neovim The Practical Way. All articles on how to configure and… | by alpha2phi | Medium](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f)：medium上关于neovim配置的系列文章
 
 ### 碰到的一些问题的解决方法
 1. [No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub](https://github.com/LunarVim/Neovim-from-scratch/issues/274)
@@ -104,9 +105,111 @@ settings["colorscheme"] = "tokyonight"
 
 
 ### neovim配置java环境
+1. 下载解压jdt-language-server：
+```bash
+#创建workspace目录，后面会用到
+mkdir -p ~/.local/share/nvim/lsp/jdt-language-server/workspace/folder
+cd ~/.local/share/nvim/lsp/jdt-language-server
+# 下载jdt-language-server-xxxxx.tar.gz
+wget https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz
+# 解压
+tar -zxvf jdt-language-server-1.9.0-202203031534.tar.gz
+```
+2. 创建`/lua/modules/lang/usr/`文件夹，并添加`config.lua`和`plugins.lua`两个文件，文件内容如下：
+config.lua：
+```lua
+local config = {}
 
+function config.java()
+	local opts = {
+		cmd = {
+			"java", 
+			"-Declipse.application=org.eclipse.jdt.ls.core.id1",
+			"-Dosgi.bundles.defaultStartLevel=4",
+			"-Declipse.product=org.eclipse.jdt.ls.core.product",
+			"-Dlog.protocol=true",
+			"-Dlog.level=ALL",
+			"-Xms1g",
+			"--add-modules=ALL-SYSTEM",
+			"--add-opens",
+			"java.base/java.util=ALL-UNNAMED",
+			"--add-opens",
+			"java.base/java.lang=ALL-UNNAMED",
+			"-jar",
+			"/home/fg/.local/share/nvim/lsp/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+			"-configuration",
+			"/home/fg/.local/share/nvim/lsp/jdt-language-server/config_linux",
+			"-data",
+			"/home/fg/.local/share/nvim/lsp/jdt-language-server/workspace/folder",
+		},
+		root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
+		settings = {
+			java = {},
+		},
+		init_options = {
+			bundles = {},
+		},
+	}
+	require("jdtls").start_or_attach(opts)
+end
+
+return config
+```
+plugins.lua：
+```lua
+local custom = {}
+local conf = require("modules.lang.user.config")
+
+custom["mfussenegger/nvim-jdtls"] = {
+	lazy = true,
+	ft = "java",
+	config = conf.java,
+}
+
+return custom
+```
+3. 在`lazy-lock.json`添加仓库信息：
+```json
+"nvim-jdtls": { "branch": "master", "commit": "1f640d14d17f20cfc63c1acc26a10f9466e66a75" },
+```
+4. 在`/lua/modules/editor/config.lua`中添加`java`的语法高亮：
+```lua
+require("nvim-treesitter.configs").setup({
+		ensure_installed = {
+		"java",
+		},
+		})
+```
+5. 在`/lua/modules/editor/config.lua`中添加java的debug配置：
+```lua
+-- local dap = require('dap')
+dap.adapters.java = function(callback)
+		callback({
+			type = 'server';
+			host = '127.0.0.1';
+			port = port;
+		})
+	end
+
+-- local dap = require('dap')
+dap.configurations.java = {
+  {
+	classPaths = {},
+
+	-- If using multi-module projects, remove otherwise.
+	projectName = "yourProjectName",
+
+	javaExec = "/usr/bin/java",
+	mainClass = "your.package.name.MainClassName",
+	modulePaths = {},
+	name = "Launch YourClassName",
+	request = "launch",
+	type = "java"
+  },
+}	
+```
 > 参考资料：
-> 1. [Java in Neovim | Chris@Machine](https://www.chiarulli.me/Neovim/24-neovim-and-java/)
-> 2. [Using Neovim as a Java IDE | Kevin Sookocheff](https://sookocheff.com/post/vim/neovim-java-ide/)
-> 3. [Neovim for Beginners — Java. Use Neovim for Java application… | by alpha2phi | Medium](https://alpha2phi.medium.com/neovim-for-beginners-java-6a86cf1a91a5)
-> 4. [GitHub - lxyoucan/nvim-as-java-ide: 从零开始搭建Neovim Java IDE开发环境](https://github.com/lxyoucan/nvim-as-java-ide)
+> 1. [GitHub - lxyoucan/nvim-as-java-ide: 从零开始搭建Neovim Java IDE开发环境](https://github.com/lxyoucan/nvim-as-java-ide)
+> 2. [Usage · ayamir/nvimdots Wiki · GitHub](https://github.com/ayamir/nvimdots/wiki/Usage)
+> 3. [Java · mfussenegger/nvim-dap Wiki · GitHub](https://github.com/mfussenegger/nvim-dap/wiki/Java)
+> 4. [GitHub - mfussenegger/nvim-jdtls: Extensions for the built-in LSP support in Neovim for eclipse.jdt.ls](https://github.com/mfussenegger/nvim-jdtls)
