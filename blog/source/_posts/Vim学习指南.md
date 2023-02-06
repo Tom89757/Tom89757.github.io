@@ -17,8 +17,10 @@ tags:
 5. [入门指南 | SpaceVim](https://spacevim.org/cn/quick-start-guide/#windows)
 6. [学习 Neovim 全 lua 配置 - 知乎](https://zhuanlan.zhihu.com/p/571617696)：Neovim配置实战的旧版，免费
 7. [Learn Neovim The Practical Way. All articles on how to configure and… | by alpha2phi | Medium](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f)：medium上关于neovim配置的系列文章
-8. [LunarVim | LunarVim](https://www.lunarvim.org/)：neovim的变种，便于配置
-9. [Home | SpaceVim](https://spacevim.org/)：neovim的变种，便于配置
+8. [GitHub - LunarVim/Neovim-from-scratch: 📚 A Neovim config designed from scratch to be understandable](https://github.com/LunarVim/Neovim-from-scratch)：Lunar官方配置教程
+9. [Neovim IDE from Scratch](https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&ab_channel=chris%40machine)：Neovim配置视频教程
+10. [LunarVim | LunarVim](https://www.lunarvim.org/)：neovim的变种，便于配置
+11. [Home | SpaceVim](https://spacevim.org/)：neovim的变种，便于配置
 
 ### 碰到的一些问题的解决方法
 1. [No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub](https://github.com/LunarVim/Neovim-from-scratch/issues/274)
