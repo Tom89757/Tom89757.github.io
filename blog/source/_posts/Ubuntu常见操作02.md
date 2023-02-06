@@ -174,12 +174,21 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe
 > 参考资料：
 > 1. [Ubuntu 20.04系统下更改apt源为阿里源 - 知乎](https://zhuanlan.zhihu.com/p/251009600)
 > 2. [USTC Open Source Software Mirror](http://mirrors.ustc.edu.cn/)
+> 3. [Ubuntu 源使用帮助 — USTC Mirror Help 文档](http://mirrors.ustc.edu.cn/help/ubuntu.html)
 
 </br>
 13.修改用户名和密码
-
+1. 使用`wsl -u root`登录root用户
+2. 执行如下命令：
+```bash
+ usermod -l <newname> -d /home/<newname> -m <oldname>
+ usermod -c "newfullname" <newname>
+ groupmod -n <newgroup> <oldgroup>
+```
 > 参考资料：
-> 1. [修改Ubuntu用户名及其密码、主机名、主目录名 - 直木 - 博客园](https://www.cnblogs.com/yxqxx/p/12319130.html)
+> 1. [permissions - How do I change my username? - Ask Ubuntu](https://askubuntu.com/questions/34074/how-do-i-change-my-username)
+> 2. [Linux usermod user is currently used by process - Stack Overflow](https://stackoverflow.com/questions/28972503/linux-usermod-user-is-currently-used-by-process)
+> 3. [linux - How to set default user for manually installed WSL distro? - Super User](https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro)
 
 </br>
 14.查看文件和文件夹大小：
@@ -189,3 +198,14 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe
 
 > 参考资料：
 > 1. [Ubuntu查看文件大小或文件夹大小_jackliang的博客-CSDN博客_ubuntu 文件大小](https://blog.csdn.net/xiqingchun/article/details/42466267)
+
+
+</br>
+15.卸载java
+```bash
+dpkg-query -W -f='${binary:Package}\n' | grep -E -e '^(ia32-)?(sun|oracle)-java' -e '^openjdk-' -e '^icedtea' -e '^(default|gcj)-j(re|dk)' -e '^gcj-(.*)-j(re|dk)' -e '^java-common' | xargs sudo apt-get -y remove
+
+sudo apt-get -y autoremove
+```
+> 参考资料：
+> 1. [How to completely uninstall Java? - Ask Ubuntu](https://askubuntu.com/questions/84483/how-to-completely-uninstall-java#)
