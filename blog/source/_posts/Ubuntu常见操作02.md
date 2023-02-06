@@ -143,3 +143,34 @@ sudo apt-get purge --auto-remove lua5.3 # 使用auto remove选项时，将根据
 > 1. [在ubuntu系统中删除软件的三种最佳方法_51CTO博客_ubuntu 卸载软件](https://blog.51cto.com/u_168360/2407085)
 > 2. [server - How to completely remove virtual packages? - Ask Ubuntu](https://askubuntu.com/questions/207505/how-to-completely-remove-virtual-packages)
 > 3. [How to uninstall or remove lua5.3 software package from Ubuntu 17.04 (Zesty Zapus)](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/lua5.3?type=uninstall)
+
+
+</br>
+12.Ubuntu源配置：
+1. 备份sources.list文件，然后删除
+```bash
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bat
+```
+2. 新建sources.list，将下述参考资料2中的源地址复制到其中：
+```bash
+# 默认注释了源码仓库，如有需要可自行取消注释
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+```
+3. 运行`sudo apt-get update`对源进行更新
+> 参考资料：
+> 1. [Ubuntu 20.04系统下更改apt源为阿里源 - 知乎](https://zhuanlan.zhihu.com/p/251009600)
+> 2. [USTC Open Source Software Mirror](http://mirrors.ustc.edu.cn/)
