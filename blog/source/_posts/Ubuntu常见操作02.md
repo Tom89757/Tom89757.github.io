@@ -180,3 +180,12 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe
 
 > 参考资料：
 > 1. [修改Ubuntu用户名及其密码、主机名、主目录名 - 直木 - 博客园](https://www.cnblogs.com/yxqxx/p/12319130.html)
+
+</br>
+14.查看文件和文件夹大小：
+- 查看文件大小：`ls -l filename`
+- 查看文件夹大小：`du -sh folder`
+- 查看磁盘使用情况：`df -h`
+
+> 参考资料：
+> 1. [Ubuntu查看文件大小或文件夹大小_jackliang的博客-CSDN博客_ubuntu 文件大小](https://blog.csdn.net/xiqingchun/article/details/42466267)
