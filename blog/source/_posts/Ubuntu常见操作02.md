@@ -174,3 +174,9 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe
 > 参考资料：
 > 1. [Ubuntu 20.04系统下更改apt源为阿里源 - 知乎](https://zhuanlan.zhihu.com/p/251009600)
 > 2. [USTC Open Source Software Mirror](http://mirrors.ustc.edu.cn/)
+
+</br>
+13.修改用户名和密码
+
+> 参考资料：
+> 1. [修改Ubuntu用户名及其密码、主机名、主目录名 - 直木 - 博客园](https://www.cnblogs.com/yxqxx/p/12319130.html)
