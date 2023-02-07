@@ -19,3 +19,5 @@ tags:
 7. aria2：[aria2 源码解析专题—— (一)基础架构](https://www.cnblogs.com/endingly/p/15832027.html)
 8. [GoodWeather](https://github.com/lilongweidev/GoodWeather)：从零开发Android天气APP。
 9. [(How to Write a (Lisp) Interpreter (in Python))](https://norvig.com/lispy.html)：如何使用Python写一个Lisp解释器。
+10. [Build Your Own Redis with C/C++ | Build Your Own Redis with C/C++](https://build-your-own.org/redis/)：教你使用C/C++来构建一个类似redis的server。
+11. 
