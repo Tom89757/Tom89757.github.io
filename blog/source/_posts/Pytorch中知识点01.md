@@ -124,7 +124,7 @@ type(B()) == A        # returns False
 
 </br>
 
-11.`random.random()`方法返回随机生成的一个实数，范围为 [0,1)；`random.randint(a,b)`方法返回随机生成的一个整数，其值>=a，<=b。
+11.`random.randint()`方法返回随机生成的一个实数，范围为 [0,1)；`random.randint(a,b)`方法返回随机生成的一个整数，其值>=a，<=b。
 
 </br>
 

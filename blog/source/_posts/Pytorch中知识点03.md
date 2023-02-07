@@ -77,3 +77,32 @@ Cannot interpret '<attribute 'dtype' of 'numpy.generic' objects>' as a data type
 解决方法：`loss.mean().backward()`。
 > 参考资料：
 > 1. [Loss.backward() raises error 'grad can be implicitly created only for scalar outputs' - autograd - PyTorch Forums](https://discuss.pytorch.org/t/loss-backward-raises-error-grad-can-be-implicitly-created-only-for-scalar-outputs/12152/2)
+
+
+</br>
+7. Pytorch创建随机张量和创建张量：
+- 随机张量均匀分布
+```python
+x1 = torch.rand((4, 256, 80, 80))
+x2 = torch.rand((4, 512, 40, 40))
+x3 = torch.rand((4, 1024, 20, 20))
+x4 = torch.rand((4, 2048, 10, 10))
+```
+- 随机张量标准正态分布
+```python
+x = torch.randn((4, 3, 320, 320))
+```
+- 全部为1：
+```python
+x = torch.ones(2, 3)
+```
+- 全部为0：
+```python
+x = torch.zeros(2, 3)
+```
+> 参考资料：
+> 1. [PyTorch 常用方法总结1：生成随机数Tensor的方法汇总（标准分布、正态分布……） - 知乎](https://zhuanlan.zhihu.com/p/31231210)
+> 2. [torch.ones — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.ones.html)
+> 3. [torch.ones_like — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.ones_like.html)
+> 4. [torch.zeros — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.zeros.html)
+> 5. [torch.zeros_like — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.zeros_like.html)
