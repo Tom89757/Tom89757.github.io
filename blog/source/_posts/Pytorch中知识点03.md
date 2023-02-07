@@ -106,3 +106,13 @@ x = torch.zeros(2, 3)
 > 3. [torch.ones_like — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.ones_like.html)
 > 4. [torch.zeros — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.zeros.html)
 > 5. [torch.zeros_like — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.zeros_like.html)
+
+
+</br>
+8.BCE Loss vs Cross Entropy：
+
+> 参考资料：
+> 1. [BCE Loss vs Cross Entropy - vision - PyTorch Forums](https://discuss.pytorch.org/t/bce-loss-vs-cross-entropy/97437)
+> 2. [Learning Day 57/Practical 5: Loss function — CrossEntropyLoss vs BCELoss in Pytorch; Softmax vs sigmoid; Loss calculation | by De Jun Huang | dejunhuang | Medium](https://medium.com/dejunhuang/learning-day-57-practical-5-loss-function-crossentropyloss-vs-bceloss-in-pytorch-softmax-vs-bd866c8a0d23#:~:text=Difference%20in%20purpose%20(in%20practice,probability%2C%20you%20should%20use%20BCE.&text=We%20cannot%20use%20sigmoid%20for,CrossEntropyLoss%20as%20the%20loss%20function.)
+> 3. [BCELoss — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html)
+> 4. [CrossEntropyLoss — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html)
