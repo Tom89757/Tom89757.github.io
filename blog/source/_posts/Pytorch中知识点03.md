@@ -116,3 +116,12 @@ x = torch.zeros(2, 3)
 > 2. [Learning Day 57/Practical 5: Loss function — CrossEntropyLoss vs BCELoss in Pytorch; Softmax vs sigmoid; Loss calculation | by De Jun Huang | dejunhuang | Medium](https://medium.com/dejunhuang/learning-day-57-practical-5-loss-function-crossentropyloss-vs-bceloss-in-pytorch-softmax-vs-bd866c8a0d23#:~:text=Difference%20in%20purpose%20(in%20practice,probability%2C%20you%20should%20use%20BCE.&text=We%20cannot%20use%20sigmoid%20for,CrossEntropyLoss%20as%20the%20loss%20function.)
 > 3. [BCELoss — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html)
 > 4. [CrossEntropyLoss — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html)
+
+</br>
+9.张量最大值和最小值：
+```python
+# 最大
+x.max()
+# 最小
+x.min()
+```
