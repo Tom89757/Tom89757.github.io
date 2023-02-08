@@ -40,6 +40,7 @@ tags:
 参考资料：
 
 > 1. [pip installation](https://pip.pypa.io/en/stable/installation/)
+> 2. [python - ModuleNotFoundError: No module named 'distutils.util' - Ask Ubuntu](https://askubuntu.com/questions/1239829/modulenotfounderror-no-module-named-distutils-util)
 
 ### 键盘键位映射修改
 问题：笔记本left shift键失灵，将Caps Lock键映射到left shift键然后作为left shift键使用
