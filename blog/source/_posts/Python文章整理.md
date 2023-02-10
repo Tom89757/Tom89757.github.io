@@ -12,5 +12,7 @@ tags:
 
 1. [Understanding all of Python, through its builtins](https://sadh.life/post/builtins/)：Python有许多大多数不熟知的内置函数。本文通过Python的一些鲜为人知的内置函数介绍Python提供的功能和特性。(未读)
 2. [Understanding the Python Traceback – Real Python](https://realpython.com/python-traceback/)：本文对Python中的报错信息traceback进行介绍。（未读完）
+3. [Typing Python with typing :: Yet Another Random Memoir](https://trebaud.github.io/posts/typing-python/)：Python3.6开始支持类型声明，本文想初学者简单介绍如何使用Python类型
+4. 
 
 
