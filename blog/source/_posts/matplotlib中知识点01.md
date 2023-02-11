@@ -100,4 +100,12 @@ def point_plot(model, dataset, size=0.1):
 > 4. [Python三种方法计算皮尔逊相关系数](https://blog.csdn.net/qq_40260867/article/details/90667462)
 
 </br>
+5.由于OpenCV读取的图片默认三通道顺序为BGR，所以在使用matplotlib进行画图时，需要对其通道顺序进行调整：
+```python
+from matplotlib import pyplot as plt
+plt.subplot(1,1,1)
+plt.imshow(result[:, :, [2, 1, 0]])
+plt.title("result")
+plt.show()
+```
 
