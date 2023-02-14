@@ -235,3 +235,8 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 
 > 参考资料：
 > 1. [Java project management in Visual Studio Code](https://code.visualstudio.com/docs/java/java-project)
+
+
+### VSCode插件推荐
+> 参考资料：
+> 1. [有什么推荐的vs code插件？ - 知乎](https://www.zhihu.com/question/380933740/answer/1554048933)
