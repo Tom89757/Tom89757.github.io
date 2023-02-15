@@ -71,3 +71,8 @@ Windows 10打开Taskbar设置：
 > 参考资料：
 > 1. [VS Code multiple taskbar icon - Stack Overflow](https://stackoverflow.com/questions/63381934/vs-code-multiple-taskbar-icon)
 > 2. [88：7+ Taskbar Tweaker 最新 5.1一款功能强大的Windows任务栏自定义设置工具使用教程_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1VV411n7hW)
+
+### 其中的文件夹或文件已在另一程序中打开
+
+> 参考资料：
+> 1. [想删除这个东西但它显示的是在另一文件夹中或程序中打开，无法删除，怎么办？ - 知乎](https://www.zhihu.com/question/453864187/answer/1827894565)

@@ -240,3 +240,10 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 ### VSCode插件推荐
 > 参考资料：
 > 1. [有什么推荐的vs code插件？ - 知乎](https://www.zhihu.com/question/380933740/answer/1554048933)
+
+
+### VSCode C++环境配置
+> 参考资料：
+> 1. [C++ programming with Visual Studio Code](https://code.visualstudio.com/docs/languages/cpp)
+> 2. [MSYS2](https://www.msys2.org/)
+> 3. [Package: mingw-w64-x86_64-gcc - MSYS2 Packages](https://packages.msys2.org/package/mingw-w64-x86_64-gcc)
