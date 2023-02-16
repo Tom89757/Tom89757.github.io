@@ -455,7 +455,7 @@ imageio.imwrite(save_path + name, pred_edge_kk)
 
 > 参考资料：
 >
-> [[My scipy.misc module appears to be missing imsave](https://stackoverflow.com/questions/19991665/my-scipy-misc-module-appears-to-be-missing-imsave)
+> [My scipy.misc module appears to be missing imsave](https://stackoverflow.com/questions/19991665/my-scipy-misc-module-appears-to-be-missing-imsave)
 
 </br>
 
