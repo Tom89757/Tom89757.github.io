@@ -125,3 +125,16 @@ x.max()
 # 最小
 x.min()
 ```
+
+</br>
+10.扩充维度和复制：
+```python
+# 原始tensor x
+x = torch.randn((366, 400)) # shape: 366, 400
+# 扩充维度
+x = x.unsqueeze(0) # shape: 1, 366, 400
+# 复制通道
+x = x.repeat(3, 1, 1) # shape: 3, 366, 400
+```
+> 参考资料：
+> 1. [记录一个Tensor操作——扩充维度+复制 - 知乎](https://zhuanlan.zhihu.com/p/442263715)
