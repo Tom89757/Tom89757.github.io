@@ -624,3 +624,20 @@ pip3 install --upgrade albumentations --user
 解决方案：在对应路径下`d:\ml\anaconda3\envs\testenv\lib\site-packages`找到名字前缀为`~ip`的文件夹并删除。
 > 参考资料：
 > 1. [Found Solution to: WARNING: Ignoring invalid distribution -{packageName} ({pathToIssue}) : Python](https://www.reddit.com/r/Python/comments/x70edr/found_solution_to_warning_ignoring_invalid/)
+
+</br>
+22.pip更新：
+```bash
+python -m pip install --upgrade pip
+```
+> 参考资料：
+> 1. [python - There was an error checking the latest version of pip - Stack Overflow](https://stackoverflow.com/questions/72439001/there-was-an-error-checking-the-latest-version-of-pip)
+
+</br>
+23.python中`import`相关的路径问题：
+
+> 参考资料：
+> 1. [Relative imports in Python 3 - Stack Overflow](https://stackoverflow.com/questions/16981921/relative-imports-in-python-3)
+> 2. [python - __init__.py can't find local modules - Stack Overflow](https://stackoverflow.com/questions/34753206/init-py-cant-find-local-modules)
+> 3. [【python】关于import你需要知道的一切！一个视频足够了_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1K24y1k7XA/?spm_id_from=333.999.0.0&vd_source=71b57f2bb132ac1f88ed255cad4a06a6)
+
