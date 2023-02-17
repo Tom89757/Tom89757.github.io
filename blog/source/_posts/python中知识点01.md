@@ -604,3 +604,23 @@ next_input, next_target, _ , _ = next(iter_loader) # 访问迭代器下一个ite
 ```
 > 参考资料：
 > 1. [Python enumerate() 函数 | 菜鸟教程](https://www.runoob.com/python/python-func-enumerate.html)
+
+</br>
+20.安装`pip install albumentations`时报错：
+```bash
+Could not install packages due to an OSError: [WinError 5]
+```
+解决方案：添加`--user`选项
+```bash
+pip3 install --upgrade albumentations --user
+```
+> 参考资料：
+> 1. [tensorflow - Could not install packages due to an EnvironmentError: [WinError 5] Access is denied: - Stack Overflow](https://stackoverflow.com/questions/51912999/could-not-install-packages-due-to-an-environmenterror-winerror-5-access-is-de)
+
+</br>
+21.`pip install package`时出现如下Warning:
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230217212259.png)
+原因：对应包损坏
+解决方案：在对应路径下`d:\ml\anaconda3\envs\testenv\lib\site-packages`找到名字前缀为`~ip`的文件夹并删除。
+> 参考资料：
+> 1. [Found Solution to: WARNING: Ignoring invalid distribution -{packageName} ({pathToIssue}) : Python](https://www.reddit.com/r/Python/comments/x70edr/found_solution_to_warning_ignoring_invalid/)

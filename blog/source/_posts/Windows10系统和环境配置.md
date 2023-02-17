@@ -17,5 +17,10 @@ tags:
 > 参考资料：
 > 1. [在 Windows 下使用多块屏幕的你，可以收下这些建议](https://sspai.com/post/66381)
 
-
+### Sumatra PDF和Everything的冲突
+在使用Everything搜索pdf文件后，如果直接双击打开pdf文件，此时Sumatra PDF以管理员身份运行。如果直接在文件夹中双击pdf文件，此时会报错。
+解决方案：Everything -> 工具 -> 选项 -> 取消勾选以管理员身份运行 -> 启动Everything服务 -> 重启Everything
+> 参考资料：
+> 1. [Why "SumatraPDF is running as admin and cannot open files from a non-admin process" error? · Discussion #2316 · sumatrapdfreader/sumatrapdf · GitHub](https://github.com/sumatrapdfreader/sumatrapdf/discussions/2316)
+> 2. [FAQ - voidtools](https://www.voidtools.com/faq/#how_do_i_prevent_the_uac_prompt_when_running_everything)
 
