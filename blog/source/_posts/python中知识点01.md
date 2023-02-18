@@ -641,3 +641,25 @@ python -m pip install --upgrade pip
 > 2. [python - __init__.py can't find local modules - Stack Overflow](https://stackoverflow.com/questions/34753206/init-py-cant-find-local-modules)
 > 3. [【python】关于import你需要知道的一切！一个视频足够了_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1K24y1k7XA/?spm_id_from=333.999.0.0&vd_source=71b57f2bb132ac1f88ed255cad4a06a6)
 
+</br>
+24.导出pip list到`requirements.txt`文件在另一个环境中安装：
+```bash
+## 导出
+pip freeze >requirements.txt
+## 安装
+pip install -r requirements.txt
+```
+> 参考资料：
+> 1. [pip requirements导出当前项目所用的包list列表_苦咖啡's运维之路的技术博客_51CTO博客](https://blog.51cto.com/alsww/1893100)
+
+
+
+
+
+
+
+
+
+
+
+
