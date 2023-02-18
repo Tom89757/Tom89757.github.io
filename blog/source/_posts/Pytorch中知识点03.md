@@ -138,3 +138,24 @@ x = x.repeat(3, 1, 1) # shape: 3, 366, 400
 ```
 > 参考资料：
 > 1. [记录一个Tensor操作——扩充维度+复制 - 知乎](https://zhuanlan.zhihu.com/p/442263715)
+
+</br>
+11.在Module中的如下操作报如下错误：
+```python
+gaussian_2D = get_gaussian_kernel(k_gaussian, mu, sigma)
+        self.gaussian_filter = nn.Conv2d(in_channels=1,
+                                         out_channels=1,
+                                         kernel_size=k_gaussian,
+                                         padding=k_gaussian // 2,
+                                         bias=False)
+self.gaussian_filter.weight[:] = torch.from_numpy(gaussian_2D)
+```
+```error
+Leaf variable was used in an inplace operation
+```
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230218224821.png)
+解决方案：注释掉151行
+> 参考资料：
+> 1. [Leaf variable was used in an inplace operation - PyTorch Forums](https://discuss.pytorch.org/t/leaf-variable-was-used-in-an-inplace-operation/308)
+
+
