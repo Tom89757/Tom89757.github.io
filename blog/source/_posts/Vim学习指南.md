@@ -217,3 +217,29 @@ dap.configurations.java = {
 > 2. [Usage · ayamir/nvimdots Wiki · GitHub](https://github.com/ayamir/nvimdots/wiki/Usage)
 > 3. [Java · mfussenegger/nvim-dap Wiki · GitHub](https://github.com/mfussenegger/nvim-dap/wiki/Java)
 > 4. [GitHub - mfussenegger/nvim-jdtls: Extensions for the built-in LSP support in Neovim for eclipse.jdt.ls](https://github.com/mfussenegger/nvim-jdtls)
+
+</br>
+6.Vim模式在中文输入法下的问题。
+> 参考资料：
+> 1. [Vim模式在中文输入法下的问题 - 建议反馈 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/11234/2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
