@@ -652,7 +652,18 @@ pip install -r requirements.txt
 > 参考资料：
 > 1. [pip requirements导出当前项目所用的包list列表_苦咖啡's运维之路的技术博客_51CTO博客](https://blog.51cto.com/alsww/1893100)
 
-
+</br>
+15.在Python中只声明变量而不赋值：
+```python 
+result = None
+for i in range(10):
+	if i == 0:
+		result = i 
+	else:
+		result += i
+```
+> 参考资料：
+> 1. [在Python中是否可以只声明变量而不赋值？ - 问答 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/28703)
 
 
 

@@ -158,4 +158,31 @@ Leaf variable was used in an inplace operation
 > 参考资料：
 > 1. [Leaf variable was used in an inplace operation - PyTorch Forums](https://discuss.pytorch.org/t/leaf-variable-was-used-in-an-inplace-operation/308)
 
+</br>
+12.在Module的batch上面迭代：
+```python
+def forward(self, x):
+	B, C, H, W = x.shape
+	for i in range(B):
+		xi = x[i, ...][None, ...]
+		xi = self.net(xi)
+```
+
+</br>
+13.对多个Tensor进行join。有两种方式：
+- `torch.cat((tens_1, tens_2, -, tens_n), dim=0, *, out=None)`：在相同的dimension上concatenate多个tensor：
+```python
+x1 = torch.randn((1,3,320,320)) # x1.shape: (1,3,320,320)
+x2 = torch.randn((1,3,320,320)) # x2.shape: (1,3,320,320)
+x = torch.cat((x1,x2), dim=0) # x.shape: (2,3,320,320)
+```
+- `torch.stack((tens_1, tens_2, -, tens_n), dim=0, *, out=None)`：在一个新的dimension上concatenate一个tensor序列，tensor需要为相同的尺寸：
+```python
+x1 = torch.randn((1,3,320,320)) # x1.shape: (1,3,320,320)
+x2 = torch.randn((1,3,320,320)) # x2.shape: (1,3,320,320)
+x = torch.stack((x1, x2), dim=0) # x.shape: (2,1,3,320,320)
+```
+> 参考资料：
+> 1. [How to join tensors in Pytorch](https://www.geeksforgeeks.org/how-to-join-tensors-in-pytorch/)
+> 2. [How to join tensors in Pytorch?](https://www.tutorialspoint.com/how-to-join-tensors-in-pytorch) 
 
