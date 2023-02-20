@@ -186,3 +186,18 @@ x = torch.stack((x1, x2), dim=0) # x.shape: (2,1,3,320,320)
 > 1. [How to join tensors in Pytorch](https://www.geeksforgeeks.org/how-to-join-tensors-in-pytorch/)
 > 2. [How to join tensors in Pytorch?](https://www.tutorialspoint.com/how-to-join-tensors-in-pytorch) 
 
+</br>
+14.Pytorch对tensor取指定维度的切片。
+```python
+a = torch.randn((16,3,320,320)) # (16,3,320,320)
+a1 = a[0] # (3,320,320)
+a2 = a[0:1] # (1,3,320,320)
+a3 = a[None, 0] # (1,3,320,320)
+
+b = torch.randn((1, 1, 320, 320)) # (1, 1, 320, 320)
+b1 = b[0] # (1, 320, 320)
+b2 = b[0].squeeze(0) # (320, 320)
+b3 = b[0].unsqueeze(0) # (1, 1, 320, 320)
+```
+> 参考资料：
+> 1. [python - Tensorflow: How to slice tensor with number of dimension not changed? - Stack Overflow](https://stackoverflow.com/questions/51670073/tensorflow-how-to-slice-tensor-with-number-of-dimension-not-changed)
