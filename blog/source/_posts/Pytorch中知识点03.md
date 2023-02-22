@@ -201,3 +201,14 @@ b3 = b[0].unsqueeze(0) # (1, 1, 320, 320)
 ```
 > 参考资料：
 > 1. [python - Tensorflow: How to slice tensor with number of dimension not changed? - Stack Overflow](https://stackoverflow.com/questions/51670073/tensorflow-how-to-slice-tensor-with-number-of-dimension-not-changed)
+
+</br>1
+15.报错`RuntimeError: Function 'SqrtBackward0' returned nan values in its 0th output.`
+解决方案：
+```python
+grad_mag = torch.sqrt(grad_x_r**2 + grad_y_r**2)
+# 添加1e-8项
+grad_mag = torch.sqrt(grad_x_r**2 + grad_y_r**2 + 1e-8)
+```
+> 参考资料：
+> 1. [RuntimeError: Function 'SqrtBackward' returned nan values in its 0th output - autograd - PyTorch Forums](https://discuss.pytorch.org/t/runtimeerror-function-sqrtbackward-returned-nan-values-in-its-0th-output/48702/5)
