@@ -665,7 +665,48 @@ for i in range(10):
 > 参考资料：
 > 1. [在Python中是否可以只声明变量而不赋值？ - 问答 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/28703)
 
+</br>
+16.Python中`dict` vs `collections.OrderedDict`：
+```python
+# A Python program to demonstrate working of OrderedDict  
+from collections import OrderedDict
 
+print("This is a Dict:n")  
+d = {}  
+d['a'] = 1  
+d['b'] = 2  
+d['c'] = 3  
+d['d'] = 4
+
+for key, value in d.items():  
+print(key, value)
+
+print("nThis is an Ordered Dict:n")  
+od = OrderedDict()  
+od['a'] = 1  
+od['b'] = 2  
+od['c'] = 3  
+od['d'] = 4
+
+for key, value in od.items():  
+print(key, value)  
+Output:
+
+This is a Dict:  
+('a', 1)  
+('c', 3)  
+('b', 2)  
+('d', 4)
+
+This is an Ordered Dict:  
+('a', 1)  
+('b', 2)  
+('c', 3)  
+('d', 4)
+```
+> 参考资料：
+> 1. [OrderedDict in Python](https://prutor.ai/ordereddict-in-python/#:~:text=The%20only%20difference%20between%20dict,inserted%20is%20remembered%20by%20OrderedDict.)
+> 2. [python - Difference between dictionary and OrderedDict - Stack Overflow](https://stackoverflow.com/questions/34305003/difference-between-dictionary-and-ordereddict)
 
 
 

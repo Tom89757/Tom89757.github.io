@@ -18,7 +18,7 @@ tags:
 
 * `torch.save`：存储一个serialized object到磁盘，该函数使用Python的`pickle` utility来序列化（serialization）。Models/tensors和各种类型对象的字典都可以使用该函数存储
 * `torch.load`：使用`pickle`的unpickling能力来反序列化pickled对象文件到内存中。该函数也可以设置用来加载数据的设备（如gpu），见 [Saving & Loading Model Across Devices](https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-across-devices)。
-* `torch.nn.Module.load_state_dict`：使用反序列话的state_dict加载模型的参数字典，详细信息见 [What is a state_dict?](https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict)。
+* `torch.nn.Module.load_state_dict`：使用反序列化的state_dict加载模型的参数字典，详细信息见 [What is a state_dict?](https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict)。
 
 **什么是`state_dict`?**
 
