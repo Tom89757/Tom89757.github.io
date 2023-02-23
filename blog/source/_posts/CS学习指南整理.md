@@ -54,6 +54,7 @@ tags:
 ### 有趣站点
 1. [互联网哲学百科](https://iep.utm.edu/)
 2. [Rosetta Code](https://rosettacode.org/wiki/Rosetta_Code)：用不同的语言解决相同的问题
+3. [LiteratePrograms:Welcome - LiteratePrograms](https://literateprograms.org/)：同上
 
 ### 好用工具
 1. [moreofit](http://www.moreofit.com/)：查找相似的网站
