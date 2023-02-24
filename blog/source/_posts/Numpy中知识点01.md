@@ -19,4 +19,19 @@ x = np.zeros(shape, dtype = np.uint8)
 > 参考资料：
 > 1. [NumPy 创建数组 | 菜鸟教程](https://www.runoob.com/numpy/numpy-array-creation.html)
 
+</br>
+2.numpy数组转换为dataframe：
+```python
+import numpy as np
+import pandas as pd
+
+my_array = np.array([[11,22,33],[44,55,66]])
+
+df = pd.DataFrame(my_array, columns = ['Column_A','Column_B','Column_C'])
+
+print(df)
+print(type(df))
+```
+> 参考资料：
+> 1. [How to Convert NumPy Array to Pandas DataFrame – Data to Fish](https://datatofish.com/numpy-array-to-pandas-dataframe/)
 
