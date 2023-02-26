@@ -24,7 +24,7 @@ tags:
 一行命令实现：
 `lsof +D ./ | awk '{print $2}' | tail -n +2 | xargs -r kill -9`
 类似命令：
-`ps -ef | grep FT | awk '{print $2}' | xargs -r kill -9'`
+`ps -ef | grep FT | awk '{print $2}' | xargs -r kill -9`
 > 参考资料：
 > 1. [files - How to get over "device or resource busy"? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/11238/how-to-get-over-device-or-resource-busy)
 
@@ -209,3 +209,9 @@ sudo apt-get -y autoremove
 ```
 > 参考资料：
 > 1. [How to completely uninstall Java? - Ask Ubuntu](https://askubuntu.com/questions/84483/how-to-completely-uninstall-java#)
+
+</br>
+16.改造`rm`命令，删除文件至回收站：
+
+> 参考资料：
+> 1. [linux - 改造rm命令，删除文件至回收站 - 不足 - SegmentFault 思否](https://segmentfault.com/a/1190000018464527)
