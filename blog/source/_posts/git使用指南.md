@@ -261,3 +261,13 @@ ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 > 参考资料：
 > 1. [我的现代化Neovim配置 - 知乎](https://zhuanlan.zhihu.com/p/382092667)
 > 2. [ssh - Git error: "Host Key Verification Failed" when connecting to remote repository - Stack Overflow](https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository)
+
+</br>
+14.下载仓库中某个文件夹：
+工具：[Download GitHub directory](https://download-directory.github.io/)
+
+</br>
+
+
+
+

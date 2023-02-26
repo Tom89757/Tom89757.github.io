@@ -215,3 +215,11 @@ sudo apt-get -y autoremove
 
 > 参考资料：
 > 1. [linux - 改造rm命令，删除文件至回收站 - 不足 - SegmentFault 思否](https://segmentfault.com/a/1190000018464527)
+> 2. [GitHub - andreafrancia/trash-cli: Command line interface to the freedesktop.org trashcan.](https://github.com/andreafrancia/trash-cli)
+
+</br>
+17.定期清空某个文件夹
+
+> 参考资料：
+> 1. [linux定时删除N天前的文件（文件夹） - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1849092)
+> 2. [command line - Removing files older than 7 days - Ask Ubuntu](https://askubuntu.com/questions/589210/removing-files-older-than-7-days)
