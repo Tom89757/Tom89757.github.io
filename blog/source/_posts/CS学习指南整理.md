@@ -31,6 +31,16 @@ tags:
 6. [UCB cs roadmap](https://hkn.eecs.berkeley.edu/courseguides)
 7. [分享各类电子书（政治、IT、科普、历史、等，97本）](https://program-think.blogspot.com/2021/05/share-books.html)
 
+### 刷题
+#### leetcode
+
+#### CodeForces
+1. [【洛谷日报#19】Codeforces游玩攻略 - 知乎](https://zhuanlan.zhihu.com/p/42106537)
+2. [【洛谷日报#116】Codeforces快速精通 - 知乎](https://zhuanlan.zhihu.com/p/71674596)
+3. [sublime text 4 刷题一键配置FastOlympicCoding FiraCode gcc-11.2.0(c++20)_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1tT4y1e7nG)
+4. [算法竞赛编程变量命名指南 - 知乎](https://zhuanlan.zhihu.com/p/104963169)
+5. [CODELF](https://unbug.github.io/codelf/)：变量命名搜索
+
 ### 开拓视野
 1. [《计算的极限》等文章索引](https://fwjmath.wordpress.com/recommended-list/)
 2. [The Architecture of Open Source Applications](https://aosabook.org/en/index.html)
