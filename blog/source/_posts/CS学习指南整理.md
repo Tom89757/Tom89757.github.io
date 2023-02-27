@@ -33,6 +33,15 @@ tags:
 
 ### 刷题
 #### leetcode
+1. [leetcode/README.md at main · doocs/leetcode · GitHub](https://github.com/doocs/leetcode/blob/main/solution/README.md)：leetcode按序排列
+2. [leetcode/CONTEST_README.md at main · doocs/leetcode · GitHub](https://github.com/doocs/leetcode/blob/main/solution/CONTEST_README.md)：leetcode周赛
+3. [leetcode/README.md at main · doocs/leetcode · GitHub](https://github.com/doocs/leetcode/blob/main/lcof/README.md)：剑指offer第二版系列
+4. [leetcode/README.md at main · doocs/leetcode · GitHub](https://github.com/doocs/leetcode/blob/main/lcof2/README.md)：剑指offer (专项突击版)
+5. [leetcode/README.md at main · doocs/leetcode · GitHub](https://github.com/doocs/leetcode/blob/main/lcci/README.md)：程序员面试金典第6版
+6. [Roadmap](https://neetcode.io/roadmap)：leetcode刷题Roadmap
+7. [力扣](https://leetcode.cn/progress/)：个人leetcode做题分析，用于生成anki card
+8. [johnkram - 力扣（LeetCode）](https://leetcode.cn/u/johnkram/)：清华汪乐平主页，可以学习leetcode代码风格
+
 
 #### CodeForces
 1. [【洛谷日报#19】Codeforces游玩攻略 - 知乎](https://zhuanlan.zhihu.com/p/42106537)
@@ -40,6 +49,8 @@ tags:
 3. [sublime text 4 刷题一键配置FastOlympicCoding FiraCode gcc-11.2.0(c++20)_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1tT4y1e7nG)
 4. [算法竞赛编程变量命名指南 - 知乎](https://zhuanlan.zhihu.com/p/104963169)
 5. [CODELF](https://unbug.github.io/codelf/)：变量命名搜索
+6. [Personal submissions - Codeforces](https://codeforces.com/submissions/jiangly)：jiangly submissions主页，可以查看其submissions学习代码风格
+7. [Personal submissions - Codeforces](https://codeforces.com/submissions/tourist)：tourist submissions主页
 
 ### 开拓视野
 1. [《计算的极限》等文章索引](https://fwjmath.wordpress.com/recommended-list/)
