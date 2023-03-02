@@ -223,3 +223,16 @@ sudo apt-get -y autoremove
 > 参考资料：
 > 1. [linux定时删除N天前的文件（文件夹） - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1849092)
 > 2. [command line - Removing files older than 7 days - Ask Ubuntu](https://askubuntu.com/questions/589210/removing-files-older-than-7-days)
+
+</br>
+18.Ubuntu配置ssh免输密码：
+- `ssh-keygen`：在本地机器上生成密钥对，`id_rsa.pub`和`id_rsa`。在`~/.ssh/`目录下。更改`id_rsa` 私钥权限，`chmod 600 id_rsa`。
+- `ssh-copy-id -i ~/.ssh/id_rsa.pub user@host`：将本地公钥`id_rsa.pub`写入远程host的`~/.ssh`目录下的`authorized_keys`文件。如果远程host没有`.ssh`目录手动进行创建。更改`authorized_keys`文件权限，`chmod 755 authorized_keys`。
+- 尝试本地登录，如果无法免密码登录，更高远程host上`/home/user`目录权限，`chmod 700 /home/user`。
+> 参考资料：
+> 1. [Getting Started With SSH in Linux](https://linuxhandbook.com/ssh-basics/)
+> 2. [How to Add SSH Public Key to Server](https://linuxhandbook.com/add-ssh-public-key-to-server/)
+> 3. [Why am I still getting a password prompt with ssh with public key authentication? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/36540/why-am-i-still-getting-a-password-prompt-with-ssh-with-public-key-authentication)
+> 4. [ssh-copy-id succeeded, but still prompt password input - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/407394/ssh-copy-id-succeeded-but-still-prompt-password-input)
+
+

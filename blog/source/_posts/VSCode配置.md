@@ -247,3 +247,9 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 1. [C++ programming with Visual Studio Code](https://code.visualstudio.com/docs/languages/cpp)
 > 2. [MSYS2](https://www.msys2.org/)
 > 3. [Package: mingw-w64-x86_64-gcc - MSYS2 Packages](https://packages.msys2.org/package/mingw-w64-x86_64-gcc)
+
+### VSCode ssh免密码连接远程服务器
+
+> 参考资料：
+> 1. [Developing on Remote Machines using SSH and Visual Studio Code](https://code.visualstudio.com/docs/remote/ssh)
+> 2. [Visual Studio Code Remote SSH Tips and Tricks](https://code.visualstudio.com/blogs/2019/10/03/remote-ssh-tips-and-tricks)
