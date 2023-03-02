@@ -234,5 +234,6 @@ sudo apt-get -y autoremove
 > 2. [How to Add SSH Public Key to Server](https://linuxhandbook.com/add-ssh-public-key-to-server/)
 > 3. [Why am I still getting a password prompt with ssh with public key authentication? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/36540/why-am-i-still-getting-a-password-prompt-with-ssh-with-public-key-authentication)
 > 4. [ssh-copy-id succeeded, but still prompt password input - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/407394/ssh-copy-id-succeeded-but-still-prompt-password-input)
+> 5. [VSCode远程连接服务器 免密登录（ssh key） | 烟雨平生](https://i007it.com/2022/07/14/VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/)
 
 
