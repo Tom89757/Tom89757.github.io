@@ -235,4 +235,9 @@ sudo apt-get -y autoremove
 > 3. [Why am I still getting a password prompt with ssh with public key authentication? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/36540/why-am-i-still-getting-a-password-prompt-with-ssh-with-public-key-authentication)
 > 4. [ssh-copy-id succeeded, but still prompt password input - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/407394/ssh-copy-id-succeeded-but-still-prompt-password-input)
 
-
+</br>
+19.vnc viewer和vnc server搭配使用。
+- 先使用`vncserver`在远程服务器上生成对应端口号
+- 在本地机器上建立`host:port`的连接
+> 参考资料：
+> 1. [linux中如何开启vnc服务端口,Linux下vnc配置及启动_听亭亭的博客-CSDN博客](https://blog.csdn.net/weixin_30125993/article/details/116636925?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-116636925-blog-107807058.pc_relevant_3mothn_strategy_recovery&spm=1001.2101.3001.4242.2&utm_relevant_index=4)
