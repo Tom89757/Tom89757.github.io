@@ -202,7 +202,7 @@ b3 = b[0].unsqueeze(0) # (1, 1, 320, 320)
 > 参考资料：
 > 1. [python - Tensorflow: How to slice tensor with number of dimension not changed? - Stack Overflow](https://stackoverflow.com/questions/51670073/tensorflow-how-to-slice-tensor-with-number-of-dimension-not-changed)
 
-</br>1
+</br>
 15.报错`RuntimeError: Function 'SqrtBackward0' returned nan values in its 0th output.`
 解决方案：
 ```python
@@ -212,3 +212,15 @@ grad_mag = torch.sqrt(grad_x_r**2 + grad_y_r**2 + 1e-8)
 ```
 > 参考资料：
 > 1. [RuntimeError: Function 'SqrtBackward' returned nan values in its 0th output - autograd - PyTorch Forums](https://discuss.pytorch.org/t/runtimeerror-function-sqrtbackward-returned-nan-values-in-its-0th-output/48702/5)
+
+</br>
+16.报错`ImportError: cannot import name 'container_abcs' from 'torch._six'`。
+原因：torch版本问题，本人版本为`1.10`。
+解决方案：
+```python
+from torch._six import container_abcs
+# 改为
+import collections.abc as container_abcs
+```
+> 参考资料：
+> 1. [Site Unreachable](https://stackoverflow.com/questions/70193443/colab-notebook-cannot-import-name-container-abcs-from-torch-six)

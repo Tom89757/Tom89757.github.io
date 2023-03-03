@@ -708,9 +708,45 @@ This is an Ordered Dict:
 > 1. [OrderedDict in Python](https://prutor.ai/ordereddict-in-python/#:~:text=The%20only%20difference%20between%20dict,inserted%20is%20remembered%20by%20OrderedDict.)
 > 2. [python - Difference between dictionary and OrderedDict - Stack Overflow](https://stackoverflow.com/questions/34305003/difference-between-dictionary-and-ordereddict)
 
+</br>
+17.遍历argparse的`parse_args()`：
+```python
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--a', type=int, default=55)
+parser.add_argument('--b', type=int, default=66)
+parser.add_argument('--c', type=int, default=77)
 
+args = parser.parse_args()
+print(args)
+# vars() 函数返回对象object的属性和属性值的字典对象。
+for arg in vars(args):
+    print(arg, ':', getattr(args, arg))  # getattr() 函数是获取args中arg的属性值
+```
+> 参考资料：
+> 1. [python遍历argparse的parse_args()_python 遍历args_集电极的博客-CSDN博客](https://blog.csdn.net/qq_38463737/article/details/121103702)
 
+</br>
+18.python代码可以正常运行，但是debug时出现`No Module named 'mmseg'`。
+原因：在代码文件开头添加了上层路径
+```python
+# test.py
+import sys
+sys.path.insert(0, "..")
+import mmseg
+```
+在代码直接运行时，运行`python test.py`，可以从上层路径直接导入`mmseg`；但是在进行debug时，运行`pythn tools/test.py`，路径相对关系发生变化。无法正常导入`mmseg`。
+解决方案：
+```python
+# test.py
+import sys 
+sys.path.insert(0, "..")
+sys.path.insert(0, ".") # 添加本地路径
+import mmseg
+```
+> 参考资料：
+> 1. [https://youtrack.jetbrains.com/issue/PY-43911/run-my-python-code-works-but-debugging-has-problems-ModuleNotFoundError-No-module-named-MaryPackage](https://youtrack.jetbrains.com/issue/PY-43911/run-my-python-code-works-but-debugging-has-problems-ModuleNotFoundError-No-module-named-MaryPackage)
 
 
 
