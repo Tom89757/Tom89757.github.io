@@ -748,6 +748,22 @@ import mmseg
 > 参考资料：
 > 1. [https://youtrack.jetbrains.com/issue/PY-43911/run-my-python-code-works-but-debugging-has-problems-ModuleNotFoundError-No-module-named-MaryPackage](https://youtrack.jetbrains.com/issue/PY-43911/run-my-python-code-works-but-debugging-has-problems-ModuleNotFoundError-No-module-named-MaryPackage)
 
+</br>
+19.在对python文件进行调试时，有将下面的字典类型变量复制、保存到txt文件并转为更易读的json格式的需求：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230304125946.png)
+步骤：
+1. 右键上述cfg局部变量，并copy value，保存到txt文件`cfg.txt`。
+2. 从txt文件中读取，或者直接复制给变量赋值
+3. 使用`json`库将其保存至`.json`文件：
+```python
+import json
 
+x = txt_content # 复制赋值或从txt读取
+with open("cfg.json", 'w') as outfile:
+	json.dump(x, outfile, indent=2)
+```
+> 参考资料：
+> 1. [python - How to Format dict string outputs nicely - Stack Overflow](https://stackoverflow.com/questions/3733554/how-to-format-dict-string-outputs-nicely)
+> 2. [python - How do I write JSON data to a file? - Stack Overflow](https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file)
 
 
