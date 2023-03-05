@@ -62,7 +62,7 @@ done
 > 1. [Fetching Title#90mq](https://www.runoob.com/linux/linux-comm-awk.html)
 
 </br>
-6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分：
+6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分（向后查找，回溯）：
 ```bash
 sed 's/hello \(world\)/hi \1/' file.txt
 ```
