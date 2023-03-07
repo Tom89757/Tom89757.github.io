@@ -4,8 +4,8 @@ nmap L $
 "map j j to Esc"
 imap jj <Esc>
 " Have j and k navigate visual lines rather than logical ones
-" nmap j gj
-" nmap k gk
+nmap j gj
+nmap k gk
 
 " Yank to system clipboard"
 set clipboard=unnamed
@@ -23,6 +23,6 @@ set clipboard=unnamed
 
 " imap <C-[> <nop>
 " imap <C-]> <nop>
-nmap <C-[> <C-d>
-imap <C-[> <C-d>
+" nmap <C-[> <C-d>
+" imap <C-[> <C-d>
 
