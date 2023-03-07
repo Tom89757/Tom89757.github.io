@@ -285,3 +285,8 @@ edge1 = torch.mul(edge, mask_final).numpy()
 > 参考资料：
 > 1. [随笔1: PyTorch中矩阵乘法总结 - 知乎](https://zhuanlan.zhihu.com/p/100069938)
 > 2. [torch.Tensor的4种乘法_torch tensor 相乘_da_kao_la的博客-CSDN博客](https://blog.csdn.net/da_kao_la/article/details/87484403)
+
+</br>
+19.报错`RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! when resuming training`
+> 参考资料：
+> 1. [python - RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! when resuming training - Stack Overflow](https://stackoverflow.com/questions/66091226/runtimeerror-expected-all-tensors-to-be-on-the-same-device-but-found-at-least)
