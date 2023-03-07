@@ -223,4 +223,46 @@ from torch._six import container_abcs
 import collections.abc as container_abcs
 ```
 > 参考资料：
-> 1. [Site Unreachable](https://stackoverflow.com/questions/70193443/colab-notebook-cannot-import-name-container-abcs-from-torch-six)
+> 1. [Colab Notebook: Cannot import name 'container_abcs' from 'torch._six'](https://stackoverflow.com/questions/70193443/colab-notebook-cannot-import-name-container-abcs-from-torch-six)
+
+</br>
+17.高效的tensor张量矩阵阈值过滤操作：
+```python
+>>> x = torch.randn(3, 4)
+>>> x
+tensor([[ 0.3552, -2.3825, -0.8297,  0.3477],
+        [-1.2035,  1.2252,  0.5002,  0.6248],
+        [ 0.1307, -2.0608,  0.1244,  2.0139]])
+>>> mask = x.ge(0.5)
+>>> mask
+tensor([[False, False, False, False],
+        [False, True, True, True],
+        [False, False, False, True]])
+>>> torch.masked_select(x, mask)
+tensor([ 1.2252,  0.5002,  0.6248,  2.0139])
+```
+`torch.masked_select(x, mask)`和`x[mask]`作用相似，可能的差别见参考资料3。但二者返回的tensor均为一维张量，而不是和输入的x和mask相同的shape。
+> 参考资料：
+> 1. [torch.masked_select — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.masked_select.html)
+> 2. [PyTorch中的masked_select选择函数 - 知乎](https://zhuanlan.zhihu.com/p/348035584)
+> 3. [Please add "dim" feature for function "torch.masked_select" · Issue #48830 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/48830)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

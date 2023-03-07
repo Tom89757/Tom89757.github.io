@@ -468,7 +468,27 @@ imageio.imwrite(save_path + name, pred_edge_kk)
 </br>
 
 20.tensor和numpy之间的转换：
+- numpy to tensor: 
+```python
+import cv2 
+import torch
+mask = cv2.imread('./mask.png', 0)
+mask = torch.from_numpy(mask)
+```
+- tensor to numpy:
+```python
+import torch 
+import cv2
+# this is just my embedding matrix which is a Torch tensor object
+embedding = learn.model.u_weight
 
+embedding_list = list(range(0, 64382))
+
+input = torch.cuda.LongTensor(embedding_list)
+tensor_array = embedding(input)
+# the output of the line below is a numpy array
+tensor_array.cpu().detach().numpy()
+```
 > 参考资料：
 >
 > 1. [RuntimeError: Can only calculate the mean of floating types. Got Byte instead. for mean += images_data.mean(2).sum(0)](https://stackoverflow.com/questions/64358283/runtimeerror-can-only-calculate-the-mean-of-floating-types-got-byte-instead-f)
