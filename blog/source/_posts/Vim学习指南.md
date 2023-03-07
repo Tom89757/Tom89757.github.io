@@ -223,22 +223,40 @@ dap.configurations.java = {
 > 参考资料：
 > 1. [Vim模式在中文输入法下的问题 - 建议反馈 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/11234/2)
 
+</br>
+7.对Obsidian的`.obsidian.vimrc`文件配置`Ctrl`键（对Obsidian而言需要安装Vimrc Support插件）
+```.vimrc
+"set some Ctrl- shortcuts"
+nmap <C-[> <C-d> #映射为outdent，不能生效
+imap <C-[> <C-d> #映射伪outdent，不能生效
+```
+PS：
+> 参考资料：
+> 1. [key bindings - How to disable Ctrl key? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/4060/how-to-disable-ctrl-key)
+> 2. [key bindings -  Vim Stack Exchange](https://vi.stackexchange.com/questions/3225/disable-esc-but-keep-c/3570#3570)
+> 3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
+> 4. [Can't map the Tab key w/o Mod Keys · Issue #48 · esm7/obsidian-vimrc-support · GitHub](https://github.com/esm7/obsidian-vimrc-support/issues/48) 
+> 5. [vim tips and tricks: indenting](https://www.cs.swarthmore.edu/oldhelp/vim/indenting.html#:~:text=To%20indent%20the%20current%20line,by%20sw%20(repeat%20with%20.%20)&text=then%20try%20hitting%20the%20F5,or%20just%20%3Aset%20paste%20).)
 
+</br>
+8.设置vim中的yy可以copy to clipboard：
+- Obsidian配置，在`.obsidian.vimrc`文件中添加：
+```.vimrc
+"Yank to system clipboard"
+set clipboard=unnamed #重启后生效
+```
+- VSCode配置，在settings中搜索`vim clip`点击生效：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/1.png)
+> 参考资料：
+>1. [VS code VIM extension copy and paste - Stack Overflow](https://stackoverflow.com/questions/58306002/vs-code-vim-extension-copy-and-paste)
+>2. [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim)
+>3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</br>
+9.Vim中各种map模式nmap/imap等详解：
+> 参考资料：
+> 1. [What is the difference between the remap, noremap, nnoremap and vnoremap mapping commands in Vim? - Stack Overflow](https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping)
+> 2. [key bindings - What is the difference between unmap and mapping to <Nop>? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16392/what-is-the-difference-between-unmap-and-mapping-to-nop?noredirect=1)
 
 
 

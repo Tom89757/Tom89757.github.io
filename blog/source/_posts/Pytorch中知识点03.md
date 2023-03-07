@@ -242,27 +242,39 @@ tensor([[False, False, False, False],
 tensor([ 1.2252,  0.5002,  0.6248,  2.0139])
 ```
 `torch.masked_select(x, mask)`和`x[mask]`作用相似，可能的差别见参考资料3。但二者返回的tensor均为一维张量，而不是和输入的x和mask相同的shape。
+若想保持原始tensor的尺寸，可以进行如下操作：
+```python
+x = torch.randn(3,4)
+mask = torch.zeros(x.shape)
+mask[x>0.5] = 1
+result = torch.mul(x, mask)
+```
 > 参考资料：
 > 1. [torch.masked_select — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.masked_select.html)
 > 2. [PyTorch中的masked_select选择函数 - 知乎](https://zhuanlan.zhihu.com/p/348035584)
 > 3. [Please add "dim" feature for function "torch.masked_select" · Issue #48830 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/48830)
 
+</br>
+18.PyTorch中的矩阵乘法操作：
+点乘：矩阵逐个元素（element-wise）乘法
+```python
+import torch
+import cv2
+mask = cv2.imread('./mask.png', 0)
+mask = torch.from_numpy(mask)
 
+edge = cv2.imread('./edge.png', 0)
+edge = torch.from_numpy(edge)
 
+mask1 = mask / 255.0
 
+mask_region = mask1.ge(0.5)
+mask_final = torch.zeros(edge.shape)
+mask_final[mask_region==True] = 1
+mask_final[mask_region==False] = 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+edge1 = torch.mul(edge, mask_final).numpy()
+```
+> 参考资料：
+> 1. [随笔1: PyTorch中矩阵乘法总结 - 知乎](https://zhuanlan.zhihu.com/p/100069938)
+> 2. [torch.Tensor的4种乘法_torch tensor 相乘_da_kao_la的博客-CSDN博客](https://blog.csdn.net/da_kao_la/article/details/87484403)

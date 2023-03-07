@@ -35,3 +35,33 @@ print(type(df))
 > 参考资料：
 > 1. [How to Convert NumPy Array to Pandas DataFrame – Data to Fish](https://datatofish.com/numpy-array-to-pandas-dataframe/)
 
+</br>
+3.numpy矩阵乘法：
+```python
+>>> import numpy as np
+>>> a = np.array([[1,1],[1,1]])
+>>> a
+array([[1, 1],
+       [1, 1]])
+>>> b = np.array([[1,2],[3,4]])
+>>> b
+array([[1, 2],
+       [3, 4]])
+>>> np.multiply(a,b)
+array([[1, 2],
+       [3, 4]])
+>>> np.dot(a,b)
+array([[4, 6],
+       [4, 6]])
+```
+>参考资料：
+>1. [NumPy矩阵乘法](http://c.biancheng.net/numpy/matrix-multiplication.html)
+
+
+
+
+
+
+
+
+
