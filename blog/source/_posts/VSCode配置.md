@@ -253,3 +253,10 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 参考资料：
 > 1. [Developing on Remote Machines using SSH and Visual Studio Code](https://code.visualstudio.com/docs/remote/ssh)
 > 2. [Visual Studio Code Remote SSH Tips and Tricks](https://code.visualstudio.com/blogs/2019/10/03/remote-ssh-tips-and-tricks)
+
+
+### VSCode跳转配置
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230312161241.png)
+通过勾选上述选项，可以实现在当前文件窗口更改代码，而无需跳转。
+> 参考资料：
+> 1. [VSCode #46 - A Better Code Folding Extension](https://mailchi.mp/vscode/46)

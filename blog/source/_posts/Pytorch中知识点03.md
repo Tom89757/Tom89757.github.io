@@ -290,3 +290,60 @@ edge1 = torch.mul(edge, mask_final).numpy()
 19.报错`RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! when resuming training`
 > 参考资料：
 > 1. [python - RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! when resuming training - Stack Overflow](https://stackoverflow.com/questions/66091226/runtimeerror-expected-all-tensors-to-be-on-the-same-device-but-found-at-least)
+
+</br>
+20.报错`Could not load dynamic library 'libnvinfer_plugin.so.7`。
+解决方案：建立从`libvinfer`版本7到版本8的symbolic link
+```python
+# the follwoing path will be different for you - depending on your install method
+$ cd env/lib/python3.10/site-packages/tensorrt
+
+# create symbolic links
+$ ln -s libnvinfer_plugin.so.8 libnvinfer_plugin.so.7
+$ ln -s libnvinfer.so.8 libnvinfer.so.7
+
+# add tensorrt to library path
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/env/lib/python3.10/site-packages/tensorrt/
+```
+> 参考资料：
+> 1. [tensorflow - Could not load dynamic library 'libnvinfer.so.7' - Stack Overflow](https://stackoverflow.com/questions/74956134/could-not-load-dynamic-library-libnvinfer-so-7)
+
+</br>
+21.报错`tensorflow.python.framework.errors_impl.PermissionDeniedError: : /storage/FT/pth/SCWSSOD/SCWSSOD28/events.out.tfevents.1678606756.node4.11263.0; Permission denied`
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230312170110.png)
+解决方案：更改`/storage/FT/pth/SCWSSOD/SCWSSOD28`文件夹的权限
+```bash
+chmod -R 777 /storage/FT/pth/SCWSSOD/SCWSSOD28
+```
+> 参考资料：
+> 1. [tensorflow.python.framework.errors_impl.PermissionDeniedError: data · Issue #6393 · tensorflow/tensorflow · GitHub](https://github.com/tensorflow/tensorflow/issues/6393)
+> 2. [tensorflow.python.framework.errors_impl.PermissionDeniedError: data · Issue #6393 · tensorflow/tensorflow · GitHub](https://github.com/tensorflow/tensorflow/issues/6393)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
