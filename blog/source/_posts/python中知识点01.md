@@ -766,4 +766,29 @@ with open("cfg.json", 'w') as outfile:
 > 1. [python - How to Format dict string outputs nicely - Stack Overflow](https://stackoverflow.com/questions/3733554/how-to-format-dict-string-outputs-nicely)
 > 2. [python - How do I write JSON data to a file? - Stack Overflow](https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file)
 
-
+</br>
+20.在python中，有时有对tuple或list中的元素值进行逐个比较（不是引用）的需求，此时需要引入`operator`模块，并调用`eq`函数：
+```python
+>> import operator
+>> operator.eq('hello', 'name')
+False
+>> operator.eq('hello', 'hello')
+True
+```
+`operator`中还存在其它对象比较函数：
+```python
+operator.lt(a, b)
+operator.le(a, b)
+operator.eq(a, b)
+operator.ne(a, b)
+operator.ge(a, b)
+operator.gt(a, b)
+operator.__lt__(a, b)
+operator.__le__(a, b)
+operator.__eq__(a, b)
+operator.__ne__(a, b)
+operator.__ge__(a, b)
+operator.__gt__(a, b)
+```
+> 参考资料：
+> 1. [Python Tuple(元组) cmp()方法 | 菜鸟教程](https://www.runoob.com/python/att-tuple-cmp.html)
