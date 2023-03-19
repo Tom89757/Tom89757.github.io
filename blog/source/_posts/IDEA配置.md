@@ -29,3 +29,22 @@ tags:
 如下图所示：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220916000324.png)
 有时上图中的Compile output路径无法通过浏览目录指定，此时可以直接复制目录完整路径到该选项，如上图中的`D:\Desktop\CS61B\out`，应用后重启项目即可。
+
+### 对ideaVim中的键进行重新映射
+1. 在`C:\Users\user\`目录下创建`.ideavimrc`文件。
+2. 在其中添加如下内容：
+```python
+" I like using H and L for beginning/end of line
+:nmap H ^
+:nmap L $
+"map j j to Esc"
+imap jj <Esc>
+" Have j and k navigate visual lines rather than logical ones
+:nmap j gj
+:nmap k gk
+
+" Yank to system clipboard"
+:set clipboard=unnamed
+```
+> 参考资料：
+> 1. [vim - Intellij IdeaVim change keys - Stack Overflow](https://stackoverflow.com/questions/10149187/intellij-ideavim-change-keys)
