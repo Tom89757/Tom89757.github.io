@@ -34,7 +34,7 @@ tags:
 1. 在`C:\Users\user\`目录下创建`.ideavimrc`文件。
 2. 在其中添加如下内容：
 ```python
-" I like using H and L for beginning/end of line
+" I like ujsing H and L for beginning/end of line
 :nmap H ^
 :nmap L $
 "map j j to Esc"
@@ -48,3 +48,6 @@ imap jj <Esc>
 ```
 > 参考资料：
 > 1. [vim - Intellij IdeaVim change keys - Stack Overflow](https://stackoverflow.com/questions/10149187/intellij-ideavim-change-keys)
+
+### IDEA插件推荐
+1. IdeaVimExtension：在切换到normal模式时，自动切换为英文输入
