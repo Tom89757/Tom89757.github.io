@@ -85,3 +85,11 @@ curl https://www.youtube.com | head -1
 > 1. [在cmd中为命令设置别名以及启动cmd时自动执行bat](https://www.cnblogs.com/fstang/archive/2013/04/06/3002006.html)
 > 2. [window alias给cmd命令起别名](https://www.cnblogs.com/onelikeone/p/10783497.html)
 > 3. [Windows版Grep – findstr示例](https://blog.csdn.net/cyan20115/article/details/106551191)
+
+### Scoop
+Scoop是Windows系统下一款流行的包管理工具
+推荐包：
+1. [GitHub - solidiquis/erdtree: A multi-threaded file-tree visualizer and disk usage analyzer.](https://github.com/solidiquis/erdtree)：目录结构树状展示
+2. [GitHub - Slackadays/Clipboard: Your external brain that remembers anything, anytime, anywhere. Save time and effort the 𝗲𝗮𝘀𝘆 way! 😄](https://github.com/Slackadays/Clipboard)：实现终端复制、剪切和粘贴。
+> 参考资料：
+> 1. [Scoop](https://scoop.sh/)

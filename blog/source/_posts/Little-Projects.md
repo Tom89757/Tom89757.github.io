@@ -16,5 +16,5 @@ tags:
 4. [the-super-tiny-compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)：使用JavaScript实现的一个小型的编译器，其包含一个现代编译器的所有主要组件。有对应的解析文章：[有史以来最小的编译器源码解析](https://segmentfault.com/a/1190000016402699)
 5. [OneFile](https://github.com/521xueweihan/OneFile)：该项目整理了可以使用单个文件实现的小型项目或者功能。
 6. [HelloGitHub｜一个文件的开源项目](https://hellogithub.com/onefile)：同样为OneFile项目。
-
+7. [Textual tutorial - build a TODO app in Python](https://mathspp.com/blog/textual-tutorial-build-a-todo-app-in-python)：使用Python构建一个TODO app。
 ...持续更新中

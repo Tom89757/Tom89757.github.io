@@ -21,7 +21,8 @@ tags:
 9. [Neovim IDE from Scratch](https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&ab_channel=chris%40machine)：Neovim配置视频教程
 10. [LunarVim | LunarVim](https://www.lunarvim.org/)：neovim的变种，便于配置
 11. [Home | SpaceVim](https://spacevim.org/)：neovim的变种，便于配置
-12. [Interactive Vim tutorial](https://www.openvim.com/)：在线vim交互式教程。
+12. [Getting Started | AstroNvim](https://astronvim.com/)：neovim的变种，便于配置
+13. [Interactive Vim tutorial](https://www.openvim.com/)：在线vim交互式教程。
 
 ### 碰到的一些问题的解决方法
 1. [No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub](https://github.com/LunarVim/Neovim-from-scratch/issues/274)
