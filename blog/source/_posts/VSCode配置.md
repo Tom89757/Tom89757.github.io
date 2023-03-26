@@ -190,7 +190,26 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 > 7. [vscode + vim 全键盘操作高效搭配方案 - 知乎](https://zhuanlan.zhihu.com/p/430603620)
 > 8. [vim 文本插入 - 在光标的前面，后面，行尾，行首插入字符 - vim使用入门 | 宅学部落](https://www.zhaixue.cc/vim/vim-insert.html#:~:text=%E5%B8%B8%E7%94%A8%E7%9A%84vim%E6%8F%92%E5%85%A5%E5%91%BD%E4%BB%A4%EF%BC%9A&text=a%EF%BC%9A%E5%9C%A8%E5%BD%93%E5%89%8D%E5%85%89%E6%A0%87%E7%9A%84,%E7%9A%84%E7%BB%93%E5%B0%BE%E5%A4%84%E6%B7%BB%E5%8A%A0%E6%96%87%E6%9C%AC)
 > 9. [How do you avoid key binding collisions between VS Code and vscodevim? - Stack Overflow](https://stackoverflow.com/questions/62405783/how-do-you-avoid-key-binding-collisions-between-vs-code-and-vscodevim)
+> 10. [Use in Visual Studio Code (Vim extension) CAPS instead of ESC - Stack Overflow](https://stackoverflow.com/questions/48369303/use-in-visual-studio-code-vim-extension-caps-instead-of-esc)
 
+### VSCode Vim打开EasyMotion和Sneak实现文件内任意跳转
+#### Sneak
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230325225209.png)
+- `s{char}{char}`跳转到从光标开始，第一个`{char}{char}`出现的位置
+- `;`跳转到下一个出现位置，`,`跳转到上一个
+- `S{char}{char}`：反向查找，即方向相反
+#### EasyMotion
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230325225459.png)
+EasyMotion使你摆脱需要`5j`或者`5k`这样数数的麻烦。
+- `<leader><leader>w`：会使用字母的排列组合标注当前行以及之后的行的单词。
+标注前：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230325225622.png)
+标注后：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230325225650.png)
+按下对应键即可实现跳转。
+- `<leader><leader>f'`，EasyMotion将会标注所有`'`字符在当前行和之后行出现的位置。
+> 参考资料：
+> 1. [Moving Even Faster with Vim Surround and EasyMotion | Barbarian Meets Coding](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/moving-even-faster-with-vim-sneak-and-easymotion/)
 
 ### VSCode配置在终端和编辑器之间切换的快捷键
 > 参考资料：
@@ -238,6 +257,7 @@ PS：上述的GitBash不要添加空格使用"Git Bash"，会导致配置无法�
 
 
 ### VSCode插件推荐
+1. [Set up CodeGPT in Visual Studio Code](https://blog.openreplay.com/set-up-codegpt-in-visual-studio-code/)
 > 参考资料：
 > 1. [有什么推荐的vs code插件？ - 知乎](https://www.zhihu.com/question/380933740/answer/1554048933)
 
