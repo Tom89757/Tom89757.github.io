@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221010164417.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221018162553.png">
 <meta property="article:published_time" content="2022-10-06T09:06:19.000Z">
-<meta property="article:modified_time" content="2023-01-17T18:57:50.096Z">
+<meta property="article:modified_time" content="2023-03-14T04:18:41.373Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Pytorch">
 <meta property="article:tag" content="python">
@@ -166,7 +166,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -177,7 +177,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -263,7 +263,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-18 02:57:50" itemprop="dateModified" datetime="2023-01-18T02:57:50+08:00">2023-01-18</time>
+      <time title="修改时间：2023-03-14 12:18:41" itemprop="dateModified" datetime="2023-03-14T12:18:41+08:00">2023-03-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,14 +282,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>10 分钟</span>
     </span>
 </div>
 
@@ -358,6 +358,127 @@
 解决方法：`loss.mean().backward()`。
 > 参考资料：
 > 1. [Loss.backward() raises error 'grad can be implicitly created only for scalar outputs' - autograd - PyTorch Forums](https://discuss.pytorch.org/t/loss-backward-raises-error-grad-can-be-implicitly-created-only-for-scalar-outputs/12152/2)
+</br>
+7. Pytorch创建随机张量和创建张量：
+- 随机张量均匀分布
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x1 = torch.rand((<span class="number">4</span>, <span class="number">256</span>, <span class="number">80</span>, <span class="number">80</span>))</span><br><span class="line">x2 = torch.rand((<span class="number">4</span>, <span class="number">512</span>, <span class="number">40</span>, <span class="number">40</span>))</span><br><span class="line">x3 = torch.rand((<span class="number">4</span>, <span class="number">1024</span>, <span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line">x4 = torch.rand((<span class="number">4</span>, <span class="number">2048</span>, <span class="number">10</span>, <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+- 随机张量标准正态分布
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn((<span class="number">4</span>, <span class="number">3</span>, <span class="number">320</span>, <span class="number">320</span>))</span><br></pre></td></tr></table></figure>
+- 全部为1：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = torch.ones(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+- 全部为0：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = torch.zeros(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [PyTorch 常用方法总结1：生成随机数Tensor的方法汇总（标准分布、正态分布……） - 知乎](https://zhuanlan.zhihu.com/p/31231210)
+> 2. [torch.ones — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.ones.html)
+> 3. [torch.ones_like — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.ones_like.html)
+> 4. [torch.zeros — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.zeros.html)
+> 5. [torch.zeros_like — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.zeros_like.html)
+</br>
+8.BCE Loss vs Cross Entropy：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://discuss.pytorch.org/t/bce-loss-vs-cross-entropy/97437">BCE Loss vs Cross Entropy - vision - PyTorch Forums</a></li>
+<li>[Learning Day 57/Practical 5: Loss function — CrossEntropyLoss vs BCELoss in Pytorch; Softmax vs sigmoid; Loss calculation | by De Jun Huang | dejunhuang | Medium](<a target="_blank" rel="noopener" href="https://medium.com/dejunhuang/learning-day-57-practical-5-loss-function-crossentropyloss-vs-bceloss-in-pytorch-softmax-vs-bd866c8a0d23#:~:text=Difference%20in%20purpose%20(in%20practice,probability%2C%20you%20should%20use%20BCE.&amp;text=We%20cannot%20use%20sigmoid%20for,CrossEntropyLoss%20as%20the%20loss%20function.)">https://medium.com/dejunhuang/learning-day-57-practical-5-loss-function-crossentropyloss-vs-bceloss-in-pytorch-softmax-vs-bd866c8a0d23#:~:text=Difference in purpose (in practice,probability%2C you should use BCE.&amp;text=We cannot use sigmoid for,CrossEntropyLoss as the loss function.)</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html">BCELoss — PyTorch 1.13 documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">CrossEntropyLoss — PyTorch 1.13 documentation</a></li>
+</ol>
+</blockquote>
+</br>
+9.张量最大值和最小值：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 最大</span></span><br><span class="line">x.<span class="built_in">max</span>()</span><br><span class="line"><span class="comment"># 最小</span></span><br><span class="line">x.<span class="built_in">min</span>()</span><br></pre></td></tr></table></figure>
+</br>
+10.维度扩充、复制和压缩：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 原始tensor x</span></span><br><span class="line">x = torch.randn((<span class="number">366</span>, <span class="number">400</span>)) <span class="comment"># shape: 366, 400</span></span><br><span class="line"><span class="comment"># 扩充维度</span></span><br><span class="line">x = x.unsqueeze(<span class="number">0</span>) <span class="comment"># shape: 1, 366, 400</span></span><br><span class="line"><span class="comment"># 复制通道</span></span><br><span class="line">x = x.repeat(<span class="number">3</span>, <span class="number">1</span>, <span class="number">1</span>) <span class="comment"># shape: 3, 366, 400</span></span><br><span class="line"><span class="comment"># 压缩维度</span></span><br><span class="line">x = x.squeeze(<span class="number">0</span>) <span class="comment"># shape: 3, 366, 400 不能压缩非1的维度</span></span><br><span class="line">x = torch.randn((<span class="number">1</span>, <span class="number">366</span>, <span class="number">400</span>))</span><br><span class="line">x = x.squeeze(<span class="number">0</span>) <span class="comment"># shape: 366, 400</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [记录一个Tensor操作——扩充维度+复制 - 知乎](https://zhuanlan.zhihu.com/p/442263715)
+</br>
+11.在Module中的如下操作报如下错误：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gaussian_2D = get_gaussian_kernel(k_gaussian, mu, sigma)</span><br><span class="line">        self.gaussian_filter = nn.Conv2d(in_channels=<span class="number">1</span>,</span><br><span class="line">                                         out_channels=<span class="number">1</span>,</span><br><span class="line">                                         kernel_size=k_gaussian,</span><br><span class="line">                                         padding=k_gaussian // <span class="number">2</span>,</span><br><span class="line">                                         bias=<span class="literal">False</span>)</span><br><span class="line">self.gaussian_filter.weight[:] = torch.from_numpy(gaussian_2D)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Leaf variable was used in an inplace operation</span><br></pre></td></tr></table></figure>
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230218224821.png)
+解决方案：注释掉151行
+> 参考资料：
+> 1. [Leaf variable was used in an inplace operation - PyTorch Forums](https://discuss.pytorch.org/t/leaf-variable-was-used-in-an-inplace-operation/308)
+</br>
+12.在Module的batch上面迭代：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">	B, C, H, W = x.shape</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(B):</span><br><span class="line">		xi = x[i, ...][<span class="literal">None</span>, ...]</span><br><span class="line">		xi = self.net(xi)</span><br></pre></td></tr></table></figure>
+</br>
+13.对多个Tensor进行join。有两种方式：
+- `torch.cat((tens_1, tens_2, -, tens_n), dim=0, *, out=None)`：在相同的dimension上concatenate多个tensor：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x1 = torch.randn((<span class="number">1</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># x1.shape: (1,3,320,320)</span></span><br><span class="line">x2 = torch.randn((<span class="number">1</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># x2.shape: (1,3,320,320)</span></span><br><span class="line">x = torch.cat((x1,x2), dim=<span class="number">0</span>) <span class="comment"># x.shape: (2,3,320,320)</span></span><br></pre></td></tr></table></figure>
+- `torch.stack((tens_1, tens_2, -, tens_n), dim=0, *, out=None)`：在一个新的dimension上concatenate一个tensor序列，tensor需要为相同的尺寸：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x1 = torch.randn((<span class="number">1</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># x1.shape: (1,3,320,320)</span></span><br><span class="line">x2 = torch.randn((<span class="number">1</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># x2.shape: (1,3,320,320)</span></span><br><span class="line">x = torch.stack((x1, x2), dim=<span class="number">0</span>) <span class="comment"># x.shape: (2,1,3,320,320)</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [How to join tensors in Pytorch](https://www.geeksforgeeks.org/how-to-join-tensors-in-pytorch/)
+> 2. [How to join tensors in Pytorch?](https://www.tutorialspoint.com/how-to-join-tensors-in-pytorch) 
+</br>
+14.Pytorch对tensor取指定维度的切片。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = torch.randn((<span class="number">16</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># (16,3,320,320)</span></span><br><span class="line">a1 = a[<span class="number">0</span>] <span class="comment"># (3,320,320)</span></span><br><span class="line">a2 = a[<span class="number">0</span>:<span class="number">1</span>] <span class="comment"># (1,3,320,320)</span></span><br><span class="line">a3 = a[<span class="literal">None</span>, <span class="number">0</span>] <span class="comment"># (1,3,320,320)</span></span><br><span class="line"></span><br><span class="line">b = torch.randn((<span class="number">1</span>, <span class="number">1</span>, <span class="number">320</span>, <span class="number">320</span>)) <span class="comment"># (1, 1, 320, 320)</span></span><br><span class="line">b1 = b[<span class="number">0</span>] <span class="comment"># (1, 320, 320)</span></span><br><span class="line">b2 = b[<span class="number">0</span>].squeeze(<span class="number">0</span>) <span class="comment"># (320, 320)</span></span><br><span class="line">b3 = b[<span class="number">0</span>].unsqueeze(<span class="number">0</span>) <span class="comment"># (1, 1, 320, 320)</span></span><br><span class="line"></span><br><span class="line">c = torch.randn((<span class="number">16</span>, <span class="number">2</span>, <span class="number">320</span>, <span class="number">320</span>)) <span class="comment"># (16, 2, 320, 320)</span></span><br><span class="line">c1 = c[:, <span class="literal">None</span>, <span class="number">1</span>, :] <span class="comment"># (16, 1, 320, 320)</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python - Tensorflow: How to slice tensor with number of dimension not changed? - Stack Overflow](https://stackoverflow.com/questions/51670073/tensorflow-how-to-slice-tensor-with-number-of-dimension-not-changed)
+</br>
+15.报错`RuntimeError: Function 'SqrtBackward0' returned nan values in its 0th output.`
+解决方案：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grad_mag = torch.sqrt(grad_x_r**<span class="number">2</span> + grad_y_r**<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 添加1e-8项</span></span><br><span class="line">grad_mag = torch.sqrt(grad_x_r**<span class="number">2</span> + grad_y_r**<span class="number">2</span> + <span class="number">1e-8</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [RuntimeError: Function 'SqrtBackward' returned nan values in its 0th output - autograd - PyTorch Forums](https://discuss.pytorch.org/t/runtimeerror-function-sqrtbackward-returned-nan-values-in-its-0th-output/48702/5)
+</br>
+16.报错`ImportError: cannot import name 'container_abcs' from 'torch._six'`。
+原因：torch版本问题，本人版本为`1.10`。
+解决方案：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch._six <span class="keyword">import</span> container_abcs</span><br><span class="line"><span class="comment"># 改为</span></span><br><span class="line"><span class="keyword">import</span> collections.abc <span class="keyword">as</span> container_abcs</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Colab Notebook: Cannot import name 'container_abcs' from 'torch._six'](https://stackoverflow.com/questions/70193443/colab-notebook-cannot-import-name-container-abcs-from-torch-six)
+</br>
+17.高效的tensor张量矩阵阈值过滤操作：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">tensor([[ <span class="number">0.3552</span>, -<span class="number">2.3825</span>, -<span class="number">0.8297</span>,  <span class="number">0.3477</span>],</span><br><span class="line">        [-<span class="number">1.2035</span>,  <span class="number">1.2252</span>,  <span class="number">0.5002</span>,  <span class="number">0.6248</span>],</span><br><span class="line">        [ <span class="number">0.1307</span>, -<span class="number">2.0608</span>,  <span class="number">0.1244</span>,  <span class="number">2.0139</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mask = x.ge(<span class="number">0.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mask</span><br><span class="line">tensor([[<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">True</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.masked_select(x, mask)</span><br><span class="line">tensor([ <span class="number">1.2252</span>,  <span class="number">0.5002</span>,  <span class="number">0.6248</span>,  <span class="number">2.0139</span>])</span><br></pre></td></tr></table></figure>
+`torch.masked_select(x, mask)`和`x[mask]`作用相似，可能的差别见参考资料3。但二者返回的tensor均为一维张量，而不是和输入的x和mask相同的shape。
+若想保持原始tensor的尺寸，可以进行如下操作：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">mask = torch.zeros(x.shape)</span><br><span class="line">mask[x&gt;<span class="number">0.5</span>] = <span class="number">1</span></span><br><span class="line">result = torch.mul(x, mask)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [torch.masked_select — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.masked_select.html)
+> 2. [PyTorch中的masked_select选择函数 - 知乎](https://zhuanlan.zhihu.com/p/348035584)
+> 3. [Please add "dim" feature for function "torch.masked_select" · Issue #48830 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/48830)
+</br>
+18.PyTorch中的矩阵乘法操作：
+点乘：矩阵逐个元素（element-wise）乘法
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">mask = cv2.imread(<span class="string">&#x27;./mask.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">mask = torch.from_numpy(mask)</span><br><span class="line"></span><br><span class="line">edge = cv2.imread(<span class="string">&#x27;./edge.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">edge = torch.from_numpy(edge)</span><br><span class="line"></span><br><span class="line">mask1 = mask / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">mask_region = mask1.ge(<span class="number">0.5</span>)</span><br><span class="line">mask_final = torch.zeros(edge.shape)</span><br><span class="line">mask_final[mask_region==<span class="literal">True</span>] = <span class="number">1</span></span><br><span class="line">mask_final[mask_region==<span class="literal">False</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">edge1 = torch.mul(edge, mask_final).numpy()</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [随笔1: PyTorch中矩阵乘法总结 - 知乎](https://zhuanlan.zhihu.com/p/100069938)
+> 2. [torch.Tensor的4种乘法_torch tensor 相乘_da_kao_la的博客-CSDN博客](https://blog.csdn.net/da_kao_la/article/details/87484403)
+</br>
+19.报错`RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! when resuming training`
+> 参考资料：
+> 1. [python - RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! when resuming training - Stack Overflow](https://stackoverflow.com/questions/66091226/runtimeerror-expected-all-tensors-to-be-on-the-same-device-but-found-at-least)
+</br>
+20.报错`Could not load dynamic library 'libnvinfer_plugin.so.7`。
+解决方案：建立从`libvinfer`版本7到版本8的symbolic link
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># the follwoing path will be different for you - depending on your install method</span></span><br><span class="line">$ cd env/lib/python3<span class="number">.10</span>/site-packages/tensorrt</span><br><span class="line"></span><br><span class="line"><span class="comment"># create symbolic links</span></span><br><span class="line">$ ln -s libnvinfer_plugin.so<span class="number">.8</span> libnvinfer_plugin.so<span class="number">.7</span></span><br><span class="line">$ ln -s libnvinfer.so<span class="number">.8</span> libnvinfer.so<span class="number">.7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># add tensorrt to library path</span></span><br><span class="line">$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/env/lib/python3<span class="number">.10</span>/site-packages/tensorrt/</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [tensorflow - Could not load dynamic library 'libnvinfer.so.7' - Stack Overflow](https://stackoverflow.com/questions/74956134/could-not-load-dynamic-library-libnvinfer-so-7)
+</br>
+21.报错`tensorflow.python.framework.errors_impl.PermissionDeniedError: : /storage/FT/pth/SCWSSOD/SCWSSOD28/events.out.tfevents.1678606756.node4.11263.0; Permission denied`
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230312170110.png)
+解决方案：更改`/storage/FT/pth/SCWSSOD/SCWSSOD28`文件夹的权限
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -R 777 /storage/FT/pth/SCWSSOD/SCWSSOD28</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [tensorflow.python.framework.errors_impl.PermissionDeniedError: data · Issue #6393 · tensorflow/tensorflow · GitHub](https://github.com/tensorflow/tensorflow/issues/6393)
+> 2. [tensorflow.python.framework.errors_impl.PermissionDeniedError: data · Issue #6393 · tensorflow/tensorflow · GitHub](https://github.com/tensorflow/tensorflow/issues/6393)
+</br>
+22.Pytorch保存中间权重作为checkpoint，并从中间权重加载权重开始继续训练：
+1. 定义和初始化网络
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Net</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Net, self).__init__()</span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">3</span>, <span class="number">6</span>, <span class="number">5</span>)</span><br><span class="line">        self.pool = nn.MaxPool2d(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(<span class="number">6</span>, <span class="number">16</span>, <span class="number">5</span>)</span><br><span class="line">        self.fc1 = nn.Linear(<span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>, <span class="number">120</span>)</span><br><span class="line">        self.fc2 = nn.Linear(<span class="number">120</span>, <span class="number">84</span>)</span><br><span class="line">        self.fc3 = nn.Linear(<span class="number">84</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = self.pool(F.relu(self.conv1(x)))</span><br><span class="line">        x = self.pool(F.relu(self.conv2(x)))</span><br><span class="line">        x = x.view(-<span class="number">1</span>, <span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>)</span><br><span class="line">        x = F.relu(self.fc1(x))</span><br><span class="line">        x = F.relu(self.fc2(x))</span><br><span class="line">        x = self.fc3(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">net = Net()</span><br><span class="line"><span class="built_in">print</span>(net)</span><br></pre></td></tr></table></figure>
+2. 初始化优化器
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">optimizer = optim.SGD(net.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br></pre></td></tr></table></figure>
+3. 保存checkpoint
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Additional information</span></span><br><span class="line">EPOCH = <span class="number">5</span></span><br><span class="line">PATH = <span class="string">&quot;model.pt&quot;</span></span><br><span class="line">LOSS = <span class="number">0.4</span></span><br><span class="line"></span><br><span class="line">torch.save(&#123;</span><br><span class="line">            <span class="string">&#x27;epoch&#x27;</span>: EPOCH,</span><br><span class="line">            <span class="string">&#x27;model_state_dict&#x27;</span>: net.state_dict(),</span><br><span class="line">            <span class="string">&#x27;optimizer_state_dict&#x27;</span>: optimizer.state_dict(),</span><br><span class="line">            <span class="string">&#x27;loss&#x27;</span>: LOSS,</span><br><span class="line">            &#125;, PATH)</span><br></pre></td></tr></table></figure>
+4. 加载checkpoint
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = Net()</span><br><span class="line">optimizer = optim.SGD(net.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br><span class="line"></span><br><span class="line">checkpoint = torch.load(PATH)</span><br><span class="line">model.load_state_dict(checkpoint[<span class="string">&#x27;model_state_dict&#x27;</span>])</span><br><span class="line">optimizer.load_state_dict(checkpoint[<span class="string">&#x27;optimizer_state_dict&#x27;</span>])</span><br><span class="line">epoch = checkpoint[<span class="string">&#x27;epoch&#x27;</span>]</span><br><span class="line">loss = checkpoint[<span class="string">&#x27;loss&#x27;</span>]</span><br><span class="line"></span><br><span class="line">model.<span class="built_in">eval</span>()</span><br><span class="line"><span class="comment"># - or -</span></span><br><span class="line">model.train()</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Saving and loading a general checkpoint in PyTorch — PyTorch Tutorials 1.13.1+cu117 documentation](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html)
+
     </div>
 
     
@@ -430,13 +551,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">315k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:10</span>
+    <span title="站点阅读时长">4:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

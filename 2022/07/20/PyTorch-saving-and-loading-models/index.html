@@ -29,7 +29,7 @@
 <meta property="og:description" content="本文记录PyTorch中的核心操作之一——saving and loading models。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-20T13:52:59.000Z">
-<meta property="article:modified_time" content="2022-07-20T14:15:36.865Z">
+<meta property="article:modified_time" content="2023-02-22T14:05:54.933Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Pytorch">
 <meta property="article:tag" content="文档">
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -173,7 +173,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -251,9 +251,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-07-20 21:52:59 / 修改时间：22:15:36" itemprop="dateCreated datePublished" datetime="2022-07-20T21:52:59+08:00">2022-07-20</time>
+      <time title="创建时间：2022-07-20 21:52:59" itemprop="dateCreated datePublished" datetime="2022-07-20T21:52:59+08:00">2022-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-22 22:05:54" itemprop="dateModified" datetime="2023-02-22T22:05:54+08:00">2023-02-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -297,7 +303,7 @@
 <ul>
 <li><code>torch.save</code>：存储一个serialized object到磁盘，该函数使用Python的<code>pickle</code> utility来序列化（serialization）。Models/tensors和各种类型对象的字典都可以使用该函数存储</li>
 <li><code>torch.load</code>：使用<code>pickle</code>的unpickling能力来反序列化pickled对象文件到内存中。该函数也可以设置用来加载数据的设备（如gpu），见 <a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-across-devices">Saving &amp; Loading Model Across Devices</a>。</li>
-<li><code>torch.nn.Module.load_state_dict</code>：使用反序列话的state_dict加载模型的参数字典，详细信息见 <a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict">What is a state_dict?</a>。</li>
+<li><code>torch.nn.Module.load_state_dict</code>：使用反序列化的state_dict加载模型的参数字典，详细信息见 <a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict">What is a state_dict?</a>。</li>
 </ul>
 <p><strong>什么是<code>state_dict</code>?</strong></p>
 <p>在Pytorch中， 一个<code>torch.nn.Module</code>模型的可学习的参数（如权重和偏差）被包含在模型的参数中（可以通过<code>model.parameters()</code>获取。一个state_dict就是一个简单的Python字典对象，其将每个layer映射到它的参数tensor。注意只有具有可学习参数的layers（如卷积层，线性层等）和具有registered buffers（batchnorm’s running_mean）的layers在模型的state_dict中有入口。Optimizer对象（<code>torch.optim</code>）也有一个state_dict，它包含关于优化器的状态信息和使用的超参数。</p>
@@ -460,13 +466,13 @@ model.eval()
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">315k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:10</span>
+    <span title="站点阅读时长">4:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

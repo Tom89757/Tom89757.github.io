@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220929171040.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221108182409.png">
 <meta property="article:published_time" content="2022-05-12T09:54:26.000Z">
-<meta property="article:modified_time" content="2023-01-03T16:40:40.268Z">
+<meta property="article:modified_time" content="2023-02-26T11:19:32.098Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -168,7 +168,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -179,7 +179,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -265,7 +265,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-04 00:40:40" itemprop="dateModified" datetime="2023-01-04T00:40:40+08:00">2023-01-04</time>
+      <time title="修改时间：2023-02-26 19:19:32" itemprop="dateModified" datetime="2023-02-26T19:19:32+08:00">2023-02-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,14 +284,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.1k</span>
+      <span>5.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -483,6 +483,30 @@
 <li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro">git - error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1) - Stack Overflow</a></li>
 </ol>
 </blockquote>
+</br>
+12.在linux中使用git时，出现如下情况：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230203180529.png)
+解决方案：在Linux的git中配置personal token
+- `git config --global credential.helper cache`：在`.gitconfig`中添加配置，使得系统记住后续输入的token，避免重复输入
+- `git clone https://github.com/Tom89757/dotfiles.git`：clone对应仓库，并输入对应用户名和token。由于上述配置，此次输入后后续无需再次输入。
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/68775869/message-support-for-password-authentication-was-removed-please-use-a-personal#:~:text=From%202021%2D08%2D13%2C,a%20PAT%20on%20your%20system.">git - Message “Support for password authentication was removed. Please use a personal access token instead.” - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+13.clone仓库时出现：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Host key verification failed. fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
+解决方案：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的github账户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub <span class="comment"># 添加到git ssh</span></span><br><span class="line">ssh-keyscan -t rsa github.com &gt;&gt; ~/.ssh/known_hosts </span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [我的现代化Neovim配置 - 知乎](https://zhuanlan.zhihu.com/p/382092667)
+> 2. [ssh - Git error: "Host Key Verification Failed" when connecting to remote repository - Stack Overflow](https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository)
+</br>
+14.下载仓库中某个文件夹：
+工具：[Download GitHub directory](https://download-directory.github.io/)
+</br>
 
     </div>
 
@@ -555,13 +579,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">315k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:10</span>
+    <span title="站点阅读时长">4:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

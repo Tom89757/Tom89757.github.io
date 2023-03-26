@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221122221549.png">
 <meta property="article:published_time" content="2022-11-22T12:49:01.000Z">
-<meta property="article:modified_time" content="2023-01-18T15:49:31.598Z">
+<meta property="article:modified_time" content="2023-03-04T15:34:00.125Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -173,7 +173,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -259,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-18 23:49:31" itemprop="dateModified" datetime="2023-01-18T23:49:31+08:00">2023-01-18</time>
+      <time title="修改时间：2023-03-04 23:34:00" itemprop="dateModified" datetime="2023-03-04T23:34:00+08:00">2023-03-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -278,14 +278,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
+      <span>8.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -317,7 +317,7 @@
 一行命令实现：
 `lsof +D ./ | awk '{print $2}' | tail -n +2 | xargs -r kill -9`
 类似命令：
-`ps -ef | grep FT | awk '{print $2}' | xargs -r kill -9'`
+`ps -ef | grep FT | awk '{print $2}' | xargs -r kill -9`
 > 参考资料：
 > 1. [files - How to get over "device or resource busy"? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/11238/how-to-get-over-device-or-resource-busy)
 </br>
@@ -338,7 +338,7 @@
 > 参考资料：
 > 1. [Fetching Title#90mq](https://www.runoob.com/linux/linux-comm-awk.html)
 </br>
-6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分：
+6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分（向后查找，回溯）：
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">&#x27;s/hello \(world\)/hi \1/&#x27;</span> file.txt</span><br></pre></td></tr></table></figure>
 可以将`hello world`替换为`hi world`。
 </br>
@@ -372,6 +372,84 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&#x27;fatal\|error\|critical&#x27;</span> /var/log/nginx/error.log <span class="comment"># 使用\转义</span></span><br><span class="line">grep -E <span class="string">&#x27;fatal|error|critical&#x27;</span> /var/log/nginx/error.log</span><br></pre></td></tr></table></figure>
 > 参考资料：
 > 1. [Linux grep中的正则表达式Regex | myfreax](https://www.myfreax.com/regular-expressions-in-grep/)
+</br>
+11.Ubuntu卸载软件：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove lua5.3 <span class="comment">#只去除lua5.3</span></span><br><span class="line">sudo apt-get remove --auto-remove lua5.3 <span class="comment">#去除lua5.3及其依赖packages</span></span><br><span class="line">sudo apt-get purge lua5.3 <span class="comment"># 使用purge，所有配置和依赖packages将被移除</span></span><br><span class="line">sudo apt-get purge --auto-remove lua5.3 <span class="comment"># 使用auto remove选项时，将根据该package来去除，在你想要重装时很有用</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [在ubuntu系统中删除软件的三种最佳方法_51CTO博客_ubuntu 卸载软件](https://blog.51cto.com/u_168360/2407085)
+> 2. [server - How to completely remove virtual packages? - Ask Ubuntu](https://askubuntu.com/questions/207505/how-to-completely-remove-virtual-packages)
+> 3. [How to uninstall or remove lua5.3 software package from Ubuntu 17.04 (Zesty Zapus)](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/lua5.3?type=uninstall)
+</br>
+12.Ubuntu源配置：
+1. 备份sources.list文件，然后删除
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bat</span><br></pre></td></tr></table></figure>
+2. 新建sources.list，将下述参考资料2中的源地址复制到其中：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认注释了源码仓库，如有需要可自行取消注释</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 预发布软件源，不建议启用</span></span><br><span class="line"><span class="comment"># deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span></span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span></span><br></pre></td></tr></table></figure>
+3. 运行`sudo apt-get update`对源进行更新
+> 参考资料：
+> 1. [Ubuntu 20.04系统下更改apt源为阿里源 - 知乎](https://zhuanlan.zhihu.com/p/251009600)
+> 2. [USTC Open Source Software Mirror](http://mirrors.ustc.edu.cn/)
+> 3. [Ubuntu 源使用帮助 — USTC Mirror Help 文档](http://mirrors.ustc.edu.cn/help/ubuntu.html)
+</br>
+13.修改用户名和密码
+1. 使用`wsl -u root`登录root用户
+2. 执行如下命令：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">usermod -l &lt;newname&gt; -d /home/&lt;newname&gt; -m &lt;oldname&gt;</span><br><span class="line">usermod -c <span class="string">&quot;newfullname&quot;</span> &lt;newname&gt;</span><br><span class="line">groupmod -n &lt;newgroup&gt; &lt;oldgroup&gt;</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [permissions - How do I change my username? - Ask Ubuntu](https://askubuntu.com/questions/34074/how-do-i-change-my-username)
+> 2. [Linux usermod user is currently used by process - Stack Overflow](https://stackoverflow.com/questions/28972503/linux-usermod-user-is-currently-used-by-process)
+> 3. [linux - How to set default user for manually installed WSL distro? - Super User](https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro)
+</br>
+14.查看文件和文件夹大小：
+- 查看文件大小：`ls -l filename`
+- 查看文件夹大小：`du -sh folder`
+- 查看磁盘使用情况：`df -h`
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiqingchun/article/details/42466267">Ubuntu查看文件大小或文件夹大小_jackliang的博客-CSDN博客_ubuntu 文件大小</a></li>
+</ol>
+</blockquote>
+</br>
+15.卸载java
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query -W -f=<span class="string">&#x27;$&#123;binary:Package&#125;\n&#x27;</span> | grep -E -e <span class="string">&#x27;^(ia32-)?(sun|oracle)-java&#x27;</span> -e <span class="string">&#x27;^openjdk-&#x27;</span> -e <span class="string">&#x27;^icedtea&#x27;</span> -e <span class="string">&#x27;^(default|gcj)-j(re|dk)&#x27;</span> -e <span class="string">&#x27;^gcj-(.*)-j(re|dk)&#x27;</span> -e <span class="string">&#x27;^java-common&#x27;</span> | xargs sudo apt-get -y remove</span><br><span class="line"></span><br><span class="line">sudo apt-get -y autoremove</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [How to completely uninstall Java? - Ask Ubuntu](https://askubuntu.com/questions/84483/how-to-completely-uninstall-java#)
+</br>
+16.改造`rm`命令，删除文件至回收站：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018464527">linux - 改造rm命令，删除文件至回收站 - 不足 - SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/andreafrancia/trash-cli">GitHub - andreafrancia/trash-cli: Command line interface to the freedesktop.org trashcan.</a></li>
+</ol>
+</blockquote>
+</br>
+17.定期清空某个文件夹
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1849092">linux定时删除N天前的文件（文件夹） - 腾讯云开发者社区-腾讯云</a></li>
+<li><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/589210/removing-files-older-than-7-days">command line - Removing files older than 7 days - Ask Ubuntu</a></li>
+</ol>
+</blockquote>
+</br>
+18.Ubuntu配置ssh免输密码：
+- `ssh-keygen`：在本地机器上生成密钥对，`id_rsa.pub`和`id_rsa`。在`~/.ssh/`目录下。更改`id_rsa` 私钥权限，`chmod 600 id_rsa`。
+- `ssh-copy-id -i ~/.ssh/id_rsa.pub user@host`：将本地公钥`id_rsa.pub`写入远程host的`~/.ssh`目录下的`authorized_keys`文件。如果远程host没有`.ssh`目录手动进行创建。更改`authorized_keys`文件权限，`chmod 755 authorized_keys`。
+- 尝试本地登录，如果无法免密码登录，更高远程host上`/home/user`目录权限，`chmod 700 /home/user`。
+> 参考资料：
+> 1. [Getting Started With SSH in Linux](https://linuxhandbook.com/ssh-basics/)
+> 2. [How to Add SSH Public Key to Server](https://linuxhandbook.com/add-ssh-public-key-to-server/)
+> 3. [Why am I still getting a password prompt with ssh with public key authentication? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/36540/why-am-i-still-getting-a-password-prompt-with-ssh-with-public-key-authentication)
+> 4. [ssh-copy-id succeeded, but still prompt password input - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/407394/ssh-copy-id-succeeded-but-still-prompt-password-input)
+> 5. [VSCode远程连接服务器 免密登录（ssh key） | 烟雨平生](https://i007it.com/2022/07/14/VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/)
+</br>
+19.vnc viewer和vnc server搭配使用。
+- 先使用`vncserver`在远程服务器上生成对应端口号
+- 在本地机器上建立`host:port`的连接
+> 参考资料：
+> 1. [linux中如何开启vnc服务端口,Linux下vnc配置及启动_听亭亭的博客-CSDN博客](https://blog.csdn.net/weixin_30125993/article/details/116636925?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-116636925-blog-107807058.pc_relevant_3mothn_strategy_recovery&spm=1001.2101.3001.4242.2&utm_relevant_index=4)
     </div>
 
     
@@ -443,13 +521,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">315k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:10</span>
+    <span title="站点阅读时长">4:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

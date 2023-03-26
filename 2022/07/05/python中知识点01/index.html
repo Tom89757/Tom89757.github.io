@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161809.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221016161809.png">
 <meta property="article:published_time" content="2022-07-04T17:25:06.000Z">
-<meta property="article:modified_time" content="2023-01-18T17:24:11.273Z">
+<meta property="article:modified_time" content="2023-03-13T14:43:25.326Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="python">
@@ -170,7 +170,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -181,7 +181,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -267,7 +267,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-19 01:24:11" itemprop="dateModified" datetime="2023-01-19T01:24:11+08:00">2023-01-19</time>
+      <time title="修改时间：2023-03-13 22:43:25" itemprop="dateModified" datetime="2023-03-13T22:43:25+08:00">2023-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,14 +286,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>11k</span>
+      <span>16k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>10 分钟</span>
+      <span>15 分钟</span>
     </span>
 </div>
 
@@ -591,6 +591,84 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; seasons = [<span class="string">&#x27;Spring&#x27;</span>, <span class="string">&#x27;Summer&#x27;</span>, <span class="string">&#x27;Fall&#x27;</span>, <span class="string">&#x27;Winter&#x27;</span>]  </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">list</span>(<span class="built_in">enumerate</span>(seasons))  </span><br><span class="line">[(<span class="number">0</span>, <span class="string">&#x27;Spring&#x27;</span>), (<span class="number">1</span>, <span class="string">&#x27;Summer&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;Fall&#x27;</span>), (<span class="number">3</span>, <span class="string">&#x27;Winter&#x27;</span>)]  </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">list</span>(<span class="built_in">enumerate</span>(seasons, start=<span class="number">1</span>))       <span class="comment"># 下标从 1 开始  </span></span><br><span class="line">[(<span class="number">1</span>, <span class="string">&#x27;Spring&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;Summer&#x27;</span>), (<span class="number">3</span>, <span class="string">&#x27;Fall&#x27;</span>), (<span class="number">4</span>, <span class="string">&#x27;Winter&#x27;</span>)]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; seq = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>]  </span><br><span class="line">&gt;&gt;&gt; <span class="keyword">for</span> i, element <span class="keyword">in</span> <span class="built_in">enumerate</span>(seq):  </span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span> i, element  </span><br><span class="line"><span class="meta">... </span> </span><br><span class="line"><span class="number">0</span> one  </span><br><span class="line"><span class="number">1</span> two  </span><br><span class="line"><span class="number">2</span> three</span><br></pre></td></tr></table></figure>
 > 参考资料：
 > 1. [Python enumerate() 函数 | 菜鸟教程](https://www.runoob.com/python/python-func-enumerate.html)
+</br>
+20.安装`pip install albumentations`时报错：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Could not install packages due to an OSError: [WinError 5]</span><br></pre></td></tr></table></figure>
+解决方案：添加`--user`选项
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install --upgrade albumentations --user</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [tensorflow - Could not install packages due to an EnvironmentError: [WinError 5] Access is denied: - Stack Overflow](https://stackoverflow.com/questions/51912999/could-not-install-packages-due-to-an-environmenterror-winerror-5-access-is-de)
+</br>
+21.`pip install package`时出现如下Warning:
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230217212259.png)
+原因：对应包损坏
+解决方案：在对应路径下`d:\ml\anaconda3\envs\testenv\lib\site-packages`找到名字前缀为`~ip`的文件夹并删除。
+> 参考资料：
+> 1. [Found Solution to: WARNING: Ignoring invalid distribution -{packageName} ({pathToIssue}) : Python](https://www.reddit.com/r/Python/comments/x70edr/found_solution_to_warning_ignoring_invalid/)
+</br>
+22.pip更新：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python - There was an error checking the latest version of pip - Stack Overflow](https://stackoverflow.com/questions/72439001/there-was-an-error-checking-the-latest-version-of-pip)
+</br>
+23.python中`import`相关的路径问题：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/16981921/relative-imports-in-python-3">Relative imports in Python 3 - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/34753206/init-py-cant-find-local-modules">python - <strong>init</strong>.py can’t find local modules - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1K24y1k7XA/?spm_id_from=333.999.0.0&amp;vd_source=71b57f2bb132ac1f88ed255cad4a06a6">【python】关于import你需要知道的一切！一个视频足够了_哔哩哔哩_bilibili</a></li>
+</ol>
+</blockquote>
+</br>
+24.导出pip list到`requirements.txt`文件在另一个环境中安装：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 导出</span></span><br><span class="line">pip freeze &gt;requirements.txt</span><br><span class="line"><span class="comment">## 安装</span></span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [pip requirements导出当前项目所用的包list列表_苦咖啡's运维之路的技术博客_51CTO博客](https://blog.51cto.com/alsww/1893100)
+</br>
+15.在Python中只声明变量而不赋值：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">result = <span class="literal">None</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">	<span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">		result = i </span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		result += i</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [在Python中是否可以只声明变量而不赋值？ - 问答 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/28703)
+</br>
+16.Python中`dict` vs `collections.OrderedDict`：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A Python program to demonstrate working of OrderedDict  </span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;This is a Dict:n&quot;</span>)  </span><br><span class="line">d = &#123;&#125;  </span><br><span class="line">d[<span class="string">&#x27;a&#x27;</span>] = <span class="number">1</span>  </span><br><span class="line">d[<span class="string">&#x27;b&#x27;</span>] = <span class="number">2</span>  </span><br><span class="line">d[<span class="string">&#x27;c&#x27;</span>] = <span class="number">3</span>  </span><br><span class="line">d[<span class="string">&#x27;d&#x27;</span>] = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():  </span><br><span class="line"><span class="built_in">print</span>(key, value)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;nThis is an Ordered Dict:n&quot;</span>)  </span><br><span class="line">od = OrderedDict()  </span><br><span class="line">od[<span class="string">&#x27;a&#x27;</span>] = <span class="number">1</span>  </span><br><span class="line">od[<span class="string">&#x27;b&#x27;</span>] = <span class="number">2</span>  </span><br><span class="line">od[<span class="string">&#x27;c&#x27;</span>] = <span class="number">3</span>  </span><br><span class="line">od[<span class="string">&#x27;d&#x27;</span>] = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> od.items():  </span><br><span class="line"><span class="built_in">print</span>(key, value)  </span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">This <span class="keyword">is</span> a <span class="type">Dict</span>:  </span><br><span class="line">(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>)  </span><br><span class="line">(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>)  </span><br><span class="line">(<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>)  </span><br><span class="line">(<span class="string">&#x27;d&#x27;</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">This <span class="keyword">is</span> an Ordered <span class="type">Dict</span>:  </span><br><span class="line">(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>)  </span><br><span class="line">(<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>)  </span><br><span class="line">(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>)  </span><br><span class="line">(<span class="string">&#x27;d&#x27;</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [OrderedDict in Python](https://prutor.ai/ordereddict-in-python/#:~:text=The%20only%20difference%20between%20dict,inserted%20is%20remembered%20by%20OrderedDict.)
+> 2. [python - Difference between dictionary and OrderedDict - Stack Overflow](https://stackoverflow.com/questions/34305003/difference-between-dictionary-and-ordereddict)
+</br>
+17.遍历argparse的`parse_args()`：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--a&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">55</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--b&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">66</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--c&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">77</span>)</span><br><span class="line"></span><br><span class="line">args = parser.parse_args()</span><br><span class="line"><span class="built_in">print</span>(args)</span><br><span class="line"><span class="comment"># vars() 函数返回对象object的属性和属性值的字典对象。</span></span><br><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> <span class="built_in">vars</span>(args):</span><br><span class="line">    <span class="built_in">print</span>(arg, <span class="string">&#x27;:&#x27;</span>, <span class="built_in">getattr</span>(args, arg))  <span class="comment"># getattr() 函数是获取args中arg的属性值</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python遍历argparse的parse_args()_python 遍历args_集电极的博客-CSDN博客](https://blog.csdn.net/qq_38463737/article/details/121103702)
+</br>
+18.python代码可以正常运行，但是debug时出现`No Module named 'mmseg'`。
+原因：在代码文件开头添加了上层路径
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&quot;..&quot;</span>)</span><br><span class="line"><span class="keyword">import</span> mmseg</span><br></pre></td></tr></table></figure>
+在代码直接运行时，运行`python test.py`，可以从上层路径直接导入`mmseg`；但是在进行debug时，运行`pythn tools/test.py`，路径相对关系发生变化。无法正常导入`mmseg`。
+解决方案：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="keyword">import</span> sys </span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&quot;..&quot;</span>)</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&quot;.&quot;</span>) <span class="comment"># 添加本地路径</span></span><br><span class="line"><span class="keyword">import</span> mmseg</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [https://youtrack.jetbrains.com/issue/PY-43911/run-my-python-code-works-but-debugging-has-problems-ModuleNotFoundError-No-module-named-MaryPackage](https://youtrack.jetbrains.com/issue/PY-43911/run-my-python-code-works-but-debugging-has-problems-ModuleNotFoundError-No-module-named-MaryPackage)
+</br>
+19.在对python文件进行调试时，有将下面的字典类型变量复制、保存到txt文件并转为更易读的json格式的需求：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230304125946.png)
+步骤：
+1. 右键上述cfg局部变量，并copy value，保存到txt文件`cfg.txt`。
+2. 从txt文件中读取，或者直接复制给变量赋值
+3. 使用`json`库将其保存至`.json`文件：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">x = txt_content <span class="comment"># 复制赋值或从txt读取</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;cfg.json&quot;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> outfile:</span><br><span class="line">	json.dump(x, outfile, indent=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python - How to Format dict string outputs nicely - Stack Overflow](https://stackoverflow.com/questions/3733554/how-to-format-dict-string-outputs-nicely)
+> 2. [python - How do I write JSON data to a file? - Stack Overflow](https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file)
+</br>
+20.在python中，有时有对tuple或list中的元素值进行逐个比较（不是引用）的需求，此时需要引入`operator`模块，并调用`eq`函数：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; <span class="keyword">import</span> operator</span><br><span class="line">&gt;&gt; operator.eq(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;name&#x27;</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line">&gt;&gt; operator.eq(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+`operator`中还存在其它对象比较函数：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">operator.lt(a, b)</span><br><span class="line">operator.le(a, b)</span><br><span class="line">operator.eq(a, b)</span><br><span class="line">operator.ne(a, b)</span><br><span class="line">operator.ge(a, b)</span><br><span class="line">operator.gt(a, b)</span><br><span class="line">operator.__lt__(a, b)</span><br><span class="line">operator.__le__(a, b)</span><br><span class="line">operator.__eq__(a, b)</span><br><span class="line">operator.__ne__(a, b)</span><br><span class="line">operator.__ge__(a, b)</span><br><span class="line">operator.__gt__(a, b)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Python Tuple(元组) cmp()方法 | 菜鸟教程](https://www.runoob.com/python/att-tuple-cmp.html)
+
     </div>
 
     
@@ -663,13 +741,13 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">315k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:10</span>
+    <span title="站点阅读时长">4:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

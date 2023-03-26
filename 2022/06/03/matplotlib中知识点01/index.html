@@ -29,7 +29,7 @@
 <meta property="og:description" content="本文记录一下在实现 DDRQM 过程中的一些 matplotlib 包和 python 相关知识点。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-03T06:37:10.000Z">
-<meta property="article:modified_time" content="2022-12-06T14:02:35.439Z">
+<meta property="article:modified_time" content="2023-02-11T10:08:33.900Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="matplotlib">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -172,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -258,7 +258,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-12-06 22:02:35" itemprop="dateModified" datetime="2022-12-06T22:02:35+08:00">2022-12-06</time>
+      <time title="修改时间：2023-02-11 18:08:33" itemprop="dateModified" datetime="2023-02-11T18:08:33+08:00">2023-02-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,7 +277,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
+      <span>2.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -352,6 +352,8 @@
 > 3. [Matplotlib 散点图 | 菜鸟教程](https://www.runoob.com/matplotlib/matplotlib-scatter.html)
 > 4. [Python三种方法计算皮尔逊相关系数](https://blog.csdn.net/qq_40260867/article/details/90667462)
 </br>
+5.由于OpenCV读取的图片默认三通道顺序为BGR，所以在使用matplotlib进行画图时，需要对其通道顺序进行调整：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">plt.imshow(result[:, :, [<span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>]])</span><br><span class="line">plt.title(<span class="string">&quot;result&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -425,13 +427,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">315k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:10</span>
+    <span title="站点阅读时长">4:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

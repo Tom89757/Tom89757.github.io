@@ -29,7 +29,7 @@
 <meta property="og:description" content="本文记录一下一些开阔视野的文章和博客：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-26T14:17:13.000Z">
-<meta property="article:modified_time" content="2023-01-20T18:57:04.549Z">
+<meta property="article:modified_time" content="2023-03-13T04:36:30.902Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="开阔视野">
 <meta name="twitter:card" content="summary">
@@ -148,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda-cube"><span class="nav-number">1.</span> <span class="nav-text"> Lambda cube</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interpreters-vs-compilers"><span class="nav-number">2.</span> <span class="nav-text"> interpreters vs compilers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#closures-%E9%97%AD%E5%8C%85-%E5%92%8C-objects-%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.</span> <span class="nav-text"> Closures (闭包) 和 Objects (对象)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#y%E7%BB%84%E5%90%88%E5%AD%90y-combinator"><span class="nav-number">4.</span> <span class="nav-text"> Y组合子（Y combinator）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cps-continuation-passing-style"><span class="nav-number">5.</span> <span class="nav-text"> CPS (Continuation-Passing Style)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98-%E9%80%86%E5%8F%98%E5%92%8C%E4%B8%8D%E5%8F%98"><span class="nav-number">6.</span> <span class="nav-text"> 协变、逆变和不变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E5%92%8C%E8%AF%AD%E4%B9%89"><span class="nav-number">7.</span> <span class="nav-text"> 递归函数和语义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B0%E6%80%A7%E6%B1%82%E5%80%BC-lazy-evaluation-%E5%92%8C-%E8%B4%AA%E5%A9%AA%E6%B1%82%E5%80%BC-greedy-evaluation"><span class="nav-number">8.</span> <span class="nav-text"> 惰性求值 (Lazy Evaluation) 和 贪婪求值 (Greedy evaluation)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E6%95%B0%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-algebraic-data-type"><span class="nav-number">9.</span> <span class="nav-text"> 代数数据类型 (algebraic data type)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F"><span class="nav-number">10.</span> <span class="nav-text"> 类型系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type-inference-%E5%92%8C-type-check"><span class="nav-number">11.</span> <span class="nav-text"> type inference 和 type check</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81-polymorphism"><span class="nav-number">12.</span> <span class="nav-text"> 多态 (polymorphism)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta-programming"><span class="nav-number">13.</span> <span class="nav-text"> meta-programming</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#callcc"><span class="nav-number">14.</span> <span class="nav-text"> call&#x2F;cc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-programming-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">15.</span> <span class="nav-text"> Dynamic Programming (动态规划)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2"><span class="nav-number">16.</span> <span class="nav-text"> 发展历史</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda-cube"><span class="nav-number">1.</span> <span class="nav-text"> Lambda cube</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interpreters-vs-compilers"><span class="nav-number">2.</span> <span class="nav-text"> interpreters vs compilers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#closures-%E9%97%AD%E5%8C%85-%E5%92%8C-objects-%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.</span> <span class="nav-text"> Closures (闭包) 和 Objects (对象)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#y%E7%BB%84%E5%90%88%E5%AD%90y-combinator"><span class="nav-number">4.</span> <span class="nav-text"> Y组合子（Y combinator）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cps-continuation-passing-style"><span class="nav-number">5.</span> <span class="nav-text"> CPS (Continuation-Passing Style)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98-%E9%80%86%E5%8F%98%E5%92%8C%E4%B8%8D%E5%8F%98"><span class="nav-number">6.</span> <span class="nav-text"> 协变、逆变和不变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E5%92%8C%E8%AF%AD%E4%B9%89"><span class="nav-number">7.</span> <span class="nav-text"> 递归函数和语义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B0%E6%80%A7%E6%B1%82%E5%80%BC-lazy-evaluation-%E5%92%8C-%E8%B4%AA%E5%A9%AA%E6%B1%82%E5%80%BC-greedy-evaluation"><span class="nav-number">8.</span> <span class="nav-text"> 惰性求值 (Lazy Evaluation) 和 贪婪求值 (Greedy evaluation)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E6%95%B0%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-algebraic-data-type"><span class="nav-number">9.</span> <span class="nav-text"> 代数数据类型 (algebraic data type)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F"><span class="nav-number">10.</span> <span class="nav-text"> 类型系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collections-container-and-iterators"><span class="nav-number">11.</span> <span class="nav-text"> Collections, Container and Iterators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type-inference-%E5%92%8C-type-check"><span class="nav-number">12.</span> <span class="nav-text"> type inference 和 type check</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#write-a-linter"><span class="nav-number">13.</span> <span class="nav-text"> write a linter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81-polymorphism"><span class="nav-number">14.</span> <span class="nav-text"> 多态 (polymorphism)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multimethod-multiple-dispatch"><span class="nav-number">15.</span> <span class="nav-text"> multimethod (multiple dispatch)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta-programming"><span class="nav-number">16.</span> <span class="nav-text"> meta-programming</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#callcc"><span class="nav-number">17.</span> <span class="nav-text"> call&#x2F;cc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-programming-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">18.</span> <span class="nav-text"> Dynamic Programming (动态规划)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E6%B3%84%E9%9C%B2"><span class="nav-number">19.</span> <span class="nav-text"> 抽象泄露</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84"><span class="nav-number">20.</span> <span class="nav-text"> 软件架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#competitive-programming"><span class="nav-number">21.</span> <span class="nav-text"> Competitive Programming</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">22.</span> <span class="nav-text"> 正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="nav-number">23.</span> <span class="nav-text"> 一些概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2"><span class="nav-number">24.</span> <span class="nav-text"> 发展历史</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -172,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -258,7 +258,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-21 02:57:04" itemprop="dateModified" datetime="2023-01-21T02:57:04+08:00">2023-01-21</time>
+      <time title="修改时间：2023-03-13 12:36:30" itemprop="dateModified" datetime="2023-03-13T12:36:30+08:00">2023-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,14 +277,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
+      <span>3.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -331,6 +331,7 @@
 <ol>
 <li><a target="_blank" rel="noopener" href="https://zh.m.wikipedia.org/zh-hans/%E5%8D%8F%E5%8F%98%E4%B8%8E%E9%80%86%E5%8F%98">协变与逆变 - 维基百科，自由的百科全书</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/B1151937289/article/details/119523464">协变 (Covariant)、逆变 (Contravariant) 与不变 (Invariant)_小麦先生的博客-CSDN博客_contravariant</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/41814387">逆变、协变与子类型，以及Rust - 知乎</a></li>
 </ol>
 <h3 id="递归函数和语义"><a class="markdownIt-Anchor" href="#递归函数和语义"></a> 递归函数和语义</h3>
 <ol>
@@ -348,6 +349,9 @@
 <ol>
 <li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E6%95%B0%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B#:~:text=%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E4%B8%AD%EF%BC%8C%E5%B0%A4%E5%85%B6,%E5%A4%9A%E4%B8%AA%E5%80%BC%EF%BC%8C%E5%8D%B3%E5%AD%97%E6%AE%B5%E3%80%82">代数数据类型 - 维基百科，自由的百科全书</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/383030756">ReScript的特性二: 代数数据类型 - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.tweag.io/blog/2022-09-08-fp1-typopaedia-pythonica/">Functional Python, Part I: Typopædia Pythonica - Tweag</a>：Python代数数据类型</li>
+<li><a target="_blank" rel="noopener" href="https://www.tweag.io/blog/2023-01-19-fp2-dial-m-for-monoid/">Functional Python, Part II: Dial M for Monoid - Tweag</a>：Python Monoid</li>
+<li><a target="_blank" rel="noopener" href="https://brian-candler.medium.com/functional-programming-illustrated-5974586a8cf0">Functional Programming illustrated in Python: Part 0 | by Brian Candler | Medium</a>：Python中的FP系列文章</li>
 </ol>
 <h3 id="类型系统"><a class="markdownIt-Anchor" href="#类型系统"></a> 类型系统</h3>
 <ol>
@@ -356,6 +360,14 @@
 <li><a target="_blank" rel="noopener" href="https://cstheory.stackexchange.com/questions/39814/what-is-the-difference-between-system-f-and-hindley-milner-type-system">What is the difference between System F and Hindley-Milner type system? - Theoretical Computer Science Stack Exchange</a></li>
 <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system">Hindley–Milner type system - Wikipedia</a></li>
 <li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-sg/%E5%9E%8B%E5%88%A5%E5%AE%89%E5%85%A8">类型安全 - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/29072167">OCaml 类型系统的缺陷有哪些？ - 知乎</a>：有关于<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Value_restriction">value restriction</a> (值限制)的部分。</li>
+</ol>
+<h3 id="collections-container-and-iterators"><a class="markdownIt-Anchor" href="#collections-container-and-iterators"></a> Collections, Container and Iterators</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://computersciencewiki.org/index.php/Collections">Collections - Computer Science Wiki</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Container_(type_theory)">Container (type theory) - Wikipedia</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Collection_(abstract_data_type)">Collection (abstract data type) - Wikipedia</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Iterator">Iterator - Wikipedia</a></li>
 </ol>
 <h3 id="type-inference-和-type-check"><a class="markdownIt-Anchor" href="#type-inference-和-type-check"></a> type inference 和 type check</h3>
 <ol>
@@ -364,6 +376,12 @@
 <li><a target="_blank" rel="noopener" href="https://pingfangx.github.io/java-tutorials/java/generics/genTypeInference.html">类型推断(Java™ 教程-Java Tutorials 中文版&gt;学习 Java 语言&gt;泛型(更新))</a></li>
 <li><a target="_blank" rel="noopener" href="https://shzhangji.com/cnblogs/2020/10/04/python-static-typing/#:~:text=Python%20%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%E6%98%AF,%E6%97%A0%E6%B3%95%E4%BD%9C%E4%B8%BA%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E4%BD%BF%E7%94%A8%E3%80%82">Python 类型检查实践 | 张吉的博客</a></li>
 </ol>
+<h3 id="write-a-linter"><a class="markdownIt-Anchor" href="#write-a-linter"></a> write a linter</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/caramelomartins/awesome-linters">GitHub - caramelomartins/awesome-linters.</a>：该仓库收集了针对各种语言的linter</li>
+<li><a target="_blank" rel="noopener" href="https://python.plainenglish.io/asts-and-making-a-python-linter-from-scratch-79e66e8d99b8">Making a Python Linter from Scratch | by Benjamin Campbell | Python in Plain English</a></li>
+<li><a target="_blank" rel="noopener" href="https://guicommits.com/how-to-write-linter-python/">How to write a linter in Python 🐍✨</a></li>
+</ol>
 <h3 id="多态-polymorphism"><a class="markdownIt-Anchor" href="#多态-polymorphism"></a> 多态 (polymorphism)</h3>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E6%80%81_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多态 (计算机科学) - 维基百科，自由的百科全书</a></li>
@@ -371,6 +389,13 @@
 <li><a target="_blank" rel="noopener" href="https://zh.m.wikipedia.org/zh/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B">鸭子类型 - 维基百科，自由的百科全书</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/382098633">ReScript的特性一: 鲜为人知的Row polymorphism - 知乎</a></li>
 <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Row_polymorphism">Row polymorphism - Wikipedia</a></li>
+</ol>
+<h3 id="multimethod-multiple-dispatch"><a class="markdownIt-Anchor" href="#multimethod-multiple-dispatch"></a> multimethod (multiple dispatch)</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105953560">为什么要多重派发？（Why multiple dispatch?) - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903426577399821">Python 有什么奇技淫巧？ - 知乎 - 掘金</a></li>
+<li><a target="_blank" rel="noopener" href="https://clojure.org/reference/multimethods">Clojure - Multimethods and Hierarchies</a></li>
+<li><a target="_blank" rel="noopener" href="https://clojure.org/about/runtime_polymorphism">Clojure - Runtime Polymorphism</a></li>
 </ol>
 <h3 id="meta-programming"><a class="markdownIt-Anchor" href="#meta-programming"></a> meta-programming</h3>
 <ol>
@@ -387,9 +412,34 @@
 <li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/23995189/answer/35429905">什么是动态规划（Dynamic Programming）？动态规划的意义是什么？ - 知乎</a></li>
 <li><a target="_blank" rel="noopener" href="https://patterns.eecs.berkeley.edu/?page_id=416">Dynamic Programming Pattern | Our Pattern Language</a></li>
 </ol>
+<h3 id="抽象泄露"><a class="markdownIt-Anchor" href="#抽象泄露"></a> 抽象泄露</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zh.m.wikipedia.org/zh-hans/%E6%8A%BD%E8%B1%A1%E6%B3%84%E6%BC%8F">抽象泄漏 - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26803553">关于Leaky Abstraction - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.51cto.com/article/669206.html">一篇文章带你了解抽象泄漏（Leaky Abstractions）-51CTO.COM</a></li>
+</ol>
+<h3 id="软件架构"><a class="markdownIt-Anchor" href="#软件架构"></a> 软件架构</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://arc42.org/overview">arc42 Template Overview - arc42</a>：Software Architecture Template。</li>
+<li><a target="_blank" rel="noopener" href="https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/">The Ultimate Guide To Software Architecture Documentation</a></li>
+</ol>
+<h3 id="competitive-programming"><a class="markdownIt-Anchor" href="#competitive-programming"></a> Competitive Programming</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/ShahjalalShohag/Competitive-Programming-A-Complete-Guideline">Competitive-Programming-A-Complete-Guideline</a>：关于Competitive Programming的介绍</li>
+</ol>
+<h3 id="正则表达式"><a class="markdownIt-Anchor" href="#正则表达式"></a> 正则表达式</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/i_C4ATnajxRDGlTA8dJDHg">Weixin Official Accounts Platform</a></li>
+</ol>
+<h3 id="一些概念"><a class="markdownIt-Anchor" href="#一些概念"></a> 一些概念</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Language_primitive">Language primitive - Wikipedia</a>：language primitives是在一种编程语言中可以使用的最简单的元素。一个primitive是对程序员来说可以获得的最小&quot;unit of processing&quot;，或者可以是语言中表达式的atomic元素。Primitives是units with a meaning，也就是是语言中的semantic value。它们不同于parser中的tokens，其是最小的elements of syntax (语法元素)。</li>
+<li><a target="_blank" rel="noopener" href="https://www.programiz.com/c-programming/c-keywords-identifier#:~:text=Keywords%20are%20predefined%2C%20reserved%20words,be%20used%20as%20an%20identifier.">C Keywords and Identifiers</a>：keywords是预定义的，保留的单词，其对compiler/interpreter有专门的meaning。keywords是语法的一部分，不能作为一个identifier。identifier指那些对给定entities (如variable, functions, structures等)的名称。</li>
+</ol>
 <h3 id="发展历史"><a class="markdownIt-Anchor" href="#发展历史"></a> 发展历史</h3>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://thevaluable.dev/guide-terminal-shell-console/?continueFlag=43b44873b1c6d9c4016629ebd5706bdf">A Guide to the Terminal, Console, and Shell</a>：讲述了Terminal/Console/Shell的由来和发展</li>
+<li><a target="_blank" rel="noopener" href="https://www.swyx.io/the-end-of-localhost">The End of Localhost</a>：该文讲述使用localhost进行本地调试的方法可能被云端调试终结</li>
 </ol>
 
     </div>
@@ -463,13 +513,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">315k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:10</span>
+    <span title="站点阅读时长">4:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

@@ -29,7 +29,7 @@
 <meta property="og:description" content="本文记录一下Pytorch中的核心操作之一——Distributed Data Parallel (分布式数据并行)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-12T08:51:19.000Z">
-<meta property="article:modified_time" content="2022-09-12T14:20:57.811Z">
+<meta property="article:modified_time" content="2023-03-19T12:00:12.067Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Pytorch">
 <meta property="article:tag" content="文档">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -172,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -250,9 +250,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-09-12 16:51:19 / 修改时间：22:20:57" itemprop="dateCreated datePublished" datetime="2022-09-12T16:51:19+08:00">2022-09-12</time>
+      <time title="创建时间：2022-09-12 16:51:19" itemprop="dateCreated datePublished" datetime="2022-09-12T16:51:19+08:00">2022-09-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-19 20:00:12" itemprop="dateModified" datetime="2023-03-19T20:00:12+08:00">2023-03-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,7 +277,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>55</span>
+      <span>652</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -291,6 +297,18 @@
     <div class="post-body" itemprop="articleBody">
         <p>本文记录一下Pytorch中的核心操作之一——Distributed Data Parallel (分布式数据并行)</p>
 <span id="more"></span>
+<p>训练时：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.environ[<span class="string">&quot;CUDA_VISIBLE_DEVICES&quot;</span>] = <span class="string">&quot;3, 5&quot;</span></span><br><span class="line">multi_gpu = <span class="literal">True</span></span><br><span class="line">model = Model(args)</span><br><span class="line"><span class="keyword">if</span> multi_gpu:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;training on multi_gpu: &quot;</span>)</span><br><span class="line">	torch.cuda.empty_cache()</span><br><span class="line">	model = nn.DataParallel(model)</span><br><span class="line">model.train(<span class="literal">True</span>)</span><br><span class="line">model.cuda()</span><br></pre></td></tr></table></figure>
+<p>测试时：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model = Model(args)</span><br><span class="line"><span class="keyword">if</span> multi_gpu:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;testing on multi_gpu...&quot;</span>)</span><br><span class="line">	model = nn.DataParallel(model)</span><br><span class="line">model.load_state_dict(torch.load(path))</span><br><span class="line">model.train(<span class="literal">False</span>)</span><br><span class="line">model.cuda()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/Karel911/TRACER/blob/main/trainer.py">TRACER/trainer.py at main · Karel911/TRACER · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html">Optional: Data Parallelism — PyTorch Tutorials 2.0.0+cu117 documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html">DataParallel — PyTorch 2.0 documentation</a></li>
+</ol>
+</blockquote>
 
     </div>
 
@@ -364,13 +382,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">315k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:10</span>
+    <span title="站点阅读时长">4:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

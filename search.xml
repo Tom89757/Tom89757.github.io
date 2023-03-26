@@ -241,6 +241,28 @@
 <li><a href="https://hkn.eecs.berkeley.edu/courseguides">UCB cs roadmap</a></li>
 <li><a href="https://program-think.blogspot.com/2021/05/share-books.html">分享各类电子书（政治、IT、科普、历史、等，97本）</a></li>
 </ol>
+<h3 id="刷题"><a class="markdownIt-Anchor" href="#刷题"></a> 刷题</h3>
+<h4 id="leetcode"><a class="markdownIt-Anchor" href="#leetcode"></a> leetcode</h4>
+<ol>
+<li><a href="https://github.com/doocs/leetcode/blob/main/solution/README.md">leetcode/README.md at main · doocs/leetcode · GitHub</a>：leetcode按序排列</li>
+<li><a href="https://github.com/doocs/leetcode/blob/main/solution/CONTEST_README.md">leetcode/CONTEST_README.md at main · doocs/leetcode · GitHub</a>：leetcode周赛</li>
+<li><a href="https://github.com/doocs/leetcode/blob/main/lcof/README.md">leetcode/README.md at main · doocs/leetcode · GitHub</a>：剑指offer第二版系列</li>
+<li><a href="https://github.com/doocs/leetcode/blob/main/lcof2/README.md">leetcode/README.md at main · doocs/leetcode · GitHub</a>：剑指offer (专项突击版)</li>
+<li><a href="https://github.com/doocs/leetcode/blob/main/lcci/README.md">leetcode/README.md at main · doocs/leetcode · GitHub</a>：程序员面试金典第6版</li>
+<li><a href="https://neetcode.io/roadmap">Roadmap</a>：leetcode刷题Roadmap</li>
+<li><a href="https://leetcode.cn/progress/">力扣</a>：个人leetcode做题分析，用于生成anki card</li>
+<li><a href="https://leetcode.cn/u/johnkram/">johnkram - 力扣（LeetCode）</a>：清华汪乐平主页，可以学习leetcode代码风格</li>
+</ol>
+<h4 id="codeforces"><a class="markdownIt-Anchor" href="#codeforces"></a> CodeForces</h4>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/42106537">【洛谷日报#19】Codeforces游玩攻略 - 知乎</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/71674596">【洛谷日报#116】Codeforces快速精通 - 知乎</a></li>
+<li><a href="https://www.bilibili.com/video/BV1tT4y1e7nG">sublime text 4 刷题一键配置FastOlympicCoding FiraCode gcc-11.2.0(c++20)_哔哩哔哩_bilibili</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/104963169">算法竞赛编程变量命名指南 - 知乎</a></li>
+<li><a href="https://unbug.github.io/codelf/">CODELF</a>：变量命名搜索</li>
+<li><a href="https://codeforces.com/submissions/jiangly">Personal submissions - Codeforces</a>：jiangly submissions主页，可以查看其submissions学习代码风格</li>
+<li><a href="https://codeforces.com/submissions/tourist">Personal submissions - Codeforces</a>：tourist submissions主页</li>
+</ol>
 <h3 id="开拓视野"><a class="markdownIt-Anchor" href="#开拓视野"></a> 开拓视野</h3>
 <ol>
 <li><a href="https://fwjmath.wordpress.com/recommended-list/">《计算的极限》等文章索引</a></li>
@@ -267,6 +289,7 @@
 <ol>
 <li><a href="https://iep.utm.edu/">互联网哲学百科</a></li>
 <li><a href="https://rosettacode.org/wiki/Rosetta_Code">Rosetta Code</a>：用不同的语言解决相同的问题</li>
+<li><a href="https://literateprograms.org/">LiteratePrograms:Welcome - LiteratePrograms</a>：同上</li>
 </ol>
 <h3 id="好用工具"><a class="markdownIt-Anchor" href="#好用工具"></a> 好用工具</h3>
 <ol>
@@ -663,6 +686,22 @@
 <p>如下图所示：<br />
 <img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220916000324.png" alt="" /><br />
 有时上图中的Compile output路径无法通过浏览目录指定，此时可以直接复制目录完整路径到该选项，如上图中的<code>D:\Desktop\CS61B\out</code>，应用后重启项目即可。</p>
+<h3 id="对ideavim中的键进行重新映射"><a class="markdownIt-Anchor" href="#对ideavim中的键进行重新映射"></a> 对ideaVim中的键进行重新映射</h3>
+<ol>
+<li>在<code>C:\Users\user\</code>目录下创建<code>.ideavimrc</code>文件。</li>
+<li>在其中添加如下内容：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot; I like ujsing H and L for beginning/end of line</span></span><br><span class="line"><span class="string">:nmap H ^</span></span><br><span class="line"><span class="string">:nmap L $</span></span><br><span class="line"><span class="string">&quot;</span><span class="built_in">map</span> j j to Esc<span class="string">&quot;</span></span><br><span class="line"><span class="string">imap jj &lt;Esc&gt;</span></span><br><span class="line"><span class="string">&quot;</span> Have j <span class="keyword">and</span> k navigate visual lines rather than logical ones</span><br><span class="line">:nmap j gj</span><br><span class="line">:nmap k gk</span><br><span class="line"></span><br><span class="line"><span class="string">&quot; Yank to system clipboard&quot;</span></span><br><span class="line">:<span class="built_in">set</span> clipboard=unnamed</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/10149187/intellij-ideavim-change-keys">vim - Intellij IdeaVim change keys - Stack Overflow</a></li>
+</ol>
+</blockquote>
+<h3 id="idea插件推荐"><a class="markdownIt-Anchor" href="#idea插件推荐"></a> IDEA插件推荐</h3>
+<ol>
+<li>IdeaVimExtension：在切换到normal模式时，自动切换为英文输入</li>
+</ol>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -1543,7 +1582,7 @@ PS：</li>
 <ul>
 <li><code>torch.save</code>：存储一个serialized object到磁盘，该函数使用Python的<code>pickle</code> utility来序列化（serialization）。Models/tensors和各种类型对象的字典都可以使用该函数存储</li>
 <li><code>torch.load</code>：使用<code>pickle</code>的unpickling能力来反序列化pickled对象文件到内存中。该函数也可以设置用来加载数据的设备（如gpu），见 <a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-loading-model-across-devices">Saving &amp; Loading Model Across Devices</a>。</li>
-<li><code>torch.nn.Module.load_state_dict</code>：使用反序列话的state_dict加载模型的参数字典，详细信息见 <a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict">What is a state_dict?</a>。</li>
+<li><code>torch.nn.Module.load_state_dict</code>：使用反序列化的state_dict加载模型的参数字典，详细信息见 <a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict">What is a state_dict?</a>。</li>
 </ul>
 <p><strong>什么是<code>state_dict</code>?</strong></p>
 <p>在Pytorch中， 一个<code>torch.nn.Module</code>模型的可学习的参数（如权重和偏差）被包含在模型的参数中（可以通过<code>model.parameters()</code>获取。一个state_dict就是一个简单的Python字典对象，其将每个layer映射到它的参数tensor。注意只有具有可学习参数的layers（如卷积层，线性层等）和具有registered buffers（batchnorm’s running_mean）的layers在模型的state_dict中有入口。Optimizer对象（<code>torch.optim</code>）也有一个state_dict，它包含关于优化器的状态信息和使用的超参数。</p>
@@ -2197,6 +2236,8 @@ PS：当出现<code>you haven't written any data to your event files.</code>的�
 <span id="more"></span>
 <ol>
 <li><a href="https://sadh.life/post/builtins/">Understanding all of Python, through its builtins</a>：Python有许多大多数不熟知的内置函数。本文通过Python的一些鲜为人知的内置函数介绍Python提供的功能和特性。(未读)</li>
+<li><a href="https://realpython.com/python-traceback/">Understanding the Python Traceback – Real Python</a>：本文对Python中的报错信息traceback进行介绍。（未读完）</li>
+<li><a href="https://trebaud.github.io/posts/typing-python/">Typing Python with typing :: Yet Another Random Memoir</a>：Python3.6开始支持类型声明，本文想初学者简单介绍如何使用Python类型</li>
 <li></li>
 </ol>
 ]]></content>
@@ -2212,6 +2253,18 @@ PS：当出现<code>you haven't written any data to your event files.</code>的�
     <url>/2022/09/12/Pytorch-Distributed-Data-Parallel/</url>
     <content><![CDATA[<p>本文记录一下Pytorch中的核心操作之一——Distributed Data Parallel (分布式数据并行)</p>
 <span id="more"></span>
+<p>训练时：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.environ[<span class="string">&quot;CUDA_VISIBLE_DEVICES&quot;</span>] = <span class="string">&quot;3, 5&quot;</span></span><br><span class="line">multi_gpu = <span class="literal">True</span></span><br><span class="line">model = Model(args)</span><br><span class="line"><span class="keyword">if</span> multi_gpu:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;training on multi_gpu: &quot;</span>)</span><br><span class="line">	torch.cuda.empty_cache()</span><br><span class="line">	model = nn.DataParallel(model)</span><br><span class="line">model.train(<span class="literal">True</span>)</span><br><span class="line">model.cuda()</span><br></pre></td></tr></table></figure>
+<p>测试时：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Model(args)</span><br><span class="line"><span class="keyword">if</span> multi_gpu:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;testing on multi_gpu...&quot;</span>)</span><br><span class="line">	model = nn.DataParallel(model)</span><br><span class="line">model.load_state_dict(torch.load(path))</span><br><span class="line">model.train(<span class="literal">False</span>)</span><br><span class="line">model.cuda()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/Karel911/TRACER/blob/main/trainer.py">TRACER/trainer.py at main · Karel911/TRACER · GitHub</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html">Optional: Data Parallelism — PyTorch Tutorials 2.0.0+cu117 documentation</a></li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html">DataParallel — PyTorch 2.0 documentation</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -2268,7 +2321,7 @@ PS：当出现<code>you haven't written any data to your event files.</code>的�
 </br>
 <p>10.<code>img = cv2.flip(img, 0)</code> 表示将图像做水平翻转；<code>img = cv2.flip(img, 1)</code>表示将图像做垂直翻转。<code>img = cv2.flip(img, -1)</code> 表示将图像同时做水平和垂直翻转。</p>
 </br>
-<p>11.<code>random.random()</code>方法返回随机生成的一个实数，范围为 [0,1)；<code>random.randint(a,b)</code>方法返回随机生成的一个整数，其值&gt;=a，&lt;=b。</p>
+<p>11.<code>random.randint()</code>方法返回随机生成的一个实数，范围为 [0,1)；<code>random.randint(a,b)</code>方法返回随机生成的一个整数，其值&gt;=a，&lt;=b。</p>
 </br>
 <ol start="12">
 <li></li>
@@ -2853,7 +2906,7 @@ PS：当出现<code>you haven't written any data to your event files.</code>的�
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> imageio</span><br><span class="line">imageio.imwrite(save_path + name, pred_edge_kk)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
-<p>[<a href="https://stackoverflow.com/questions/19991665/my-scipy-misc-module-appears-to-be-missing-imsave">My scipy.misc module appears to be missing imsave</a></p>
+<p><a href="https://stackoverflow.com/questions/19991665/my-scipy-misc-module-appears-to-be-missing-imsave">My scipy.misc module appears to be missing imsave</a></p>
 </blockquote>
 </br>
 <p>19.Variable deprecated</p>
@@ -2865,6 +2918,14 @@ PS：当出现<code>you haven't written any data to your event files.</code>的�
 </blockquote>
 </br>
 <p>20.tensor和numpy之间的转换：</p>
+<ul>
+<li>numpy to tensor:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 </span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">mask = cv2.imread(<span class="string">&#x27;./mask.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">mask = torch.from_numpy(mask)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>tensor to numpy:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch </span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment"># this is just my embedding matrix which is a Torch tensor object</span></span><br><span class="line">embedding = learn.model.u_weight</span><br><span class="line"></span><br><span class="line">embedding_list = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">64382</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">input</span> = torch.cuda.LongTensor(embedding_list)</span><br><span class="line">tensor_array = embedding(<span class="built_in">input</span>)</span><br><span class="line"><span class="comment"># the output of the line below is a numpy array</span></span><br><span class="line">tensor_array.cpu().detach().numpy()</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -3170,6 +3231,33 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 <li><a href="https://zhuanlan.zhihu.com/p/430603620">vscode + vim 全键盘操作高效搭配方案 - 知乎</a></li>
 <li><a href="https://www.zhaixue.cc/vim/vim-insert.html#:~:text=%E5%B8%B8%E7%94%A8%E7%9A%84vim%E6%8F%92%E5%85%A5%E5%91%BD%E4%BB%A4%EF%BC%9A&amp;text=a%EF%BC%9A%E5%9C%A8%E5%BD%93%E5%89%8D%E5%85%89%E6%A0%87%E7%9A%84,%E7%9A%84%E7%BB%93%E5%B0%BE%E5%A4%84%E6%B7%BB%E5%8A%A0%E6%96%87%E6%9C%AC">vim 文本插入 - 在光标的前面，后面，行尾，行首插入字符 - vim使用入门 | 宅学部落</a></li>
 <li><a href="https://stackoverflow.com/questions/62405783/how-do-you-avoid-key-binding-collisions-between-vs-code-and-vscodevim">How do you avoid key binding collisions between VS Code and vscodevim? - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/48369303/use-in-visual-studio-code-vim-extension-caps-instead-of-esc">Use in Visual Studio Code (Vim extension) CAPS instead of ESC - Stack Overflow</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode-vim打开easymotion和sneak实现文件内任意跳转"><a class="markdownIt-Anchor" href="#vscode-vim打开easymotion和sneak实现文件内任意跳转"></a> VSCode Vim打开EasyMotion和Sneak实现文件内任意跳转</h3>
+<h4 id="sneak"><a class="markdownIt-Anchor" href="#sneak"></a> Sneak</h4>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230325225209.png" alt="" /></p>
+<ul>
+<li><code>s&#123;char&#125;&#123;char&#125;</code>跳转到从光标开始，第一个<code>&#123;char&#125;&#123;char&#125;</code>出现的位置</li>
+<li><code>;</code>跳转到下一个出现位置，<code>,</code>跳转到上一个</li>
+<li><code>S&#123;char&#125;&#123;char&#125;</code>：反向查找，即方向相反</li>
+</ul>
+<h4 id="easymotion"><a class="markdownIt-Anchor" href="#easymotion"></a> EasyMotion</h4>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230325225459.png" alt="" /><br />
+EasyMotion使你摆脱需要<code>5j</code>或者<code>5k</code>这样数数的麻烦。</p>
+<ul>
+<li><code>&lt;leader&gt;&lt;leader&gt;w</code>：会使用字母的排列组合标注当前行以及之后的行的单词。<br />
+标注前：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230325225622.png" alt="" /><br />
+标注后：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230325225650.png" alt="" /><br />
+按下对应键即可实现跳转。</li>
+<li><code>&lt;leader&gt;&lt;leader&gt;f'</code>，EasyMotion将会标注所有<code>'</code>字符在当前行和之后行出现的位置。</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/moving-even-faster-with-vim-sneak-and-easymotion/">Moving Even Faster with Vim Surround and EasyMotion | Barbarian Meets Coding</a></li>
 </ol>
 </blockquote>
 <h3 id="vscode配置在终端和编辑器之间切换的快捷键"><a class="markdownIt-Anchor" href="#vscode配置在终端和编辑器之间切换的快捷键"></a> VSCode配置在终端和编辑器之间切换的快捷键</h3>
@@ -3195,6 +3283,67 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 <p>参考资料：</p>
 <ol>
 <li><a href="https://stackoverflow.com/questions/38713405/open-files-always-in-a-new-tab">visual studio code - Open files always in a new tab - Stack Overflow</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode配置defaultformatter"><a class="markdownIt-Anchor" href="#vscode配置defaultformatter"></a> VSCode配置defaultFormatter</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://dev.to/drayeleo/installing-the-ruby-plugin-for-prettier-in-vs-code-2m6c#:~:text=You%20should%20now%20be%20able,for%20macOS">Installing the Ruby Plugin for Prettier in VS Code - DEV Community</a></li>
+<li><a href="https://stackoverflow.com/questions/41051423/how-do-i-auto-format-ruby-or-erb-files-in-vs-code">html - How do I auto format Ruby or .erb files in VS Code? - Stack Overflow</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode配置fira-code字体"><a class="markdownIt-Anchor" href="#vscode配置fira-code字体"></a> VSCode配置Fira Code字体</h3>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;editor.fontLigatures&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;editor.fontFamily&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Fira Code&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/38605932">Fira Code: 一个有趣而实用的编程字体 - 知乎</a></li>
+<li><a href="https://www.cnblogs.com/kizuna1314/p/15423673.html">visual studio/vscode 使用Fira code字体 - KizunaT - 博客园</a></li>
+<li><a href="https://github.com/tonsky/FiraCode/blob/master/README_CN.md">FiraCode/README_CN.md at master · tonsky/FiraCode · GitHub</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode管理java项目"><a class="markdownIt-Anchor" href="#vscode管理java项目"></a> VSCode管理Java项目</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://code.visualstudio.com/docs/java/java-project">Java project management in Visual Studio Code</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode插件推荐"><a class="markdownIt-Anchor" href="#vscode插件推荐"></a> VSCode插件推荐</h3>
+<ol>
+<li><a href="https://blog.openreplay.com/set-up-codegpt-in-visual-studio-code/">Set up CodeGPT in Visual Studio Code</a></li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.zhihu.com/question/380933740/answer/1554048933">有什么推荐的vs code插件？ - 知乎</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode-c环境配置"><a class="markdownIt-Anchor" href="#vscode-c环境配置"></a> VSCode C++环境配置</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://code.visualstudio.com/docs/languages/cpp">C++ programming with Visual Studio Code</a></li>
+<li><a href="https://www.msys2.org/">MSYS2</a></li>
+<li><a href="https://packages.msys2.org/package/mingw-w64-x86_64-gcc">Package: mingw-w64-x86_64-gcc - MSYS2 Packages</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode-ssh免密码连接远程服务器"><a class="markdownIt-Anchor" href="#vscode-ssh免密码连接远程服务器"></a> VSCode ssh免密码连接远程服务器</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://code.visualstudio.com/docs/remote/ssh">Developing on Remote Machines using SSH and Visual Studio Code</a></li>
+<li><a href="https://code.visualstudio.com/blogs/2019/10/03/remote-ssh-tips-and-tricks">Visual Studio Code Remote SSH Tips and Tricks</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode跳转配置"><a class="markdownIt-Anchor" href="#vscode跳转配置"></a> VSCode跳转配置</h3>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230312161241.png" alt="" /><br />
+通过勾选上述选项，可以实现在当前文件窗口更改代码，而无需跳转。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://mailchi.mp/vscode/46">VSCode #46 - A Better Code Folding Extension</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -3240,6 +3389,7 @@ PS：上述的GitBash不要添加空格使用&quot;Git Bash&quot;，会导致配
 <blockquote>
 <ol>
 <li><a href="https://pip.pypa.io/en/stable/installation/">pip installation</a></li>
+<li><a href="https://askubuntu.com/questions/1239829/modulenotfounderror-no-module-named-distutils-util">python - ModuleNotFoundError: No module named ‘distutils.util’ - Ask Ubuntu</a></li>
 </ol>
 </blockquote>
 <h3 id="键盘键位映射修改"><a class="markdownIt-Anchor" href="#键盘键位映射修改"></a> 键盘键位映射修改</h3>
@@ -3276,13 +3426,21 @@ Windows 10打开Taskbar设置：<br />
 改为：<br />
 <img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230112140336.png" alt="" /><br />
 但这会对所有软件生效。</li>
-<li>方法2：使用7+ Taskbar Tweaker管理Taskbar，推荐</li>
+<li>方法2：使用7+ Taskbar Tweaker管理Taskbar，推荐。配置如下：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230203201506.png" alt="" /></li>
 </ol>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://stackoverflow.com/questions/63381934/vs-code-multiple-taskbar-icon">VS Code multiple taskbar icon - Stack Overflow</a></li>
 <li><a href="https://www.bilibili.com/video/BV1VV411n7hW">88：7+ Taskbar Tweaker 最新 5.1一款功能强大的Windows任务栏自定义设置工具使用教程_哔哩哔哩_bilibili</a></li>
+</ol>
+</blockquote>
+<h3 id="其中的文件夹或文件已在另一程序中打开"><a class="markdownIt-Anchor" href="#其中的文件夹或文件已在另一程序中打开"></a> 其中的文件夹或文件已在另一程序中打开</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.zhihu.com/question/453864187/answer/1827894565">想删除这个东西但它显示的是在另一文件夹中或程序中打开，无法删除，怎么办？ - 知乎</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -3308,6 +3466,16 @@ Windows 10打开Taskbar设置：<br />
 <p>参考资料：</p>
 <ol>
 <li><a href="https://sspai.com/post/66381">在 Windows 下使用多块屏幕的你，可以收下这些建议</a></li>
+</ol>
+</blockquote>
+<h3 id="sumatra-pdf和everything的冲突"><a class="markdownIt-Anchor" href="#sumatra-pdf和everything的冲突"></a> Sumatra PDF和Everything的冲突</h3>
+<p>在使用Everything搜索pdf文件后，如果直接双击打开pdf文件，此时Sumatra PDF以管理员身份运行。如果直接在文件夹中双击pdf文件，此时会报错。<br />
+解决方案：Everything -&gt; 工具 -&gt; 选项 -&gt; 取消勾选以管理员身份运行 -&gt; 启动Everything服务 -&gt; 重启Everything</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/sumatrapdfreader/sumatrapdf/discussions/2316">Why “SumatraPDF is running as admin and cannot open files from a non-admin process” error? · Discussion #2316 · sumatrapdfreader/sumatrapdf · GitHub</a></li>
+<li><a href="https://www.voidtools.com/faq/#how_do_i_prevent_the_uac_prompt_when_running_everything">FAQ - voidtools</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -3366,11 +3534,19 @@ Windows 10打开Taskbar设置：<br />
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220522210402831.png" alt="image-20220522210402831" /></p>
 </li>
 </ul>
+<h3 id="wsl代理配置"><a class="markdownIt-Anchor" href="#wsl代理配置"></a> WSL代理配置</h3>
+<p>配置代理后测试代理不能使用ping，因为ping使用ICMP协议，而代理只支持TCP/UDP数据包。应该使用curl：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl https://www.youtube.com | <span class="built_in">head</span> -1</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://docs.microsoft.com/en-us/windows/wsl/install">Install Linux on Windows with WSL</a></li>
 <li><a href="https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands">WSL的基本命令</a></li>
+<li><a href="https://www.cnblogs.com/tuilk/p/16287472.html">WSL2配置代理 - Leaos - 博客园</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/153124468">为 WSL2 一键设置代理 - 知乎</a></li>
+<li><a href="https://www.linuxidc.com/Linux/2016-05/131448.htm">httping：测量网站延迟_Linux教程_Linux公社-Linux系统门户网站</a></li>
+<li><a href="https://blog.csdn.net/zhongliangtang/article/details/81280460">windows上使用代理，使用ping命令会超时</a></li>
+<li><a href="https://blog.csdn.net/fur_pikachu/article/details/127973376">WSL2-解决无法ping通主机/配置使用主机代理_wsl 使用代理_会伏丘的博客-CSDN博客</a></li>
 </ol>
 </blockquote>
 <h2 id="cmd"><a class="markdownIt-Anchor" href="#cmd"></a> cmd</h2>
@@ -3391,6 +3567,19 @@ Windows 10打开Taskbar设置：<br />
 <li><a href="https://www.cnblogs.com/fstang/archive/2013/04/06/3002006.html">在cmd中为命令设置别名以及启动cmd时自动执行bat</a></li>
 <li><a href="https://www.cnblogs.com/onelikeone/p/10783497.html">window alias给cmd命令起别名</a></li>
 <li><a href="https://blog.csdn.net/cyan20115/article/details/106551191">Windows版Grep – findstr示例</a></li>
+</ol>
+</blockquote>
+<h3 id="scoop"><a class="markdownIt-Anchor" href="#scoop"></a> Scoop</h3>
+<p>Scoop是Windows系统下一款流行的包管理工具<br />
+推荐包：</p>
+<ol>
+<li><a href="https://github.com/solidiquis/erdtree">GitHub - solidiquis/erdtree: A multi-threaded file-tree visualizer and disk usage analyzer.</a>：目录结构树状展示</li>
+<li><a href="https://github.com/Slackadays/Clipboard">GitHub - Slackadays/Clipboard: Your external brain that remembers anything, anytime, anywhere. Save time and effort the 𝗲𝗮𝘀𝘆 way! 😄</a>：实现终端复制、剪切和粘贴。</li>
+</ol>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://scoop.sh/">Scoop</a></li>
 </ol>
 </blockquote>
 ]]></content>
@@ -3585,6 +3774,30 @@ Windows 10打开Taskbar设置：<br />
 <li><a href="https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro">git - error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1) - Stack Overflow</a></li>
 </ol>
 </blockquote>
+</br>
+12.在linux中使用git时，出现如下情况：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230203180529.png)
+解决方案：在Linux的git中配置personal token
+- `git config --global credential.helper cache`：在`.gitconfig`中添加配置，使得系统记住后续输入的token，避免重复输入
+- `git clone https://github.com/Tom89757/dotfiles.git`：clone对应仓库，并输入对应用户名和token。由于上述配置，此次输入后后续无需再次输入。
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/68775869/message-support-for-password-authentication-was-removed-please-use-a-personal#:~:text=From%202021%2D08%2D13%2C,a%20PAT%20on%20your%20system.">git - Message “Support for password authentication was removed. Please use a personal access token instead.” - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+13.clone仓库时出现：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Host key verification failed. fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
+解决方案：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的github账户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub <span class="comment"># 添加到git ssh</span></span><br><span class="line">ssh-keyscan -t rsa github.com &gt;&gt; ~/.ssh/known_hosts </span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [我的现代化Neovim配置 - 知乎](https://zhuanlan.zhihu.com/p/382092667)
+> 2. [ssh - Git error: "Host Key Verification Failed" when connecting to remote repository - Stack Overflow](https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository)
+</br>
+14.下载仓库中某个文件夹：
+工具：[Download GitHub directory](https://download-directory.github.io/)
+</br>
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -3601,6 +3814,8 @@ Windows 10打开Taskbar设置：<br />
 <ol>
 <li><a href="https://sp19.datastructur.es/materials/guides/using-git">Using Git</a>：本教程需要你对命令行有基础的了解（未读）</li>
 <li><a href="https://sp19.datastructur.es/materials/guides/git-wtfs">Git WTFS</a>：本文档旨在帮你解决你在使用git过程中频繁遇到的WTFS (weird technical failure scenarios)（未读）</li>
+<li><a href="https://www.cnblogs.com/apocelipes/p/14491762.html">图解如何在Linux上配置git自动登录验证 - apocelipes - 博客园</a></li>
+<li>[</li>
 </ol>
 ]]></content>
       <categories>
@@ -3657,7 +3872,16 @@ Windows 10打开Taskbar设置：<br />
 <li><a href="https://go.dev/ref/spec#Import_declarations">Import declarations</a></li>
 </ol>
 </blockquote>
-]]></content>
+</br>
+2.镜像源配置：
+在`.bashrc`文件中写入：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 GOPROXY 环境变量，以下三选一</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 七牛 CDN</span></span><br><span class="line">go <span class="built_in">env</span> -w  GOPROXY=https://goproxy.cn,direct</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 阿里云</span></span><br><span class="line">go <span class="built_in">env</span> -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 官方</span></span><br><span class="line">go <span class="built_in">env</span> -w  GOPROXY=https://goproxy.io,direct</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Go 国内加速：Go 国内加速镜像 | Go 技术论坛](https://learnku.com/go/wikis/38122)
+</br>
+3.Linux安装go
+> 参考资料：
+> 1. [Go 语言环境安装 | 菜鸟教程](https://www.runoob.com/go/go-environment.html)]]></content>
       <categories>
         <category>笔记</category>
       </categories>
@@ -3828,6 +4052,8 @@ Windows 10打开Taskbar设置：<br />
 > 3. [Matplotlib 散点图 | 菜鸟教程](https://www.runoob.com/matplotlib/matplotlib-scatter.html)
 > 4. [Python三种方法计算皮尔逊相关系数](https://blog.csdn.net/qq_40260867/article/details/90667462)
 </br>
+5.由于OpenCV读取的图片默认三通道顺序为BGR，所以在使用matplotlib进行画图时，需要对其通道顺序进行调整：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">plt.imshow(result[:, :, [<span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>]])</span><br><span class="line">plt.title(<span class="string">&quot;result&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>深度学习</category>
@@ -4126,7 +4352,85 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 19.python中的`enumerate`的用法：
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; seasons = [<span class="string">&#x27;Spring&#x27;</span>, <span class="string">&#x27;Summer&#x27;</span>, <span class="string">&#x27;Fall&#x27;</span>, <span class="string">&#x27;Winter&#x27;</span>]  </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">list</span>(<span class="built_in">enumerate</span>(seasons))  </span><br><span class="line">[(<span class="number">0</span>, <span class="string">&#x27;Spring&#x27;</span>), (<span class="number">1</span>, <span class="string">&#x27;Summer&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;Fall&#x27;</span>), (<span class="number">3</span>, <span class="string">&#x27;Winter&#x27;</span>)]  </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">list</span>(<span class="built_in">enumerate</span>(seasons, start=<span class="number">1</span>))       <span class="comment"># 下标从 1 开始  </span></span><br><span class="line">[(<span class="number">1</span>, <span class="string">&#x27;Spring&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;Summer&#x27;</span>), (<span class="number">3</span>, <span class="string">&#x27;Fall&#x27;</span>), (<span class="number">4</span>, <span class="string">&#x27;Winter&#x27;</span>)]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; seq = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>]  </span><br><span class="line">&gt;&gt;&gt; <span class="keyword">for</span> i, element <span class="keyword">in</span> <span class="built_in">enumerate</span>(seq):  </span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span> i, element  </span><br><span class="line"><span class="meta">... </span> </span><br><span class="line"><span class="number">0</span> one  </span><br><span class="line"><span class="number">1</span> two  </span><br><span class="line"><span class="number">2</span> three</span><br></pre></td></tr></table></figure>
 > 参考资料：
-> 1. [Python enumerate() 函数 | 菜鸟教程](https://www.runoob.com/python/python-func-enumerate.html)]]></content>
+> 1. [Python enumerate() 函数 | 菜鸟教程](https://www.runoob.com/python/python-func-enumerate.html)
+</br>
+20.安装`pip install albumentations`时报错：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not install packages due to an OSError: [WinError 5]</span><br></pre></td></tr></table></figure>
+解决方案：添加`--user`选项
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install --upgrade albumentations --user</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [tensorflow - Could not install packages due to an EnvironmentError: [WinError 5] Access is denied: - Stack Overflow](https://stackoverflow.com/questions/51912999/could-not-install-packages-due-to-an-environmenterror-winerror-5-access-is-de)
+</br>
+21.`pip install package`时出现如下Warning:
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230217212259.png)
+原因：对应包损坏
+解决方案：在对应路径下`d:\ml\anaconda3\envs\testenv\lib\site-packages`找到名字前缀为`~ip`的文件夹并删除。
+> 参考资料：
+> 1. [Found Solution to: WARNING: Ignoring invalid distribution -{packageName} ({pathToIssue}) : Python](https://www.reddit.com/r/Python/comments/x70edr/found_solution_to_warning_ignoring_invalid/)
+</br>
+22.pip更新：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python - There was an error checking the latest version of pip - Stack Overflow](https://stackoverflow.com/questions/72439001/there-was-an-error-checking-the-latest-version-of-pip)
+</br>
+23.python中`import`相关的路径问题：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/16981921/relative-imports-in-python-3">Relative imports in Python 3 - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/34753206/init-py-cant-find-local-modules">python - <strong>init</strong>.py can’t find local modules - Stack Overflow</a></li>
+<li><a href="https://www.bilibili.com/video/BV1K24y1k7XA/?spm_id_from=333.999.0.0&amp;vd_source=71b57f2bb132ac1f88ed255cad4a06a6">【python】关于import你需要知道的一切！一个视频足够了_哔哩哔哩_bilibili</a></li>
+</ol>
+</blockquote>
+</br>
+24.导出pip list到`requirements.txt`文件在另一个环境中安装：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 导出</span></span><br><span class="line">pip freeze &gt;requirements.txt</span><br><span class="line"><span class="comment">## 安装</span></span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [pip requirements导出当前项目所用的包list列表_苦咖啡's运维之路的技术博客_51CTO博客](https://blog.51cto.com/alsww/1893100)
+</br>
+15.在Python中只声明变量而不赋值：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result = <span class="literal">None</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">	<span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">		result = i </span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		result += i</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [在Python中是否可以只声明变量而不赋值？ - 问答 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/28703)
+</br>
+16.Python中`dict` vs `collections.OrderedDict`：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># A Python program to demonstrate working of OrderedDict  </span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;This is a Dict:n&quot;</span>)  </span><br><span class="line">d = &#123;&#125;  </span><br><span class="line">d[<span class="string">&#x27;a&#x27;</span>] = <span class="number">1</span>  </span><br><span class="line">d[<span class="string">&#x27;b&#x27;</span>] = <span class="number">2</span>  </span><br><span class="line">d[<span class="string">&#x27;c&#x27;</span>] = <span class="number">3</span>  </span><br><span class="line">d[<span class="string">&#x27;d&#x27;</span>] = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():  </span><br><span class="line"><span class="built_in">print</span>(key, value)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;nThis is an Ordered Dict:n&quot;</span>)  </span><br><span class="line">od = OrderedDict()  </span><br><span class="line">od[<span class="string">&#x27;a&#x27;</span>] = <span class="number">1</span>  </span><br><span class="line">od[<span class="string">&#x27;b&#x27;</span>] = <span class="number">2</span>  </span><br><span class="line">od[<span class="string">&#x27;c&#x27;</span>] = <span class="number">3</span>  </span><br><span class="line">od[<span class="string">&#x27;d&#x27;</span>] = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> od.items():  </span><br><span class="line"><span class="built_in">print</span>(key, value)  </span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">This <span class="keyword">is</span> a <span class="type">Dict</span>:  </span><br><span class="line">(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>)  </span><br><span class="line">(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>)  </span><br><span class="line">(<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>)  </span><br><span class="line">(<span class="string">&#x27;d&#x27;</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">This <span class="keyword">is</span> an Ordered <span class="type">Dict</span>:  </span><br><span class="line">(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>)  </span><br><span class="line">(<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>)  </span><br><span class="line">(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>)  </span><br><span class="line">(<span class="string">&#x27;d&#x27;</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [OrderedDict in Python](https://prutor.ai/ordereddict-in-python/#:~:text=The%20only%20difference%20between%20dict,inserted%20is%20remembered%20by%20OrderedDict.)
+> 2. [python - Difference between dictionary and OrderedDict - Stack Overflow](https://stackoverflow.com/questions/34305003/difference-between-dictionary-and-ordereddict)
+</br>
+17.遍历argparse的`parse_args()`：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--a&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">55</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--b&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">66</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--c&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">77</span>)</span><br><span class="line"></span><br><span class="line">args = parser.parse_args()</span><br><span class="line"><span class="built_in">print</span>(args)</span><br><span class="line"><span class="comment"># vars() 函数返回对象object的属性和属性值的字典对象。</span></span><br><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> <span class="built_in">vars</span>(args):</span><br><span class="line">    <span class="built_in">print</span>(arg, <span class="string">&#x27;:&#x27;</span>, <span class="built_in">getattr</span>(args, arg))  <span class="comment"># getattr() 函数是获取args中arg的属性值</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python遍历argparse的parse_args()_python 遍历args_集电极的博客-CSDN博客](https://blog.csdn.net/qq_38463737/article/details/121103702)
+</br>
+18.python代码可以正常运行，但是debug时出现`No Module named 'mmseg'`。
+原因：在代码文件开头添加了上层路径
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&quot;..&quot;</span>)</span><br><span class="line"><span class="keyword">import</span> mmseg</span><br></pre></td></tr></table></figure>
+在代码直接运行时，运行`python test.py`，可以从上层路径直接导入`mmseg`；但是在进行debug时，运行`pythn tools/test.py`，路径相对关系发生变化。无法正常导入`mmseg`。
+解决方案：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="keyword">import</span> sys </span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&quot;..&quot;</span>)</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">&quot;.&quot;</span>) <span class="comment"># 添加本地路径</span></span><br><span class="line"><span class="keyword">import</span> mmseg</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [https://youtrack.jetbrains.com/issue/PY-43911/run-my-python-code-works-but-debugging-has-problems-ModuleNotFoundError-No-module-named-MaryPackage](https://youtrack.jetbrains.com/issue/PY-43911/run-my-python-code-works-but-debugging-has-problems-ModuleNotFoundError-No-module-named-MaryPackage)
+</br>
+19.在对python文件进行调试时，有将下面的字典类型变量复制、保存到txt文件并转为更易读的json格式的需求：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230304125946.png)
+步骤：
+1. 右键上述cfg局部变量，并copy value，保存到txt文件`cfg.txt`。
+2. 从txt文件中读取，或者直接复制给变量赋值
+3. 使用`json`库将其保存至`.json`文件：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">x = txt_content <span class="comment"># 复制赋值或从txt读取</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;cfg.json&quot;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> outfile:</span><br><span class="line">	json.dump(x, outfile, indent=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python - How to Format dict string outputs nicely - Stack Overflow](https://stackoverflow.com/questions/3733554/how-to-format-dict-string-outputs-nicely)
+> 2. [python - How do I write JSON data to a file? - Stack Overflow](https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file)
+</br>
+20.在python中，有时有对tuple或list中的元素值进行逐个比较（不是引用）的需求，此时需要引入`operator`模块，并调用`eq`函数：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt; <span class="keyword">import</span> operator</span><br><span class="line">&gt;&gt; operator.eq(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;name&#x27;</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line">&gt;&gt; operator.eq(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+`operator`中还存在其它对象比较函数：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">operator.lt(a, b)</span><br><span class="line">operator.le(a, b)</span><br><span class="line">operator.eq(a, b)</span><br><span class="line">operator.ne(a, b)</span><br><span class="line">operator.ge(a, b)</span><br><span class="line">operator.gt(a, b)</span><br><span class="line">operator.__lt__(a, b)</span><br><span class="line">operator.__le__(a, b)</span><br><span class="line">operator.__eq__(a, b)</span><br><span class="line">operator.__ne__(a, b)</span><br><span class="line">operator.__ge__(a, b)</span><br><span class="line">operator.__gt__(a, b)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Python Tuple(元组) cmp()方法 | 菜鸟教程](https://www.runoob.com/python/att-tuple-cmp.html)
+]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -4177,6 +4481,10 @@ Python关于类是什么这个问题有古怪的答案，它借鉴了来自Small
 </ol>
 </blockquote>
 </br>
+7.Linux安装nodejs：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line">sudo <span class="built_in">mkdir</span> -p /usr/local/lib/nodejs</span><br><span class="line">sudo tar -xJvf node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>.tar.xz -C /usr/local/lib/nodejs </span><br><span class="line"><span class="comment"># Nodejs</span></span><br><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line"><span class="built_in">export</span> PATH=/usr/local/lib/nodejs/node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Installation · nodejs/help Wiki · GitHub](https://github.com/nodejs/help/wiki/Installation)
 ]]></content>
       <categories>
         <category>开发工具</category>
@@ -5977,7 +6285,12 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 7.在Python中捕捉`OpenCV Error`：
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># do a thing</span></span><br><span class="line"><span class="keyword">except</span> (cv.error, OpenCV Error):</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;Can&#x27;t do the thing&quot;</span></span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 > 参考资料：
-> 1. [How to catch "OpenCV Error" in Python - Stack Overflow](https://stackoverflow.com/questions/8873657/how-to-catch-opencv-error-in-python)]]></content>
+> 1. [How to catch "OpenCV Error" in Python - Stack Overflow](https://stackoverflow.com/questions/8873657/how-to-catch-opencv-error-in-python)
+</br>
+8.膨胀腐蚀：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 膨胀</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dilate_k</span>(<span class="params">img, k=<span class="number">20</span>, <span class="built_in">iter</span> = <span class="number">2</span></span>):</span><br><span class="line">    kernel = np.ones((k,k))</span><br><span class="line">    result = cv2.dilate(img, kernel, <span class="built_in">iter</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"><span class="comment"># 腐蚀</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_erosion</span>(<span class="params">img, ksize=<span class="number">1</span></span>):</span><br><span class="line">    kernel = np.ones((ksize, ksize), dtype=np.uint8)</span><br><span class="line">    result = cv2.erode(img, kernel, iterations=<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_edge</span>(<span class="params">img, erosion</span>):</span><br><span class="line">    h,w = img.shape[:<span class="number">2</span>]</span><br><span class="line">    result = np.zeros((h,w), dtype=np.uint8)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">            <span class="keyword">if</span> img[i][j]&gt;<span class="number">0</span> <span class="keyword">and</span> erosion[i][j]==<span class="number">0</span>:</span><br><span class="line">                result[i][j]=<span class="number">255</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [OpenCV 图像处理之膨胀与腐蚀 - 知乎](https://zhuanlan.zhihu.com/p/110330329)]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -8220,7 +8533,38 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 11.在Python环境中用Caffe创建LeNet：
 > 参考资料：
 > 1. [Solving in Python with LeNet](https://nbviewer.org/github/BVLC/caffe/blob/master/examples/01-learning-lenet.ipynb)
-]]></content>
+</br>
+12.`opencv` vs `opencv-contrib-python` vs `opencv-python-headless` vs `opencv-contrib-python-headless`
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/64902852/the-difference-between-opencv-python-and-opencv-contrib-python">The difference between opencv-python and opencv-contrib-python - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+13.关闭启动Ubuntu环境时自动启动anaconda
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --<span class="built_in">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [安装conda后取消命令行前出现的base，取消每次启动自动激活conda的基础环境_南国那片枫叶的博客-CSDN博客_auto_activate_base](https://blog.csdn.net/u014734886/article/details/90718719)
+</br>
+14.Anaconda官方安装文档
+> 参考资料：
+> 1. [Installing on Linux — Anaconda documentation](https://docs.anaconda.com/anaconda/install/linux/)
+</br>
+15.Anaconda镜像源配置
+> 参考资料：
+> 1. [Anaconda镜像源配置 - mirage_mc - 博客园](https://www.cnblogs.com/mirage-mc/p/16072075.html)
+</br>
+16.pip镜像源配置：
+> 参考资料：
+> 1. [pip 使用国内镜像源 | 菜鸟教程](https://www.runoob.com/w3cnote/pip-cn-mirror.html)
+> 2. [pip设置全局镜像源-阿里云开发者社区](https://developer.aliyun.com/article/976828)
+</br>
+17.VSCode无法连接远程服务器：
+解决方案：
+- 本地VSCode运行`Remote-SSH: Kill VS Code Server on Host...`。
+> 参考资料：
+> 1. [SSH stops working · Issue #5982 · microsoft/vscode-remote-release · GitHub](https://github.com/microsoft/vscode-remote-release/issues/5982)]]></content>
       <categories>
         <category>深度学习</category>
         <category>环境配置</category>
@@ -8260,7 +8604,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
   <entry>
     <title>程序员延寿指南</title>
     <url>/2022/05/09/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BB%B6%E5%AF%BF%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>本文转载自 github 上的 <a href="https://github.com/geekan/HowToLiveLonger">程序员健康项目</a>，放在博客上便于查看。</p>
+    <content><![CDATA[<p>本文转载自 github 上的 <a href="https://github.com/geekan/HowToLiveLonger">程序员健康项目</a>，放在博客上便于查看。另一个有用的网站是 <a href="https://m.youlai.cn/jijiu">急救指南</a></p>
 <span id="more"></span>
 <hr />
 <h3 id="术语"><a class="markdownIt-Anchor" href="#术语"></a> 术语</h3>
@@ -8827,6 +9171,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <h4 id="实战-5"><a class="markdownIt-Anchor" href="#实战-5"></a> 实战</h4>
 <ol>
 <li><a href="https://github.com/ui-buttons/core">ui-button/core</a></li>
+<li><a href="https://www.handsome-css.com/">AwA | HANDSOME-CSS3-LIB</a>：CSS样式组件</li>
 </ol>
 <h3 id="prolog"><a class="markdownIt-Anchor" href="#prolog"></a> Prolog</h3>
 <h4 id="综合教程-6"><a class="markdownIt-Anchor" href="#综合教程-6"></a> 综合教程</h4>
@@ -8919,6 +9264,10 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="http://www.ruanyifeng.com/blog/2010/10/why_lisp_is_superior.html">为什么Lisp语言如此先进？（译文）</a></li>
 <li><a href="https://twobithistory.org/2018/10/14/lisp.html">How Lisp Became God’s Own Programming Language</a></li>
 </ol>
+<h3 id="java"><a class="markdownIt-Anchor" href="#java"></a> Java</h3>
+<ol>
+<li><a href="https://www.morling.dev/blog/getting-started-with-java-development-2023/">Getting Started With Java Development in 2023 — An Opinionated Guide - Gunnar Morling</a></li>
+</ol>
 <h3 id="kotlin"><a class="markdownIt-Anchor" href="#kotlin"></a> Kotlin</h3>
 <h4 id="综合教程-10"><a class="markdownIt-Anchor" href="#综合教程-10"></a> 综合教程</h4>
 <ol>
@@ -8941,6 +9290,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://argumatronic.com/">argumatronic -</a>：函数式编程和代数</li>
 <li><a href="http://learnyouahaskell.com/chapters">Chapters - Learn You a Haskell for Great Good!</a></li>
 <li><a href="https://rwh.readthedocs.io/en/latest/">Real World Haskell 中文版 — Real World Haskell 中文版</a></li>
+<li><a href="https://typeclasses.substack.com/p/memfd-an-example-of-haskell-and-c">memfd: An example of Haskell and C - by Chris Martin</a></li>
 </ol>
 <h4 id="dart"><a class="markdownIt-Anchor" href="#dart"></a> Dart</h4>
 <h4 id="综合教程-12"><a class="markdownIt-Anchor" href="#综合教程-12"></a> 综合教程</h4>
@@ -8992,6 +9342,8 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="http://www.java2s.com/">Programming Tutorials and Source Code Examples</a></li>
 <li><a href="https://quickref.me">Quick Reference</a></li>
 <li><a href="https://www.codewars.com/join">codewars</a></li>
+<li><a href="https://google.github.io/styleguide/">Google Style Guides | styleguide</a>：Google代码风格指南</li>
+<li><a href="https://wiki.eryajf.net/comein/">博客导引 | 二丫讲梵</a>：二丫讲梵博客资源索引</li>
 </ul>
 <h4 id="文章收集-10"><a class="markdownIt-Anchor" href="#文章收集-10"></a> 文章收集</h4>
 <ol>
@@ -9056,6 +9408,9 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/">Algorithms by Jeff Erickson</a>：据说递归和DP（动态规划）的部分讲的很好。</li>
 <li><a href="https://book.douban.com/subject/4048566/">算法设计手册 (豆瓣)</a>：Steve Yegge推荐。</li>
+<li><a href="https://www.coursera.org/specializations/algorithms#courses">Algorithms | Coursera</a>：Coursera上斯坦福的算法专项课程</li>
+<li><a href="https://cp-algorithms.com/">Main Page - Algorithms for Competitive Programming</a>：编程算法网站，英文</li>
+<li><a href="https://the-algorithms.com/">The Algorithms</a>：编程算法网站，英文</li>
 </ol>
 <h3 id="分布式系统"><a class="markdownIt-Anchor" href="#分布式系统"></a> 分布式系统</h3>
 <ol>
@@ -9086,6 +9441,8 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="http://parsing-techniques.duguying.net/">介绍 - 解析技术</a></li>
 <li><a href="https://iucompilercourse.github.io/IU-P423-P523-E313-E513-Fall-2020/">Course Webpage for Compilers (P423, P523, E313, and E513) | IU-P423-P523-E313-E513-Fall-2020</a>：印第安纳大学使用Racket教学的编译器课程</li>
 <li><a href="https://sqlite.org/src/doc/trunk/doc/lemon.html">The Lemon Parser Generator</a>：4000行的C语言parser，搭配《LEMON语法分析生成器（LALR（1）类型）源代码情景分析》使用</li>
+<li><a href="https://citw.dev/tutorial/create-your-own-compiler">Create Your Own Compiler - Caught in the Web</a>：互动式地教你动手写编译器。</li>
+<li><a href="https://www.timdbg.com/posts/fakers-guide-to-assembly/">The faker’s guide to reading (x86) assembly language // TimDbg</a>：叫你学习x86 assembly language。</li>
 </ol>
 <h3 id="计算机图形学"><a class="markdownIt-Anchor" href="#计算机图形学"></a> 计算机图形学</h3>
 <ol>
@@ -9101,6 +9458,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://www.andrew.cmu.edu/user/avigad/itp/">Interactive Theorem Proving</a>：CMU的交互式定理证明课程</li>
 <li><a href="https://www.cs.cmu.edu/~fp/courses/atp/">15-815 Automated Theorem Proving</a>：CMU的自动定理证明课程</li>
 <li><a href="https://xenaproject.wordpress.com/category/imperial/formalising-mathematics-course/">formalising mathematics course</a>：Kevin Buzzard的形式化数学博客教程</li>
+<li><a href="https://github.com/analysis-tools-dev/static-analysis#writing">GitHub - analysis-tools-dev/static-analysis</a>：该仓库收集了针对各种语言的静态分析的工具</li>
 </ol>
 <h3 id="计算机结构"><a class="markdownIt-Anchor" href="#计算机结构"></a> 计算机结构</h3>
 <ol>
@@ -9111,6 +9469,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li>[rCore-Tutorial-Book]：本教程旨在一步一步展示如何从零开始用Rust语言写一个基于RISC-V架构的类Unix内核。</li>
 <li><a href="https://inst.eecs.berkeley.edu/~cs61c/sp22/">CS 61C</a>：UCB的计算机架构课程。对应中文字幕<a href="https://www.bilibili.com/video/BV1Lu411X7u7">视频</a></li>
 <li><a href="http://csapp.cs.cmu.edu/3e/labs.html">CSAPP</a>：CMU的CSAPP课程lab。</li>
+<li><a href="https://nju-projectn.github.io/ics-pa-gitbook/ics2022/">Introduction · GitBook</a>：南京大学计算机系统基础2022，相关感悟见 <a href="https://note.tonycrane.cc/cs/system/pa/">ICS PA 实验纪实 - 鹤翔万里的笔记本</a></li>
 </ol>
 <h3 id="软件工程"><a class="markdownIt-Anchor" href="#软件工程"></a> 软件工程</h3>
 <ol>
@@ -9122,6 +9481,9 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <h3 id="深度学习和机器学习"><a class="markdownIt-Anchor" href="#深度学习和机器学习"></a> 深度学习和机器学习</h3>
 <ol>
 <li><a href="https://dlsyscourse.org/">Deep Learning Systems</a>：CMU深度学习课程，涉及算法和实现。</li>
+<li><a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations">GitHub - labmlai/annotated_deep_learning_paper_implementations</a>：常见模型架构的代码及其注释。</li>
+<li><a href="https://karpathy.ai/zero-to-hero.html">Neural Networks: Zero To Hero</a>：教你从头构建网络的系列视频</li>
+<li><a href="https://microsoft.github.io/ai-edu/">AI-EDU</a>：微软社区开源的AI-EDU学习资源</li>
 </ol>
 <h3 id="概率图模型"><a class="markdownIt-Anchor" href="#概率图模型"></a> 概率图模型</h3>
 <ol>
@@ -9129,7 +9491,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 </ol>
 <h3 id="程序语言理论"><a class="markdownIt-Anchor" href="#程序语言理论"></a> 程序语言理论</h3>
 <ol>
-<li><a href="https://bobzhang.github.io/courses/">程序语言理论与实现</a>：Rescript语言创建者张宏波退出的程序语言理论课程，注重于实践，使用Rescript教学。</li>
+<li><a href="https://bobzhang.github.io/courses/">程序语言理论与实现</a>：Rescript语言创建者张宏波推出的程序语言理论课程，注重于实践，使用Rescript教学。</li>
 <li><a href="https://cgi.luddy.indiana.edu/~c311/doku.php?id=home">C311/B521/A596 Programming Languages [Home]</a>：印第安纳大学Dan P.Friedman的程序语言课程</li>
 <li><a href="https://www.cs.cmu.edu/~fp/courses.html">Frank Pfenning / Courses</a> 和 <a href="https://www.cs.cornell.edu/~kozen/#Courses">Dexter Kozen’s Home Page</a> 和 <a href="https://www.coursera.org/instructor/~873260">Dan Grossman, Instructor | Coursera</a><a href=""></a> (Programming Languages A/B/C)</li>
 <li><a href="https://cs.brown.edu/courses/cs173/2012/OnLine/">Programming Languages: On-Line Offering</a></li>
@@ -9137,6 +9499,8 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://www.seas.upenn.edu/~cis1940/spring13/lectures.html">CIS 194</a>：经典的Haskell课程</li>
 <li><a href="http://www.cs.cornell.edu/courses/cs3110/2013fa/course_info.php">CS 3110 - Fall 2013 - Course Info</a>：经典的OCaml课程</li>
 <li><a href="https://sites.google.com/cs.washington.edu/cse341winter2022/lecture">CSE 341 Winter 2022 - Lecture</a>：Programming Languages A/B/C的新版</li>
+<li><a href="https://groups.seas.harvard.edu/courses/cs152/2015sp/schedule.html">CS152 - Harvard University - Lectures</a>：哈佛大学Programming Languages课程</li>
+<li><a href="https://inst.eecs.berkeley.edu/~cs164/fa22/">CS 164, Fall 2022</a>：UC Berkeley的 Programming Languages and Compilers课程。<a href="https://inst.eecs.berkeley.edu/~cs164/fa04/">CS164 (Fall 2004)</a> 版本。</li>
 </ol>
 <h3 id="数据库"><a class="markdownIt-Anchor" href="#数据库"></a> 数据库</h3>
 <ol>
@@ -9161,10 +9525,31 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://tyrchen.github.io/racket-book/begin.html">Racket语言入门</a></li>
 <li><a href="http://xbluer.github.io/note/2013/12/04/drracket_include_module/">DrRacket 载入模块</a></li>
 </ol>
+<h3 id="网络编程"><a class="markdownIt-Anchor" href="#网络编程"></a> 网络编程</h3>
+<ol>
+<li><a href="https://weblab.mit.edu/schedule/">schedule | web.lab</a>：MIT的网站开发课程</li>
+<li><a href="https://web.stanford.edu/class/cs142/lectures.html">CS142 Lectures</a>：斯坦福大学的网络编程课程</li>
+</ol>
+<h3 id="并行"><a class="markdownIt-Anchor" href="#并行"></a> 并行</h3>
+<ol>
+<li><a href="https://github.com/parallel101/course">GitHub - parallel101/course: 高性能并行编程与优化 - 课件</a>：</li>
+</ol>
+<h3 id="全栈开发"><a class="markdownIt-Anchor" href="#全栈开发"></a> 全栈开发</h3>
+<ol>
+<li><a href="https://fullstackopen.com/zh/about">关于本课程 | 全栈公开课2022</a>：本课程是介绍如何使用JavaScript开发现代Web应用程序。 课程的重点是使用ReactJS构建单页面应用程序（SPA），并使用由Node.js构建REST API。 该课程还包含介绍GraphQL的部分，这是REST API的现代替代方案。课程还包括测试、配置和环境管理，以及使用 MongoDB 来存储应用的数据</li>
+</ol>
 <h3 id="技术文章"><a class="markdownIt-Anchor" href="#技术文章"></a> 技术文章</h3>
 <ol>
 <li><a href="http://learn.lianglianglee.com/">技术文章摘抄</a></li>
 <li><a href="https://tls13.xargs.org/">The Illustrated TLS 1.3 Connection: Every Byte Explained</a></li>
+</ol>
+<h3 id="软件组织"><a class="markdownIt-Anchor" href="#软件组织"></a> 软件组织</h3>
+<ol>
+<li><a href="https://www.figma.com/best-practices/team-file-organization/">Team, Project, and file organization</a></li>
+</ol>
+<h3 id="programming-idioms"><a class="markdownIt-Anchor" href="#programming-idioms"></a> Programming Idioms</h3>
+<ol>
+<li><a href="https://programming-idioms.org/all-idioms">https://programming-idioms.org/all-idioms</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -9235,6 +9620,10 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li>aria2：<a href="https://www.cnblogs.com/endingly/p/15832027.html">aria2 源码解析专题—— (一)基础架构</a></li>
 <li><a href="https://github.com/lilongweidev/GoodWeather">GoodWeather</a>：从零开发Android天气APP。</li>
 <li><a href="https://norvig.com/lispy.html">(How to Write a (Lisp) Interpreter (in Python))</a>：如何使用Python写一个Lisp解释器。</li>
+<li><a href="https://build-your-own.org/redis/">Build Your Own Redis with C/C++ | Build Your Own Redis with C/C++</a>：教你使用C/C++来构建一个类似redis的server。</li>
+<li><a href="https://minitorch.github.io/">MiniTorch</a>：教你从头实现一个minitorch深度学习框架。</li>
+<li><a href="https://github.com/chvin/react-tetris">GitHub - chvin/react-tetris: Use React, Redux, Immutable to code Tetris. 🎮</a>：使用React + Redux + Immutable复刻经典的俄罗斯方块</li>
+<li><a href="https://github.com/lichess-org/lila">GitHub - lichess-org/lila: ♞ lichess.org: the forever free, adless and open source chess server ♞</a>：使用Scala + TypeScript实现国际象棋游戏</li>
 </ol>
 ]]></content>
       <categories>
@@ -9256,8 +9645,10 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://github.com/aosabook/500lines">500lines</a>：<a href="http://aosabook.org/en/index.html">The Architecture of Open Source Applications</a>系列第四版中《500 Lines or less》中各个小型项目的官方实现，其使用不到500行的代码实现一个小型功能或组件。</li>
 <li><a href="https://github.com/jamiebuilds/the-super-tiny-compiler">the-super-tiny-compiler</a>：使用JavaScript实现的一个小型的编译器，其包含一个现代编译器的所有主要组件。有对应的解析文章：<a href="https://segmentfault.com/a/1190000016402699">有史以来最小的编译器源码解析</a></li>
 <li><a href="https://github.com/521xueweihan/OneFile">OneFile</a>：该项目整理了可以使用单个文件实现的小型项目或者功能。</li>
+<li><a href="https://hellogithub.com/onefile">HelloGitHub｜一个文件的开源项目</a>：同样为OneFile项目。</li>
+<li><a href="https://mathspp.com/blog/textual-tutorial-build-a-todo-app-in-python">Textual tutorial - build a TODO app in Python</a>：使用Python构建一个TODO app。<br />
+…持续更新中</li>
 </ol>
-<p>…持续更新中</p>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -9326,7 +9717,128 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 6.`loss.backward()`报错：`grad can be implicitly created only for scalar outputs`
 解决方法：`loss.mean().backward()`。
 > 参考资料：
-> 1. [Loss.backward() raises error 'grad can be implicitly created only for scalar outputs' - autograd - PyTorch Forums](https://discuss.pytorch.org/t/loss-backward-raises-error-grad-can-be-implicitly-created-only-for-scalar-outputs/12152/2)]]></content>
+> 1. [Loss.backward() raises error 'grad can be implicitly created only for scalar outputs' - autograd - PyTorch Forums](https://discuss.pytorch.org/t/loss-backward-raises-error-grad-can-be-implicitly-created-only-for-scalar-outputs/12152/2)
+</br>
+7. Pytorch创建随机张量和创建张量：
+- 随机张量均匀分布
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x1 = torch.rand((<span class="number">4</span>, <span class="number">256</span>, <span class="number">80</span>, <span class="number">80</span>))</span><br><span class="line">x2 = torch.rand((<span class="number">4</span>, <span class="number">512</span>, <span class="number">40</span>, <span class="number">40</span>))</span><br><span class="line">x3 = torch.rand((<span class="number">4</span>, <span class="number">1024</span>, <span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line">x4 = torch.rand((<span class="number">4</span>, <span class="number">2048</span>, <span class="number">10</span>, <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+- 随机张量标准正态分布
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = torch.randn((<span class="number">4</span>, <span class="number">3</span>, <span class="number">320</span>, <span class="number">320</span>))</span><br></pre></td></tr></table></figure>
+- 全部为1：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = torch.ones(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+- 全部为0：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = torch.zeros(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [PyTorch 常用方法总结1：生成随机数Tensor的方法汇总（标准分布、正态分布……） - 知乎](https://zhuanlan.zhihu.com/p/31231210)
+> 2. [torch.ones — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.ones.html)
+> 3. [torch.ones_like — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.ones_like.html)
+> 4. [torch.zeros — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.zeros.html)
+> 5. [torch.zeros_like — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.zeros_like.html)
+</br>
+8.BCE Loss vs Cross Entropy：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://discuss.pytorch.org/t/bce-loss-vs-cross-entropy/97437">BCE Loss vs Cross Entropy - vision - PyTorch Forums</a></li>
+<li>[Learning Day 57/Practical 5: Loss function — CrossEntropyLoss vs BCELoss in Pytorch; Softmax vs sigmoid; Loss calculation | by De Jun Huang | dejunhuang | Medium](<a href="https://medium.com/dejunhuang/learning-day-57-practical-5-loss-function-crossentropyloss-vs-bceloss-in-pytorch-softmax-vs-bd866c8a0d23#:~:text=Difference%20in%20purpose%20(in%20practice,probability%2C%20you%20should%20use%20BCE.&amp;text=We%20cannot%20use%20sigmoid%20for,CrossEntropyLoss%20as%20the%20loss%20function.)">https://medium.com/dejunhuang/learning-day-57-practical-5-loss-function-crossentropyloss-vs-bceloss-in-pytorch-softmax-vs-bd866c8a0d23#:~:text=Difference in purpose (in practice,probability%2C you should use BCE.&amp;text=We cannot use sigmoid for,CrossEntropyLoss as the loss function.)</a></li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html">BCELoss — PyTorch 1.13 documentation</a></li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">CrossEntropyLoss — PyTorch 1.13 documentation</a></li>
+</ol>
+</blockquote>
+</br>
+9.张量最大值和最小值：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 最大</span></span><br><span class="line">x.<span class="built_in">max</span>()</span><br><span class="line"><span class="comment"># 最小</span></span><br><span class="line">x.<span class="built_in">min</span>()</span><br></pre></td></tr></table></figure>
+</br>
+10.维度扩充、复制和压缩：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 原始tensor x</span></span><br><span class="line">x = torch.randn((<span class="number">366</span>, <span class="number">400</span>)) <span class="comment"># shape: 366, 400</span></span><br><span class="line"><span class="comment"># 扩充维度</span></span><br><span class="line">x = x.unsqueeze(<span class="number">0</span>) <span class="comment"># shape: 1, 366, 400</span></span><br><span class="line"><span class="comment"># 复制通道</span></span><br><span class="line">x = x.repeat(<span class="number">3</span>, <span class="number">1</span>, <span class="number">1</span>) <span class="comment"># shape: 3, 366, 400</span></span><br><span class="line"><span class="comment"># 压缩维度</span></span><br><span class="line">x = x.squeeze(<span class="number">0</span>) <span class="comment"># shape: 3, 366, 400 不能压缩非1的维度</span></span><br><span class="line">x = torch.randn((<span class="number">1</span>, <span class="number">366</span>, <span class="number">400</span>))</span><br><span class="line">x = x.squeeze(<span class="number">0</span>) <span class="comment"># shape: 366, 400</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [记录一个Tensor操作——扩充维度+复制 - 知乎](https://zhuanlan.zhihu.com/p/442263715)
+</br>
+11.在Module中的如下操作报如下错误：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">gaussian_2D = get_gaussian_kernel(k_gaussian, mu, sigma)</span><br><span class="line">        self.gaussian_filter = nn.Conv2d(in_channels=<span class="number">1</span>,</span><br><span class="line">                                         out_channels=<span class="number">1</span>,</span><br><span class="line">                                         kernel_size=k_gaussian,</span><br><span class="line">                                         padding=k_gaussian // <span class="number">2</span>,</span><br><span class="line">                                         bias=<span class="literal">False</span>)</span><br><span class="line">self.gaussian_filter.weight[:] = torch.from_numpy(gaussian_2D)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Leaf variable was used in an inplace operation</span><br></pre></td></tr></table></figure>
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230218224821.png)
+解决方案：注释掉151行
+> 参考资料：
+> 1. [Leaf variable was used in an inplace operation - PyTorch Forums](https://discuss.pytorch.org/t/leaf-variable-was-used-in-an-inplace-operation/308)
+</br>
+12.在Module的batch上面迭代：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">	B, C, H, W = x.shape</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(B):</span><br><span class="line">		xi = x[i, ...][<span class="literal">None</span>, ...]</span><br><span class="line">		xi = self.net(xi)</span><br></pre></td></tr></table></figure>
+</br>
+13.对多个Tensor进行join。有两种方式：
+- `torch.cat((tens_1, tens_2, -, tens_n), dim=0, *, out=None)`：在相同的dimension上concatenate多个tensor：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x1 = torch.randn((<span class="number">1</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># x1.shape: (1,3,320,320)</span></span><br><span class="line">x2 = torch.randn((<span class="number">1</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># x2.shape: (1,3,320,320)</span></span><br><span class="line">x = torch.cat((x1,x2), dim=<span class="number">0</span>) <span class="comment"># x.shape: (2,3,320,320)</span></span><br></pre></td></tr></table></figure>
+- `torch.stack((tens_1, tens_2, -, tens_n), dim=0, *, out=None)`：在一个新的dimension上concatenate一个tensor序列，tensor需要为相同的尺寸：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x1 = torch.randn((<span class="number">1</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># x1.shape: (1,3,320,320)</span></span><br><span class="line">x2 = torch.randn((<span class="number">1</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># x2.shape: (1,3,320,320)</span></span><br><span class="line">x = torch.stack((x1, x2), dim=<span class="number">0</span>) <span class="comment"># x.shape: (2,1,3,320,320)</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [How to join tensors in Pytorch](https://www.geeksforgeeks.org/how-to-join-tensors-in-pytorch/)
+> 2. [How to join tensors in Pytorch?](https://www.tutorialspoint.com/how-to-join-tensors-in-pytorch) 
+</br>
+14.Pytorch对tensor取指定维度的切片。
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = torch.randn((<span class="number">16</span>,<span class="number">3</span>,<span class="number">320</span>,<span class="number">320</span>)) <span class="comment"># (16,3,320,320)</span></span><br><span class="line">a1 = a[<span class="number">0</span>] <span class="comment"># (3,320,320)</span></span><br><span class="line">a2 = a[<span class="number">0</span>:<span class="number">1</span>] <span class="comment"># (1,3,320,320)</span></span><br><span class="line">a3 = a[<span class="literal">None</span>, <span class="number">0</span>] <span class="comment"># (1,3,320,320)</span></span><br><span class="line"></span><br><span class="line">b = torch.randn((<span class="number">1</span>, <span class="number">1</span>, <span class="number">320</span>, <span class="number">320</span>)) <span class="comment"># (1, 1, 320, 320)</span></span><br><span class="line">b1 = b[<span class="number">0</span>] <span class="comment"># (1, 320, 320)</span></span><br><span class="line">b2 = b[<span class="number">0</span>].squeeze(<span class="number">0</span>) <span class="comment"># (320, 320)</span></span><br><span class="line">b3 = b[<span class="number">0</span>].unsqueeze(<span class="number">0</span>) <span class="comment"># (1, 1, 320, 320)</span></span><br><span class="line"></span><br><span class="line">c = torch.randn((<span class="number">16</span>, <span class="number">2</span>, <span class="number">320</span>, <span class="number">320</span>)) <span class="comment"># (16, 2, 320, 320)</span></span><br><span class="line">c1 = c[:, <span class="literal">None</span>, <span class="number">1</span>, :] <span class="comment"># (16, 1, 320, 320)</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [python - Tensorflow: How to slice tensor with number of dimension not changed? - Stack Overflow](https://stackoverflow.com/questions/51670073/tensorflow-how-to-slice-tensor-with-number-of-dimension-not-changed)
+</br>
+15.报错`RuntimeError: Function 'SqrtBackward0' returned nan values in its 0th output.`
+解决方案：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">grad_mag = torch.sqrt(grad_x_r**<span class="number">2</span> + grad_y_r**<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 添加1e-8项</span></span><br><span class="line">grad_mag = torch.sqrt(grad_x_r**<span class="number">2</span> + grad_y_r**<span class="number">2</span> + <span class="number">1e-8</span>)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [RuntimeError: Function 'SqrtBackward' returned nan values in its 0th output - autograd - PyTorch Forums](https://discuss.pytorch.org/t/runtimeerror-function-sqrtbackward-returned-nan-values-in-its-0th-output/48702/5)
+</br>
+16.报错`ImportError: cannot import name 'container_abcs' from 'torch._six'`。
+原因：torch版本问题，本人版本为`1.10`。
+解决方案：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch._six <span class="keyword">import</span> container_abcs</span><br><span class="line"><span class="comment"># 改为</span></span><br><span class="line"><span class="keyword">import</span> collections.abc <span class="keyword">as</span> container_abcs</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Colab Notebook: Cannot import name 'container_abcs' from 'torch._six'](https://stackoverflow.com/questions/70193443/colab-notebook-cannot-import-name-container-abcs-from-torch-six)
+</br>
+17.高效的tensor张量矩阵阈值过滤操作：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">tensor([[ <span class="number">0.3552</span>, -<span class="number">2.3825</span>, -<span class="number">0.8297</span>,  <span class="number">0.3477</span>],</span><br><span class="line">        [-<span class="number">1.2035</span>,  <span class="number">1.2252</span>,  <span class="number">0.5002</span>,  <span class="number">0.6248</span>],</span><br><span class="line">        [ <span class="number">0.1307</span>, -<span class="number">2.0608</span>,  <span class="number">0.1244</span>,  <span class="number">2.0139</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mask = x.ge(<span class="number">0.5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mask</span><br><span class="line">tensor([[<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">True</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">True</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.masked_select(x, mask)</span><br><span class="line">tensor([ <span class="number">1.2252</span>,  <span class="number">0.5002</span>,  <span class="number">0.6248</span>,  <span class="number">2.0139</span>])</span><br></pre></td></tr></table></figure>
+`torch.masked_select(x, mask)`和`x[mask]`作用相似，可能的差别见参考资料3。但二者返回的tensor均为一维张量，而不是和输入的x和mask相同的shape。
+若想保持原始tensor的尺寸，可以进行如下操作：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = torch.randn(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">mask = torch.zeros(x.shape)</span><br><span class="line">mask[x&gt;<span class="number">0.5</span>] = <span class="number">1</span></span><br><span class="line">result = torch.mul(x, mask)</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [torch.masked_select — PyTorch 1.13 documentation](https://pytorch.org/docs/stable/generated/torch.masked_select.html)
+> 2. [PyTorch中的masked_select选择函数 - 知乎](https://zhuanlan.zhihu.com/p/348035584)
+> 3. [Please add "dim" feature for function "torch.masked_select" · Issue #48830 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/48830)
+</br>
+18.PyTorch中的矩阵乘法操作：
+点乘：矩阵逐个元素（element-wise）乘法
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">mask = cv2.imread(<span class="string">&#x27;./mask.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">mask = torch.from_numpy(mask)</span><br><span class="line"></span><br><span class="line">edge = cv2.imread(<span class="string">&#x27;./edge.png&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">edge = torch.from_numpy(edge)</span><br><span class="line"></span><br><span class="line">mask1 = mask / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">mask_region = mask1.ge(<span class="number">0.5</span>)</span><br><span class="line">mask_final = torch.zeros(edge.shape)</span><br><span class="line">mask_final[mask_region==<span class="literal">True</span>] = <span class="number">1</span></span><br><span class="line">mask_final[mask_region==<span class="literal">False</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">edge1 = torch.mul(edge, mask_final).numpy()</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [随笔1: PyTorch中矩阵乘法总结 - 知乎](https://zhuanlan.zhihu.com/p/100069938)
+> 2. [torch.Tensor的4种乘法_torch tensor 相乘_da_kao_la的博客-CSDN博客](https://blog.csdn.net/da_kao_la/article/details/87484403)
+</br>
+19.报错`RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! when resuming training`
+> 参考资料：
+> 1. [python - RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! when resuming training - Stack Overflow](https://stackoverflow.com/questions/66091226/runtimeerror-expected-all-tensors-to-be-on-the-same-device-but-found-at-least)
+</br>
+20.报错`Could not load dynamic library 'libnvinfer_plugin.so.7`。
+解决方案：建立从`libvinfer`版本7到版本8的symbolic link
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># the follwoing path will be different for you - depending on your install method</span></span><br><span class="line">$ cd env/lib/python3<span class="number">.10</span>/site-packages/tensorrt</span><br><span class="line"></span><br><span class="line"><span class="comment"># create symbolic links</span></span><br><span class="line">$ ln -s libnvinfer_plugin.so<span class="number">.8</span> libnvinfer_plugin.so<span class="number">.7</span></span><br><span class="line">$ ln -s libnvinfer.so<span class="number">.8</span> libnvinfer.so<span class="number">.7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># add tensorrt to library path</span></span><br><span class="line">$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/env/lib/python3<span class="number">.10</span>/site-packages/tensorrt/</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [tensorflow - Could not load dynamic library 'libnvinfer.so.7' - Stack Overflow](https://stackoverflow.com/questions/74956134/could-not-load-dynamic-library-libnvinfer-so-7)
+</br>
+21.报错`tensorflow.python.framework.errors_impl.PermissionDeniedError: : /storage/FT/pth/SCWSSOD/SCWSSOD28/events.out.tfevents.1678606756.node4.11263.0; Permission denied`
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230312170110.png)
+解决方案：更改`/storage/FT/pth/SCWSSOD/SCWSSOD28`文件夹的权限
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -R 777 /storage/FT/pth/SCWSSOD/SCWSSOD28</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [tensorflow.python.framework.errors_impl.PermissionDeniedError: data · Issue #6393 · tensorflow/tensorflow · GitHub](https://github.com/tensorflow/tensorflow/issues/6393)
+> 2. [tensorflow.python.framework.errors_impl.PermissionDeniedError: data · Issue #6393 · tensorflow/tensorflow · GitHub](https://github.com/tensorflow/tensorflow/issues/6393)
+</br>
+22.Pytorch保存中间权重作为checkpoint，并从中间权重加载权重开始继续训练：
+1. 定义和初始化网络
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Net</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Net, self).__init__()</span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">3</span>, <span class="number">6</span>, <span class="number">5</span>)</span><br><span class="line">        self.pool = nn.MaxPool2d(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(<span class="number">6</span>, <span class="number">16</span>, <span class="number">5</span>)</span><br><span class="line">        self.fc1 = nn.Linear(<span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>, <span class="number">120</span>)</span><br><span class="line">        self.fc2 = nn.Linear(<span class="number">120</span>, <span class="number">84</span>)</span><br><span class="line">        self.fc3 = nn.Linear(<span class="number">84</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = self.pool(F.relu(self.conv1(x)))</span><br><span class="line">        x = self.pool(F.relu(self.conv2(x)))</span><br><span class="line">        x = x.view(-<span class="number">1</span>, <span class="number">16</span> * <span class="number">5</span> * <span class="number">5</span>)</span><br><span class="line">        x = F.relu(self.fc1(x))</span><br><span class="line">        x = F.relu(self.fc2(x))</span><br><span class="line">        x = self.fc3(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">net = Net()</span><br><span class="line"><span class="built_in">print</span>(net)</span><br></pre></td></tr></table></figure>
+2. 初始化优化器
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">optimizer = optim.SGD(net.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br></pre></td></tr></table></figure>
+3. 保存checkpoint
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Additional information</span></span><br><span class="line">EPOCH = <span class="number">5</span></span><br><span class="line">PATH = <span class="string">&quot;model.pt&quot;</span></span><br><span class="line">LOSS = <span class="number">0.4</span></span><br><span class="line"></span><br><span class="line">torch.save(&#123;</span><br><span class="line">            <span class="string">&#x27;epoch&#x27;</span>: EPOCH,</span><br><span class="line">            <span class="string">&#x27;model_state_dict&#x27;</span>: net.state_dict(),</span><br><span class="line">            <span class="string">&#x27;optimizer_state_dict&#x27;</span>: optimizer.state_dict(),</span><br><span class="line">            <span class="string">&#x27;loss&#x27;</span>: LOSS,</span><br><span class="line">            &#125;, PATH)</span><br></pre></td></tr></table></figure>
+4. 加载checkpoint
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model = Net()</span><br><span class="line">optimizer = optim.SGD(net.parameters(), lr=<span class="number">0.001</span>, momentum=<span class="number">0.9</span>)</span><br><span class="line"></span><br><span class="line">checkpoint = torch.load(PATH)</span><br><span class="line">model.load_state_dict(checkpoint[<span class="string">&#x27;model_state_dict&#x27;</span>])</span><br><span class="line">optimizer.load_state_dict(checkpoint[<span class="string">&#x27;optimizer_state_dict&#x27;</span>])</span><br><span class="line">epoch = checkpoint[<span class="string">&#x27;epoch&#x27;</span>]</span><br><span class="line">loss = checkpoint[<span class="string">&#x27;loss&#x27;</span>]</span><br><span class="line"></span><br><span class="line">model.<span class="built_in">eval</span>()</span><br><span class="line"><span class="comment"># - or -</span></span><br><span class="line">model.train()</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [Saving and loading a general checkpoint in PyTorch — PyTorch Tutorials 1.13.1+cu117 documentation](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html)
+]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
@@ -9418,9 +9930,10 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://www.programmingfonts.org">https://www.programmingfonts.org</a> ：可以在线查看300种字体的代码风格和样式</li>
 </ol>
-<h3 id="shell"><a class="markdownIt-Anchor" href="#shell"></a> Shell</h3>
+<h3 id="linux-和-shell"><a class="markdownIt-Anchor" href="#linux-和-shell"></a> Linux 和 Shell</h3>
 <ol>
 <li><a href="https://links.bestxtools.com/explainshell.com/">explainshell.com</a>：输入一段shell命令行，将参数和对应帮助文本匹配</li>
+<li><a href="https://dashdash.io/">Linux Man Pages – Dash Dash</a>：将Linux Manual Page以更友好的方式组织</li>
 </ol>
 <h3 id="uml图工具"><a class="markdownIt-Anchor" href="#uml图工具"></a> UML图工具</h3>
 <ol>
@@ -9467,6 +9980,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://github.com/guangzhengli/k8s-tutorials">k8s-tutorials</a>：k8s教程（中文）</li>
 <li><a href="https://github.com/up9inc/mizu">mizu</a>：k8s API流量查看工具</li>
 <li><a href="https://opensource.com/article/22/12/kubernetes-articles">6 Kubernetes articles every open source enthusiast should read | Opensource.com</a></li>
+<li></li>
 </ol>
 <h3 id="chrome实用插件"><a class="markdownIt-Anchor" href="#chrome实用插件"></a> Chrome实用插件</h3>
 <ol>
@@ -9517,6 +10031,16 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <h3 id="git"><a class="markdownIt-Anchor" href="#git"></a> Git</h3>
 <ol>
 <li><a href="https://www.highflux.io/blog/what-makes-git-hard-to-use">What makes Git so hard to use? | HighFlux</a></li>
+</ol>
+<h3 id="各种语言-框架在线运行网站"><a class="markdownIt-Anchor" href="#各种语言-框架在线运行网站"></a> 各种语言、框架在线运行网站</h3>
+<ol>
+<li><a href="https://replit.com/@huanguanghoulai/SillyUncommonPipeline#main.cpp">SillyUncommonPipeline - Replit</a>：C++在线REPL</li>
+<li><a href="https://stackblitz.com/">StackBlitz | Instant Dev Environments | Click. Code. Done.</a>：包括JavaScript/TypeScript/React/Vue 3等语言和框架的在线编写环境</li>
+<li><a href="https://go.dev/play/">Go Playground - The Go Programming Language</a>：go语言官方在线编写环境</li>
+<li><a href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor code visualizer: Visualize code in Python, JavaScript, C, C++, and Java</a>：Python/JavaScript/C/C++/Java等在线可视化代码环境</li>
+<li><a href="https://www.jdoodle.com/online-java-compiler/">Online Java Compiler - Online Java Editor - Java Code Online</a>：Java在线编写环境</li>
+<li><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021">Rust Playground</a>：Rust在线编写环境</li>
+<li><a href="https://codepen.io/trending">CodePen: Online Code Editor and Front End Web Developer Community</a>：HTML/CSS/JavaScript三件套在线编写环境</li>
 </ol>
 ]]></content>
       <categories>
@@ -9707,6 +10231,32 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://cloud.tencent.com/developer/article/1784790#:~:text=%E7%9B%B8%E5%BD%93%E4%BA%8E%E6%89%A7%E8%A1%8C%E5%A6%82%E4%B8%8B%E8%AF%AD%E5%8F%A5,%E7%9A%84%E4%B8%AA%E6%95%B0%EF%BC%8C%E5%90%A6%E5%88%99%E5%87%BA%E9%94%99%E3%80%82">C++二维数组初始化的形式 - 腾讯云开发者社区-腾讯云</a></li>
 </ol>
 </blockquote>
+<h3 id="c中h头文件和cpp源文件应该写什么"><a class="markdownIt-Anchor" href="#c中h头文件和cpp源文件应该写什么"></a> C++中<code>.h</code>头文件和<code>.cpp</code>源文件应该写什么</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/fenghuan/p/4794514.html">C++中头文件（.h）和源文件（.cpp）都应该写些什么 - fenghuan - 博客园</a></li>
+<li><a href="https://stackoverflow.com/questions/51117196/undefined-reference-error-in-vscode">c - undefined reference error in VScode - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/17904643/error-with-multiple-definitions-of-function">c++ - Error with multiple definitions of function - Stack Overflow</a></li>
+</ol>
+</blockquote>
+<h3 id="c代码风格"><a class="markdownIt-Anchor" href="#c代码风格"></a> C++代码风格</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://oi.men.ci/code-style-oi/">Menci’s Code Style for OI | Menci’s OI Blog</a></li>
+<li><a href="https://google.github.io/styleguide/cppguide.html">Google C++ Style Guide</a></li>
+<li><a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/contents/">C++ 风格指南 - 内容目录 — Google 开源项目风格指南</a></li>
+</ol>
+</blockquote>
+<h3 id="c-ipch文件夹和ipch文件"><a class="markdownIt-Anchor" href="#c-ipch文件夹和ipch文件"></a> C++ ipch文件夹和.ipch文件</h3>
+<p>在<code>C:\Users\26899\AppData\Local\Microsoft\vscode-cpptools\ipch</code>目录下有打量了的C++ Precompiled headers，这些可以安全删除</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/2757402/is-it-safe-to-delete-the-ipch-folder-precompiled-headers">visual studio 2010 - Is it safe to delete the “ipch” folder - Precompiled headers? - Stack Overflow</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>资料</category>
@@ -9720,13 +10270,15 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
     <url>/2022/11/20/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>本文记录一下在学习Vim过程中的经验和总结：</p>
 <span id="more"></span>
+<h3 id="vim删除查找匹配的行"><a class="markdownIt-Anchor" href="#vim删除查找匹配的行"></a> Vim删除查找匹配的行</h3>
+<p>例如，要全局替换掉包含<code>file:</code>的行：</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">:g/<span class="keyword">file</span>:/d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
 <ol>
-<li><code>A</code>：在当前行末尾插入</li>
-<li><code>I</code>：在当前行开头插入</li>
-<li><code>a</code>：在当前光标后插入</li>
-<li><code>i</code>：在当前光标前插入</li>
-<li><code>J</code>：</li>
+<li><a href="https://blog.csdn.net/hanshileiai/article/details/50528505">vim 删除匹配行_中国风2012的博客-CSDN博客_vim 删除匹配行</a></li>
 </ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>工具</category>
@@ -9780,7 +10332,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 一行命令实现：
 `lsof +D ./ | awk '{print $2}' | tail -n +2 | xargs -r kill -9`
 类似命令：
-`ps -ef | grep FT | awk '{print $2}' | xargs -r kill -9'`
+`ps -ef | grep FT | awk '{print $2}' | xargs -r kill -9`
 > 参考资料：
 > 1. [files - How to get over "device or resource busy"? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/11238/how-to-get-over-device-or-resource-busy)
 </br>
@@ -9801,7 +10353,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 > 参考资料：
 > 1. [Fetching Title#90mq](https://www.runoob.com/linux/linux-comm-awk.html)
 </br>
-6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分：
+6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分（向后查找，回溯）：
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed <span class="string">&#x27;s/hello \(world\)/hi \1/&#x27;</span> file.txt</span><br></pre></td></tr></table></figure>
 可以将`hello world`替换为`hi world`。
 </br>
@@ -9834,7 +10386,85 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 10.当使用`grep`指令时，搭配正则表达式，例如或运算：
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">grep <span class="string">&#x27;fatal\|error\|critical&#x27;</span> /var/log/nginx/error.log <span class="comment"># 使用\转义</span></span><br><span class="line">grep -E <span class="string">&#x27;fatal|error|critical&#x27;</span> /var/log/nginx/error.log</span><br></pre></td></tr></table></figure>
 > 参考资料：
-> 1. [Linux grep中的正则表达式Regex | myfreax](https://www.myfreax.com/regular-expressions-in-grep/)]]></content>
+> 1. [Linux grep中的正则表达式Regex | myfreax](https://www.myfreax.com/regular-expressions-in-grep/)
+</br>
+11.Ubuntu卸载软件：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove lua5.3 <span class="comment">#只去除lua5.3</span></span><br><span class="line">sudo apt-get remove --auto-remove lua5.3 <span class="comment">#去除lua5.3及其依赖packages</span></span><br><span class="line">sudo apt-get purge lua5.3 <span class="comment"># 使用purge，所有配置和依赖packages将被移除</span></span><br><span class="line">sudo apt-get purge --auto-remove lua5.3 <span class="comment"># 使用auto remove选项时，将根据该package来去除，在你想要重装时很有用</span></span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [在ubuntu系统中删除软件的三种最佳方法_51CTO博客_ubuntu 卸载软件](https://blog.51cto.com/u_168360/2407085)
+> 2. [server - How to completely remove virtual packages? - Ask Ubuntu](https://askubuntu.com/questions/207505/how-to-completely-remove-virtual-packages)
+> 3. [How to uninstall or remove lua5.3 software package from Ubuntu 17.04 (Zesty Zapus)](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/lua5.3?type=uninstall)
+</br>
+12.Ubuntu源配置：
+1. 备份sources.list文件，然后删除
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bat</span><br></pre></td></tr></table></figure>
+2. 新建sources.list，将下述参考资料2中的源地址复制到其中：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 默认注释了源码仓库，如有需要可自行取消注释</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 预发布软件源，不建议启用</span></span><br><span class="line"><span class="comment"># deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span></span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span></span><br></pre></td></tr></table></figure>
+3. 运行`sudo apt-get update`对源进行更新
+> 参考资料：
+> 1. [Ubuntu 20.04系统下更改apt源为阿里源 - 知乎](https://zhuanlan.zhihu.com/p/251009600)
+> 2. [USTC Open Source Software Mirror](http://mirrors.ustc.edu.cn/)
+> 3. [Ubuntu 源使用帮助 — USTC Mirror Help 文档](http://mirrors.ustc.edu.cn/help/ubuntu.html)
+</br>
+13.修改用户名和密码
+1. 使用`wsl -u root`登录root用户
+2. 执行如下命令：
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">usermod -l &lt;newname&gt; -d /home/&lt;newname&gt; -m &lt;oldname&gt;</span><br><span class="line">usermod -c <span class="string">&quot;newfullname&quot;</span> &lt;newname&gt;</span><br><span class="line">groupmod -n &lt;newgroup&gt; &lt;oldgroup&gt;</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [permissions - How do I change my username? - Ask Ubuntu](https://askubuntu.com/questions/34074/how-do-i-change-my-username)
+> 2. [Linux usermod user is currently used by process - Stack Overflow](https://stackoverflow.com/questions/28972503/linux-usermod-user-is-currently-used-by-process)
+> 3. [linux - How to set default user for manually installed WSL distro? - Super User](https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro)
+</br>
+14.查看文件和文件夹大小：
+- 查看文件大小：`ls -l filename`
+- 查看文件夹大小：`du -sh folder`
+- 查看磁盘使用情况：`df -h`
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://blog.csdn.net/xiqingchun/article/details/42466267">Ubuntu查看文件大小或文件夹大小_jackliang的博客-CSDN博客_ubuntu 文件大小</a></li>
+</ol>
+</blockquote>
+</br>
+15.卸载java
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dpkg-query -W -f=<span class="string">&#x27;$&#123;binary:Package&#125;\n&#x27;</span> | grep -E -e <span class="string">&#x27;^(ia32-)?(sun|oracle)-java&#x27;</span> -e <span class="string">&#x27;^openjdk-&#x27;</span> -e <span class="string">&#x27;^icedtea&#x27;</span> -e <span class="string">&#x27;^(default|gcj)-j(re|dk)&#x27;</span> -e <span class="string">&#x27;^gcj-(.*)-j(re|dk)&#x27;</span> -e <span class="string">&#x27;^java-common&#x27;</span> | xargs sudo apt-get -y remove</span><br><span class="line"></span><br><span class="line">sudo apt-get -y autoremove</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [How to completely uninstall Java? - Ask Ubuntu](https://askubuntu.com/questions/84483/how-to-completely-uninstall-java#)
+</br>
+16.改造`rm`命令，删除文件至回收站：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://segmentfault.com/a/1190000018464527">linux - 改造rm命令，删除文件至回收站 - 不足 - SegmentFault 思否</a></li>
+<li><a href="https://github.com/andreafrancia/trash-cli">GitHub - andreafrancia/trash-cli: Command line interface to the freedesktop.org trashcan.</a></li>
+</ol>
+</blockquote>
+</br>
+17.定期清空某个文件夹
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://cloud.tencent.com/developer/article/1849092">linux定时删除N天前的文件（文件夹） - 腾讯云开发者社区-腾讯云</a></li>
+<li><a href="https://askubuntu.com/questions/589210/removing-files-older-than-7-days">command line - Removing files older than 7 days - Ask Ubuntu</a></li>
+</ol>
+</blockquote>
+</br>
+18.Ubuntu配置ssh免输密码：
+- `ssh-keygen`：在本地机器上生成密钥对，`id_rsa.pub`和`id_rsa`。在`~/.ssh/`目录下。更改`id_rsa` 私钥权限，`chmod 600 id_rsa`。
+- `ssh-copy-id -i ~/.ssh/id_rsa.pub user@host`：将本地公钥`id_rsa.pub`写入远程host的`~/.ssh`目录下的`authorized_keys`文件。如果远程host没有`.ssh`目录手动进行创建。更改`authorized_keys`文件权限，`chmod 755 authorized_keys`。
+- 尝试本地登录，如果无法免密码登录，更高远程host上`/home/user`目录权限，`chmod 700 /home/user`。
+> 参考资料：
+> 1. [Getting Started With SSH in Linux](https://linuxhandbook.com/ssh-basics/)
+> 2. [How to Add SSH Public Key to Server](https://linuxhandbook.com/add-ssh-public-key-to-server/)
+> 3. [Why am I still getting a password prompt with ssh with public key authentication? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/36540/why-am-i-still-getting-a-password-prompt-with-ssh-with-public-key-authentication)
+> 4. [ssh-copy-id succeeded, but still prompt password input - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/407394/ssh-copy-id-succeeded-but-still-prompt-password-input)
+> 5. [VSCode远程连接服务器 免密登录（ssh key） | 烟雨平生](https://i007it.com/2022/07/14/VSCode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/)
+</br>
+19.vnc viewer和vnc server搭配使用。
+- 先使用`vncserver`在远程服务器上生成对应端口号
+- 在本地机器上建立`host:port`的连接
+> 参考资料：
+> 1. [linux中如何开启vnc服务端口,Linux下vnc配置及启动_听亭亭的博客-CSDN博客](https://blog.csdn.net/weixin_30125993/article/details/116636925?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-116636925-blog-107807058.pc_relevant_3mothn_strategy_recovery&spm=1001.2101.3001.4242.2&utm_relevant_index=4)]]></content>
       <categories>
         <category>开发工具</category>
       </categories>
@@ -10306,6 +10936,10 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
     <content><![CDATA[<p>本文记录一下在网络上收集的各种教程：</p>
 <ol>
 <li><a href="https://mirror.xyz/boxchen.eth/9O9CSqyKDj4BKUIil7NC1Sa1LJM-3hsPqaeW_QjfFBc">注册ChatGPT全攻略 — BoxChen</a></li>
+<li><a href="https://www.ericzhang.me/projects/spotify-ad-blocker-ezblocker/">EZBlocker – Spotify Ad Blocker / Eric Zhang [Xeroday]</a>：屏蔽Windows端Spotify上的广告</li>
+<li><a href="https://catcoding.me/p/chatgpt-tools/">人类的终极工具 | 程序员的喵</a>：如何用chatGPT提问？</li>
+<li><a href="https://app.gumroad.com/d/52391c67754c7f5c7814004307bc660a">The Art of ChatGPT Prompting: A Guide to Crafting Clear and Effective Prompts</a>：使用ChatGPT Prompting的艺术</li>
+<li><a href="https://time.geekbang.org/column/article/641742">01｜重新出发，让我们学会和AI说话-极客时间</a>：配置chatGPT的Anaconda环境</li>
 </ol>
 ]]></content>
       <categories>
@@ -10354,6 +10988,7 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://zh.m.wikipedia.org/zh-hans/%E5%8D%8F%E5%8F%98%E4%B8%8E%E9%80%86%E5%8F%98">协变与逆变 - 维基百科，自由的百科全书</a></li>
 <li><a href="https://blog.csdn.net/B1151937289/article/details/119523464">协变 (Covariant)、逆变 (Contravariant) 与不变 (Invariant)_小麦先生的博客-CSDN博客_contravariant</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/41814387">逆变、协变与子类型，以及Rust - 知乎</a></li>
 </ol>
 <h3 id="递归函数和语义"><a class="markdownIt-Anchor" href="#递归函数和语义"></a> 递归函数和语义</h3>
 <ol>
@@ -10371,6 +11006,9 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <ol>
 <li><a href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E6%95%B0%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B#:~:text=%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E4%B8%AD%EF%BC%8C%E5%B0%A4%E5%85%B6,%E5%A4%9A%E4%B8%AA%E5%80%BC%EF%BC%8C%E5%8D%B3%E5%AD%97%E6%AE%B5%E3%80%82">代数数据类型 - 维基百科，自由的百科全书</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/383030756">ReScript的特性二: 代数数据类型 - 知乎</a></li>
+<li><a href="https://www.tweag.io/blog/2022-09-08-fp1-typopaedia-pythonica/">Functional Python, Part I: Typopædia Pythonica - Tweag</a>：Python代数数据类型</li>
+<li><a href="https://www.tweag.io/blog/2023-01-19-fp2-dial-m-for-monoid/">Functional Python, Part II: Dial M for Monoid - Tweag</a>：Python Monoid</li>
+<li><a href="https://brian-candler.medium.com/functional-programming-illustrated-5974586a8cf0">Functional Programming illustrated in Python: Part 0 | by Brian Candler | Medium</a>：Python中的FP系列文章</li>
 </ol>
 <h3 id="类型系统"><a class="markdownIt-Anchor" href="#类型系统"></a> 类型系统</h3>
 <ol>
@@ -10379,6 +11017,14 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://cstheory.stackexchange.com/questions/39814/what-is-the-difference-between-system-f-and-hindley-milner-type-system">What is the difference between System F and Hindley-Milner type system? - Theoretical Computer Science Stack Exchange</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system">Hindley–Milner type system - Wikipedia</a></li>
 <li><a href="https://zh.wikipedia.org/zh-sg/%E5%9E%8B%E5%88%A5%E5%AE%89%E5%85%A8">类型安全 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://www.zhihu.com/question/29072167">OCaml 类型系统的缺陷有哪些？ - 知乎</a>：有关于<a href="https://en.wikipedia.org/wiki/Value_restriction">value restriction</a> (值限制)的部分。</li>
+</ol>
+<h3 id="collections-container-and-iterators"><a class="markdownIt-Anchor" href="#collections-container-and-iterators"></a> Collections, Container and Iterators</h3>
+<ol>
+<li><a href="https://computersciencewiki.org/index.php/Collections">Collections - Computer Science Wiki</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Container_(type_theory)">Container (type theory) - Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Collection_(abstract_data_type)">Collection (abstract data type) - Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Iterator">Iterator - Wikipedia</a></li>
 </ol>
 <h3 id="type-inference-和-type-check"><a class="markdownIt-Anchor" href="#type-inference-和-type-check"></a> type inference 和 type check</h3>
 <ol>
@@ -10387,6 +11033,12 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://pingfangx.github.io/java-tutorials/java/generics/genTypeInference.html">类型推断(Java™ 教程-Java Tutorials 中文版&gt;学习 Java 语言&gt;泛型(更新))</a></li>
 <li><a href="https://shzhangji.com/cnblogs/2020/10/04/python-static-typing/#:~:text=Python%20%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%E6%98%AF,%E6%97%A0%E6%B3%95%E4%BD%9C%E4%B8%BA%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E4%BD%BF%E7%94%A8%E3%80%82">Python 类型检查实践 | 张吉的博客</a></li>
 </ol>
+<h3 id="write-a-linter"><a class="markdownIt-Anchor" href="#write-a-linter"></a> write a linter</h3>
+<ol>
+<li><a href="https://github.com/caramelomartins/awesome-linters">GitHub - caramelomartins/awesome-linters.</a>：该仓库收集了针对各种语言的linter</li>
+<li><a href="https://python.plainenglish.io/asts-and-making-a-python-linter-from-scratch-79e66e8d99b8">Making a Python Linter from Scratch | by Benjamin Campbell | Python in Plain English</a></li>
+<li><a href="https://guicommits.com/how-to-write-linter-python/">How to write a linter in Python 🐍✨</a></li>
+</ol>
 <h3 id="多态-polymorphism"><a class="markdownIt-Anchor" href="#多态-polymorphism"></a> 多态 (polymorphism)</h3>
 <ol>
 <li><a href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E6%80%81_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多态 (计算机科学) - 维基百科，自由的百科全书</a></li>
@@ -10394,6 +11046,13 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://zh.m.wikipedia.org/zh/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B">鸭子类型 - 维基百科，自由的百科全书</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/382098633">ReScript的特性一: 鲜为人知的Row polymorphism - 知乎</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Row_polymorphism">Row polymorphism - Wikipedia</a></li>
+</ol>
+<h3 id="multimethod-multiple-dispatch"><a class="markdownIt-Anchor" href="#multimethod-multiple-dispatch"></a> multimethod (multiple dispatch)</h3>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/105953560">为什么要多重派发？（Why multiple dispatch?) - 知乎</a></li>
+<li><a href="https://juejin.cn/post/6844903426577399821">Python 有什么奇技淫巧？ - 知乎 - 掘金</a></li>
+<li><a href="https://clojure.org/reference/multimethods">Clojure - Multimethods and Hierarchies</a></li>
+<li><a href="https://clojure.org/about/runtime_polymorphism">Clojure - Runtime Polymorphism</a></li>
 </ol>
 <h3 id="meta-programming"><a class="markdownIt-Anchor" href="#meta-programming"></a> meta-programming</h3>
 <ol>
@@ -10410,9 +11069,34 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
 <li><a href="https://www.zhihu.com/question/23995189/answer/35429905">什么是动态规划（Dynamic Programming）？动态规划的意义是什么？ - 知乎</a></li>
 <li><a href="https://patterns.eecs.berkeley.edu/?page_id=416">Dynamic Programming Pattern | Our Pattern Language</a></li>
 </ol>
+<h3 id="抽象泄露"><a class="markdownIt-Anchor" href="#抽象泄露"></a> 抽象泄露</h3>
+<ol>
+<li><a href="https://zh.m.wikipedia.org/zh-hans/%E6%8A%BD%E8%B1%A1%E6%B3%84%E6%BC%8F">抽象泄漏 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26803553">关于Leaky Abstraction - 知乎</a></li>
+<li><a href="https://www.51cto.com/article/669206.html">一篇文章带你了解抽象泄漏（Leaky Abstractions）-51CTO.COM</a></li>
+</ol>
+<h3 id="软件架构"><a class="markdownIt-Anchor" href="#软件架构"></a> 软件架构</h3>
+<ol>
+<li><a href="https://arc42.org/overview">arc42 Template Overview - arc42</a>：Software Architecture Template。</li>
+<li><a href="https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/">The Ultimate Guide To Software Architecture Documentation</a></li>
+</ol>
+<h3 id="competitive-programming"><a class="markdownIt-Anchor" href="#competitive-programming"></a> Competitive Programming</h3>
+<ol>
+<li><a href="https://github.com/ShahjalalShohag/Competitive-Programming-A-Complete-Guideline">Competitive-Programming-A-Complete-Guideline</a>：关于Competitive Programming的介绍</li>
+</ol>
+<h3 id="正则表达式"><a class="markdownIt-Anchor" href="#正则表达式"></a> 正则表达式</h3>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s/i_C4ATnajxRDGlTA8dJDHg">Weixin Official Accounts Platform</a></li>
+</ol>
+<h3 id="一些概念"><a class="markdownIt-Anchor" href="#一些概念"></a> 一些概念</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Language_primitive">Language primitive - Wikipedia</a>：language primitives是在一种编程语言中可以使用的最简单的元素。一个primitive是对程序员来说可以获得的最小&quot;unit of processing&quot;，或者可以是语言中表达式的atomic元素。Primitives是units with a meaning，也就是是语言中的semantic value。它们不同于parser中的tokens，其是最小的elements of syntax (语法元素)。</li>
+<li><a href="https://www.programiz.com/c-programming/c-keywords-identifier#:~:text=Keywords%20are%20predefined%2C%20reserved%20words,be%20used%20as%20an%20identifier.">C Keywords and Identifiers</a>：keywords是预定义的，保留的单词，其对compiler/interpreter有专门的meaning。keywords是语法的一部分，不能作为一个identifier。identifier指那些对给定entities (如variable, functions, structures等)的名称。</li>
+</ol>
 <h3 id="发展历史"><a class="markdownIt-Anchor" href="#发展历史"></a> 发展历史</h3>
 <ol>
 <li><a href="https://thevaluable.dev/guide-terminal-shell-console/?continueFlag=43b44873b1c6d9c4016629ebd5706bdf">A Guide to the Terminal, Console, and Shell</a>：讲述了Terminal/Console/Shell的由来和发展</li>
+<li><a href="https://www.swyx.io/the-end-of-localhost">The End of Localhost</a>：该文讲述使用localhost进行本地调试的方法可能被云端调试终结</li>
 </ol>
 ]]></content>
       <categories>
@@ -10441,6 +11125,229 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
       <tags>
         <tag>Pytorch</tag>
         <tag>模型信息</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Numpy中知识点01</title>
+    <url>/2023/02/11/Numpy%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文记录一下Numpy相关知识点：</p>
+<span id="more"></span>
+<p>1.numpy创建数组：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.zeros(shape, dtype = np.uint8)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.runoob.com/numpy/numpy-array-creation.html">NumPy 创建数组 | 菜鸟教程</a></li>
+</ol>
+</blockquote>
+</br>
+2.numpy数组转换为dataframe：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">my_array = np.array([[<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>],[<span class="number">44</span>,<span class="number">55</span>,<span class="number">66</span>]])</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(my_array, columns = [<span class="string">&#x27;Column_A&#x27;</span>,<span class="string">&#x27;Column_B&#x27;</span>,<span class="string">&#x27;Column_C&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(df))</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [How to Convert NumPy Array to Pandas DataFrame – Data to Fish](https://datatofish.com/numpy-array-to-pandas-dataframe/)
+</br>
+3.numpy矩阵乘法：
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.array([[<span class="number">1</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">1</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">1</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.multiply(a,b)</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.dot(a,b)</span><br><span class="line">array([[<span class="number">4</span>, <span class="number">6</span>],</span><br><span class="line">       [<span class="number">4</span>, <span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
+>参考资料：
+>1. [NumPy矩阵乘法](http://c.biancheng.net/numpy/matrix-multiplication.html)
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>Numpy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim学习指南</title>
+    <url>/2023/02/03/Vim%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>本文记录一下从IDE转为Vim的一些资料和教程：</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://juejin.cn/book/7051157342770954277/section/7051399376945545252">Neovim配置实战</a>：掘金小册，30块</li>
+<li><a href="https://ichunyu.github.io/neovim/">NeoVim 基本配置 - 某春雨的后花园</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/467428462">我的现代化 NeoVim 配置介绍/教程 - 知乎</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/382092667">我的现代化Neovim配置 - 知乎</a></li>
+<li><a href="https://spacevim.org/cn/quick-start-guide/#windows">入门指南 | SpaceVim</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/571617696">学习 Neovim 全 lua 配置 - 知乎</a>：Neovim配置实战的旧版，免费</li>
+<li><a href="https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f">Learn Neovim The Practical Way. All articles on how to configure and… | by alpha2phi | Medium</a>：medium上关于neovim配置的系列文章</li>
+<li><a href="https://github.com/LunarVim/Neovim-from-scratch">GitHub - LunarVim/Neovim-from-scratch: 📚 A Neovim config designed from scratch to be understandable</a>：Lunar官方配置教程</li>
+<li><a href="https://www.youtube.com/watch?v=ctH-a-1eUME&amp;list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&amp;ab_channel=chris%40machine">Neovim IDE from Scratch</a>：Neovim配置视频教程</li>
+<li><a href="https://www.lunarvim.org/">LunarVim | LunarVim</a>：neovim的变种，便于配置</li>
+<li><a href="https://spacevim.org/">Home | SpaceVim</a>：neovim的变种，便于配置</li>
+<li><a href="https://astronvim.com/">Getting Started | AstroNvim</a>：neovim的变种，便于配置</li>
+<li><a href="https://www.openvim.com/">Interactive Vim tutorial</a>：在线vim交互式教程。</li>
+</ol>
+<h3 id="碰到的一些问题的解决方法"><a class="markdownIt-Anchor" href="#碰到的一些问题的解决方法"></a> 碰到的一些问题的解决方法</h3>
+<ol>
+<li><a href="https://github.com/LunarVim/Neovim-from-scratch/issues/274">No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub</a></li>
+</ol>
+<h3 id="neovim配置步骤"><a class="markdownIt-Anchor" href="#neovim配置步骤"></a> neovim配置步骤</h3>
+<h4 id="借鉴配置"><a class="markdownIt-Anchor" href="#借鉴配置"></a> 借鉴配置</h4>
+<p>可供借鉴的配置有：</p>
+<ol>
+<li><a href="https://github.com/nshen/learn-neovim-lua">GitHub - nshen/learn-neovim-lua: Neovim 配置实战：从 0 到 1 打造自己的 IDE</a></li>
+<li><a href="https://github.com/leslie255/nvim-config">GitHub - leslie255/nvim-config: A pretty epic NeoVim setup</a></li>
+<li><a href="https://github.com/ayamir/nvimdots">GitHub - ayamir/nvimdots: A well configured and structured Neovim.</a><br />
+此处以第3个配置为例，介绍配置流程。（因为第3个配置最为复杂，且使用较为丰富的插件，和更小众、更新型的插件管理工具lazy.nvim。<br />
+此处，先把<code>dotfiles</code>仓库中的对应文件夹映射到<code>~/.config/nvim</code>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /mnt/d/Desktop/dotfiles/nvim2 ~/.config/nvim</span><br></pre></td></tr></table></figure>
+<h4 id="安装lazyvim插件管理器"><a class="markdownIt-Anchor" href="#安装lazyvim插件管理器"></a> 安装lazy.vim插件管理器</h4>
+<ol>
+<li>直接在终端运行<code>nvim init.lua</code>，让neovim自动安装，出现如下报错，即无法从github clone lazy.vim进行安装。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204222425.png" alt="" /><br />
+原因：git出现问题，需要进行配置。<br />
+解决方案：向github账户添加ssh验证。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的github账户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub <span class="comment"># 添加到git ssh</span></span><br><span class="line">ssh-keyscan -t rsa github.com &gt;&gt; ~/.ssh/known_hosts </span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>进行上述配置后，再次运行<code>nvim init.lua</code>，会发现如下错误，即<code>efm-langserver</code>无法安装：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204223330.png" alt="" /><br />
+原因：<code>efm-langserver</code>使用go语言编写，其使用go的包管理工具进行安装。<br />
+解决方案：安装go语言。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载对应版本go压缩包后解压到指定目录</span></span><br><span class="line">sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz</span><br><span class="line"><span class="comment"># 将对应目录添加至PATH环境变量，写入~/.bashrc使其永久生效</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>再次运行<code>nvim init.lua</code>，发现仍然无法安装。<br />
+原因：go仓库源在国内无法稳定访问<br />
+解决方案：配置国内镜像源，在<code>.bashrc</code>文件中写入：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 GOPROXY 环境变量，以下三选一</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 七牛 CDN</span></span><br><span class="line">go <span class="built_in">env</span> -w  GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>再次运行<code>nvim init.lua</code>，发现仍然无法安装。报如下错误：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Can only use path@version syntax with <span class="string">&#x27;go get&#x27;</span>?</span><br></pre></td></tr></table></figure>
+<p>原因：go1.16以下版本无法通过<code>go install path@version</code>安装。<br />
+解决方案：卸载掉<code>apt-get</code>默认安装的<code>go1.13</code>版本，手动安装<code>go1.20</code>并添加到指定路径（也可以手动安装efm和gopls）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"><span class="comment"># 2. 阿里云</span></span><br><span class="line">go <span class="built_in">env</span> -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/mattn/efm-langserver/issues/220">Can only use path@version syntax with ‘go get’? · Issue #220 · mattn/efm-langserver · GitHub</a></li>
+<li><a href="https://github.com/ayamir/nvimdots/issues/98">efm-langserver: Error while opening a new .cc file · Issue #98 · ayamir/nvimdots · GitHub</a></li>
+</ol>
+</blockquote>
+<h3 id="配置主题"><a class="markdownIt-Anchor" href="#配置主题"></a> 配置主题</h3>
+<p>以上述安装的配置为例。</p>
+<ol>
+<li>在对应配置文件<code>lua/ui/plugins.lua</code>中添加主题：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">ui[<span class="string">&quot;folke/tokyonight.nvim&quot;</span>] = &#123;</span><br><span class="line">	lazy = <span class="literal">false</span>,</span><br><span class="line">	name = <span class="string">&quot;tokyonight&quot;</span>, </span><br><span class="line">	<span class="built_in">config</span> = conf.tokyonight,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在对应配置文件中<code>lazy-lock.json</code>中添加主题仓库信息：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;tokyonight&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;branch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;main&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;affb21a81e6d7de073378eb86d02864c594104d9&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在<code>lua/core/settings.lua</code>中将<code>colorsheme</code>设置为<code>tokyonight</code>：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">settings[<span class="string">&quot;colorscheme&quot;</span>] = <span class="string">&quot;tokyonight&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="neovim配置java环境"><a class="markdownIt-Anchor" href="#neovim配置java环境"></a> neovim配置java环境</h3>
+<ol>
+<li>下载解压jdt-language-server：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#创建workspace目录，后面会用到</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/.local/share/nvim/lsp/jdt-language-server/workspace/folder</span><br><span class="line"><span class="built_in">cd</span> ~/.local/share/nvim/lsp/jdt-language-server</span><br><span class="line"><span class="comment"># 下载jdt-language-server-xxxxx.tar.gz</span></span><br><span class="line">wget https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf jdt-language-server-1.9.0-202203031534.tar.gz</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建<code>/lua/modules/lang/usr/</code>文件夹，并添加<code>config.lua</code>和<code>plugins.lua</code>两个文件，文件内容如下：<br />
+config.lua：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="built_in">config</span> = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">config.java</span><span class="params">()</span></span></span><br><span class="line">	<span class="keyword">local</span> opts = &#123;</span><br><span class="line">		cmd = &#123;</span><br><span class="line">			<span class="string">&quot;java&quot;</span>, </span><br><span class="line">			<span class="string">&quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dosgi.bundles.defaultStartLevel=4&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dlog.protocol=true&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dlog.level=ALL&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Xms1g&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-modules=ALL-SYSTEM&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-opens&quot;</span>,</span><br><span class="line">			<span class="string">&quot;java.base/java.util=ALL-UNNAMED&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-opens&quot;</span>,</span><br><span class="line">			<span class="string">&quot;java.base/java.lang=ALL-UNNAMED&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-jar&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-configuration&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/config_linux&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-data&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/workspace/folder&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">		root_dir = <span class="built_in">require</span>(<span class="string">&quot;jdtls.setup&quot;</span>).find_root(&#123; <span class="string">&quot;.git&quot;</span>, <span class="string">&quot;mvnw&quot;</span>, <span class="string">&quot;gradlew&quot;</span> &#125;),</span><br><span class="line">		settings = &#123;</span><br><span class="line">			java = &#123;&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">		init_options = &#123;</span><br><span class="line">			bundles = &#123;&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">require</span>(<span class="string">&quot;jdtls&quot;</span>).start_or_attach(opts)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">config</span></span><br></pre></td></tr></table></figure>
+<p>plugins.lua：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> custom = &#123;&#125;</span><br><span class="line"><span class="keyword">local</span> conf = <span class="built_in">require</span>(<span class="string">&quot;modules.lang.user.config&quot;</span>)</span><br><span class="line"></span><br><span class="line">custom[<span class="string">&quot;mfussenegger/nvim-jdtls&quot;</span>] = &#123;</span><br><span class="line">	lazy = <span class="literal">true</span>,</span><br><span class="line">	ft = <span class="string">&quot;java&quot;</span>,</span><br><span class="line">	<span class="built_in">config</span> = conf.java,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> custom</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在<code>lazy-lock.json</code>添加仓库信息：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;nvim-jdtls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;branch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;master&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1f640d14d17f20cfc63c1acc26a10f9466e66a75&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在<code>/lua/modules/editor/config.lua</code>中添加<code>java</code>的语法高亮：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;nvim-treesitter.configs&quot;</span>).setup(&#123;</span><br><span class="line">		ensure_installed = &#123;</span><br><span class="line">		<span class="string">&quot;java&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>在<code>/lua/modules/editor/config.lua</code>中添加java的debug配置：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- local dap = require(&#x27;dap&#x27;)</span></span><br><span class="line">dap.adapters.java = <span class="function"><span class="keyword">function</span><span class="params">(callback)</span></span></span><br><span class="line">		callback(&#123;</span><br><span class="line">			<span class="built_in">type</span> = <span class="string">&#x27;server&#x27;</span>;</span><br><span class="line">			host = <span class="string">&#x27;127.0.0.1&#x27;</span>;</span><br><span class="line">			port = port;</span><br><span class="line">		&#125;)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- local dap = require(&#x27;dap&#x27;)</span></span><br><span class="line">dap.configurations.java = &#123;</span><br><span class="line">  &#123;</span><br><span class="line">	classPaths = &#123;&#125;,</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- If using multi-module projects, remove otherwise.</span></span><br><span class="line">	projectName = <span class="string">&quot;yourProjectName&quot;</span>,</span><br><span class="line"></span><br><span class="line">	javaExec = <span class="string">&quot;/usr/bin/java&quot;</span>,</span><br><span class="line">	mainClass = <span class="string">&quot;your.package.name.MainClassName&quot;</span>,</span><br><span class="line">	modulePaths = &#123;&#125;,</span><br><span class="line">	name = <span class="string">&quot;Launch YourClassName&quot;</span>,</span><br><span class="line">	request = <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">	<span class="built_in">type</span> = <span class="string">&quot;java&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;	</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/lxyoucan/nvim-as-java-ide">GitHub - lxyoucan/nvim-as-java-ide: 从零开始搭建Neovim Java IDE开发环境</a></li>
+<li><a href="https://github.com/ayamir/nvimdots/wiki/Usage">Usage · ayamir/nvimdots Wiki · GitHub</a></li>
+<li><a href="https://github.com/mfussenegger/nvim-dap/wiki/Java">Java · mfussenegger/nvim-dap Wiki · GitHub</a></li>
+<li><a href="https://github.com/mfussenegger/nvim-jdtls">GitHub - mfussenegger/nvim-jdtls: Extensions for the built-in LSP support in Neovim for eclipse.jdt.ls</a></li>
+</ol>
+</blockquote>
+</br>
+6.Vim模式在中文输入法下的问题。
+> 参考资料：
+> 1. [Vim模式在中文输入法下的问题 - 建议反馈 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/11234/2)
+</br>
+7.对Obsidian的`.obsidian.vimrc`文件配置`Ctrl`键（对Obsidian而言需要安装Vimrc Support插件）
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;set some Ctrl- shortcuts&quot;</span><br><span class="line">nmap &lt;C-[&gt; &lt;C-d&gt; #映射为outdent，不能生效</span><br><span class="line">imap &lt;C-[&gt; &lt;C-d&gt; #映射伪outdent，不能生效</span><br></pre></td></tr></table></figure>
+PS：
+> 参考资料：
+> 1. [key bindings - How to disable Ctrl key? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/4060/how-to-disable-ctrl-key)
+> 2. [key bindings -  Vim Stack Exchange](https://vi.stackexchange.com/questions/3225/disable-esc-but-keep-c/3570#3570)
+> 3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
+> 4. [Can't map the Tab key w/o Mod Keys · Issue #48 · esm7/obsidian-vimrc-support · GitHub](https://github.com/esm7/obsidian-vimrc-support/issues/48) 
+> 5. [vim tips and tricks: indenting](https://www.cs.swarthmore.edu/oldhelp/vim/indenting.html#:~:text=To%20indent%20the%20current%20line,by%20sw%20(repeat%20with%20.%20)&text=then%20try%20hitting%20the%20F5,or%20just%20%3Aset%20paste%20).)
+</br>
+8.设置vim中的yy可以copy to clipboard：
+- Obsidian配置，在`.obsidian.vimrc`文件中添加：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;Yank to system clipboard&quot;</span><br><span class="line">set clipboard=unnamed #重启后生效</span><br></pre></td></tr></table></figure>
+- VSCode配置，在settings中搜索`vim clip`点击生效：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/1.png)
+> 参考资料：
+>1. [VS code VIM extension copy and paste - Stack Overflow](https://stackoverflow.com/questions/58306002/vs-code-vim-extension-copy-and-paste)
+>2. [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim)
+>3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
+</br>
+9.Vim中各种map模式nmap/imap等详解：
+> 参考资料：
+> 1. [What is the difference between the remap, noremap, nnoremap and vnoremap mapping commands in Vim? - Stack Overflow](https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping)
+> 2. [key bindings - What is the difference between unmap and mapping to  nop? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16392/what-is-the-difference-between-unmap-and-mapping-to-nop?noredirect=1)
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kornia中知识点01</title>
+    <url>/2023/03/07/kornia%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</url>
+    <content><![CDATA[<p>本文介绍一下在PyTorch基础上实现的扩展张量操作的仓库<a href="https://github.com/kornia/kornia">kornia</a>中对张量的进阶操作：</p>
+<span id="more"></span>
+<p>1.对张量进行膨胀(dilation)和腐蚀(erosion)操作：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://kornia.readthedocs.io/en/latest/morphology.html">kornia.morphology - Kornia</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端文章汇总</title>
+    <url>/2023/02/19/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<p>本文收集一些较新的关于前端的文章或资料：</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://www.twilio.com/blog/comparing-nextjs-nestjs-nuxt-gatsby">Next, Nest, Nuxt… Nust?</a>：比较Express, Next.js, Nest, Gatsby, Nuxt等前端框架</li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
       </tags>
   </entry>
 </search>
