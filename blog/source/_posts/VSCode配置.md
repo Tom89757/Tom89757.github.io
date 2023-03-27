@@ -280,3 +280,7 @@ EasyMotion使你摆脱需要`5j`或者`5k`这样数数的麻烦。
 通过勾选上述选项，可以实现在当前文件窗口更改代码，而无需跳转。
 > 参考资料：
 > 1. [VSCode #46 - A Better Code Folding Extension](https://mailchi.mp/vscode/46)
+
+### VSCode刷题主题
+1.Gruvbox Them较为简洁，且变量和关键字区分较为明显，比较适合刷题
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327235910.png)
