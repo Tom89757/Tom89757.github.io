@@ -1,5 +1,5 @@
 ---
-title: Windows10系统和环境配置
+title: Windows10环境配置
 date: 2022-09-10 17:53:28
 categories:
 - 环境配置
@@ -24,3 +24,7 @@ tags:
 > 1. [Why "SumatraPDF is running as admin and cannot open files from a non-admin process" error? · Discussion #2316 · sumatrapdfreader/sumatrapdf · GitHub](https://github.com/sumatrapdfreader/sumatrapdf/discussions/2316)
 > 2. [FAQ - voidtools](https://www.voidtools.com/faq/#how_do_i_prevent_the_uac_prompt_when_running_everything)
 
+### Golden配置屏幕取词
+> 参考资料：
+> 1. [GoldenDict和AutoHotKey的安装和使用_SANGF_的博客-CSDN博客](https://blog.csdn.net/sangfengcn/article/details/75731410)
+> 2. [[转载]GoldenDict 上的那些精美版权词典（附下载地址）（英语、_细草_微风_新浪博客](https://blog.sina.com.cn/s/blog_797a6edf0102wteg.html)
