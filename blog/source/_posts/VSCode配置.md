@@ -284,3 +284,8 @@ EasyMotion使你摆脱需要`5j`或者`5k`这样数数的麻烦。
 ### VSCode刷题主题
 1.Gruvbox Them较为简洁，且变量和关键字区分较为明显，比较适合刷题
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327235910.png)
+
+### VSCode搜索文件
+快捷键：Ctrl+P
+> 参考资料：
+> 1. [keyboard shortcuts - How do I search for files in Visual Studio Code? - Stack Overflow](https://stackoverflow.com/questions/30095376/how-do-i-search-for-files-in-visual-studio-code)
