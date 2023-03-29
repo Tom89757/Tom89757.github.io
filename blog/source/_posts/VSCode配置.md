@@ -289,3 +289,18 @@ EasyMotion使你摆脱需要`5j`或者`5k`这样数数的麻烦。
 快捷键：Ctrl+P
 > 参考资料：
 > 1. [keyboard shortcuts - How do I search for files in Visual Studio Code? - Stack Overflow](https://stackoverflow.com/questions/30095376/how-do-i-search-for-files-in-visual-studio-code)
+
+
+### VSCode Copilot使用
+1.`tab`键补全。
+2.`Ctrl + Enter`右侧打开Copilot窗口。
+> 参考资料：
+> 1. [Github Copilot 的使用方法和快捷键 | 教程 | Tinkink](https://tutorials.tinkink.net/zh-hans/vscode/copilot-usage-and-shortcut.html#%E4%BD%BF%E7%94%A8)
+
+
+### VSCode快捷键
+1.`Ctrl+P`：按文件名搜索文件
+2.`Ctrl+W`：关闭当前文件窗口
+3.`Ctrl+K+W`：关闭所有文件窗口
+>参考资料：
+>1. [VS Code 的常用快捷键 - 知乎](https://zhuanlan.zhihu.com/p/44044896)
