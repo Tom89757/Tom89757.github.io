@@ -302,5 +302,31 @@ EasyMotion使你摆脱需要`5j`或者`5k`这样数数的麻烦。
 1.`Ctrl+P`：按文件名搜索文件
 2.`Ctrl+W`：关闭当前文件窗口
 3.`Ctrl+K+W`：关闭所有文件窗口
+4.`Ctrl+shif+l`：选中当前光标所在单词的所有单词
 >参考资料：
 >1. [VS Code 的常用快捷键 - 知乎](https://zhuanlan.zhihu.com/p/44044896)
+
+### VSCode配置Vim映射
+在`settings.json`中添加：（经使用，不太好用，无法输入H/L/J/K，故取消）
+```json
+"vim.insertModeKeyBindings": [
+        {
+            "before": ["H"],
+            "after": ["<Esc>", "^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["<Esc>", "$"]
+        },
+        {
+            "before": ["J"],
+            "after": ["<Esc>", "g", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["<Esc>", "g", "k"]
+        },
+    ]
+```
+> 参考资料：
+> 1. [Moving to the beginning of line within Vim insert mode - Super User](https://superuser.com/questions/706674/moving-to-the-beginning-of-line-within-vim-insert-mode)
