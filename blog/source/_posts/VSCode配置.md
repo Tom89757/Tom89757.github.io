@@ -306,7 +306,7 @@ EasyMotion使你摆脱需要`5j`或者`5k`这样数数的麻烦。
 >参考资料：
 >1. [VS Code 的常用快捷键 - 知乎](https://zhuanlan.zhihu.com/p/44044896)
 
-### VSCode配置Vim映射
+### VSCode配置插入模式下的Vim映射
 在`settings.json`中添加：（经使用，不太好用，无法输入H/L/J/K，故取消）
 ```json
 "vim.insertModeKeyBindings": [
@@ -330,3 +330,12 @@ EasyMotion使你摆脱需要`5j`或者`5k`这样数数的麻烦。
 ```
 > 参考资料：
 > 1. [Moving to the beginning of line within Vim insert mode - Super User](https://superuser.com/questions/706674/moving-to-the-beginning-of-line-within-vim-insert-mode)
+
+### VSCode查找光标处单词的所有出现插件
+Find Word At Cursor。其快捷键配置如下：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230330105601.png)
+使用步骤为：
+1. 使用快捷键`Ctrl+D`选中光标所在单词的所有出现。
+2. 使用快捷键`Ctrl+->`定位下一个出现，使用快捷键`Ctrl+<-`定位上一个出现k。
+PS：需要覆盖或删除与`Ctrl+->`和`Ctrl+<-`冲突的系统默认快捷键。
+
