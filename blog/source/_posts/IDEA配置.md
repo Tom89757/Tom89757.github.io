@@ -45,9 +45,20 @@ imap jj <Esc>
 
 " Yank to system clipboard"
 :set clipboard=unnamed
+
+“ set <leader> to <space>
+let mapleader = " "
+set easymotion
+set sneak
 ```
 > 参考资料：
 > 1. [vim - Intellij IdeaVim change keys - Stack Overflow](https://stackoverflow.com/questions/10149187/intellij-ideavim-change-keys)
+> 2. [dotfiles/.ideavimrc at master · fdietze/dotfiles · GitHub](https://github.com/fdietze/dotfiles/blob/master/.ideavimrc)
+> 3. [GitHub - AlexPl292/IdeaVim-EasyMotion: EasyMotion emulation plugin for IdeaVim](https://github.com/AlexPl292/IdeaVim-EasyMotion)
+> 4. [let mapleader = "\<Space>" not working! : vim](https://www.reddit.com/r/vim/comments/2dpihg/let_mapleader_space_not_working/)
+> 5. [Site Unreachable](https://www.andreasoverland.no/vim)
 
 ### IDEA插件推荐
 1. IdeaVimExtension：在切换到normal模式时，自动切换为英文输入
+2. IdeaVim-EasyMotion：用于配合`<leader> <leader> w`快速跳转
+3. IdeaVim-Sneak：行内快速跳转

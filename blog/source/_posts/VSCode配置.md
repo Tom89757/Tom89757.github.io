@@ -303,6 +303,7 @@ EasyMotion使你摆脱需要`5j`或者`5k`这样数数的麻烦。
 2.`Ctrl+W`：关闭当前文件窗口
 3.`Ctrl+K+W`：关闭所有文件窗口
 4.`Ctrl+shif+l`：选中当前光标所在单词的所有单词
+5.`Ctrl+,`：打开settings。
 >参考资料：
 >1. [VS Code 的常用快捷键 - 知乎](https://zhuanlan.zhihu.com/p/44044896)
 
@@ -338,4 +339,56 @@ Find Word At Cursor。其快捷键配置如下：
 1. 使用快捷键`Ctrl+D`选中光标所在单词的所有出现。
 2. 使用快捷键`Ctrl+->`定位下一个出现，使用快捷键`Ctrl+<-`定位上一个出现k。
 PS：需要覆盖或删除与`Ctrl+->`和`Ctrl+<-`冲突的系统默认快捷键。
+
+### VSCode使用`.vimrc`文件配置Vim
+在`settings`中打开`.vimrc`文件配置，并在指定位置添加`.vimrc`文件：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230402235543.png)
+`.vimrc`内容如下（参考资料2）：
+```json
+" Pick a leader key
+" Use space as leader key
+let mapleader = " "
+
+nmap H ^
+nmap L $
+nmap j gj
+nmap k gk
+
+set textwidth=79
+```
+> 参考资料：
+> 1. [vim - How to modify/change the vimrc file in VsCode? - Stack Overflow](https://stackoverflow.com/questions/63017771/how-to-modify-change-the-vimrc-file-in-vscode)
+> 2. [A basic .vimrc file that will serve as a good template on which to build. · GitHub](https://gist.github.com/simonista/8703722)
+
+### VSCode配置80字符和120字符垂直线
+在`settings.json`中添加：
+```json
+"editor.rulers": [
+    80, 120
+  ]
+```
+效果如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230402235455.png)
+
+> 参考资料：
+> 1. [configuration - Vertical rulers in Visual Studio Code - Stack Overflow](https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code)
+
+
+### VSCode中Vim配置复杂命令映射
+
+> 参考资料：
+> 1. [Elevating Your Workflow With Custom Mappings | Barbarian Meets Coding](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/elevating-your-worflow-with-custom-mappings/)
+> 2. [Visual Studio Code User Interface](https://code.visualstudio.com/docs/getstarted/userinterface)
+> 3. [Built-in Commands | Visual Studio Code Extension API](https://code.visualstudio.com/api/references/commands)
+
+### VSCode中NERDTree插件实现文件切换
+
+
+
+
+
+
+
+
+
 

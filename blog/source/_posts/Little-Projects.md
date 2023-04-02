@@ -17,4 +17,5 @@ tags:
 5. [OneFile](https://github.com/521xueweihan/OneFile)：该项目整理了可以使用单个文件实现的小型项目或者功能。
 6. [HelloGitHub｜一个文件的开源项目](https://hellogithub.com/onefile)：同样为OneFile项目。
 7. [Textual tutorial - build a TODO app in Python](https://mathspp.com/blog/textual-tutorial-build-a-todo-app-in-python)：使用Python构建一个TODO app。
+8. [GitHub - gaogaotiantian/biliscope: Bilibili chrome extension](https://github.com/gaogaotiantian/biliscope)：一个简单的查看b站up主信息的谷歌插件。
 ...持续更新中

@@ -76,3 +76,9 @@ Windows 10打开Taskbar设置：
 
 > 参考资料：
 > 1. [想删除这个东西但它显示的是在另一文件夹中或程序中打开，无法删除，怎么办？ - 知乎](https://www.zhihu.com/question/453864187/answer/1827894565)
+
+
+### Google同步多个标签页
+
+> 参考资料：
+> 1. [Sync OneTab tabs on Chrome across different PC's - Super User](https://superuser.com/questions/630975/sync-onetab-tabs-on-chrome-across-different-pcs)
