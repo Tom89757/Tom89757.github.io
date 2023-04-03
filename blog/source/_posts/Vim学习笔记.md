@@ -29,3 +29,13 @@ tags:
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191848.png)
 > 参考资料：
 > 1. [Copy, delete, then paste in Vim - Super User](https://superuser.com/questions/371160/copy-delete-then-paste-in-vim)
+
+
+### Vim移动
+1.`w`、`b`、`e`。`e`用于移动到光标所在位置的下一个单词的末尾。
+2.`W`、`B`、`E`。跳转到下一个空格。
+3.`%`。跳到对应的括号。
+
+### Vim Tab页切换
+1.`gt`：右边的tab页
+2.`gT`：左边的tab页

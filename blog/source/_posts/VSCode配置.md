@@ -383,7 +383,13 @@ set textwidth=79
 
 ### VSCode中NERDTree插件实现文件切换
 
+### VSCode中Find Word At Cursor插件实现定位所有光标处单词并快速移动到下一个
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230404003727.png)
+1.`Ctrl+D`定位所有光标位置单词。
+2.`Ctrl+->`和`Ctrl+<-`跳转到上一个/下一个。
 
+### VSCode中Code Ace Jumper插件实现任意跳转
+按下`Ctrl + ;`后输入对应字母即可跳转到以该字母为首字母的单词出现位置。
 
 
 
