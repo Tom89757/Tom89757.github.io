@@ -23,4 +23,5 @@ tags:
 11. [MiniTorch](https://minitorch.github.io/)：教你从头实现一个minitorch深度学习框架。
 12. [GitHub - chvin/react-tetris: Use React, Redux, Immutable to code Tetris. 🎮](https://github.com/chvin/react-tetris)：使用React + Redux + Immutable复刻经典的俄罗斯方块
 13. [GitHub - lichess-org/lila: ♞ lichess.org: the forever free, adless and open source chess server ♞](https://github.com/lichess-org/lila)：使用Scala + TypeScript实现国际象棋游戏
+14. [Redis 设计与实现 — Redis 设计与实现](http://redisbook.com/index.html)：Redis设计与实现
 
