@@ -375,11 +375,12 @@ set textwidth=79
 
 
 ### VSCode中Vim配置复杂命令映射
-
+PS：VSCode中跳出文件编辑窗口后`<leader>`键和其它键不起作用。
 > 参考资料：
 > 1. [Elevating Your Workflow With Custom Mappings | Barbarian Meets Coding](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/elevating-your-worflow-with-custom-mappings/)
 > 2. [Visual Studio Code User Interface](https://code.visualstudio.com/docs/getstarted/userinterface)
 > 3. [Built-in Commands | Visual Studio Code Extension API](https://code.visualstudio.com/api/references/commands)
+> 4. [How do I assign a mapping to VSCode commands · Issue #2542 · VSCodeVim/Vim · GitHub](https://github.com/VSCodeVim/Vim/issues/2542)
 
 ### VSCode中NERDTree插件实现文件切换
 
