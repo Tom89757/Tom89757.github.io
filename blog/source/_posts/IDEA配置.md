@@ -50,13 +50,15 @@ imap jj <Esc>
 let mapleader = " "
 set easymotion
 set sneak
+map <leader>n :NERDTreeToggle<CR>
 ```
 > 参考资料：
 > 1. [vim - Intellij IdeaVim change keys - Stack Overflow](https://stackoverflow.com/questions/10149187/intellij-ideavim-change-keys)
 > 2. [dotfiles/.ideavimrc at master · fdietze/dotfiles · GitHub](https://github.com/fdietze/dotfiles/blob/master/.ideavimrc)
 > 3. [GitHub - AlexPl292/IdeaVim-EasyMotion: EasyMotion emulation plugin for IdeaVim](https://github.com/AlexPl292/IdeaVim-EasyMotion)
 > 4. [let mapleader = "\<Space>" not working! : vim](https://www.reddit.com/r/vim/comments/2dpihg/let_mapleader_space_not_working/)
-> 5. [Site Unreachable](https://www.andreasoverland.no/vim)
+> 5. [Vim & IdeaVim shortcuts, keystroke combos and commands](https://www.andreasoverland.no/vim)
+> 6. [https://youtrack.jetbrains.com/issue/VIM-1042/Vim-keyboard-shortcuts-for-project-navigator-structure-tool-window](https://youtrack.jetbrains.com/issue/VIM-1042/Vim-keyboard-shortcuts-for-project-navigator-structure-tool-window)
 
 ### IDEA插件推荐
 1. IdeaVimExtension：在切换到normal模式时，自动切换为英文输入
