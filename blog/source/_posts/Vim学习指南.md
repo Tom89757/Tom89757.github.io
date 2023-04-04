@@ -261,6 +261,13 @@ set clipboard=unnamed #重启后生效
 > 2. [key bindings - What is the difference between unmap and mapping to  nop? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16392/what-is-the-difference-between-unmap-and-mapping-to-nop?noredirect=1)
 
 </br>
+10.`Ctrl`/`Shift`/方向键/Fn键的映射：
 
+> 参考资料：
+> 1. [vim - Map Shift + F3 in .vimrc - Super User](https://superuser.com/questions/508655/map-shift-f3-in-vimrc)
+> 2. [vim: how to specify arrow keys - Stack Overflow](https://stackoverflow.com/questions/7542381/vim-how-to-specify-arrow-keys)
 
-
+</br>
+11.`.vimrc`配置文件中`<CR>`的含义：
+> 参考资料：
+> 1. [What is the meaning of a <CR> at the end of some vim mappings? - Stack Overflow](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings)

@@ -34,31 +34,73 @@ tags:
 1. 在`C:\Users\user\`目录下创建`.ideavimrc`文件。
 2. 在其中添加如下内容：
 ```python
-" I like ujsing H and L for beginning/end of line
-:nmap H ^
-:nmap L $
-"map j j to Esc"
-imap jj <Esc>
-" Have j and k navigate visual lines rather than logical ones
-:nmap j gj
-:nmap k gk
+" basic settings
+set ignorecase
+set scrolloff=30
+set history=200
 
-" Yank to system clipboard"
-:set clipboard=unnamed
+set number
+set relativenumber
 
-“ set <leader> to <space>
-let mapleader = " "
+set incsearch
+set hlsearch
+set keep-english-in-normal
+
+" Plug
+Plug 'preservim/nerdtree' 
 set easymotion
 set sneak
-map <leader>n :NERDTreeToggle<CR>
+" nmap j j to Esc"
+" imap jj <Esc>
+
+" I like using H and L for beginning/end of line
+" Have j and k navigate visual lines rather than logical ones
+nmap H ^
+nmap L $
+nmap j gj
+nmap k gk
+
+" Yank to system clipboard"
+set clipboard+=unnamed
+
+" No Leader Keymaps
+nmap gd <Action>(GotoDeclaration)
+nmap ge <Action>(GotoNextError)
+nmap gE <Action>(GotoPreviousError)
+nmap gm <Action>(MethodDown)
+nmap gM <Action>(MethodUp)
+
+" Use <leader><Right> and <leader><Left> to locate Next/Previous Occurence
+" nmap <leader><Right> <Action>(PreviousOccurrenceoftheWordatCaret)
+" nmap <leader><Left> <Action>(NextOccurrenceoftheWordatCaret)
+nmap <C-Right> <C-F3>
+nmap <C-Left> <C-S-F3>
+
+# set leader to space 
+let mapleader=" " 
+
+" Use <leader>l and <leader>h to switch tabs
+nmap <leader>l gt
+nmap <leader>h gT
+
+" Use <leader>b to locate bracket
+nmap <leader>b %
+
+" Use <leader>q to close the current tab
+nmap <leader>q :tabclose<CR>
+
+
+" Use <leader>n to focus explorer 
+nmap <leader>n :NERDTreeToggle<CR> 
 ```
+PS：其中`<Action>`只能用于IDEA自带的actions。Plugins actions需要使用`:`。
 > 参考资料：
 > 1. [vim - Intellij IdeaVim change keys - Stack Overflow](https://stackoverflow.com/questions/10149187/intellij-ideavim-change-keys)
 > 2. [dotfiles/.ideavimrc at master · fdietze/dotfiles · GitHub](https://github.com/fdietze/dotfiles/blob/master/.ideavimrc)
 > 3. [GitHub - AlexPl292/IdeaVim-EasyMotion: EasyMotion emulation plugin for IdeaVim](https://github.com/AlexPl292/IdeaVim-EasyMotion)
 > 4. [let mapleader = "\<Space>" not working! : vim](https://www.reddit.com/r/vim/comments/2dpihg/let_mapleader_space_not_working/)
 > 5. [Vim & IdeaVim shortcuts, keystroke combos and commands](https://www.andreasoverland.no/vim)
-> 6. [https://youtrack.jetbrains.com/issue/VIM-1042/Vim-keyboard-shortcuts-for-project-navigator-structure-tool-window](https://youtrack.jetbrains.com/issue/VIM-1042/Vim-keyboard-shortcuts-for-project-navigator-structure-tool-window)
+> 6. [Vim keyboard shortcuts for project navigator / structure / tool window](https://youtrack.jetbrains.com/issue/VIM-1042/Vim-keyboard-shortcuts-for-project-navigator-structure-tool-window)
 
 ### IDEA插件推荐
 1. IdeaVimExtension：在切换到normal模式时，自动切换为英文输入
