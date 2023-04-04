@@ -383,6 +383,8 @@ PS：VSCode中跳出文件编辑窗口后`<leader>`键和其它键不起作用�
 > 4. [How do I assign a mapping to VSCode commands · Issue #2542 · VSCodeVim/Vim · GitHub](https://github.com/VSCodeVim/Vim/issues/2542)
 
 ### VSCode中NERDTree插件实现文件切换
+快捷键如下：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230404222129.png)
 
 ### VSCode中Find Word At Cursor插件实现定位所有光标处单词并快速移动到下一个
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230404003727.png)
