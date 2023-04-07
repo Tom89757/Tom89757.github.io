@@ -39,14 +39,28 @@ tags:
 
 
 ### 文本选择（包括选择、删除、替换、复制）
-选择、删除、替换、复制分别对应`v`, `d`, `c`, `y`
+选择、删除、替换、复制分别对应`v`, `d`, `c`, `y`。
+首先先根据参考资料1理解text object的概念：
 以选择模式(`v`)为例：
-
+1.`viw`：选中光标所在单词（不包括单词末尾空格/space）。如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407172636.png)
+2.`vaw`：选中光标所在单词（包括单词末尾空格/space）。如下图所示：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407172754.png)
+3.`viW/vaW`：选中更广义的单词（`,`、`;`等不会中断识别）：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407173106.png)
+上述`viw`会被`,`中断。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407173146.png)
+使用`viW`则不会被`,`中断。
+4.
+>参考资料：
+> 1. [Vim中的重要概念 Text Object_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Ze4y1E7Sk/?spm_id_from=333.999.0.0&vd_source=71b57f2bb132ac1f88ed255cad4a06a6)
 
 ### Vim-surround
-首先
 
 
+> 参考资料：
+> 1. [好用的Vim插件Vim-Surround介绍_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Le4y1i7Uz/?spm_id_from=333.788&vd_source=71b57f2bb132ac1f88ed255cad4a06a6)
+> k2. [指尖飞舞：vscode + vim 高效开发（vim-surround）_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1YA411u78P/?spm_id_from=333.337.search-card.all.click&vd_source=71b57f2bb132ac1f88ed255cad4a06a6)
 
 
 
