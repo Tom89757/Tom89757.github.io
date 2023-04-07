@@ -792,3 +792,34 @@ operator.__gt__(a, b)
 ```
 > 参考资料：
 > 1. [Python Tuple(元组) cmp()方法 | 菜鸟教程](https://www.runoob.com/python/att-tuple-cmp.html)
+
+</br>
+21.在Python中获取当前运行文件所在路径：
+```python
+print(os.path.expanduser(os.path.abspath(__file__)))
+```
+PS：直接在python interpreter中运行该命令会报错如下错误
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407165649.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

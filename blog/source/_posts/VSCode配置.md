@@ -394,7 +394,48 @@ PS：VSCode中跳出文件编辑窗口后`<leader>`键和其它键不起作用�
 ### VSCode中Code Ace Jumper插件实现任意跳转
 按下`Ctrl + ;`后输入对应字母即可跳转到以该字母为首字母的单词出现位置。
 
-
+### VSCode中设置`justMyCode=false`失效
+当前调试配置文件`launch.json`为：
+```json
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+}
+```
+根据参考资料3在上述`launch.json`中添加：
+```json
+"purpose": ["debug-in-terminal"]
+```
+即更新为：
+```json
+"configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "purpose": ["debug-in-terminal"]
+        }
+    ]
+```
+> 参考资料：
+> 1. ["justMyCode" does not enable standard library debugging · Issue #7347 · microsoft/vscode-python · GitHub](https://github.com/microsoft/vscode-python/issues/7347)
+> 2. [Testing Python in Visual Studio Code](https://code.visualstudio.com/docs/python/testing#_debug-tests)
+> 3. [VsCode justMyCode: false无效 - 知乎](https://zhuanlan.zhihu.com/p/440413830)
 
 
 

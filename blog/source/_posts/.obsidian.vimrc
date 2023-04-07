@@ -10,6 +10,9 @@ nmap k gk
 " Yank to system clipboard"
 set clipboard=unnamed
 
+set number
+set relativenumber
+
 "set some Ctrl- shortcuts"
 " Go back and forward with Ctrl+O and Ctrl+I
 " (make sure to remove default Obsidian shortcuts for these to work)
