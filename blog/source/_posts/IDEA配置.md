@@ -103,6 +103,11 @@ PS：其中`<Action>`只能用于IDEA自带的actions。Plugins actions需要使
 > 6. [Vim keyboard shortcuts for project navigator / structure / tool window](https://youtrack.jetbrains.com/issue/VIM-1042/Vim-keyboard-shortcuts-for-project-navigator-structure-tool-window)
 
 ### IDEA插件推荐
-1. IdeaVimExtension：在切换到normal模式时，自动切换为英文输入
+1. IdeaVimExtension：在切换到normal模式时，自动切换为英文输入（切换为美式键盘，不好用）
 2. IdeaVim-EasyMotion：用于配合`<leader> <leader> w`快速跳转
 3. IdeaVim-Sneak：行内快速跳转
+4. NERDTree：定位explorer并进行文件选择/重命名/新建等操作。
+其中NERDTree快捷键如下：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407195931.png)
+
+> 参考资料：[NERDTree support · JetBrains/ideavim Wiki · GitHub](https://github.com/JetBrains/ideavim/wiki/NERDTree-support)
