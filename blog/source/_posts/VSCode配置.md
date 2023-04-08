@@ -437,8 +437,18 @@ PS：VSCode中跳出文件编辑窗口后`<leader>`键和其它键不起作用�
 > 2. [Testing Python in Visual Studio Code](https://code.visualstudio.com/docs/python/testing#_debug-tests)
 > 3. [VsCode justMyCode: false无效 - 知乎](https://zhuanlan.zhihu.com/p/440413830)
 
+### VSCode Insiders vs VSCode
+二者的配置是独立的，但是VSCode Insiders可以同步VSCode的配置。通过关闭对VSCode的同步，然后打开VSCode Insiders的同步便可以从VSCode复制一份配置。
+> 参考资料：
+> 1. [Visual Studio Code Frequently Asked Questions](https://code.visualstudio.com/docs/supporting/FAQ)
+> 2. [Download Visual Studio Code Insiders](https://code.visualstudio.com/insiders/)
 
 
+### VSCode Python错误提示和类型检查
+问题：插件Pylance会提供对Python文件的类型检查，但是有时候其类型检查较为严格，会爆出很多我们想忽视的错误
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230408141703.png)
+解决方案：在settings里关闭
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230408141832.png)
 
 
 
