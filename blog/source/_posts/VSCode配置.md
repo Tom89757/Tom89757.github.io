@@ -450,5 +450,21 @@ PS：VSCode中跳出文件编辑窗口后`<leader>`键和其它键不起作用�
 解决方案：在settings里关闭
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230408141832.png)
 
+### VSCode设置选取候选词切换键为tab
+在快捷键中查找selectNextSuggestion设置
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230409110425.png)
+> 参考资料：
+> 1. [How to select the non-first item of the candidate selector by using the shortcut key? · Issue #33645 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/33645)
+
+
+
+
+
+
+
+
+
+
+
 
 
