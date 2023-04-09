@@ -22,6 +22,11 @@ tags:
 10.`Ctrl+;`输入字母快速定位文件中该字母的出现位置。（通过ace jump插件实现）。
 11.`Alt+Left/Right`跳转到上/下一个跳转位置。
 12.`gb`选中光标所在单词，再次按`gb`选中和前面单词的下一个出现。按下`c`或者`i`可以进行多光标编辑。（IDEA中不起作用）
+13.`yL`复制光标到该行末尾的内容(`L`已被映射为`$`)；`y^`复制光标到该行开头的内容（虽然H已被映射为^，但在VSCode中`yH`不起作用，在Obsidian中起作用）
+14.`3yy`复制光标所在行以及之后的两行共3行。
+
+> 参考资料：
+> 1. [vim - How to copy from current position to the end of line in vi - Stack Overflow](https://stackoverflow.com/questions/7764176/how-to-copy-from-current-position-to-the-end-of-line-in-vi)
 
 ### 切换
 1.`<leader>h`和`<leader>l`切换tab页。
