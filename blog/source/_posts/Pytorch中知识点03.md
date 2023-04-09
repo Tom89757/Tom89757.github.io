@@ -385,7 +385,17 @@ model.train()
 > 参考资料：
 > 1. [Saving and loading a general checkpoint in PyTorch — PyTorch Tutorials 1.13.1+cu117 documentation](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html)
 
-
+</br>
+23.将损失和张量加载到gpu中：
+```python
+tree_loss = TreeEnergyLoss().cuda()
+preds = torch.randn((2, 21, 128, 128)).to(device='cuda')
+low_feats = torch.randn((2, 3, 512, 512)).to(device='cuda')
+high_feats = torch.randn((2, 256, 128, 128)).to(device='cuda')
+unlabeled_ROIs = torch.randn((2, 512, 512)).to(device='cuda')
+```
+> 参考资料：
+> 1. [Moving tensor to cuda - PyTorch Forums](https://discuss.pytorch.org/t/moving-tensor-to-cuda/39318)
 
 
 
