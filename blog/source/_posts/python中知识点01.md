@@ -801,9 +801,35 @@ print(os.path.expanduser(os.path.abspath(__file__)))
 PS：直接在python interpreter中运行该命令会报错如下错误
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407165649.png)
 
+</br>
 
+22.Python中的`*`号。
+```python
+>>> x, y = (1, 2, 3)
+ValueError: too many values to unpack (expected 2)
 
+>>> x, *y = 1, 2, 3
+>>> x
+1 
+>>> y 
+[2, 3]
 
+>>> def foo(x, *args):
+>>>     print(x)
+>>>     print(args)
+
+>>>foo(1, 2, 3, 4)
+1
+[2, 3, 4]
+
+>>> names = ("Jack", "Johnson", "Senior")
+>>> fist_name, *surnames =  names
+>>> print(surnames)
+["Johnson", "Senior"]
+
+```
+> 参考资料：
+> 1. [What does for x, *y in list mean in python - Stack Overflow](https://stackoverflow.com/questions/57814195/what-does-for-x-y-in-list-mean-in-python)
 
 
 
