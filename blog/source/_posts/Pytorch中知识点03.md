@@ -407,11 +407,41 @@ pip install setuptools==59.5.0
 > 参考资料：
 > 1. [AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0 · Issue #69894 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/69894)
 
+</br>
+25.报错`Default process group has not been initialized, please make sure to call init_process_group`。
+问题：网络中包含了`SyncBatchNorm`操作，该操作必须在两张卡上进行。
+解决方案：将`SyncBatchNorm`改为`BatchNorm2d`。
 
+> 参考资料：
+> 1. [RuntimeError: Default process group has not been initialized, please make sure to call init_process_group. · Issue #3972 · facebookresearch/detectron2 · GitHub](https://github.com/facebookresearch/detectron2/issues/3972)
 
+</br>
+26.报错`Assertion 't>=0' && 't<n_classes' failed error`。
+问题：通过以下方式初始化张量会导致出现`<0`的概率值，无法计算损失
+```python
+images = torch.randn((8, 2, 3, 512, 512)).to(device='cuda')
+masks = torch.randn((8, 2, 512, 512)).to(device='cuda')
+image, mask = images[0], masks[0]
+outputs = model(image)
+loss = seg_loss([outputs[0], outputs[0]], mask)
+optimizer.zero_grad()
+loss.backward()
+optimizer.step()
+```
+解决方案：将`torch.randn()`改为`torch.ones()`。
+```python
+images = torch.ones((8, 2, 3, 512, 512)).to(device='cuda')
+masks = torch.ones((8, 2, 512, 512)).to(device='cuda')
+```
+> 参考资料：
+> 1. [Assertion `t >= 0 && t < n_classes` failed error - vision - PyTorch Forums](https://discuss.pytorch.org/t/assertion-t-0-t-n-classes-failed-error/133794)
 
+</br>
+27.报错`TracerWarning: Encountering a list at the output of the tracer might cause the trace to be incorrect, this is only valid if the container structure does not change based on the module's inputs. Consider using a constant container instead (e.g. for `list`, use a `tuple` instead. for `dict`, use a `NamedTuple` instead). If you absolutely need this and know the side effects, pass strict=False to trace() to allow this behavior.`
+问题：
 
-
+> 参考资料：
+> 1. [Site Unreachable](https://stackoverflow.com/questions/70706389/pytorch-tensorboard-add-graph-dictionary-input-error)
 
 
 
