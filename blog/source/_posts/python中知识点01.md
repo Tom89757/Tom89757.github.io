@@ -831,7 +831,28 @@ ValueError: too many values to unpack (expected 2)
 > 参考资料：
 > 1. [What does for x, *y in list mean in python - Stack Overflow](https://stackoverflow.com/questions/57814195/what-does-for-x-y-in-list-mean-in-python)
 
+</br>
+23.Python中tuple实现和list相似的`append`操作：
+```python
+a = []
+a.append(1)
+>> a
+[1]
 
+b = ()
+b += (1,)
+>> b
+(1,)
+
+c = (1,)
+>> c
+(1,)
+c += (2,)
+>> c
+(1,2,)
+```
+>参考资料：
+>1. [Site Unreachable](https://www.tutorialspoint.com/How-to-append-elements-in-Python-tuple)
 
 
 
