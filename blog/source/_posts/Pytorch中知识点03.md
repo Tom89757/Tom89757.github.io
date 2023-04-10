@@ -397,7 +397,15 @@ unlabeled_ROIs = torch.randn((2, 512, 512)).to(device='cuda')
 > 参考资料：
 > 1. [Moving tensor to cuda - PyTorch Forums](https://discuss.pytorch.org/t/moving-tensor-to-cuda/39318)
 
-
+</br>
+24.报错`AttributeError: module 'distutils' has no attribute 'version'`。
+问题：setuptools新版本中移除了某些属性
+解决方案：对setuptools进行降级
+```python
+pip install setuptools==59.5.0
+```
+> 参考资料：
+> 1. [AttributeError: module 'distutils' has no attribute 'version' : with setuptools 59.6.0 · Issue #69894 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/69894)
 
 
 
