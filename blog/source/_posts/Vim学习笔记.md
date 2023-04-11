@@ -37,5 +37,12 @@ tags:
 3.`%`。跳到对应的括号。
 
 ### Vim Tab页切换
-1.`gt`：右边的tab页
-2.`gT`：左边的tab页
+1.`gt`：右边的tab页。已经映射为`<leader>l`。
+2.`gT`：左边的tab页。已经映射为`<leader>h`。
+
+### leetcode网页端Vim模式
+问题1：按下`Esc`键会跳出编辑窗口。
+解决方案：编辑前使用`:imap jj <Esc>`进行映射，或者使用`Ctrl+C`进入normal模式。
+> 参考资料：
+> 1. [VIM Command Mode](https://leetcode.com/discuss/general-discussion/446981/vim-command-mode)
+
