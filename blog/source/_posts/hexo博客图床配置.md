@@ -79,7 +79,9 @@ RequestError: Error: tunneling socket could not be established, cause=socket han
 
 其原因在于PicGO只支持http协议的代理，而V2rayN只支持socks5协议代理。故应将代理软件替换为支持http协议的软件，有两种选择ShadowsocksR和Clash，我选择了Clash。更改代理软件并设置相应端口后会发现上传成功。
 
-> 参考资料：[为Typora配置图床,实现图片自动上传](https://www.jianshu.com/p/4740993c5843)
+> 参考资料：
+> 1. [为Typora配置图床,实现图片自动上传](https://www.jianshu.com/p/4740993c5843)
+> 2. [PicGo+GitHub图床配置&常见错误 - Eighty Percent](http://b.aksy.space/study-notes/514.html)
 
 ### 上传至腾讯云对象存储
 
