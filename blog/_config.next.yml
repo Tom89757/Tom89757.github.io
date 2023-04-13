@@ -42,7 +42,27 @@ scheme: Muse
 #scheme: Gemini
 
 # Dark Mode
-darkmode: false
+darkmode: false 
+
+# Darkmode JS
+# For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js
+darkmode_js:
+  enable: true
+  # bottom: '64px' # default: '32px'
+  bottom: '480px' # default: '32px'
+  right: 'unset' # default: '32px'
+  left: '32px' # default: 'unset'
+  time: '0.5s' # default: '0.3s'
+  mixColor: 'transparent' # default: '#fff'
+  backgroundColor: 'transparent' # default: '#fff'
+  buttonColorDark: '#100f2c' # default: '#100f2c'
+  buttonColorLight: '#fff' # default: '#fff'
+  isActivated: false # default false
+  saveInCookies: false # default: true
+  label: '🌓' # default: ''
+  autoMatchOsTheme: false # default: true
+  libUrl: # Set custom library cdn url for Darkmode.js
+
 
 
 # ---------------------------------------------------------------
@@ -366,14 +386,15 @@ codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
   theme:
-    light: default
-    dark: stackoverflow-dark
+    light: base16/monokai 
+    dark: base16/monokai 
   prism:
-    light: prism
-    dark: prism-dark
+    light: prism-a11y-dark 
+    dark: prism-a11y-dark
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true 
+    # enable: false
     # Available values: default | flat | mac
     style:
 
@@ -524,8 +545,8 @@ math:
 
 # Easily enable fast Ajax navigation on your website.
 # For more information: https://github.com/next-theme/pjax
-pjax: false
-# pjax: true
+# pjax: false
+pjax: true
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox/

@@ -316,7 +316,11 @@ test.py
 import sys
 sys.path.insert(0, './model')
 ```
-
+也可以插入绝对路径：
+```python
+import sys
+sys.path.insert(0, '/storage/FT/SCWSSOD/SCWSSOD31')
+```
 > 参考资料：
 >
 > 1. [import error: 'No module named' *does* exist](https://stackoverflow.com/questions/23417941/import-error-no-module-named-does-exist)
@@ -467,7 +471,7 @@ imageio.imwrite(save_path + name, pred_edge_kk)
 
 </br>
 
-20.tensor和numpy之间的转换：
+20.tensor和numpy之间的转换：(张量转换)
 - numpy to tensor: 
 ```python
 import cv2 

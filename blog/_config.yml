@@ -45,13 +45,17 @@ relative_link: false
 future: true
 highlight:
   enable: true
+  # enable: false 
   line_number: true
   auto_detect: false
+  # auto_detect: true 
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true 
+  # hljs: false
 prismjs:
   enable: false
+  # enable: true 
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -145,3 +149,27 @@ feed:
 #     markmap_view_js: https://fastly.jsdelivr.net/npm/markmap-view@0.2.7
 #     katex_css: https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css
 #     prism_css: https://fastly.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css
+
+# marked:
+#   gfm: true
+#   pedantic: false
+#   breaks: true
+#   smartLists: true
+#   smartypants: true
+#   quotes: '“”‘’'
+#   modifyAnchors: 0
+#   anchorAlias: false
+#   autolink: true
+#   mangle: true
+#   sanitizeUrl: false
+#   dompurify: false
+#   headerIds: true
+#   lazyload: false
+#   prependRoot: true
+#   postAsset: false
+#   external_link:
+#     enable: false
+#     exclude: []
+#     nofollow: false
+#   disableNunjucks: false
+#   descriptionLists: true
