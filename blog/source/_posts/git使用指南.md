@@ -268,6 +268,10 @@ ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 </br>
 
-
-
+15.在运行`git push origin main`之后，在出现`Total`行之后卡住
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230415230020.png)
+问题：推送的objects较大
+解决方案：参考下方参考资料
+> 参考资料：
+> 1. [bitbucket - git push hangs after Total line - Stack Overflow](https://stackoverflow.com/questions/15843937/git-push-hangs-after-total-line)
 
