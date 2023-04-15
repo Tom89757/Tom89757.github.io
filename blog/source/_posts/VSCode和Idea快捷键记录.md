@@ -127,7 +127,11 @@ delete：`cs srcMark dstMark`
 操作如下：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407195849.png)
 
+### VSCode光标移动到wrap line末尾
 
+>参考资料：
+>1. [cursor movement - How to go to the end of the line even in on a wrapped line? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/9762/how-to-go-to-the-end-of-the-line-even-in-on-a-wrapped-line)
+>2. [editor - How do I move to end of line in Vim? - Stack Overflow](https://stackoverflow.com/questions/105721/how-do-i-move-to-end-of-line-in-vim)
 
 
 

@@ -82,3 +82,14 @@ Windows 10打开Taskbar设置：
 
 > 参考资料：
 > 1. [Sync OneTab tabs on Chrome across different PC's - Super User](https://superuser.com/questions/630975/sync-onetab-tabs-on-chrome-across-different-pcs)
+
+### Windows重启资源管理器
+重命名文件时，包含特殊字符会导致桌面卡住，无法进行桌面文件选择和点击操作：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230415122100.png)
+此时需要重启windows资源管理器，但在任务管理器中有时又没有该任务。此时需要启动资源管理器然后对它进行重启。操作步骤如下：
+- `Windows + R`键打开运行窗口，输入`expolorer.exe`回车启动资源管理器，（不要关闭打开的文件资源管理器窗口）：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230415122405.png)
+- 此时会发现任务管理器中出现Windows Explorer任务，右键重启即可：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230415122528.png)
+> 参考资料：
+> 1. [Windows 10 计算机如何重启文件资源管理器 | 华为官网](https://consumer.huawei.com/cn/support/content/zh-cn00733776/)
