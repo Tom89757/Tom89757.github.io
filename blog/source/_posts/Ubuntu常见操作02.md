@@ -242,3 +242,9 @@ sudo apt-get -y autoremove
 - 在本地机器上建立`host:port`的连接
 > 参考资料：
 > 1. [linux中如何开启vnc服务端口,Linux下vnc配置及启动_听亭亭的博客-CSDN博客](https://blog.csdn.net/weixin_30125993/article/details/116636925?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-116636925-blog-107807058.pc_relevant_3mothn_strategy_recovery&spm=1001.2101.3001.4242.2&utm_relevant_index=4)
+
+</br>
+20.使用`rm`删除文件时排除某个文件：
+
+> 参考资料：
+> 1. [Remove all files/directories except for one file](https://unix.stackexchange.com/questions/153862/remove-all-files-directories-except-for-one-file)
