@@ -13,6 +13,8 @@ nmap k gk
 " nnoremap yL y$
 " nnoremap j gj
 " nnoremap k gk
+" remap U to redo
+nmap U <C-r>
 
 " Yank to system clipboard"
 set clipboard=unnamed

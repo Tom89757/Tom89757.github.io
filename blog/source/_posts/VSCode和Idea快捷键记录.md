@@ -27,6 +27,7 @@ tags:
 
 > 参考资料：
 > 1. [vim - How to copy from current position to the end of line in vi - Stack Overflow](https://stackoverflow.com/questions/7764176/how-to-copy-from-current-position-to-the-end-of-line-in-vi)
+> 2. [VSCode 快捷键备忘](https://www.yuque.com/xiaochentongzhi/plyxyr/ekvv3fliaqtzaymt)
 
 ### 切换
 1.`<leader>h`和`<leader>l`切换tab页。

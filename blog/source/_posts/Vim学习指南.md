@@ -23,6 +23,8 @@ tags:
 11. [Home | SpaceVim](https://spacevim.org/)：neovim的变种，便于配置
 12. [Getting Started | AstroNvim](https://astronvim.com/)：neovim的变种，便于配置
 13. [Interactive Vim tutorial](https://www.openvim.com/)：在线vim交互式教程。
+14. [GitHub - fengstats/vscode-settings: my vscode settings and theme config]：[VSCode | 日常工作流分享_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1i24y1L7uG)中分享的配置
+15. [GitHub - LintaoAmons/CoolStuffes: 我的分享放这里了，大家随便拿去用啊，记得给个星星就行啦～](https://github.com/LintaoAmons/CoolStuffes)：b站up主的配置
 
 ### 碰到的一些问题的解决方法
 1. [No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub](https://github.com/LunarVim/Neovim-from-scratch/issues/274)
