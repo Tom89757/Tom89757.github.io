@@ -133,6 +133,18 @@ delete：`cs srcMark dstMark`
 >1. [cursor movement - How to go to the end of the line even in on a wrapped line? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/9762/how-to-go-to-the-end-of-the-line-even-in-on-a-wrapped-line)
 >2. [editor - How do I move to end of line in Vim? - Stack Overflow](https://stackoverflow.com/questions/105721/how-do-i-move-to-end-of-line-in-vim)
 
+### VSCode将redo映射为U
+- 打开VSCode中Vim的Ctrl映射
+```settings.json
+"vim.useCtrlKeys": true,
+```
+- 在`.vimrc`中remap
+```vimrc
+" remap redo to U
+nnoremap U <C-r>
+```
+> 参考资料：
+> 1. [Remapping `U` to redo, `C-r` to reverse-search : vim](https://www.reddit.com/r/vim/comments/4yvjje/remapping_u_to_redo_cr_to_reversesearch/)
 
 
 
