@@ -283,3 +283,4 @@ set clipboard=unnamed #重启后生效
 > 1. [A basic .vimrc file that will serve as a good template on which to build. · GitHub](https://gist.github.com/simonista/8703722)
 > 2. [ubuntu下vim的配置vimrc-掘金](https://juejin.cn/s/ubuntu%E4%B8%8Bvim%E7%9A%84%E9%85%8D%E7%BD%AEvimrc)
 > 3. [vim - Error Trailing Characters in Ubuntu - Stack Overflow](https://stackoverflow.com/questions/9206797/error-trailing-characters-in-ubuntu)
+> 4. [Vim cursor can't be changed · Issue #4335 · microsoft/terminal · GitHub](https://github.com/microsoft/terminal/issues/4335)
