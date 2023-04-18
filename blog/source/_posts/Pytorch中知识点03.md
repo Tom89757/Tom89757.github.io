@@ -443,6 +443,19 @@ masks = torch.ones((8, 2, 512, 512)).to(device='cuda')
 > 参考资料：
 > 1. [PyTorch TensorBoard add_graph() dictionary input error](https://stackoverflow.com/questions/70706389/pytorch-tensorboard-add-graph-dictionary-input-error)
 
+</br>
+28.张量(tensor)所在设备和加载到cpu/gpu：
+```python
+>> a = torch.randn((1,1))
+>> a.device
+device(type='cpu')
+>> a = a.cuda()
+>> a.device
+device(type='cuda', index=0)
+>> a = a.cpu()
+>> a.device
+device(type='cpu')
+```
 
 
 
