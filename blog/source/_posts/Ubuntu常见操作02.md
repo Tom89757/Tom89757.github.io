@@ -248,3 +248,14 @@ sudo apt-get -y autoremove
 
 > 参考资料：
 > 1. [Remove all files/directories except for one file](https://unix.stackexchange.com/questions/153862/remove-all-files-directories-except-for-one-file)
+
+</br>
+21.Ubuntu复制命令行输出到剪切板的工具。
+工具：xclip
+
+> 参考资料 ：
+> 1. [software recommendation - A command-line clipboard copy and paste utility? - Ask Ubuntu](https://askubuntu.com/questions/11925/a-command-line-clipboard-copy-and-paste-utility)
+> 2. [xclip/INSTALL at master · milki/xclip · GitHub](https://github.com/milki/xclip/blob/master/INSTALL)
+> 3. [How to install xclip on Ubuntu](https://howtoinstall.co/en/xclip)
+> 4. [xclip download | SourceForge.net](https://sourceforge.net/projects/xclip/)
+> 5. [linux - Make install, but not to default directories? - Stack Overflow](https://stackoverflow.com/questions/3239343/make-install-but-not-to-default-directories)
