@@ -273,3 +273,13 @@ set clipboard=unnamed #重启后生效
 11.`.vimrc`配置文件中`<CR>`的含义：
 > 参考资料：
 > 1. [What is the meaning of a <CR> at the end of some vim mappings? - Stack Overflow](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings)
+
+</br>
+
+</br>
+12.Ubuntu和wsl中进行基础的`.vimrc`配置：
+
+> 参考资料：
+> 1. [A basic .vimrc file that will serve as a good template on which to build. · GitHub](https://gist.github.com/simonista/8703722)
+> 2. [ubuntu下vim的配置vimrc-掘金](https://juejin.cn/s/ubuntu%E4%B8%8Bvim%E7%9A%84%E9%85%8D%E7%BD%AEvimrc)
+> 3. [vim - Error Trailing Characters in Ubuntu - Stack Overflow](https://stackoverflow.com/questions/9206797/error-trailing-characters-in-ubuntu)

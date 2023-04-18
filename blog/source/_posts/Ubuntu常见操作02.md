@@ -252,6 +252,23 @@ sudo apt-get -y autoremove
 </br>
 21.Ubuntu复制命令行输出到剪切板的工具。
 工具：xclip
+安装过程：
+- 从参考资料4下载并解压得到xclip文件夹
+- 进入xclip文件夹，运行`./configure --prefix=/storage/FT/.local`指定安装文件夹。
+- `make`进行编译
+- 通过`su`切换到root用户
+- `make install`和`make install.man`安装xclip和man page，分别安装在`/storage/FT/.local/bin`和`/storage/FT/.local/man`目录下。
+- 编辑`.bashrc`将该路径加入到PATH中：
+```bash
+export PATH="/storage/FT/.local/bin:$PATH"
+```
+- 编辑`.bashrc`添加alias：
+```bash
+alias clip='xclip se -c'
+```
+- 此时即可通过`pwd | clip`复制当前路径。
+PS：但在VSCode终端中会出现如下报错。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230418225219.png)
 
 > 参考资料 ：
 > 1. [software recommendation - A command-line clipboard copy and paste utility? - Ask Ubuntu](https://askubuntu.com/questions/11925/a-command-line-clipboard-copy-and-paste-utility)
@@ -259,3 +276,35 @@ sudo apt-get -y autoremove
 > 3. [How to install xclip on Ubuntu](https://howtoinstall.co/en/xclip)
 > 4. [xclip download | SourceForge.net](https://sourceforge.net/projects/xclip/)
 > 5. [linux - Make install, but not to default directories? - Stack Overflow](https://stackoverflow.com/questions/3239343/make-install-but-not-to-default-directories)
+
+</br>
+22.VSCode中使用bash连接远程服务器时，运行上述`pwd | clip`出现如下报错（MobaXterm中不报错）：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230418225219.png)
+根据参考资料4中下述描述：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230419002605.png)
+在MobaXterm中`$DISPLAY`生效，但在VSCode中打开的bash终端中`$DISPLAY`并未生效。只需：
+- 在MobaXterm中通过`echo $DISPLAY`查看`$DISPLAY`环境变量的值。
+- 在`.bashrc`中添加：
+```bash
+export DISPLAY='localhost:29.0'
+```
+- `source ~/.bashrc`使之生效。
+> 参考资料：
+> 1. [xclip fails with Error: Can't open display: (null) · Issue #4933 · microsoft/WSL · GitHub](https://github.com/microsoft/WSL/issues/4933)
+> 2. [How do I fix a "cannot open display" error when opening an X program after ssh'ing with X11 forwarding enabled? - Super User](https://superuser.com/questions/310197/how-do-i-fix-a-cannot-open-display-error-when-opening-an-x-program-after-sshi)
+> 3. [linux - Error: Can't open display: (null) when using Xclip to copy ssh public key - Stack Overflow](https://stackoverflow.com/questions/18695934/error-cant-open-display-null-when-using-xclip-to-copy-ssh-public-key)
+> 4. [linux - Error: Can't open display: (null) when using Xclip to copy ssh public key - Stack Overflow](https://stackoverflow.com/questions/18695934/error-cant-open-display-null-when-using-xclip-to-copy-ssh-public-key)
+
+
+</br>
+22.Ubuntu系统复制粘贴：
+VSCode终端窗口中可以使用`Ctrl+Shift+C/V`进行复制粘贴；
+MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
+
+</br>
+23.Ubuntu从源码编译安装，安装到指定文件夹：
+```bash
+./configure --prefix=/storage/FT/.local
+```
+> 参考资料：
+> 1. [linux - Make install, but not to default directories? - Stack Overflow](https://stackoverflow.com/questions/3239343/make-install-but-not-to-default-directories)
