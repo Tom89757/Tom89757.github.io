@@ -456,7 +456,24 @@ PS：VSCode中跳出文件编辑窗口后`<leader>`键和其它键不起作用�
 > 参考资料：
 > 1. [How to select the non-first item of the candidate selector by using the shortcut key? · Issue #33645 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/33645)
 
+### VSCode在settings sync (设置同步) 中排除某些设置
+```json
+{
+    "settingsSync.ignoredSettings": [
+	    "editor.fontSize",
+		"-python.defaultInterpreterPath"
+    ]
+}
+```
+快捷键：
+```json
+{
+   "settingsSync.keybindingsPerPlatform": True
+}
+```
 
+> 参考资料：
+> 1. [Can I exclude certain settings with VS Code built-in settings sync feature? - Stack Overflow](https://stackoverflow.com/questions/64603768/can-i-exclude-certain-settings-with-vs-code-built-in-settings-sync-feature)
 
 
 
