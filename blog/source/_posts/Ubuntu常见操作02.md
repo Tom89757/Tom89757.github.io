@@ -264,7 +264,7 @@ export PATH="/storage/FT/.local/bin:$PATH"
 ```
 - 编辑`.bashrc`添加alias：
 ```bash
-alias clip='xclip se -c'
+alias clip='xclip -se c'
 ```
 - 此时即可通过`pwd | clip`复制当前路径。
 PS：但在VSCode终端中会出现如下报错。
@@ -283,7 +283,7 @@ PS：但在VSCode终端中会出现如下报错。
 根据参考资料4中下述描述：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230419002605.png)
 在MobaXterm中`$DISPLAY`生效，但在VSCode中打开的bash终端中`$DISPLAY`并未生效。只需：
-- 在MobaXterm中通过`echo $DISPLAY`查看`$DISPLAY`环境变量的值。
+- 在MobaXterm中通过`echo $DISPLAY`查看`$DISPLAY`环境变量的值。(若没有，通过`cat /etc/resolv.conf`查看`nameserver`的值)
 - 在`.bashrc`中添加：
 ```bash
 export DISPLAY='localhost:29.0'
