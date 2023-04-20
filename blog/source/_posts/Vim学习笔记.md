@@ -50,3 +50,23 @@ tags:
 
 > 参考资料：
 > 1. [Best vim color schemes and how to install](https://linuxhint.com/best_vim_color_schemes/)
+
+
+### Vim禁止闪烁
+
+> 参考资料：
+> 1. [vim - Disable blinking at the first/last line of the file - Stack Overflow](https://stackoverflow.com/questions/5933568/disable-blinking-at-the-first-last-line-of-the-file)
+> 2. [terminal - How to prevent Vim from making a flashy screen effect when pressing `ESC` or `^[` in normal mode? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/22547/how-to-prevent-vim-from-making-a-flashy-screen-effect-when-pressing-esc-or)
+
+
+### git bash Vim主题显示和对应主题不一致
+
+> 参考资料：
+> 1. [Reddit - Dive into anything](https://www.reddit.com/r/vim/comments/ebylxb/vim_from_git_bash_showing_weird_colorscheme/)
+
+### Vim复制到剪切板 clipboard
+参考资料3设置有效
+> 参考资料：
+> 1.[What is difference between Vim's clipboard "unnamed" and "unnamedplus" settings? - Stack Overflow](https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings) 
+> 2.  [Windows Subsystem Linux - Make VIM use the clipboard? - Super User](https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard)
+> 3. [Vim Wsl Clipboard](https://waylonwalker.com/vim-wsl-clipboard/)
