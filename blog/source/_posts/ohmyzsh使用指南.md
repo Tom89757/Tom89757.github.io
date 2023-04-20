@@ -1,7 +1,6 @@
 ---
 title: ohmyzsh使用指南
 date: 2023-04-19 17:36:05
-tags:
 categories:
 - 环境配置
 tags:
@@ -94,7 +93,10 @@ fi
 > 5. [Building Zsh from Source and Configuring It on CentOS - jdhao's digital space](https://jdhao.github.io/2018/10/13/centos_zsh_install_use/)
 > 6. [Linux/Mac OS下安装并配置oh my zsh | SunPages](https://www.sunhanwu.top/archives/ohmyzsh)
 
+### git bash中安装zsh和ohmyzsh
 
+> 参考资料：
+> 1. [Zsh / Oh-my-zsh on Windows Git Bash · GitHub](https://gist.github.com/fworks/af4c896c9de47d827d4caa6fd7154b6b)
 
 
 

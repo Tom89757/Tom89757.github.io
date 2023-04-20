@@ -68,6 +68,10 @@ curl https://www.youtube.com | head -1
 > 6. [windows上使用代理，使用ping命令会超时](https://blog.csdn.net/zhongliangtang/article/details/81280460)
 > 7. [WSL2-解决无法ping通主机/配置使用主机代理_wsl 使用代理_会伏丘的博客-CSDN博客](https://blog.csdn.net/fur_pikachu/article/details/127973376)
 
+### WSL普通用户无法登录
+`wsl -u root`：
+> 参考资料：
+> 1. [windows subsystem for linux - [process exited with code 1], can't open WSL, zsh - Stack Overflow](https://stackoverflow.com/questions/67261530/process-exited-with-code-1-cant-open-wsl-zsh)
 ## cmd
 ### 别名设置
 在windows系统中可以使用类似Linux中`alias`的别名设置。
