@@ -308,3 +308,22 @@ MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
 ```
 > 参考资料：
 > 1. [linux - Make install, but not to default directories? - Stack Overflow](https://stackoverflow.com/questions/3239343/make-install-but-not-to-default-directories)
+
+</br>
+24.`tar`解压文件夹：
+
+> 参考资料：
+> 1. [Linux tar 命令 | 菜鸟教程](https://www.runoob.com/linux/linux-comm-tar.html)
+
+
+
+
+
+
+
+
+
+
+
+
+

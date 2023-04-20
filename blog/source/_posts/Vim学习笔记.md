@@ -46,3 +46,7 @@ tags:
 > 参考资料：
 > 1. [VIM Command Mode](https://leetcode.com/discuss/general-discussion/446981/vim-command-mode)
 
+### Vim配置特定主题
+
+> 参考资料：
+> 1. [Best vim color schemes and how to install](https://linuxhint.com/best_vim_color_schemes/)
