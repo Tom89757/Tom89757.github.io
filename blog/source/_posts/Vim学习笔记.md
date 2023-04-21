@@ -70,3 +70,17 @@ tags:
 > 1.[What is difference between Vim's clipboard "unnamed" and "unnamedplus" settings? - Stack Overflow](https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings) 
 > 2.  [Windows Subsystem Linux - Make VIM use the clipboard? - Super User](https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard)
 > 3. [Vim Wsl Clipboard](https://waylonwalker.com/vim-wsl-clipboard/)
+
+
+### git中使用zsh在git仓库中响应过慢
+```bash
+# 当前仓库配置
+git config --add oh-my-zsh.hide-status 1
+git config --add oh-my-zsh.hide-dirty 1
+
+# 全局配置
+git config --global --add oh-my-zsh.hide-status 1
+git config --global --add oh-my-zsh.hide-dirty 1
+```
+> 参考资料：
+> 1. [oh-my-zsh slow, but only for certain Git repo - Stack Overflow](https://stackoverflow.com/questions/12765344/oh-my-zsh-slow-but-only-for-certain-git-repo)
