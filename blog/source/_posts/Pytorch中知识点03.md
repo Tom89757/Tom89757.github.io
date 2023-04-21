@@ -457,7 +457,22 @@ device(type='cuda', index=0)
 device(type='cpu')
 ```
 
+</br>
+29.处理图片时报错`ValueError: the input array must have size along channel_axis, got (267, 400)`。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230421182748.png)
 
+问题：在使用Skimage处理单通道图片时进行了多余的转换：
+```python
+MASK = color.rgb2gray(MASK)  # shape of [h, w]
+```
+解决方案：将上述代码改为，
+```python
+if len(MASK.shape==3): 
+	MASK = color.rgb2gray(MASK)  # shape of [h, w]
+```
+> 参考资料：
+> 1. [/data/__init__.py 54 MASK = color.rgb2gray(MASK) · Issue #2 · BarCodeReader/SelfReformer · GitHub](https://github.com/BarCodeReader/SelfReformer/issues/2)
+> 2. [python - Skimage rgb2gray giving errors, the input array must have size 3 along - Stack Overflow](https://stackoverflow.com/questions/70895576/skimage-rgb2gray-giving-errors-the-input-array-must-have-size-3-along)
 
 
 
