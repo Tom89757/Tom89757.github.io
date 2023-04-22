@@ -474,7 +474,17 @@ if len(MASK.shape==3):
 > 1. [/data/__init__.py 54 MASK = color.rgb2gray(MASK) · Issue #2 · BarCodeReader/SelfReformer · GitHub](https://github.com/BarCodeReader/SelfReformer/issues/2)
 > 2. [python - Skimage rgb2gray giving errors, the input array must have size 3 along - Stack Overflow](https://stackoverflow.com/questions/70895576/skimage-rgb2gray-giving-errors-the-input-array-must-have-size-3-along)
 
+</br>
+20.在`test.py`中设置GPU编号无效，仍使用GPU0
+```python
+GPU_ID=1
+os.environ['CUDA_VISIBLE_DEVICES'] = str(GPU_ID)
+```
+原因：在导入torch时可能对GPU编号进行了指定
+解决方案：将上述代码放在`test.py`最前面
 
+> 参考资料：
+> 1. [[1.12] os.environ["CUDA_VISIBLE_DEVICES"] has no effect · Issue #80876 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/80876)
 
 
 
