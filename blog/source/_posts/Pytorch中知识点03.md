@@ -480,11 +480,12 @@ if len(MASK.shape==3):
 GPU_ID=1
 os.environ['CUDA_VISIBLE_DEVICES'] = str(GPU_ID)
 ```
-原因：在导入torch时可能对GPU编号进行了指定
+原因：在导入`kornia`时出现了问题
 解决方案：将上述代码放在`test.py`最前面
 
 > 参考资料：
 > 1. [[1.12] os.environ["CUDA_VISIBLE_DEVICES"] has no effect · Issue #80876 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/80876)
+> 2. [`import kornia` break CUDA lazy init · Issue #1951 · kornia/kornia · GitHub](https://github.com/kornia/kornia/issues/1951)
 
 
 
