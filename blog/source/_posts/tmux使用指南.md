@@ -6,7 +6,7 @@ categories:
 tags:
 - tmux 
 ---
----
+
 本文记录一下tmux的学习和使用过程：
 <!--more-->
 
