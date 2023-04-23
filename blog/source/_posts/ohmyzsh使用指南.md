@@ -98,8 +98,10 @@ fi
 > 参考资料：
 > 1. [Zsh / Oh-my-zsh on Windows Git Bash · GitHub](https://gist.github.com/fworks/af4c896c9de47d827d4caa6fd7154b6b)
 
+### 安装autojump插件实现目录跳转
 
-
+> 参考资料：
+> 1. [GitHub - wting/autojump: A cd command that learns - easily navigate directories from the command line](https://github.com/wting/autojump)
 
 
 

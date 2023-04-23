@@ -1,5 +1,5 @@
 ---
-title: Vim学习指南
+title: Vim使用指南
 date: 2023-02-03 16:43:38
 categories:
 - 环境配置
@@ -26,6 +26,7 @@ tags:
 14. [GitHub - fengstats/vscode-settings: my vscode settings and theme config]：[VSCode | 日常工作流分享_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1i24y1L7uG)中分享的配置
 15. [GitHub - LintaoAmons/CoolStuffes: 我的分享放这里了，大家随便拿去用啊，记得给个星星就行啦～](https://github.com/LintaoAmons/CoolStuffes)：b站up主的配置
 16. [NvChad](https://github.com/NvChad/NvChad)：NvChad，另一个neovim的变种。
+17. [玩转Vim 从放弃到爱不释手-Vim入门-慕课网](https://www.imooc.com/learn/1129)：b站PegasusWang出品的免费Vim慕课教程
 
 ### 碰到的一些问题的解决方法
 1. [No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub](https://github.com/LunarVim/Neovim-from-scratch/issues/274)

@@ -23,5 +23,10 @@ fi
 原因：`.bashrc`中出现了问题，暂未排查出来
 解决方案：将`.bashrc`被分为`.bashrc.bak`，新建`.bashrc`文件并写入配置。（建议直接使用zsh替代bash）。
 
-
+### 查看commands历史并使用
+- `history`：查看commands历史
+- `!!`：选择最近命令
+- `!12`：选择`history`中的第12条命令
+> 参考资料：
+> 1. [How to Search in My ZSH History](https://linuxhint.com/search-in-my-zsh-history/)
 
