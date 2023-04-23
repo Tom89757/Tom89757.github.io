@@ -60,9 +60,13 @@ tags:
 
 
 ### git bash Vim主题显示和对应主题不一致
-
+推测原因为终端不支持256 color，见参考资料2。可在`.zshrc`中添加如下配置：
+```bash
+export TERM=xterm-256color
+```
 > 参考资料：
 > 1. [Reddit - Dive into anything](https://www.reddit.com/r/vim/comments/ebylxb/vim_from_git_bash_showing_weird_colorscheme/)
+> 2. [Configuration wizard missing · Issue #1840 · romkatv/powerlevel10k · GitHub](https://github.com/romkatv/powerlevel10k/issues/1840)
 
 ### Vim复制到剪切板 clipboard
 参考资料3设置有效

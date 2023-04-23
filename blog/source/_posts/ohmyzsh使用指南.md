@@ -19,7 +19,7 @@ tags:
 > 4. [优雅简洁的zim美化你的zsh终端，媲美甚至超越 ohmyzsh - 勒勒乐了 - 博客园](https://www.cnblogs.com/matytan/p/16684665.html)
 > 5. [优雅简洁的zim美化你的zsh终端，媲美甚至超越 ohmyzsh_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Bg411m7ND)
 > 6. [终端神器ohmyzsh_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1C7411V7M8)
-> 7. [Linux/Mac OS下安装并配置oh my zsh | SunPages](https://www.sunhanwu.top/archives/ohmyzsh)
+> 7. [Linux/Mac OS下安装并配置oh my zsh | SunPages](https://www.sunhanwu.top/archives/ohmyzsh)：**重点参考**
 > 8. [GitHub - unixorn/awesome-zsh-plugins: A collection of ZSH frameworks, plugins, themes and tutorials.](https://github.com/unixorn/awesome-zsh-plugins)
 > 9. [oh-my-zsh让终端好用到飞起~ - 掘金](https://juejin.cn/post/6844903939121348616)
 
@@ -104,8 +104,12 @@ fi
 > 1. [GitHub - wting/autojump: A cd command that learns - easily navigate directories from the command line](https://github.com/wting/autojump)
 
 
-
-
-
+### 安装powerlevel10k主题
+- 重置配置：`p10k configure`
+- 在git bash和MobaTermX中会出现某些配置直接被跳过的情况，其原因为这些终端不支持256colors，
+> 参考资料：
+> 1. [GitHub - romkatv/powerlevel10k: A Zsh theme](https://github.com/romkatv/powerlevel10k)
+> 2. [How to reset the settings? · Issue #214 · romkatv/powerlevel10k · GitHub](https://github.com/romkatv/powerlevel10k/issues/214)
+> 3. [Configuration wizard missing · Issue #1840 · romkatv/powerlevel10k · GitHub](https://github.com/romkatv/powerlevel10k/issues/1840)
 
 
