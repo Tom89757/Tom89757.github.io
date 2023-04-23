@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文记录一下在学习Vim过程中的经验和总结：">
 <meta property="og:type" content="article">
@@ -28,11 +28,16 @@
 <meta property="og:site_name" content="世界在我面前展开">
 <meta property="og:description" content="本文记录一下在学习Vim过程中的经验和总结：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191509.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191750.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191812.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191848.png">
 <meta property="article:published_time" content="2022-11-20T05:05:32.000Z">
-<meta property="article:modified_time" content="2023-03-25T14:45:48.762Z">
+<meta property="article:modified_time" content="2023-04-21T04:17:37.018Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Vim">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191509.png">
 
 
 <link rel="canonical" href="https://tom89757.github.io/2022/11/20/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
@@ -148,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim%E5%88%A0%E9%99%A4%E6%9F%A5%E6%89%BE%E5%8C%B9%E9%85%8D%E7%9A%84%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text"> Vim删除查找匹配的行</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim%E5%88%A0%E9%99%A4%E6%9F%A5%E6%89%BE%E5%8C%B9%E9%85%8D%E7%9A%84%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text"> Vim删除查找匹配的行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim%E5%A4%8D%E5%88%B6-%E7%B2%98%E8%B4%B4%E7%84%B6%E5%90%8E%E6%9B%BF%E6%8D%A2"><span class="nav-number">2.</span> <span class="nav-text"> Vim复制、粘贴然后替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim%E7%A7%BB%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text"> Vim移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim-tab%E9%A1%B5%E5%88%87%E6%8D%A2"><span class="nav-number">4.</span> <span class="nav-text"> Vim Tab页切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#leetcode%E7%BD%91%E9%A1%B5%E7%AB%AFvim%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text"> leetcode网页端Vim模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim%E9%85%8D%E7%BD%AE%E7%89%B9%E5%AE%9A%E4%B8%BB%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text"> Vim配置特定主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim%E7%A6%81%E6%AD%A2%E9%97%AA%E7%83%81"><span class="nav-number">7.</span> <span class="nav-text"> Vim禁止闪烁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-bash-vim%E4%B8%BB%E9%A2%98%E6%98%BE%E7%A4%BA%E5%92%8C%E5%AF%B9%E5%BA%94%E4%B8%BB%E9%A2%98%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="nav-number">8.</span> <span class="nav-text"> git bash Vim主题显示和对应主题不一致</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF-clipboard"><span class="nav-number">9.</span> <span class="nav-text"> Vim复制到剪切板 clipboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E4%B8%AD%E4%BD%BF%E7%94%A8zsh%E5%9C%A8git%E4%BB%93%E5%BA%93%E4%B8%AD%E5%93%8D%E5%BA%94%E8%BF%87%E6%85%A2"><span class="nav-number">10.</span> <span class="nav-text"> git中使用zsh在git仓库中响应过慢</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,7 +166,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">93</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -172,7 +177,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -258,7 +263,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-25 22:45:48" itemprop="dateModified" datetime="2023-03-25T22:45:48+08:00">2023-03-25</time>
+      <time title="修改时间：2023-04-21 12:17:37" itemprop="dateModified" datetime="2023-04-21T12:17:37+08:00">2023-04-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,7 +282,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>103</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -304,6 +309,76 @@
 <p>参考资料：</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/hanshileiai/article/details/50528505">vim 删除匹配行_中国风2012的博客-CSDN博客_vim 删除匹配行</a></li>
+</ol>
+</blockquote>
+<h3 id="vim复制-粘贴然后替换"><a class="markdownIt-Anchor" href="#vim复制-粘贴然后替换"></a> Vim复制、粘贴然后替换</h3>
+<p>以下面代码为例：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191509.png" alt="" /><br />
+我们的目的是将<code>pass</code>替换为<code>if __name__ == &quot;__main__&quot;</code>。步骤如下：<br />
+1.在visual模式下选择<code>if __name__ == &quot;__main__&quot;</code>，然后在normal模式下按下<code>y</code>复制。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191750.png" alt="" /><br />
+2.在visual模式下选择<code>pass</code>，按下<code>y</code>即可进行替换：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191812.png" alt="" /><br />
+便可得到下述结果：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327191848.png" alt="" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://superuser.com/questions/371160/copy-delete-then-paste-in-vim">Copy, delete, then paste in Vim - Super User</a></li>
+</ol>
+</blockquote>
+<h3 id="vim移动"><a class="markdownIt-Anchor" href="#vim移动"></a> Vim移动</h3>
+<p>1.<code>w</code>、<code>b</code>、<code>e</code>。<code>e</code>用于移动到光标所在位置的下一个单词的末尾。<br />
+2.<code>W</code>、<code>B</code>、<code>E</code>。跳转到下一个空格。<br />
+3.<code>%</code>。跳到对应的括号。</p>
+<h3 id="vim-tab页切换"><a class="markdownIt-Anchor" href="#vim-tab页切换"></a> Vim Tab页切换</h3>
+<p>1.<code>gt</code>：右边的tab页。已经映射为<code>&lt;leader&gt;l</code>。<br />
+2.<code>gT</code>：左边的tab页。已经映射为<code>&lt;leader&gt;h</code>。</p>
+<h3 id="leetcode网页端vim模式"><a class="markdownIt-Anchor" href="#leetcode网页端vim模式"></a> leetcode网页端Vim模式</h3>
+<p>问题1：按下<code>Esc</code>键会跳出编辑窗口。<br />
+解决方案：编辑前使用<code>:imap jj &lt;Esc&gt;</code>进行映射，或者使用<code>Ctrl+C</code>进入normal模式。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/discuss/general-discussion/446981/vim-command-mode">VIM Command Mode</a></li>
+</ol>
+</blockquote>
+<h3 id="vim配置特定主题"><a class="markdownIt-Anchor" href="#vim配置特定主题"></a> Vim配置特定主题</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://linuxhint.com/best_vim_color_schemes/">Best vim color schemes and how to install</a></li>
+</ol>
+</blockquote>
+<h3 id="vim禁止闪烁"><a class="markdownIt-Anchor" href="#vim禁止闪烁"></a> Vim禁止闪烁</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5933568/disable-blinking-at-the-first-last-line-of-the-file">vim - Disable blinking at the first/last line of the file - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://vi.stackexchange.com/questions/22547/how-to-prevent-vim-from-making-a-flashy-screen-effect-when-pressing-esc-or">terminal - How to prevent Vim from making a flashy screen effect when pressing <code>ESC</code> or <code>^[</code> in normal mode? - Vi and Vim Stack Exchange</a></li>
+</ol>
+</blockquote>
+<h3 id="git-bash-vim主题显示和对应主题不一致"><a class="markdownIt-Anchor" href="#git-bash-vim主题显示和对应主题不一致"></a> git bash Vim主题显示和对应主题不一致</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.reddit.com/r/vim/comments/ebylxb/vim_from_git_bash_showing_weird_colorscheme/">Reddit - Dive into anything</a></li>
+</ol>
+</blockquote>
+<h3 id="vim复制到剪切板-clipboard"><a class="markdownIt-Anchor" href="#vim复制到剪切板-clipboard"></a> Vim复制到剪切板 clipboard</h3>
+<p>参考资料3设置有效</p>
+<blockquote>
+<p>参考资料：<br />
+1.<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings">What is difference between Vim’s clipboard “unnamed” and “unnamedplus” settings? - Stack Overflow</a><br />
+2.  <a target="_blank" rel="noopener" href="https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard">Windows Subsystem Linux - Make VIM use the clipboard? - Super User</a><br />
+3. <a target="_blank" rel="noopener" href="https://waylonwalker.com/vim-wsl-clipboard/">Vim Wsl Clipboard</a></p>
+</blockquote>
+<h3 id="git中使用zsh在git仓库中响应过慢"><a class="markdownIt-Anchor" href="#git中使用zsh在git仓库中响应过慢"></a> git中使用zsh在git仓库中响应过慢</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当前仓库配置</span></span><br><span class="line">git config --add oh-my-zsh.hide-status 1</span><br><span class="line">git config --add oh-my-zsh.hide-dirty 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 全局配置</span></span><br><span class="line">git config --global --add oh-my-zsh.hide-status 1</span><br><span class="line">git config --global --add oh-my-zsh.hide-dirty 1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/12765344/oh-my-zsh-slow-but-only-for-certain-git-repo">oh-my-zsh slow, but only for certain Git repo - Stack Overflow</a></li>
 </ol>
 </blockquote>
 
@@ -378,13 +453,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">315k</span>
+    <span title="站点总字数">345k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:47</span>
+    <span title="站点阅读时长">5:14</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
@@ -395,7 +470,8 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
 
   
 <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>

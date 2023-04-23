@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文记录一下在VSCode和IDEA中所配置的快捷键以便查阅：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VSCode和Idea快捷键记录">
+<meta property="og:url" content="https://tom89757.github.io/2023/04/07/VSCode%E5%92%8CIdea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录一下在VSCode和IDEA中所配置的快捷键以便查阅：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407182521.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407172636.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407172754.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407173106.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407173146.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184135.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184204.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184257.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184346.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184721.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184839.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191410.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190108.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190233.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190720.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190909.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190957.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191812.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191934.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191949.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192147.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192308.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192819.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192441.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192615.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407193033.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407195849.png">
+<meta property="article:published_time" content="2023-04-06T16:02:41.000Z">
+<meta property="article:modified_time" content="2023-04-17T16:00:33.927Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="IDEA">
+<meta property="article:tag" content="VSCode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407182521.png">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2023/04/07/VSCode%E5%92%8CIdea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2023/04/07/VSCode%E5%92%8CIdea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/","path":"2023/04/07/VSCode和Idea快捷键记录/","title":"VSCode和Idea快捷键记录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>VSCode和Idea快捷键记录 | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%BE%91"><span class="nav-number">1.</span> <span class="nav-text"> 编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8D%A2"><span class="nav-number">2.</span> <span class="nav-text"> 切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">3.</span> <span class="nav-text"> 其它</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E9%80%89%E6%8B%A9%E5%8C%85%E6%8B%AC%E9%80%89%E6%8B%A9-%E5%88%A0%E9%99%A4-%E6%9B%BF%E6%8D%A2-%E5%A4%8D%E5%88%B6-%E7%BC%A9%E8%BF%9B"><span class="nav-number">4.</span> <span class="nav-text"> 文本选择（包括选择、删除、替换、复制、缩进）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim-surround"><span class="nav-number">5.</span> <span class="nav-text"> Vim-surround</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%8F%92%E4%BB%B6nerdtree"><span class="nav-number">6.</span> <span class="nav-text"> VSCode插件NERDTree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8%E5%88%B0wrap-line%E6%9C%AB%E5%B0%BE"><span class="nav-number">7.</span> <span class="nav-text"> VSCode光标移动到wrap line末尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%B0%86redo%E6%98%A0%E5%B0%84%E4%B8%BAu"><span class="nav-number">8.</span> <span class="nav-text"> VSCode将redo映射为U</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2023/04/07/VSCode%E5%92%8CIdea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="VSCode和Idea快捷键记录 | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VSCode和Idea快捷键记录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-04-07 00:02:41" itemprop="dateCreated datePublished" datetime="2023-04-07T00:02:41+08:00">2023-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-04-18 00:00:33" itemprop="dateModified" datetime="2023-04-18T00:00:33+08:00">2023-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">开发工具</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文记录一下在VSCode和IDEA中所配置的快捷键以便查阅：</p>
+<span id="more"></span>
+<h3 id="编辑"><a class="markdownIt-Anchor" href="#编辑"></a> 编辑</h3>
+<p>1.<code>Ctrl+Shift+D</code>：选中光标位置所在的单词出现。<br />
+2.<code>Ctrl+Shift+L</code>：选中光标位置所在单词的所有出现。此时使用<code>i</code>或<code>c/d</code>可以实现多光标编辑（VSCode和IDEA中的Vim插件使用<code>i</code>有点问题，可使用<code>c</code>作为替代）<br />
+3.<code>Ctrl+Right/Left</code>定位选中单词的下/上一个出现。（VSCode，IDEA中配置快捷键失效）<br />
+4.<code>Ctrl+D/U</code>上下移动整个屏幕。<br />
+5.<code>gd</code>跳转到函数/变量定义处。<br />
+6.<code>ge/gE</code>跳转到下/上一个error处。<br />
+7.<code>gm/gM</code>跳转到下/上一个method处。（IDEA）<br />
+8.<code>&lt;leader&gt;&lt;leader&gt;w/b</code>快速定位光标前后单词。（通过easymotion实现）<br />
+9.<code>s+目标单词的前两个字母</code>快速定位光标所在行的目标单词。（通过sneak实现）<br />
+10.<code>Ctrl+;</code>输入字母快速定位文件中该字母的出现位置。（通过ace jump插件实现）。<br />
+11.<code>Alt+Left/Right</code>跳转到上/下一个跳转位置。<br />
+12.<code>gb</code>选中光标所在单词，再次按<code>gb</code>选中和前面单词的下一个出现。按下<code>c</code>或者<code>i</code>可以进行多光标编辑。（IDEA中不起作用）<br />
+13.<code>yL</code>复制光标到该行末尾的内容(<code>L</code>已被映射为<code>$</code>)；<code>y^</code>复制光标到该行开头的内容（虽然H已被映射为^，但在VSCode中<code>yH</code>不起作用，在Obsidian中起作用）<br />
+14.<code>3yy</code>复制光标所在行以及之后的两行共3行。<br />
+15.<code>123G</code>跳转到123行。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/7764176/how-to-copy-from-current-position-to-the-end-of-line-in-vi">vim - How to copy from current position to the end of line in vi - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/xiaochentongzhi/plyxyr/ekvv3fliaqtzaymt">VSCode 快捷键备忘</a></li>
+</ol>
+</blockquote>
+<h3 id="切换"><a class="markdownIt-Anchor" href="#切换"></a> 切换</h3>
+<p>1.<code>&lt;leader&gt;h</code>和<code>&lt;leader&gt;l</code>切换tab页。<br />
+2.<code>&lt;leader&gt;n</code>定位explorer，通过<code>j/k</code>等选择、新建、重命名文件。（通过NERDTree插件实现）<br />
+3.<code>Ctrl+P</code>根据文件名搜索explorer中的所有文件并通过enter打开。<br />
+4.<code>~ + 1</code>定位文件进行编辑，<code>~ + 2</code>定位终端窗口。</p>
+<h3 id="其它"><a class="markdownIt-Anchor" href="#其它"></a> 其它</h3>
+<p>1.<code>Ctrl+Shift+F</code>全局搜索。<br />
+2.<code>Ctrl+,</code>打开settings。<br />
+3.<code>F2</code>搜索commands（VSCode）。<br />
+4.<code>Ctrl+Shift+R</code>重载窗口（VSCode）。<br />
+5.<code>Ctrl+T</code>打开终端。<br />
+6.<code>Ctrl+w</code>或者<code>&lt;leader&gt;q</code>关闭当前文件。<br />
+7.<code>Ctrl+K+W</code>关闭所有文件。</p>
+<h3 id="文本选择包括选择-删除-替换-复制-缩进"><a class="markdownIt-Anchor" href="#文本选择包括选择-删除-替换-复制-缩进"></a> 文本选择（包括选择、删除、替换、复制、缩进）</h3>
+<p>选择、删除、替换、复制、缩进分别对应<code>v</code>, <code>d</code>, <code>c</code>, <code>y</code>, <code>&gt;</code>。（visual/delete/change/yank/indent）<br />
+首先先根据参考资料1理解text object的概念：<br />
+以选择模式(<code>v</code>)为例：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407182521.png" alt="" /><br />
+解释：<br />
+<code>viw</code>：visual select inner a word<br />
+<code>di&quot;</code>：delete the content which surrounded by <code>&quot;&quot;</code><br />
+1.<code>viw</code>：选中光标所在单词（不包括单词末尾空格/space）。如下图所示：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407172636.png" alt="" /><br />
+2.<code>vaw</code>：选中光标所在单词（包括单词末尾空格/space）。如下图所示：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407172754.png" alt="" /><br />
+3.<code>viW/vaW</code>：选中更广义的单词（<code>,</code>、<code>;</code>等不会中断识别）：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407173106.png" alt="" /><br />
+上述<code>viw</code>会被<code>,</code>中断。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407173146.png" alt="" /><br />
+使用<code>viW</code>则不会被<code>,</code>中断。<br />
+4.<code>vis</code>：选中光标所在句子，句子通过<code>.</code>分隔。<code>vas</code>则会多选中末尾一个空格（对代码来说不太好用，但理解<code>s</code>表示句子的概念对理解Vim-surround中的操作有帮助。没有<code>viS/vaS</code>）<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184135.png" alt="" /><br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184204.png" alt="" /><br />
+5.<code>vip</code>：选中光标所在的段落，段落通过空行分割。<code>vap</code>会多选中末尾空行直至下一个段落。（没有<code>viP/vaP</code>）<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184257.png" alt="" /><br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184346.png" alt="" /><br />
+6.<code>vi&#123;</code>：选中光标所在位置外部的第一个<code>&#123;&#125;</code>内的所有内容，不包括<code>&#123;&#125;</code>本身。（<code>vi(</code>, <code>vi[</code>, <code>vi&quot;</code>, <code>vi'</code>同理）：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184721.png" alt="" /><br />
+7.<code>va&#123;</code>：选中光标所在位置外部的第一个<code>&#123;&#125;</code>内的所有内容，包括<code>&#123;&#125;</code>本身。（<code>vi(</code>, <code>vi[</code>, <code>vi&quot;</code>, <code>vi'</code>同理）：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407184839.png" alt="" /><br />
+8.<code>vit</code>：选中光标所在的HTML tag中的内容。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191410.png" alt="" /></p>
+<p>PS：将上述的<code>v</code>替换为<code>c/d/y/&gt;</code>可以实现相同范围的选择。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ze4y1E7Sk/?spm_id_from=333.999.0.0&amp;vd_source=71b57f2bb132ac1f88ed255cad4a06a6">Vim中的重要概念 Text Object_哔哩哔哩_bilibili</a></li>
+</ol>
+</blockquote>
+<h3 id="vim-surround"><a class="markdownIt-Anchor" href="#vim-surround"></a> Vim-surround</h3>
+<p>add/change/delete surrounding for content<br />
+add：<code>ys [text object] Mark</code><br />
+change：<code>ds Mark</code><br />
+delete：<code>cs srcMark dstMark</code><br />
+<strong>add</strong><br />
+1.<code>ysiw&quot;</code>：给光标所在单词添加<code>&quot;&quot;</code>。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190108.png" alt="" /><br />
+2.<code>yss&quot;</code>：给光标所在行添加<code>&quot;&quot;</code>。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190233.png" alt="" /><br />
+3.<code>ysip&quot;</code>：给光标所在代码段添加<code>&quot;&quot;</code>。（注意此处需要<code>i</code>，上述VSCode中<code>yss</code>不需要<code>i</code>，IDEA中需要写<code>ysis</code>，但根据参考资料5该特性并没有在IDEA中实现）<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190720.png" alt="" /><br />
+4.<code>ysiw(</code>：给光标所在单词添加<code>()</code>，额外添加空格。（<code>yss(</code>和<code>ysip(</code>同理）<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190909.png" alt="" /><br />
+5.<code>ysiw)</code>：给光标所在单词添加<code>()</code>，不额外添加空格。（<code>yss)</code>和<code>ysip)</code>同理）<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407190957.png" alt="" /><br />
+6.<code>ysiwt p</code>：给光标所在单词添加HTML tag <code>&lt;p&gt;&lt;/p&gt;</code>。（<code>ysst p</code>和<code>ysipt p</code>同理）<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191812.png" alt="" /><br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191934.png" alt="" /><br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191949.png" alt="" /></p>
+<p><strong>change</strong><br />
+1.<code>cs&quot;'</code>：将光标所在单词最近的<code>&quot;&quot;</code>变为<code>''</code>。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192147.png" alt="" /><br />
+2.<code>cs&quot;&#123;</code>：将光标所在单词最近的<code>&quot;&quot;</code>变为<code>&#123;&#125;</code>，并添加额外空格。（<code>cs&quot;&#125;</code>不会添加额外空格）<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192308.png" alt="" /><br />
+3.<code>cs&quot;t p</code>：将光标所在单词最近的<code>&quot;&quot;</code>变为对应HTML tag <code>&lt;p&gt;&lt;/p&gt;</code>。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192819.png" alt="" /></p>
+<p><strong>delete</strong><br />
+1.<code>ds&quot;</code>：删除光标所在单词最近的<code>&quot;&quot;</code>。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192441.png" alt="" /><br />
+2.<code>ds&#123;</code>：删除光标所在单词最近的<code>&#123;&#125;</code>，并删除周围空格，如果没有则不删除。（<code>ds&#125;</code>不会删除周围空格）<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407192615.png" alt="" /><br />
+3.<code>dst</code>：删除光标所在单词最近的HTML tag。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407193033.png" alt="" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Le4y1i7Uz/?spm_id_from=333.788&amp;vd_source=71b57f2bb132ac1f88ed255cad4a06a6">好用的Vim插件Vim-Surround介绍_哔哩哔哩_bilibili</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YA411u78P/?spm_id_from=333.337.search-card.all.click&amp;vd_source=71b57f2bb132ac1f88ed255cad4a06a6">指尖飞舞：vscode + vim 高效开发（vim-surround）_哔哩哔哩_bilibili</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tpope/vim-surround">GitHub - tpope/vim-surround: surround.vim: Delete/change/add parentheses/quotes/XML-tags/much more with ease</a></li>
+<li><a target="_blank" rel="noopener" href="https://youtrack.jetbrains.com/issue/VIM-769/inbuilt-vim-surround-support-in-ideavim">https://youtrack.jetbrains.com/issue/VIM-769/inbuilt-vim-surround-support-in-ideavim</a></li>
+<li><a target="_blank" rel="noopener" href="https://youtrack.jetbrains.com/issue/VIM-2004/Cannot-surround-full-line-using-yss-command">https://youtrack.jetbrains.com/issue/VIM-2004/Cannot-surround-full-line-using-yss-command</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode插件nerdtree"><a class="markdownIt-Anchor" href="#vscode插件nerdtree"></a> VSCode插件NERDTree</h3>
+<p>操作如下：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407195849.png" alt="" /></p>
+<h3 id="vscode光标移动到wrap-line末尾"><a class="markdownIt-Anchor" href="#vscode光标移动到wrap-line末尾"></a> VSCode光标移动到wrap line末尾</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://vi.stackexchange.com/questions/9762/how-to-go-to-the-end-of-the-line-even-in-on-a-wrapped-line">cursor movement - How to go to the end of the line even in on a wrapped line? - Vi and Vim Stack Exchange</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/105721/how-do-i-move-to-end-of-line-in-vim">editor - How do I move to end of line in Vim? - Stack Overflow</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode将redo映射为u"><a class="markdownIt-Anchor" href="#vscode将redo映射为u"></a> VSCode将redo映射为U</h3>
+<ul>
+<li>打开VSCode中Vim的Ctrl映射</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;vim.useCtrlKeys&quot;: true,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在<code>.vimrc</code>中remap</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot; remap redo to U</span><br><span class="line">nnoremap U &lt;C-r&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.reddit.com/r/vim/comments/4yvjje/remapping_u_to_redo_cr_to_reversesearch/">Remapping <code>U</code> to redo, <code>C-r</code> to reverse-search : vim</a></li>
+</ol>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2023/04/07/VSCode%E5%92%8CIdea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" title="VSCode和Idea快捷键记录">https://tom89757.github.io/2023/04/07/VSCode和Idea快捷键记录/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/IDEA/" rel="tag"># IDEA</a>
+              <a href="/tags/VSCode/" rel="tag"># VSCode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/04/LaTex%E4%BD%BF%E7%94%A8/" rel="prev" title="LaTex使用">
+                  <i class="fa fa-chevron-left"></i> LaTex使用
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/04/13/ACM%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A51/" rel="next" title="ACM格式输入1">
+                  ACM格式输入1 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">345k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:14</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

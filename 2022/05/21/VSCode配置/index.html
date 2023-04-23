@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文记录一下在 VSCode 编辑器中一些常用的配置方法。">
 <meta property="og:type" content="article">
@@ -53,8 +53,17 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230114000131.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230114000313.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230312161241.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327235910.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230330105601.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230402235543.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230402235455.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230404222129.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230404003727.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230408141703.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230408141832.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230409110425.png">
 <meta property="article:published_time" content="2022-05-21T09:09:43.000Z">
-<meta property="article:modified_time" content="2023-03-25T14:58:41.087Z">
+<meta property="article:modified_time" content="2023-04-18T03:59:43.102Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="VSCode">
 <meta name="twitter:card" content="summary">
@@ -174,7 +183,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-%E9%87%8D%E6%96%B0%E5%90%AF%E7%94%A8%E9%94%99%E8%AF%AF%E6%B3%A2%E5%BD%A2%E6%8F%90%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text"> VSCode 重新启用“错误波形提示”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E9%94%AEshortcuts"><span class="nav-number">2.</span> <span class="nav-text"> VSCode 配置快捷键（shortcuts）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-%E5%9C%A8%E5%A4%9A%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%93%E5%BC%80%E5%90%8C%E4%B8%80%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text"> VSCode 在多个窗口中打开同一项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%98%BE%E7%A4%BA85%E5%AD%97%E7%AC%A6%E5%AE%BD%E5%BA%A6%E6%8F%90%E7%A4%BA%E7%BA%BF"><span class="nav-number">4.</span> <span class="nav-text"> VSCode显示85字符宽度提示线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4python-interpreter"><span class="nav-number">5.</span> <span class="nav-text"> VSCode设置默认Python Interpreter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%85%B3%E9%97%ADeditor-enable-preview"><span class="nav-number">6.</span> <span class="nav-text"> VSCode关闭Editor: Enable Preview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%87%BA%E7%8E%B0unexpected-indentation-in-visual-studio-code-with-python"><span class="nav-number">7.</span> <span class="nav-text"> VSCode出现Unexpected Indentation in Visual Studio Code with Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AE%E9%BB%98%E8%AE%A4terminal"><span class="nav-number">8.</span> <span class="nav-text"> VSCode配置默认Terminal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%9C%A8%E8%BF%90%E8%A1%8C%E6%88%96%E8%80%85%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98"><span class="nav-number">9.</span> <span class="nav-text"> VSCode在运行或者编译C++文件出现问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BDvscode"><span class="nav-number">10.</span> <span class="nav-text"> 彻底卸载VSCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AEgit%E7%BB%88%E7%AB%AF"><span class="nav-number">11.</span> <span class="nav-text"> VSCode配置Git终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-leetcode%E6%8F%92%E4%BB%B6"><span class="nav-number">12.</span> <span class="nav-text"> VSCode leetcode插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-vim%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">13.</span> <span class="nav-text"> VSCode Vim插件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-vim%E6%89%93%E5%BC%80easymotion%E5%92%8Csneak%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%86%85%E4%BB%BB%E6%84%8F%E8%B7%B3%E8%BD%AC"><span class="nav-number">14.</span> <span class="nav-text"> VSCode Vim打开EasyMotion和Sneak实现文件内任意跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sneak"><span class="nav-number">14.1.</span> <span class="nav-text"> Sneak</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#easymotion"><span class="nav-number">14.2.</span> <span class="nav-text"> EasyMotion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AE%E5%9C%A8%E7%BB%88%E7%AB%AF%E5%92%8C%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">15.</span> <span class="nav-text"> VSCode配置在终端和编辑器之间切换的快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%89%93%E5%BC%80new-tab"><span class="nav-number">16.</span> <span class="nav-text"> VSCode打开new tab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AEdefaultformatter"><span class="nav-number">17.</span> <span class="nav-text"> VSCode配置defaultFormatter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AEfira-code%E5%AD%97%E4%BD%93"><span class="nav-number">18.</span> <span class="nav-text"> VSCode配置Fira Code字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE"><span class="nav-number">19.</span> <span class="nav-text"> VSCode管理Java项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90"><span class="nav-number">20.</span> <span class="nav-text"> VSCode插件推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-c%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">21.</span> <span class="nav-text"> VSCode C++环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-ssh%E5%85%8D%E5%AF%86%E7%A0%81%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">22.</span> <span class="nav-text"> VSCode ssh免密码连接远程服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E8%B7%B3%E8%BD%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">23.</span> <span class="nav-text"> VSCode跳转配置</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-%E9%87%8D%E6%96%B0%E5%90%AF%E7%94%A8%E9%94%99%E8%AF%AF%E6%B3%A2%E5%BD%A2%E6%8F%90%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text"> VSCode 重新启用“错误波形提示”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E9%94%AEshortcuts"><span class="nav-number">2.</span> <span class="nav-text"> VSCode 配置快捷键（shortcuts）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-%E5%9C%A8%E5%A4%9A%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%93%E5%BC%80%E5%90%8C%E4%B8%80%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text"> VSCode 在多个窗口中打开同一项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%98%BE%E7%A4%BA85%E5%AD%97%E7%AC%A6%E5%AE%BD%E5%BA%A6%E6%8F%90%E7%A4%BA%E7%BA%BF"><span class="nav-number">4.</span> <span class="nav-text"> VSCode显示85字符宽度提示线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4python-interpreter"><span class="nav-number">5.</span> <span class="nav-text"> VSCode设置默认Python Interpreter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%85%B3%E9%97%ADeditor-enable-preview"><span class="nav-number">6.</span> <span class="nav-text"> VSCode关闭Editor: Enable Preview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%87%BA%E7%8E%B0unexpected-indentation-in-visual-studio-code-with-python"><span class="nav-number">7.</span> <span class="nav-text"> VSCode出现Unexpected Indentation in Visual Studio Code with Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AE%E9%BB%98%E8%AE%A4terminal"><span class="nav-number">8.</span> <span class="nav-text"> VSCode配置默认Terminal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%9C%A8%E8%BF%90%E8%A1%8C%E6%88%96%E8%80%85%E7%BC%96%E8%AF%91c%E6%96%87%E4%BB%B6%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98"><span class="nav-number">9.</span> <span class="nav-text"> VSCode在运行或者编译C++文件出现问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BDvscode"><span class="nav-number">10.</span> <span class="nav-text"> 彻底卸载VSCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AEgit%E7%BB%88%E7%AB%AF"><span class="nav-number">11.</span> <span class="nav-text"> VSCode配置Git终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-leetcode%E6%8F%92%E4%BB%B6"><span class="nav-number">12.</span> <span class="nav-text"> VSCode leetcode插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-vim%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">13.</span> <span class="nav-text"> VSCode Vim插件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-vim%E6%89%93%E5%BC%80easymotion%E5%92%8Csneak%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%86%85%E4%BB%BB%E6%84%8F%E8%B7%B3%E8%BD%AC"><span class="nav-number">14.</span> <span class="nav-text"> VSCode Vim打开EasyMotion和Sneak实现文件内任意跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sneak"><span class="nav-number">14.1.</span> <span class="nav-text"> Sneak</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#easymotion"><span class="nav-number">14.2.</span> <span class="nav-text"> EasyMotion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AE%E5%9C%A8%E7%BB%88%E7%AB%AF%E5%92%8C%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">15.</span> <span class="nav-text"> VSCode配置在终端和编辑器之间切换的快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%89%93%E5%BC%80new-tab"><span class="nav-number">16.</span> <span class="nav-text"> VSCode打开new tab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AEdefaultformatter"><span class="nav-number">17.</span> <span class="nav-text"> VSCode配置defaultFormatter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AEfira-code%E5%AD%97%E4%BD%93"><span class="nav-number">18.</span> <span class="nav-text"> VSCode配置Fira Code字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE"><span class="nav-number">19.</span> <span class="nav-text"> VSCode管理Java项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90"><span class="nav-number">20.</span> <span class="nav-text"> VSCode插件推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-c%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">21.</span> <span class="nav-text"> VSCode C++环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-ssh%E5%85%8D%E5%AF%86%E7%A0%81%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">22.</span> <span class="nav-text"> VSCode ssh免密码连接远程服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E8%B7%B3%E8%BD%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">23.</span> <span class="nav-text"> VSCode跳转配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%88%B7%E9%A2%98%E4%B8%BB%E9%A2%98"><span class="nav-number">24.</span> <span class="nav-text"> VSCode刷题主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%90%9C%E7%B4%A2%E6%96%87%E4%BB%B6"><span class="nav-number">25.</span> <span class="nav-text"> VSCode搜索文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-copilot%E4%BD%BF%E7%94%A8"><span class="nav-number">26.</span> <span class="nav-text"> VSCode Copilot使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">27.</span> <span class="nav-text"> VSCode快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AE%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84vim%E6%98%A0%E5%B0%84"><span class="nav-number">28.</span> <span class="nav-text"> VSCode配置插入模式下的Vim映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E6%9F%A5%E6%89%BE%E5%85%89%E6%A0%87%E5%A4%84%E5%8D%95%E8%AF%8D%E7%9A%84%E6%89%80%E6%9C%89%E5%87%BA%E7%8E%B0%E6%8F%92%E4%BB%B6"><span class="nav-number">29.</span> <span class="nav-text"> VSCode查找光标处单词的所有出现插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E4%BD%BF%E7%94%A8vimrc%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AEvim"><span class="nav-number">30.</span> <span class="nav-text"> VSCode使用.vimrc文件配置Vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AE80%E5%AD%97%E7%AC%A6%E5%92%8C120%E5%AD%97%E7%AC%A6%E5%9E%82%E7%9B%B4%E7%BA%BF"><span class="nav-number">31.</span> <span class="nav-text"> VSCode配置80字符和120字符垂直线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E4%B8%ADvim%E9%85%8D%E7%BD%AE%E5%A4%8D%E6%9D%82%E5%91%BD%E4%BB%A4%E6%98%A0%E5%B0%84"><span class="nav-number">32.</span> <span class="nav-text"> VSCode中Vim配置复杂命令映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E4%B8%ADnerdtree%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%88%87%E6%8D%A2"><span class="nav-number">33.</span> <span class="nav-text"> VSCode中NERDTree插件实现文件切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E4%B8%ADfind-word-at-cursor%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9A%E4%BD%8D%E6%89%80%E6%9C%89%E5%85%89%E6%A0%87%E5%A4%84%E5%8D%95%E8%AF%8D%E5%B9%B6%E5%BF%AB%E9%80%9F%E7%A7%BB%E5%8A%A8%E5%88%B0%E4%B8%8B%E4%B8%80%E4%B8%AA"><span class="nav-number">34.</span> <span class="nav-text"> VSCode中Find Word At Cursor插件实现定位所有光标处单词并快速移动到下一个</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E4%B8%ADcode-ace-jumper%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E8%B7%B3%E8%BD%AC"><span class="nav-number">35.</span> <span class="nav-text"> VSCode中Code Ace Jumper插件实现任意跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E4%B8%AD%E8%AE%BE%E7%BD%AEjustmycodefalse%E5%A4%B1%E6%95%88"><span class="nav-number">36.</span> <span class="nav-text"> VSCode中设置justMyCode&#x3D;false失效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-insiders-vs-vscode"><span class="nav-number">37.</span> <span class="nav-text"> VSCode Insiders vs VSCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA%E5%92%8C%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="nav-number">38.</span> <span class="nav-text"> VSCode Python错误提示和类型检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E8%AE%BE%E7%BD%AE%E9%80%89%E5%8F%96%E5%80%99%E9%80%89%E8%AF%8D%E5%88%87%E6%8D%A2%E9%94%AE%E4%B8%BAtab"><span class="nav-number">39.</span> <span class="nav-text"> VSCode设置选取候选词切换键为tab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode%E5%9C%A8settings-sync-%E8%AE%BE%E7%BD%AE%E5%90%8C%E6%AD%A5-%E4%B8%AD%E6%8E%92%E9%99%A4%E6%9F%90%E4%BA%9B%E8%AE%BE%E7%BD%AE"><span class="nav-number">40.</span> <span class="nav-text"> VSCode在settings sync (设置同步) 中排除某些设置</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -187,7 +196,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">93</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -198,7 +207,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -284,7 +293,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-25 22:58:41" itemprop="dateModified" datetime="2023-03-25T22:58:41+08:00">2023-03-25</time>
+      <time title="修改时间：2023-04-18 11:59:43" itemprop="dateModified" datetime="2023-04-18T11:59:43+08:00">2023-04-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -303,14 +312,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.3k</span>
+      <span>9.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -600,6 +609,147 @@ EasyMotion使你摆脱需要<code>5j</code>或者<code>5k</code>这样数数的�
 <li><a target="_blank" rel="noopener" href="https://mailchi.mp/vscode/46">VSCode #46 - A Better Code Folding Extension</a></li>
 </ol>
 </blockquote>
+<h3 id="vscode刷题主题"><a class="markdownIt-Anchor" href="#vscode刷题主题"></a> VSCode刷题主题</h3>
+<p>1.Gruvbox Them较为简洁，且变量和关键字区分较为明显，比较适合刷题<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230327235910.png" alt="" /></p>
+<h3 id="vscode搜索文件"><a class="markdownIt-Anchor" href="#vscode搜索文件"></a> VSCode搜索文件</h3>
+<p>快捷键：Ctrl+P</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/30095376/how-do-i-search-for-files-in-visual-studio-code">keyboard shortcuts - How do I search for files in Visual Studio Code? - Stack Overflow</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode-copilot使用"><a class="markdownIt-Anchor" href="#vscode-copilot使用"></a> VSCode Copilot使用</h3>
+<p>1.<code>tab</code>键补全。<br />
+2.<code>Ctrl + Enter</code>右侧打开Copilot窗口。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://tutorials.tinkink.net/zh-hans/vscode/copilot-usage-and-shortcut.html#%E4%BD%BF%E7%94%A8">Github Copilot 的使用方法和快捷键 | 教程 | Tinkink</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode快捷键"><a class="markdownIt-Anchor" href="#vscode快捷键"></a> VSCode快捷键</h3>
+<p>1.<code>Ctrl+P</code>：按文件名搜索文件<br />
+2.<code>Ctrl+W</code>：关闭当前文件窗口<br />
+3.<code>Ctrl+K+W</code>：关闭所有文件窗口<br />
+4.<code>Ctrl+shif+l</code>：选中当前光标所在单词的所有单词<br />
+5.<code>Ctrl+,</code>：打开settings。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44044896">VS Code 的常用快捷键 - 知乎</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode配置插入模式下的vim映射"><a class="markdownIt-Anchor" href="#vscode配置插入模式下的vim映射"></a> VSCode配置插入模式下的Vim映射</h3>
+<p>在<code>settings.json</code>中添加：（经使用，不太好用，无法输入H/L/J/K，故取消）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vim.insertModeKeyBindings&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;before&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;H&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;after&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;Esc&gt;&quot;</span><span class="punctuation">,</span> <span class="string">&quot;^&quot;</span><span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;before&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;L&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;after&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;Esc&gt;&quot;</span><span class="punctuation">,</span> <span class="string">&quot;$&quot;</span><span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;before&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;J&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;after&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;Esc&gt;&quot;</span><span class="punctuation">,</span> <span class="string">&quot;g&quot;</span><span class="punctuation">,</span> <span class="string">&quot;j&quot;</span><span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;before&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;K&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;after&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;Esc&gt;&quot;</span><span class="punctuation">,</span> <span class="string">&quot;g&quot;</span><span class="punctuation">,</span> <span class="string">&quot;k&quot;</span><span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://superuser.com/questions/706674/moving-to-the-beginning-of-line-within-vim-insert-mode">Moving to the beginning of line within Vim insert mode - Super User</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode查找光标处单词的所有出现插件"><a class="markdownIt-Anchor" href="#vscode查找光标处单词的所有出现插件"></a> VSCode查找光标处单词的所有出现插件</h3>
+<p>Find Word At Cursor。其快捷键配置如下：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230330105601.png" alt="" /><br />
+使用步骤为：</p>
+<ol>
+<li>使用快捷键<code>Ctrl+D</code>选中光标所在单词的所有出现。</li>
+<li>使用快捷键<code>Ctrl+-&gt;</code>定位下一个出现，使用快捷键<code>Ctrl+&lt;-</code>定位上一个出现k。<br />
+PS：需要覆盖或删除与<code>Ctrl+-&gt;</code>和<code>Ctrl+&lt;-</code>冲突的系统默认快捷键。</li>
+</ol>
+<h3 id="vscode使用vimrc文件配置vim"><a class="markdownIt-Anchor" href="#vscode使用vimrc文件配置vim"></a> VSCode使用<code>.vimrc</code>文件配置Vim</h3>
+<p>在<code>settings</code>中打开<code>.vimrc</code>文件配置，并在指定位置添加<code>.vimrc</code>文件：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230402235543.png" alt="" /><br />
+<code>.vimrc</code>内容如下（参考资料2）：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot; Pick a leader key</span></span><br><span class="line"><span class="string">&quot;</span> Use space as leader key</span><br><span class="line">let mapleader = <span class="string">&quot; &quot;</span></span><br><span class="line"></span><br><span class="line">nmap H ^</span><br><span class="line">nmap L $</span><br><span class="line">nmap j gj</span><br><span class="line">nmap k gk</span><br><span class="line"></span><br><span class="line">set textwidth=<span class="number">79</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/63017771/how-to-modify-change-the-vimrc-file-in-vscode">vim - How to modify/change the vimrc file in VsCode? - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://gist.github.com/simonista/8703722">A basic .vimrc file that will serve as a good template on which to build. · GitHub</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode配置80字符和120字符垂直线"><a class="markdownIt-Anchor" href="#vscode配置80字符和120字符垂直线"></a> VSCode配置80字符和120字符垂直线</h3>
+<p>在<code>settings.json</code>中添加：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;editor.rulers&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="number">80</span><span class="punctuation">,</span> <span class="number">120</span></span><br><span class="line">  <span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<p>效果如下图所示：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230402235455.png" alt="" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code">configuration - Vertical rulers in Visual Studio Code - Stack Overflow</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode中vim配置复杂命令映射"><a class="markdownIt-Anchor" href="#vscode中vim配置复杂命令映射"></a> VSCode中Vim配置复杂命令映射</h3>
+<p>PS：VSCode中跳出文件编辑窗口后<code>&lt;leader&gt;</code>键和其它键不起作用。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/elevating-your-worflow-with-custom-mappings/">Elevating Your Workflow With Custom Mappings | Barbarian Meets Coding</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/getstarted/userinterface">Visual Studio Code User Interface</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/api/references/commands">Built-in Commands | Visual Studio Code Extension API</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/VSCodeVim/Vim/issues/2542">How do I assign a mapping to VSCode commands · Issue #2542 · VSCodeVim/Vim · GitHub</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode中nerdtree插件实现文件切换"><a class="markdownIt-Anchor" href="#vscode中nerdtree插件实现文件切换"></a> VSCode中NERDTree插件实现文件切换</h3>
+<p>快捷键如下：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230404222129.png" alt="" /></p>
+<h3 id="vscode中find-word-at-cursor插件实现定位所有光标处单词并快速移动到下一个"><a class="markdownIt-Anchor" href="#vscode中find-word-at-cursor插件实现定位所有光标处单词并快速移动到下一个"></a> VSCode中Find Word At Cursor插件实现定位所有光标处单词并快速移动到下一个</h3>
+<p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230404003727.png" alt="" /><br />
+1.<code>Ctrl+D</code>定位所有光标位置单词。<br />
+2.<code>Ctrl+-&gt;</code>和<code>Ctrl+&lt;-</code>跳转到上一个/下一个。</p>
+<h3 id="vscode中code-ace-jumper插件实现任意跳转"><a class="markdownIt-Anchor" href="#vscode中code-ace-jumper插件实现任意跳转"></a> VSCode中Code Ace Jumper插件实现任意跳转</h3>
+<p>按下<code>Ctrl + ;</code>后输入对应字母即可跳转到以该字母为首字母的单词出现位置。</p>
+<h3 id="vscode中设置justmycodefalse失效"><a class="markdownIt-Anchor" href="#vscode中设置justmycodefalse失效"></a> VSCode中设置<code>justMyCode=false</code>失效</h3>
+<p>当前调试配置文件<code>launch.json</code>为：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Python: Current File&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;python&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;file&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;console&quot;</span><span class="punctuation">:</span> <span class="string">&quot;integratedTerminal&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;justMyCode&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>根据参考资料3在上述<code>launch.json</code>中添加：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;purpose&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;debug-in-terminal&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<p>即更新为：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Python: Current File&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;python&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;file&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;console&quot;</span><span class="punctuation">:</span> <span class="string">&quot;integratedTerminal&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;justMyCode&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;purpose&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;debug-in-terminal&quot;</span><span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode-python/issues/7347">“justMyCode” does not enable standard library debugging · Issue #7347 · microsoft/vscode-python · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/python/testing#_debug-tests">Testing Python in Visual Studio Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/440413830">VsCode justMyCode: false无效 - 知乎</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode-insiders-vs-vscode"><a class="markdownIt-Anchor" href="#vscode-insiders-vs-vscode"></a> VSCode Insiders vs VSCode</h3>
+<p>二者的配置是独立的，但是VSCode Insiders可以同步VSCode的配置。通过关闭对VSCode的同步，然后打开VSCode Insiders的同步便可以从VSCode复制一份配置。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/supporting/FAQ">Visual Studio Code Frequently Asked Questions</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/insiders/">Download Visual Studio Code Insiders</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode-python错误提示和类型检查"><a class="markdownIt-Anchor" href="#vscode-python错误提示和类型检查"></a> VSCode Python错误提示和类型检查</h3>
+<p>问题：插件Pylance会提供对Python文件的类型检查，但是有时候其类型检查较为严格，会爆出很多我们想忽视的错误<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230408141703.png" alt="" /><br />
+解决方案：在settings里关闭<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230408141832.png" alt="" /></p>
+<h3 id="vscode设置选取候选词切换键为tab"><a class="markdownIt-Anchor" href="#vscode设置选取候选词切换键为tab"></a> VSCode设置选取候选词切换键为tab</h3>
+<p>在快捷键中查找selectNextSuggestion设置<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230409110425.png" alt="" /></p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/issues/33645">How to select the non-first item of the candidate selector by using the shortcut key? · Issue #33645 · microsoft/vscode · GitHub</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode在settings-sync-设置同步-中排除某些设置"><a class="markdownIt-Anchor" href="#vscode在settings-sync-设置同步-中排除某些设置"></a> VSCode在settings sync (设置同步) 中排除某些设置</h3>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;settingsSync.ignoredSettings&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">	    <span class="string">&quot;editor.fontSize&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="string">&quot;-python.defaultInterpreterPath&quot;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>快捷键：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">   <span class="attr">&quot;settingsSync.keybindingsPerPlatform&quot;</span><span class="punctuation">:</span> True</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/64603768/can-i-exclude-certain-settings-with-vs-code-built-in-settings-sync-feature">Can I exclude certain settings with VS Code built-in settings sync feature? - Stack Overflow</a></li>
+</ol>
+</blockquote>
 
     </div>
 
@@ -672,13 +822,13 @@ EasyMotion使你摆脱需要<code>5j</code>或者<code>5k</code>这样数数的�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">315k</span>
+    <span title="站点总字数">345k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:47</span>
+    <span title="站点阅读时长">5:14</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
@@ -689,7 +839,8 @@ EasyMotion使你摆脱需要<code>5j</code>或者<code>5k</code>这样数数的�
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
 
   
 <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>

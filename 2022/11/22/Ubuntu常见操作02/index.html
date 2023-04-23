@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文记录一下使用Ubuntu操作系统时的常见操作：">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221122221549.png">
 <meta property="article:published_time" content="2022-11-22T12:49:01.000Z">
-<meta property="article:modified_time" content="2023-03-04T15:34:00.125Z">
+<meta property="article:modified_time" content="2023-04-20T13:53:37.827Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">93</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -173,7 +173,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -259,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-04 23:34:00" itemprop="dateModified" datetime="2023-03-04T23:34:00+08:00">2023-03-04</time>
+      <time title="修改时间：2023-04-20 21:53:37" itemprop="dateModified" datetime="2023-04-20T21:53:37+08:00">2023-04-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -278,14 +278,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>8.3k</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>8 分钟</span>
+      <span>10 分钟</span>
     </span>
 </div>
 
@@ -450,6 +450,73 @@
 - 在本地机器上建立`host:port`的连接
 > 参考资料：
 > 1. [linux中如何开启vnc服务端口,Linux下vnc配置及启动_听亭亭的博客-CSDN博客](https://blog.csdn.net/weixin_30125993/article/details/116636925?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-116636925-blog-107807058.pc_relevant_3mothn_strategy_recovery&spm=1001.2101.3001.4242.2&utm_relevant_index=4)
+</br>
+20.使用`rm`删除文件时排除某个文件：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/153862/remove-all-files-directories-except-for-one-file">Remove all files/directories except for one file</a></li>
+</ol>
+</blockquote>
+</br>
+21.Ubuntu复制命令行输出到剪切板的工具。
+工具：xclip
+安装过程：
+- 从参考资料4下载并解压得到xclip文件夹
+- 进入xclip文件夹，运行`./configure --prefix=/storage/FT/.local`指定安装文件夹。
+- `make`进行编译
+- 通过`su`切换到root用户
+- `make install`和`make install.man`安装xclip和man page，分别安装在`/storage/FT/.local/bin`和`/storage/FT/.local/man`目录下。
+- 编辑`.bashrc`将该路径加入到PATH中：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;/storage/FT/.local/bin:<span class="variable">$PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
+- 编辑`.bashrc`添加alias：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> clip=<span class="string">&#x27;xclip -se c&#x27;</span></span><br></pre></td></tr></table></figure>
+- 此时即可通过`pwd | clip`复制当前路径。
+PS：但在VSCode终端中会出现如下报错。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230418225219.png)
+<blockquote>
+<p>参考资料 ：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/11925/a-command-line-clipboard-copy-and-paste-utility">software recommendation - A command-line clipboard copy and paste utility? - Ask Ubuntu</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/milki/xclip/blob/master/INSTALL">xclip/INSTALL at master · milki/xclip · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://howtoinstall.co/en/xclip">How to install xclip on Ubuntu</a></li>
+<li><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/xclip/">xclip download | SourceForge.net</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3239343/make-install-but-not-to-default-directories">linux - Make install, but not to default directories? - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+22.VSCode中使用bash连接远程服务器时，运行上述`pwd | clip`出现如下报错（MobaXterm中不报错）：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230418225219.png)
+根据参考资料4中下述描述：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230419002605.png)
+在MobaXterm中`$DISPLAY`生效，但在VSCode中打开的bash终端中`$DISPLAY`并未生效。只需：
+- 在MobaXterm中通过`echo $DISPLAY`查看`$DISPLAY`环境变量的值。(若没有，通过`cat /etc/resolv.conf`查看`nameserver`的值)
+- 在`.bashrc`中添加：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> DISPLAY=<span class="string">&#x27;localhost:29.0&#x27;</span></span><br></pre></td></tr></table></figure>
+- `source ~/.bashrc`使之生效。
+> 参考资料：
+> 1. [xclip fails with Error: Can't open display: (null) · Issue #4933 · microsoft/WSL · GitHub](https://github.com/microsoft/WSL/issues/4933)
+> 2. [How do I fix a "cannot open display" error when opening an X program after ssh'ing with X11 forwarding enabled? - Super User](https://superuser.com/questions/310197/how-do-i-fix-a-cannot-open-display-error-when-opening-an-x-program-after-sshi)
+> 3. [linux - Error: Can't open display: (null) when using Xclip to copy ssh public key - Stack Overflow](https://stackoverflow.com/questions/18695934/error-cant-open-display-null-when-using-xclip-to-copy-ssh-public-key)
+> 4. [linux - Error: Can't open display: (null) when using Xclip to copy ssh public key - Stack Overflow](https://stackoverflow.com/questions/18695934/error-cant-open-display-null-when-using-xclip-to-copy-ssh-public-key)
+</br>
+22.Ubuntu系统复制粘贴：
+VSCode终端窗口中可以使用`Ctrl+Shift+C/V`进行复制粘贴；
+MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
+</br>
+23.Ubuntu从源码编译安装，安装到指定文件夹：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/storage/FT/.local</span><br></pre></td></tr></table></figure>
+> 参考资料：
+> 1. [linux - Make install, but not to default directories? - Stack Overflow](https://stackoverflow.com/questions/3239343/make-install-but-not-to-default-directories)
+</br>
+24.`tar`解压文件夹：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-tar.html">Linux tar 命令 | 菜鸟教程</a></li>
+</ol>
+</blockquote>
+
     </div>
 
     
@@ -521,13 +588,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">315k</span>
+    <span title="站点总字数">345k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:47</span>
+    <span title="站点阅读时长">5:14</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
@@ -538,7 +605,8 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
 
   
 <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
