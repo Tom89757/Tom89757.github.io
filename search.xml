@@ -5033,189 +5033,6 @@ PS：需要覆盖或删除与<code>Ctrl+-&gt;</code>和<code>Ctrl+&lt;-</code>�
       </tags>
   </entry>
   <entry>
-    <title>Vim学习指南</title>
-    <url>/2023/02/03/Vim%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>本文记录一下从IDE转为Vim的一些资料和教程：</p>
-<span id="more"></span>
-<ol>
-<li><a href="https://juejin.cn/book/7051157342770954277/section/7051399376945545252">Neovim配置实战</a>：掘金小册，30块</li>
-<li><a href="https://ichunyu.github.io/neovim/">NeoVim 基本配置 - 某春雨的后花园</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/467428462">我的现代化 NeoVim 配置介绍/教程 - 知乎</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/382092667">我的现代化Neovim配置 - 知乎</a></li>
-<li><a href="https://spacevim.org/cn/quick-start-guide/#windows">入门指南 | SpaceVim</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/571617696">学习 Neovim 全 lua 配置 - 知乎</a>：Neovim配置实战的旧版，免费</li>
-<li><a href="https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f">Learn Neovim The Practical Way. All articles on how to configure and… | by alpha2phi | Medium</a>：medium上关于neovim配置的系列文章</li>
-<li><a href="https://github.com/LunarVim/Neovim-from-scratch">GitHub - LunarVim/Neovim-from-scratch: 📚 A Neovim config designed from scratch to be understandable</a>：Lunar官方配置教程</li>
-<li><a href="https://www.youtube.com/watch?v=ctH-a-1eUME&amp;list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&amp;ab_channel=chris%40machine">Neovim IDE from Scratch</a>：Neovim配置视频教程</li>
-<li><a href="https://www.lunarvim.org/">LunarVim | LunarVim</a>：neovim的变种，便于配置</li>
-<li><a href="https://spacevim.org/">Home | SpaceVim</a>：neovim的变种，便于配置</li>
-<li><a href="https://astronvim.com/">Getting Started | AstroNvim</a>：neovim的变种，便于配置</li>
-<li><a href="https://www.openvim.com/">Interactive Vim tutorial</a>：在线vim交互式教程。</li>
-<li>[GitHub - fengstats/vscode-settings: my vscode settings and theme config]：<a href="https://www.bilibili.com/video/BV1i24y1L7uG">VSCode | 日常工作流分享_哔哩哔哩_bilibili</a>中分享的配置</li>
-<li><a href="https://github.com/LintaoAmons/CoolStuffes">GitHub - LintaoAmons/CoolStuffes: 我的分享放这里了，大家随便拿去用啊，记得给个星星就行啦～</a>：b站up主的配置</li>
-<li><a href="https://github.com/NvChad/NvChad">NvChad</a>：NvChad，另一个neovim的变种。</li>
-</ol>
-<h3 id="碰到的一些问题的解决方法"><a class="markdownIt-Anchor" href="#碰到的一些问题的解决方法"></a> 碰到的一些问题的解决方法</h3>
-<ol>
-<li><a href="https://github.com/LunarVim/Neovim-from-scratch/issues/274">No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub</a></li>
-</ol>
-<h3 id="neovim配置步骤"><a class="markdownIt-Anchor" href="#neovim配置步骤"></a> neovim配置步骤</h3>
-<h4 id="借鉴配置"><a class="markdownIt-Anchor" href="#借鉴配置"></a> 借鉴配置</h4>
-<p>可供借鉴的配置有：</p>
-<ol>
-<li><a href="https://github.com/nshen/learn-neovim-lua">GitHub - nshen/learn-neovim-lua: Neovim 配置实战：从 0 到 1 打造自己的 IDE</a></li>
-<li><a href="https://github.com/leslie255/nvim-config">GitHub - leslie255/nvim-config: A pretty epic NeoVim setup</a></li>
-<li><a href="https://github.com/ayamir/nvimdots">GitHub - ayamir/nvimdots: A well configured and structured Neovim.</a><br />
-此处以第3个配置为例，介绍配置流程。（因为第3个配置最为复杂，且使用较为丰富的插件，和更小众、更新型的插件管理工具lazy.nvim。<br />
-此处，先把<code>dotfiles</code>仓库中的对应文件夹映射到<code>~/.config/nvim</code>：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /mnt/d/Desktop/dotfiles/nvim2 ~/.config/nvim</span><br></pre></td></tr></table></figure>
-<h4 id="安装lazyvim插件管理器"><a class="markdownIt-Anchor" href="#安装lazyvim插件管理器"></a> 安装lazy.vim插件管理器</h4>
-<ol>
-<li>直接在终端运行<code>nvim init.lua</code>，让neovim自动安装，出现如下报错，即无法从github clone lazy.vim进行安装。<br />
-<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204222425.png" alt="" /><br />
-原因：git出现问题，需要进行配置。<br />
-解决方案：向github账户添加ssh验证。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的github账户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub <span class="comment"># 添加到git ssh</span></span><br><span class="line">ssh-keyscan -t rsa github.com &gt;&gt; ~/.ssh/known_hosts </span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>进行上述配置后，再次运行<code>nvim init.lua</code>，会发现如下错误，即<code>efm-langserver</code>无法安装：<br />
-<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204223330.png" alt="" /><br />
-原因：<code>efm-langserver</code>使用go语言编写，其使用go的包管理工具进行安装。<br />
-解决方案：安装go语言。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载对应版本go压缩包后解压到指定目录</span></span><br><span class="line">sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz</span><br><span class="line"><span class="comment"># 将对应目录添加至PATH环境变量，写入~/.bashrc使其永久生效</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>再次运行<code>nvim init.lua</code>，发现仍然无法安装。<br />
-原因：go仓库源在国内无法稳定访问<br />
-解决方案：配置国内镜像源，在<code>.bashrc</code>文件中写入：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 GOPROXY 环境变量，以下三选一</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 七牛 CDN</span></span><br><span class="line">go <span class="built_in">env</span> -w  GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>再次运行<code>nvim init.lua</code>，发现仍然无法安装。报如下错误：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Can only use path@version syntax with <span class="string">&#x27;go get&#x27;</span>?</span><br></pre></td></tr></table></figure>
-<p>原因：go1.16以下版本无法通过<code>go install path@version</code>安装。<br />
-解决方案：卸载掉<code>apt-get</code>默认安装的<code>go1.13</code>版本，手动安装<code>go1.20</code>并添加到指定路径（也可以手动安装efm和gopls）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"><span class="comment"># 2. 阿里云</span></span><br><span class="line">go <span class="built_in">env</span> -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://github.com/mattn/efm-langserver/issues/220">Can only use path@version syntax with ‘go get’? · Issue #220 · mattn/efm-langserver · GitHub</a></li>
-<li><a href="https://github.com/ayamir/nvimdots/issues/98">efm-langserver: Error while opening a new .cc file · Issue #98 · ayamir/nvimdots · GitHub</a></li>
-</ol>
-</blockquote>
-<h3 id="配置主题"><a class="markdownIt-Anchor" href="#配置主题"></a> 配置主题</h3>
-<p>以上述安装的配置为例。</p>
-<ol>
-<li>在对应配置文件<code>lua/ui/plugins.lua</code>中添加主题：</li>
-</ol>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">ui[<span class="string">&quot;folke/tokyonight.nvim&quot;</span>] = &#123;</span><br><span class="line">	lazy = <span class="literal">false</span>,</span><br><span class="line">	name = <span class="string">&quot;tokyonight&quot;</span>, </span><br><span class="line">	<span class="built_in">config</span> = conf.tokyonight,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>在对应配置文件中<code>lazy-lock.json</code>中添加主题仓库信息：</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;tokyonight&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;branch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;main&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;affb21a81e6d7de073378eb86d02864c594104d9&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>在<code>lua/core/settings.lua</code>中将<code>colorsheme</code>设置为<code>tokyonight</code>：</li>
-</ol>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">settings[<span class="string">&quot;colorscheme&quot;</span>] = <span class="string">&quot;tokyonight&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="neovim配置java环境"><a class="markdownIt-Anchor" href="#neovim配置java环境"></a> neovim配置java环境</h3>
-<ol>
-<li>下载解压jdt-language-server：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#创建workspace目录，后面会用到</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/.local/share/nvim/lsp/jdt-language-server/workspace/folder</span><br><span class="line"><span class="built_in">cd</span> ~/.local/share/nvim/lsp/jdt-language-server</span><br><span class="line"><span class="comment"># 下载jdt-language-server-xxxxx.tar.gz</span></span><br><span class="line">wget https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf jdt-language-server-1.9.0-202203031534.tar.gz</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>创建<code>/lua/modules/lang/usr/</code>文件夹，并添加<code>config.lua</code>和<code>plugins.lua</code>两个文件，文件内容如下：<br />
-config.lua：</li>
-</ol>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="built_in">config</span> = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">config.java</span><span class="params">()</span></span></span><br><span class="line">	<span class="keyword">local</span> opts = &#123;</span><br><span class="line">		cmd = &#123;</span><br><span class="line">			<span class="string">&quot;java&quot;</span>, </span><br><span class="line">			<span class="string">&quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dosgi.bundles.defaultStartLevel=4&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dlog.protocol=true&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dlog.level=ALL&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Xms1g&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-modules=ALL-SYSTEM&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-opens&quot;</span>,</span><br><span class="line">			<span class="string">&quot;java.base/java.util=ALL-UNNAMED&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-opens&quot;</span>,</span><br><span class="line">			<span class="string">&quot;java.base/java.lang=ALL-UNNAMED&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-jar&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-configuration&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/config_linux&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-data&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/workspace/folder&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">		root_dir = <span class="built_in">require</span>(<span class="string">&quot;jdtls.setup&quot;</span>).find_root(&#123; <span class="string">&quot;.git&quot;</span>, <span class="string">&quot;mvnw&quot;</span>, <span class="string">&quot;gradlew&quot;</span> &#125;),</span><br><span class="line">		settings = &#123;</span><br><span class="line">			java = &#123;&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">		init_options = &#123;</span><br><span class="line">			bundles = &#123;&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">require</span>(<span class="string">&quot;jdtls&quot;</span>).start_or_attach(opts)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">config</span></span><br></pre></td></tr></table></figure>
-<p>plugins.lua：</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> custom = &#123;&#125;</span><br><span class="line"><span class="keyword">local</span> conf = <span class="built_in">require</span>(<span class="string">&quot;modules.lang.user.config&quot;</span>)</span><br><span class="line"></span><br><span class="line">custom[<span class="string">&quot;mfussenegger/nvim-jdtls&quot;</span>] = &#123;</span><br><span class="line">	lazy = <span class="literal">true</span>,</span><br><span class="line">	ft = <span class="string">&quot;java&quot;</span>,</span><br><span class="line">	<span class="built_in">config</span> = conf.java,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> custom</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>在<code>lazy-lock.json</code>添加仓库信息：</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;nvim-jdtls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;branch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;master&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1f640d14d17f20cfc63c1acc26a10f9466e66a75&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>在<code>/lua/modules/editor/config.lua</code>中添加<code>java</code>的语法高亮：</li>
-</ol>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;nvim-treesitter.configs&quot;</span>).setup(&#123;</span><br><span class="line">		ensure_installed = &#123;</span><br><span class="line">		<span class="string">&quot;java&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>在<code>/lua/modules/editor/config.lua</code>中添加java的debug配置：</li>
-</ol>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- local dap = require(&#x27;dap&#x27;)</span></span><br><span class="line">dap.adapters.java = <span class="function"><span class="keyword">function</span><span class="params">(callback)</span></span></span><br><span class="line">		callback(&#123;</span><br><span class="line">			<span class="built_in">type</span> = <span class="string">&#x27;server&#x27;</span>;</span><br><span class="line">			host = <span class="string">&#x27;127.0.0.1&#x27;</span>;</span><br><span class="line">			port = port;</span><br><span class="line">		&#125;)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- local dap = require(&#x27;dap&#x27;)</span></span><br><span class="line">dap.configurations.java = &#123;</span><br><span class="line">  &#123;</span><br><span class="line">	classPaths = &#123;&#125;,</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- If using multi-module projects, remove otherwise.</span></span><br><span class="line">	projectName = <span class="string">&quot;yourProjectName&quot;</span>,</span><br><span class="line"></span><br><span class="line">	javaExec = <span class="string">&quot;/usr/bin/java&quot;</span>,</span><br><span class="line">	mainClass = <span class="string">&quot;your.package.name.MainClassName&quot;</span>,</span><br><span class="line">	modulePaths = &#123;&#125;,</span><br><span class="line">	name = <span class="string">&quot;Launch YourClassName&quot;</span>,</span><br><span class="line">	request = <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">	<span class="built_in">type</span> = <span class="string">&quot;java&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;	</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://github.com/lxyoucan/nvim-as-java-ide">GitHub - lxyoucan/nvim-as-java-ide: 从零开始搭建Neovim Java IDE开发环境</a></li>
-<li><a href="https://github.com/ayamir/nvimdots/wiki/Usage">Usage · ayamir/nvimdots Wiki · GitHub</a></li>
-<li><a href="https://github.com/mfussenegger/nvim-dap/wiki/Java">Java · mfussenegger/nvim-dap Wiki · GitHub</a></li>
-<li><a href="https://github.com/mfussenegger/nvim-jdtls">GitHub - mfussenegger/nvim-jdtls: Extensions for the built-in LSP support in Neovim for eclipse.jdt.ls</a></li>
-</ol>
-</blockquote>
-</br>
-6.Vim模式在中文输入法下的问题。
-> 参考资料：
-> 1. [Vim模式在中文输入法下的问题 - 建议反馈 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/11234/2)
-</br>
-7.对Obsidian的`.obsidian.vimrc`文件配置`Ctrl`键（对Obsidian而言需要安装Vimrc Support插件）
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;set some Ctrl- shortcuts&quot;</span><br><span class="line">nmap &lt;C-[&gt; &lt;C-d&gt; #映射为outdent，不能生效</span><br><span class="line">imap &lt;C-[&gt; &lt;C-d&gt; #映射伪outdent，不能生效</span><br></pre></td></tr></table></figure>
-PS：
-> 参考资料：
-> 1. [key bindings - How to disable Ctrl key? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/4060/how-to-disable-ctrl-key)
-> 2. [key bindings -  Vim Stack Exchange](https://vi.stackexchange.com/questions/3225/disable-esc-but-keep-c/3570#3570)
-> 3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
-> 4. [Can't map the Tab key w/o Mod Keys · Issue #48 · esm7/obsidian-vimrc-support · GitHub](https://github.com/esm7/obsidian-vimrc-support/issues/48) 
-> 5. [vim tips and tricks: indenting](https://www.cs.swarthmore.edu/oldhelp/vim/indenting.html#:~:text=To%20indent%20the%20current%20line,by%20sw%20(repeat%20with%20.%20)&text=then%20try%20hitting%20the%20F5,or%20just%20%3Aset%20paste%20).)
-</br>
-8.设置vim中的yy可以copy to clipboard：
-- Obsidian配置，在`.obsidian.vimrc`文件中添加：
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;Yank to system clipboard&quot;</span><br><span class="line">set clipboard=unnamed #重启后生效</span><br></pre></td></tr></table></figure>
-- VSCode配置，在settings中搜索`vim clip`点击生效：
-![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/1.png)
-> 参考资料：
->1. [VS code VIM extension copy and paste - Stack Overflow](https://stackoverflow.com/questions/58306002/vs-code-vim-extension-copy-and-paste)
->2. [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim)
->3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
-</br>
-9.Vim中各种map模式nmap/imap等详解：
-> 参考资料：
-> 1. [What is the difference between the remap, noremap, nnoremap and vnoremap mapping commands in Vim? - Stack Overflow](https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping)
-> 2. [key bindings - What is the difference between unmap and mapping to  nop? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16392/what-is-the-difference-between-unmap-and-mapping-to-nop?noredirect=1)
-</br>
-10.`Ctrl`/`Shift`/方向键/Fn键的映射：
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://superuser.com/questions/508655/map-shift-f3-in-vimrc">vim - Map Shift + F3 in .vimrc - Super User</a></li>
-<li><a href="https://stackoverflow.com/questions/7542381/vim-how-to-specify-arrow-keys">vim: how to specify arrow keys - Stack Overflow</a></li>
-</ol>
-</blockquote>
-</br>
-11.`.vimrc`配置文件中`<CR>`的含义：
-> 参考资料：
-> 1. [What is the meaning of a <CR> at the end of some vim mappings? - Stack Overflow](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings)
-</br>
-</br>
-12.Ubuntu和wsl中进行基础的`.vimrc`配置：
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://gist.github.com/simonista/8703722">A basic .vimrc file that will serve as a good template on which to build. · GitHub</a></li>
-<li><a href="https://juejin.cn/s/ubuntu%E4%B8%8Bvim%E7%9A%84%E9%85%8D%E7%BD%AEvimrc">ubuntu下vim的配置vimrc-掘金</a></li>
-<li><a href="https://stackoverflow.com/questions/9206797/error-trailing-characters-in-ubuntu">vim - Error Trailing Characters in Ubuntu - Stack Overflow</a></li>
-<li><a href="https://github.com/microsoft/terminal/issues/4335">Vim cursor can’t be changed · Issue #4335 · microsoft/terminal · GitHub</a></li>
-<li><a href="https://www.reddit.com/r/vim/comments/uvizcu/changing_vim_cursor_in_windows_terminal/">Changing Vim cursor in Windows Terminal : vim</a></li>
-</ol>
-</blockquote>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>Vim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows10常见操作</title>
     <url>/2022/05/22/Windows10%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p>本文记录一下使用 Windows10 过程中的常见操作：</p>
@@ -5623,10 +5440,13 @@ Windows 10打开Taskbar设置：<br />
 </ol>
 </blockquote>
 <h3 id="git-bash-vim主题显示和对应主题不一致"><a class="markdownIt-Anchor" href="#git-bash-vim主题显示和对应主题不一致"></a> git bash Vim主题显示和对应主题不一致</h3>
+<p>推测原因为终端不支持256 color，见参考资料2。可在<code>.zshrc</code>中添加如下配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> TERM=xterm-256color</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://www.reddit.com/r/vim/comments/ebylxb/vim_from_git_bash_showing_weird_colorscheme/">Reddit - Dive into anything</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k/issues/1840">Configuration wizard missing · Issue #1840 · romkatv/powerlevel10k · GitHub</a></li>
 </ol>
 </blockquote>
 <h3 id="vim复制到剪切板-clipboard"><a class="markdownIt-Anchor" href="#vim复制到剪切板-clipboard"></a> Vim复制到剪切板 clipboard</h3>
@@ -6241,6 +6061,18 @@ Windows 10打开Taskbar设置：<br />
 <h3 id="报错process-exited-with-code-11-0x0000000b"><a class="markdownIt-Anchor" href="#报错process-exited-with-code-11-0x0000000b"></a> 报错<code>[process exited with code 11 (0x0000000b)]</code></h3>
 <p>原因：<code>.bashrc</code>中出现了问题，暂未排查出来<br />
 解决方案：将<code>.bashrc</code>被分为<code>.bashrc.bak</code>，新建<code>.bashrc</code>文件并写入配置。（建议直接使用zsh替代bash）。</p>
+<h3 id="查看commands历史并使用"><a class="markdownIt-Anchor" href="#查看commands历史并使用"></a> 查看commands历史并使用</h3>
+<ul>
+<li><code>history</code>：查看commands历史</li>
+<li><code>!!</code>：选择最近命令</li>
+<li><code>!12</code>：选择<code>history</code>中的第12条命令</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://linuxhint.com/search-in-my-zsh-history/">How to Search in My ZSH History</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -6264,7 +6096,7 @@ Windows 10打开Taskbar设置：<br />
 <li><a href="https://www.cnblogs.com/matytan/p/16684665.html">优雅简洁的zim美化你的zsh终端，媲美甚至超越 ohmyzsh - 勒勒乐了 - 博客园</a></li>
 <li><a href="https://www.bilibili.com/video/BV1Bg411m7ND">优雅简洁的zim美化你的zsh终端，媲美甚至超越 ohmyzsh_哔哩哔哩_bilibili</a></li>
 <li><a href="https://www.bilibili.com/video/BV1C7411V7M8">终端神器ohmyzsh_哔哩哔哩_bilibili</a></li>
-<li><a href="https://www.sunhanwu.top/archives/ohmyzsh">Linux/Mac OS下安装并配置oh my zsh | SunPages</a></li>
+<li><a href="https://www.sunhanwu.top/archives/ohmyzsh">Linux/Mac OS下安装并配置oh my zsh | SunPages</a>：<strong>重点参考</strong></li>
 <li><a href="https://github.com/unixorn/awesome-zsh-plugins">GitHub - unixorn/awesome-zsh-plugins: A collection of ZSH frameworks, plugins, themes and tutorials.</a></li>
 <li><a href="https://juejin.cn/post/6844903939121348616">oh-my-zsh让终端好用到飞起~ - 掘金</a></li>
 </ol>
@@ -6346,6 +6178,26 @@ Windows 10打开Taskbar设置：<br />
 <li><a href="https://gist.github.com/fworks/af4c896c9de47d827d4caa6fd7154b6b">Zsh / Oh-my-zsh on Windows Git Bash · GitHub</a></li>
 </ol>
 </blockquote>
+<h3 id="安装autojump插件实现目录跳转"><a class="markdownIt-Anchor" href="#安装autojump插件实现目录跳转"></a> 安装autojump插件实现目录跳转</h3>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/wting/autojump">GitHub - wting/autojump: A cd command that learns - easily navigate directories from the command line</a></li>
+</ol>
+</blockquote>
+<h3 id="安装powerlevel10k主题"><a class="markdownIt-Anchor" href="#安装powerlevel10k主题"></a> 安装powerlevel10k主题</h3>
+<ul>
+<li>重置配置：<code>p10k configure</code></li>
+<li>在git bash和MobaTermX中会出现某些配置直接被跳过的情况，其原因为这些终端不支持256colors，</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/romkatv/powerlevel10k">GitHub - romkatv/powerlevel10k: A Zsh theme</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k/issues/214">How to reset the settings? · Issue #214 · romkatv/powerlevel10k · GitHub</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k/issues/1840">Configuration wizard missing · Issue #1840 · romkatv/powerlevel10k · GitHub</a></li>
+</ol>
+</blockquote>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -6357,16 +6209,24 @@ Windows 10打开Taskbar设置：<br />
   <entry>
     <title>tmux使用指南</title>
     <url>/2023/04/19/tmux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<hr />
-<p>本文记录一下tmux的学习和使用过程：</p>
+    <content><![CDATA[<p>本文记录一下tmux的学习和使用过程：</p>
 <span id="more"></span>
+<h3 id="基础使用"><a class="markdownIt-Anchor" href="#基础使用"></a> 基础使用</h3>
+<p>主要参考资料4，资料5中包含了较多进阶配置。</p>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a href="https://tmuxcheatsheet.com/">Tmux Cheat Sheet &amp; Quick Reference</a></li>
 <li><a href="https://www.bilibili.com/video/BV1KW411Z7W3">手把手教你使用终端复用神器 tmux_哔哩哔哩_bilibili</a></li>
 <li><a href="https://github.com/tmux/tmux">GitHub - tmux/tmux: tmux source code</a></li>
+<li><a href="https://www.ruanyifeng.com/blog/2019/10/tmux.html">Tmux 使用教程 - 阮一峰的网络日志</a></li>
+<li><a href="http://louiszhai.github.io/2017/09/30/tmux/">Tmux使用手册 | louis blog</a></li>
 </ol>
+</blockquote>
+<h3 id="报错sessions-should-be-nested-with-care-unset-tmux-to-force"><a class="markdownIt-Anchor" href="#报错sessions-should-be-nested-with-care-unset-tmux-to-force"></a> 报错<code>sessions should be nested with care, unset $TMUX to force</code></h3>
+<p>tmux布建议在一个已经active的tmux session嵌套另一个session。</p>
+<blockquote>
+<p><a href="https://koenwoortman.com/tmux-sessions-should-be-nested-with-care-unset-tmux-to-force/">Tmux sessions should be nested with care, unset $TMUX to force</a></p>
 </blockquote>
 ]]></content>
       <categories>
@@ -7627,15 +7487,8 @@ PS：直接在python interpreter中运行该命令会报错如下错误
 <ol>
 <li><a href="https://mirror.xyz/boxchen.eth/9O9CSqyKDj4BKUIil7NC1Sa1LJM-3hsPqaeW_QjfFBc">注册ChatGPT全攻略 — BoxChen</a></li>
 <li><a href="https://www.ericzhang.me/projects/spotify-ad-blocker-ezblocker/">EZBlocker – Spotify Ad Blocker / Eric Zhang [Xeroday]</a>：屏蔽Windows端Spotify上的广告</li>
-<li><a href="https://catcoding.me/p/chatgpt-tools/">人类的终极工具 | 程序员的喵</a>：如何用chatGPT提问？</li>
-<li><a href="https://app.gumroad.com/d/52391c67754c7f5c7814004307bc660a">The Art of ChatGPT Prompting: A Guide to Crafting Clear and Effective Prompts</a>：使用ChatGPT Prompting的艺术</li>
-<li><a href="https://time.geekbang.org/column/article/641742">01｜重新出发，让我们学会和AI说话-极客时间</a>：配置chatGPT的Anaconda环境</li>
-<li><a href="https://www.youtube.com/watch?v=S3tqNPLnX6A&amp;ab_channel=MortenJust">Creating an iPhone app from scratch with gpt-4</a>：使用gpt-4从头创建一个iPhone app。</li>
-<li><a href="https://www.builder.io/blog/vscode-tips">Improve Your VSCode Workflow to the Max</a>：Copilot的高级用法</li>
 <li><a href="https://greatdk.com/1908.html">我用我的微信聊天记录和 280 篇博客文章，做了我自己的数字克隆AI - 王登科-DK博客</a>：做一个自己的数字克隆</li>
 <li><a href="https://diygod.me/software-update">我得了软件更新强迫症 - DIYgod</a>：各平台软件更新</li>
-<li><a href="https://boostpixels.com/guide">Guide for prompt writing | BoostPixels</a>：如何写chatGPT prompt。</li>
-<li><a href="https://www.ruxu.dev/articles/ai/maximizing-the-potential-of-llms/">Maximizing the Potential of LLMs: A Guide to Prompt Engineering</a></li>
 <li><a href="https://www.youtube.com/watch?v=mc6XrQy63D0&amp;ab_channel=IT%E6%96%B0%E6%89%8B%E6%9D%91">NEW BING 报错处理方法Sorry, looks like your network settings are preventing access to this feature.的处理办法 - YouTube</a></li>
 </ol>
 ]]></content>
@@ -12330,6 +12183,286 @@ PDF，图片，或者其他类型的内容。资源的位置通过用户提供�
       </categories>
       <tags>
         <tag>自传</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim使用指南</title>
+    <url>/2023/02/03/Vim%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>本文记录一下从IDE转为Vim的一些资料和教程：</p>
+<span id="more"></span>
+<ol>
+<li><a href="https://juejin.cn/book/7051157342770954277/section/7051399376945545252">Neovim配置实战</a>：掘金小册，30块</li>
+<li><a href="https://ichunyu.github.io/neovim/">NeoVim 基本配置 - 某春雨的后花园</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/467428462">我的现代化 NeoVim 配置介绍/教程 - 知乎</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/382092667">我的现代化Neovim配置 - 知乎</a></li>
+<li><a href="https://spacevim.org/cn/quick-start-guide/#windows">入门指南 | SpaceVim</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/571617696">学习 Neovim 全 lua 配置 - 知乎</a>：Neovim配置实战的旧版，免费</li>
+<li><a href="https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f">Learn Neovim The Practical Way. All articles on how to configure and… | by alpha2phi | Medium</a>：medium上关于neovim配置的系列文章</li>
+<li><a href="https://github.com/LunarVim/Neovim-from-scratch">GitHub - LunarVim/Neovim-from-scratch: 📚 A Neovim config designed from scratch to be understandable</a>：Lunar官方配置教程</li>
+<li><a href="https://www.youtube.com/watch?v=ctH-a-1eUME&amp;list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&amp;ab_channel=chris%40machine">Neovim IDE from Scratch</a>：Neovim配置视频教程</li>
+<li><a href="https://www.lunarvim.org/">LunarVim | LunarVim</a>：neovim的变种，便于配置</li>
+<li><a href="https://spacevim.org/">Home | SpaceVim</a>：neovim的变种，便于配置</li>
+<li><a href="https://astronvim.com/">Getting Started | AstroNvim</a>：neovim的变种，便于配置</li>
+<li><a href="https://www.openvim.com/">Interactive Vim tutorial</a>：在线vim交互式教程。</li>
+<li>[GitHub - fengstats/vscode-settings: my vscode settings and theme config]：<a href="https://www.bilibili.com/video/BV1i24y1L7uG">VSCode | 日常工作流分享_哔哩哔哩_bilibili</a>中分享的配置</li>
+<li><a href="https://github.com/LintaoAmons/CoolStuffes">GitHub - LintaoAmons/CoolStuffes: 我的分享放这里了，大家随便拿去用啊，记得给个星星就行啦～</a>：b站up主的配置</li>
+<li><a href="https://github.com/NvChad/NvChad">NvChad</a>：NvChad，另一个neovim的变种。</li>
+<li><a href="https://www.imooc.com/learn/1129">玩转Vim 从放弃到爱不释手-Vim入门-慕课网</a>：b站PegasusWang出品的免费Vim慕课教程</li>
+</ol>
+<h3 id="碰到的一些问题的解决方法"><a class="markdownIt-Anchor" href="#碰到的一些问题的解决方法"></a> 碰到的一些问题的解决方法</h3>
+<ol>
+<li><a href="https://github.com/LunarVim/Neovim-from-scratch/issues/274">No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub</a></li>
+</ol>
+<h3 id="neovim配置步骤"><a class="markdownIt-Anchor" href="#neovim配置步骤"></a> neovim配置步骤</h3>
+<h4 id="借鉴配置"><a class="markdownIt-Anchor" href="#借鉴配置"></a> 借鉴配置</h4>
+<p>可供借鉴的配置有：</p>
+<ol>
+<li><a href="https://github.com/nshen/learn-neovim-lua">GitHub - nshen/learn-neovim-lua: Neovim 配置实战：从 0 到 1 打造自己的 IDE</a></li>
+<li><a href="https://github.com/leslie255/nvim-config">GitHub - leslie255/nvim-config: A pretty epic NeoVim setup</a></li>
+<li><a href="https://github.com/ayamir/nvimdots">GitHub - ayamir/nvimdots: A well configured and structured Neovim.</a><br />
+此处以第3个配置为例，介绍配置流程。（因为第3个配置最为复杂，且使用较为丰富的插件，和更小众、更新型的插件管理工具lazy.nvim。<br />
+此处，先把<code>dotfiles</code>仓库中的对应文件夹映射到<code>~/.config/nvim</code>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /mnt/d/Desktop/dotfiles/nvim2 ~/.config/nvim</span><br></pre></td></tr></table></figure>
+<h4 id="安装lazyvim插件管理器"><a class="markdownIt-Anchor" href="#安装lazyvim插件管理器"></a> 安装lazy.vim插件管理器</h4>
+<ol>
+<li>直接在终端运行<code>nvim init.lua</code>，让neovim自动安装，出现如下报错，即无法从github clone lazy.vim进行安装。<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204222425.png" alt="" /><br />
+原因：git出现问题，需要进行配置。<br />
+解决方案：向github账户添加ssh验证。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的github账户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub <span class="comment"># 添加到git ssh</span></span><br><span class="line">ssh-keyscan -t rsa github.com &gt;&gt; ~/.ssh/known_hosts </span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>进行上述配置后，再次运行<code>nvim init.lua</code>，会发现如下错误，即<code>efm-langserver</code>无法安装：<br />
+<img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204223330.png" alt="" /><br />
+原因：<code>efm-langserver</code>使用go语言编写，其使用go的包管理工具进行安装。<br />
+解决方案：安装go语言。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载对应版本go压缩包后解压到指定目录</span></span><br><span class="line">sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz</span><br><span class="line"><span class="comment"># 将对应目录添加至PATH环境变量，写入~/.bashrc使其永久生效</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>再次运行<code>nvim init.lua</code>，发现仍然无法安装。<br />
+原因：go仓库源在国内无法稳定访问<br />
+解决方案：配置国内镜像源，在<code>.bashrc</code>文件中写入：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 GOPROXY 环境变量，以下三选一</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 七牛 CDN</span></span><br><span class="line">go <span class="built_in">env</span> -w  GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>再次运行<code>nvim init.lua</code>，发现仍然无法安装。报如下错误：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Can only use path@version syntax with <span class="string">&#x27;go get&#x27;</span>?</span><br></pre></td></tr></table></figure>
+<p>原因：go1.16以下版本无法通过<code>go install path@version</code>安装。<br />
+解决方案：卸载掉<code>apt-get</code>默认安装的<code>go1.13</code>版本，手动安装<code>go1.20</code>并添加到指定路径（也可以手动安装efm和gopls）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"><span class="comment"># 2. 阿里云</span></span><br><span class="line">go <span class="built_in">env</span> -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/mattn/efm-langserver/issues/220">Can only use path@version syntax with ‘go get’? · Issue #220 · mattn/efm-langserver · GitHub</a></li>
+<li><a href="https://github.com/ayamir/nvimdots/issues/98">efm-langserver: Error while opening a new .cc file · Issue #98 · ayamir/nvimdots · GitHub</a></li>
+</ol>
+</blockquote>
+<h3 id="配置主题"><a class="markdownIt-Anchor" href="#配置主题"></a> 配置主题</h3>
+<p>以上述安装的配置为例。</p>
+<ol>
+<li>在对应配置文件<code>lua/ui/plugins.lua</code>中添加主题：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">ui[<span class="string">&quot;folke/tokyonight.nvim&quot;</span>] = &#123;</span><br><span class="line">	lazy = <span class="literal">false</span>,</span><br><span class="line">	name = <span class="string">&quot;tokyonight&quot;</span>, </span><br><span class="line">	<span class="built_in">config</span> = conf.tokyonight,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在对应配置文件中<code>lazy-lock.json</code>中添加主题仓库信息：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;tokyonight&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;branch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;main&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;affb21a81e6d7de073378eb86d02864c594104d9&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在<code>lua/core/settings.lua</code>中将<code>colorsheme</code>设置为<code>tokyonight</code>：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">settings[<span class="string">&quot;colorscheme&quot;</span>] = <span class="string">&quot;tokyonight&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="neovim配置java环境"><a class="markdownIt-Anchor" href="#neovim配置java环境"></a> neovim配置java环境</h3>
+<ol>
+<li>下载解压jdt-language-server：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#创建workspace目录，后面会用到</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/.local/share/nvim/lsp/jdt-language-server/workspace/folder</span><br><span class="line"><span class="built_in">cd</span> ~/.local/share/nvim/lsp/jdt-language-server</span><br><span class="line"><span class="comment"># 下载jdt-language-server-xxxxx.tar.gz</span></span><br><span class="line">wget https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf jdt-language-server-1.9.0-202203031534.tar.gz</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建<code>/lua/modules/lang/usr/</code>文件夹，并添加<code>config.lua</code>和<code>plugins.lua</code>两个文件，文件内容如下：<br />
+config.lua：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="built_in">config</span> = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">config.java</span><span class="params">()</span></span></span><br><span class="line">	<span class="keyword">local</span> opts = &#123;</span><br><span class="line">		cmd = &#123;</span><br><span class="line">			<span class="string">&quot;java&quot;</span>, </span><br><span class="line">			<span class="string">&quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dosgi.bundles.defaultStartLevel=4&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dlog.protocol=true&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dlog.level=ALL&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Xms1g&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-modules=ALL-SYSTEM&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-opens&quot;</span>,</span><br><span class="line">			<span class="string">&quot;java.base/java.util=ALL-UNNAMED&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-opens&quot;</span>,</span><br><span class="line">			<span class="string">&quot;java.base/java.lang=ALL-UNNAMED&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-jar&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-configuration&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/config_linux&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-data&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/workspace/folder&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">		root_dir = <span class="built_in">require</span>(<span class="string">&quot;jdtls.setup&quot;</span>).find_root(&#123; <span class="string">&quot;.git&quot;</span>, <span class="string">&quot;mvnw&quot;</span>, <span class="string">&quot;gradlew&quot;</span> &#125;),</span><br><span class="line">		settings = &#123;</span><br><span class="line">			java = &#123;&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">		init_options = &#123;</span><br><span class="line">			bundles = &#123;&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">require</span>(<span class="string">&quot;jdtls&quot;</span>).start_or_attach(opts)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">config</span></span><br></pre></td></tr></table></figure>
+<p>plugins.lua：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> custom = &#123;&#125;</span><br><span class="line"><span class="keyword">local</span> conf = <span class="built_in">require</span>(<span class="string">&quot;modules.lang.user.config&quot;</span>)</span><br><span class="line"></span><br><span class="line">custom[<span class="string">&quot;mfussenegger/nvim-jdtls&quot;</span>] = &#123;</span><br><span class="line">	lazy = <span class="literal">true</span>,</span><br><span class="line">	ft = <span class="string">&quot;java&quot;</span>,</span><br><span class="line">	<span class="built_in">config</span> = conf.java,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> custom</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在<code>lazy-lock.json</code>添加仓库信息：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;nvim-jdtls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;branch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;master&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1f640d14d17f20cfc63c1acc26a10f9466e66a75&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在<code>/lua/modules/editor/config.lua</code>中添加<code>java</code>的语法高亮：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;nvim-treesitter.configs&quot;</span>).setup(&#123;</span><br><span class="line">		ensure_installed = &#123;</span><br><span class="line">		<span class="string">&quot;java&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>在<code>/lua/modules/editor/config.lua</code>中添加java的debug配置：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- local dap = require(&#x27;dap&#x27;)</span></span><br><span class="line">dap.adapters.java = <span class="function"><span class="keyword">function</span><span class="params">(callback)</span></span></span><br><span class="line">		callback(&#123;</span><br><span class="line">			<span class="built_in">type</span> = <span class="string">&#x27;server&#x27;</span>;</span><br><span class="line">			host = <span class="string">&#x27;127.0.0.1&#x27;</span>;</span><br><span class="line">			port = port;</span><br><span class="line">		&#125;)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- local dap = require(&#x27;dap&#x27;)</span></span><br><span class="line">dap.configurations.java = &#123;</span><br><span class="line">  &#123;</span><br><span class="line">	classPaths = &#123;&#125;,</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- If using multi-module projects, remove otherwise.</span></span><br><span class="line">	projectName = <span class="string">&quot;yourProjectName&quot;</span>,</span><br><span class="line"></span><br><span class="line">	javaExec = <span class="string">&quot;/usr/bin/java&quot;</span>,</span><br><span class="line">	mainClass = <span class="string">&quot;your.package.name.MainClassName&quot;</span>,</span><br><span class="line">	modulePaths = &#123;&#125;,</span><br><span class="line">	name = <span class="string">&quot;Launch YourClassName&quot;</span>,</span><br><span class="line">	request = <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">	<span class="built_in">type</span> = <span class="string">&quot;java&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;	</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/lxyoucan/nvim-as-java-ide">GitHub - lxyoucan/nvim-as-java-ide: 从零开始搭建Neovim Java IDE开发环境</a></li>
+<li><a href="https://github.com/ayamir/nvimdots/wiki/Usage">Usage · ayamir/nvimdots Wiki · GitHub</a></li>
+<li><a href="https://github.com/mfussenegger/nvim-dap/wiki/Java">Java · mfussenegger/nvim-dap Wiki · GitHub</a></li>
+<li><a href="https://github.com/mfussenegger/nvim-jdtls">GitHub - mfussenegger/nvim-jdtls: Extensions for the built-in LSP support in Neovim for eclipse.jdt.ls</a></li>
+</ol>
+</blockquote>
+</br>
+6.Vim模式在中文输入法下的问题。
+> 参考资料：
+> 1. [Vim模式在中文输入法下的问题 - 建议反馈 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/11234/2)
+</br>
+7.对Obsidian的`.obsidian.vimrc`文件配置`Ctrl`键（对Obsidian而言需要安装Vimrc Support插件）
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;set some Ctrl- shortcuts&quot;</span><br><span class="line">nmap &lt;C-[&gt; &lt;C-d&gt; #映射为outdent，不能生效</span><br><span class="line">imap &lt;C-[&gt; &lt;C-d&gt; #映射伪outdent，不能生效</span><br></pre></td></tr></table></figure>
+PS：
+> 参考资料：
+> 1. [key bindings - How to disable Ctrl key? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/4060/how-to-disable-ctrl-key)
+> 2. [key bindings -  Vim Stack Exchange](https://vi.stackexchange.com/questions/3225/disable-esc-but-keep-c/3570#3570)
+> 3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
+> 4. [Can't map the Tab key w/o Mod Keys · Issue #48 · esm7/obsidian-vimrc-support · GitHub](https://github.com/esm7/obsidian-vimrc-support/issues/48) 
+> 5. [vim tips and tricks: indenting](https://www.cs.swarthmore.edu/oldhelp/vim/indenting.html#:~:text=To%20indent%20the%20current%20line,by%20sw%20(repeat%20with%20.%20)&text=then%20try%20hitting%20the%20F5,or%20just%20%3Aset%20paste%20).)
+</br>
+8.设置vim中的yy可以copy to clipboard：
+- Obsidian配置，在`.obsidian.vimrc`文件中添加：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;Yank to system clipboard&quot;</span><br><span class="line">set clipboard=unnamed #重启后生效</span><br></pre></td></tr></table></figure>
+- VSCode配置，在settings中搜索`vim clip`点击生效：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/1.png)
+> 参考资料：
+>1. [VS code VIM extension copy and paste - Stack Overflow](https://stackoverflow.com/questions/58306002/vs-code-vim-extension-copy-and-paste)
+>2. [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim)
+>3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
+</br>
+9.Vim中各种map模式nmap/imap等详解：
+> 参考资料：
+> 1. [What is the difference between the remap, noremap, nnoremap and vnoremap mapping commands in Vim? - Stack Overflow](https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping)
+> 2. [key bindings - What is the difference between unmap and mapping to  nop? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16392/what-is-the-difference-between-unmap-and-mapping-to-nop?noredirect=1)
+</br>
+10.`Ctrl`/`Shift`/方向键/Fn键的映射：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://superuser.com/questions/508655/map-shift-f3-in-vimrc">vim - Map Shift + F3 in .vimrc - Super User</a></li>
+<li><a href="https://stackoverflow.com/questions/7542381/vim-how-to-specify-arrow-keys">vim: how to specify arrow keys - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+11.`.vimrc`配置文件中`<CR>`的含义：
+> 参考资料：
+> 1. [What is the meaning of a <CR> at the end of some vim mappings? - Stack Overflow](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings)
+</br>
+</br>
+12.Ubuntu和wsl中进行基础的`.vimrc`配置：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://gist.github.com/simonista/8703722">A basic .vimrc file that will serve as a good template on which to build. · GitHub</a></li>
+<li><a href="https://juejin.cn/s/ubuntu%E4%B8%8Bvim%E7%9A%84%E9%85%8D%E7%BD%AEvimrc">ubuntu下vim的配置vimrc-掘金</a></li>
+<li><a href="https://stackoverflow.com/questions/9206797/error-trailing-characters-in-ubuntu">vim - Error Trailing Characters in Ubuntu - Stack Overflow</a></li>
+<li><a href="https://github.com/microsoft/terminal/issues/4335">Vim cursor can’t be changed · Issue #4335 · microsoft/terminal · GitHub</a></li>
+<li><a href="https://www.reddit.com/r/vim/comments/uvizcu/changing_vim_cursor_in_windows_terminal/">Changing Vim cursor in Windows Terminal : vim</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>copilot资源整理</title>
+    <url>/2023/04/24/copilot%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>本文整理一下收集到的copilot学习资料：</p>
+<span id="more"></span>
+<h3 id="工作流"><a class="markdownIt-Anchor" href="#工作流"></a> 工作流</h3>
+<ol>
+<li><a href="https://www.builder.io/blog/vscode-tips">Improve Your VSCode Workflow to the Max</a>：Copilot的高级用法</li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>chatGPT资源整理</title>
+    <url>/2023/04/24/chatGPT%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<p>本文整理一下所收集的chatGPT学习资料：</p>
+<span id="more"></span>
+<h3 id="prompt-engineer-提示词工程"><a class="markdownIt-Anchor" href="#prompt-engineer-提示词工程"></a> Prompt Engineer (提示词工程)</h3>
+<ol>
+<li><a href="https://boostpixels.com/guide">Guide for prompt writing | BoostPixels</a>：如何写chatGPT prompt。</li>
+<li><a href="https://www.ruxu.dev/articles/ai/maximizing-the-potential-of-llms/">Maximizing the Potential of LLMs: A Guide to Prompt Engineering</a></li>
+<li><a href="https://catcoding.me/p/chatgpt-tools/">人类的终极工具 | 程序员的喵</a>：如何用chatGPT提问？</li>
+<li><a href="https://app.gumroad.com/d/52391c67754c7f5c7814004307bc660a">The Art of ChatGPT Prompting: A Guide to Crafting Clear and Effective Prompts</a>：使用ChatGPT Prompting的艺术</li>
+</ol>
+<h3 id="使用chatgpt完成项目"><a class="markdownIt-Anchor" href="#使用chatgpt完成项目"></a> 使用chatGPT完成项目</h3>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=D6Xj_W4leu8&amp;ab_channel=freeCodeCamp.org">Use ChatGPT to Build a RegEx Generator – OpenAI API Low Code Course - YouTube</a>：使用chatGPT创建一个RegEx Generator</li>
+<li><a href="https://www.youtube.com/watch?v=S3tqNPLnX6A&amp;ab_channel=MortenJust">Creating an iPhone app from scratch with gpt-4</a>：使用gpt-4从头创建一个iPhone app。</li>
+<li><a href="https://lablab.ai/apps">Discover all the AI applications that have been built during lablab.ai hackathons using popular AI technologie like Transformers, GPT-3, Cohere and more</a>：使用各种AI平台搭建的各种工具</li>
+<li><a href="https://learningprompt.wiki/">Hello from Learning Prompt | Learning Prompt</a>：使用chatGPT完成5个项目。</li>
+<li><a href="https://www.bilibili.com/video/BV1DT411H7ph">格斗之王！AI写出来的AI竟然这么强_哔哩哔哩_bilibili</a>：使用chatGPT和copilot完成对街头霸王的改写，附带所有对话文件。</li>
+</ol>
+<h3 id="环境搭建"><a class="markdownIt-Anchor" href="#环境搭建"></a> 环境搭建</h3>
+<ol>
+<li><a href="https://time.geekbang.org/column/article/641742">01｜重新出发，让我们学会和AI说话-极客时间</a>：配置chatGPT的Anaconda环境</li>
+</ol>
+<h3 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h3>
+<ol>
+<li><a href="https://www.chatpdf.com/">https://www.chatpdf.com</a>：快速阅读pdf</li>
+<li><a href="https://framergpt.framer.website/">FramerGPT</a>：快速生成code components</li>
+<li><a href="https://chatdoc.com/chatdoc/#/upload">ChatDOC</a>：快速阅读文档</li>
+<li></li>
+</ol>
+<h3 id="awesome-promts"><a class="markdownIt-Anchor" href="#awesome-promts"></a> Awesome Promts</h3>
+<ol>
+<li><a href="https://www.aishort.top/">ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts | Tag filtering, keyword search, and one-click copy prompts</a>：各种prompts</li>
+<li><a href="https://www.awesomegptprompts.com/categories/coding">Categories</a>：各种prompts</li>
+<li><a href="https://openprompt.co/#">Open Prompt</a> ：网友分享的各种prompts</li>
+<li><a href="https://github.com/f/awesome-chatgpt-prompts">GitHub - f/awesome-chatgpt-prompts: This repo includes ChatGPT prompt curation to use ChatGPT better.</a>：github仓库，收集prompts</li>
+</ol>
+<h3 id="chatgpt替代"><a class="markdownIt-Anchor" href="#chatgpt替代"></a> chatGPT替代</h3>
+<ol>
+<li><a href="https://chatbot.theb.ai/#/chat/1002">BAI Chat</a>：BAI chat，更快的响应速度。</li>
+<li><a href="https://www.aiyjs.com/">AI研究所 – 国内外AI工具资讯首发站</a>：国内外AI工具资讯</li>
+<li></li>
+</ol>
+<h3 id="使用手册"><a class="markdownIt-Anchor" href="#使用手册"></a> 使用手册</h3>
+<ol>
+<li><a href="https://eibot3u32o.feishu.cn/docx/E7jodtO4fosu4SxdgCrcWF1Znvd">最全 ChatGPT 使用手册 - 飞书云文档</a></li>
+<li><a href="https://learnprompting.org/zh-Hans/docs/intro">欢迎 | Learn Prompting</a>：系统学习Prompting</li>
+<li><a href="https://learningprompt.wiki/">Hello from Learning Prompt | Learning Prompt</a>：系统学习Prompting</li>
+</ol>
+]]></content>
+      <categories>
+        <category>资料</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tmux学习笔记</title>
+    <url>/2023/04/23/tmux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>本文记录一下学习tmux过程中的经验和总结：</p>
+<span id="more"></span>
+<h3 id="alias配置"><a class="markdownIt-Anchor" href="#alias配置"></a> alias配置</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> tl=<span class="string">&#x27;tmux list-sessions&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> tkss=<span class="string">&#x27;tmux kill-session -t&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ta=<span class="string">&#x27;tmux attach -t&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> td=<span class="string">&#x27;tmux detach&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ts=<span class="string">&#x27;tmux new-session -s&#x27;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.zhihu.com/question/49284484">mac上使用oh my zsh有哪些必备的插件推荐？ - 知乎</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>tmux</tag>
       </tags>
   </entry>
 </search>

@@ -28,7 +28,7 @@
 <meta property="og:description" content="本文记录一下在使用ohmyzsh过程中碰到的问题：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-20T14:30:01.000Z">
-<meta property="article:modified_time" content="2023-04-20T14:47:30.982Z">
+<meta property="article:modified_time" content="2023-04-23T05:07:34.419Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="tmux">
 <meta name="twitter:card" content="summary">
@@ -144,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E9%94%99job-table-full-or-recursion-limit-exceeded"><span class="nav-number">1.</span> <span class="nav-text"> 报错job table full or recursion limit exceeded：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E9%94%99process-exited-with-code-11-0x0000000b"><span class="nav-number">2.</span> <span class="nav-text"> 报错[process exited with code 11 (0x0000000b)]</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E9%94%99job-table-full-or-recursion-limit-exceeded"><span class="nav-number">1.</span> <span class="nav-text"> 报错job table full or recursion limit exceeded：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E9%94%99process-exited-with-code-11-0x0000000b"><span class="nav-number">2.</span> <span class="nav-text"> 报错[process exited with code 11 (0x0000000b)]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8Bcommands%E5%8E%86%E5%8F%B2%E5%B9%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text"> 查看commands历史并使用</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -234,9 +234,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-04-20 22:30:01 / 修改时间：22:47:30" itemprop="dateCreated datePublished" datetime="2023-04-20T22:30:01+08:00">2023-04-20</time>
+      <time title="创建时间：2023-04-20 22:30:01" itemprop="dateCreated datePublished" datetime="2023-04-20T22:30:01+08:00">2023-04-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-04-23 13:07:34" itemprop="dateModified" datetime="2023-04-23T13:07:34+08:00">2023-04-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -255,7 +261,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>279</span>
+      <span>374</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -282,6 +288,18 @@
 <h3 id="报错process-exited-with-code-11-0x0000000b"><a class="markdownIt-Anchor" href="#报错process-exited-with-code-11-0x0000000b"></a> 报错<code>[process exited with code 11 (0x0000000b)]</code></h3>
 <p>原因：<code>.bashrc</code>中出现了问题，暂未排查出来<br />
 解决方案：将<code>.bashrc</code>被分为<code>.bashrc.bak</code>，新建<code>.bashrc</code>文件并写入配置。（建议直接使用zsh替代bash）。</p>
+<h3 id="查看commands历史并使用"><a class="markdownIt-Anchor" href="#查看commands历史并使用"></a> 查看commands历史并使用</h3>
+<ul>
+<li><code>history</code>：查看commands历史</li>
+<li><code>!!</code>：选择最近命令</li>
+<li><code>!12</code>：选择<code>history</code>中的第12条命令</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://linuxhint.com/search-in-my-zsh-history/">How to Search in My ZSH History</a></li>
+</ol>
+</blockquote>
 
     </div>
 
@@ -320,6 +338,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/04/23/tmux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="tmux学习笔记">
+                  tmux学习笔记 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -351,13 +372,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">345k</span>
+    <span title="站点总字数">347k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:14</span>
+    <span title="站点阅读时长">5:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

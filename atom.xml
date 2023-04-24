@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2023-04-20T14:47:30.982Z</updated>
+  <updated>2023-04-24T13:53:13.545Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,11 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>copilot资源整理</title>
+    <link href="https://tom89757.github.io/2023/04/24/copilot%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/"/>
+    <id>https://tom89757.github.io/2023/04/24/copilot%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</id>
+    <published>2023-04-24T12:18:29.000Z</published>
+    <updated>2023-04-24T13:53:13.545Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文整理一下收集到的copilot学习资料：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="教程" scheme="https://tom89757.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chatGPT资源整理</title>
+    <link href="https://tom89757.github.io/2023/04/24/chatGPT%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/"/>
+    <id>https://tom89757.github.io/2023/04/24/chatGPT%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</id>
+    <published>2023-04-24T12:13:17.000Z</published>
+    <updated>2023-04-24T13:53:13.544Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文整理一下所收集的chatGPT学习资料：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="教程" scheme="https://tom89757.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tmux学习笔记</title>
+    <link href="https://tom89757.github.io/2023/04/23/tmux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://tom89757.github.io/2023/04/23/tmux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-04-23T05:35:33.000Z</published>
+    <updated>2023-04-23T05:38:40.311Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下学习tmux过程中的经验和总结：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="tmux" scheme="https://tom89757.github.io/tags/tmux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ohmyzsh学习笔记</title>
     <link href="https://tom89757.github.io/2023/04/20/ohmyzsh%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://tom89757.github.io/2023/04/20/ohmyzsh%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2023-04-20T14:30:01.000Z</published>
-    <updated>2023-04-20T14:47:30.982Z</updated>
+    <updated>2023-04-23T05:07:34.419Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在使用ohmyzsh过程中碰到的问题：&lt;/p&gt;</summary>
@@ -40,7 +97,7 @@
     <link href="https://tom89757.github.io/2023/04/19/ohmyzsh%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2023/04/19/ohmyzsh%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2023-04-19T09:36:05.000Z</published>
-    <updated>2023-04-20T15:18:57.130Z</updated>
+    <updated>2023-04-23T06:17:58.161Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文介绍一下ohmyzsh的学习和使用过程：&lt;/p&gt;</summary>
@@ -59,11 +116,10 @@
     <link href="https://tom89757.github.io/2023/04/19/tmux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://tom89757.github.io/2023/04/19/tmux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2023-04-19T09:24:29.000Z</published>
-    <updated>2023-04-19T09:38:09.885Z</updated>
+    <updated>2023-04-23T05:37:21.116Z</updated>
     
     
-    <summary type="html">&lt;hr /&gt;
-&lt;p&gt;本文记录一下tmux的学习和使用过程：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下tmux的学习和使用过程：&lt;/p&gt;</summary>
     
     
     
@@ -214,11 +270,11 @@
   </entry>
   
   <entry>
-    <title>Vim学习指南</title>
-    <link href="https://tom89757.github.io/2023/02/03/Vim%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/"/>
-    <id>https://tom89757.github.io/2023/02/03/Vim%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</id>
+    <title>Vim使用指南</title>
+    <link href="https://tom89757.github.io/2023/02/03/Vim%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/02/03/Vim%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
     <published>2023-02-03T08:43:38.000Z</published>
-    <updated>2023-04-20T13:53:37.827Z</updated>
+    <updated>2023-04-23T05:34:34.333Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下从IDE转为Vim的一些资料和教程：&lt;/p&gt;</summary>
@@ -296,7 +352,7 @@
     <link href="https://tom89757.github.io/2022/12/05/%E5%90%84%E7%A7%8D%E6%95%99%E7%A8%8B%E8%AE%B0%E5%BD%95/"/>
     <id>https://tom89757.github.io/2022/12/05/%E5%90%84%E7%A7%8D%E6%95%99%E7%A8%8B%E8%AE%B0%E5%BD%95/</id>
     <published>2022-12-05T11:33:31.000Z</published>
-    <updated>2023-04-22T14:19:07.576Z</updated>
+    <updated>2023-04-24T13:53:13.545Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录一下在网络上收集的各种教程：&lt;/p&gt;</summary>
@@ -345,63 +401,6 @@
     
     
     <category term="Ubuntu" scheme="https://tom89757.github.io/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vim学习笔记</title>
-    <link href="https://tom89757.github.io/2022/11/20/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://tom89757.github.io/2022/11/20/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2022-11-20T05:05:32.000Z</published>
-    <updated>2023-04-21T04:17:37.018Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下在学习Vim过程中的经验和总结：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="工具" scheme="https://tom89757.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Vim" scheme="https://tom89757.github.io/tags/Vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阅读别人的经历和人生</title>
-    <link href="https://tom89757.github.io/2022/11/18/%E9%98%85%E8%AF%BB%E5%88%AB%E4%BA%BA%E7%9A%84%E7%BB%8F%E5%8E%86%E5%92%8C%E4%BA%BA%E7%94%9F/"/>
-    <id>https://tom89757.github.io/2022/11/18/%E9%98%85%E8%AF%BB%E5%88%AB%E4%BA%BA%E7%9A%84%E7%BB%8F%E5%8E%86%E5%92%8C%E4%BA%BA%E7%94%9F/</id>
-    <published>2022-11-18T09:01:44.000Z</published>
-    <updated>2022-11-18T13:05:38.800Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下别人对自己过去经历的总结和感悟的博客文章：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="自传" scheme="https://tom89757.github.io/tags/%E8%87%AA%E4%BC%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++知识点01</title>
-    <link href="https://tom89757.github.io/2022/11/04/C++%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
-    <id>https://tom89757.github.io/2022/11/04/C++%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
-    <published>2022-11-04T12:45:10.000Z</published>
-    <updated>2023-04-12T13:52:25.065Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下与C++相关的知识点：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="C++" scheme="https://tom89757.github.io/tags/C/"/>
     
   </entry>
   
