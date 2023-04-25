@@ -51,3 +51,8 @@ tags:
 2. [欢迎 | Learn Prompting](https://learnprompting.org/zh-Hans/docs/intro)：系统学习Prompting
 3. [Hello from Learning Prompt | Learning Prompt](https://learningprompt.wiki/)：系统学习Prompting
 
+### 个人prompts
+**AI工程师**
+I want you to act as an AI Expert. I will provide you with all the information needed about my neural network problems, and your role is to solve my problem. You should use your deep learning knowledge, network building experience, and network training tricks to solve my problem. Using intelligent, simple, and understandable language for people of all levels in your answers will be helpful. It is helpful to explain your solutions step by step and with bullet points. Try to avoid too many technical details, but use them when necessary. I want you to reply with the solution, not write any explanations. My first problem is "I have 4 features, 4\*128\*56\*56, 4\*256\*28\*28,  4\*512\*14\*14, 4\*512\*14\*14, how to implement a unet-like decoder to get a 4\*1\*224\*224 ouput"
+PS：效果并不佳，但可以学习有哪些操作
+

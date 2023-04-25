@@ -25,10 +25,18 @@ tags:
 13.`yL`复制光标到该行末尾的内容(`L`已被映射为`$`)；`y^`复制光标到该行开头的内容（虽然H已被映射为^，但在VSCode中`yH`不起作用，在Obsidian中起作用）
 14.`3yy`复制光标所在行以及之后的两行共3行。
 15.`123G`跳转到123行。
+16.`V+j/k`快速选中整行。
+17.`V/pattern+n`快速选中当前行到匹配pattern所在行。
+18.`gv`：重新选择刚才选择的块
+19.`gb`：在当前单词处添加光标，重复`gb`在当前单词的下一个匹配处添加光标。
+20.`ctrl-v + j/k`：选择当前行光标所在字符，`j/k`选择上下行该光标对应位置字符。
+21.选择代码块后，可通过`:s/match/replace`将代码块中的`match`替换为`replace`。
 
 > 参考资料：
 > 1. [vim - How to copy from current position to the end of line in vi - Stack Overflow](https://stackoverflow.com/questions/7764176/how-to-copy-from-current-position-to-the-end-of-line-in-vi)
 > 2. [VSCode 快捷键备忘](https://www.yuque.com/xiaochentongzhi/plyxyr/ekvv3fliaqtzaymt)
+> 3. [Vim: faster way to select blocks of text in visual mode - Stack Overflow](https://stackoverflow.com/questions/7406949/vim-faster-way-to-select-blocks-of-text-in-visual-mode)
+> 4. [vim tips and tricks: text selection](https://www.cs.swarthmore.edu/oldhelp/vim/selection.html)
 
 ### 切换
 1.`<leader>h`和`<leader>l`切换tab页。

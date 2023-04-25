@@ -27,6 +27,7 @@ tags:
 15. [GitHub - LintaoAmons/CoolStuffes: 我的分享放这里了，大家随便拿去用啊，记得给个星星就行啦～](https://github.com/LintaoAmons/CoolStuffes)：b站up主的配置
 16. [NvChad](https://github.com/NvChad/NvChad)：NvChad，另一个neovim的变种。
 17. [玩转Vim 从放弃到爱不释手-Vim入门-慕课网](https://www.imooc.com/learn/1129)：b站PegasusWang出品的免费Vim慕课教程
+18. [vim tips and tricks: home](https://www.cs.swarthmore.edu/oldhelp/vim/home.html)：Vim在线交互学习网站。
 
 ### 碰到的一些问题的解决方法
 1. [No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub](https://github.com/LunarVim/Neovim-from-scratch/issues/274)

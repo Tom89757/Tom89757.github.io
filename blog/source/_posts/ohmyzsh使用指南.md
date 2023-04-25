@@ -45,7 +45,7 @@ tags:
 
 
 ### 为指定用户安装zsh (不需要root权限)
-下述安装过程主要参考资料6和资料7：
+下述安装过程主要参考资料5和资料6：
 1. 从源码安装`zsh`的依赖包`ncurses`：
 ```bash
 wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz tar xf ncurses-6.1.tar.gz cd ncurses-6.1 ./configure --prefix=$HOME/local CXXFLAGS="-fPIC" CFLAGS="-fPIC" make -j && make install
