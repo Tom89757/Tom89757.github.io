@@ -854,7 +854,13 @@ c += (2,)
 >参考资料：
 >1. [Site Unreachable](https://www.tutorialspoint.com/How-to-append-elements-in-Python-tuple)
 
+</br>
+24.报错`inconsistent use of tabs and spaces in indentation`
+问题：缩进问题（tab和空格）
+解决方案1：命令行运行`autopep8 -i my_file.py`。
 
+> 参考资料：
+> 1. [python - "inconsistent use of tabs and spaces in indentation" - Stack Overflow](https://stackoverflow.com/questions/5685406/inconsistent-use-of-tabs-and-spaces-in-indentation)
 
 
 
