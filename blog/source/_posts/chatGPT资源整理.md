@@ -15,6 +15,7 @@ tags:
 2. [Maximizing the Potential of LLMs: A Guide to Prompt Engineering](https://www.ruxu.dev/articles/ai/maximizing-the-potential-of-llms/)
 3. [人类的终极工具 | 程序员的喵](https://catcoding.me/p/chatgpt-tools/)：如何用chatGPT提问？
 4. [The Art of ChatGPT Prompting: A Guide to Crafting Clear and Effective Prompts](https://app.gumroad.com/d/52391c67754c7f5c7814004307bc660a)：使用ChatGPT Prompting的艺术
+5. [AIGC Weekly #19 | AIGC周刊](https://op7418.zhubai.love/posts/2264801966632763392)
 
 ### 使用chatGPT完成项目
 1. [Use ChatGPT to Build a RegEx Generator – OpenAI API Low Code Course - YouTube](https://www.youtube.com/watch?v=D6Xj_W4leu8&ab_channel=freeCodeCamp.org)：使用chatGPT创建一个RegEx Generator
