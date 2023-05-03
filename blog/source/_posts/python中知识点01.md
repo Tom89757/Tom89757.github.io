@@ -862,8 +862,43 @@ c += (2,)
 > 参考资料：
 > 1. [python - "inconsistent use of tabs and spaces in indentation" - Stack Overflow](https://stackoverflow.com/questions/5685406/inconsistent-use-of-tabs-and-spaces-in-indentation)
 
+</br>
+25.使用smtplib发送邮件：
+```python
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
+
+sender = 'tom89757@outlook.com'
+receivers = ['2689980244@qq.com']
+# smtp = smtplib.SMTP()
+# smtp.connect('smtp-mail.outlook.com', 587)
+# smtp.login('tom89757@outlook.com', 'QmB2/!D4J.vr3t2')
 
 
+if __name__ == "__main__":
+    message = MIMEText('Python 邮件发送测试...', 'plain', 'utf-8')
+    message['From'] = Header("菜鸟教程", 'utf-8')
+    message['To'] = Header("测试", 'utf-8')
+
+    subject = 'Python SMTP 邮件测试'
+    message['Subject'] = Header(subject, 'utf-8')
+    
+    try:  
+        smtpObj = smtplib.SMTP()
+        smtpObj.connect('smtp-mail.outlook.com', 587)
+        smtpObj.login('emal_address', 'email_password')
+        smtpObj.sendmail(sender, receivers, message.as_string())
+        print("邮件发送成功")
+    
+    except smtplib.SMTPException:
+        print("Error: 无法发送邮件")
+```
+> 参考资料：
+> 1. [Python SMTP发送邮件 | 菜鸟教程](https://www.runoob.com/python/python-email.html)
+> 2. [Python SMTP发送邮件-smtplib模块 - 知乎](https://zhuanlan.zhihu.com/p/318387004)
+> 3. [解决Python通过STMP发送邮件出现 TimeoutError: [WinError 10060]_Tech_April的博客-CSDN博客](https://blog.csdn.net/Tech_April/article/details/106257696)
+> 4. [SMTP/IMAP服务](https://wx.mail.qq.com/list/readtemplate?name=app_intro.html#/agreement/authorizationCode)
 
 
 
