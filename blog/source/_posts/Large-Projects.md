@@ -25,4 +25,5 @@ tags:
 13. [GitHub - lichess-org/lila: ♞ lichess.org: the forever free, adless and open source chess server ♞](https://github.com/lichess-org/lila)：使用Scala + TypeScript实现国际象棋游戏
 14. [Redis 设计与实现 — Redis 设计与实现](http://redisbook.com/index.html)：Redis设计与实现
 15. [Build Your Own Database From Scratch | Build Your Own Database From Scratch](https://build-your-own.org/database/)
+16. [Building a CodePen Type Editor from Scratch](https://decode.sh/building-a-code-pen-type-editor-from-scratch)
 
