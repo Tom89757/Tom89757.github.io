@@ -93,3 +93,6 @@ Windows 10打开Taskbar设置：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230415122528.png)
 > 参考资料：
 > 1. [Windows 10 计算机如何重启文件资源管理器 | 华为官网](https://consumer.huawei.com/cn/support/content/zh-cn00733776/)
+
+### PPT (Powerpoint) 在多个窗口打开多个文件
+视图->层叠窗口
