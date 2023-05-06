@@ -48,15 +48,38 @@ tags:
 下述安装过程主要参考资料5和资料6：
 1. 从源码安装`zsh`的依赖包`ncurses`：
 ```bash
-wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz tar xf ncurses-6.1.tar.gz cd ncurses-6.1 ./configure --prefix=$HOME/local CXXFLAGS="-fPIC" CFLAGS="-fPIC" make -j && make install
+wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz tar xf ncurses-6.1.tar.gz 
+cd ncurses-6.1 ./configure --prefix=$HOME/local CXXFLAGS="-fPIC" CFLAGS="-fPIC" 
+make -j && make install
 ```
-2. 构建并安装`zsh`（将下述命令写入脚本`zsh.sh`并运行`sh zsh.sh`j：
+2. 构建并安装`zsh`（将下述命令写入脚本`zsh.sh`并运行`sh zsh.sh`：
 ```bash
-ZSH_SRC_NAME=$HOME/packages/zsh.tar.xz ZSH_PACK_DIR=$HOME/packages/zsh ZSH_LINK="https://sourceforge.net/projects/zsh/files/latest/download" if [[ ! -d "$ZSH_PACK_DIR" ]]; then echo "Creating zsh directory under packages directory" mkdir -p "$ZSH_PACK_DIR" fi if [[ ! -f $ZSH_SRC_NAME ]]; then curl -Lo "$ZSH_SRC_NAME" "$ZSH_LINK" fi tar xJvf "$ZSH_SRC_NAME" -C "$ZSH_PACK_DIR" --strip-components 1 cd "$ZSH_PACK_DIR" ./configure --prefix="$HOME/local" \ CPPFLAGS="-I$HOME/local/include" \ LDFLAGS="-L$HOME/local/lib" make -j && make install
+ZSH_SRC_NAME=$HOME/packages/zsh.tar.xz
+ZSH_PACK_DIR=$HOME/packages/zsh
+ZSH_LINK="https://sourceforge.net/projects/zsh/files/latest/download"
+
+if [[ ! -d "$ZSH_PACK_DIR" ]]; then
+    echo "Creating zsh directory under packages directory"
+    mkdir -p "$ZSH_PACK_DIR"
+fi
+
+if [[ ! -f $ZSH_SRC_NAME ]]; then
+    curl -Lo "$ZSH_SRC_NAME" "$ZSH_LINK"
+fi
+
+tar xJvf "$ZSH_SRC_NAME" -C "$ZSH_PACK_DIR" --strip-components 1
+cd "$ZSH_PACK_DIR"
+
+./configure --prefix="$HOME/local" \
+    CPPFLAGS="-I$HOME/local/include" \
+    LDFLAGS="-L$HOME/local/lib"
+make -j && make install
 ```
 3. 设置默认shell为`zsh`。创建`~/.bash_profile`文件并写入：
 ```bash
-export PATH=$HOME/local/bin:$PATH export SHELL=`which zsh` [ -f "$SHELL" ] && exec "$SHELL" -l
+export PATH=$HOME/local/bin:$PATH 
+export SHELL=`which zsh` 
+[ -f "$SHELL" ] && exec "$SHELL" -l
 ```
 4. 运行`source ~/.bash_profile`启动`zsh`。选择`q`选项暂不进行配置，此时位于zsh shell。
 5. 直接采用资料6中的配置（可以将`ohmyzsh.sh`下载到本地运行`sh ohmyzsh.sh`
