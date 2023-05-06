@@ -120,6 +120,9 @@ fi
 
 > 参考资料：
 > 1. [Zsh / Oh-my-zsh on Windows Git Bash · GitHub](https://gist.github.com/fworks/af4c896c9de47d827d4caa6fd7154b6b)
+> 2. [git - Strange characters for ohmyz in vscode - Stack Overflow](https://stackoverflow.com/questions/64036536/strange-characters-for-ohmyz-in-vscode)
+> 3. [Weird letter spacing in Integrated Terminal for VS Code · Issue #120004 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/120004)
+> 4. [weird cursor-word space issue with zsh, oh-my-zsh · Issue #67789 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/67789)
 
 ### 安装autojump插件实现目录跳转
 
