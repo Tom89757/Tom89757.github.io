@@ -487,7 +487,11 @@ os.environ['CUDA_VISIBLE_DEVICES'] = str(GPU_ID)
 > 1. [[1.12] os.environ["CUDA_VISIBLE_DEVICES"] has no effect · Issue #80876 · pytorch/pytorch · GitHub](https://github.com/pytorch/pytorch/issues/80876)
 > 2. [`import kornia` break CUDA lazy init · Issue #1951 · kornia/kornia · GitHub](https://github.com/kornia/kornia/issues/1951)
 
+</br>
+21.报错`tensorflow.python.framework.errors_impl.PermissionDeniedError:`
 
+> 参考资料：
+> 1. [python - TensorFlow Permission Denied Error /Location - Stack Overflow](https://stackoverflow.com/questions/41606854/tensorflow-permission-denied-error-location)
 
 
 
