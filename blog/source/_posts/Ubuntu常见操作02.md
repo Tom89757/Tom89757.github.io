@@ -315,7 +315,10 @@ MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
 > 参考资料：
 > 1. [Linux tar 命令 | 菜鸟教程](https://www.runoob.com/linux/linux-comm-tar.html)
 
-
+</br>
+25.设置alias
+> 参考资料：
+> 1. [Bash alias with piping - Super User](https://superuser.com/questions/407104/bash-alias-with-piping)
 
 
 
