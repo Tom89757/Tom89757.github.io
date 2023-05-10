@@ -320,7 +320,13 @@ MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
 > 参考资料：
 > 1. [Bash alias with piping - Super User](https://superuser.com/questions/407104/bash-alias-with-piping)
 
-
+</br>
+26.设置时区。·
+`ls -lh`和`date`命令显示的时间不同。
+> 参考资料：
+> 1. [linux - ls and date showing different file dates - Super User](https://superuser.com/questions/908157/ls-and-date-showing-different-file-dates)
+> 2. [How to set or change timezone in linux](https://linuxize.com/post/how-to-set-or-change-timezone-in-linux/)
+> 3. [关于Linux中ls -l显示时间不全的问题_nui111的博客-CSDN博客](https://blog.csdn.net/nui111/article/details/42275481)
 
 
 
