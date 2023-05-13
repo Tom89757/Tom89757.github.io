@@ -31,12 +31,14 @@ tags:
 19.`gb`：在当前单词处添加光标，重复`gb`在当前单词的下一个匹配处添加光标。
 20.`ctrl-v + j/k`：选择当前行光标所在字符，`j/k`选择上下行该光标对应位置字符。
 21.选择代码块后，可通过`:s/match/replace`将代码块中的`match`替换为`replace`。
+22.`"0p`：粘贴使用`yy`复制的内容，该内容不会被`dd`覆盖。见参考资料5。
 
 > 参考资料：
 > 1. [vim - How to copy from current position to the end of line in vi - Stack Overflow](https://stackoverflow.com/questions/7764176/how-to-copy-from-current-position-to-the-end-of-line-in-vi)
 > 2. [VSCode 快捷键备忘](https://www.yuque.com/xiaochentongzhi/plyxyr/ekvv3fliaqtzaymt)
 > 3. [Vim: faster way to select blocks of text in visual mode - Stack Overflow](https://stackoverflow.com/questions/7406949/vim-faster-way-to-select-blocks-of-text-in-visual-mode)
 > 4. [vim tips and tricks: text selection](https://www.cs.swarthmore.edu/oldhelp/vim/selection.html)
+> 5. [copy paste - How to delete (not cut) in Vim? - Stack Overflow](https://stackoverflow.com/questions/11993851/how-to-delete-not-cut-in-vim)
 
 ### 切换
 1.`<leader>h`和`<leader>l`切换tab页。

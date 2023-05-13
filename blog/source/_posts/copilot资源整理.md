@@ -12,3 +12,5 @@ tags:
 ### 工作流
 
 1. [Improve Your VSCode Workflow to the Max](https://www.builder.io/blog/vscode-tips)：Copilot的高级用法
+2. [GitHub Copilot Chat Transparency Note - GitHub Docs](https://docs.github.com/en/early-access/copilot/github-copilot-chat-transparency-note)
+
