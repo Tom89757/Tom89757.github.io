@@ -13,5 +13,5 @@ tags:
 1. [Using Git](https://sp19.datastructur.es/materials/guides/using-git)：本教程需要你对命令行有基础的了解（未读）
 2. [Git WTFS](https://sp19.datastructur.es/materials/guides/git-wtfs)：本文档旨在帮你解决你在使用git过程中频繁遇到的WTFS (weird technical failure scenarios)（未读）
 3. [图解如何在Linux上配置git自动登录验证 - apocelipes - 博客园](https://www.cnblogs.com/apocelipes/p/14491762.html)
-4. 
+4. [同一台电脑配置多个git账号 · Issue #2 · jawil/notes · GitHub](https://github.com/jawil/notes/issues/2)：同一主机配置多个git账号。
 
