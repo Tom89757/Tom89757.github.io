@@ -201,3 +201,101 @@ yarn why date-fns
 ### 一些先决条件
 注册GitHub和Netlify
 
+### 工具的三个阶段
+- 安全的网络：也可以称为开发环境
+- 编译与构建：允许在开发过程中使用编程语言的最新特性或其它语言（如JSX或TypeScript），然后转译为浏览器可以允许的代码
+- 开发后阶段：确保软件持续运行。包括测试和部署
+
+### 创建开发环境
+包括：
+- 软件包安装工具：node.js和npm
+- 代码修订控制：git
+- 代码格式化工具：prettier
+- 代码检查工具：ESLint。建议同时本地和全局安装此工具。对于共享的项目可以让拷贝自己版本的人可以遵循应用于项目的规则；全局则可以随时检查任何文件。
+
+### 配置初始项目
+详见文档。
+#### 获取项目代码文件
+详见文档
+#### 安装我们的工具
+详见文档
+#### 配置我们的工具
+分别配置`.prettierrc.json`和`.eslintrc.json`文件。详见文档
+
+### 构建和转换工具
+我们将使用Parcel，Parcel将处理安装任何所需的转换工具和配置，在大多数情况下不需要我们干预。详见文档
+
+#### 使用现代特性
+我们使用 [CSS 嵌套](https://drafts.csswg.org/css-nesting/)，而不是像 [Sass](https://sass-lang.com/) 这样的工具。Parcel使用 [PostCSS](https://postcss.org/)在嵌套CSS和本地支持的CSS之间转换。因此本项目需要包含一个PostCSS插件，这里使用[postcss-preset-env](https://preset-env.cssdb.org/)。详见文档
+
+#### 构建和运行
+```bash
+npx parcel src/index.html
+```
+详见文档
+
+## Deploying our app (en-US)
+最后一部分，采用前面文章的example toolchain然后部署我们的sample app。我们将代码推送到github，使用Netfily进行部署，甚至展示怎样添加一个简单的测试。
+
+### Post Development
+在项目的该阶段有大量潜在问题需要解决，创建一个toolchain减少手工干预是很重要的。这里是一些需要为该项目考虑的一些事情：
+- 生成一个production build：确保文件最小化，chunked, 应用了tree-shaking，并且版本是"cache busted"。
+- 运行测试：确保失败的测试可以组织部署
+- 实际将更新的代码部署到一个live URL。
+> cache busting是一种破坏浏览器caching机制的策略，强制浏览器下载一个你的代码的新的copy。Parcel（和许多其它工具）会对每个新的build生成独一无二的文件名。这个独特的文件名会打断浏览器的cache，因此确保浏览器会在每次更新代码时下载最新的代码。
+
+本项目将使用Netlify，Netlify提供hosting，即提供一个URL来在线查看我们的项目，从而可以和他人分享。
+尽管Netlify提供 [drag and drop deployment service](https://app.netlify.com/drop)，我们打算在每次推送到一个Github repo时在Netlify触发一个新的部署。
+我们可以提交我们的代码然后推送到Github，更新的代码会自动触发整个build routine，我们唯一需要做的就是"push"。
+
+### The build process
+运行`npx parcel build src/index.html`，Parcel可以构建产品，而不是只是运行代码用于开发和测试。
+新创建的production code位于`dist`目录，包含所有的运行网站的文件，可以上传到服务器。
+但是手动构建代码不是我们的目标，我们想做的事让构建自动进行并且`dist`目录中的结果部署在我们的网站上。
+我们code所在的地方，GitHub和Netlify需要彼此沟通，这样每次更新Github Code仓库时，Netlify会自动挑选changes，运行build任务，最终发布一个更新。
+我们将添加build命令到`package.json`作为npm script，这步补充必须的，但是是配置的最佳实践。在所有的项目中，我们都可以依赖`npm run build`来做完整的build步骤，而不需要为每个项目记住特定的构建参数。
+1. 打开`package.json`文件，找到`scripts` property。
+2. 添加`build`命令：
+```json
+"scripts": {
+	//...
+    "build": "parcel build src/index.html"
+},
+```
+3. 现在可以通过在根目录运行`npm run build`完成production build步骤。
+
+### Committing changes to GitHub
+本节将让你在一个git仓库中存储代码，但它并不是一个git教程。更详细的git教程见 [Git and GitHub](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/GitHub)。
+```bash
+git status
+git add ./
+git commit -m 'committing initial code'
+git remote add github https://github.com/Tom89757/super-website.git
+git push github main 
+```
+详见文档
+
+### Using Netlify for deployment
+详见文档
+
+### Testing
+我们将展示如何添加一个initial test到项目中，以及如何使用该测试防止或允许项目部署进行。
+有许多测试类型：
+- End-to-end testing。
+- Integration testing。
+- Unit testing。
+以及许多其它类型。测试可以作用于JavaScript，rendered DOM，用户交互，CSS甚至page外观。
+本项目将创建一个简单的test来检查第三方的NASA data feed以确保它为正确的格式。如果测试失败，将会阻止项目存活。本测试不使用测试框架，但是有许多测试框架以供选择 [framework options](https://www.npmjs.com/search?q=keywords%3Atesting)。测试本身不是那么重要，重要的是如何处理测试成功和失败的情况。
+Netlify只询问build命令，所以需要使测试称为build的一部分。如果测试失败，build也失败，Netlify不会进行项目部署。
+测试添加详见文档。
+
+
+## Bug汇总
+运行`npx parcel src/index.html`后出现`plugin is not a function`构建错误：
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230523225301.png)
+解决方案：
+```bash
+npm install --save-dev postcss-preset-env@6.7.0
+```
+> 参考资料：
+> 1. [javascript - index.css:undefined:undefined: plugin is not a function - Stack Overflow](https://stackoverflow.com/questions/70884769/index-cssundefinedundefined-plugin-is-not-a-function)
