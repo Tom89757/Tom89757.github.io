@@ -88,3 +88,21 @@ git config --global --add oh-my-zsh.hide-dirty 1
 ```
 > 参考资料：
 > 1. [oh-my-zsh slow, but only for certain Git repo - Stack Overflow](https://stackoverflow.com/questions/12765344/oh-my-zsh-slow-but-only-for-certain-git-repo)
+
+
+### VSCode中使用j/k切换IntelliSense suggestions
+在`keybindings.json`中添加：
+```json
+{
+	"key": "j",
+	"command": "selectNextSuggestion",
+	"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && vim.mode=='Insert'"
+},
+{
+	"key": "k",
+	"command": "selectPrevSuggestion",
+	"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && vim.mode=='Insert'"
+}
+```
+> 参考资料：
+> 1. [Using vim-like navigation for IntelliSense suggestions in VSCode | by Airy | Medium](https://airyboy.medium.com/using-vim-like-navigation-for-intellisense-suggestions-in-vscode-3c310ac73844)

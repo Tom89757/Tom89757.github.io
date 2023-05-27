@@ -19,8 +19,8 @@ nmap U <C-r>
 " Yank to system clipboard"
 set clipboard=unnamed
 
-set number
-set relativenumber
+" set number
+" set relativenumber
 
 "set some Ctrl- shortcuts"
 " Go back and forward with Ctrl+O and Ctrl+I

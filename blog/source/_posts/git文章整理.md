@@ -14,4 +14,6 @@ tags:
 2. [Git WTFS](https://sp19.datastructur.es/materials/guides/git-wtfs)：本文档旨在帮你解决你在使用git过程中频繁遇到的WTFS (weird technical failure scenarios)（未读）
 3. [图解如何在Linux上配置git自动登录验证 - apocelipes - 博客园](https://www.cnblogs.com/apocelipes/p/14491762.html)
 4. [同一台电脑配置多个git账号 · Issue #2 · jawil/notes · GitHub](https://github.com/jawil/notes/issues/2)：同一主机配置多个git账号。
+5. [Git 如何恢复到之前的提交](https://www.freecodecamp.org/chinese/news/git-reverting-to-previous-commit-how-to-revert-to-last-commit/)
+6. [版本回退 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192)
 
