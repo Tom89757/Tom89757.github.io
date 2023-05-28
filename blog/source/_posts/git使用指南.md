@@ -275,4 +275,18 @@ ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 > 参考资料：
 > 1. [bitbucket - git push hangs after Total line - Stack Overflow](https://stackoverflow.com/questions/15843937/git-push-hangs-after-total-line)
 
+</br>
 
+16.查看分支的最早提交时间：
+切换到对应分支例如`w6-complete`然后运行如下命令：
+```bash
+git log --reverse --pretty=format:"%cd" --date=iso w6-complete | tail -1
+```
+PS：上述命令只能查看`w6-complete`的最早提交时间，而不是分支的创建时间
+> 参考资料：VSCode Copilot
+
+</br>
+17.`git log`显示commits时间并倒序输出到`commits.txt`：
+```bash
+git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short | tac >commits.txt
+```

@@ -86,7 +86,10 @@ tags:
 8.`vit`：选中光标所在的HTML tag中的内容。
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407191410.png)
 
+9.`ci(`：可以直接修改修改最近的括号中的内容。（参考：[我今天刚意识到的超实用 Vim 小技巧_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Vu4y1f7sW/?vd_source=71b57f2bb132ac1f88ed255cad4a06a6)）
+
 PS：将上述的`v`替换为`c/d/y/>`可以实现相同范围的选择。
+
 >参考资料：
 > 1. [Vim中的重要概念 Text Object_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Ze4y1E7Sk/?spm_id_from=333.999.0.0&vd_source=71b57f2bb132ac1f88ed255cad4a06a6)
 
