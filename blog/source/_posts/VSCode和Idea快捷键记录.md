@@ -161,7 +161,11 @@ nnoremap U <C-r>
 > 参考资料：
 > 1. [Remapping `U` to redo, `C-r` to reverse-search : vim](https://www.reddit.com/r/vim/comments/4yvjje/remapping_u_to_redo_cr_to_reversesearch/)
 
+### VSCode配置复制粘贴操作
+- 使用`p`替换在visual mode下选中的text而不会替换剪切板的内容
 
+> 参考资料：
+> 1. [How do I replace-paste yanked text in vim without yanking the deleted lines? - Super User](https://superuser.com/questions/321547/how-do-i-replace-paste-yanked-text-in-vim-without-yanking-the-deleted-lines)
 
 
 

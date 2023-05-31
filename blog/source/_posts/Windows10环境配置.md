@@ -29,3 +29,9 @@ tags:
 > 参考资料：
 > 1. [GoldenDict和AutoHotKey的安装和使用_SANGF_的博客-CSDN博客](https://blog.csdn.net/sangfengcn/article/details/75731410)
 > 2. [[转载]GoldenDict 上的那些精美版权词典（附下载地址）（英语、_细草_微风_新浪博客](https://blog.sina.com.cn/s/blog_797a6edf0102wteg.html)
+
+
+### 将任意键映射到Shortcuts
+
+> 参考资料：
+> 1. [How to Remap Any Key or Shortcut on Windows 10](https://www.howtogeek.com/710290/how-to-remap-any-key-or-shortcut-on-windows-10/)
