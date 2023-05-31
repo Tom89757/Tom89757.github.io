@@ -78,8 +78,14 @@ return
 
 
 ### 在当前目录使用`Ctrl+shift+t`新建text文件
-
+主要参考资料3
 > 参考资料：
 > 1. [Windows新建文件快捷键使用AutoHotKey脚本_✿三日月的博客-CSDN博客](https://blog.csdn.net/qq_44119557/article/details/123284048)
 > 2. [Script to create and open a new text file? - AutoHotkey Community](https://www.autohotkey.com/boards/viewtopic.php?t=64289)：打开nodepad
-> 3. [AutoHotKey: Create a new file with Alt+N keyboard shortcut in Windows Explorer · GitHub](https://gist.github.com/aborruso/8867d871bbb421495476b22f040f0ee2)：完美满足 
+> 3. [AutoHotKey: Create a new file with Alt+N keyboard shortcut in Windows Explorer · GitHub](https://gist.github.com/aborruso/8867d871bbb421495476b22f040f0ee2)：完美满足A
+
+
+### 将多个`.ahk`文件组合为一个脚本 (script)
+
+> 参考资料：
+> 1. [AHK Startup (Consolidate AHK Scripts' Tray Icons) - AutoHotkey Community](https://www.autohotkey.com/boards/viewtopic.php?f=6&t=788&p=5942#p5942)
