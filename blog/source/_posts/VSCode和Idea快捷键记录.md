@@ -163,7 +163,17 @@ nnoremap U <C-r>
 
 ### VSCode配置复制粘贴操作
 - 使用`p`替换在visual mode下选中的text而不会替换剪切板的内容
+在`.vimrc`中添加如下内容：
+```bash
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
+```
+PS：在VSCode中生效，在VSCode Insiders中不生效
 > 参考资料：
 > 1. [How do I replace-paste yanked text in vim without yanking the deleted lines? - Super User](https://superuser.com/questions/321547/how-do-i-replace-paste-yanked-text-in-vim-without-yanking-the-deleted-lines)
 
