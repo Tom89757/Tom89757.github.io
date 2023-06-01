@@ -43,3 +43,23 @@ tags:
 > 1. [How to Disable Keyboard Shortcuts on Windows 10](https://www.makeuseof.com/windows-10-disable-keyboard-shortcuts)
 > 2. [How to Disable Specific Windows Key Shortcut in Windows | Password Recovery](https://www.top-password.com/blog/disable-specific-windows-key-shortcut/)
 > 3. [Disable Win+Space keyboard-layout switch in Windows 10 - Super User](https://superuser.com/questions/1000678/disable-winspace-keyboard-layout-switch-in-windows-10#:~:text=go%20to%20Edit%20language%20and,Layout%22%20to%20%22Not%20Assigned%22)
+
+### PowerToys Keyboards Manager只在某些应用里生效
+参考资料1给出如何进行映射；参考资料2给出如何查看进程名（process name）
+> 参考资料：
+> 1. [PowerToys Keyboard Manager utility for Windows | Microsoft Learn](https://learn.microsoft.com/en-us/windows/powertoys/keyboard-manager)
+> 2. [Finding the Process ID - Windows drivers | Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/finding-the-process-id)
+> 3. [Exclude Target apps for Keyboard Manager!!!!!!!!! · Issue #10800 · microsoft/PowerToys · GitHub](https://github.com/microsoft/PowerToys/issues/10800)
+
+
+
+
+
+
+
+
+
+
+
+
+

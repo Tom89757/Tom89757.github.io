@@ -86,6 +86,12 @@ return
 
 
 ### 将多个`.ahk`文件组合为一个脚本 (script)
-
+并无必要，运行多个脚本可以选择性终止脚本
 > 参考资料：
 > 1. [AHK Startup (Consolidate AHK Scripts' Tray Icons) - AutoHotkey Community](https://www.autohotkey.com/boards/viewtopic.php?f=6&t=788&p=5942#p5942)
+
+
+### 设置脚本开机自启动
+
+> 参考资料：
+> 1. [Frequently Asked Questions (FAQ) | AutoHotkey](https://www.autohotkey.com/docs/v1/FAQ.htm)

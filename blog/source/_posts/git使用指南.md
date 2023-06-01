@@ -290,3 +290,40 @@ PS：上述命令只能查看`w6-complete`的最早提交时间，而不是分�
 ```bash
 git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short | tac >commits.txt
 ```
+
+</br>
+18.git添加PATH：
+> 参考资料：
+> 1. [node.js - How come npm install doesn't work on git bash - Stack Overflow](https://stackoverflow.com/questions/35915832/how-come-npm-install-doesnt-work-on-git-bash)
+> 2. [node.js - Http-Server Command Not Found After Install in NPM - Stack Overflow](https://stackoverflow.com/questions/31694646/http-server-command-not-found-after-install-in-npm#:%7E:text=you%20should%20add%20the%20npm,%22%2C%20run%20the%20below%20command.&text=bashrc%20file%20in%20your%20home,commands%20on%20your%20git%20bash)
+
+</br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
