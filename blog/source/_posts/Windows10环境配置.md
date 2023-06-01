@@ -35,3 +35,10 @@ tags:
 
 > 参考资料：
 > 1. [How to Remap Any Key or Shortcut on Windows 10](https://www.howtogeek.com/710290/how-to-remap-any-key-or-shortcut-on-windows-10/)
+
+
+### 关闭特定快捷键 (specific shortkeys)
+
+> 参考资料：
+> 1. [How to Disable Keyboard Shortcuts on Windows 10](https://www.makeuseof.com/windows-10-disable-keyboard-shortcuts)
+> 2. [How to Disable Specific Windows Key Shortcut in Windows | Password Recovery](https://www.top-password.com/blog/disable-specific-windows-key-shortcut/)
