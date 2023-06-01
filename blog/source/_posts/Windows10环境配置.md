@@ -42,3 +42,4 @@ tags:
 > 参考资料：
 > 1. [How to Disable Keyboard Shortcuts on Windows 10](https://www.makeuseof.com/windows-10-disable-keyboard-shortcuts)
 > 2. [How to Disable Specific Windows Key Shortcut in Windows | Password Recovery](https://www.top-password.com/blog/disable-specific-windows-key-shortcut/)
+> 3. [Disable Win+Space keyboard-layout switch in Windows 10 - Super User](https://superuser.com/questions/1000678/disable-winspace-keyboard-layout-switch-in-windows-10#:~:text=go%20to%20Edit%20language%20and,Layout%22%20to%20%22Not%20Assigned%22)
