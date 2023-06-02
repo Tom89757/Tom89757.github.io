@@ -475,7 +475,11 @@ PS：VSCode中跳出文件编辑窗口后`<leader>`键和其它键不起作用�
 > 参考资料：
 > 1. [Can I exclude certain settings with VS Code built-in settings sync feature? - Stack Overflow](https://stackoverflow.com/questions/64603768/can-i-exclude-certain-settings-with-vs-code-built-in-settings-sync-feature)
 
+### VSCode显示tab和space并设置颜色
 
+> 参考资料：
+> 1. [Show whitespace characters in Visual Studio Code - Stack Overflow](https://stackoverflow.com/questions/30140595/show-whitespace-characters-in-visual-studio-code)
+> 2. [Setting to change the color and opacity of whitespace characters when made visible… · Issue #25956 · microsoft/vscode · GitHub](https://github.com/Microsoft/vscode/issues/25956)
 
 
 

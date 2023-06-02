@@ -177,6 +177,18 @@ PS：在VSCode中生效，在VSCode Insiders中不生效
 > 参考资料：
 > 1. [How do I replace-paste yanked text in vim without yanking the deleted lines? - Super User](https://superuser.com/questions/321547/how-do-i-replace-paste-yanked-text-in-vim-without-yanking-the-deleted-lines)
 
+### 多光标编辑
+**VSCode原生模式**
+1. 鼠标定位到目标行目标编辑位置。
+2. `Ctrl+Alt+down/up`创建多个光标。
+3. `right/down`更改光标位置
+4. 便可以直接进行多光标编辑
+**Vim模式**
+
+### 替换换行符
+
+> 参考资料：
+> 1. [Search for newline character (\n) in regex mode · Issue #2097 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/2097)
 
 
 
