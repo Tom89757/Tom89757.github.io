@@ -32,6 +32,13 @@ tags:
 20.`ctrl-v + j/k`：选择当前行光标所在字符，`j/k`选择上下行该光标对应位置字符。
 21.选择代码块后，可通过`:s/match/replace`将代码块中的`match`替换为`replace`。
 22.`"0p`：粘贴使用`yy`复制的内容，该内容不会被`dd`覆盖。见参考资料5。
+23.`J`：将下一行和当前行合并，没有对应的`K`操作。
+24.`i/a`：在光标前后插入，`i`对应insert，`a`对应append。
+25.`ea`：在光标所在单词后插入。
+26.`gU`后选中：将选择的文本转换为大写。
+27.`gu`后选中：将选择的文本转换为小写。
+28.`gh`：展示光标所在位置的变量的tooltip（提示）。
+
 
 > 参考资料：
 > 1. [vim - How to copy from current position to the end of line in vi - Stack Overflow](https://stackoverflow.com/questions/7764176/how-to-copy-from-current-position-to-the-end-of-line-in-vi)
@@ -186,9 +193,34 @@ PS：在VSCode中生效，在VSCode Insiders中不生效
 **Vim模式**
 
 ### 替换换行符
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230604104759.png)
 
 > 参考资料：
 > 1. [Search for newline character (\n) in regex mode · Issue #2097 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/2097)
 
+### 跳转到代码块 (block) 的开头和末尾
+1.`[[`：跳转到上一个顶层代码块（block）的开头。
+2.`]]`：跳转到下一个顶层代码块（block）的开头。
+3.`[m`：跳转到上一个方法/函数（method/function）的开头。
+4.`]m`：跳转到下一个方法/函数（method/function）的开头。
+
+> 参考资料：
+> 1. [End of python block motion - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/7262/end-of-python-block-motion)
+> 2. [perl - Move to the beginning of next code block in Vim - Stack Overflow](https://stackoverflow.com/questions/26344789/move-to-the-beginning-of-next-code-block-in-vim)
+
+### VSCode Vim Tips
+> 参考资料：
+> 1. [VSCodeVim Tips | paul shen](https://www.bypaulshen.com/posts/vscode-vim-tips)
 
 
+### VSCode Vim重新映射已有的快捷键
+```bash
+nnoremap gb ]]
+nnoremap gB [[
+nnoremap gm ]m
+nnoremap gM [m
+```
+> 参考资料：
+> 1. [How do you remap brackets in vim : r/vim](https://www.reddit.com/r/vim/comments/g50gdv/how_do_you_remap_brackets_in_vim/)
+> 2. [key mapping - Disable or remove default vim keybinding - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/180926/disable-or-remove-default-vim-keybinding)
+> 3. [Changing default key bindings in vim - Stack Overflow](https://stackoverflow.com/questions/24416826/changing-default-key-bindings-in-vim)

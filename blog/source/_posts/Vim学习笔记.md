@@ -106,3 +106,10 @@ git config --global --add oh-my-zsh.hide-dirty 1
 ```
 > 参考资料：
 > 1. [Using vim-like navigation for IntelliSense suggestions in VSCode | by Airy | Medium](https://airyboy.medium.com/using-vim-like-navigation-for-intellisense-suggestions-in-vscode-3c310ac73844)
+
+
+### Vim映射键
+
+> 参考资料：
+> 1. [GitHub - VSCodeVim/Vim: Vim for Visual Studio Code](https://github.com/VSCodeVim/Vim)
+> 2. [key mapping - Disable or remove default vim keybinding - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/180926/disable-or-remove-default-vim-keybinding)

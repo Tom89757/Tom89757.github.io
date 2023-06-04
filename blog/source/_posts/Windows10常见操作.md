@@ -96,3 +96,6 @@ Windows 10打开Taskbar设置：
 
 ### PPT (Powerpoint) 在多个窗口打开多个文件
 视图->层叠窗口
+
+### 同步时间
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230604143409.png)
