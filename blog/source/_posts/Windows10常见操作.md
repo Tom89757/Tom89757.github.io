@@ -105,3 +105,7 @@ Windows 10打开Taskbar设置：
 
 > 参考资料：
 > 1. [Using the cf CLI with a proxy server | Cloud Foundry Docs](https://docs.cloudfoundry.org/cf-cli/http-proxy.html) 
+
+
+### PowerToys常见快捷键配置
+- `Ctrl+j -> downarrow`
