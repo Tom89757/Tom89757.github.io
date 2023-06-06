@@ -51,8 +51,21 @@ tags:
 > 2. [Finding the Process ID - Windows drivers | Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/finding-the-process-id)
 > 3. [Exclude Target apps for Keyboard Manager!!!!!!!!! · Issue #10800 · microsoft/PowerToys · GitHub](https://github.com/microsoft/PowerToys/issues/10800)
 
+### 谷歌浏览器（Chrome）使用Vimium技巧
+**指定搜索引擎搜索**
+1. 按下`o`打开多功能搜索框。（`o`搜索内容在当前标签页，`O`在新标签页打开）
+2. 按下`b+空格`指定搜索引擎为百度（搜索引擎可以进行设置）
+3. 键入搜索内容即可用百度进行搜索。
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230606104139.png)
+> 参考资料：
+> 1. [vimium插件设置快速搜索引擎_hampeter的博客-CSDN博客](https://blog.csdn.net/hampeter/article/details/81940035)
+> 2. [vimium完全教程，各类技巧大全 - 知乎](https://zhuanlan.zhihu.com/p/30263616)
 
-
+### Windows10查看所有环境变量和指定环境变量
+- **指定环境变量**。`echo %VARIABLE%`
+- **所有环境变量**。`SET | more`
+> 参考资料：
+> 1. [windows - List all environment variables from the command line - Stack Overflow](https://stackoverflow.com/questions/5327495/list-all-environment-variables-from-the-command-line)
 
 
 

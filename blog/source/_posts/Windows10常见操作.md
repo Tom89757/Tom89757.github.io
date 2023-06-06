@@ -99,3 +99,9 @@ Windows 10打开Taskbar设置：
 
 ### 同步时间
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230604143409.png)
+
+
+### 添加系统http_proxy和https_proxy环境变量
+
+> 参考资料：
+> 1. [Using the cf CLI with a proxy server | Cloud Foundry Docs](https://docs.cloudfoundry.org/cf-cli/http-proxy.html) 

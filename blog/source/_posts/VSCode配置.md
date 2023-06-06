@@ -489,3 +489,8 @@ Ctrl + `
 
 > 参考资料：
 > 1. [How to switch between terminals in Visual Studio Code? - Stack Overflow](https://stackoverflow.com/questions/48440673/how-to-switch-between-terminals-in-visual-studio-code) 
+
+
+### VSCode中切换terminal tab
+- `Ctrl + pageDown`：
+
