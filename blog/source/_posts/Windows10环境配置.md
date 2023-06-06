@@ -64,8 +64,10 @@ tags:
 ### Windows10查看所有环境变量和指定环境变量
 - **指定环境变量**。`echo %VARIABLE%`
 - **所有环境变量**。`SET | more`
+- 使用配置文件配置环境变量
 > 参考资料：
 > 1. [windows - List all environment variables from the command line - Stack Overflow](https://stackoverflow.com/questions/5327495/list-all-environment-variables-from-the-command-line)
+> 2. [go - Using .env files to set environment variables in Windows - Stack Overflow](https://stackoverflow.com/questions/48607302/using-env-files-to-set-environment-variables-in-windows)
 
 
 

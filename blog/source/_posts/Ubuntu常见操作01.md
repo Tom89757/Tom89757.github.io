@@ -515,7 +515,25 @@ cp -r dir1 dir2
 > 参考资料：
 > 1. [每天学习一个命令: rename 批量修改文件名 | Verne in GitHub](https://einverne.github.io/post/2018/01/rename-files-batch.html)
 
+</br>
+31.编写bash script脚本：
+以下脚本使用copilot编写：
+```bash
+# Find the process IDs of all processes containing "FT"
+pids=$(ps -ef | grep FT | grep train | awk '{print $2}')
 
+# Kill all processes with the found process IDs
+if [ -n "$pids" ]; then
+  echo "Killing processes: $pids"
+  echo "$pids" | xargs -r kill -9
+else
+  echo "No processes found containing 'FT'"
+fi
+```
+> 参考资料：
+> 1. [linux - Add a bash script to path - Stack Overflow](https://stackoverflow.com/questions/20054538/add-a-bash-script-to-path)
+> 2. [WSL2配置代理 - Leaos - 博客园](https://www.cnblogs.com/tuilk/p/16287472.html)
+> 3. [Functions - Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-functions.php)
 
 
 
