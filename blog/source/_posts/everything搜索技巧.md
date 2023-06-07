@@ -6,7 +6,8 @@ categories:
 tags:
 - everything 
 ---
-
+本文记录一下使用everything的搜索技巧。
+<!--more-->
 ### everything配置search history (搜索历史)
 可搭配PowerToys映射快捷键`Ctrl+j/k`到`downarrow/uparrow`。
 > 参考资料：
