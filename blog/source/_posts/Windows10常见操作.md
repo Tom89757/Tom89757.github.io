@@ -109,3 +109,31 @@ Windows 10打开Taskbar设置：
 
 ### PowerToys常见快捷键配置
 - `Ctrl+j -> downarrow`
+- `Ctrl+k -> uparrow`
+- `F4 -> Alt+F4`：关闭当前应用窗口
+- `Shift+4 -> F4`：在Alt-tab Terminal中关闭应用
+- `Ctrl+Shift+j`：在VSCode中映射为`Ctrl+PageDown`，用于切换terminal tab
+- `Ctrl+Shift+k`：在VSCode中映射为`Ctrl+PageUp`，用于切换terminal tab
+- `Ctrl+Space`：用于预览文件，PowerToys中的Peek功能
+- `Win+Shift+t`：用于框选屏幕并识别文字，PowerToys中的Text Extractor功能。
+
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
