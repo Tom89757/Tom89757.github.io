@@ -30,7 +30,6 @@ custom_file_path:
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
-
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -42,28 +41,26 @@ scheme: Muse
 #scheme: Gemini
 
 # Dark Mode
-darkmode: false 
+darkmode: false
 
 # Darkmode JS
 # For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js
 darkmode_js:
   enable: true
   # bottom: '64px' # default: '32px'
-  bottom: '480px' # default: '32px'
-  right: 'unset' # default: '32px'
-  left: '32px' # default: 'unset'
-  time: '0.5s' # default: '0.3s'
-  mixColor: 'transparent' # default: '#fff'
-  backgroundColor: 'transparent' # default: '#fff'
-  buttonColorDark: '#100f2c' # default: '#100f2c'
-  buttonColorLight: '#fff' # default: '#fff'
+  bottom: "480px" # default: '32px'
+  right: "unset" # default: '32px'
+  left: "32px" # default: 'unset'
+  time: "0.5s" # default: '0.3s'
+  mixColor: "transparent" # default: '#fff'
+  backgroundColor: "transparent" # default: '#fff'
+  buttonColorDark: "#100f2c" # default: '#100f2c'
+  buttonColorLight: "#fff" # default: '#fff'
   isActivated: false # default false
   saveInCookies: false # default: true
-  label: '🌓' # default: ''
+  label: "🌓" # default: ''
   autoMatchOsTheme: false # default: true
   libUrl: # Set custom library cdn url for Darkmode.js
-
-
 
 # ---------------------------------------------------------------
 # Site Information Settings
@@ -105,7 +102,6 @@ open_graph:
     #fb_admins: <fb:admin_id>
     #fb_app_id: <fb:app_id>
 
-
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
@@ -128,7 +124,6 @@ menu:
 menu_settings:
   icons: true
   badges: false
-
 
 # ---------------------------------------------------------------
 # Sidebar Settings
@@ -214,7 +209,6 @@ toc:
   # Maximum heading depth of generated toc.
   max_depth: 6
 
-
 # ---------------------------------------------------------------
 # Footer Settings
 # See: https://theme-next.js.org/docs/theme-settings/footer
@@ -252,7 +246,6 @@ footer:
     gongan_num:
     # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
     gongan_icon_url:
-
 
 # ---------------------------------------------------------------
 # Post Settings
@@ -324,7 +317,6 @@ post_edit:
 # Available values: left | right | false
 post_navigation: left
 
-
 # ---------------------------------------------------------------
 # Custom Page Settings
 # See: https://theme-next.js.org/docs/theme-settings/custom-pages
@@ -350,7 +342,6 @@ calendar:
   showDeleted: false
   singleEvents: true
   maxResults: 250
-
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
@@ -386,14 +377,14 @@ codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
   theme:
-    light: base16/monokai 
-    dark: base16/monokai 
-  prism:
-    light: prism-a11y-dark 
-    dark: prism-a11y-dark
+    light: base16/monokai
+    dark: base16/monokai
+  # prism:
+  #   light: prism-a11y-dark
+  #   dark: prism-a11y-dark
   # Add copy button on codeblock
   copy_button:
-    enable: true 
+    enable: true
     # enable: false
     # Available values: default | flat | mac
     style:
@@ -430,7 +421,6 @@ github_banner:
   enable: false
   permalink: https://github.com/yourname
   title: Follow me on GitHub
-
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -483,7 +473,6 @@ font:
     external: true
     family:
 
-
 # ---------------------------------------------------------------
 # SEO Settings
 # See: https://theme-next.js.org/docs/theme-settings/seo
@@ -514,7 +503,6 @@ yandex_site_verification:
 # Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
 baidu_site_verification:
-
 
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
@@ -569,7 +557,6 @@ lazyload: false
 pangu: false
 # pangu: true
 
-
 # mermaid
 # mermaid:
 #   enable: true
@@ -591,7 +578,6 @@ quicklink:
   timeout: 3000
   # Default (true) will attempt to use the fetch() API if supported (rather than link[rel=prefetch]).
   priority: true
-
 
 # ---------------------------------------------------------------
 # Comments Settings
@@ -678,7 +664,6 @@ utterances:
 # For more information: https://posativ.org/isso/
 isso: # <data_isso>
 
-
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
 # See: https://theme-next.js.org/docs/third-party-services/post-widgets
@@ -688,13 +673,12 @@ isso: # <data_isso>
 # To get your ID visit https://widgetpack.com
 rating:
   enable: false
-  id:     # <app_id>
-  color:  "#fc6423"
+  id: # <app_id>
+  color: "#fc6423"
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
-
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
@@ -758,7 +742,6 @@ busuanzi_count:
   post_views: true
   post_views_icon: far fa-eye
 
-
 # ---------------------------------------------------------------
 # Search Services
 # See: https://theme-next.js.org/docs/third-party-services/search-services
@@ -784,7 +767,6 @@ local_search:
   unescape: false
   # Preload the search data when the page loads.
   preload: false
-
 
 # ---------------------------------------------------------------
 # Chat Services
@@ -819,7 +801,6 @@ tidio:
 gitter:
   enable: false
   room:
-
 
 # ---------------------------------------------------------------
 # Tags Settings
@@ -864,7 +845,6 @@ mermaid:
     light: default
     dark: dark
 
-
 # ---------------------------------------------------------------
 # Animation Settings
 # ---------------------------------------------------------------
@@ -902,7 +882,6 @@ canvas_ribbon:
   size: 300 # The width of the ribbon
   alpha: 0.6 # The transparency of the ribbon
   zIndex: -1 # The display level of the ribbon
-
 
 # ---------------------------------------------------------------
 # CDN Settings
