@@ -299,15 +299,62 @@ git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short | tac >commit
 
 </br>
 
+19.git配置pager：
+GitHub Copilot: Git pager是指Git命令行工具中用于分页显示输出的程序。Git pager通常用于显示长时间运行的命令的输出，例如git log或git diff。当输出超过终端窗口的大小时，Git pager会自动将输出分页显示，以便您可以逐页查看输出。
 
+默认情况下，Git pager使用less程序作为分页程序。您可以使用`git config`命令来配置Git pager的选项。例如，您可以使用以下命令将Git pager配置为使用more程序而不是less程序：
+```bash
+git config --global core.pager more
+```
+您还可以使用以下命令来禁用Git pager：
+```bash
+git config --global core.pager ''
+```
+这将使Git命令在终端窗口中直接输出所有内容，而不是分页显示。
+> 参考资料：
+> 1. [How do I prevent 'git diff' from using a pager? - Stack Overflow](https://stackoverflow.com/questions/2183900/how-do-i-prevent-git-diff-from-using-a-pager)
 
+</br>
+20.git bash使用`git diff`，不显示任何东西。
+问题：错误的使用方式
+解决方案：按照下述流程使用：
+```bash
+git add file_name
 
+git diff --cached file_name
+```
+> 参考资料：
+> 1. ['git status' shows changed files, but 'git diff' doesn't - Stack Overflow](https://stackoverflow.com/questions/14564946/git-status-shows-changed-files-but-git-diff-doesnt) 
 
+</br>
+21.git显示警告：
+```bash
+warning: lF will be replaced by CRLF.
+```
+解决方案：
+```bash
+git config --global core.autocrlf false
+```
+> 参考资料：
+> 1. [Windows git "warning: LF will be replaced by CRLF", is that warning tail backward? - Stack Overflow](https://stackoverflow.com/questions/17628305/windows-git-warning-lf-will-be-replaced-by-crlf-is-that-warning-tail-backwar)
 
+</br>
+22.git设置符号链接（软链接 `ln -s`）：
+GitHub Copilot: 您可以使用以下命令将Git配置选项`core.symlinks`设置为`true`：
+```
+git config --global core.symlinks true
+```
+这将在全局范围内设置`core.symlinks`选项，使Git在克隆或检出存储库时保留符号链接。
+如果您只想在当前存储库中设置`core.symlinks`选项，而不是在全局范围内设置它，可以使用以下命令：
+```
+git config core.symlinks true
+```
+这将在当前存储库中设置`core.symlinks`选项。
+请注意，如果您将`core.symlinks`选项设置为`true`，则Git将保留符号链接，并在克隆或检出存储库时创建它们。这可能会导致一些安全问题，因此请谨慎使用。
 
-
-
-
+> 参考资料：
+> 1. [Symbolic link does not work in Git over Windows - Super User](https://superuser.com/questions/1713099/symbolic-link-does-not-work-in-git-over-windows)
+> 2. [Git symbolic links in Windows - Stack Overflow](https://stackoverflow.com/questions/5917249/git-symbolic-links-in-windows)
 
 
 

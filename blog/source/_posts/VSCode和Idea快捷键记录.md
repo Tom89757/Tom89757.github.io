@@ -40,6 +40,7 @@ tags:
 28.`gh`：展示光标所在位置的变量的tooltip（提示）。
 
 
+
 > 参考资料：
 > 1. [vim - How to copy from current position to the end of line in vi - Stack Overflow](https://stackoverflow.com/questions/7764176/how-to-copy-from-current-position-to-the-end-of-line-in-vi)
 > 2. [VSCode 快捷键备忘](https://www.yuque.com/xiaochentongzhi/plyxyr/ekvv3fliaqtzaymt)

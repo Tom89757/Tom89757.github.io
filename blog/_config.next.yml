@@ -376,12 +376,12 @@ body_scrollbar:
 codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
-  theme:
-    light: base16/monokai
-    dark: base16/monokai
-  # prism:
-  #   light: prism-a11y-dark
-  #   dark: prism-a11y-dark
+  # theme:
+  #   light: base16/monokai
+  #   dark: base16/monokai
+  prism:
+    light: prism-okaidia
+    dark: prism-okaidia
   # Add copy button on codeblock
   copy_button:
     enable: true
