@@ -117,7 +117,11 @@ Windows 10打开Taskbar设置：
 - `Ctrl+Space`：用于预览文件，PowerToys中的Peek功能
 - `Win+Shift+t`：用于框选屏幕并识别文字，PowerToys中的Text Extractor功能。
 
-###
+### Windows 10最小化和最大化当前窗口快捷键
+- `Win + downarrow`：最小化当前窗口
+- `Win + uparrow`：最大化当前窗口
+> 参考资料：
+> 1. [What is the Windows hotkey to minimise a single, currently active window? - Super User](https://superuser.com/questions/189194/what-is-the-windows-hotkey-to-minimise-a-single-currently-active-window)
 
 
 

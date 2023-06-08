@@ -340,23 +340,28 @@ git config --global core.autocrlf false
 
 </br>
 22.git设置符号链接（软链接 `ln -s`）：
-GitHub Copilot: 您可以使用以下命令将Git配置选项`core.symlinks`设置为`true`：
+- 打开Windows 10中的开发者模式（"Developer Mode"），从而给`mklink`权限
+- 使得git中symbol links生效：
+```bash
+git config --global core.symlinks true # 全局生效
+git config core.symlinks true # 当前仓库生效
 ```
-git config --global core.symlinks true
+- 添加symbol link链接：
+```bash
+mklink C:\Users\26899\.bash_aliases D:\Desktop\dotfiles\git\.bash_aliases
 ```
-这将在全局范围内设置`core.symlinks`选项，使Git在克隆或检出存储库时保留符号链接。
-如果您只想在当前存储库中设置`core.symlinks`选项，而不是在全局范围内设置它，可以使用以下命令：
-```
-git config core.symlinks true
-```
-这将在当前存储库中设置`core.symlinks`选项。
-请注意，如果您将`core.symlinks`选项设置为`true`，则Git将保留符号链接，并在克隆或检出存储库时创建它们。这可能会导致一些安全问题，因此请谨慎使用。
-
 > 参考资料：
 > 1. [Symbolic link does not work in Git over Windows - Super User](https://superuser.com/questions/1713099/symbolic-link-does-not-work-in-git-over-windows)
 > 2. [Git symbolic links in Windows - Stack Overflow](https://stackoverflow.com/questions/5917249/git-symbolic-links-in-windows)
 
-
+</br>
+23.git bash配置定制（custom）的`git-prompt.sh`文件：
+1. 找到`git-prompt.sh`文件，在Git安装目录下。
+2. 将其复制到`~/.config/git/`目录下。
+3. 即可编辑上述复制的`git-prompt.sh`文件对git prompt进行定制。
+PS：同理，可以对使用oh-my-zsh的git prompt进行定制，其文件位于`/c/Users/26899/.oh-my-zsh/plugins/gitfast/git-prompt.sh`。
+> 参考资料：
+> 1. [How to change the display name in Git bash prompt](https://www.brainstormcreative.co.uk/git-bash/how-to-change-the-display-name-in-git-bash/)
 
 
 
