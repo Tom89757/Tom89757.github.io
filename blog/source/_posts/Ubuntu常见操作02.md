@@ -328,7 +328,16 @@ MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
 > 2. [How to set or change timezone in linux](https://linuxize.com/post/how-to-set-or-change-timezone-in-linux/)
 > 3. [关于Linux中ls -l显示时间不全的问题_nui111的博客-CSDN博客](https://blog.csdn.net/nui111/article/details/42275481)
 
-
+</br>
+27.使用`ln -s`将`dotfiles`仓库中的文件链接到`~`。
+```bash
+ln -s /mnt/d/Desktop/dotfiles/wsl/.zshrc ~/.zshrc
+ln -s /mnt/d/Desktop/dotfiles/wsl/.bash_aliases ~/.bash_aliases
+ln -s /mnt/d/Desktop/dotfiles/wsl/.bash_path ~/.bash_path
+ln -s /mnt/d/Desktop/dotfiles/wsl/.bashrc ~/.bashrc
+ln -s /mnt/d/Desktop/dotfiles/wsl/.vimrc ~/.vimrc
+ln -s /mnt/d/Desktop/dotfiles/wsl/.vim/colors/monokai.vim ~/.vim/colors/monokai.vim
+```
 
 
 

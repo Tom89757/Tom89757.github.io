@@ -46,8 +46,10 @@ tree -I '*png|*pyc|*.jpg'
 > 2. [How do we specify multiple ignore patterns for `tree` command? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/47805/how-do-we-specify-multiple-ignore-patterns-for-tree-command)
 
 
-### trash
+### trash-cli
 使用`trash`替代`rm`，更加安全，类似回收站
 
 > 参考资料：
 > 1. [trash-cli · PyPI](https://pypi.org/project/trash-cli/)
+
+

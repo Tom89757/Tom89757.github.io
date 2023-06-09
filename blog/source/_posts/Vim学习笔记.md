@@ -133,6 +133,7 @@ git config --global --add oh-my-zsh.hide-dirty 1
 > 参考资料：
 > 1. [Moving lines up or down](https://vim.fandom.com/wiki/Moving_lines_up_or_down#:~:text=Mappings%20to%20move%20lines,-The%20following%20mappings&text=In%20normal%20mode%20or%20in,move%20the%20current%20line%20up.)
 > 2. [key bindings - How can I easily move a line? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/2674/how-can-i-easily-move-a-line)
+> 3. [vim - Any mapping in vimrc with Alt isn't working - Stack Overflow](https://stackoverflow.com/questions/49052619/any-mapping-in-vimrc-with-alt-isnt-working)
 
 
 
