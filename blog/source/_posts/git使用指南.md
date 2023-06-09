@@ -379,6 +379,21 @@ npm install --global trash-cli
 > 参考资料：
 > 1. [trash-cli - npm](https://www.npmjs.com/package/trash-cli)
 
+</br>
+26.使用`mklink`命令将`.vimrc`和`monokai.vim`等文件对`dotfiles`仓库中的文件进行软链接：
+```bash
+mklink C:\Users\A\.vimrc D:\Desktop\dotfiles\git\.vimrc
+mklink C:\Users\A\.vim\colors\monokai.vim D:\Desktop\dotfiles\git\.vim\colors\monokai.vim
+```
+
+</br>
+27.使用`mklink`将`.zshrc`，`.bash_aliases`，`.bash_path`，`.bashrc`，`.bash_profile`链接到`dotfiles`仓库中的文件。
+```bash
+mklink C:\Users\A\.zshrc D:\Desktop\dotfiles\git\.zshrc
+mklink C:\Users\A\.bash_aliases D:\Desktop\dotfiles\git\.bash_aliases
+mklink C:\Users\A\.bash_path D:\Desktop\dotfiles\git\.bash_path
+mklink C:\Users\A\.bash_profile D:\Desktop\dotfiles\git\.bash_profile
+```
 
 
 

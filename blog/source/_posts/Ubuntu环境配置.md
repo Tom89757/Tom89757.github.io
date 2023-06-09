@@ -16,11 +16,17 @@ tags:
 - `pip3 install tldr`：linux中安装
 使用：
 - `tldr git`：即可查看git的用法，第一次使用时需要建立索引
+- 给git bash配置颜色。参考资料2/3/4。
+```bash
+mklink C:\Users\A\.oh-my-zsh\custom\plugins\tldr\_tldr D:\Desktop\dotfiles\git\tldr-node-client\bin\completion\zsh\_tldr
+mklink C:\Users\A\.tldrrc D:\Desktop\dotfiles\git\.tldrrc
+```
 PS：根据参考资料2和3，在gitbash中`tldr`的输出没有颜色，此时可以在`.zshrc`中添加`export FORCE_COLOR=2`。
 > 参考资料：
 > 1. [GitHub - tldr-pages/tldr: 📚 Collaborative cheatsheets for console commands](https://github.com/tldr-pages/tldr)
 > 2. [How to get colors? · Issue #1262 · tldr-pages/tldr · GitHub](https://github.com/tldr-pages/tldr/issues/1262)
 > 3. [tldr doesnt pick color config from .tldrrc file · Issue #276 · tldr-pages/tldr-node-client · GitHub](https://github.com/tldr-pages/tldr-node-client/issues/276)
+> 4. [GitHub - tldr-pages/tldr-node-client: Node.js command-line client for tldr pages](https://github.com/tldr-pages/tldr-node-client)
 
 ### tree 
 在不使用sudo的情况下安装tree命令：
