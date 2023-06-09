@@ -121,3 +121,9 @@ git config --global --add oh-my-zsh.hide-dirty 1
 > 参考资料：
 > 1. [Vim doesn't show a certain file with colors - Stack Overflow](https://stackoverflow.com/questions/19657384/vim-doesnt-show-a-certain-file-with-colors)
 > 2. [vim - Persistent :set syntax for a given filetype? - Stack Overflow](https://stackoverflow.com/questions/11666170/persistent-set-syntax-for-a-given-filetype)
+
+
+### Vim识别文件并语法高亮
+
+> 参考资料：
+> 1. [gvimrc - How to make my vim recognize filetype and load the corresponding syntax file - Super User](https://superuser.com/questions/620374/how-to-make-my-vim-recognize-filetype-and-load-the-corresponding-syntax-file)
