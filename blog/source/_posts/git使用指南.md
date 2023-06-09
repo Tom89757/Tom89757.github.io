@@ -363,9 +363,21 @@ PS：同理，可以对使用oh-my-zsh的git prompt进行定制，其文件位�
 > 参考资料：
 > 1. [How to change the display name in Git bash prompt](https://www.brainstormcreative.co.uk/git-bash/how-to-change-the-display-name-in-git-bash/)
 
+</br>
+24.git bash中使用`tree`命令。在`.bash_aliases`中添加：
+```bash
+alias tree='cmd //c tree //a'
+```
+> 参考资料：
+> 1. [How to add the 'tree' command to git-bash in Windows? - Super User](https://superuser.com/questions/531592/how-to-add-the-tree-command-to-git-bash-in-windows)
 
-
-
+</br>
+25.git bash中使用`trash`替代`rm`，类似回收站。
+```bash
+npm install --global trash-cli
+```
+> 参考资料：
+> 1. [trash-cli - npm](https://www.npmjs.com/package/trash-cli)
 
 
 

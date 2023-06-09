@@ -21,3 +21,27 @@ PS：根据参考资料2和3，在gitbash中`tldr`的输出没有颜色，此时
 > 1. [GitHub - tldr-pages/tldr: 📚 Collaborative cheatsheets for console commands](https://github.com/tldr-pages/tldr)
 > 2. [How to get colors? · Issue #1262 · tldr-pages/tldr · GitHub](https://github.com/tldr-pages/tldr/issues/1262)
 > 3. [tldr doesnt pick color config from .tldrrc file · Issue #276 · tldr-pages/tldr-node-client · GitHub](https://github.com/tldr-pages/tldr-node-client/issues/276)
+
+### tree 
+在不使用sudo的情况下安装tree命令：
+```bash
+mkdir ~/deb
+cd ~/deb
+apt download tree
+dpkg-deb -xv ./*deb ./
+export PATH="/home/FT/deb/usr/bin:$PATH" # 加入路径
+```
+使用：
+```bash
+tree -I '*png|*pyc|*.jpg'
+```
+> 参考资料：
+> 1. [apt - How to install tree on Ubuntu without sudo right? - Ask Ubuntu](https://askubuntu.com/questions/1322467/how-to-install-tree-on-ubuntu-without-sudo-right)
+> 2. [How do we specify multiple ignore patterns for `tree` command? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/47805/how-do-we-specify-multiple-ignore-patterns-for-tree-command)
+
+
+### trash
+使用`trash`替代`rm`，更加安全，类似回收站
+
+> 参考资料：
+> 1. [trash-cli · PyPI](https://pypi.org/project/trash-cli/)
