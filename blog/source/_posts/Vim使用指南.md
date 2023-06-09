@@ -28,6 +28,8 @@ tags:
 16. [NvChad](https://github.com/NvChad/NvChad)：NvChad，另一个neovim的变种。
 17. [玩转Vim 从放弃到爱不释手-Vim入门-慕课网](https://www.imooc.com/learn/1129)：b站PegasusWang出品的免费Vim慕课教程
 18. [vim tips and tricks: home](https://www.cs.swarthmore.edu/oldhelp/vim/home.html)：Vim在线交互学习网站。
+19. [Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Vim_Tips_Wiki)：vim tips
+20. [Vim Cheat Sheet](https://vim.rtorr.com/lang/zh_cn)：vim常用命令大全
 
 ### 碰到的一些问题的解决方法
 1. [No C compiler found · Issue #274 · LunarVim/Neovim-from-scratch · GitHub](https://github.com/LunarVim/Neovim-from-scratch/issues/274)
@@ -226,12 +228,13 @@ dap.configurations.java = {
 > 4. [GitHub - mfussenegger/nvim-jdtls: Extensions for the built-in LSP support in Neovim for eclipse.jdt.ls](https://github.com/mfussenegger/nvim-jdtls)
 
 </br>
-6.Vim模式在中文输入法下的问题。
+### Vim模式在中文输入法下的问题。
 > 参考资料：
 > 1. [Vim模式在中文输入法下的问题 - 建议反馈 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/11234/2)
 
 </br>
-7.对Obsidian的`.obsidian.vimrc`文件配置`Ctrl`键（对Obsidian而言需要安装Vimrc Support插件）
+### Obsidian vim模式配置
+对Obsidian的`.obsidian.vimrc`文件配置`Ctrl`键（对Obsidian而言需要安装Vimrc Support插件）
 ```.vimrc
 "set some Ctrl- shortcuts"
 nmap <C-[> <C-d> #映射为outdent，不能生效
@@ -246,7 +249,8 @@ PS：
 > 5. [vim tips and tricks: indenting](https://www.cs.swarthmore.edu/oldhelp/vim/indenting.html#:~:text=To%20indent%20the%20current%20line,by%20sw%20(repeat%20with%20.%20)&text=then%20try%20hitting%20the%20F5,or%20just%20%3Aset%20paste%20).)
 
 </br>
-8.设置vim中的yy可以copy to clipboard：
+### vim中yy复制到系统剪贴板
+设置vim中的yy可以copy to clipboard：
 - Obsidian配置，在`.obsidian.vimrc`文件中添加：
 ```.vimrc
 "Yank to system clipboard"
@@ -260,27 +264,28 @@ set clipboard=unnamed #重启后生效
 >3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
 
 </br>
-9.Vim中各种map模式nmap/imap等详解：
+### Vim中各种map模式nmap/imap等详解：
 > 参考资料：
 > 1. [What is the difference between the remap, noremap, nnoremap and vnoremap mapping commands in Vim? - Stack Overflow](https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping)
 > 2. [key bindings - What is the difference between unmap and mapping to  nop? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16392/what-is-the-difference-between-unmap-and-mapping-to-nop?noredirect=1)
 
 </br>
-10.`Ctrl`/`Shift`/方向键/Fn键的映射：
+### `Ctrl`/`Shift`/方向键/Fn键的映射：
 
 > 参考资料：
 > 1. [vim - Map Shift + F3 in .vimrc - Super User](https://superuser.com/questions/508655/map-shift-f3-in-vimrc)
 > 2. [vim: how to specify arrow keys - Stack Overflow](https://stackoverflow.com/questions/7542381/vim-how-to-specify-arrow-keys)
 
 </br>
-11.`.vimrc`配置文件中`<CR>`的含义：
+### `.vimrc`配置文件中`<CR>`的含义：
 > 参考资料：
-> 1. [What is the meaning of a <CR> at the end of some vim mappings? - Stack Overflow](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings)
+> 1. [What is the meaning of a CR at the end of some vim mappings? - Stack Overflow](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings)
 
 </br>
 
 </br>
-12.Ubuntu和wsl中进行基础的`.vimrc`配置：
+### Ubuntu和wsl中vim配置
+Ubuntu和wsl中进行基础的`.vimrc`配置：
 
 > 参考资料：
 > 1. [A basic .vimrc file that will serve as a good template on which to build. · GitHub](https://gist.github.com/simonista/8703722)

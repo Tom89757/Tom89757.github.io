@@ -127,3 +127,31 @@ git config --global --add oh-my-zsh.hide-dirty 1
 
 > 参考资料：
 > 1. [gvimrc - How to make my vim recognize filetype and load the corresponding syntax file - Super User](https://superuser.com/questions/620374/how-to-make-my-vim-recognize-filetype-and-load-the-corresponding-syntax-file)
+
+### VSCode配置行移动 (Moving lines up or down)
+
+> 参考资料：
+> 1. [Moving lines up or down](https://vim.fandom.com/wiki/Moving_lines_up_or_down#:~:text=Mappings%20to%20move%20lines,-The%20following%20mappings&text=In%20normal%20mode%20or%20in,move%20the%20current%20line%20up.)
+> 2. [key bindings - How can I easily move a line? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/2674/how-can-i-easily-move-a-line)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
