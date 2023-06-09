@@ -92,6 +92,10 @@ return
 
 
 ### 设置脚本开机自启动
-
+- 对脚本创建快捷方式
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230608221430.png)
+- `Win+r -> shell:startup`：打开开机启动项的放置位置，在`C:\Users\A\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`目录。
+- 将创建的快捷方式放置在上述目录。
 > 参考资料：
 > 1. [Frequently Asked Questions (FAQ) | AutoHotkey](https://www.autohotkey.com/docs/v1/FAQ.htm)
+> 2. [How to Launch AutoHotkey Scripts At Startup (4k) - YouTube](https://www.youtube.com/watch?v=qo3XIAbHbCo&t=14s&ab_channel=CarsonClark) 

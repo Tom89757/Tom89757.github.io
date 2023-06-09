@@ -494,3 +494,7 @@ Ctrl + `
 ### VSCode中切换terminal tab
 - `Ctrl + pageDown`：
 
+### VSCode出现  "Error while fetching extensions. XHR failed"
+
+> 参考资料：
+> 1. [marketplace - Visual Studio Code "Error while fetching extensions. XHR failed" - Stack Overflow](https://stackoverflow.com/questions/70177216/visual-studio-code-error-while-fetching-extensions-xhr-failed)
