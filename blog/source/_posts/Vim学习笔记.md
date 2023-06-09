@@ -113,3 +113,11 @@ git config --global --add oh-my-zsh.hide-dirty 1
 > 参考资料：
 > 1. [GitHub - VSCodeVim/Vim: Vim for Visual Studio Code](https://github.com/VSCodeVim/Vim)
 > 2. [key mapping - Disable or remove default vim keybinding - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/180926/disable-or-remove-default-vim-keybinding)
+
+
+### Vim对文件显示颜色
+- `:set syntax=json`：临时生效，使得`json`文件具有颜色。还有`:set syntax=html`等方式。
+- 
+> 参考资料：
+> 1. [Vim doesn't show a certain file with colors - Stack Overflow](https://stackoverflow.com/questions/19657384/vim-doesnt-show-a-certain-file-with-colors)
+> 2. [vim - Persistent :set syntax for a given filetype? - Stack Overflow](https://stackoverflow.com/questions/11666170/persistent-set-syntax-for-a-given-filetype)
