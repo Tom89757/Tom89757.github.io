@@ -395,9 +395,19 @@ mklink C:\Users\A\.bash_path D:\Desktop\dotfiles\git\.bash_path
 mklink C:\Users\A\.bash_profile D:\Desktop\dotfiles\git\.bash_profile
 ```
 
+</br>
+28.将git配置文件链接到`dotfiles`仓库：
+```bash
+mklink C:\Users\A\.gitconfig D:\Desktop\dotfiles\git\.gitconfig
+mklink D:\Develop\Git\etc\gitconfig D:\Desktop\dotfiles\git\gitconfig
+```
 
+</br>
+29.配置`git-delta`，高亮工具，可以使得`git`, `diff`和`grep`等输出高亮。
 
-
+> 参考资料：
+> 1. [GitHub - dandavison/delta: A syntax-highlighting pager for git, diff, and grep output](https://github.com/dandavison/delta)
+> 2. [git-delta 终端代码 diff 也很酷！_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Jo4y1N7fi/?vd_source=71b57f2bb132ac1f88ed255cad4a06a6)
 
 
 

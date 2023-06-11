@@ -53,3 +53,9 @@ tree -I '*png|*pyc|*.jpg'
 > 1. [trash-cli · PyPI](https://pypi.org/project/trash-cli/)
 
 
+### bat
+和cat功能类似，具有语法高亮
+- `sudo apt install bat`：在Ubuntu上安装
+- `choco install bat`：在windows10上安装
+> 参考资料：
+> 1. [GitHub - sharkdp/bat: A cat(1) clone with wings.](https://github.com/sharkdp/bat/#installation)

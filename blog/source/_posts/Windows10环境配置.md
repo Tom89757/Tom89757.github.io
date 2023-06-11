@@ -69,7 +69,19 @@ tags:
 > 1. [windows - List all environment variables from the command line - Stack Overflow](https://stackoverflow.com/questions/5327495/list-all-environment-variables-from-the-command-line)
 > 2. [go - Using .env files to set environment variables in Windows - Stack Overflow](https://stackoverflow.com/questions/48607302/using-env-files-to-set-environment-variables-in-windows)
 
-
+### Vimium-C配置
+重新映射快捷键：
+```bash
+map F LinkHints.activate
+map f LinkHints.activateOpenInNewTab
+map O Vomnibar.activate
+map o Vomnibar.activateInNewTab
+map B Vomnibar.activateBookmarks
+map b Vomnibar.activateBookmarksInNewTab
+```
+> 参考资料：
+> 1. [GitHub - gdh1995/vimium-c: A keyboard shortcut browser extension for keyboard-based navigation and tab operations with an advanced omnibar](https://github.com/gdh1995/vimium-c)
+> 2. [shortcut - How to Remap a Key to Another Key in Vimium - Stack Overflow](https://stackoverflow.com/questions/66280656/how-to-remap-a-key-to-another-key-in-vimium)
 
 
 
