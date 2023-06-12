@@ -338,7 +338,11 @@ ln -s /mnt/d/Desktop/dotfiles/wsl/.bashrc ~/.bashrc
 ln -s /mnt/d/Desktop/dotfiles/wsl/.vimrc ~/.vimrc
 ln -s /mnt/d/Desktop/dotfiles/wsl/.vim/colors/monokai.vim ~/.vim/colors/monokai.vim
 ```
+</br>
+28.Linux的内存统计：
 
+> 参考资料：
+> 1. [聊聊 Linux 的内存统计 | 浅墨的部落格](https://www.0xffffff.org/2019/07/17/42-linux-memory-monitor/) 
 
 
 
