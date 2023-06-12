@@ -30,6 +30,7 @@ tags:
 5. [EECS Course WEB Sites](https://inst.eecs.berkeley.edu/classes-eecs.html)
 6. [UCB cs roadmap](https://hkn.eecs.berkeley.edu/courseguides)
 7. [分享各类电子书（政治、IT、科普、历史、等，97本）](https://program-think.blogspot.com/2021/05/share-books.html)
+8. [6 courses at Massachusetts Institute of Technology | Coursicle MIT](https://www.coursicle.com/mit/courses/6/)：MIT课程
 
 ### 刷题
 #### leetcode
