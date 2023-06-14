@@ -22,3 +22,6 @@ ngrok http 5050 --host-header="localhost:5050"
 > 5. [reactjs - Invalid Host Header when ngrok tries to connect to React dev server - Stack Overflow](https://stackoverflow.com/questions/45425721/invalid-host-header-when-ngrok-tries-to-connect-to-react-dev-server) 
 > 6. [google-auth-library - npm](https://www.npmjs.com/package/google-auth-library)
 > 7. [Google Identity Services Login with React (2023 React Google Login) - YouTube](https://www.youtube.com/watch?v=roxC8SMs7HU&ab_channel=CooperCodes)
+> 8. [从 Google 登录服务迁移  |  Authentication  |  Google for Developers](https://developers.google.com/identity/gsi/web/guides/migration?hl=zh-cn#redirect-mode_1)
+> 9. [@react-oauth/google - npm](https://www.npmjs.com/package/@react-oauth/google)
+> 10. [Google Login Integration with React and npm || How to add Google login button in website || #google - YouTube](https://www.youtube.com/watch?v=n3P55o3Gfy0)
