@@ -409,7 +409,13 @@ mklink D:\Develop\Git\etc\gitconfig D:\Desktop\dotfiles\git\gitconfig
 > 1. [GitHub - dandavison/delta: A syntax-highlighting pager for git, diff, and grep output](https://github.com/dandavison/delta)
 > 2. [git-delta 终端代码 diff 也很酷！_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Jo4y1N7fi/?vd_source=71b57f2bb132ac1f88ed255cad4a06a6)
 
-
+</br>
+30.git新建分支，不保留当前分支文件：
+```bash
+git switch --orphan <new-branch-name> 
+```
+> 参考资料：
+> 1. [git - Create empty branch on GitHub - Stack Overflow](https://stackoverflow.com/questions/34100048/create-empty-branch-on-github)
 
 
 
