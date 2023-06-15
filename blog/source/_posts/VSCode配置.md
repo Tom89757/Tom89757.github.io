@@ -505,3 +505,9 @@ Ctrl + `
 
 > 参考资料：
 > 1. [Nerd Fonts - Iconic font aggregator, glyphs/icons collection, & fonts patcher](https://www.nerdfonts.com/font-downloads)
+
+### VSCode配置终端图标
+
+>参考资料：
+>1. [Terminal Appearance in Visual Studio Code](https://code.visualstudio.com/docs/terminal/appearance)
+>2. [Terminal Profiles in Visual Studio Code](https://code.visualstudio.com/docs/terminal/profiles)
