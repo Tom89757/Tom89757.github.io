@@ -14,6 +14,9 @@ tags:
 npm install -g ngrok
 ngrok http 5050 --host-header="localhost:5050"
 ```
+PS：由于server和client使用了两个端口，需要付费，无法满足要求
+#### Google Cloud配置
+根据参考资料11使用`react-oauth/google`库进行google登录，
 > 参考资料：
 > 1. [Setting up OAuth 2.0 - Google Cloud Platform Console Help](https://support.google.com/cloud/answer/6158849#authorized-domains&zippy=%2Cauthorized-domains%2Cstep-configure-your-app-to-use-the-new-secret%2Cuser-consent%2Cweb-applications)
 > 2. [localhost - OAuth: how to test with local URLs? - Stack Overflow](https://stackoverflow.com/questions/10456174/oauth-how-to-test-with-local-urls)
@@ -25,3 +28,4 @@ ngrok http 5050 --host-header="localhost:5050"
 > 8. [从 Google 登录服务迁移  |  Authentication  |  Google for Developers](https://developers.google.com/identity/gsi/web/guides/migration?hl=zh-cn#redirect-mode_1)
 > 9. [@react-oauth/google - npm](https://www.npmjs.com/package/@react-oauth/google)
 > 10. [Google Login Integration with React and npm || How to add Google login button in website || #google - YouTube](https://www.youtube.com/watch?v=n3P55o3Gfy0)
+> 11. [javascript - Popup closed error by react google login package - Stack Overflow](https://stackoverflow.com/questions/72250735/popup-closed-error-by-react-google-login-package)

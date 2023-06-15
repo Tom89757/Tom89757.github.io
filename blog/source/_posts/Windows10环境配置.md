@@ -83,6 +83,15 @@ map b Vomnibar.activateBookmarksInNewTab
 > 1. [GitHub - gdh1995/vimium-c: A keyboard shortcut browser extension for keyboard-based navigation and tab operations with an advanced omnibar](https://github.com/gdh1995/vimium-c)
 > 2. [shortcut - How to Remap a Key to Another Key in Vimium - Stack Overflow](https://stackoverflow.com/questions/66280656/how-to-remap-a-key-to-another-key-in-vimium)
 
+### PowerShell安装oh-my-posh
+
+> 参考资料：
+>1.  [Oh My Posh：Windows 下的Oh my zsh - 掘金](https://juejin.cn/post/7210596158934433853)
+>2. [I am not able to install a minimal theme for oh-my-posh · Issue #3756 · JanDeDobbeleer/oh-my-posh · GitHub](https://github.com/JanDeDobbeleer/oh-my-posh/issues/3756)
+>3. [Home | Oh My Posh](https://ohmyposh.dev/)
+>4. [GitHub - devblackops/Terminal-Icons: A PowerShell module to show file and folder icons in the terminal](https://github.com/devblackops/Terminal-Icons)
+>5. [GitHub - PowerShell/PSReadLine: A bash inspired readline implementation for PowerShell](https://github.com/PowerShell/PSReadLine#upgrading)
+>6. [icons don't display in VS code integrated terminal after setting terminal.integrated.fontFamily · Issue #671 · romkatv/powerlevel10k · GitHub](https://github.com/romkatv/powerlevel10k/issues/671)
 
 
 

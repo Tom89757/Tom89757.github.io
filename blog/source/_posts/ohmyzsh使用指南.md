@@ -139,3 +139,9 @@ fi
 > 3. [Configuration wizard missing · Issue #1840 · romkatv/powerlevel10k · GitHub](https://github.com/romkatv/powerlevel10k/issues/1840)
 
 
+### VSCode Icons图标显示
+方案一： 安装`MesloLGS NF`字体并设置。
+方案二：下载参考资料2中的扩展`Fira Code`字体。
+> 参考资料：
+> 1. [icons don't display in VS code integrated terminal after setting terminal.integrated.fontFamily · Issue #671 · romkatv/powerlevel10k · GitHub](https://github.com/romkatv/powerlevel10k/issues/671)
+> 2. [Missing icons for oh-my-zsh · tonsky/FiraCode · Discussion #1285 · GitHub](https://github.com/tonsky/FiraCode/discussions/1285)

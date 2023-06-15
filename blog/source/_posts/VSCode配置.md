@@ -498,3 +498,10 @@ Ctrl + `
 
 > 参考资料：
 > 1. [marketplace - Visual Studio Code "Error while fetching extensions. XHR failed" - Stack Overflow](https://stackoverflow.com/questions/70177216/visual-studio-code-error-while-fetching-extensions-xhr-failed)
+
+
+### VSCode配置终端字体
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230615115430.png)
+
+> 参考资料：
+> 1. [Nerd Fonts - Iconic font aggregator, glyphs/icons collection, & fonts patcher](https://www.nerdfonts.com/font-downloads)
