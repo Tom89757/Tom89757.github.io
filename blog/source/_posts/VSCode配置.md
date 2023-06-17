@@ -507,7 +507,17 @@ Ctrl + `
 > 1. [Nerd Fonts - Iconic font aggregator, glyphs/icons collection, & fonts patcher](https://www.nerdfonts.com/font-downloads)
 
 ### VSCode配置终端图标
-
+```json
+"Git Bash": {
+  "source": "Git Bash",
+  "icon": "github"
+},
+"Ubuntu (WSL)": {
+  "path": "C:\\WINDOWS\\System32\\wsl.exe",
+  "args": ["-d", "Ubuntu"],
+  "icon": "terminal-ubuntu"
+}
+```
 >参考资料：
 >1. [Terminal Appearance in Visual Studio Code](https://code.visualstudio.com/docs/terminal/appearance)
 >2. [Terminal Profiles in Visual Studio Code](https://code.visualstudio.com/docs/terminal/profiles)
