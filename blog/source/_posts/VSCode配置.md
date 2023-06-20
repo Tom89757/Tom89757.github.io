@@ -461,7 +461,8 @@ PS：VSCode中跳出文件编辑窗口后`<leader>`键和其它键不起作用�
 {
     "settingsSync.ignoredSettings": [
 	    "editor.fontSize",
-		"-python.defaultInterpreterPath"
+		"-python.defaultInterpreterPath",
+		"remote.SSH.configFile",
     ]
 }
 ```
