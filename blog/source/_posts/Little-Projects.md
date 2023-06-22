@@ -19,4 +19,5 @@ tags:
 7. [Textual tutorial - build a TODO app in Python](https://mathspp.com/blog/textual-tutorial-build-a-todo-app-in-python)：使用Python构建一个TODO app。
 8. [GitHub - gaogaotiantian/biliscope: Bilibili chrome extension](https://github.com/gaogaotiantian/biliscope)：一个简单的查看b站up主信息的谷歌插件。
 9. [GitHub - antirez/adventofcode2022: A few Advent of Code puzzles (2022 edition) in C](https://github.com/antirez/adventofcode2022)：redis作者antirez仓库，使用C解决18道谜题。
+10. [用油猴制作一个 Jenkins 日志窗口 | 卡瓦邦噶！](https://www.kawabangga.com/posts/5166)：油猴脚本
 ...持续更新中
