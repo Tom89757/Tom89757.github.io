@@ -350,6 +350,11 @@ git config core.symlinks true # 当前仓库生效
 ```bash
 mklink C:\Users\26899\.bash_aliases D:\Desktop\dotfiles\git\.bash_aliases
 ```
+- 添加文件夹链接：
+```bash
+
+mklink /d D:\Desktop\dotfiles\git\.oh-my-zsh C:\Users\26899\.oh-my-zsh
+```
 > 参考资料：
 > 1. [Symbolic link does not work in Git over Windows - Super User](https://superuser.com/questions/1713099/symbolic-link-does-not-work-in-git-over-windows)
 > 2. [Git symbolic links in Windows - Stack Overflow](https://stackoverflow.com/questions/5917249/git-symbolic-links-in-windows)
