@@ -90,6 +90,12 @@ curl https://www.youtube.com | head -1
 > 2. [window alias给cmd命令起别名](https://www.cnblogs.com/onelikeone/p/10783497.html)
 > 3. [Windows版Grep – findstr示例](https://blog.csdn.net/cyan20115/article/details/106551191)
 
+
+### cmd中文乱码
+- `chcp 65001`：临时改为UTF-8编码。
+> 参考资料：
+> 1. [CMD中文乱码 - 码农在路上 - 博客园](https://www.cnblogs.com/lzmrex/articles/12553666.html)
+
 ### Scoop
 Scoop是Windows系统下一款流行的包管理工具
 推荐包：

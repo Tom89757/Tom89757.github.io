@@ -30,3 +30,10 @@ fi
 > 参考资料：
 > 1. [How to Search in My ZSH History](https://linuxhint.com/search-in-my-zsh-history/)
 
+
+### One word accept
+- `Ctrl+down` / `Ctrl+j`：接受建议
+- `Ctrl+right`：接受一个work
+> 参考资料：
+> 1. [One word accept · Issue #627 · zsh-users/zsh-autosuggestions · GitHub](https://github.com/zsh-users/zsh-autosuggestions/issues/627)
+
