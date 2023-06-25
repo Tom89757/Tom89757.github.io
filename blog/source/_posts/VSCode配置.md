@@ -522,3 +522,9 @@ Ctrl + `
 >参考资料：
 >1. [Terminal Appearance in Visual Studio Code](https://code.visualstudio.com/docs/terminal/appearance)
 >2. [Terminal Profiles in Visual Studio Code](https://code.visualstudio.com/docs/terminal/profiles)
+
+
+### VSCode Neovim
+
+> 参考资料：
+> 1. [vscode-nvim - 云崖君 - 博客园](https://www.cnblogs.com/YunyaSir/p/15523927.html)
