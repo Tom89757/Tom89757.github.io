@@ -528,3 +528,8 @@ Ctrl + `
 
 > 参考资料：
 > 1. [vscode-nvim - 云崖君 - 博客园](https://www.cnblogs.com/YunyaSir/p/15523927.html)
+
+### VSCode设置隐藏文件
+
+> 参考资料：
+> 1. [如何在VSCode设置/取消隐藏文件_zwkkkk1的博客-CSDN博客](https://blog.csdn.net/zwkkkk1/article/details/93742821)
