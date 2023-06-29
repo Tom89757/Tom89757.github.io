@@ -41,6 +41,7 @@ tags:
 29.`>`和`<`，对选择的代码进行缩进。
 30.`Alt+Shift+F`：对文件进行格式化。
 31.`Alt`+鼠标点击，在指定位置创建多光标。
+32.在`visual`模式下选中单词后，按下`gb`可以选择下一个该单词的出现，从而实现多光标编辑。
 
 > 参考资料：
 > 1. [vim - How to copy from current position to the end of line in vi - Stack Overflow](https://stackoverflow.com/questions/7764176/how-to-copy-from-current-position-to-the-end-of-line-in-vi)
