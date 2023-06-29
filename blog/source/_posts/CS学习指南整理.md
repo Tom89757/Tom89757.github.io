@@ -87,6 +87,9 @@ tags:
 5.  [TutHub.io](https://www.tuthub.io/)：其宗旨为不要在不好的编程教程上浪费时间，可以用来搜索免费和付费的编程教程
 6. [General APIs](https://m3o.com/explore)：整理收集了各种通用API
 
+### 百科
+1. [Britannica](https://www.britannica.com/science/)
+
 
 ### 入门资料收集
 用于上手项目，快速入门
@@ -119,7 +122,7 @@ tags:
 ### 前端
 1. [前言 | 大厂面试题每日一题](https://q.shanyue.tech/engineering/)：程序员山月整理的资料
 
-### 工作网站
+### 找工作网站
 1. [Flexible Java Jobs | Indeed.com](https://www.indeed.com/q-Java-jobs.html?vjk=dd38219803504422)
 2. [Rust Jobs in Web3 - Dec 2022](https://web3.career/rust-jobs)
 3. [Rust Jobs | RustJobs.dev](https://rustjobs.dev/)
