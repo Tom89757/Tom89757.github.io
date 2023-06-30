@@ -16,4 +16,5 @@ tags:
 4. [同一台电脑配置多个git账号 · Issue #2 · jawil/notes · GitHub](https://github.com/jawil/notes/issues/2)：同一主机配置多个git账号。
 5. [Git 如何恢复到之前的提交](https://www.freecodecamp.org/chinese/news/git-reverting-to-previous-commit-how-to-revert-to-last-commit/)
 6. [版本回退 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192)
+7. [Sane defaults for Github repositories | wiringbits](https://wiringbits.net/blog/github-repository-setup)：调整git仓库的默认设置
 
