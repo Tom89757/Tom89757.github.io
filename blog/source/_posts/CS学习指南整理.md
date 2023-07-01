@@ -86,6 +86,7 @@ tags:
 4. [流行项目生命周期](https://endoflife.date/)：整理各种流行的大型项目的生命周期，从发布、更新到死亡
 5.  [TutHub.io](https://www.tuthub.io/)：其宗旨为不要在不好的编程教程上浪费时间，可以用来搜索免费和付费的编程教程
 6. [General APIs](https://m3o.com/explore)：整理收集了各种通用API
+7. [LibHunt - Trending open-source projects and their alternatives](https://www.libhunt.com/)：对比相似的github仓库
 
 ### 百科
 1. [Britannica](https://www.britannica.com/science/)

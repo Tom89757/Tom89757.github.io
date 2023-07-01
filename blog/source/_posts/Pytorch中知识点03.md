@@ -493,7 +493,20 @@ os.environ['CUDA_VISIBLE_DEVICES'] = str(GPU_ID)
 > 参考资料：
 > 1. [python - TensorFlow Permission Denied Error /Location - Stack Overflow](https://stackoverflow.com/questions/41606854/tensorflow-permission-denied-error-location)
 
-
+</br>
+22.在`bgnet.py`中导入上一层目录中其它文件夹中的包：
+```python
+import sys
+sys.path.insert(0, '../utils')
+from show_info import * 
+```
+目录结构如下：
+```python
++--bgnet
+\----bgnet.py
++--utils
+\----show_info.py
+```
 
 
 
