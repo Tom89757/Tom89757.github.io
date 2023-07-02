@@ -227,3 +227,17 @@ nnoremap gM [m
 > 1. [How do you remap brackets in vim : r/vim](https://www.reddit.com/r/vim/comments/g50gdv/how_do_you_remap_brackets_in_vim/)
 > 2. [key mapping - Disable or remove default vim keybinding - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/180926/disable-or-remove-default-vim-keybinding)
 > 3. [Changing default key bindings in vim - Stack Overflow](https://stackoverflow.com/questions/24416826/changing-default-key-bindings-in-vim)
+
+### VSCode vim d键重新映射
+```vimrc
+vnoremap p P
+vnoremap P p
+vnoremap d "_d
+vnoremap "_d d
+```
+> 参考资料：
+> 1 [How do I replace-paste yanked text in vim without yanking the deleted lines? - Super User](https://superuser.com/questions/321547/how-do-i-replace-paste-yanked-text-in-vim-without-yanking-the-deleted-lines)
+> [copy paste - How to delete (not cut) in Vim? - Stack Overflow](https://stackoverflow.com/questions/11993851/how-to-delete-not-cut-in-vim)
+> [Vim Visual 模式粘贴小知识_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1hh411P7vZ/?spm_id_from=333.999.0.0)
+> [replace - In Vim is there a way to delete without putting text in the register? - Stack Overflow](https://stackoverflow.com/questions/54255/in-vim-is-there-a-way-to-delete-without-putting-text-in-the-register)
+> [copy paste - How to delete (not cut) in Vim? - Stack Overflow](https://stackoverflow.com/questions/11993851/how-to-delete-not-cut-in-vim)

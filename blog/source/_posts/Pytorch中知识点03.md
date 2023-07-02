@@ -508,6 +508,19 @@ from show_info import *
 \----show_info.py
 ```
 
+</br>
+报错`"conda\activate.py", line 1210, in main print(activator.execute(), end='') UnicodeEncodeError: 'gbk' codec can't encode charact`
+问题：git bash作为终端时Python编码格式未设置为`utf-8`
+解决方案：在`.bashrc/.zshrc/.bash_path`中添加环境变量：
+```bash
+export PYTHONIOENCODING=utf-8
+export PYTHONLEGACYWINDOWSSTDIO=utf-8
+```
+> 参考资料：
+> 1. [python 3.x - Conda: UnicodeEncodeError: 'charmap' codec can't encode character '\u2580' in position 644: character maps to undefined - Stack Overflow](https://stackoverflow.com/questions/59974715/conda-unicodeencodeerror-charmap-codec-cant-encode-character-u2580-in-po)
+> 2. [Can not activate/deactivate conda environment due to cmder lambda character not handled in conda encoder/decoder · Issue #7445 · conda/conda · GitHub](https://github.com/conda/conda/issues/7445)
+
+
 
 
 

@@ -900,7 +900,12 @@ if __name__ == "__main__":
 > 3. [解决Python通过STMP发送邮件出现 TimeoutError: [WinError 10060]_Tech_April的博客-CSDN博客](https://blog.csdn.net/Tech_April/article/details/106257696)
 > 4. [SMTP/IMAP服务](https://wx.mail.qq.com/list/readtemplate?name=app_intro.html#/agreement/authorizationCode)
 
+</br>
+26.获取变量名，例如从变量`foo`中获取其变量名`'foo'`。
 
+> 参考资料：
+> 1. [python - Getting the name of a variable as a string - Stack Overflow](https://stackoverflow.com/questions/18425225/getting-the-name-of-a-variable-as-a-string)
+> 2. [How to get a variable name as a string in Python?](https://www.tutorialspoint.com/How-to-get-a-variable-name-as-a-string-in-Python)
 
 
 
