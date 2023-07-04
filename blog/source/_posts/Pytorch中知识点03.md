@@ -520,7 +520,13 @@ export PYTHONLEGACYWINDOWSSTDIO=utf-8
 > 1. [python 3.x - Conda: UnicodeEncodeError: 'charmap' codec can't encode character '\u2580' in position 644: character maps to undefined - Stack Overflow](https://stackoverflow.com/questions/59974715/conda-unicodeencodeerror-charmap-codec-cant-encode-character-u2580-in-po)
 > 2. [Can not activate/deactivate conda environment due to cmder lambda character not handled in conda encoder/decoder · Issue #7445 · conda/conda · GitHub](https://github.com/conda/conda/issues/7445)
 
-
+</br>
+23.关闭`nvidia-smi`命令中运行在指定显卡上的进程：
+```bash
+nvidia-smi | grep 'python' | grep 19398 | awk '{ print $5 }' | xargs -n1 kill -9
+```
+> 参考资料：
+> 1. [python - How to kill process on GPUs with PID in nvidia-smi using keyword? - Stack Overflow](https://stackoverflow.com/questions/50193538/how-to-kill-process-on-gpus-with-pid-in-nvidia-smi-using-keyword)
 
 
 
