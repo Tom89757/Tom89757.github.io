@@ -4,12 +4,13 @@ date: 2022-05-14 23:32:40
 categories:
 - 开发工具
 tags:
+- npm
 - nodejs
 ---
 
 
 
-本文记录一下使用nodejs时的常见操作：
+本文记录一下使用npm管理包时的常见操作：
 
 <!--more-->
 
@@ -70,3 +71,27 @@ export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
 ```
 > 参考资料：
 > 1. [Installation · nodejs/help Wiki · GitHub](https://github.com/nodejs/help/wiki/Installation)
+
+</br>
+8.查看当前项目所安装的依赖：
+Github Copilot：您可以使用 `npm list` 命令来查看当前 npm 项目中各个包的版本。在项目根目录下运行该命令，将输出当前项目中所有已安装的包及其版本号。如果您只想查看生产环境依赖项的版本，可以使用 `npm list --prod` 命令。如果您只想查看开发环境依赖项的版本，可以使用 `npm list --dev` 命令。
+
+</br>
+9.指定npm某个包的版本：
+```package.json
+"react": "16.14.0" #某个版本
+"react": "latest" #最新版本
+```
+
+</br>
+10.查看某个npm包的所有版本：
+Github Copilot：您可以使用 npm view 命令来查看某个包的所有版本。在终端中运行以下命令，将 package-name 替换为您要查看的包的名称：
+``` bash
+npm view <package-name> versions
+```
+这将输出该包的所有版本号。如果您只想查看稳定版本，可以使用 npm view package-name versions --json | grep -v "-" 命令。
+例如 `npm view react version`
+
+</br>
+查看当前npm项目中各个包的版本
+Github Copilot：您可以使用 `npm list` 命令来查看当前 npm 项目中各个包的版本。在项目根目录下运行该命令，将输出当前项目中所有已安装的包及其版本号。如果您只想查看生产环境依赖项的版本，可以使用 `npm list --prod` 命令。如果您只想查看开发环境依赖项的版本，可以使用 `npm list --dev` 命令。
