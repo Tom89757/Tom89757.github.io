@@ -20,4 +20,5 @@ tags:
 8. [GitHub - gaogaotiantian/biliscope: Bilibili chrome extension](https://github.com/gaogaotiantian/biliscope)：一个简单的查看b站up主信息的谷歌插件。
 9. [GitHub - antirez/adventofcode2022: A few Advent of Code puzzles (2022 edition) in C](https://github.com/antirez/adventofcode2022)：redis作者antirez仓库，使用C解决18道谜题。
 10. [用油猴制作一个 Jenkins 日志窗口 | 卡瓦邦噶！](https://www.kawabangga.com/posts/5166)：油猴脚本
+11. [GitHub - hugoattal/milky-warp: Simple magnifier for presentations (so that people can read the tiny texts)](https://github.com/hugoattal/milky-warp)：使用Vuew/Rust/TypeScript完成的一个Windows桌面放大镜应用
 ...持续更新中
