@@ -525,12 +525,12 @@ Ctrl + `
 
 
 ### VSCode Neovim
-
+- 映射`init.vim`文件：
+```cmd
+mklink C:\Users\26899\AppData\Local\nvim\init.vim D:\Desktop\dotfiles\nvim-win\init.vim
+```
 > 参考资料：
 > 1. [vscode-nvim - 云崖君 - 博客园](https://www.cnblogs.com/YunyaSir/p/15523927.html)
-> 2. [Integrating VSCode With Neovim | Barbarian Meets Coding](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/integrating-vscode-with-neovim/#enabling-neovim-inside-vscode)
-> 3. [Switching to VSCodium - Low-Hanging Fruit](https://lowhangingfruit.dev/2019-09-30/switching-to-vscodium/)
-> 4. [Migrating from VS Code to VS Codium on Linux painlessly](https://www.roboleary.net/tools/2022/06/13/migrate-from-vscode-to-vscodium-on-linux.html)
 > 5. [Settings sync is not available · Issue #482 · VSCodium/vscodium · GitHub](https://github.com/VSCodium/vscodium/issues/482)
 > 6. [Neovim IDE Crash Course](https://www.chrisatmachine.com/posts/01-ide-crash-course)
 
