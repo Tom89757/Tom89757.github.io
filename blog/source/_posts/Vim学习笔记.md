@@ -146,7 +146,13 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 > 2. [key bindings - How can I easily move a line? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/2674/how-can-i-easily-move-a-line)
 > 3. [vim - Any mapping in vimrc with Alt isn't working - Stack Overflow](https://stackoverflow.com/questions/49052619/any-mapping-in-vimrc-with-alt-isnt-working)
 
-
+### Vim中删除空行
+```vim
+:g/^$/d
+```
+PS：由于vscode中vim插件为vim模拟器，未实现g (global) 功能。故考虑迁移到vscode-neovim (其非模拟器，而是之间调用本地安装的neovim)
+> 参考资料：
+> 1. [vim删除空行和注释 - 碳 - 博客园](https://www.cnblogs.com/carbon3/p/5915282.html)
 
 
 
