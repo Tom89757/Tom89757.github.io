@@ -111,3 +111,15 @@ PS：其中`<Action>`只能用于IDEA自带的actions。Plugins actions需要使
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407195931.png)
 
 > 参考资料：[NERDTree support · JetBrains/ideavim Wiki · GitHub](https://github.com/JetBrains/ideavim/wiki/NERDTree-support)
+
+
+### IDEA文件颜色配置
+
+> 参考资料：
+> 1. [File status highlights | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/file-status-highlights.html)
+
+### Maven依赖项
+ 报错`Dependency 'org.springframework.boot:spring-boot-starter-web:' not found`。
+解决方案：`Settings->Maven->Maven home directory->D:/Develop/Java/Maven/apache-maven-3.8.3`，详细见参考资料
+> 参考资料：
+> 1. [解决报错project 'org.springframework.boot:spring-boot-starter-parent:1.5.9.RELEASE' not found问题_叫我天真的博客-CSDN博客](https://blog.csdn.net/LJH_laura_li/article/details/104850229)

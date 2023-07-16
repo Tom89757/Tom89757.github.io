@@ -243,7 +243,11 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 参考资料：
 > 1. [解决删除文件时出现“该项目不在XX中，请确认该项目的位置然后重试”的提示-阿里云开发者社区](https://developer.aliyun.com/article/910256)
 
-
+</br>
+19.windows10无法编辑系统环境变量（Can't edit system variables）
+解决方案：`Win+X -> Y -> Advanced system settings`进入编辑
+> 参考资料：
+> 1. [Redirecting](https://answers.microsoft.com/en-us/windows/forum/all/cant-edit-environment-variables-in-windows-10/29ca1561-5c4d-4c0d-ab93-808411a062a3)
 
 
 
