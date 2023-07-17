@@ -241,3 +241,8 @@ vnoremap "_d d
 > [Vim Visual 模式粘贴小知识_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1hh411P7vZ/?spm_id_from=333.999.0.0)
 > [replace - In Vim is there a way to delete without putting text in the register? - Stack Overflow](https://stackoverflow.com/questions/54255/in-vim-is-there-a-way-to-delete-without-putting-text-in-the-register)
 > [copy paste - How to delete (not cut) in Vim? - Stack Overflow](https://stackoverflow.com/questions/11993851/how-to-delete-not-cut-in-vim)
+
+### VSCode定位explorer快捷键（shortcut）
+`Ctrl+0`
+> 参考资料：
+> 1. [Is there a shortcut to move focus to the sidebar in Visual Studio Code? - Stack Overflow](https://stackoverflow.com/questions/49662075/is-there-a-shortcut-to-move-focus-to-the-sidebar-in-visual-studio-code)

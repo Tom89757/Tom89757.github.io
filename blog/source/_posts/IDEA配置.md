@@ -106,7 +106,8 @@ PS：其中`<Action>`只能用于IDEA自带的actions。Plugins actions需要使
 1. IdeaVimExtension：在切换到normal模式时，自动切换为英文输入（切换为美式键盘，不好用）
 2. IdeaVim-EasyMotion：用于配合`<leader> <leader> w`快速跳转
 3. IdeaVim-Sneak：行内快速跳转
-4. NERDTree：定位explorer并进行文件选择/重命名/新建等操作。
+4. NERDTree：定位explorer并进行文件选择/重命名/新建等操作。[NERDTree support · JetBrains/ideavim Wiki · GitHub](https://github.com/JetBrains/ideavim/wiki/NERDTree-support)
+5. Material Theme UI：IDEA界面主题美化
 其中NERDTree快捷键如下：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230407195931.png)
 
@@ -123,3 +124,9 @@ PS：其中`<Action>`只能用于IDEA自带的actions。Plugins actions需要使
 解决方案：`Settings->Maven->Maven home directory->D:/Develop/Java/Maven/apache-maven-3.8.3`，详细见参考资料
 > 参考资料：
 > 1. [解决报错project 'org.springframework.boot:spring-boot-starter-parent:1.5.9.RELEASE' not found问题_叫我天真的博客-CSDN博客](https://blog.csdn.net/LJH_laura_li/article/details/104850229)
+
+### 创建文件时自动生成作者信息
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230717111930.png)
+
+> 参考资料：
+> 1. [javadoc - Autocompletion of @author in Intellij - Stack Overflow](https://stackoverflow.com/questions/18736986/autocompletion-of-author-in-intellij)
