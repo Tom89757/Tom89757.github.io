@@ -130,3 +130,9 @@ PS：其中`<Action>`只能用于IDEA自带的actions。Plugins actions需要使
 
 > 参考资料：
 > 1. [javadoc - Autocompletion of @author in Intellij - Stack Overflow](https://stackoverflow.com/questions/18736986/autocompletion-of-author-in-intellij)
+
+
+### IDEA focus in sidebar
+
+> 参考资料：
+> 1. [Shortcut to toggle focus between project sidebar and editor? – IDEs Support (IntelliJ Platform) | JetBrains](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206887115-Shortcut-to-toggle-focus-between-project-sidebar-and-editor-)
