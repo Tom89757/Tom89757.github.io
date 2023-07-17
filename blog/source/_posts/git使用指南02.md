@@ -59,3 +59,10 @@ GitHub Copilot: Fork 和 Pull Request 都是 GitHub 中用于协作开发的重�
 Fork 是指将一个开源项目的代码库复制到自己的 GitHub 账户中，以便进行修改和贡献。通过 Fork，开发人员可以在自己的分支中进行代码更改，并将这些更改推送到自己的 GitHub 仓库中。这样，他们就可以在自己的仓库中管理代码，并随时将更改推送到原始项目中。
 Pull Request 是指开发人员在自己的分支中进行代码更改后，向原始项目的维护者请求审核和合并这些更改的机制。通过 Pull Request，开发人员可以描述他们所做的更改、为什么要做这些更改以及如何测试这些更改。项目维护者可以查看 Pull Request，并在必要时提出问题或建议修改。一旦 Pull Request 被审核通过，项目维护者可以将更改合并到项目的主分支中。
 总的来说，Fork 和 Pull Request 都是用于协作开发的机制，但它们的使用场景和目的有所不同。Fork 通常用于在自己的分支中进行代码更改和管理，而 Pull Request 通常用于向原始项目贡献代码并请求审核和合并。
+
+</br>
+7.`git pull origin main`报错`fetch-pack: unexpected disconnect while reading sideband packet`
+
+> 参考资料：
+> 1. [git - error: RPC failed; curl transfer closed with outstanding read data remaining - Stack Overflow](https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-closed-with-outstanding-read-data-remaining)
+> 2. [git - Github - unexpected disconnect while reading sideband packet - Stack Overflow](https://stackoverflow.com/questions/66366582/github-unexpected-disconnect-while-reading-sideband-packet)
