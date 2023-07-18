@@ -249,7 +249,11 @@ File D:\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be l
 > 参考资料：
 > 1. [Redirecting](https://answers.microsoft.com/en-us/windows/forum/all/cant-edit-environment-variables-in-windows-10/29ca1561-5c4d-4c0d-ab93-808411a062a3)
 
+</br>
+20.VSCode Copilot报错`GitHub Copilot could not connect to server. Extension activation failed: "Unexpected token 'N', "Not Found" is not valid JSON"`
 
+> 参考资料：
+> 1. [VSCode Extension GitHub Copilot could not connect to server · community · Discussion #14305 · GitHub](https://github.com/orgs/community/discussions/14305)
 
 
 

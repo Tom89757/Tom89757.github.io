@@ -66,3 +66,16 @@ Pull Request 是指开发人员在自己的分支中进行代码更改后，向�
 > 参考资料：
 > 1. [git - error: RPC failed; curl transfer closed with outstanding read data remaining - Stack Overflow](https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-closed-with-outstanding-read-data-remaining)
 > 2. [git - Github - unexpected disconnect while reading sideband packet - Stack Overflow](https://stackoverflow.com/questions/66366582/github-unexpected-disconnect-while-reading-sideband-packet)
+
+</br>
+8.在local git repository（本地git仓库）中同时在两个分支上工作
+```git
+gb backend # 切换到backend分支
+git worktee add frontend # 在当前worktree添加frontend分支
+```
+此时目录结构如下：
+
+> 参考资料：
+> 1. [github - i want to work on different branches in git in my local repository which have different branches from origin set as upstream - Stack Overflow](https://stackoverflow.com/questions/59579681/i-want-to-work-on-different-branches-in-git-in-my-local-repository-which-have-di)
+> 2. [Multiple Branches in Git ⋆ Mark McDonnell](https://www.integralist.co.uk/posts/multiple-branches-in-git/#:~:text=Git%20offers%20a%20feature%20referred,directories%20where%20they%20are%20stored.)
+> 3. [Git's Best And Most Unknown Feature - YouTube](https://www.youtube.com/watch?v=2uEqYw-N8uE)
