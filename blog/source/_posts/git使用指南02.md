@@ -79,3 +79,9 @@ git worktee add frontend # 在当前worktree添加frontend分支
 > 1. [github - i want to work on different branches in git in my local repository which have different branches from origin set as upstream - Stack Overflow](https://stackoverflow.com/questions/59579681/i-want-to-work-on-different-branches-in-git-in-my-local-repository-which-have-di)
 > 2. [Multiple Branches in Git ⋆ Mark McDonnell](https://www.integralist.co.uk/posts/multiple-branches-in-git/#:~:text=Git%20offers%20a%20feature%20referred,directories%20where%20they%20are%20stored.)
 > 3. [Git's Best And Most Unknown Feature - YouTube](https://www.youtube.com/watch?v=2uEqYw-N8uE)
+
+</br>
+9.`git rebase`操作
+
+> 参考资料：
+> 1. [The Git Rebase Handbook – A Definitive Guide to Rebasing](https://www.freecodecamp.org/news/git-rebase-handbook/)

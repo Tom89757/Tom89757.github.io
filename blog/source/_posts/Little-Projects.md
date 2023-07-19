@@ -22,4 +22,6 @@ tags:
 10. [用油猴制作一个 Jenkins 日志窗口 | 卡瓦邦噶！](https://www.kawabangga.com/posts/5166)：油猴脚本
 11. [GitHub - hugoattal/milky-warp: Simple magnifier for presentations (so that people can read the tiny texts)](https://github.com/hugoattal/milky-warp)：使用Vuew/Rust/TypeScript完成的一个Windows桌面放大镜应用
 12. [Build Your Own: React, ProseMirror, and Redux](https://nytimes.github.io/oak-byo-react-prosemirror-redux/)：指导新人实现React, ProseMirror和Redux等库
+13. [GitHub - VOYAGERX013/ShadowScript: A programming language made for fun](https://github.com/VOYAGERX013/ShadowScript)：学会编写小型语言
+14. [Building a Toy Programming Language in Python - miguelgrinberg.com](https://blog.miguelgrinberg.com/post/building-a-toy-programming-language-in-python)：使用Python编写小型语言
 ...持续更新中
