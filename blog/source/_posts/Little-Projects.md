@@ -24,4 +24,5 @@ tags:
 12. [Build Your Own: React, ProseMirror, and Redux](https://nytimes.github.io/oak-byo-react-prosemirror-redux/)：指导新人实现React, ProseMirror和Redux等库
 13. [GitHub - VOYAGERX013/ShadowScript: A programming language made for fun](https://github.com/VOYAGERX013/ShadowScript)：学会编写小型语言
 14. [Building a Toy Programming Language in Python - miguelgrinberg.com](https://blog.miguelgrinberg.com/post/building-a-toy-programming-language-in-python)：使用Python编写小型语言
+15. [Writing a 6502 emulator in Python — Dailystuff on the Internet](https://dailystuff.nl/projects/writing-a-6502-emulator-in-python)：使用Python编写一个microprocessor [MOS Technology 6502 - Wikipedia](https://en.wikipedia.org/wiki/MOS_Technology_6502)。
 ...持续更新中
