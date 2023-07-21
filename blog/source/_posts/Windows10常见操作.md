@@ -123,7 +123,12 @@ Windows 10打开Taskbar设置：
 > 参考资料：
 > 1. [What is the Windows hotkey to minimise a single, currently active window? - Super User](https://superuser.com/questions/189194/what-is-the-windows-hotkey-to-minimise-a-single-currently-active-window)
 
-
+### 命令行删除单词、整行
+通常我们使用`backspace`删除字母，但是我们可以删除单词或整行：
+1. `Ctrl + w`：删除单词
+2. `Ctrl + u`：删除整行
+> 参考资料：
+> 1. [keyboard shortcuts - How can I delete a word backward at the command line (bash and zsh)? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/94331/how-can-i-delete-a-word-backward-at-the-command-line-bash-and-zsh)
 
 
 
