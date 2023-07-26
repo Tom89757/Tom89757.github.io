@@ -85,3 +85,15 @@ git worktee add frontend # 在当前worktree添加frontend分支
 
 > 参考资料：
 > 1. [The Git Rebase Handbook – A Definitive Guide to Rebasing](https://www.freecodecamp.org/news/git-rebase-handbook/)
+
+10.`git merge`操作。报错`fatal: refusing to merge unrelated histories`
+解决方案：
+当您尝试将两个没有共同祖先的分支合并时，可能会遇到`fatal: refusing to merge unrelated histories`错误。这通常发生在以下情况下：
+- 您创建了一个新的本地仓库，并将其推送到远程仓库，然后尝试将另一个仓库的分支合并到本地仓库中。
+- 您在本地仓库中创建了一个新的分支，并将其推送到远程仓库，然后尝试将另一个仓库的分支合并到本地仓库中。
+在这些情况下，Git无法确定两个分支之间的共同祖先，因此会拒绝合并操作。
+要解决此问题，可以使用`--allow-unrelated-histories`选项强制合并两个没有共同祖先的分支。例如，要将`feature`分支合并到`master`分支，可以运行以下命令：
+```
+git merge --allow-unrelated-histories feature
+```
+这将强制合并`feature`分支到`master`分支，即使它们没有共同祖先。请注意，这可能会导致合并冲突，因此在合并分支之前，请确保备份了所有重要的更改，并测试了所有更改以确保它们不会破坏应用程序的功能。

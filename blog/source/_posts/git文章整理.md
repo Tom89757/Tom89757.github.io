@@ -17,4 +17,5 @@ tags:
 5. [Git 如何恢复到之前的提交](https://www.freecodecamp.org/chinese/news/git-reverting-to-previous-commit-how-to-revert-to-last-commit/)
 6. [版本回退 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192)
 7. [Sane defaults for Github repositories | wiringbits](https://wiringbits.net/blog/github-repository-setup)：调整git仓库的默认设置
+8. [Fast Intro to Git Internals - The Chromium Projects](https://sites.google.com/a/chromium.org/dev/developers/fast-intro-to-git-internals)：Google浏览器工程师对git的快速介绍
 

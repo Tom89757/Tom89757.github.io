@@ -228,7 +228,7 @@ sudo apt-get -y autoremove
 18.Ubuntu配置ssh免输密码：
 - `ssh-keygen`：在本地机器上生成密钥对，`id_rsa.pub`和`id_rsa`。在`~/.ssh/`目录下。更改`id_rsa` 私钥权限，`chmod 600 id_rsa`。
 - `ssh-copy-id -i ~/.ssh/id_rsa.pub user@host`：将本地公钥`id_rsa.pub`写入远程host的`~/.ssh`目录下的`authorized_keys`文件。如果远程host没有`.ssh`目录手动进行创建。更改`authorized_keys`文件权限，`chmod 755 authorized_keys`。
-- 尝试本地登录，如果无法免密码登录，更高远程host上`/home/user`目录权限，`chmod 700 /home/user`。
+- 尝试本地登录，如果无法免密码登录，更改远程host上`/home/user`目录权限，`chmod 700 /home/user`。
 > 参考资料：
 > 1. [Getting Started With SSH in Linux](https://linuxhandbook.com/ssh-basics/)
 > 2. [How to Add SSH Public Key to Server](https://linuxhandbook.com/add-ssh-public-key-to-server/)

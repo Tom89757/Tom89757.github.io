@@ -136,3 +136,16 @@ PS：其中`<Action>`只能用于IDEA自带的actions。Plugins actions需要使
 
 > 参考资料：
 > 1. [Shortcut to toggle focus between project sidebar and editor? – IDEs Support (IntelliJ Platform) | JetBrains](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206887115-Shortcut-to-toggle-focus-between-project-sidebar-and-editor-)
+
+
+### IDEA将`dotfiles/idea/.ideavimrc`映射到`C:\Users\A\.ideavimrc`
+打开`cmd`运行如下指令：
+```cmd
+mklink C:\Users\A\.ideavimrc D:\Desktop\dotfiles\idea\.ideavimrc
+```
+
+### IDEA将action映射到vim shortcuts
+
+> 参考资料：
+> 1. [IntelliJ IDEA Action List - Google Sheets](https://docs.google.com/spreadsheets/d/17GvVbsLc48iM-vpKgBTwz5ByvsMmmw0dqIenzemDcXM/edit#gid=0)
+> 2. [IdeaVim actionlist · GitHub](https://gist.github.com/zchee/9c78f91cc5ad771c1f5d)

@@ -5,6 +5,7 @@ categories:
 - 环境配置
 tags:
 - Vim
+- neovim
 ---
 
 本文记录一下从IDE转为Vim的一些资料和教程：
