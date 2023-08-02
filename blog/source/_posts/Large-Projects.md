@@ -27,4 +27,5 @@ tags:
 15. [Build Your Own Database From Scratch | Build Your Own Database From Scratch](https://build-your-own.org/database/)：
 16. [Building a CodePen Type Editor from Scratch](https://decode.sh/building-a-code-pen-type-editor-from-scratch)
 17. [Build Your Own Database From Scratch | Build Your Own Database From Scratch](https://build-your-own.org/database/)
+18. [GitHub - oceanbase/miniob: MiniOB is one mini database, helping developers to learn how database works.](https://github.com/oceanbase/miniob)：MiniOB 整体代码简洁，容易上手，设计了一系列由浅入深的题目，帮助同学们从零基础入门，迅速了解数据库并深入学习数据库内核。
 
