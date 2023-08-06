@@ -103,3 +103,8 @@ Scoop是Windows系统下一款流行的包管理工具
 2. [GitHub - Slackadays/Clipboard: Your external brain that remembers anything, anytime, anywhere. Save time and effort the 𝗲𝗮𝘀𝘆 way! 😄](https://github.com/Slackadays/Clipboard)：实现终端复制、剪切和粘贴。
 > 参考资料：
 > 1. [Scoop](https://scoop.sh/)
+
+### cmd自动补全和命令高亮
+
+> 参考资料：
+> 1. [GitHub - chrisant996/clink: Bash's powerful command line editing in cmd.exe](https://github.com/chrisant996/clink)
