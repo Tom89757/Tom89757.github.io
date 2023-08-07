@@ -25,4 +25,7 @@ tags:
 13. [GitHub - VOYAGERX013/ShadowScript: A programming language made for fun](https://github.com/VOYAGERX013/ShadowScript)：学会编写小型语言
 14. [Building a Toy Programming Language in Python - miguelgrinberg.com](https://blog.miguelgrinberg.com/post/building-a-toy-programming-language-in-python)：使用Python编写小型语言
 15. [Writing a 6502 emulator in Python — Dailystuff on the Internet](https://dailystuff.nl/projects/writing-a-6502-emulator-in-python)：使用Python编写一个microprocessor [MOS Technology 6502 - Wikipedia](https://en.wikipedia.org/wiki/MOS_Technology_6502)。
+16. [Representing Heterogeneous Data – journal.stuffwithstuff.com](https://journal.stuffwithstuff.com/2023/08/04/representing-heterogeneous-data/)：一种小型的，过程式的语言，用于表示用户输入的多种多样的数据
+17. [Scripting with Go: a 400-line Git client that can create a repo and push itself to GitHub](https://benhoyt.com/writings/gogit/)：使用go编写自动化git操作的脚本，6年前作者写了python版本。
+18. [GitHub - henrypp/memreduct: Lightweight real-time memory management application to monitor and clean system memory on your computer.](https://github.com/henrypp/memreduct)：使用C语言编写的内存监控工具
 ...持续更新中
