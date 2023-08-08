@@ -1,8 +1,14 @@
 ---
 title: Windows下neovim配置指南
 date: 2023-07-14 21:16:02
+categories:
+- 环境配置
 tags:
+- Vim
+- neovim
 ---
+本文记录一下在Windows中neovim的配置：
+<!--more-->
 
 > 参考资料：
 > 1. [GitHub - folke/tokyonight.nvim: 🏙 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish.](https://github.com/folke/tokyonight.nvim)
