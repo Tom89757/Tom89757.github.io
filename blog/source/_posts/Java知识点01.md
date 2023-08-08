@@ -42,7 +42,6 @@ tags:
 使用Remote JVM Debug时，运行debug出现：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220924174528.png)
 
-
 > 参考资料：
 > 1. [Error running 'Remote Debugger': Unable to open debugger port (localhost:5005): java.net.ConnectException "Connection refused (Connection refused)"](https://stackoverflow.com/questions/53327701/error-running-remote-debugger-unable-to-open-debugger-port-localhost5005)
 
@@ -78,7 +77,7 @@ javac -encoding utf8 p3/Evaluate.java
 > 参考资料：
 > 1. [Javac和JVM的字符编码问题](https://www.cnblogs.com/jayson-jamaica/p/12695427.html)
 
-## Linux下编译和运行Java引用多个外部包
+### Linux下编译和运行Java引用多个外部包
 以算法第四版第三章的3.1.3的用例举例为例进行说明。在windows中已经根据上述的**出现ClassNotFoundException**进行外部库的依赖配置。
 此时在windows中只需在cmd窗口按照以下步骤运行用例类：
 - `javac p1/TestST.java`：编译生成`TestST.class`文件
@@ -132,3 +131,9 @@ alias java="java -cp $CLASSPATH:/mnt/d/Develop/Java/jdk11.0.11/lib/*"
 ### Java数据类型
 > 参考资料：
 > 1. [Java 基本数据类型 | 菜鸟教程](https://www.runoob.com/java/java-basic-datatypes.html)
+
+### 使用gradle时卡在`80% building :bootRun`
+正常情况
+> 参考资料：
+> 1. [Gets stuck at > Building 80% > :bootRun · Issue #3 · hamvocke/spring-testing · GitHub](https://github.com/hamvocke/spring-testing/issues/3
+> 2. [java - Why does my Spring Boot web app not run completely in Gradle? - Stack Overflow](https://stackoverflow.com/questions/34724299/why-does-my-spring-boot-web-app-not-run-completely-in-gradle)

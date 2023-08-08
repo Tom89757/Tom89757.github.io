@@ -123,6 +123,9 @@ tags:
 ### 前端
 1. [前言 | 大厂面试题每日一题](https://q.shanyue.tech/engineering/)：程序员山月整理的资料
 
+### Web3
+1. [Design and UX in web3 | ethereum.org](https://ethereum.org/en/developers/docs/design-and-ux/)：以太坊整理的Web3领域设计资源
+
 ### 找工作网站
 1. [Flexible Java Jobs | Indeed.com](https://www.indeed.com/q-Java-jobs.html?vjk=dd38219803504422)
 2. [Rust Jobs in Web3 - Dec 2022](https://web3.career/rust-jobs)
