@@ -59,3 +59,12 @@ tree -I '*png|*pyc|*.jpg'
 - `choco install bat`：在windows10上安装
 > 参考资料：
 > 1. [GitHub - sharkdp/bat: A cat(1) clone with wings.](https://github.com/sharkdp/bat/#installation)
+
+
+### ripgrep
+使用regex模式递归地在当前目录下搜索的工具。
+> 参考资料：
+> 1. [GitHub - BurntSushi/ripgrep: ripgrep recursively searches directories for a regex pattern while respecting your gitignore](https://github.com/BurntSushi/ripgrep#installation)
+
+### 综合类
+1. [What helps people get comfortable on the command line?](https://jvns.ca/blog/2023/08/08/what-helps-people-get-comfortable-on-the-command-line-/)：推荐了很多使你习惯使用命令行的工具

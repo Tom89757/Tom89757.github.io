@@ -108,3 +108,10 @@ Scoop是Windows系统下一款流行的包管理工具
 
 > 参考资料：
 > 1. [GitHub - chrisant996/clink: Bash's powerful command line editing in cmd.exe](https://github.com/chrisant996/clink)
+
+### cmd默认以管理员身份运行并关闭UAC prompt
+
+> 参考资料：
+> 1. [How To Always Open Command Prompt As Administrator](https://www.intowindows.com/how-to-always-run-command-prompt-as-administrator/)
+> 2. [Use the Windows Task Scheduler to run apps without UAC prompts, with admin rights](https://www.digitalcitizen.life/use-task-scheduler-launch-programs-without-uac-prompts/)
+> 3. [How to Run Programs as Administrator (Elevated) without UAC Prompt » Winhelponline](https://www.winhelponline.com/blog/run-programs-elevated-without-getting-the-uac-prompt/)
