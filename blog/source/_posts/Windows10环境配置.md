@@ -93,7 +93,10 @@ map b Vomnibar.activateBookmarksInNewTab
 >5. [GitHub - PowerShell/PSReadLine: A bash inspired readline implementation for PowerShell](https://github.com/PowerShell/PSReadLine#upgrading)
 >6. [icons don't display in VS code integrated terminal after setting terminal.integrated.fontFamily · Issue #671 · romkatv/powerlevel10k · GitHub](https://github.com/romkatv/powerlevel10k/issues/671)
 
-
+### starship
+更好看的终端，适用于cmd
+> 参考资料：
+> 1. [GitHub - starship/starship: ☄🌌️ The minimal, blazing-fast, and infinitely customizable prompt for any shell!](https://github.com/starship/starship)
 
 
 
