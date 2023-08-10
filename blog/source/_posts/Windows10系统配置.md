@@ -115,3 +115,14 @@ Scoop是Windows系统下一款流行的包管理工具
 > 1. [How To Always Open Command Prompt As Administrator](https://www.intowindows.com/how-to-always-run-command-prompt-as-administrator/)
 > 2. [Use the Windows Task Scheduler to run apps without UAC prompts, with admin rights](https://www.digitalcitizen.life/use-task-scheduler-launch-programs-without-uac-prompts/)
 > 3. [How to Run Programs as Administrator (Elevated) without UAC Prompt » Winhelponline](https://www.winhelponline.com/blog/run-programs-elevated-without-getting-the-uac-prompt/)
+
+
+### cmd配置Fira Code字体
+
+> 参考资料：
+> 1. [Font not in Windows 10 console properties list - Super User](https://superuser.com/questions/1337310/font-not-in-windows-10-console-properties-list)
+> 2. [Ligatures not working with Fira Code Light in console · Issue #941 · tonsky/FiraCode · GitHub](https://github.com/tonsky/FiraCode/issues/941)
+> 3. [cmd.exe support · Issue #431 · tonsky/FiraCode · GitHub](https://github.com/tonsky/FiraCode/issues/431)
+> 4. [Detect path of font on Windows - Super User](https://superuser.com/questions/1658678/detect-path-of-font-on-windows)
+> 5. [How to Customize the Font in Windows Command Prompt: 15 Steps](https://www.wikihow.com/Customize-the-Font-in-Windows-Command-Prompt#:~:text=Right%2Dclick%20on%20the%20top,%2C%20Font%2C%20Layout%2C%20Colors.&text=When%20you%20open%20the%20%22Options,check%20%22Quick%20Edit%20Mode%22.)
+
