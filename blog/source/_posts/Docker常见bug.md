@@ -20,3 +20,4 @@ tags:
 > 4. [How To Configure Paketo Buildpacks - Paketo Buildpacks](https://paketo.io/docs/howto/configuration/)
 > 5. [github bellsoft-jre17.0.5+8-linux-amd64.tar.gz x509: certificate signed by unknown authority · Issue #353 · paketo-buildpacks/bellsoft-liberica · GitHub](https://github.com/paketo-buildpacks/bellsoft-liberica/issues/353)
 > 6. [docker - How to set dependency-mapping binding in gradle bootBuildImage (Spring-boot 2.7.1, native) - Stack Overflow](https://stackoverflow.com/questions/74399883/how-to-set-dependency-mapping-binding-in-gradle-bootbuildimage-spring-boot-2-7)
+> 7. [Image building with newer Paketo base-platform-api-0.3 fails · Issue #23009 · spring-projects/spring-boot · GitHub](https://github.com/spring-projects/spring-boot/issues/23009)
