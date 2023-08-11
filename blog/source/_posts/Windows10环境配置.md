@@ -98,7 +98,16 @@ map b Vomnibar.activateBookmarksInNewTab
 > 参考资料：
 > 1. [GitHub - starship/starship: ☄🌌️ The minimal, blazing-fast, and infinitely customizable prompt for any shell!](https://github.com/starship/starship)
 
-
+### Windows中类似`%USERPROFILE`的环境变量
+GitHub Copilot: 在Windows中，除了`%USERPROFILE%`环境变量之外，还有许多其他类似的环境变量，用于访问系统和用户的各种目录和设置。以下是一些常用的环境变量：
+- `%APPDATA%`：该环境变量指向当前用户的应用程序数据文件夹，例如`C:\Users\username\AppData\Roaming`。
+- `%LOCALAPPDATA%`：该环境变量指向当前用户的本地应用程序数据文件夹，例如`C:\Users\username\AppData\Local`。
+- `%TEMP%`或`%TMP%`：这些环境变量指向当前用户的临时文件夹，例如`C:\Users\username\AppData\Local\Temp`。
+- `%PROGRAMFILES%`：该环境变量指向安装32位程序的默认目录，例如`C:\Program Files`。
+- `%PROGRAMFILES(X86)%`：该环境变量指向安装64位程序的默认目录，例如`C:\Program Files (x86)`。
+- `%SYSTEMROOT%`：该环境变量指向Windows操作系统的安装目录，例如`C:\Windows`。
+- `%PATH%`：该环境变量包含一组用分号分隔的目录路径，用于在命令行中查找可执行文件。
+这些环境变量可以在Windows操作系统中的任何位置使用，例如在命令提示符、批处理文件、PowerShell脚本和其他应用程序中。您可以使用这些环境变量来访问系统和用户的各种目录和设置，从而使您的脚本和应用程序更加灵活和可移植。
 
 
 

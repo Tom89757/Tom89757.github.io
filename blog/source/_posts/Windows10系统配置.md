@@ -116,7 +116,6 @@ Scoop是Windows系统下一款流行的包管理工具
 > 2. [Use the Windows Task Scheduler to run apps without UAC prompts, with admin rights](https://www.digitalcitizen.life/use-task-scheduler-launch-programs-without-uac-prompts/)
 > 3. [How to Run Programs as Administrator (Elevated) without UAC Prompt » Winhelponline](https://www.winhelponline.com/blog/run-programs-elevated-without-getting-the-uac-prompt/)
 
-
 ### cmd配置Fira Code字体
 
 > 参考资料：

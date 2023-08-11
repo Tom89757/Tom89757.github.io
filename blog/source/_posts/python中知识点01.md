@@ -907,6 +907,13 @@ if __name__ == "__main__":
 > 1. [python - Getting the name of a variable as a string - Stack Overflow](https://stackoverflow.com/questions/18425225/getting-the-name-of-a-variable-as-a-string)
 > 2. [How to get a variable name as a string in Python?](https://www.tutorialspoint.com/How-to-get-a-variable-name-as-a-string-in-Python)
 
+</br>
+27.将dotfiles中pip的配置文件`pip.int`链接到：
+```cmd
+mklink C:\Users\26899\AppData\Roaming\pip\pip.ini D:\Desktop\dotfiles\python\pip.ini
+
+mklink %APPDATA%\pip\pip.ini D:\Desktop\dotfiles\python\pip.ini
+```
 
 
 
