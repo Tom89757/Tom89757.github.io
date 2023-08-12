@@ -17,7 +17,9 @@ tags:
 > 参考资料：
 > 1. [java - using gradle plugin from flatDir source - Stack Overflow](https://stackoverflow.com/questions/54918583/using-gradle-plugin-from-flatdir-source)
 > 2. [Declaring repositories](https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver)
-> 3. 
+> 3. [java - Adding local plugin to a Gradle project - Stack Overflow](https://stackoverflow.com/questions/35302414/adding-local-plugin-to-a-gradle-project)
+> 4. [maven - How to make Gradle repository point to local directory - Stack Overflow](https://stackoverflow.com/questions/25965901/how-to-make-gradle-repository-point-to-local-directory)
+> 5. [Declaring repositories](https://docs.gradle.org/current/userguide/declaring_repositories.html#sec:declaring_multiple_repositories)
 
 ### spring-cloud-bindings无法下载
 
