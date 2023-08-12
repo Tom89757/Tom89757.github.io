@@ -20,13 +20,20 @@ tags:
 > 3. 
 
 ### spring-cloud-bindings无法下载
-
+根据以下参考资料6，spring-cloud-bindings已从[repo.spring.io](https://repo.spring.io/ui/native/release/org/springframework/cloud/spring-cloud-bindings)迁移至Maven Central。
+根据参考资料7，可以在plugins中指定：
+```gradle
+implementation group: 'org.springframework.cloud', name: 'spring-cloud-bindings', version: '1.11.0'
+```
 > 参考资料：
 > 1. [Image building fails when downloading spring-cloud-bindings · Issue #33699 · spring-projects/spring-boot · GitHub](https://github.com/spring-projects/spring-boot/issues/33699)
 > 2. [spring-cloud-bindings download returning 404 when running spring buildpack · Issue #225 · paketo-buildpacks/spring-boot · GitHub](https://github.com/paketo-buildpacks/spring-boot/issues/225)
 > 3. [Notice of Permissions Changes to repo.spring.io, January 2023](https://spring.io/blog/2022/12/14/notice-of-permissions-changes-to-repo-spring-io-january-2023)
 > 4. [Image building fails when downloading spring-cloud-bindings · Issue #33699 · spring-projects/spring-boot · GitHub](https://github.com/spring-projects/spring-boot/issues/33699)
 > 5. [Builds failing as spring-cloud-bindings not accessible from repo.spring.io · Issue #304 · paketo-buildpacks/spring-boot · GitHub](https://github.com/paketo-buildpacks/spring-boot/issues/304)
+> 6. [Publish to Maven Central · Issue #71 · spring-cloud/spring-cloud-bindings · GitHub](https://github.com/spring-cloud/spring-cloud-bindings/issues/71)
+> 7. [Maven Central: org.springframework.cloud:spring-cloud-bindings:1.11.0](https://central.sonatype.com/artifact/org.springframework.cloud/spring-cloud-bindings/1.11.0)
+> 8. [Release Notes for Paketo Spring Boot Buildpack](https://docs.vmware.com/en/VMware-Tanzu-Buildpacks/services/tanzu-buildpacks/GUID-release-notes-spring-boot-release-notes.html)
 
 
 
