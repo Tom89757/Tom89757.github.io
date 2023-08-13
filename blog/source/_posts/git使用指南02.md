@@ -97,3 +97,15 @@ git worktee add frontend # 在当前worktree添加frontend分支
 git merge --allow-unrelated-histories feature
 ```
 这将强制合并`feature`分支到`master`分支，即使它们没有共同祖先。请注意，这可能会导致合并冲突，因此在合并分支之前，请确保备份了所有重要的更改，并测试了所有更改以确保它们不会破坏应用程序的功能。
+
+</br>
+
+11.git bash中进行复制/粘贴
+```git
+Git bash copy and paste 
+Copy: Ctrl + Ins 
+Paste: Shift + Ins 
+or if your keyboard has function key named as fn 
+Copy : Ctrl + fn + Ins 
+Paste : Shift + fn + Ins
+```

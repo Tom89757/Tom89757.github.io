@@ -149,3 +149,5 @@ mklink C:\Users\A\.ideavimrc D:\Desktop\dotfiles\idea\.ideavimrc
 > 参考资料：
 > 1. [IntelliJ IDEA Action List - Google Sheets](https://docs.google.com/spreadsheets/d/17GvVbsLc48iM-vpKgBTwz5ByvsMmmw0dqIenzemDcXM/edit#gid=0)
 > 2. [IdeaVim actionlist · GitHub](https://gist.github.com/zchee/9c78f91cc5ad771c1f5d)
+
+
