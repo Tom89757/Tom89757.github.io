@@ -125,3 +125,12 @@ Scoop是Windows系统下一款流行的包管理工具
 > 4. [Detect path of font on Windows - Super User](https://superuser.com/questions/1658678/detect-path-of-font-on-windows)
 > 5. [How to Customize the Font in Windows Command Prompt: 15 Steps](https://www.wikihow.com/Customize-the-Font-in-Windows-Command-Prompt#:~:text=Right%2Dclick%20on%20the%20top,%2C%20Font%2C%20Layout%2C%20Colors.&text=When%20you%20open%20the%20%22Options,check%20%22Quick%20Edit%20Mode%22.)
 
+### 在配置Docker后, Clash for Windows中端口不能设为1080，一直为0
+原因：
+Docker会用到wsl，wsl会用到hyper-V，hyper-V会让win10的动态端口变成1024开始的13977个端口，然后hyper-V会随机保留端口，大概2860个左右，刚好占用了clash端口。  
+解决方法：
+一种是把动态端口改到更高的端口区域去，或者将使用的端口从hyper-V保留端口中排除。
+> 参考资料：
+> 1. [WIN10更新后端口显示为0的解决方法 · Issue #671 · Fndroid/clash_for_windows_pkg · GitHub](https://github.com/Fndroid/clash_for_windows_pkg/issues/671)
+> 2. [Win10 各种端口占用问题的解决办法 - hyuuko - 博客园](https://www.cnblogs.com/zsmumu/p/13389816.html)
+> 3. [解决 Windows 10 端口被 Hyper-V 随机保留（占用）的问题 - 知乎](https://zhuanlan.zhihu.com/p/474392069)

@@ -21,3 +21,15 @@ tags:
 > 5. [github bellsoft-jre17.0.5+8-linux-amd64.tar.gz x509: certificate signed by unknown authority · Issue #353 · paketo-buildpacks/bellsoft-liberica · GitHub](https://github.com/paketo-buildpacks/bellsoft-liberica/issues/353)
 > 6. [docker - How to set dependency-mapping binding in gradle bootBuildImage (Spring-boot 2.7.1, native) - Stack Overflow](https://stackoverflow.com/questions/74399883/how-to-set-dependency-mapping-binding-in-gradle-bootbuildimage-spring-boot-2-7)
 > 7. [Image building with newer Paketo base-platform-api-0.3 fails · Issue #23009 · spring-projects/spring-boot · GitHub](https://github.com/spring-projects/spring-boot/issues/23009)
+
+
+### Docker一直处于"Docker is staring..."界面
+以管理员身份打开powershell，运行：
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Containers") -All
+```
+重启电脑。
+> 参考资料：
+> 1. [Docker forever in "Docker is starting.." at Windows task - Stack Overflow](https://stackoverflow.com/questions/43041331/docker-forever-in-docker-is-starting-at-windows-task)
+> 2. [Solve Problem Docker stucks and still in starting mode - YouTube](https://www.youtube.com/watch?v=JRluDLoiHXM&t=5s)
+> 3. [c# - How to enable the Windows 10 "Containers" feature? - Stack Overflow](https://stackoverflow.com/questions/36590514/how-to-enable-the-windows-10-containers-feature)
