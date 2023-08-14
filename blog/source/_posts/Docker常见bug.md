@@ -33,3 +33,9 @@ Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Conta
 > 1. [Docker forever in "Docker is starting.." at Windows task - Stack Overflow](https://stackoverflow.com/questions/43041331/docker-forever-in-docker-is-starting-at-windows-task)
 > 2. [Solve Problem Docker stucks and still in starting mode - YouTube](https://www.youtube.com/watch?v=JRluDLoiHXM&t=5s)
 > 3. [c# - How to enable the Windows 10 "Containers" feature? - Stack Overflow](https://stackoverflow.com/questions/36590514/how-to-enable-the-windows-10-containers-feature)
+
+
+### 运行`docker build`后出现no matching manifest for windows/amd64 in the manifest list entries
+解决方案：右键docker图标Switching to Linux containers
+> 参考资料：
+> 1. [Docker: "no matching manifest for windows/amd64 in the manifest list entries" - Stack Overflow](https://stackoverflow.com/questions/48066994/docker-no-matching-manifest-for-windows-amd64-in-the-manifest-list-entries)

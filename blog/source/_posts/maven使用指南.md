@@ -7,7 +7,7 @@ tags:
 - maven 
 ---
 
-本文记录一下gradle的使用指南：
+本文记录一下maven的使用指南：
 <!--more-->
 
 ### ./mvnw spring-boot:run运行失败
