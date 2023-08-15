@@ -109,5 +109,9 @@ GitHub Copilot: 在Windows中，除了`%USERPROFILE%`环境变量之外，还有
 - `%PATH%`：该环境变量包含一组用分号分隔的目录路径，用于在命令行中查找可执行文件。
 这些环境变量可以在Windows操作系统中的任何位置使用，例如在命令提示符、批处理文件、PowerShell脚本和其他应用程序中。您可以使用这些环境变量来访问系统和用户的各种目录和设置，从而使您的脚本和应用程序更加灵活和可移植。
 
-
+### Windows创建对file或者folder的link
+file的link可以通过mklink命令创建。
+> 参考资料：
+> 1. [The Complete Guide to Creating Symbolic Links (aka Symlinks) on Windows](https://www.howtogeek.com/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/)
+> 2. [Creating Symbolic Links (Symlinks) in Windows | Windows OS Hub](https://woshub.com/create-symlink-windows/)
 

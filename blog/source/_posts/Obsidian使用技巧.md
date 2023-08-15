@@ -10,6 +10,8 @@ tags:
 <!--more-->
 
 ### Obsidian在新标签页打开文件
-`Ctrl+left click`。
+`Ctrl + click`。
+
+
 
 
