@@ -105,12 +105,13 @@ Scoop是Windows系统下一款流行的包管理工具
 > 1. [Scoop](https://scoop.sh/)
 
 ### cmd自动补全和命令高亮
-
+clink用于替代cmd终端；starship用于定制shell。
 > 参考资料：
 > 1. [GitHub - chrisant996/clink: Bash's powerful command line editing in cmd.exe](https://github.com/chrisant996/clink)
+> 2. [GitHub - starship/starship: ☄🌌️ The minimal, blazing-fast, and infinitely customizable prompt for any shell!](https://github.com/starship/starship)
 
 ### cmd默认以管理员身份运行并关闭UAC prompt
-
+主要参考资料2配置。
 > 参考资料：
 > 1. [How To Always Open Command Prompt As Administrator](https://www.intowindows.com/how-to-always-run-command-prompt-as-administrator/)
 > 2. [Use the Windows Task Scheduler to run apps without UAC prompts, with admin rights](https://www.digitalcitizen.life/use-task-scheduler-launch-programs-without-uac-prompts/)
