@@ -154,7 +154,13 @@ PS：由于vscode中vim插件为vim模拟器，未实现g (global) 功能。故�
 > 参考资料：
 > 1. [vim删除空行和注释 - 碳 - 博客园](https://www.cnblogs.com/carbon3/p/5915282.html)
 
-
+### Vim使用H/L移动到wrap line的行首/行尾
+```.vimrc
+noremap <silent> H g^ // g^和g0等价，即0和^等价
+noremap <silent> L g$
+```
+> 参考资料：
+> 1. [Move cursor by display lines when wrapping | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Move_cursor_by_display_lines_when_wrapping)
 
 
 
