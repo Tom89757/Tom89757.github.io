@@ -29,3 +29,10 @@ tags:
 ```
 > 参考资料：
 > 1. [java - Plugin 'org.springframework.boot:spring-boot-maven-plugin:' not found - Stack Overflow](https://stackoverflow.com/questions/64639836/plugin-org-springframework-bootspring-boot-maven-plugin-not-found) 
+
+
+### Could not autowire. No beans of 'BookRepository' type found
+
+> 参考资料：
+> 1. [java - intellij incorrectly saying no beans of type found for autowired repository - Stack Overflow](https://stackoverflow.com/questions/26889970/intellij-incorrectly-saying-no-beans-of-type-found-for-autowired-repository)
+> 2. [https://youtrack.jetbrains.com/issue/IDEA-281454/Could-not-autowire.-No-beans-of-XXX-type-found-IntelliJ-2021.2.3-Spring-2.5.6](https://youtrack.jetbrains.com/issue/IDEA-281454/Could-not-autowire.-No-beans-of-XXX-type-found-IntelliJ-2021.2.3-Spring-2.5.6)

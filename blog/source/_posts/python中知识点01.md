@@ -915,6 +915,16 @@ mklink C:\Users\26899\AppData\Roaming\pip\pip.ini D:\Desktop\dotfiles\python\pip
 mklink %APPDATA%\pip\pip.ini D:\Desktop\dotfiles\python\pip.ini
 ```
 
+</br>
+28.安装包时出现如下报错
+```pip
+```py
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', NewConnection
+Error('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x0000026F50B448C8>: Failed to establish a new connection: [WinError 10061] No connection could be made
+ because the target machine actively refused it'))': /simple/pytest
+```
+原因：打开了代理
+解决方案：管理代理，重新安装
 
 
 
