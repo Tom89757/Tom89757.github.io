@@ -926,6 +926,11 @@ Error('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x0000026F50B44
 原因：打开了代理
 解决方案：管理代理，重新安装
 
+</br>
+报错`RequestsDependencyWarning: urllib3 (1.26.9) or chardet (5.0.0)/charset_normalizer (2.0.12) doesn't match a supported version!`
+解决方案：更新requests，`pip3 install --upgrade requests`
+> 参考资料：
+> 1. [python - RequestsDependencyWarning: urllib3 (1.25.2) or chardet (3.0.4) doesn't match a supported version! Fix - Stack Overflow](https://stackoverflow.com/questions/56155627/requestsdependencywarning-urllib3-1-25-2-or-chardet-3-0-4-doesnt-match-a-s)
 
 
 
