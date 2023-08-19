@@ -68,3 +68,25 @@ tree -I '*png|*pyc|*.jpg'
 
 ### 综合类
 1. [What helps people get comfortable on the command line?](https://jvns.ca/blog/2023/08/08/what-helps-people-get-comfortable-on-the-command-line-/)：推荐了很多使你习惯使用命令行的工具
+
+### 从deb文件安装软件
+GitHub Copilot: 在Linux中，可以使用`dpkg`命令从`.deb`文件安装软件包。具体来说，可以按照以下步骤进行操作：
+1. 下载`.deb`文件。可以从软件包的官方网站或其他可信来源下载`.deb`文件。（下载对应架构的版本，amd64/arm64）
+2. 打开终端，并使用`cd`命令进入`.deb`文件所在的目录。
+3. 使用`dpkg`命令安装软件包。例如，要安装名为`example.deb`的软件包，可以使用以下命令：
+   ```
+   sudo dpkg -i example.deb
+   ```
+   其中，`-i`选项表示安装软件包，`example.deb`为要安装的软件包文件名。需要使用`sudo`命令以管理员权限运行`dpkg`命令。
+4. 如果安装过程中出现依赖项错误，可以使用以下命令来修复依赖项：
+   ```
+   sudo apt-get install -f
+   ```
+   该命令会自动安装缺失的依赖项，并尝试修复其他依赖项错误。
+5. 安装完成后，可以使用`dpkg`命令来查询已安装的软件包。例如，要查询名为`example`的软件包是否已安装，可以使用以下命令：
+   ```
+   dpkg -s example
+   ```
+   如果软件包已安装，该命令会显示软件包的详细信息，包括版本号、安装时间等。
+需要注意的是，使用`dpkg`命令安装软件包时，可能会出现依赖项错误或其他问题。如果无法解决问题，可以尝试使用其他软件包管理工具，例如`apt`或`yum`，来安装软件包。
+总之，要在Linux中从`.deb`文件安装软件包，可以使用`dpkg`命令，并使用`sudo`命令以管理员权限运行该命令。如果出现依赖项错误，可以使用`apt-get`命令来修复依赖项。

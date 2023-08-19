@@ -109,8 +109,13 @@ git config --global --get https.proxy
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
+4. 查看代理是否生效
+```git
+curl https://www.google.com
+```
 
   PS：1080 为在 ShadowSocksR 或者 V2rayN 客户端中设置的代理的端口；Windows V2rayN 客户端似乎不支持 http 协议代理（注意在 git 更新 personal access token 时不支持 socks 协议）
+  
   
   > 参考文献：
   >
