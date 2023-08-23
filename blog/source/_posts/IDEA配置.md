@@ -151,3 +151,8 @@ mklink C:\Users\A\.ideavimrc D:\Desktop\dotfiles\idea\.ideavimrc
 > 2. [IdeaVim actionlist · GitHub](https://gist.github.com/zchee/9c78f91cc5ad771c1f5d)
 
 
+### IDEA在New window(新窗口) 中打开项目
+`Settings->Appearance & Behavior->System Settings`
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230823170740.png)
+> 参考资料：
+> 1. [Open, close, and move projects | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/open-close-and-move-projects.html#open-reopen-projects)
