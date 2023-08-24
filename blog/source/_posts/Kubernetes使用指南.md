@@ -6,7 +6,7 @@ categories:
 tags:
 - Kubernetes 
 ---
-本文记录一下Kubernets的使用指南：
+本文记录一下Kubernetes的使用指南：
 <!--more-->
 
 ### 报错 Unable to resolve the current Docker CLI context "default"
