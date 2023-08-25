@@ -29,4 +29,5 @@ tags:
 17. [Scripting with Go: a 400-line Git client that can create a repo and push itself to GitHub](https://benhoyt.com/writings/gogit/)：使用go编写自动化git操作的脚本，6年前作者写了python版本。
 18. [GitHub - henrypp/memreduct: Lightweight real-time memory management application to monitor and clean system memory on your computer.](https://github.com/henrypp/memreduct)：使用C语言编写的内存监控工具
 19. [The path to implementing a programming language](https://rainingcomputers.blog/dist/the_path_to_implementing_a_programming_language.md)
+20. [GitHub - spandanb/learndb-py: Learn database internals by implementing it from scratch.](https://github.com/spandanb/learndb-py)：实现一个小型数据库
 ...持续更新中
