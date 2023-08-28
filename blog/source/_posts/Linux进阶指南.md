@@ -11,3 +11,9 @@ tags:
 
 ### Linux新的发行版本
 1. [NixOS for the Impatient](https://borretti.me/article/nixos-for-the-impatient)：NixOS 是一个 Linux 发行版，它有一个系统配置文件，记录所安装的软件。只要有这个文件，就能还原出一模一样的系统。
+
+### 保持Linux服务器安全
+1. [GitHub - imthenachoman/How-To-Secure-A-Linux-Server: An evolving how-to guide for securing a Linux server.](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server)
+
+### Linux现代化教程
+1. [LINUX-TUTORIAL](https://dunwu.github.io/linux-tutorial/)
