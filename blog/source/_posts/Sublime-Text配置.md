@@ -21,6 +21,7 @@ ignored_packages" : []
 ```
 > 参考资料：
 > 1. [Vintage Mode](https://www.sublimetext.com/docs/vintage.html)
+> 2. [Sublime text is your vim editor – Wenbin Fei](https://wenbinfei.github.io/sublime-vim/)
 
 ### 自动保存
 
