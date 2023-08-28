@@ -538,3 +538,16 @@ mklink C:\Users\26899\AppData\Local\nvim\init.vim D:\Desktop\dotfiles\nvim-win\i
 
 > 参考资料：
 > 1. [如何在VSCode设置/取消隐藏文件_zwkkkk1的博客-CSDN博客](https://blog.csdn.net/zwkkkk1/article/details/93742821)
+
+### VSCode关闭word suggestions(单词提示/单词建议)
+问题：在编辑`.tex`文件时，会进行全文检索并给出单词提示
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230828123217.png)
+解决方案：
+在`settings.json`中添加：
+```json
+"editor.wordBasedSuggestions": false
+```
+
+> 参考资料：
+> 1. [Disable word based suggestion in Visual Studio Code - Stack Overflow](https://stackoverflow.com/questions/50890967/disable-word-based-suggestion-in-visual-studio-code)
+> 2. [How to Enable/Disable Inline Suggestions in VS Code – Tabnine](https://support.tabnine.com/hc/en-us/articles/11623814014865-How-to-Enable-Disable-Inline-Suggestions-in-VS-Code)
