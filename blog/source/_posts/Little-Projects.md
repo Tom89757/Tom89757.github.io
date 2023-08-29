@@ -30,4 +30,5 @@ tags:
 18. [GitHub - henrypp/memreduct: Lightweight real-time memory management application to monitor and clean system memory on your computer.](https://github.com/henrypp/memreduct)：使用C语言编写的内存监控工具
 19. [The path to implementing a programming language](https://rainingcomputers.blog/dist/the_path_to_implementing_a_programming_language.md)
 20. [GitHub - spandanb/learndb-py: Learn database internals by implementing it from scratch.](https://github.com/spandanb/learndb-py)：实现一个小型数据库
+21. [Series: Writing a JVM in Rust · Andrea Bergia's Website](https://andreabergia.com/series/writing-a-jvm-in-rust/)：使用Rust写一个JVM
 ...持续更新中
