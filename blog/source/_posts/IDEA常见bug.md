@@ -63,3 +63,9 @@ spring.r2dbc.sql-client.name=orders
 ### bad SQL grammar [INSERT INTO orders (book_isbn, quantity, status, created_date, last_modified_date, version) 
 [42P01] relation "orders" does not exist
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230825155514.png)
+
+### 报错Cannot resolve symbol "'StreamBridge'"
+原因：Spring Cloud和Spring boot版本不匹配
+解决方案：更改build.gradle使得二者版本匹配
+> 参考资料：
+> 1. [StreamBridge bean not found in Spring context - Stack Overflow](https://stackoverflow.com/questions/75367370/streambridge-bean-not-found-in-spring-context)
