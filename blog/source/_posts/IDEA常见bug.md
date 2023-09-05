@@ -69,3 +69,8 @@ spring.r2dbc.sql-client.name=orders
 解决方案：更改build.gradle使得二者版本匹配
 > 参考资料：
 > 1. [StreamBridge bean not found in Spring context - Stack Overflow](https://stackoverflow.com/questions/75367370/streambridge-bean-not-found-in-spring-context)
+
+### Could not autowire. No beans of 'ReactiveClientRegistrationRepository' type found.
+可能是IDEA无法正确解析依赖。
+> 参考资料：
+> 1. [java - intellij incorrectly saying no beans of type found for autowired repository - Stack Overflow](https://stackoverflow.com/questions/26889970/intellij-incorrectly-saying-no-beans-of-type-found-for-autowired-repository)
