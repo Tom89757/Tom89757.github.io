@@ -31,4 +31,6 @@ tags:
 19. [The path to implementing a programming language](https://rainingcomputers.blog/dist/the_path_to_implementing_a_programming_language.md)
 20. [GitHub - spandanb/learndb-py: Learn database internals by implementing it from scratch.](https://github.com/spandanb/learndb-py)：实现一个小型数据库
 21. [Series: Writing a JVM in Rust · Andrea Bergia's Website](https://andreabergia.com/series/writing-a-jvm-in-rust/)：使用Rust写一个JVM
+22. [GitHub - codecrafters-io/build-your-own-x: Master programming by recreating your favorite technologies from scratch.](https://github.com/codecrafters-io/build-your-own-x)：Build your own X。实现你想要的任何工具。
+23. [Chromium Docs - Checking out and Building Chromium for Windows](https://chromium.googlesource.com/chromium/src/+/main/docs/windows_build_instructions.md)：尝试自己编译一个Chromium
 ...持续更新中
