@@ -15,3 +15,7 @@ tags:
 > 参考资料：
 > 1. [Exploring the Top Neovim Distributions: LazyVim, LunarVim, AstroVim, and NVChad — Which One Reigns Supreme? | by Adam Poniatowski | Medium](https://medium.com/@adaml.poniatowski/exploring-the-top-neovim-distributions-lazyvim-lunarvim-astrovim-and-nvchad-which-one-reigns-3adcdbfa478d)
 
+### lazy.vim
+
+> 参考资料：
+> 1. [Migrating from Packer.nvim to Lazy.nvim - jdhao's digital space](https://jdhao.github.io/2023/09/02/from_packer_to_lazy_nvim/)
