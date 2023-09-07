@@ -74,3 +74,8 @@ spring.r2dbc.sql-client.name=orders
 可能是IDEA无法正确解析依赖。
 > 参考资料：
 > 1. [java - intellij incorrectly saying no beans of type found for autowired repository - Stack Overflow](https://stackoverflow.com/questions/26889970/intellij-incorrectly-saying-no-beans-of-type-found-for-autowired-repository)
+
+### Range for response status value 403 FORBIDDEN expected: \< SUCCESSFUL> but was:<CLIENT_ERROR>
+
+> 参考资料：
+> 1. [How to Solve 403 Error in Spring Boot POST Request | Baeldung](https://www.baeldung.com/java-spring-fix-403-error)
