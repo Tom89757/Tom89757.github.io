@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221122221549.png">
 <meta property="article:published_time" content="2022-11-22T12:49:01.000Z">
-<meta property="article:modified_time" content="2023-04-20T13:53:37.827Z">
+<meta property="article:modified_time" content="2023-07-23T15:45:59.349Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
@@ -158,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -243,7 +243,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-20 21:53:37" itemprop="dateModified" datetime="2023-04-20T21:53:37+08:00">2023-04-20</time>
+      <time title="修改时间：2023-07-23 23:45:59" itemprop="dateModified" datetime="2023-07-23T23:45:59+08:00">2023-07-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +306,11 @@
 > 1. [files - How to get over "device or resource busy"? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/11238/how-to-get-over-device-or-resource-busy)
 </br>
 3.bash脚本中的字符串比较：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$dir</span>&quot;</span> == <span class="string">&quot;image&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">	img=DUTS/<span class="variable">$dir</span>/<span class="variable">$line</span><span class="string">&quot;.jpg&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	img=DUTS/<span class="variable">$dir</span>/<span class="variable">$line</span><span class="string">&quot;.png&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$dir</span>"</span> <span class="token operator">==</span> <span class="token string">"image"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+	<span class="token assign-left variable">img</span><span class="token operator">=</span>DUTS/<span class="token variable">$dir</span>/<span class="token variable">$line</span><span class="token string">".jpg"</span>
+<span class="token keyword">else</span>
+	<span class="token assign-left variable">img</span><span class="token operator">=</span>DUTS/<span class="token variable">$dir</span>/<span class="token variable">$line</span><span class="token string">".png"</span>
+<span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 > 参考资料：
 > 1. [Bash shell字符串比较 | myfreax](https://www.myfreax.com/how-to-compare-strings-in-bash/#:~:text=%E5%9C%A8Bash%E4%B8%AD%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8B,%E4%BD%A0%E5%BA%94%E8%AF%A5%E4%B8%8E%20%5B%20%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E3%80%82)
 > 2. [Bash Shell字符串比较入门_Linux教程_Linux公社-Linux系统门户网站](https://www.linuxidc.com/Linux/2019-05/158678.htm)
@@ -314,7 +318,12 @@
 4.由于Windows系统和Linux系统中换行符的差异（前者为\n\r，后者为\n），在WSL进行批量处理时可能出现以下问题：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221203144329.png)
 其解决方式是，在遍历时进行`sed`替换操作替换掉`\r`：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> img_1000.txt | sed <span class="string">&#x27;s/\r//&#x27;</span> | <span class="keyword">while</span> <span class="built_in">read</span> line</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    img=./image/<span class="variable">$line</span><span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="built_in">cp</span> <span class="variable">$img</span> ./DUTS1000/</span><br><span class="line">    <span class="comment"># echo &quot;$img&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> img_1000.txt <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/\r//'</span> <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> line
+<span class="token keyword">do</span>
+    <span class="token assign-left variable">img</span><span class="token operator">=</span>./image/<span class="token variable">$line</span><span class="token string">".jpg"</span>
+    <span class="token function">cp</span> <span class="token variable">$img</span> ./DUTS1000/
+    <span class="token comment"># echo "$img"</span>
+<span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </br>
 5.`awk`指令。
 - 打印第4列：`cat test.txt | awk '{print $4}'`
@@ -323,25 +332,35 @@
 > 1. [Fetching Title#90mq](https://www.runoob.com/linux/linux-comm-awk.html)
 </br>
 6.sed指令匹配模式，并替换模式中的一部分，保留剩余部分（向后查找，回溯）：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">&#x27;s/hello \(world\)/hi \1/&#x27;</span> file.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sed</span> <span class="token string">'s/hello \(world\)/hi \1/'</span> file.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 可以将`hello world`替换为`hi world`。
 </br>
 7.由于Linux和Windows系统中换行符的差异，有时需要将`\r`替换为空字符。
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> test.txt | sed <span class="string">&#x27;s/\r//&#x27;</span> &gt;a.txt</span><br><span class="line">$ <span class="built_in">sort</span> b.txt a.txt a.txt | <span class="built_in">uniq</span> -u &gt; b-a.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">cat</span> test.txt <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/\r//'</span> <span class="token operator">></span>a.txt
+$ <span class="token function">sort</span> b.txt a.txt a.txt <span class="token operator">|</span> <span class="token function">uniq</span> -u <span class="token operator">></span> b-a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </br>
 8.使用FreePic2Pdf给书制作目录时，从豆瓣或使用OCR对应的目录txt文本往往如下图所示：
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第1章 基础：逻辑和证明 1</span><br><span class="line">1.1 命题逻辑 1</span><br><span class="line">1.1.1 引言 1</span><br><span class="line">1.1.2 命题 1</span><br><span class="line">1.1.3 条件语句 4</span><br><span class="line">1.1.4 复合命题的真值表 7</span><br><span class="line">1.1.5 逻辑运算符的优先级 8</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">第1章 基础：逻辑和证明 1
+1.1 命题逻辑 1
+1.1.1 引言 1
+1.1.2 命题 1
+1.1.3 条件语句 4
+1.1.4 复合命题的真值表 7
+1.1.5 逻辑运算符的优先级 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 根据FreePic2Pdf要求，需要将末尾的" "(空格)+数字转换为"\t"(tab键)+数字。此时可以使用vim中的替换（使用子模式匹配），命令如下：
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/\v( )([<span class="number">0</span>-<span class="number">9</span>]**)$</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vim" data-language="vim"><code class="language-vim"><span class="token operator">/</span>\<span class="token function">v</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">)</span>$<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 先使用上述正则语法，然后回车找到末尾的`( )(页码)$`模式；
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s//\t\<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vim" data-language="vim"><code class="language-vim"><span class="token punctuation">:</span><span class="token operator">%</span>s<span class="token operator">/</span><span class="token operator">/</span>\<span class="token keyword">t</span>\<span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 再使用上述的替换命令，将页码前的空格替换为`\t`。
 同样可以使用类似命令在行首添加`\t`：
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\v^([<span class="number">0</span>-<span class="number">9</span>]*).([<span class="number">0</span>-<span class="number">9</span>]*) #末尾包含空格</span><br><span class="line">:%s//\t\<span class="number">1</span>.\<span class="number">2</span> #末尾包含空格</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vim" data-language="vim"><code class="language-vim"><span class="token operator">/</span>\v^<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">.</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">)</span> #末尾包含空格
+<span class="token punctuation">:</span><span class="token operator">%</span>s<span class="token operator">/</span><span class="token operator">/</span>\<span class="token keyword">t</span>\<span class="token number">1</span><span class="token operator">.</span>\<span class="token number">2</span> #末尾包含空格<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 更精准的做法是：
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\v^([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>,<span class="number">2</span>&#125;.[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1.2</span>&#125; ) #末尾包含空格，&#123;<span class="number">1</span>,<span class="number">2</span>&#125;表示匹配<span class="number">1</span>或<span class="number">2</span>次</span><br><span class="line">:%s//\t\<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vim" data-language="vim"><code class="language-vim"><span class="token operator">/</span>\v^<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token operator">.</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">1.2</span><span class="token punctuation">&#125;</span> <span class="token punctuation">)</span> #末尾包含空格，<span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">&#125;</span>表示匹配<span class="token number">1</span>或<span class="token number">2</span>次
+<span class="token punctuation">:</span><span class="token operator">%</span>s<span class="token operator">/</span><span class="token operator">/</span>\<span class="token keyword">t</span>\<span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 还可以使用`^`排除匹配：
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/\v^([^第\t]) #[^第\t]表示排除对<span class="string">&quot;第&quot;</span>和<span class="string">&quot;\t&quot;</span>的匹配</span><br><span class="line">:%s//\t\<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vim" data-language="vim"><code class="language-vim"><span class="token operator">/</span>\v^<span class="token punctuation">(</span><span class="token punctuation">[</span>^第\<span class="token keyword">t</span><span class="token punctuation">]</span><span class="token punctuation">)</span> #<span class="token punctuation">[</span>^第\<span class="token keyword">t</span><span class="token punctuation">]</span>表示排除对<span class="token string">"第"</span>和<span class="token string">"\t"</span>的匹配
+<span class="token punctuation">:</span><span class="token operator">%</span>s<span class="token operator">/</span><span class="token operator">/</span>\<span class="token keyword">t</span>\<span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 > 参考资料：
 > 1. 《Vim实用技巧》技巧94
 > 2. [VIM学习笔记 正则表达式-进阶 (Regular Expression Advanced)](http://yyq123.github.io/learn-vim/learn-vi-82-RegularExpressionAdv.html)
@@ -353,12 +372,16 @@
 > 3. [privileges - lsof: WARNING: can't stat() fuse.gvfsd-fuse file system - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/171519/lsof-warning-cant-stat-fuse-gvfsd-fuse-file-system)
 </br>
 10.当使用`grep`指令时，搭配正则表达式，例如或运算：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&#x27;fatal\|error\|critical&#x27;</span> /var/log/nginx/error.log <span class="comment"># 使用\转义</span></span><br><span class="line">grep -E <span class="string">&#x27;fatal|error|critical&#x27;</span> /var/log/nginx/error.log</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">grep</span> <span class="token string">'fatal\|error\|critical'</span> /var/log/nginx/error.log <span class="token comment"># 使用\转义</span>
+<span class="token function">grep</span> -E <span class="token string">'fatal|error|critical'</span> /var/log/nginx/error.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 > 参考资料：
 > 1. [Linux grep中的正则表达式Regex | myfreax](https://www.myfreax.com/regular-expressions-in-grep/)
 </br>
 11.Ubuntu卸载软件：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove lua5.3 <span class="comment">#只去除lua5.3</span></span><br><span class="line">sudo apt-get remove --auto-remove lua5.3 <span class="comment">#去除lua5.3及其依赖packages</span></span><br><span class="line">sudo apt-get purge lua5.3 <span class="comment"># 使用purge，所有配置和依赖packages将被移除</span></span><br><span class="line">sudo apt-get purge --auto-remove lua5.3 <span class="comment"># 使用auto remove选项时，将根据该package来去除，在你想要重装时很有用</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> remove lua5.3 <span class="token comment">#只去除lua5.3</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> remove --auto-remove lua5.3 <span class="token comment">#去除lua5.3及其依赖packages</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> purge lua5.3 <span class="token comment"># 使用purge，所有配置和依赖packages将被移除</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> purge --auto-remove lua5.3 <span class="token comment"># 使用auto remove选项时，将根据该package来去除，在你想要重装时很有用</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 > 参考资料：
 > 1. [在ubuntu系统中删除软件的三种最佳方法_51CTO博客_ubuntu 卸载软件](https://blog.51cto.com/u_168360/2407085)
 > 2. [server - How to completely remove virtual packages? - Ask Ubuntu](https://askubuntu.com/questions/207505/how-to-completely-remove-virtual-packages)
@@ -366,9 +389,24 @@
 </br>
 12.Ubuntu源配置：
 1. 备份sources.list文件，然后删除
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bat</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 2. 新建sources.list，将下述参考资料2中的源地址复制到其中：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认注释了源码仓库，如有需要可自行取消注释</span></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 预发布软件源，不建议启用</span></span><br><span class="line"><span class="comment"># deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span></span><br><span class="line"><span class="comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 默认注释了源码仓库，如有需要可自行取消注释</span>
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+<span class="token comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span>
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+<span class="token comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span>
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+<span class="token comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span>
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+<span class="token comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span>
+
+<span class="token comment"># 预发布软件源，不建议启用</span>
+<span class="token comment"># deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span>
+<span class="token comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 3. 运行`sudo apt-get update`对源进行更新
 > 参考资料：
 > 1. [Ubuntu 20.04系统下更改apt源为阿里源 - 知乎](https://zhuanlan.zhihu.com/p/251009600)
@@ -378,7 +416,9 @@
 13.修改用户名和密码
 1. 使用`wsl -u root`登录root用户
 2. 执行如下命令：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">usermod -l &lt;newname&gt; -d /home/&lt;newname&gt; -m &lt;oldname&gt;</span><br><span class="line">usermod -c <span class="string">&quot;newfullname&quot;</span> &lt;newname&gt;</span><br><span class="line">groupmod -n &lt;newgroup&gt; &lt;oldgroup&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">usermod</span> -l <span class="token operator">&lt;</span>newname<span class="token operator">></span> -d /home/<span class="token operator">&lt;</span>newname<span class="token operator">></span> -m <span class="token operator">&lt;</span>oldname<span class="token operator">></span>
+<span class="token function">usermod</span> -c <span class="token string">"newfullname"</span> <span class="token operator">&lt;</span>newname<span class="token operator">></span>
+<span class="token function">groupmod</span> -n <span class="token operator">&lt;</span>newgroup<span class="token operator">></span> <span class="token operator">&lt;</span>oldgroup<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 > 参考资料：
 > 1. [permissions - How do I change my username? - Ask Ubuntu](https://askubuntu.com/questions/34074/how-do-i-change-my-username)
 > 2. [Linux usermod user is currently used by process - Stack Overflow](https://stackoverflow.com/questions/28972503/linux-usermod-user-is-currently-used-by-process)
@@ -396,7 +436,9 @@
 </blockquote>
 </br>
 15.卸载java
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query -W -f=<span class="string">&#x27;$&#123;binary:Package&#125;\n&#x27;</span> | grep -E -e <span class="string">&#x27;^(ia32-)?(sun|oracle)-java&#x27;</span> -e <span class="string">&#x27;^openjdk-&#x27;</span> -e <span class="string">&#x27;^icedtea&#x27;</span> -e <span class="string">&#x27;^(default|gcj)-j(re|dk)&#x27;</span> -e <span class="string">&#x27;^gcj-(.*)-j(re|dk)&#x27;</span> -e <span class="string">&#x27;^java-common&#x27;</span> | xargs sudo apt-get -y remove</span><br><span class="line"></span><br><span class="line">sudo apt-get -y autoremove</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dpkg-query -W -f<span class="token operator">=</span><span class="token string">'$&#123;binary:Package&#125;\n'</span> <span class="token operator">|</span> <span class="token function">grep</span> -E -e <span class="token string">'^(ia32-)?(sun|oracle)-java'</span> -e <span class="token string">'^openjdk-'</span> -e <span class="token string">'^icedtea'</span> -e <span class="token string">'^(default|gcj)-j(re|dk)'</span> -e <span class="token string">'^gcj-(.*)-j(re|dk)'</span> -e <span class="token string">'^java-common'</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">sudo</span> <span class="token function">apt-get</span> -y remove
+
+<span class="token function">sudo</span> <span class="token function">apt-get</span> -y autoremove<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 > 参考资料：
 > 1. [How to completely uninstall Java? - Ask Ubuntu](https://askubuntu.com/questions/84483/how-to-completely-uninstall-java#)
 </br>
@@ -421,7 +463,7 @@
 18.Ubuntu配置ssh免输密码：
 - `ssh-keygen`：在本地机器上生成密钥对，`id_rsa.pub`和`id_rsa`。在`~/.ssh/`目录下。更改`id_rsa` 私钥权限，`chmod 600 id_rsa`。
 - `ssh-copy-id -i ~/.ssh/id_rsa.pub user@host`：将本地公钥`id_rsa.pub`写入远程host的`~/.ssh`目录下的`authorized_keys`文件。如果远程host没有`.ssh`目录手动进行创建。更改`authorized_keys`文件权限，`chmod 755 authorized_keys`。
-- 尝试本地登录，如果无法免密码登录，更高远程host上`/home/user`目录权限，`chmod 700 /home/user`。
+- 尝试本地登录，如果无法免密码登录，更改远程host上`/home/user`目录权限，`chmod 700 /home/user`。
 > 参考资料：
 > 1. [Getting Started With SSH in Linux](https://linuxhandbook.com/ssh-basics/)
 > 2. [How to Add SSH Public Key to Server](https://linuxhandbook.com/add-ssh-public-key-to-server/)
@@ -452,9 +494,9 @@
 - 通过`su`切换到root用户
 - `make install`和`make install.man`安装xclip和man page，分别安装在`/storage/FT/.local/bin`和`/storage/FT/.local/man`目录下。
 - 编辑`.bashrc`将该路径加入到PATH中：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;/storage/FT/.local/bin:<span class="variable">$PATH</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"/storage/FT/.local/bin:<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 - 编辑`.bashrc`添加alias：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> clip=<span class="string">&#x27;xclip -se c&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">clip</span><span class="token operator">=</span><span class="token string">'xclip -se c'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 - 此时即可通过`pwd | clip`复制当前路径。
 PS：但在VSCode终端中会出现如下报错。
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230418225219.png)
@@ -476,7 +518,7 @@ PS：但在VSCode终端中会出现如下报错。
 在MobaXterm中`$DISPLAY`生效，但在VSCode中打开的bash终端中`$DISPLAY`并未生效。只需：
 - 在MobaXterm中通过`echo $DISPLAY`查看`$DISPLAY`环境变量的值。(若没有，通过`cat /etc/resolv.conf`查看`nameserver`的值)
 - 在`.bashrc`中添加：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> DISPLAY=<span class="string">&#x27;localhost:29.0&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">DISPLAY</span></span><span class="token operator">=</span><span class="token string">'localhost:29.0'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 - `source ~/.bashrc`使之生效。
 > 参考资料：
 > 1. [xclip fails with Error: Can't open display: (null) · Issue #4933 · microsoft/WSL · GitHub](https://github.com/microsoft/WSL/issues/4933)
@@ -489,7 +531,7 @@ VSCode终端窗口中可以使用`Ctrl+Shift+C/V`进行复制粘贴；
 MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
 </br>
 23.Ubuntu从源码编译安装，安装到指定文件夹：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/storage/FT/.local</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./configure --prefix<span class="token operator">=</span>/storage/FT/.local<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 > 参考资料：
 > 1. [linux - Make install, but not to default directories? - Stack Overflow](https://stackoverflow.com/questions/3239343/make-install-but-not-to-default-directories)
 </br>
@@ -498,6 +540,33 @@ MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
 <p>参考资料：</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-tar.html">Linux tar 命令 | 菜鸟教程</a></li>
+</ol>
+</blockquote>
+</br>
+25.设置alias
+> 参考资料：
+> 1. [Bash alias with piping - Super User](https://superuser.com/questions/407104/bash-alias-with-piping)
+</br>
+26.设置时区。·
+`ls -lh`和`date`命令显示的时间不同。
+> 参考资料：
+> 1. [linux - ls and date showing different file dates - Super User](https://superuser.com/questions/908157/ls-and-date-showing-different-file-dates)
+> 2. [How to set or change timezone in linux](https://linuxize.com/post/how-to-set-or-change-timezone-in-linux/)
+> 3. [关于Linux中ls -l显示时间不全的问题_nui111的博客-CSDN博客](https://blog.csdn.net/nui111/article/details/42275481)
+</br>
+27.使用`ln -s`将`dotfiles`仓库中的文件链接到`~`。
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> -s /mnt/d/Desktop/dotfiles/wsl/.zshrc ~/.zshrc
+<span class="token function">ln</span> -s /mnt/d/Desktop/dotfiles/wsl/.bash_aliases ~/.bash_aliases
+<span class="token function">ln</span> -s /mnt/d/Desktop/dotfiles/wsl/.bash_path ~/.bash_path
+<span class="token function">ln</span> -s /mnt/d/Desktop/dotfiles/wsl/.bashrc ~/.bashrc
+<span class="token function">ln</span> -s /mnt/d/Desktop/dotfiles/wsl/.vimrc ~/.vimrc
+<span class="token function">ln</span> -s /mnt/d/Desktop/dotfiles/wsl/.vim/colors/monokai.vim ~/.vim/colors/monokai.vim<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</br>
+28.Linux的内存统计：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.0xffffff.org/2019/07/17/42-linux-memory-monitor/">聊聊 Linux 的内存统计 | 浅墨的部落格</a></li>
 </ol>
 </blockquote>
 
@@ -572,13 +641,13 @@ MobaXterm可以使用`Ctrl+C`进行复制，鼠标右键进行粘贴。
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">348k</span>
+    <span title="站点总字数">390k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

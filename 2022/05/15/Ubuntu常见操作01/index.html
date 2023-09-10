@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164139.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220913164340.png">
 <meta property="article:published_time" content="2022-05-14T16:22:55.000Z">
-<meta property="article:modified_time" content="2023-01-18T15:52:21.848Z">
+<meta property="article:modified_time" content="2023-06-06T10:01:53.213Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
@@ -166,18 +166,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -251,7 +251,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-18 23:52:21" itemprop="dateModified" datetime="2023-01-18T23:52:21+08:00">2023-01-18</time>
+      <time title="修改时间：2023-06-06 18:01:53" itemprop="dateModified" datetime="2023-06-06T18:01:53+08:00">2023-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -270,14 +270,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>8.1k</span>
+      <span>8.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>7 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -375,25 +375,54 @@
 <ul>
 <li>
 <p>处理之前：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FT@node2$ ls | head</span><br><span class="line">ILSVRC2012_test_00000004.jpg</span><br><span class="line">ILSVRC2012_test_00000018.jpg</span><br><span class="line">ILSVRC2012_test_00000019.jpg</span><br><span class="line">ILSVRC2012_test_00000022.jpg</span><br><span class="line">ILSVRC2012_test_00000030.jpg</span><br><span class="line">ILSVRC2012_test_00000072.jpg</span><br><span class="line">ILSVRC2012_test_00000082.jpg</span><br><span class="line">ILSVRC2012_test_00000108.jpg</span><br><span class="line">ILSVRC2012_test_00000130.jpg</span><br><span class="line">ILSVRC2012_test_00000172.jpg</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">FT@node2$ ls <span class="token operator">|</span> head
+ILSVRC2012_test_00000004<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000018<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000019<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000022<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000030<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000072<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000082<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000108<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000130<span class="token punctuation">.</span>jpg
+ILSVRC2012_test_00000172<span class="token punctuation">.</span>jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>
 <p>处理之后：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FT@node2$ ls | head | sed <span class="string">&#x27;s/.jpg//&#x27;</span></span><br><span class="line">ILSVRC2012_test_00000004</span><br><span class="line">ILSVRC2012_test_00000018</span><br><span class="line">ILSVRC2012_test_00000019</span><br><span class="line">ILSVRC2012_test_00000022</span><br><span class="line">ILSVRC2012_test_00000030</span><br><span class="line">ILSVRC2012_test_00000072</span><br><span class="line">ILSVRC2012_test_00000082</span><br><span class="line">ILSVRC2012_test_00000108</span><br><span class="line">ILSVRC2012_test_00000130</span><br><span class="line">ILSVRC2012_test_00000172</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">FT@node2$ ls <span class="token operator">|</span> head <span class="token operator">|</span> sed <span class="token string">'s/.jpg//'</span>
+ILSVRC2012_test_00000004
+ILSVRC2012_test_00000018
+ILSVRC2012_test_00000019
+ILSVRC2012_test_00000022
+ILSVRC2012_test_00000030
+ILSVRC2012_test_00000072
+ILSVRC2012_test_00000082
+ILSVRC2012_test_00000108
+ILSVRC2012_test_00000130
+ILSVRC2012_test_00000172<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </br>
 <p>9.在<code>sed</code>命令中包含斜杆的替换。一般情况下，我们会用<code>/</code>作为<code>sed</code>指令的分隔符进行字符串的查找替换。例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat test.txt | sed <span class="string">&#x27;s/.jpg/.png/&#x27;</span> &gt; test1.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cat test<span class="token punctuation">.</span>txt <span class="token operator">|</span> sed <span class="token string">'s/.jpg/.png/'</span> <span class="token operator">></span> test1<span class="token punctuation">.</span>txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>可以将<code>.jpg</code>字符串替换为<code>.png</code>。但当要查找或替换的字符串包含<code>/</code>本身时，该方式无法使用。此时可以利用<code>sed</code>命令会将紧跟在<code>s</code>后面的字符作为分隔符的特性，将分隔符改为<code>#</code>或其他字符。例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat test.txt | sed <span class="string">&#x27;s#^#data/#&#x27;</span> &gt; test2.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cat test<span class="token punctuation">.</span>txt <span class="token operator">|</span> sed <span class="token string">'s#^#data/#'</span> <span class="token operator">></span> test2<span class="token punctuation">.</span>txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>可以在每一行的开头添加<code>data/</code>字符串。</p>
 <ul>
 <li>在每一行开头添加<code>'</code>单引号字符，<code>ls | sed &quot;s/^/'/&quot;</code></li>
 <li>在每一行末尾添加<code>',</code>字符，<code>ls | sed &quot;s/$/',/&quot;</code>。<br />
 完整使用<code>ls | sed &quot;s/^/'/&quot; | sed &quot;s/$/',/&quot;</code>效果如下：</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x27;ILSVRC2012_test_00000003.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000023.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000025.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000026.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000034.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000038.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000064.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000086.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000105.png&#x27;,</span><br><span class="line">&#x27;ILSVRC2012_test_00000128.png&#x27;,</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#39;ILSVRC2012_test_00000003.png&#39;,
+&#39;ILSVRC2012_test_00000023.png&#39;,
+&#39;ILSVRC2012_test_00000025.png&#39;,
+&#39;ILSVRC2012_test_00000026.png&#39;,
+&#39;ILSVRC2012_test_00000034.png&#39;,
+&#39;ILSVRC2012_test_00000038.png&#39;,
+&#39;ILSVRC2012_test_00000064.png&#39;,
+&#39;ILSVRC2012_test_00000086.png&#39;,
+&#39;ILSVRC2012_test_00000105.png&#39;,
+&#39;ILSVRC2012_test_00000128.png&#39;,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -402,9 +431,21 @@
 </blockquote>
 </br>
 <p>10.有时候可能会许村将两个文件中的数据合并到一个文件，并且数据分处第一列和第二列，此时可以通过<code>paste</code>命令实现。例如，文件<code>train.txt</code>和<code>train1.txt</code>分别包含以下内容：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ cat train.txt</span><br><span class="line"><span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg</span><br><span class="line">$ cat train1.txt</span><br><span class="line"><span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">$ cat train<span class="token punctuation">.</span>txt
+<span class="token number">1</span><span class="token punctuation">.</span>jpg
+<span class="token number">2</span><span class="token punctuation">.</span>jpg
+<span class="token number">3</span><span class="token punctuation">.</span>jpg
+<span class="token number">4</span><span class="token punctuation">.</span>jpg
+$ cat train1<span class="token punctuation">.</span>txt
+<span class="token number">1</span><span class="token punctuation">.</span>jpg
+<span class="token number">2</span><span class="token punctuation">.</span>jpg
+<span class="token number">3</span><span class="token punctuation">.</span>jpg
+<span class="token number">4</span><span class="token punctuation">.</span>jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过<code>paste train.txt train1.txt</code>命令可以获得以下输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.j</span>pg   <span class="number">1.j</span>pg</span><br><span class="line"><span class="number">2.j</span>pg   <span class="number">2.j</span>pg</span><br><span class="line"><span class="number">3.j</span>pg   <span class="number">3.j</span>pg</span><br><span class="line"><span class="number">4.j</span>pg   <span class="number">4.j</span>pg</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token number">1</span><span class="token punctuation">.</span>jpg   <span class="token number">1</span><span class="token punctuation">.</span>jpg
+<span class="token number">2</span><span class="token punctuation">.</span>jpg   <span class="token number">2</span><span class="token punctuation">.</span>jpg
+<span class="token number">3</span><span class="token punctuation">.</span>jpg   <span class="token number">3</span><span class="token punctuation">.</span>jpg
+<span class="token number">4</span><span class="token punctuation">.</span>jpg   <span class="token number">4</span><span class="token punctuation">.</span>jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -413,7 +454,34 @@
 </blockquote>
 </br>
 <p>11.可以通过以下脚本批量移动文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;processing <span class="variable">$dir</span> data&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$dir</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$dir</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    image=<span class="variable">$dir</span>/image</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;image is <span class="variable">$image</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$image</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$image</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    mask=<span class="variable">$dir</span>/mask</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;mask is <span class="variable">$mask</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ -d <span class="variable">$mask</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">mkdir</span> <span class="variable">$mask</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">mv</span> ./img/<span class="variable">$dir</span>/* <span class="variable">$image</span></span><br><span class="line">    <span class="built_in">mv</span> ./gt/<span class="variable">$dir</span>/* <span class="variable">$mask</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">dir</span> <span class="token keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"processing <span class="token variable">$dir</span> data"</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token variable">$dir</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span>
+    <span class="token keyword">else</span>
+        <span class="token function">mkdir</span> <span class="token variable">$dir</span>
+    <span class="token keyword">fi</span>
+
+    <span class="token assign-left variable">image</span><span class="token operator">=</span><span class="token variable">$dir</span>/image
+    <span class="token builtin class-name">echo</span> <span class="token string">"image is <span class="token variable">$image</span>"</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token variable">$image</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span>
+    <span class="token keyword">else</span>
+        <span class="token function">mkdir</span> <span class="token variable">$image</span>
+    <span class="token keyword">fi</span>
+    
+    <span class="token assign-left variable">mask</span><span class="token operator">=</span><span class="token variable">$dir</span>/mask
+    <span class="token builtin class-name">echo</span> <span class="token string">"mask is <span class="token variable">$mask</span>"</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token variable">$mask</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span>
+    <span class="token keyword">else</span>
+        <span class="token function">mkdir</span> <span class="token variable">$mask</span>
+    <span class="token keyword">fi</span>
+    
+    <span class="token function">mv</span> ./img/<span class="token variable">$dir</span>/* <span class="token variable">$image</span>
+    <span class="token function">mv</span> ./gt/<span class="token variable">$dir</span>/* <span class="token variable">$mask</span>
+<span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>先通过<code>[-d $dir]</code>确定是否存在<code>$dir</code>文件夹，如果没有则创建，然后将<code>img</code>和<code>gt</code>文件夹下的图片移动到对应的文件夹。</p>
 <blockquote>
 <p>参考资料：</p>
@@ -441,7 +509,17 @@
 </blockquote>
 </br>
 <p>13.结合[11]和[12]可以方便地求取image和mask文件夹中图片的交集并输出到对应的txt文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;processing <span class="variable">$dir</span> data&quot;</span></span><br><span class="line">    image=<span class="variable">$dir</span>/image</span><br><span class="line">    mask=<span class="variable">$dir</span>/mask</span><br><span class="line">    <span class="built_in">ls</span> <span class="variable">$image</span> | sed <span class="string">&#x27;s/.jpg//&#x27;</span> | sed <span class="string">&#x27;s/.png//&#x27;</span> &gt;<span class="variable">$dir</span>/image.txt</span><br><span class="line">    <span class="built_in">ls</span> <span class="variable">$mask</span> | sed <span class="string">&#x27;s/.png//&#x27;</span> | sed <span class="string">&#x27;s/.bmp//&#x27;</span> &gt;<span class="variable">$dir</span>/mask.txt</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span> <span class="variable">$dir</span>/image.txt <span class="variable">$dir</span>/mask.txt | <span class="built_in">uniq</span> -d &gt;<span class="variable">$dir</span>/test.txt</span><br><span class="line">    <span class="built_in">cat</span> <span class="variable">$dir</span>/test.txt | <span class="built_in">wc</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">dir</span> <span class="token keyword">in</span> DUT-OMRON DUTS_Test ECSSD HKU-IS PASCAL-S SOD THUR15K
+<span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"processing <span class="token variable">$dir</span> data"</span>
+    <span class="token assign-left variable">image</span><span class="token operator">=</span><span class="token variable">$dir</span>/image
+    <span class="token assign-left variable">mask</span><span class="token operator">=</span><span class="token variable">$dir</span>/mask
+    <span class="token function">ls</span> <span class="token variable">$image</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/.jpg//'</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/.png//'</span> <span class="token operator">></span><span class="token variable">$dir</span>/image.txt
+    <span class="token function">ls</span> <span class="token variable">$mask</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/.png//'</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/.bmp//'</span> <span class="token operator">></span><span class="token variable">$dir</span>/mask.txt
+
+    <span class="token function">sort</span> <span class="token variable">$dir</span>/image.txt <span class="token variable">$dir</span>/mask.txt <span class="token operator">|</span> <span class="token function">uniq</span> -d <span class="token operator">></span><span class="token variable">$dir</span>/test.txt
+    <span class="token function">cat</span> <span class="token variable">$dir</span>/test.txt <span class="token operator">|</span> <span class="token function">wc</span>
+<span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </br>
 <p>14.<code>sh</code> vs <code>bash</code>：注意，二者并不等价。bash是sh的超集。</p>
 <ul>
@@ -463,7 +541,11 @@
 </blockquote>
 </br>
 <p>15.在bash脚本中将命令行的输出复制给一个变量：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">output=$(<span class="built_in">cat</span> batchDir.sh | <span class="built_in">wc</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$&#123;output&#125;</span>&quot;</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$output</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">output</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> batchDir.sh <span class="token operator">|</span> <span class="token function">wc</span><span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$&#123;output&#125;</span>"</span>
+<span class="token comment"># 或者</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$output</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其输出如下：</p>
 <p><img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/image-20220716172942136.png" alt="image-20220716172942136" /></p>
 <blockquote>
@@ -489,7 +571,20 @@
 <p>17.删除conda环境：<code>conda env remove -n ENV_NAME</code>。</p>
 </br>
 <p>18.在编写bash脚本时，指定<code>IFS</code>变量为多个分隔符：<code>IFS=', | \\'</code>。如下图所示：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">echo <span class="string">&quot;reading values from a file&quot;</span></span><br><span class="line">file=<span class="string">&quot;list&quot;</span></span><br><span class="line"><span class="comment"># change seperator</span></span><br><span class="line"><span class="comment"># save IFS before changing it</span></span><br><span class="line">IFS_OLD=$IFS</span><br><span class="line"><span class="comment"># set multiple seperators?</span></span><br><span class="line">IFS=<span class="string">&#x27;; | :&#x27;</span></span><br><span class="line"><span class="keyword">for</span> state <span class="keyword">in</span> $(cat $file)</span><br><span class="line">do</span><br><span class="line">    echo <span class="string">&quot;Visit $state&quot;</span></span><br><span class="line">done</span><br><span class="line">IFS=$&#123;IFS_OLD&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/bin/bash</span>
+echo <span class="token string">"reading values from a file"</span>
+<span class="token builtin">file</span><span class="token operator">=</span><span class="token string">"list"</span>
+<span class="token comment"># change seperator</span>
+<span class="token comment"># save IFS before changing it</span>
+IFS_OLD<span class="token operator">=</span>$IFS
+<span class="token comment"># set multiple seperators?</span>
+IFS<span class="token operator">=</span><span class="token string">'; | :'</span>
+<span class="token keyword">for</span> state <span class="token keyword">in</span> $<span class="token punctuation">(</span>cat $<span class="token builtin">file</span><span class="token punctuation">)</span>
+do
+    echo <span class="token string">"Visit $state"</span>
+done
+IFS<span class="token operator">=</span>$<span class="token punctuation">&#123;</span>IFS_OLD<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -503,7 +598,7 @@
 <li><code>reset</code></li>
 </ul>
 <p>二者来完全清空屏幕，但<code>reset</code>为彻底清除，执行速度较慢。故可以通过在<code>~/.bashrc</code>中添加如下别名：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> cls=<span class="string">&#x27;printf &quot;\ec&quot;&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">cls</span><span class="token operator">=</span><span class="token string">'printf "\ec"'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>来使用<code>cls</code>来清空终端屏幕。</p>
 <blockquote>
 <p>参考资料：</p>
@@ -516,7 +611,7 @@
 <ol>
 <li>
 <p><code>ls -d */</code>：其输出如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DUT-OMRON/  DUTS_Test/  ECSSD/  HKU-IS/  PASCAL-S/  SOD/  THUR15K/</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">DUT-OMRON/  DUTS_Test/  ECSSD/  HKU-IS/  PASCAL-S/  SOD/  THUR15K/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>可以通过<code>ls -d */ | sed 's#/##' &gt; dir.txt</code>将数据集名称导出到<code>dir.txt</code></p>
 </li>
 <li>
@@ -524,7 +619,7 @@
 </li>
 <li>
 <p><code>ls -l | grep &quot;^d&quot;</code>。使用<code>grep</code>匹配输出每行开头的<code>d</code>字符。可以通过<code>awk</code>命令列出目录名本身：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | awk <span class="string">&#x27;&#123;print $8&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^d"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&#123;print $8&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ol>
 <blockquote>
@@ -547,7 +642,7 @@
 </li>
 <li>
 <p><code>ps -aux</code>：显示所有包含其他使用者的进程。下面是对该命令输出信息的介绍，其输出格式为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token environment constant">USER</span> PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>
 <p><code>USER</code>：进程拥有者</p>
@@ -669,7 +764,7 @@
 > 2. [How to correctly add a path to PATH?](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path)
 </br>
 <p>29.复制指定目录下的全部文件到另一个目录中：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r dir1 dir2</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> -r dir1 dir2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -684,6 +779,23 @@
 <li><a target="_blank" rel="noopener" href="https://einverne.github.io/post/2018/01/rename-files-batch.html">每天学习一个命令: rename 批量修改文件名 | Verne in GitHub</a></li>
 </ol>
 </blockquote>
+</br>
+31.编写bash script脚本：
+以下脚本使用copilot编写：
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Find the process IDs of all processes containing "FT"</span>
+<span class="token assign-left variable">pids</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> FT <span class="token operator">|</span> <span class="token function">grep</span> train <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&#123;print $2&#125;'</span><span class="token variable">)</span></span>
+
+<span class="token comment"># Kill all processes with the found process IDs</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$pids</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"Killing processes: <span class="token variable">$pids</span>"</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$pids</span>"</span> <span class="token operator">|</span> <span class="token function">xargs</span> -r <span class="token function">kill</span> -9
+<span class="token keyword">else</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"No processes found containing 'FT'"</span>
+<span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+> 参考资料：
+> 1. [linux - Add a bash script to path - Stack Overflow](https://stackoverflow.com/questions/20054538/add-a-bash-script-to-path)
+> 2. [WSL2配置代理 - Leaos - 博客园](https://www.cnblogs.com/tuilk/p/16287472.html)
+> 3. [Functions - Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-functions.php)
 
     </div>
 
@@ -717,7 +829,7 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="prev" title="nodejs使用指南">
+                <a href="/2022/05/14/npm%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="prev" title="nodejs使用指南">
                   <i class="fa fa-chevron-left"></i> nodejs使用指南
                 </a>
             </div>
@@ -756,13 +868,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">348k</span>
+    <span title="站点总字数">390k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

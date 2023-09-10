@@ -30,9 +30,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204222425.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204223330.png">
 <meta property="article:published_time" content="2023-02-03T08:43:38.000Z">
-<meta property="article:modified_time" content="2023-04-23T05:34:34.333Z">
+<meta property="article:modified_time" content="2023-07-23T13:24:30.434Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Vim">
+<meta property="article:tag" content="neovim">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204222425.png">
 
@@ -160,18 +161,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -245,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-23 13:34:34" itemprop="dateModified" datetime="2023-04-23T13:34:34+08:00">2023-04-23</time>
+      <time title="修改时间：2023-07-23 21:24:30" itemprop="dateModified" datetime="2023-07-23T21:24:30+08:00">2023-07-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -264,14 +265,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>8.6k</span>
+      <span>8.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>8 分钟</span>
+      <span>7 分钟</span>
     </span>
 </div>
 
@@ -302,6 +303,9 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/LintaoAmons/CoolStuffes">GitHub - LintaoAmons/CoolStuffes: 我的分享放这里了，大家随便拿去用啊，记得给个星星就行啦～</a>：b站up主的配置</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/NvChad/NvChad">NvChad</a>：NvChad，另一个neovim的变种。</li>
 <li><a target="_blank" rel="noopener" href="https://www.imooc.com/learn/1129">玩转Vim 从放弃到爱不释手-Vim入门-慕课网</a>：b站PegasusWang出品的免费Vim慕课教程</li>
+<li><a target="_blank" rel="noopener" href="https://www.cs.swarthmore.edu/oldhelp/vim/home.html">vim tips and tricks: home</a>：Vim在线交互学习网站。</li>
+<li><a target="_blank" rel="noopener" href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">Vim Tips Wiki | Fandom</a>：vim tips</li>
+<li><a target="_blank" rel="noopener" href="https://vim.rtorr.com/lang/zh_cn">Vim Cheat Sheet</a>：vim常用命令大全</li>
 </ol>
 <h3 id="碰到的一些问题的解决方法"><a class="markdownIt-Anchor" href="#碰到的一些问题的解决方法"></a> 碰到的一些问题的解决方法</h3>
 <ol>
@@ -317,7 +321,7 @@
 此处以第3个配置为例，介绍配置流程。（因为第3个配置最为复杂，且使用较为丰富的插件，和更小众、更新型的插件管理工具lazy.nvim。<br />
 此处，先把<code>dotfiles</code>仓库中的对应文件夹映射到<code>~/.config/nvim</code>：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s /mnt/d/Desktop/dotfiles/nvim2 ~/.config/nvim</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> -s /mnt/d/Desktop/dotfiles/nvim2 ~/.config/nvim<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="安装lazyvim插件管理器"><a class="markdownIt-Anchor" href="#安装lazyvim插件管理器"></a> 安装lazy.vim插件管理器</h4>
 <ol>
 <li>直接在终端运行<code>nvim init.lua</code>，让neovim自动安装，出现如下报错，即无法从github clone lazy.vim进行安装。<br />
@@ -325,27 +329,44 @@
 原因：git出现问题，需要进行配置。<br />
 解决方案：向github账户添加ssh验证。</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的github账户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;你的github账户默认的邮箱地址&quot;</span></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub <span class="comment"># 添加到git ssh</span></span><br><span class="line">ssh-keyscan -t rsa github.com &gt;&gt; ~/.ssh/known_hosts </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"你的github账户名"</span>
+<span class="token function">git</span> config --global user.email <span class="token string">"你的github账户默认的邮箱地址"</span>
+ssh-keygen -t rsa -b <span class="token number">4096</span> -C <span class="token string">"你的github账户默认的邮箱地址"</span>
+<span class="token function">cat</span> ~/.ssh/id_rsa.pub <span class="token comment"># 添加到git ssh</span>
+ssh-keyscan -t rsa github.com <span class="token operator">>></span> ~/.ssh/known_hosts <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="2">
 <li>进行上述配置后，再次运行<code>nvim init.lua</code>，会发现如下错误，即<code>efm-langserver</code>无法安装：<br />
 <img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20230204223330.png" alt="" /><br />
 原因：<code>efm-langserver</code>使用go语言编写，其使用go的包管理工具进行安装。<br />
 解决方案：安装go语言。</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载对应版本go压缩包后解压到指定目录</span></span><br><span class="line">sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz</span><br><span class="line"><span class="comment"># 将对应目录添加至PATH环境变量，写入~/.bashrc使其永久生效</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 下载对应版本go压缩包后解压到指定目录</span>
+<span class="token function">sudo</span> <span class="token function">tar</span> -C /usr/local -xzf go1.20.linux-amd64.tar.gz
+<span class="token comment"># 将对应目录添加至PATH环境变量，写入~/.bashrc使其永久生效</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/usr/local/go/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="3">
 <li>再次运行<code>nvim init.lua</code>，发现仍然无法安装。<br />
 原因：go仓库源在国内无法稳定访问<br />
 解决方案：配置国内镜像源，在<code>.bashrc</code>文件中写入：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 GOPROXY 环境变量，以下三选一</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 七牛 CDN</span></span><br><span class="line">go <span class="built_in">env</span> -w  GOPROXY=https://goproxy.cn,direct</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 启用 Go Modules 功能</span>
+go <span class="token function">env</span> -w <span class="token assign-left variable">GO111MODULE</span><span class="token operator">=</span>on
+
+<span class="token comment"># 配置 GOPROXY 环境变量，以下三选一</span>
+
+<span class="token comment"># 1. 七牛 CDN</span>
+go <span class="token function">env</span> -w  <span class="token assign-left variable">GOPROXY</span><span class="token operator">=</span>https://goproxy.cn,direct<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="4">
 <li>再次运行<code>nvim init.lua</code>，发现仍然无法安装。报如下错误：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Can only use path@version syntax with <span class="string">&#x27;go get&#x27;</span>?</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Can only use path@version syntax with <span class="token string">'go get'</span>?<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>原因：go1.16以下版本无法通过<code>go install path@version</code>安装。<br />
 解决方案：卸载掉<code>apt-get</code>默认安装的<code>go1.13</code>版本，手动安装<code>go1.20</code>并添加到指定路径（也可以手动安装efm和gopls）：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/go/bin</span><br><span class="line"><span class="comment"># 启用 Go Modules 功能</span></span><br><span class="line">go <span class="built_in">env</span> -w GO111MODULE=on</span><br><span class="line"><span class="comment"># 2. 阿里云</span></span><br><span class="line">go <span class="built_in">env</span> -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/usr/local/go/bin
+<span class="token comment"># 启用 Go Modules 功能</span>
+go <span class="token function">env</span> -w <span class="token assign-left variable">GO111MODULE</span><span class="token operator">=</span>on
+<span class="token comment"># 2. 阿里云</span>
+go <span class="token function">env</span> -w <span class="token assign-left variable">GOPROXY</span><span class="token operator">=</span>https://mirrors.aliyun.com/goproxy/,direct<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -358,39 +379,121 @@
 <ol>
 <li>在对应配置文件<code>lua/ui/plugins.lua</code>中添加主题：</li>
 </ol>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ui[<span class="string">&quot;folke/tokyonight.nvim&quot;</span>] = &#123;</span><br><span class="line">	lazy = <span class="literal">false</span>,</span><br><span class="line">	name = <span class="string">&quot;tokyonight&quot;</span>, </span><br><span class="line">	<span class="built_in">config</span> = conf.tokyonight,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">ui<span class="token punctuation">[</span><span class="token string">"folke/tokyonight.nvim"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+	lazy <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+	name <span class="token operator">=</span> <span class="token string">"tokyonight"</span><span class="token punctuation">,</span> 
+	config <span class="token operator">=</span> conf<span class="token punctuation">.</span>tokyonight<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="2">
 <li>在对应配置文件中<code>lazy-lock.json</code>中添加主题仓库信息：</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;tokyonight&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;branch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;main&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;affb21a81e6d7de073378eb86d02864c594104d9&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"tokyonight"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token property">"branch"</span><span class="token operator">:</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token property">"commit"</span><span class="token operator">:</span> <span class="token string">"affb21a81e6d7de073378eb86d02864c594104d9"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ol start="3">
 <li>在<code>lua/core/settings.lua</code>中将<code>colorsheme</code>设置为<code>tokyonight</code>：</li>
 </ol>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">settings[<span class="string">&quot;colorscheme&quot;</span>] = <span class="string">&quot;tokyonight&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">settings<span class="token punctuation">[</span><span class="token string">"colorscheme"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"tokyonight"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="neovim配置java环境"><a class="markdownIt-Anchor" href="#neovim配置java环境"></a> neovim配置java环境</h3>
 <ol>
 <li>下载解压jdt-language-server：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建workspace目录，后面会用到</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/.local/share/nvim/lsp/jdt-language-server/workspace/folder</span><br><span class="line"><span class="built_in">cd</span> ~/.local/share/nvim/lsp/jdt-language-server</span><br><span class="line"><span class="comment"># 下载jdt-language-server-xxxxx.tar.gz</span></span><br><span class="line">wget https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf jdt-language-server-1.9.0-202203031534.tar.gz</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#创建workspace目录，后面会用到</span>
+<span class="token function">mkdir</span> -p ~/.local/share/nvim/lsp/jdt-language-server/workspace/folder
+<span class="token builtin class-name">cd</span> ~/.local/share/nvim/lsp/jdt-language-server
+<span class="token comment"># 下载jdt-language-server-xxxxx.tar.gz</span>
+<span class="token function">wget</span> https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz
+<span class="token comment"># 解压</span>
+<span class="token function">tar</span> -zxvf jdt-language-server-1.9.0-202203031534.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="2">
 <li>创建<code>/lua/modules/lang/usr/</code>文件夹，并添加<code>config.lua</code>和<code>plugins.lua</code>两个文件，文件内容如下：<br />
 config.lua：</li>
 </ol>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="built_in">config</span> = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">config.java</span><span class="params">()</span></span></span><br><span class="line">	<span class="keyword">local</span> opts = &#123;</span><br><span class="line">		cmd = &#123;</span><br><span class="line">			<span class="string">&quot;java&quot;</span>, </span><br><span class="line">			<span class="string">&quot;-Declipse.application=org.eclipse.jdt.ls.core.id1&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dosgi.bundles.defaultStartLevel=4&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Declipse.product=org.eclipse.jdt.ls.core.product&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dlog.protocol=true&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Dlog.level=ALL&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-Xms1g&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-modules=ALL-SYSTEM&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-opens&quot;</span>,</span><br><span class="line">			<span class="string">&quot;java.base/java.util=ALL-UNNAMED&quot;</span>,</span><br><span class="line">			<span class="string">&quot;--add-opens&quot;</span>,</span><br><span class="line">			<span class="string">&quot;java.base/java.lang=ALL-UNNAMED&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-jar&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-configuration&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/config_linux&quot;</span>,</span><br><span class="line">			<span class="string">&quot;-data&quot;</span>,</span><br><span class="line">			<span class="string">&quot;/home/fg/.local/share/nvim/lsp/jdt-language-server/workspace/folder&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">		root_dir = <span class="built_in">require</span>(<span class="string">&quot;jdtls.setup&quot;</span>).find_root(&#123; <span class="string">&quot;.git&quot;</span>, <span class="string">&quot;mvnw&quot;</span>, <span class="string">&quot;gradlew&quot;</span> &#125;),</span><br><span class="line">		settings = &#123;</span><br><span class="line">			java = &#123;&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">		init_options = &#123;</span><br><span class="line">			bundles = &#123;&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">require</span>(<span class="string">&quot;jdtls&quot;</span>).start_or_attach(opts)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">config</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua"><span class="token keyword">local</span> config <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> config<span class="token punctuation">.</span><span class="token function">java</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">local</span> opts <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+		cmd <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+			<span class="token string">"java"</span><span class="token punctuation">,</span> 
+			<span class="token string">"-Declipse.application=org.eclipse.jdt.ls.core.id1"</span><span class="token punctuation">,</span>
+			<span class="token string">"-Dosgi.bundles.defaultStartLevel=4"</span><span class="token punctuation">,</span>
+			<span class="token string">"-Declipse.product=org.eclipse.jdt.ls.core.product"</span><span class="token punctuation">,</span>
+			<span class="token string">"-Dlog.protocol=true"</span><span class="token punctuation">,</span>
+			<span class="token string">"-Dlog.level=ALL"</span><span class="token punctuation">,</span>
+			<span class="token string">"-Xms1g"</span><span class="token punctuation">,</span>
+			<span class="token string">"--add-modules=ALL-SYSTEM"</span><span class="token punctuation">,</span>
+			<span class="token string">"--add-opens"</span><span class="token punctuation">,</span>
+			<span class="token string">"java.base/java.util=ALL-UNNAMED"</span><span class="token punctuation">,</span>
+			<span class="token string">"--add-opens"</span><span class="token punctuation">,</span>
+			<span class="token string">"java.base/java.lang=ALL-UNNAMED"</span><span class="token punctuation">,</span>
+			<span class="token string">"-jar"</span><span class="token punctuation">,</span>
+			<span class="token string">"/home/fg/.local/share/nvim/lsp/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar"</span><span class="token punctuation">,</span>
+			<span class="token string">"-configuration"</span><span class="token punctuation">,</span>
+			<span class="token string">"/home/fg/.local/share/nvim/lsp/jdt-language-server/config_linux"</span><span class="token punctuation">,</span>
+			<span class="token string">"-data"</span><span class="token punctuation">,</span>
+			<span class="token string">"/home/fg/.local/share/nvim/lsp/jdt-language-server/workspace/folder"</span><span class="token punctuation">,</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		root_dir <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"jdtls.setup"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find_root</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token string">".git"</span><span class="token punctuation">,</span> <span class="token string">"mvnw"</span><span class="token punctuation">,</span> <span class="token string">"gradlew"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		settings <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+			java <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		init_options <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+			bundles <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"jdtls"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start_or_attach</span><span class="token punctuation">(</span>opts<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">return</span> config<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>plugins.lua：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> custom = &#123;&#125;</span><br><span class="line"><span class="keyword">local</span> conf = <span class="built_in">require</span>(<span class="string">&quot;modules.lang.user.config&quot;</span>)</span><br><span class="line"></span><br><span class="line">custom[<span class="string">&quot;mfussenegger/nvim-jdtls&quot;</span>] = &#123;</span><br><span class="line">	lazy = <span class="literal">true</span>,</span><br><span class="line">	ft = <span class="string">&quot;java&quot;</span>,</span><br><span class="line">	<span class="built_in">config</span> = conf.java,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> custom</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua"><span class="token keyword">local</span> custom <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">local</span> conf <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"modules.lang.user.config"</span><span class="token punctuation">)</span>
+
+custom<span class="token punctuation">[</span><span class="token string">"mfussenegger/nvim-jdtls"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+	lazy <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+	ft <span class="token operator">=</span> <span class="token string">"java"</span><span class="token punctuation">,</span>
+	config <span class="token operator">=</span> conf<span class="token punctuation">.</span>java<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">return</span> custom<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="3">
 <li>在<code>lazy-lock.json</code>添加仓库信息：</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;nvim-jdtls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;branch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;master&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1f640d14d17f20cfc63c1acc26a10f9466e66a75&quot;</span> <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"nvim-jdtls"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token property">"branch"</span><span class="token operator">:</span> <span class="token string">"master"</span><span class="token punctuation">,</span> <span class="token property">"commit"</span><span class="token operator">:</span> <span class="token string">"1f640d14d17f20cfc63c1acc26a10f9466e66a75"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ol start="4">
 <li>在<code>/lua/modules/editor/config.lua</code>中添加<code>java</code>的语法高亮：</li>
 </ol>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;nvim-treesitter.configs&quot;</span>).setup(&#123;</span><br><span class="line">		ensure_installed = &#123;</span><br><span class="line">		<span class="string">&quot;java&quot;</span>,</span><br><span class="line">		&#125;,</span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"nvim-treesitter.configs"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+		ensure_installed <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+		<span class="token string">"java"</span><span class="token punctuation">,</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="5">
 <li>在<code>/lua/modules/editor/config.lua</code>中添加java的debug配置：</li>
 </ol>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- local dap = require(&#x27;dap&#x27;)</span></span><br><span class="line">dap.adapters.java = <span class="function"><span class="keyword">function</span><span class="params">(callback)</span></span></span><br><span class="line">		callback(&#123;</span><br><span class="line">			<span class="built_in">type</span> = <span class="string">&#x27;server&#x27;</span>;</span><br><span class="line">			host = <span class="string">&#x27;127.0.0.1&#x27;</span>;</span><br><span class="line">			port = port;</span><br><span class="line">		&#125;)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- local dap = require(&#x27;dap&#x27;)</span></span><br><span class="line">dap.configurations.java = &#123;</span><br><span class="line">  &#123;</span><br><span class="line">	classPaths = &#123;&#125;,</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- If using multi-module projects, remove otherwise.</span></span><br><span class="line">	projectName = <span class="string">&quot;yourProjectName&quot;</span>,</span><br><span class="line"></span><br><span class="line">	javaExec = <span class="string">&quot;/usr/bin/java&quot;</span>,</span><br><span class="line">	mainClass = <span class="string">&quot;your.package.name.MainClassName&quot;</span>,</span><br><span class="line">	modulePaths = &#123;&#125;,</span><br><span class="line">	name = <span class="string">&quot;Launch YourClassName&quot;</span>,</span><br><span class="line">	request = <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">	<span class="built_in">type</span> = <span class="string">&quot;java&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;	</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua"><span class="token comment">-- local dap = require('dap')</span>
+dap<span class="token punctuation">.</span>adapters<span class="token punctuation">.</span>java <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span>
+		<span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+			type <span class="token operator">=</span> <span class="token string">'server'</span><span class="token punctuation">;</span>
+			host <span class="token operator">=</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">;</span>
+			port <span class="token operator">=</span> port<span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	<span class="token keyword">end</span>
+
+<span class="token comment">-- local dap = require('dap')</span>
+dap<span class="token punctuation">.</span>configurations<span class="token punctuation">.</span>java <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">&#123;</span>
+	classPaths <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+	<span class="token comment">-- If using multi-module projects, remove otherwise.</span>
+	projectName <span class="token operator">=</span> <span class="token string">"yourProjectName"</span><span class="token punctuation">,</span>
+
+	javaExec <span class="token operator">=</span> <span class="token string">"/usr/bin/java"</span><span class="token punctuation">,</span>
+	mainClass <span class="token operator">=</span> <span class="token string">"your.package.name.MainClassName"</span><span class="token punctuation">,</span>
+	modulePaths <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	name <span class="token operator">=</span> <span class="token string">"Launch YourClassName"</span><span class="token punctuation">,</span>
+	request <span class="token operator">=</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
+	type <span class="token operator">=</span> <span class="token string">"java"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -401,12 +504,15 @@ config.lua：</li>
 </ol>
 </blockquote>
 </br>
-6.Vim模式在中文输入法下的问题。
+### Vim模式在中文输入法下的问题。
 > 参考资料：
 > 1. [Vim模式在中文输入法下的问题 - 建议反馈 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/11234/2)
 </br>
-7.对Obsidian的`.obsidian.vimrc`文件配置`Ctrl`键（对Obsidian而言需要安装Vimrc Support插件）
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;set some Ctrl- shortcuts&quot;</span><br><span class="line">nmap &lt;C-[&gt; &lt;C-d&gt; #映射为outdent，不能生效</span><br><span class="line">imap &lt;C-[&gt; &lt;C-d&gt; #映射伪outdent，不能生效</span><br></pre></td></tr></table></figure>
+### Obsidian vim模式配置
+对Obsidian的`.obsidian.vimrc`文件配置`Ctrl`键（对Obsidian而言需要安装Vimrc Support插件）
+<pre class="line-numbers language-.vimrc" data-language=".vimrc"><code class="language-.vimrc">&quot;set some Ctrl- shortcuts&quot;
+nmap &lt;C-[&gt; &lt;C-d&gt; #映射为outdent，不能生效
+imap &lt;C-[&gt; &lt;C-d&gt; #映射伪outdent，不能生效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 PS：
 > 参考资料：
 > 1. [key bindings - How to disable Ctrl key? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/4060/how-to-disable-ctrl-key)
@@ -415,9 +521,11 @@ PS：
 > 4. [Can't map the Tab key w/o Mod Keys · Issue #48 · esm7/obsidian-vimrc-support · GitHub](https://github.com/esm7/obsidian-vimrc-support/issues/48) 
 > 5. [vim tips and tricks: indenting](https://www.cs.swarthmore.edu/oldhelp/vim/indenting.html#:~:text=To%20indent%20the%20current%20line,by%20sw%20(repeat%20with%20.%20)&text=then%20try%20hitting%20the%20F5,or%20just%20%3Aset%20paste%20).)
 </br>
-8.设置vim中的yy可以copy to clipboard：
+### vim中yy复制到系统剪贴板
+设置vim中的yy可以copy to clipboard：
 - Obsidian配置，在`.obsidian.vimrc`文件中添加：
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;Yank to system clipboard&quot;</span><br><span class="line">set clipboard=unnamed #重启后生效</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-.vimrc" data-language=".vimrc"><code class="language-.vimrc">&quot;Yank to system clipboard&quot;
+set clipboard&#x3D;unnamed #重启后生效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 - VSCode配置，在settings中搜索`vim clip`点击生效：
 ![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/1.png)
 > 参考资料：
@@ -425,12 +533,12 @@ PS：
 >2. [How to copy to clipboard in Vim? - Stack Overflow](https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim)
 >3. [GitHub - esm7/obsidian-vimrc-support: A plugin for the Obsidian.md note-taking software](https://github.com/esm7/obsidian-vimrc-support)
 </br>
-9.Vim中各种map模式nmap/imap等详解：
+### Vim中各种map模式nmap/imap等详解：
 > 参考资料：
 > 1. [What is the difference between the remap, noremap, nnoremap and vnoremap mapping commands in Vim? - Stack Overflow](https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping)
 > 2. [key bindings - What is the difference between unmap and mapping to  nop? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16392/what-is-the-difference-between-unmap-and-mapping-to-nop?noredirect=1)
 </br>
-10.`Ctrl`/`Shift`/方向键/Fn键的映射：
+### `Ctrl`/`Shift`/方向键/Fn键的映射：
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -439,12 +547,13 @@ PS：
 </ol>
 </blockquote>
 </br>
-11.`.vimrc`配置文件中`<CR>`的含义：
+### `.vimrc`配置文件中`<CR>`的含义：
 > 参考资料：
-> 1. [What is the meaning of a <CR> at the end of some vim mappings? - Stack Overflow](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings)
+> 1. [What is the meaning of a CR at the end of some vim mappings? - Stack Overflow](https://stackoverflow.com/questions/22142755/what-is-the-meaning-of-a-cr-at-the-end-of-some-vim-mappings)
 </br>
 </br>
-12.Ubuntu和wsl中进行基础的`.vimrc`配置：
+### Ubuntu和wsl中vim配置
+Ubuntu和wsl中进行基础的`.vimrc`配置：
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -482,6 +591,7 @@ PS：
 
           <div class="post-tags">
               <a href="/tags/Vim/" rel="tag"># Vim</a>
+              <a href="/tags/neovim/" rel="tag"># neovim</a>
           </div>
 
         
@@ -527,13 +637,13 @@ PS：
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">348k</span>
+    <span title="站点总字数">390k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

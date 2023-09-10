@@ -20,32 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本文记录一下使用nodejs时的常见操作：">
+    <meta name="description" content="本文记录一下IDEA的一些好用的特性：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs使用指南">
-<meta property="og:url" content="https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:title" content="IDEA使用指南">
+<meta property="og:url" content="https://tom89757.github.io/2023/08/18/IDEA%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
 <meta property="og:site_name" content="世界在我面前展开">
-<meta property="og:description" content="本文记录一下使用nodejs时的常见操作：">
+<meta property="og:description" content="本文记录一下IDEA的一些好用的特性：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220514233532921.png">
-<meta property="og:image" content="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515003241850.png">
-<meta property="og:image" content="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515004019352.png">
-<meta property="article:published_time" content="2022-05-14T15:32:40.000Z">
-<meta property="article:modified_time" content="2023-02-04T14:14:41.475Z">
+<meta property="article:published_time" content="2023-08-18T07:13:29.000Z">
+<meta property="article:modified_time" content="2023-08-19T13:59:23.728Z">
 <meta property="article:author" content="幻光">
-<meta property="article:tag" content="nodejs">
+<meta property="article:tag" content="IDEA">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220514233532921.png">
 
 
-<link rel="canonical" href="https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+<link rel="canonical" href="https://tom89757.github.io/2023/08/18/IDEA%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/","path":"2022/05/14/nodejs使用指南/","title":"nodejs使用指南"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2023/08/18/IDEA%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/","path":"2023/08/18/IDEA使用指南/","title":"IDEA使用指南"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>nodejs使用指南 | 世界在我面前展开</title>
+<title>IDEA使用指南 | 世界在我面前展开</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -135,7 +131,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -148,6 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#idea%E6%98%BE%E7%A4%BAgit-commits"><span class="nav-number">1.</span> <span class="nav-text"> IDEA显示git commits</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -209,7 +206,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2023/08/18/IDEA%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -222,12 +219,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="nodejs使用指南 | 世界在我面前展开">
+      <meta itemprop="name" content="IDEA使用指南 | 世界在我面前展开">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          nodejs使用指南
+          IDEA使用指南
         </h1>
 
         <div class="post-meta-container">
@@ -238,14 +235,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-05-14 23:32:40" itemprop="dateCreated datePublished" datetime="2022-05-14T23:32:40+08:00">2022-05-14</time>
+      <time title="创建时间：2023-08-18 15:13:29" itemprop="dateCreated datePublished" datetime="2023-08-18T15:13:29+08:00">2023-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-04 22:14:41" itemprop="dateModified" datetime="2023-02-04T22:14:41+08:00">2023-02-04</time>
+      <time title="修改时间：2023-08-19 21:59:23" itemprop="dateModified" datetime="2023-08-19T21:59:23+08:00">2023-08-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -253,7 +250,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">开发工具</span></a>
+          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
         </span>
     </span>
 
@@ -264,7 +261,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
+      <span>71</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -282,49 +279,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本文记录一下使用nodejs时的常见操作：</p>
+        <p>本文记录一下IDEA的一些好用的特性：</p>
 <span id="more"></span>
-<p>1.<code>npm root -g</code>：查看<code>npm</code>安装全局packages时的安装地址。例如在Windows10系统中运行其结果如下：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220514233532921.png" alt="image-20220514233532921" /></p>
-<blockquote>
-<p>参考资料：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5926672/where-does-npm-install-packages">Where does npm install packages?</a></p>
-</blockquote>
-</br>
-<p>2.<code>npm install package_name</code>：局部安装package。安装的package在当前目录的node_modules文件夹中。简写形式为<code>npm i package_name</code>。</p>
-</br>
-<p>3.<code>npm install -g package_name</code>：全局安装package。安装的package运行<code>npm root -g</code>后的展示路径中。简写形式为<code>npm i -g package_name</code>。</p>
-</br>
-<p>4.<code>npm uninstall package_name</code>：局部卸载package。要卸载的package在当前目录的node_modules文件夹中。简写形式为<code>npm un package_name</code> 。</p>
-</br>
-<p>5.<code>npm uninstall -g package_name</code>：全局卸载package。要卸载的package在运行<code>npm root -g</code>后的展示路径中中。简写形式为<code>npm un -g package_name</code> 。</p>
-</br>
-<p>6.<code>npm i package_name</code> vs <code>npm i package_name --save</code> vs <code>npm i package_name --save-dev</code>：</p>
-<p>PS：本问题在为hexo博客安装<code>hexo</code>和<code>hexo-cli</code>包时出现，解决方案为使用<code>--save-dev</code>选项安装。</p>
-<ul>
-<li>
-<p><code>npm i package_name --save</code>：当需要为自己的<code>app/modules</code>安装依赖时，使用该命令可以在安装相应package之后将其添加到当前路径中<code>package.json</code>文件的<code>&quot;dependencies&quot;</code>子对象中。如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515003241850.png" alt="image-20220515003241850" /></p>
-</li>
-<li>
-<p><code>npm i package_name</code>：当前版本中，该命令与<code>npm i package_name --save</code>等价，同样会将安装的package添加到当前路径中<code>package.json</code>文件的<code>&quot;dependencies&quot;</code>子对象中。即<code>--save</code>为<code>npm i</code>命令的默认选项。</p>
-</li>
-<li>
-<p><code>npm i package_name --save-dev</code>：当为开发安装依赖包时，需要使用此命令。该命令会将 the third-party package添加到当前路径中<code>package.json</code>文件的<code>&quot;devDependencies&quot;</code>子对象中。如下图所示：</p>
-<p><img src="https://hexo-1302648630.cos.ap-beijing.myqcloud.com/2022-05-15/image-20220515004019352.png" alt="image-20220515004019352" /></p>
-</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev">What is the difference between --save and --save-dev</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v8/commands/npm-install">npm-install</a></li>
-</ol>
-</blockquote>
-</br>
-7.Linux安装nodejs：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line">sudo <span class="built_in">mkdir</span> -p /usr/local/lib/nodejs</span><br><span class="line">sudo tar -xJvf node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>.tar.xz -C /usr/local/lib/nodejs </span><br><span class="line"><span class="comment"># Nodejs</span></span><br><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line"><span class="built_in">export</span> PATH=/usr/local/lib/nodejs/node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-> 参考资料：
-> 1. [Installation · nodejs/help Wiki · GitHub](https://github.com/nodejs/help/wiki/Installation)
+<h3 id="idea显示git-commits"><a class="markdownIt-Anchor" href="#idea显示git-commits"></a> IDEA显示git commits</h3>
+<p>使用快捷键<code>Ctrl + Shift + g</code> 即可显示git commits tree：<br />
+<img src="" alt="Uploading file...rvl83" /></p>
 
     </div>
 
@@ -342,7 +301,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://tom89757.github.io/2022/05/14/nodejs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="nodejs使用指南">https://tom89757.github.io/2022/05/14/nodejs使用指南/</a>
+      <a href="https://tom89757.github.io/2023/08/18/IDEA%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="IDEA使用指南">https://tom89757.github.io/2023/08/18/IDEA使用指南/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -351,20 +310,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+              <a href="/tags/IDEA/" rel="tag"># IDEA</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/05/13/%E5%B8%B8%E8%A7%81%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD%E8%AE%B0%E5%BD%95/" rel="prev" title="常见概念和术语记录">
-                  <i class="fa fa-chevron-left"></i> 常见概念和术语记录
+                <a href="/2023/08/15/Kubernetes%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="prev" title="Kubernetes使用指南">
+                  <i class="fa fa-chevron-left"></i> Kubernetes使用指南
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/05/15/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C01/" rel="next" title="Ubuntu常见操作01">
-                  Ubuntu常见操作01 <i class="fa fa-chevron-right"></i>
+                <a href="/2023/08/20/%E7%BE%BD%E6%AF%9B%E7%90%83%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97/" rel="next" title="羽毛球训练指南">
+                  羽毛球训练指南 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -397,13 +356,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">348k</span>
+    <span title="站点总字数">390k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

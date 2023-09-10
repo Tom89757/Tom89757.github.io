@@ -6,7 +6,7 @@
   <link href="https://tom89757.github.io/atom.xml" rel="self"/>
   
   <link href="https://tom89757.github.io/"/>
-  <updated>2023-04-24T13:53:13.545Z</updated>
+  <updated>2023-09-04T04:30:32.946Z</updated>
   <id>https://tom89757.github.io/</id>
   
   <author>
@@ -17,267 +17,379 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>copilot资源整理</title>
-    <link href="https://tom89757.github.io/2023/04/24/copilot%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/"/>
-    <id>https://tom89757.github.io/2023/04/24/copilot%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</id>
-    <published>2023-04-24T12:18:29.000Z</published>
-    <updated>2023-04-24T13:53:13.545Z</updated>
+    <title>健身动作细节</title>
+    <link href="https://tom89757.github.io/2023/09/04/%E5%81%A5%E8%BA%AB%E5%8A%A8%E4%BD%9C%E7%BB%86%E8%8A%82/"/>
+    <id>https://tom89757.github.io/2023/09/04/%E5%81%A5%E8%BA%AB%E5%8A%A8%E4%BD%9C%E7%BB%86%E8%8A%82/</id>
+    <published>2023-09-04T02:02:31.000Z</published>
+    <updated>2023-09-04T04:30:32.946Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文整理一下收集到的copilot学习资料：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="教程" scheme="https://tom89757.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chatGPT资源整理</title>
-    <link href="https://tom89757.github.io/2023/04/24/chatGPT%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/"/>
-    <id>https://tom89757.github.io/2023/04/24/chatGPT%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</id>
-    <published>2023-04-24T12:13:17.000Z</published>
-    <updated>2023-04-24T16:30:07.113Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文整理一下所收集的chatGPT学习资料：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文整理一下健身各个动作的教程和细节：&lt;/p&gt;</summary>
     
     
     
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="教程" scheme="https://tom89757.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="健身" scheme="https://tom89757.github.io/tags/%E5%81%A5%E8%BA%AB/"/>
     
   </entry>
   
   <entry>
-    <title>tmux学习笔记</title>
-    <link href="https://tom89757.github.io/2023/04/23/tmux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://tom89757.github.io/2023/04/23/tmux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2023-04-23T05:35:33.000Z</published>
-    <updated>2023-04-23T05:38:40.311Z</updated>
+    <title>Sublime Text使用指南</title>
+    <link href="https://tom89757.github.io/2023/08/28/Sublime-Text%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/08/28/Sublime-Text%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2023-08-28T05:14:40.000Z</published>
+    <updated>2023-08-28T06:03:41.269Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文记录一下学习tmux过程中的经验和总结：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下在 Sublime Text编辑器中一些常用的配置方法。&lt;/p&gt;</summary>
     
     
     
     <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="tmux" scheme="https://tom89757.github.io/tags/tmux/"/>
+    <category term="Sublime Text" scheme="https://tom89757.github.io/tags/Sublime-Text/"/>
     
   </entry>
   
   <entry>
-    <title>ohmyzsh学习笔记</title>
-    <link href="https://tom89757.github.io/2023/04/20/ohmyzsh%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://tom89757.github.io/2023/04/20/ohmyzsh%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2023-04-20T14:30:01.000Z</published>
-    <updated>2023-04-23T05:07:34.419Z</updated>
+    <title>Sublime Text配置</title>
+    <link href="https://tom89757.github.io/2023/08/28/Sublime-Text%E9%85%8D%E7%BD%AE/"/>
+    <id>https://tom89757.github.io/2023/08/28/Sublime-Text%E9%85%8D%E7%BD%AE/</id>
+    <published>2023-08-28T05:05:49.000Z</published>
+    <updated>2023-08-28T13:58:33.611Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文记录一下在使用ohmyzsh过程中碰到的问题：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下在 Sublime Text编辑器中一些常用的配置方法。&lt;/p&gt;</summary>
     
     
     
     <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="tmux" scheme="https://tom89757.github.io/tags/tmux/"/>
+    <category term="Sublime Text" scheme="https://tom89757.github.io/tags/Sublime-Text/"/>
     
   </entry>
   
   <entry>
-    <title>ohmyzsh使用指南</title>
-    <link href="https://tom89757.github.io/2023/04/19/ohmyzsh%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://tom89757.github.io/2023/04/19/ohmyzsh%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
-    <published>2023-04-19T09:36:05.000Z</published>
-    <updated>2023-04-23T06:17:58.161Z</updated>
+    <title>iptables使用指南</title>
+    <link href="https://tom89757.github.io/2023/08/24/iptables%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/08/24/iptables%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2023-08-24T08:04:44.000Z</published>
+    <updated>2023-08-24T14:22:02.968Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文介绍一下ohmyzsh的学习和使用过程：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="tmux" scheme="https://tom89757.github.io/tags/tmux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tmux使用指南</title>
-    <link href="https://tom89757.github.io/2023/04/19/tmux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://tom89757.github.io/2023/04/19/tmux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
-    <published>2023-04-19T09:24:29.000Z</published>
-    <updated>2023-04-23T05:37:21.116Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下tmux的学习和使用过程：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="tmux" scheme="https://tom89757.github.io/tags/tmux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACM格式输入2</title>
-    <link href="https://tom89757.github.io/2023/04/13/ACM%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A52/"/>
-    <id>https://tom89757.github.io/2023/04/13/ACM%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A52/</id>
-    <published>2023-04-13T09:00:32.000Z</published>
-    <updated>2023-04-13T14:51:38.026Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文转载自 &lt;a href=&quot;https://dfsgwb.github.io/2023/04/13/ACM%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A52/&quot;&gt;ACM格式输入（二） | DFSgwb&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="ACM" scheme="https://tom89757.github.io/tags/ACM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACM格式输入1</title>
-    <link href="https://tom89757.github.io/2023/04/13/ACM%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A51/"/>
-    <id>https://tom89757.github.io/2023/04/13/ACM%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A51/</id>
-    <published>2023-04-13T09:00:21.000Z</published>
-    <updated>2023-04-13T14:51:38.026Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文转载自 &lt;a href=&quot;https://dfsgwb.github.io/2023/04/13/ACM%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%85%A5/&quot;&gt;ACM格式输入（一） | DFSgwb&lt;/a&gt;：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="ACM" scheme="https://tom89757.github.io/tags/ACM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode和Idea快捷键记录</title>
-    <link href="https://tom89757.github.io/2023/04/07/VSCode%E5%92%8CIdea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/"/>
-    <id>https://tom89757.github.io/2023/04/07/VSCode%E5%92%8CIdea%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/</id>
-    <published>2023-04-06T16:02:41.000Z</published>
-    <updated>2023-04-17T16:00:33.927Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下在VSCode和IDEA中所配置的快捷键以便查阅：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下iptables的使用指南：&lt;/p&gt;</summary>
     
     
     
     <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
+    <category term="iptables" scheme="https://tom89757.github.io/tags/iptables/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三分化训练计划</title>
+    <link href="https://tom89757.github.io/2023/08/23/%E4%B8%89%E5%88%86%E5%8C%96%E8%AE%AD%E7%BB%83%E8%AE%A1%E5%88%92/"/>
+    <id>https://tom89757.github.io/2023/08/23/%E4%B8%89%E5%88%86%E5%8C%96%E8%AE%AD%E7%BB%83%E8%AE%A1%E5%88%92/</id>
+    <published>2023-08-23T15:05:19.000Z</published>
+    <updated>2023-09-04T04:30:32.945Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文整理一下有关三分化健身计划的资源和指南：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="健身" scheme="https://tom89757.github.io/tags/%E5%81%A5%E8%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>羽毛球训练指南</title>
+    <link href="https://tom89757.github.io/2023/08/20/%E7%BE%BD%E6%AF%9B%E7%90%83%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/08/20/%E7%BE%BD%E6%AF%9B%E7%90%83%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97/</id>
+    <published>2023-08-20T05:20:10.000Z</published>
+    <updated>2023-09-10T08:44:58.750Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文整理以下羽毛球相关的资源和训练指南：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="羽毛球" scheme="https://tom89757.github.io/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA使用指南</title>
+    <link href="https://tom89757.github.io/2023/08/18/IDEA%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/08/18/IDEA%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2023-08-18T07:13:29.000Z</published>
+    <updated>2023-08-19T13:59:23.728Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下IDEA的一些好用的特性：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
     <category term="IDEA" scheme="https://tom89757.github.io/tags/IDEA/"/>
     
-    <category term="VSCode" scheme="https://tom89757.github.io/tags/VSCode/"/>
+  </entry>
+  
+  <entry>
+    <title>Kubernetes使用指南</title>
+    <link href="https://tom89757.github.io/2023/08/15/Kubernetes%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/08/15/Kubernetes%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2023-08-15T02:43:51.000Z</published>
+    <updated>2023-08-31T14:20:42.527Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下Kubernetes的使用指南：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Kubernetes" scheme="https://tom89757.github.io/tags/Kubernetes/"/>
     
   </entry>
   
   <entry>
-    <title>LaTex使用</title>
-    <link href="https://tom89757.github.io/2023/04/04/LaTex%E4%BD%BF%E7%94%A8/"/>
-    <id>https://tom89757.github.io/2023/04/04/LaTex%E4%BD%BF%E7%94%A8/</id>
-    <published>2023-04-04T11:45:24.000Z</published>
-    <updated>2023-04-04T14:05:15.278Z</updated>
+    <title>IDEA常见bug</title>
+    <link href="https://tom89757.github.io/2023/08/13/IDEA%E5%B8%B8%E8%A7%81bug/"/>
+    <id>https://tom89757.github.io/2023/08/13/IDEA%E5%B8%B8%E8%A7%81bug/</id>
+    <published>2023-08-13T14:42:27.000Z</published>
+    <updated>2023-09-07T16:19:53.390Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文记录一下使用LaTex过程中的经验和教训：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="工具" scheme="https://tom89757.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Latex" scheme="https://tom89757.github.io/tags/Latex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kornia中知识点01</title>
-    <link href="https://tom89757.github.io/2023/03/07/kornia%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
-    <id>https://tom89757.github.io/2023/03/07/kornia%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
-    <published>2023-03-07T11:21:42.000Z</published>
-    <updated>2023-03-07T15:14:07.122Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍一下在PyTorch基础上实现的扩展张量操作的仓库&lt;a href=&quot;https://github.com/kornia/kornia&quot;&gt;kornia&lt;/a&gt;中对张量的进阶操作：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下在IDEA中一些常见的bug：&lt;/p&gt;</summary>
     
     
     
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="python" scheme="https://tom89757.github.io/tags/python/"/>
-    
-    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
+    <category term="IDEA" scheme="https://tom89757.github.io/tags/IDEA/"/>
     
   </entry>
   
   <entry>
-    <title>前端文章汇总</title>
-    <link href="https://tom89757.github.io/2023/02/19/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0%E6%B1%87%E6%80%BB/"/>
-    <id>https://tom89757.github.io/2023/02/19/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0%E6%B1%87%E6%80%BB/</id>
-    <published>2023-02-19T12:31:54.000Z</published>
-    <updated>2023-02-19T12:35:14.297Z</updated>
+    <title>maven使用指南</title>
+    <link href="https://tom89757.github.io/2023/08/13/maven%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/08/13/maven%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2023-08-13T11:34:52.000Z</published>
+    <updated>2023-08-14T15:44:04.313Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文收集一些较新的关于前端的文章或资料：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下maven的使用指南：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="maven" scheme="https://tom89757.github.io/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>双分化双循环训练计划</title>
+    <link href="https://tom89757.github.io/2023/08/13/%E5%8F%8C%E5%88%86%E5%8C%96%E5%8F%8C%E5%BE%AA%E7%8E%AF%E8%AE%AD%E7%BB%83%E8%AE%A1%E5%88%92/"/>
+    <id>https://tom89757.github.io/2023/08/13/%E5%8F%8C%E5%88%86%E5%8C%96%E5%8F%8C%E5%BE%AA%E7%8E%AF%E8%AE%AD%E7%BB%83%E8%AE%A1%E5%88%92/</id>
+    <published>2023-08-13T03:33:05.000Z</published>
+    <updated>2023-08-20T05:20:59.206Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文整理一下有关双分化健身计划的资源和指南：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="健身" scheme="https://tom89757.github.io/tags/%E5%81%A5%E8%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gradle使用指南</title>
+    <link href="https://tom89757.github.io/2023/08/10/gradle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/08/10/gradle%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2023-08-10T02:36:41.000Z</published>
+    <updated>2023-08-12T13:54:22.326Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下gradle的使用指南：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="gradle" scheme="https://tom89757.github.io/tags/gradle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker常见bug</title>
+    <link href="https://tom89757.github.io/2023/08/09/Docker%E5%B8%B8%E8%A7%81bug/"/>
+    <id>https://tom89757.github.io/2023/08/09/Docker%E5%B8%B8%E8%A7%81bug/</id>
+    <published>2023-08-09T12:59:19.000Z</published>
+    <updated>2023-08-14T15:44:04.312Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下Docker的常见bug：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Docker" scheme="https://tom89757.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何阅读源码</title>
+    <link href="https://tom89757.github.io/2023/07/29/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E6%BA%90%E7%A0%81/"/>
+    <id>https://tom89757.github.io/2023/07/29/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E6%BA%90%E7%A0%81/</id>
+    <published>2023-07-29T14:49:59.000Z</published>
+    <updated>2023-07-29T15:16:06.126Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文收集一下关于如何阅读源码的经验和资料：&lt;/p&gt;</summary>
     
     
     
     <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
     
     
-    <category term="前端" scheme="https://tom89757.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="源码" scheme="https://tom89757.github.io/tags/%E6%BA%90%E7%A0%81/"/>
     
   </entry>
   
   <entry>
-    <title>Numpy中知识点01</title>
-    <link href="https://tom89757.github.io/2023/02/11/Numpy%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
-    <id>https://tom89757.github.io/2023/02/11/Numpy%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
-    <published>2023-02-11T09:40:10.000Z</published>
-    <updated>2023-03-07T15:14:07.121Z</updated>
+    <title>Linux进阶指南</title>
+    <link href="https://tom89757.github.io/2023/07/29/Linux%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/07/29/Linux%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97/</id>
+    <published>2023-07-29T14:33:55.000Z</published>
+    <updated>2023-08-28T16:57:32.606Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文记录一下Numpy相关知识点：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下Linux的一些进阶使用方式，跟踪效率更高的Linux系统使用方式。&lt;/p&gt;</summary>
     
     
     
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Numpy" scheme="https://tom89757.github.io/tags/Numpy/"/>
-    
-    <category term="python" scheme="https://tom89757.github.io/tags/python/"/>
+    <category term="Ubuntu" scheme="https://tom89757.github.io/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
-    <title>Vim使用指南</title>
-    <link href="https://tom89757.github.io/2023/02/03/Vim%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://tom89757.github.io/2023/02/03/Vim%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
-    <published>2023-02-03T08:43:38.000Z</published>
-    <updated>2023-04-23T05:34:34.333Z</updated>
+    <title>向往的生活</title>
+    <link href="https://tom89757.github.io/2023/07/24/%E5%90%91%E5%BE%80%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
+    <id>https://tom89757.github.io/2023/07/24/%E5%90%91%E5%BE%80%E7%9A%84%E7%94%9F%E6%B4%BB/</id>
+    <published>2023-07-24T09:19:46.000Z</published>
+    <updated>2023-07-24T09:21:45.887Z</updated>
     
     
-    <summary type="html">&lt;p&gt;本文记录一下从IDE转为Vim的一些资料和教程：&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;本文记录一下和未来向往的生活有关的一些资料：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://tom89757.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="未来" scheme="https://tom89757.github.io/tags/%E6%9C%AA%E6%9D%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>资料中的资料</title>
+    <link href="https://tom89757.github.io/2023/07/24/%E8%B5%84%E6%96%99%E4%B8%AD%E7%9A%84%E8%B5%84%E6%96%99/"/>
+    <id>https://tom89757.github.io/2023/07/24/%E8%B5%84%E6%96%99%E4%B8%AD%E7%9A%84%E8%B5%84%E6%96%99/</id>
+    <published>2023-07-24T09:17:09.000Z</published>
+    <updated>2023-07-24T11:25:25.287Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文收集一些别人收集的比较好的资料：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/tags/%E8%B5%84%E6%96%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实际工程中的调试</title>
+    <link href="https://tom89757.github.io/2023/07/24/%E5%AE%9E%E9%99%85%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95/"/>
+    <id>https://tom89757.github.io/2023/07/24/%E5%AE%9E%E9%99%85%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95/</id>
+    <published>2023-07-24T09:12:55.000Z</published>
+    <updated>2023-07-24T09:14:19.151Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在网上看到的比较好的贴合实际工程的调试实践：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="调试" scheme="https://tom89757.github.io/tags/%E8%B0%83%E8%AF%95/"/>
+    
+    <category term="debug" scheme="https://tom89757.github.io/tags/debug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云服务器使用指南</title>
+    <link href="https://tom89757.github.io/2023/07/23/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/07/23/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2023-07-23T15:10:34.000Z</published>
+    <updated>2023-07-23T16:38:46.944Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下在使用阿里云服务器过程中的一些经验和教训：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="Linux" scheme="https://tom89757.github.io/tags/Linux/"/>
+    
+    <category term="服务器" scheme="https://tom89757.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>neovim使用指南</title>
+    <link href="https://tom89757.github.io/2023/07/23/neovim%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://tom89757.github.io/2023/07/23/neovim%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2023-07-23T13:24:17.000Z</published>
+    <updated>2023-09-05T11:47:36.158Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录一下neovim的一些配置指南和经验：&lt;/p&gt;</summary>
     
     
     
@@ -286,121 +398,7 @@
     
     <category term="Vim" scheme="https://tom89757.github.io/tags/Vim/"/>
     
-  </entry>
-  
-  <entry>
-    <title>模型信息记录</title>
-    <link href="https://tom89757.github.io/2023/01/14/%E6%A8%A1%E5%9E%8B%E4%BF%A1%E6%81%AF%E8%AE%B0%E5%BD%95/"/>
-    <id>https://tom89757.github.io/2023/01/14/%E6%A8%A1%E5%9E%8B%E4%BF%A1%E6%81%AF%E8%AE%B0%E5%BD%95/</id>
-    <published>2023-01-14T15:52:30.000Z</published>
-    <updated>2023-01-14T15:55:23.251Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下在调试模型的过程中输出的信息：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://tom89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Pytorch" scheme="https://tom89757.github.io/tags/Pytorch/"/>
-    
-    <category term="模型信息" scheme="https://tom89757.github.io/tags/%E6%A8%A1%E5%9E%8B%E4%BF%A1%E6%81%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开阔视野的文章和博客</title>
-    <link href="https://tom89757.github.io/2022/12/26/%E5%BC%80%E9%98%94%E8%A7%86%E9%87%8E%E7%9A%84%E6%96%87%E7%AB%A0%E5%92%8C%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://tom89757.github.io/2022/12/26/%E5%BC%80%E9%98%94%E8%A7%86%E9%87%8E%E7%9A%84%E6%96%87%E7%AB%A0%E5%92%8C%E5%8D%9A%E5%AE%A2/</id>
-    <published>2022-12-26T14:17:13.000Z</published>
-    <updated>2023-03-31T05:07:25.866Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下一些开阔视野的文章和博客：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="开阔视野" scheme="https://tom89757.github.io/tags/%E5%BC%80%E9%98%94%E8%A7%86%E9%87%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Racket中知识点01</title>
-    <link href="https://tom89757.github.io/2022/12/07/Racket%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/"/>
-    <id>https://tom89757.github.io/2022/12/07/Racket%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%82%B901/</id>
-    <published>2022-12-07T13:06:47.000Z</published>
-    <updated>2022-12-07T13:57:08.716Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录Racket中相关的知识点：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="Racket" scheme="https://tom89757.github.io/tags/Racket/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>各种教程记录</title>
-    <link href="https://tom89757.github.io/2022/12/05/%E5%90%84%E7%A7%8D%E6%95%99%E7%A8%8B%E8%AE%B0%E5%BD%95/"/>
-    <id>https://tom89757.github.io/2022/12/05/%E5%90%84%E7%A7%8D%E6%95%99%E7%A8%8B%E8%AE%B0%E5%BD%95/</id>
-    <published>2022-12-05T11:33:31.000Z</published>
-    <updated>2023-04-24T13:53:13.545Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下在网络上收集的各种教程：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="资料" scheme="https://tom89757.github.io/categories/%E8%B5%84%E6%96%99/"/>
-    
-    
-    <category term="教程" scheme="https://tom89757.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开发环境配置</title>
-    <link href="https://tom89757.github.io/2022/12/03/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    <id>https://tom89757.github.io/2022/12/03/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
-    <published>2022-12-03T13:00:19.000Z</published>
-    <updated>2023-01-07T10:06:53.927Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下各种开发环境的配置：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://tom89757.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="Scheme" scheme="https://tom89757.github.io/tags/Scheme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu常见操作02</title>
-    <link href="https://tom89757.github.io/2022/11/22/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C02/"/>
-    <id>https://tom89757.github.io/2022/11/22/Ubuntu%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C02/</id>
-    <published>2022-11-22T12:49:01.000Z</published>
-    <updated>2023-04-20T13:53:37.827Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文记录一下使用Ubuntu操作系统时的常见操作：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="开发工具" scheme="https://tom89757.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Ubuntu" scheme="https://tom89757.github.io/tags/Ubuntu/"/>
+    <category term="neovim" scheme="https://tom89757.github.io/tags/neovim/"/>
     
   </entry>
   

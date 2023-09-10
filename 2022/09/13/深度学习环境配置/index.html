@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220914102908.png">
 <meta property="article:published_time" content="2022-09-13T08:33:03.000Z">
-<meta property="article:modified_time" content="2023-04-07T14:15:08.441Z">
+<meta property="article:modified_time" content="2023-06-23T16:19:02.278Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Pytorch">
 <meta name="twitter:card" content="summary">
@@ -159,18 +159,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -244,7 +244,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-07 22:15:08" itemprop="dateModified" datetime="2023-04-07T22:15:08+08:00">2023-04-07</time>
+      <time title="修改时间：2023-06-24 00:19:02" itemprop="dateModified" datetime="2023-06-24T00:19:02+08:00">2023-06-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -267,14 +267,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.6k</span>
+      <span>6.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -324,7 +324,7 @@
 </blockquote>
 </br>
 4.进行模型训练时出现`Could not load dynamic library 'libnvinfer.so.7'`。此为TensorFlow警告，可以通过设置环境变量：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> TF_CPP_MIN_LOG_LEVEL=<span class="string">&quot;2&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">TF_CPP_MIN_LOG_LEVEL</span><span class="token operator">=</span><span class="token string">"2"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 使系统不显示警告。
 <blockquote>
 <p>参考资料：</p>
@@ -399,7 +399,7 @@
 </blockquote>
 </br>
 13.关闭启动Ubuntu环境时自动启动anaconda
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --<span class="built_in">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda config --set auto_activate_base <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 > 参考资料：
 > 1. [安装conda后取消命令行前出现的base，取消每次启动自动激活conda的基础环境_南国那片枫叶的博客-CSDN博客_auto_activate_base](https://blog.csdn.net/u014734886/article/details/90718719)
 </br>
@@ -466,6 +466,35 @@
 <li><a target="_blank" rel="noopener" href="https://adamj.eu/tech/2020/02/25/use-python-m-pip-everywhere/">Use ‘python -m pip’ Everywhere - Adam Johnson</a></li>
 </ol>
 </blockquote>
+</br>
+21.更改anaconda默认环境：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1335235/anaconda-change-base-environment-permanently-to-a-different-environment-myenv">command line - Anaconda change ‘base’ environment permanently to a different environment ‘myenv’ to startup at terminal openings - Ask Ubuntu</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/28436769/how-to-change-default-anaconda-python-environment">How to change default Anaconda python environment - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/34534513/calling-conda-source-activate-from-bash-script">macos - calling conda source activate from bash script - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/61915607/commandnotfounderror-your-shell-has-not-been-properly-configured-to-use-conda">python - CommandNotFoundError: Your shell has not been properly configured to use ‘conda activate’ - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+22.使用crontab执行定时任务：
+- 创建应该编写crontab文件，例如`FTcron`，内容如下：
+<pre class="line-numbers language-bashobsidian://open?vault" data-language="bashobsidian://open?vault"><code class="language-bashobsidian://open?vault">SHELL&#x3D;&#x2F;bin&#x2F;bash
+PATH&#x3D;&#x2F;usr&#x2F;bin:&#x2F;bin:&#x2F;storage&#x2F;FT&#x2F;anaconda3&#x2F;bin
+0 20 * * * source activate py38; cd &#x2F;storage&#x2F;FT&#x2F;SCWSSOD&#x2F;SCWSSOD49; nohup python
+test.py&gt;test.out
+30 20 * * * source activate py38; cd &#x2F;storage&#x2F;FT&#x2F;SCWSSOD&#x2F;SCWSSOD50; nohup python test.py&gt;test.out<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+- `crontab FTcron`：将其添加到crontab任务。里面的两个任务分别在每天的20:00和20:30执行。
+- `crontab -e`：编辑文件中的任务
+- `crontab -l`：列出添加的crontab文件
+- `crontab -r`：删除crontab文件。
+具体细节见参考资料1。
+> 参考资料：
+> 1. [19. crontab 定时任务 — Linux Tools Quick Tutorial](https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html)
+> 2. [Linux Crontab 定时任务 | 菜鸟教程](https://www.runoob.com/w3cnote/linux-crontab-tasks.html)
+> 3. [javascript - linux crontab 执行多个定时任务 - SegmentFault 思否](https://segmentfault.com/q/1010000020045109)
+> 4. [crontab 使用 conda env 运行 python 脚本 - 知乎](https://zhuanlan.zhihu.com/p/337608389)
 
     </div>
 
@@ -538,13 +567,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">348k</span>
+    <span title="站点总字数">390k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

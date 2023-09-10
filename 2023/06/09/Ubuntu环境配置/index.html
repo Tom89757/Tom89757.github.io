@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文记录一下Ubuntu系统的环境配置：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu环境配置">
+<meta property="og:url" content="https://tom89757.github.io/2023/06/09/Ubuntu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录一下Ubuntu系统的环境配置：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-09T08:12:41.000Z">
+<meta property="article:modified_time" content="2023-08-19T13:59:23.729Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="Ubuntu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2023/06/09/Ubuntu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2023/06/09/Ubuntu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/","path":"2023/06/09/Ubuntu环境配置/","title":"Ubuntu环境配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Ubuntu环境配置 | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tldr"><span class="nav-number">1.</span> <span class="nav-text"> tldr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tree"><span class="nav-number">2.</span> <span class="nav-text"> tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trash-cli"><span class="nav-number">3.</span> <span class="nav-text"> trash-cli</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bat"><span class="nav-number">4.</span> <span class="nav-text"> bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ripgrep"><span class="nav-number">5.</span> <span class="nav-text"> ripgrep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E7%B1%BB"><span class="nav-number">6.</span> <span class="nav-text"> 综合类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8Edeb%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text"> 从deb文件安装软件</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2023/06/09/Ubuntu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Ubuntu环境配置 | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu环境配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-06-09 16:12:41" itemprop="dateCreated datePublished" datetime="2023-06-09T16:12:41+08:00">2023-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-19 21:59:23" itemprop="dateModified" datetime="2023-08-19T21:59:23+08:00">2023-08-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文记录一下Ubuntu系统的环境配置：</p>
+<span id="more"></span>
+<h3 id="tldr"><a class="markdownIt-Anchor" href="#tldr"></a> tldr</h3>
+<p>以简洁的方式说明各个常用命令如<code>tar</code>的用法。<br />
+安装：</p>
+<ul>
+<li><code>npm install -g tldr</code>：node.js中安装</li>
+<li><code>pip3 install tldr</code>：linux中安装<br />
+使用：</li>
+<li><code>tldr git</code>：即可查看git的用法，第一次使用时需要建立索引</li>
+<li>给git bash配置颜色。参考资料2/3/4。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mklink C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>A<span class="token punctuation">\</span>.oh-my-zsh<span class="token punctuation">\</span>custom<span class="token punctuation">\</span>plugins<span class="token punctuation">\</span>tldr<span class="token punctuation">\</span>_tldr D:<span class="token punctuation">\</span>Desktop<span class="token punctuation">\</span>dotfiles<span class="token punctuation">\</span>git<span class="token punctuation">\</span>tldr-node-client<span class="token punctuation">\</span>bin<span class="token punctuation">\</span>completion<span class="token punctuation">\</span>zsh<span class="token punctuation">\</span>_tldr
+mklink C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>A<span class="token punctuation">\</span>.tldrrc D:<span class="token punctuation">\</span>Desktop<span class="token punctuation">\</span>dotfiles<span class="token punctuation">\</span>git<span class="token punctuation">\</span>.tldrrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>PS：根据参考资料2和3，在gitbash中<code>tldr</code>的输出没有颜色，此时可以在<code>.zshrc</code>中添加<code>export FORCE_COLOR=2</code>。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr">GitHub - tldr-pages/tldr: 📚 Collaborative cheatsheets for console commands</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr/issues/1262">How to get colors? · Issue #1262 · tldr-pages/tldr · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr-node-client/issues/276">tldr doesnt pick color config from .tldrrc file · Issue #276 · tldr-pages/tldr-node-client · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr-node-client">GitHub - tldr-pages/tldr-node-client: Node.js command-line client for tldr pages</a></li>
+</ol>
+</blockquote>
+<h3 id="tree"><a class="markdownIt-Anchor" href="#tree"></a> tree</h3>
+<p>在不使用sudo的情况下安装tree命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> ~/deb
+<span class="token builtin class-name">cd</span> ~/deb
+<span class="token function">apt</span> download tree
+dpkg-deb -xv ./*deb ./
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"/home/FT/deb/usr/bin:<span class="token environment constant">$PATH</span>"</span> <span class="token comment"># 加入路径</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tree -I <span class="token string">'*png|*pyc|*.jpg'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1322467/how-to-install-tree-on-ubuntu-without-sudo-right">apt - How to install tree on Ubuntu without sudo right? - Ask Ubuntu</a></li>
+<li><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/47805/how-do-we-specify-multiple-ignore-patterns-for-tree-command">How do we specify multiple ignore patterns for <code>tree</code> command? - Unix &amp; Linux Stack Exchange</a></li>
+</ol>
+</blockquote>
+<h3 id="trash-cli"><a class="markdownIt-Anchor" href="#trash-cli"></a> trash-cli</h3>
+<p>使用<code>trash</code>替代<code>rm</code>，更加安全，类似回收站</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://pypi.org/project/trash-cli/">trash-cli · PyPI</a></li>
+</ol>
+</blockquote>
+<h3 id="bat"><a class="markdownIt-Anchor" href="#bat"></a> bat</h3>
+<p>和cat功能类似，具有语法高亮</p>
+<ul>
+<li><code>sudo apt install bat</code>：在Ubuntu上安装</li>
+<li><code>choco install bat</code>：在windows10上安装</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/sharkdp/bat/#installation">GitHub - sharkdp/bat: A cat(1) clone with wings.</a></li>
+</ol>
+</blockquote>
+<h3 id="ripgrep"><a class="markdownIt-Anchor" href="#ripgrep"></a> ripgrep</h3>
+<p>使用regex模式递归地在当前目录下搜索的工具。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/BurntSushi/ripgrep#installation">GitHub - BurntSushi/ripgrep: ripgrep recursively searches directories for a regex pattern while respecting your gitignore</a></li>
+</ol>
+</blockquote>
+<h3 id="综合类"><a class="markdownIt-Anchor" href="#综合类"></a> 综合类</h3>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://jvns.ca/blog/2023/08/08/what-helps-people-get-comfortable-on-the-command-line-/">What helps people get comfortable on the command line?</a>：推荐了很多使你习惯使用命令行的工具</li>
+</ol>
+<h3 id="从deb文件安装软件"><a class="markdownIt-Anchor" href="#从deb文件安装软件"></a> 从deb文件安装软件</h3>
+<p>GitHub Copilot: 在Linux中，可以使用<code>dpkg</code>命令从<code>.deb</code>文件安装软件包。具体来说，可以按照以下步骤进行操作：</p>
+<ol>
+<li>下载<code>.deb</code>文件。可以从软件包的官方网站或其他可信来源下载<code>.deb</code>文件。（下载对应架构的版本，amd64/arm64）</li>
+<li>打开终端，并使用<code>cd</code>命令进入<code>.deb</code>文件所在的目录。</li>
+<li>使用<code>dpkg</code>命令安装软件包。例如，要安装名为<code>example.deb</code>的软件包，可以使用以下命令：<pre class="line-numbers language-none"><code class="language-none">sudo dpkg -i example.deb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+其中，<code>-i</code>选项表示安装软件包，<code>example.deb</code>为要安装的软件包文件名。需要使用<code>sudo</code>命令以管理员权限运行<code>dpkg</code>命令。</li>
+<li>如果安装过程中出现依赖项错误，可以使用以下命令来修复依赖项：<pre class="line-numbers language-none"><code class="language-none">sudo apt-get install -f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+该命令会自动安装缺失的依赖项，并尝试修复其他依赖项错误。</li>
+<li>安装完成后，可以使用<code>dpkg</code>命令来查询已安装的软件包。例如，要查询名为<code>example</code>的软件包是否已安装，可以使用以下命令：<pre class="line-numbers language-none"><code class="language-none">dpkg -s example<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+如果软件包已安装，该命令会显示软件包的详细信息，包括版本号、安装时间等。<br />
+需要注意的是，使用<code>dpkg</code>命令安装软件包时，可能会出现依赖项错误或其他问题。如果无法解决问题，可以尝试使用其他软件包管理工具，例如<code>apt</code>或<code>yum</code>，来安装软件包。<br />
+总之，要在Linux中从<code>.deb</code>文件安装软件包，可以使用<code>dpkg</code>命令，并使用<code>sudo</code>命令以管理员权限运行该命令。如果出现依赖项错误，可以使用<code>apt-get</code>命令来修复依赖项。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2023/06/09/Ubuntu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="Ubuntu环境配置">https://tom89757.github.io/2023/06/09/Ubuntu环境配置/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/06/06/Web%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="prev" title="Web开发常见问题解决方案">
+                  <i class="fa fa-chevron-left"></i> Web开发常见问题解决方案
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/06/11/%E5%90%8E%E7%AB%AF%E6%96%87%E7%AB%A0%E6%B1%87%E6%80%BB/" rel="next" title="后端文章汇总">
+                  后端文章汇总 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">390k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:55</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
+
+
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '480px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: false
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>

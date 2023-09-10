@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20220925001124.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221002095435.png">
 <meta property="article:published_time" content="2022-08-15T03:17:01.000Z">
-<meta property="article:modified_time" content="2022-11-18T05:45:53.605Z">
+<meta property="article:modified_time" content="2023-08-08T14:04:56.890Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -148,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text"> 属性和方法签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#idea%E5%B0%86-java-%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%88%90-jar-%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text"> IDEA将 Java 项目打包成 Jar 包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exe4j%E5%B0%86jar%E5%8C%85%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text"> exe4j将jar包转换为可执行文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8Epomxml%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE"><span class="nav-number">4.</span> <span class="nav-text"> 从pom.xml导入项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#junit-debugging"><span class="nav-number">5.</span> <span class="nav-text"> JUnit debugging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#intellij-idea%E4%BD%BF%E7%94%A8java-visualizer%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text"> IntelliJ IDEA使用Java visualizer可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-%E9%94%99%E8%AF%AF%E4%B8%8D%E6%94%AF%E6%8C%81%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC5"><span class="nav-number">7.</span> <span class="nav-text"> java 错误，不支持发行版本5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E8%AF%84%E4%BC%B0"><span class="nav-number">8.</span> <span class="nav-text"> Java内存使用评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%A8%A1%E5%9D%97%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BE%9D%E8%B5%96"><span class="nav-number">9.</span> <span class="nav-text"> 多个模块之间的依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#error-running-remote-debugger"><span class="nav-number">10.</span> <span class="nav-text"> Error running ‘Remote Debugger’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javac%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3"><span class="nav-number">11.</span> <span class="nav-text"> javac编译详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E5%A4%96%E9%83%A8%E5%8C%85%E9%85%8D%E7%BD%AE"><span class="nav-number">12.</span> <span class="nav-text"> Java外部包配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0classnotfoundexception"><span class="nav-number">13.</span> <span class="nav-text"> 出现ClassNotFoundException</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E4%B9%B1%E7%A0%81"><span class="nav-number">14.</span> <span class="nav-text"> 出现乱码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E4%B8%8B%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8Cjava%E5%BC%95%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%A4%96%E9%83%A8%E5%8C%85"><span class="nav-number"></span> <span class="nav-text"> Linux下编译和运行Java引用多个外部包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85java"><span class="nav-number">1.</span> <span class="nav-text"> Ubuntu上安装Java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84hashmap-treemap%E5%92%8Chashset-treeset"><span class="nav-number">2.</span> <span class="nav-text"> Java中的HashMap、TreeMap和HashSet、TreeSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E6%BA%A2%E5%87%BA%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text"> Java中溢出处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%ADarraylist"><span class="nav-number">4.</span> <span class="nav-text"> Java中ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E4%BD%8D%E6%93%8D%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text"> Java中位操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.</span> <span class="nav-text"> Java数据类型</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text"> 属性和方法签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#idea%E5%B0%86-java-%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%88%90-jar-%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text"> IDEA将 Java 项目打包成 Jar 包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exe4j%E5%B0%86jar%E5%8C%85%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text"> exe4j将jar包转换为可执行文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8Epomxml%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE"><span class="nav-number">4.</span> <span class="nav-text"> 从pom.xml导入项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#junit-debugging"><span class="nav-number">5.</span> <span class="nav-text"> JUnit debugging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#intellij-idea%E4%BD%BF%E7%94%A8java-visualizer%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text"> IntelliJ IDEA使用Java visualizer可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-%E9%94%99%E8%AF%AF%E4%B8%8D%E6%94%AF%E6%8C%81%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC5"><span class="nav-number">7.</span> <span class="nav-text"> java 错误，不支持发行版本5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E8%AF%84%E4%BC%B0"><span class="nav-number">8.</span> <span class="nav-text"> Java内存使用评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%A8%A1%E5%9D%97%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BE%9D%E8%B5%96"><span class="nav-number">9.</span> <span class="nav-text"> 多个模块之间的依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#error-running-remote-debugger"><span class="nav-number">10.</span> <span class="nav-text"> Error running ‘Remote Debugger’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javac%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3"><span class="nav-number">11.</span> <span class="nav-text"> javac编译详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E5%A4%96%E9%83%A8%E5%8C%85%E9%85%8D%E7%BD%AE"><span class="nav-number">12.</span> <span class="nav-text"> Java外部包配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0classnotfoundexception"><span class="nav-number">13.</span> <span class="nav-text"> 出现ClassNotFoundException</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E4%B9%B1%E7%A0%81"><span class="nav-number">14.</span> <span class="nav-text"> 出现乱码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux%E4%B8%8B%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8Cjava%E5%BC%95%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%A4%96%E9%83%A8%E5%8C%85"><span class="nav-number">15.</span> <span class="nav-text"> Linux下编译和运行Java引用多个外部包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85java"><span class="nav-number">16.</span> <span class="nav-text"> Ubuntu上安装Java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84hashmap-treemap%E5%92%8Chashset-treeset"><span class="nav-number">17.</span> <span class="nav-text"> Java中的HashMap、TreeMap和HashSet、TreeSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E6%BA%A2%E5%87%BA%E5%A4%84%E7%90%86"><span class="nav-number">18.</span> <span class="nav-text"> Java中溢出处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%ADarraylist"><span class="nav-number">19.</span> <span class="nav-text"> Java中ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E4%BD%8D%E6%93%8D%E4%BD%9C"><span class="nav-number">20.</span> <span class="nav-text"> Java中位操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">21.</span> <span class="nav-text"> Java数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8gradle%E6%97%B6%E5%8D%A1%E5%9C%A880-building-bootrun"><span class="nav-number">22.</span> <span class="nav-text"> 使用gradle时卡在80% building :bootRun</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,18 +161,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-11-18 13:45:53" itemprop="dateModified" datetime="2022-11-18T13:45:53+08:00">2022-11-18</time>
+      <time title="修改时间：2023-08-08 22:04:56" itemprop="dateModified" datetime="2023-08-08T22:04:56+08:00">2023-08-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,14 +265,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
+      <span>2.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -395,14 +395,14 @@
 <p>当直接使用<code>javac Evaluate.java</code>编译文件时出现以下乱码：<br />
 <img src="https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20221002095435.png" alt="" /><br />
 此时可以通过指定编码格式解决该问题：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac -encoding utf8 p3/Evaluate.java</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">javac -encoding utf8 p3/Evaluate.java<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jayson-jamaica/p/12695427.html">Javac和JVM的字符编码问题</a></li>
 </ol>
 </blockquote>
-<h2 id="linux下编译和运行java引用多个外部包"><a class="markdownIt-Anchor" href="#linux下编译和运行java引用多个外部包"></a> Linux下编译和运行Java引用多个外部包</h2>
+<h3 id="linux下编译和运行java引用多个外部包"><a class="markdownIt-Anchor" href="#linux下编译和运行java引用多个外部包"></a> Linux下编译和运行Java引用多个外部包</h3>
 <p>以算法第四版第三章的3.1.3的用例举例为例进行说明。在windows中已经根据上述的<strong>出现ClassNotFoundException</strong>进行外部库的依赖配置。<br />
 此时在windows中只需在cmd窗口按照以下步骤运行用例类：</p>
 <ul>
@@ -421,7 +421,8 @@ PS：</li>
 <li><code>java -cp $CLASSPATH:&quot;/mnt/d/Develop/Java/jdk11.0.11/lib/*&quot; p1.TestST &lt;p1/tinyTale.txt</code>：运行<code>.class</code>文件。<br />
 为了避免上述命令中繁琐的输入，可以设置<code>alias</code>别名：</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> javac=<span class="string">&quot;javac -cp &#x27;/mnt/d/Develop/Java/jdk11.0.11/lib/*&#x27;&quot;</span></span><br><span class="line"><span class="built_in">alias</span> java=<span class="string">&quot;java -cp <span class="variable">$CLASSPATH</span>:/mnt/d/Develop/Java/jdk11.0.11/lib/*&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">javac</span><span class="token operator">=</span><span class="token string">"javac -cp '/mnt/d/Develop/Java/jdk11.0.11/lib/*'"</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">java</span><span class="token operator">=</span><span class="token string">"java -cp <span class="token variable">$CLASSPATH</span>:/mnt/d/Develop/Java/jdk11.0.11/lib/*"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考资料：</p>
 <ol>
@@ -474,6 +475,15 @@ PS：</li>
 <p>参考资料：</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-basic-datatypes.html">Java 基本数据类型 | 菜鸟教程</a></li>
+</ol>
+</blockquote>
+<h3 id="使用gradle时卡在80-building-bootrun"><a class="markdownIt-Anchor" href="#使用gradle时卡在80-building-bootrun"></a> 使用gradle时卡在<code>80% building :bootRun</code></h3>
+<p>正常情况</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li>[Gets stuck at &gt; Building 80% &gt; :bootRun · Issue #3 · hamvocke/spring-testing · GitHub](<a target="_blank" rel="noopener" href="https://github.com/hamvocke/spring-testing/issues/3">https://github.com/hamvocke/spring-testing/issues/3</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/34724299/why-does-my-spring-boot-web-app-not-run-completely-in-gradle">java - Why does my Spring Boot web app not run completely in Gradle? - Stack Overflow</a></li>
 </ol>
 </blockquote>
 
@@ -548,13 +558,13 @@ PS：</li>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">348k</span>
+    <span title="站点总字数">390k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

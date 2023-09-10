@@ -28,7 +28,7 @@
 <meta property="og:description" content="本文介绍一下ohmyzsh的学习和使用过程：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-19T09:36:05.000Z">
-<meta property="article:modified_time" content="2023-04-23T06:17:58.161Z">
+<meta property="article:modified_time" content="2023-06-15T03:21:02.010Z">
 <meta property="article:author" content="幻光">
 <meta property="article:tag" content="tmux">
 <meta name="twitter:card" content="summary">
@@ -144,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86bashrc%E4%B8%AD%E7%9A%84alias%E8%BF%81%E7%A7%BB%E5%88%B0zshrc"><span class="nav-number">1.</span> <span class="nav-text"> 将.bashrc中的alias迁移到.zshrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh%E5%9C%A8mnt%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84git%E4%BB%93%E5%BA%93%E4%B8%ADprompt%E5%BE%88%E6%85%A2"><span class="nav-number">2.</span> <span class="nav-text"> zsh在&#x2F;mnt&#x2F;…目录中的git仓库中prompt很慢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text"> 代理配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E5%AE%89%E8%A3%85zsh-%E4%B8%8D%E9%9C%80%E8%A6%81root%E6%9D%83%E9%99%90"><span class="nav-number">4.</span> <span class="nav-text"> 为指定用户安装zsh (不需要root权限)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-bash%E4%B8%AD%E5%AE%89%E8%A3%85zsh%E5%92%8Cohmyzsh"><span class="nav-number">5.</span> <span class="nav-text"> git bash中安装zsh和ohmyzsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85autojump%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E8%B7%B3%E8%BD%AC"><span class="nav-number">6.</span> <span class="nav-text"> 安装autojump插件实现目录跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85powerlevel10k%E4%B8%BB%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text"> 安装powerlevel10k主题</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86bashrc%E4%B8%AD%E7%9A%84alias%E8%BF%81%E7%A7%BB%E5%88%B0zshrc"><span class="nav-number">1.</span> <span class="nav-text"> 将.bashrc中的alias迁移到.zshrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh%E5%9C%A8mnt%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84git%E4%BB%93%E5%BA%93%E4%B8%ADprompt%E5%BE%88%E6%85%A2"><span class="nav-number">2.</span> <span class="nav-text"> zsh在&#x2F;mnt&#x2F;…目录中的git仓库中prompt很慢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text"> 代理配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E5%AE%89%E8%A3%85zsh-%E4%B8%8D%E9%9C%80%E8%A6%81root%E6%9D%83%E9%99%90"><span class="nav-number">4.</span> <span class="nav-text"> 为指定用户安装zsh (不需要root权限)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-bash%E4%B8%AD%E5%AE%89%E8%A3%85zsh%E5%92%8Cohmyzsh"><span class="nav-number">5.</span> <span class="nav-text"> git bash中安装zsh和ohmyzsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85autojump%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E8%B7%B3%E8%BD%AC"><span class="nav-number">6.</span> <span class="nav-text"> 安装autojump插件实现目录跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85powerlevel10k%E4%B8%BB%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text"> 安装powerlevel10k主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-icons%E5%9B%BE%E6%A0%87%E6%98%BE%E7%A4%BA"><span class="nav-number">8.</span> <span class="nav-text"> VSCode Icons图标显示</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">58</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -242,7 +242,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-23 14:17:58" itemprop="dateModified" datetime="2023-04-23T14:17:58+08:00">2023-04-23</time>
+      <time title="修改时间：2023-06-15 11:21:02" itemprop="dateModified" datetime="2023-06-15T11:21:02+08:00">2023-06-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -261,7 +261,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.4k</span>
+      <span>3.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -324,36 +324,68 @@
 </ol>
 </blockquote>
 <h3 id="为指定用户安装zsh-不需要root权限"><a class="markdownIt-Anchor" href="#为指定用户安装zsh-不需要root权限"></a> 为指定用户安装zsh (不需要root权限)</h3>
-<p>下述安装过程主要参考资料6和资料7：</p>
+<p>下述安装过程主要参考资料5和资料6：</p>
 <ol>
 <li>从源码安装<code>zsh</code>的依赖包<code>ncurses</code>：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz tar xf ncurses-6.1.tar.gz <span class="built_in">cd</span> ncurses-6.1 ./configure --prefix=<span class="variable">$HOME</span>/local CXXFLAGS=<span class="string">&quot;-fPIC&quot;</span> CFLAGS=<span class="string">&quot;-fPIC&quot;</span> make -j &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz <span class="token function">tar</span> xf ncurses-6.1.tar.gz 
+<span class="token builtin class-name">cd</span> ncurses-6.1 ./configure --prefix<span class="token operator">=</span><span class="token environment constant">$HOME</span>/local <span class="token assign-left variable">CXXFLAGS</span><span class="token operator">=</span><span class="token string">"-fPIC"</span> <span class="token assign-left variable">CFLAGS</span><span class="token operator">=</span><span class="token string">"-fPIC"</span> 
+<span class="token function">make</span> -j <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ol start="2">
-<li>构建并安装<code>zsh</code>（将下述命令写入脚本<code>zsh.sh</code>并运行<code>sh zsh.sh</code>j：</li>
+<li>构建并安装<code>zsh</code>（将下述命令写入脚本<code>zsh.sh</code>并运行<code>sh zsh.sh</code>：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZSH_SRC_NAME=<span class="variable">$HOME</span>/packages/zsh.tar.xz ZSH_PACK_DIR=<span class="variable">$HOME</span>/packages/zsh ZSH_LINK=<span class="string">&quot;https://sourceforge.net/projects/zsh/files/latest/download&quot;</span> <span class="keyword">if</span> [[ ! -d <span class="string">&quot;<span class="variable">$ZSH_PACK_DIR</span>&quot;</span> ]]; <span class="keyword">then</span> <span class="built_in">echo</span> <span class="string">&quot;Creating zsh directory under packages directory&quot;</span> <span class="built_in">mkdir</span> -p <span class="string">&quot;<span class="variable">$ZSH_PACK_DIR</span>&quot;</span> <span class="keyword">fi</span> <span class="keyword">if</span> [[ ! -f <span class="variable">$ZSH_SRC_NAME</span> ]]; <span class="keyword">then</span> curl -Lo <span class="string">&quot;<span class="variable">$ZSH_SRC_NAME</span>&quot;</span> <span class="string">&quot;<span class="variable">$ZSH_LINK</span>&quot;</span> <span class="keyword">fi</span> tar xJvf <span class="string">&quot;<span class="variable">$ZSH_SRC_NAME</span>&quot;</span> -C <span class="string">&quot;<span class="variable">$ZSH_PACK_DIR</span>&quot;</span> --strip-components 1 <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$ZSH_PACK_DIR</span>&quot;</span> ./configure --prefix=<span class="string">&quot;<span class="variable">$HOME</span>/local&quot;</span> \ CPPFLAGS=<span class="string">&quot;-I<span class="variable">$HOME</span>/local/include&quot;</span> \ LDFLAGS=<span class="string">&quot;-L<span class="variable">$HOME</span>/local/lib&quot;</span> make -j &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">ZSH_SRC_NAME</span><span class="token operator">=</span><span class="token environment constant">$HOME</span>/packages/zsh.tar.xz
+<span class="token assign-left variable">ZSH_PACK_DIR</span><span class="token operator">=</span><span class="token environment constant">$HOME</span>/packages/zsh
+<span class="token assign-left variable">ZSH_LINK</span><span class="token operator">=</span><span class="token string">"https://sourceforge.net/projects/zsh/files/latest/download"</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> -d <span class="token string">"<span class="token variable">$ZSH_PACK_DIR</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"Creating zsh directory under packages directory"</span>
+    <span class="token function">mkdir</span> -p <span class="token string">"<span class="token variable">$ZSH_PACK_DIR</span>"</span>
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> -f <span class="token variable">$ZSH_SRC_NAME</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">curl</span> -Lo <span class="token string">"<span class="token variable">$ZSH_SRC_NAME</span>"</span> <span class="token string">"<span class="token variable">$ZSH_LINK</span>"</span>
+<span class="token keyword">fi</span>
+
+<span class="token function">tar</span> xJvf <span class="token string">"<span class="token variable">$ZSH_SRC_NAME</span>"</span> -C <span class="token string">"<span class="token variable">$ZSH_PACK_DIR</span>"</span> --strip-components <span class="token number">1</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable">$ZSH_PACK_DIR</span>"</span>
+
+./configure --prefix<span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/local"</span> <span class="token punctuation">\</span>
+    <span class="token assign-left variable">CPPFLAGS</span><span class="token operator">=</span><span class="token string">"-I<span class="token environment constant">$HOME</span>/local/include"</span> <span class="token punctuation">\</span>
+    <span class="token assign-left variable">LDFLAGS</span><span class="token operator">=</span><span class="token string">"-L<span class="token environment constant">$HOME</span>/local/lib"</span>
+<span class="token function">make</span> -j <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="3">
 <li>设置默认shell为<code>zsh</code>。创建<code>~/.bash_profile</code>文件并写入：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/local/bin:<span class="variable">$PATH</span> <span class="built_in">export</span> SHELL=`<span class="built_in">which</span> zsh` [ -f <span class="string">&quot;<span class="variable">$SHELL</span>&quot;</span> ] &amp;&amp; <span class="built_in">exec</span> <span class="string">&quot;<span class="variable">$SHELL</span>&quot;</span> -l</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$HOME</span>/local/bin:<span class="token environment constant">$PATH</span> 
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">SHELL</span></span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">which</span> <span class="token function">zsh</span><span class="token variable">`</span></span> 
+<span class="token punctuation">[</span> -f <span class="token string">"<span class="token environment constant">$SHELL</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exec</span> <span class="token string">"<span class="token environment constant">$SHELL</span>"</span> -l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ol start="4">
 <li>运行<code>source ~/.bash_profile</code>启动<code>zsh</code>。选择<code>q</code>选项暂不进行配置，此时位于zsh shell。</li>
 <li>直接采用资料6中的配置（可以将<code>ohmyzsh.sh</code>下载到本地运行<code>sh ohmyzsh.sh</code></li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://www.sunhanwu.top/upload/2022/12/ohmyzsh.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://www.sunhanwu.top/upload/2022/12/ohmyzsh.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ol start="6">
 <li>安装第三方插件：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="token variable">$&#123;ZSH_CUSTOM<span class="token operator">:-</span>~<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom&#125;</span>/plugins/zsh-syntax-highlighting
+
+<span class="token function">git</span> clone https://github.com/zsh-users/zsh-autosuggestions <span class="token variable">$&#123;ZSH_CUSTOM<span class="token operator">:-</span>~<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom&#125;</span>/plugins/zsh-autosuggestions<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ol start="7">
 <li>在<code>.zshrc</code>中配置所需要的插件（功能介绍见资料6）：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash plugins=( git extract fzf z zsh-autosuggestions zsh-syntax-highlighting wd sudo )</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> <span class="token assign-left variable">plugins</span><span class="token operator">=</span><span class="token punctuation">(</span> <span class="token function">git</span> extract fzf z zsh-autosuggestions zsh-syntax-highlighting wd <span class="token function">sudo</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ol start="8">
 <li>将原本<code>.bashrc</code>中的<code>alias</code>和<code>export</code>配置写入<code>~/.bash_aliases</code>和<code>~/.bash_path</code>文件。然后在<code>.zshrc</code>文件中写入生效：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ -f ~/.bash_aliases ]; <span class="keyword">then</span></span><br><span class="line">   . ~/.bash_aliases</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -f ~/.bash_path ]; <span class="keyword">then</span></span><br><span class="line">   . ~/.bash_path</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> -f ~/.bash_aliases <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+   <span class="token builtin class-name">.</span> ~/.bash_aliases
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -f ~/.bash_path <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+   <span class="token builtin class-name">.</span> ~/.bash_path
+<span class="token keyword">fi</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行<code>source ~/.zshrc</code>即可生效。</p>
 <blockquote>
 <p>参考资料：</p>
@@ -371,6 +403,9 @@
 <p>参考资料：</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://gist.github.com/fworks/af4c896c9de47d827d4caa6fd7154b6b">Zsh / Oh-my-zsh on Windows Git Bash · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/64036536/strange-characters-for-ohmyz-in-vscode">git - Strange characters for ohmyz in vscode - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/issues/120004">Weird letter spacing in Integrated Terminal for VS Code · Issue #120004 · microsoft/vscode · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/issues/67789">weird cursor-word space issue with zsh, oh-my-zsh · Issue #67789 · microsoft/vscode · GitHub</a></li>
 </ol>
 </blockquote>
 <h3 id="安装autojump插件实现目录跳转"><a class="markdownIt-Anchor" href="#安装autojump插件实现目录跳转"></a> 安装autojump插件实现目录跳转</h3>
@@ -391,6 +426,16 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k">GitHub - romkatv/powerlevel10k: A Zsh theme</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k/issues/214">How to reset the settings? · Issue #214 · romkatv/powerlevel10k · GitHub</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k/issues/1840">Configuration wizard missing · Issue #1840 · romkatv/powerlevel10k · GitHub</a></li>
+</ol>
+</blockquote>
+<h3 id="vscode-icons图标显示"><a class="markdownIt-Anchor" href="#vscode-icons图标显示"></a> VSCode Icons图标显示</h3>
+<p>方案一： 安装<code>MesloLGS NF</code>字体并设置。<br />
+方案二：下载参考资料2中的扩展<code>Fira Code</code>字体。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k/issues/671">icons don’t display in VS code integrated terminal after setting terminal.integrated.fontFamily · Issue #671 · romkatv/powerlevel10k · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tonsky/FiraCode/discussions/1285">Missing icons for oh-my-zsh · tonsky/FiraCode · Discussion #1285 · GitHub</a></li>
 </ol>
 </blockquote>
 
@@ -465,13 +510,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">348k</span>
+    <span title="站点总字数">390k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="x5ktgciuUZaSdL_MVZTZbxB3KlpKTLWWRI5NuYoIlXo">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tom89757.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文记录一下使用git时的常见操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git使用指南02">
+<meta property="og:url" content="https://tom89757.github.io/2023/06/15/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%9702/index.html">
+<meta property="og:site_name" content="世界在我面前展开">
+<meta property="og:description" content="本文记录一下使用git时的常见操作。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-15T15:44:08.000Z">
+<meta property="article:modified_time" content="2023-08-13T17:13:45.548Z">
+<meta property="article:author" content="幻光">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tom89757.github.io/2023/06/15/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%9702/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tom89757.github.io/2023/06/15/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%9702/","path":"2023/06/15/git使用指南02/","title":"git使用指南02"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>git使用指南02 | 世界在我面前展开</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a5a702eb0224989403c29d3c91b068f0"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="世界在我面前展开" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">世界在我面前展开</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">死亡扑面而来 腐朽接踵而至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">幻光</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Tom89757" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Tom89757" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tom89757.github.io/2023/06/15/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%9702/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="幻光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="git使用指南02 | 世界在我面前展开">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git使用指南02
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-06-15 23:44:08" itemprop="dateCreated datePublished" datetime="2023-06-15T23:44:08+08:00">2023-06-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-14 01:13:45" itemprop="dateModified" datetime="2023-08-14T01:13:45+08:00">2023-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">开发工具</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文记录一下使用git时的常见操作。</p>
+<span id="more"></span>
+<p>1.git更新版本并添加到Windows Terminal：</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://linuxhint.com/upgrade-git-latest-version-windows/">How to Upgrade git to the Latest Version on Windows</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal">Adding Git-Bash to the new Windows Terminal - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+<p>2.git terminal在VSCode中行为很奇怪：<br />
+更新git版本。</p>
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/issues/184719">git bash terminal is acting wierd in vscode · Issue #184719 · microsoft/vscode · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/76479076/git-bash-terminal-is-acting-wierd-in-vscode">visual studio code - git bash terminal is acting wierd in vscode - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+3.git bash终端中文显示乱码：
+解决方案1（无效）：
+- `git config --global core.quotepath false`
+- 在设置里将`text`改为`zh-CN`和`UTF-8`。
+解决方案2：
+- `chcp.com 65001`：`65001`对应UTF-8，可以写在`.zshrc`文件中。
+> 参考资料：
+> 1. [Git Bash终端中文输出显示乱码解决方案 - lybingyu - 博客园](https://www.cnblogs.com/sdlz/p/13023342.html)
+> 2. [windows - Unicode (utf-8) with git-bash - Stack Overflow](https://stackoverflow.com/questions/10651975/unicode-utf-8-with-git-bash)
+</br>
+4.git中创建pull request
+> 参考资料：
+> 1. [How to Code Good Part 2 - Google 幻灯片](https://docs.google.com/presentation/d/15WY-h0lr-t3jDO0eJTaeBq5zbnwfjPxPr1aauI1xhF4/edit#slide=id.g1f8707ec125_0_4)
+</br>
+5.git仓库fork后创建pull request
+Github Copilot：如果您想将自己的更改贡献给原始仓库，可以通过 Pull Request 的方式向原始仓库提交更改请求。下面是一些基本步骤：
+1. 在 GitHub 上 Fork 原始仓库，将其复制到自己的账户中。
+2. 在自己的账户中 Clone Fork 后的仓库到本地。
+3. 在本地仓库中创建一个新的分支，并在该分支中进行代码更改。
+4. 将更改推送到自己的 GitHub 仓库中。
+5. 在自己的 GitHub 仓库中创建一个 Pull Request，请求将更改合并到原始仓库中。
+6. 在 Pull Request 中描述您所做的更改、为什么要做这些更改以及如何测试这些更改。
+7. 等待原始仓库的维护者审核并合并您的更改。
+请注意，不同的项目可能有不同的贡献流程和规则。在参与开源项目时，建议仔细阅读项目的贡献指南和代码贡献流程，以了解项目的贡献规则和流程。
+</br>
+6.本仓库pull request和fork后pull request的区别：
+GitHub Copilot: Fork 和 Pull Request 都是 GitHub 中用于协作开发的重要机制。
+Fork 是指将一个开源项目的代码库复制到自己的 GitHub 账户中，以便进行修改和贡献。通过 Fork，开发人员可以在自己的分支中进行代码更改，并将这些更改推送到自己的 GitHub 仓库中。这样，他们就可以在自己的仓库中管理代码，并随时将更改推送到原始项目中。
+Pull Request 是指开发人员在自己的分支中进行代码更改后，向原始项目的维护者请求审核和合并这些更改的机制。通过 Pull Request，开发人员可以描述他们所做的更改、为什么要做这些更改以及如何测试这些更改。项目维护者可以查看 Pull Request，并在必要时提出问题或建议修改。一旦 Pull Request 被审核通过，项目维护者可以将更改合并到项目的主分支中。
+总的来说，Fork 和 Pull Request 都是用于协作开发的机制，但它们的使用场景和目的有所不同。Fork 通常用于在自己的分支中进行代码更改和管理，而 Pull Request 通常用于向原始项目贡献代码并请求审核和合并。
+</br>
+7.`git pull origin main`报错`fetch-pack: unexpected disconnect while reading sideband packet`
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-closed-with-outstanding-read-data-remaining">git - error: RPC failed; curl transfer closed with outstanding read data remaining - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/66366582/github-unexpected-disconnect-while-reading-sideband-packet">git - Github - unexpected disconnect while reading sideband packet - Stack Overflow</a></li>
+</ol>
+</blockquote>
+</br>
+8.在local git repository（本地git仓库）中同时在两个分支上工作
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">gb backend # 切换到backend分支
+git worktee add frontend # 在当前worktree添加frontend分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+此时目录结构如下：
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/59579681/i-want-to-work-on-different-branches-in-git-in-my-local-repository-which-have-di">github - i want to work on different branches in git in my local repository which have different branches from origin set as upstream - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.integralist.co.uk/posts/multiple-branches-in-git/#:~:text=Git%20offers%20a%20feature%20referred,directories%20where%20they%20are%20stored.">Multiple Branches in Git ⋆ Mark McDonnell</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2uEqYw-N8uE">Git’s Best And Most Unknown Feature - YouTube</a></li>
+</ol>
+</blockquote>
+</br>
+9.`git rebase`操作
+<blockquote>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/git-rebase-handbook/">The Git Rebase Handbook – A Definitive Guide to Rebasing</a></li>
+</ol>
+</blockquote>
+<p>10.<code>git merge</code>操作。报错<code>fatal: refusing to merge unrelated histories</code><br />
+解决方案：<br />
+当您尝试将两个没有共同祖先的分支合并时，可能会遇到<code>fatal: refusing to merge unrelated histories</code>错误。这通常发生在以下情况下：</p>
+<ul>
+<li>您创建了一个新的本地仓库，并将其推送到远程仓库，然后尝试将另一个仓库的分支合并到本地仓库中。</li>
+<li>您在本地仓库中创建了一个新的分支，并将其推送到远程仓库，然后尝试将另一个仓库的分支合并到本地仓库中。<br />
+在这些情况下，Git无法确定两个分支之间的共同祖先，因此会拒绝合并操作。<br />
+要解决此问题，可以使用<code>--allow-unrelated-histories</code>选项强制合并两个没有共同祖先的分支。例如，要将<code>feature</code>分支合并到<code>master</code>分支，可以运行以下命令：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">git merge --allow-unrelated-histories feature<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这将强制合并<code>feature</code>分支到<code>master</code>分支，即使它们没有共同祖先。请注意，这可能会导致合并冲突，因此在合并分支之前，请确保备份了所有重要的更改，并测试了所有更改以确保它们不会破坏应用程序的功能。</p>
+</br>
+<p>11.git bash中进行复制/粘贴</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">Git bash copy and paste 
+Copy: Ctrl + Ins 
+Paste: Shift + Ins 
+or if your keyboard has function key named as fn 
+Copy : Ctrl + fn + Ins 
+Paste : Shift + fn + Ins<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>幻光
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tom89757.github.io/2023/06/15/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%9702/" title="git使用指南02">https://tom89757.github.io/2023/06/15/git使用指南02/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/06/13/%E5%89%8D%E7%A8%8B%E4%BC%BC%E9%94%A6/" rel="prev" title="前程似锦">
+                  <i class="fa fa-chevron-left"></i> 前程似锦
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/06/18/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/" rel="next" title="程序员生活指南">
+                  程序员生活指南 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">幻光</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">390k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:55</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
+
+
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '480px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: false
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>
