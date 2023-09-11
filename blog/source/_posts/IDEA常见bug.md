@@ -79,3 +79,11 @@ spring.r2dbc.sql-client.name=orders
 
 > 参考资料：
 > 1. [How to Solve 403 Error in Spring Boot POST Request | Baeldung](https://www.baeldung.com/java-spring-fix-403-error)
+
+### The server time zone value '�й���׼ʱ��' is unrecognized
+在my.ini中添加配置项（Windwos系统中，my.ini文件位置：C:\ProgramData\MySQL\MySQL Server 8.0），重启服务器生效。 > 参考资料：
+```
+[mysqld] 
+default-time-zone = '+8:00'
+```
+> 1. [The server time zone value ‘�й���׼ʱ��‘ is unrecognized or represents more than one time zone_明月几时有666的博客-CSDN博客](https://blog.csdn.net/gao_zhennan/article/details/123953198)
