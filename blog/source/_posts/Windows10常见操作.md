@@ -77,7 +77,6 @@ Windows 10打开Taskbar设置：
 > 参考资料：
 > 1. [想删除这个东西但它显示的是在另一文件夹中或程序中打开，无法删除，怎么办？ - 知乎](https://www.zhihu.com/question/453864187/answer/1827894565)
 
-
 ### Google同步多个标签页
 
 > 参考资料：
@@ -130,7 +129,11 @@ Windows 10打开Taskbar设置：
 > 参考资料：
 > 1. [keyboard shortcuts - How can I delete a word backward at the command line (bash and zsh)? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/94331/how-can-i-delete-a-word-backward-at-the-command-line-bash-and-zsh)
 
+### you don't have permission to open this file contact the file owner or an administrator
 
+> 参考资料：
+> 1. [Windows 10 error "you don't have permission to open this file"](https://answers.microsoft.com/en-us/windows/forum/all/windows-10-error-you-dont-have-permission-to-open/91f0d6a8-1766-45a3-a2bd-afea3398cc13)
+> 2. [You Don’t Have Permission to Open This File in Windows 10](https://windowsreport.com/no-permission-open-file/)
 
 
 
