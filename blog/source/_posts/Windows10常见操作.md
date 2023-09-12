@@ -135,7 +135,10 @@ Windows 10打开Taskbar设置：
 > 1. [Windows 10 error "you don't have permission to open this file"](https://answers.microsoft.com/en-us/windows/forum/all/windows-10-error-you-dont-have-permission-to-open/91f0d6a8-1766-45a3-a2bd-afea3398cc13)
 > 2. [You Don’t Have Permission to Open This File in Windows 10](https://windowsreport.com/no-permission-open-file/)
 
+### OneDrive无法启动，没有任何反应
 
+> 参考资料：
+> 1. [onedrive 无法启动，没有任何反应 - Microsoft Community](https://answers.microsoft.com/zh-hans/msoffice/forum/all/onedrive/bd2aa214-06c2-4cdf-b7b4-499a17bd2077)
 
 
 
