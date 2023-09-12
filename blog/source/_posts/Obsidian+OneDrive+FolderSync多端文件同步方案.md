@@ -1,16 +1,17 @@
 ---
-title: 坚果云使用指南
+title: Obsidian+OneDrive+FolderSync多端文件同步方案
 date: 2023-09-12 20:54:50
 categories:
-- 资料 
+  - 资料
 tags:
-- 坚果云 
+  - 坚果云
 ---
-本文记录一下坚果云同步手机端和电脑端文件的使用指南：
+本文记录一下使用Obsidian+OneDrive+FolderSync同步手机端和电脑端文件的使用指南：
 <!--more-->
+主要参考资料3：
 ```
 mklink/d E:\OneDrive\CoursesNotes D:\Notes\CoursesNotes
-mklink/d E:\OneDrive\_posts D:\Desktop\Tom89757.github.io\blog\source\_posts
+mklink/d E:\OneDrive\_post D:\Notes\CoursesNotes
 ```
 > 参考资料：
 > 1. [坚果云手机客户端FAQ | 坚果云帮助中心](https://help.jianguoyun.com/?page_id=864)
