@@ -140,7 +140,10 @@ Windows 10打开Taskbar设置：
 > 参考资料：
 > 1. [onedrive 无法启动，没有任何反应 - Microsoft Community](https://answers.microsoft.com/zh-hans/msoffice/forum/all/onedrive/bd2aa214-06c2-4cdf-b7b4-499a17bd2077)
 
+### U盘报错数据错误循环冗余检查
 
+> 参考资料：
+> 1. [求助！数据错误循环冗余检查怎么解决？](https://www.disktool.cn/content-center/diskpart-has-encountered-an-error-data-error-666.html)
 
 
 
