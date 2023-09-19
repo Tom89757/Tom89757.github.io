@@ -932,7 +932,16 @@ Error('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x0000026F50B44
 > 参考资料：
 > 1. [python - RequestsDependencyWarning: urllib3 (1.25.2) or chardet (3.0.4) doesn't match a supported version! Fix - Stack Overflow](https://stackoverflow.com/questions/56155627/requestsdependencywarning-urllib3-1-25-2-or-chardet-3-0-4-doesnt-match-a-s)
 
-
+</br>
+29.报错`Caused by ProxyError('Cannot connect to proxy.', FileNotFoundError(2, 'No such file or directory'))`
+原因：urllib3包版本较高，与requests包不兼容。
+解决方案：卸载当前urllib3，并安装较低版本
+```pip
+pip uninstall urllib3
+pip install urllib3==1.25.11
+```
+> 参考资料：
+> 1. [web scraping - Python request to download file from URL with Query String throws ProxyError HTTPSConnectionPool, Cannot connect to proxy, no such file or directory - Stack Overflow](https://stackoverflow.com/questions/67686921/python-request-to-download-file-from-url-with-query-string-throws-proxyerror-htt)
 
 
 
