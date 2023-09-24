@@ -109,3 +109,13 @@ or if your keyboard has function key named as fn
 Copy : Ctrl + fn + Ins 
 Paste : Shift + fn + Ins
 ```
+
+</br>
+12.git进行仓库克隆时报错`error: RPC failed; curl 18 transfer closed with outstanding read data remaining`
+```bash
+git clone http://github.com/large-repository --depth 1
+cd large-repository
+git fetch --unshallow
+```
+> 参考资料：
+> 1. [git - error: RPC failed; curl transfer closed with outstanding read data remaining - Stack Overflow](https://stackoverflow.com/questions/38618885/error-rpc-failed-curl-transfer-closed-with-outstanding-read-data-remaining)
