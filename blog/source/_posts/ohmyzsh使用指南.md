@@ -2,13 +2,13 @@
 title: ohmyzsh使用指南
 date: 2023-04-19 17:36:05
 categories:
-- 环境配置
+  - 环境配置
 tags:
-- tmux 
+  - tmux
 ---
 
 本文介绍一下ohmyzsh的学习和使用过程：
-<!--more-->
+<--more-->
 参考资料6和7为主要配置流程：
 
 
