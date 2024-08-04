@@ -162,7 +162,10 @@ noremap <silent> L g$
 > 参考资料：
 > 1. [Move cursor by display lines when wrapping | Vim Tips Wiki | Fandom](https://vim.fandom.com/wiki/Move_cursor_by_display_lines_when_wrapping)
 
-
+### Vim在使用`/`搜索时复制剪贴板的内容
+![](https://raw.githubusercontent.com/Tom89757/ImageHost/main/hexo/20240805003025.png)
+>参考资料：
+>1. [In Vim, is there a way to paste text in the search line? - Stack Overflow](https://stackoverflow.com/questions/101258/in-vim-is-there-a-way-to-paste-text-in-the-search-line)
 
 
 
